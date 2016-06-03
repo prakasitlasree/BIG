@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BIG.DataAccess
+namespace BIG.Model
 {
     using System;
     using System.Collections.Generic;

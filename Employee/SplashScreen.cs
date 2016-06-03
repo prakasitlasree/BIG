@@ -18,7 +18,7 @@ namespace BIG.Present
         private void SplashScreen_Shown(object sender, EventArgs e)
         {
             //set time interval 3 sec
-            timer1.Interval = 4000;
+            timer1.Interval = 3000;
             //starts the timer
             timer1.Start();
             timer1.Tick += tmr_Tick;

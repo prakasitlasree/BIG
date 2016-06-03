@@ -51,15 +51,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BIGDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="BIGDB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BIGDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Class1.cs" />
-    <Compile Include="LOGON.cs">
-      <DependentUpon>BIGDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -72,14 +63,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BIGDB.Context.cs</LastGenOutput>
     </None>
-    <None Include="BIGDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BIGDB.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BIG.Model\BIG.Model.csproj">
+      <Project>{7e263854-19a2-4a7c-a93b-a3413b93f00b}</Project>
+      <Name>BIG.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

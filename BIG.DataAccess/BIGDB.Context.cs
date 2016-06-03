@@ -12,6 +12,7 @@ namespace BIG.DataAccess
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using BIG.Model;
     
     public partial class BIG_DBEntities : DbContext
     {
