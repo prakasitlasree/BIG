@@ -23,7 +23,9 @@ namespace BIG.Present
             var obj = LogOnServices.Login(txtusername.Text, txtpassword.Text);
             if (obj)
             {
-                MessageBox.Show("Hello");
+                var main = new MainForm();
+                main.Show();
+                this.Close();
             }
             else
             {
