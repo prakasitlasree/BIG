@@ -36,6 +36,9 @@
             this.lblpassword = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+
             // 
             // groupBox1
             // 

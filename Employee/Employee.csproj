@@ -101,6 +101,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Img\maya_2015.png" />
+    <Content Include="Resources\BIG New LOGO 10-3-2016 บางบัวทอง.png" />
+    <Content Include="Resources\LOGO BIG INTERSAVEGUARD GROUP.png" />
     <None Include="Resources\maya_2015.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
