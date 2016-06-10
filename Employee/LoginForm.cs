@@ -25,7 +25,7 @@ namespace BIG.Present
             {
                 var main = new MainForm();
                 main.Show();
-                this.Close();
+                this.Hide();
             }
             else
             {

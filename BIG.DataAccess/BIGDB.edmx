@@ -77,6 +77,10 @@
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
+    <Diagrams>
+      <Diagram DiagramId="416fbd80b228408ca4ab59ee2aaa52eb" Name="Diagram1">
+        <EntityTypeShape EntityType="BIG_DBModel.LOGON" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
   </Designer>
 </edmx:Edmx>

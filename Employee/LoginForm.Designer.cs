@@ -28,17 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bt_logon = new System.Windows.Forms.Button();
-            this.txtusername = new System.Windows.Forms.TextBox();
-            this.txtpassword = new System.Windows.Forms.TextBox();
-            this.lblusername = new System.Windows.Forms.Label();
             this.lblpassword = new System.Windows.Forms.Label();
+            this.lblusername = new System.Windows.Forms.Label();
+            this.txtpassword = new System.Windows.Forms.TextBox();
+            this.txtusername = new System.Windows.Forms.TextBox();
+            this.bt_logon = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-
             // 
             // groupBox1
             // 
@@ -53,23 +51,23 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // bt_logon
+            // lblpassword
             // 
-            this.bt_logon.Location = new System.Drawing.Point(171, 150);
-            this.bt_logon.Name = "bt_logon";
-            this.bt_logon.Size = new System.Drawing.Size(75, 23);
-            this.bt_logon.TabIndex = 0;
-            this.bt_logon.Text = "Logon";
-            this.bt_logon.UseVisualStyleBackColor = true;
-            this.bt_logon.Click += new System.EventHandler(this.bt_logon_Click);
+            this.lblpassword.AutoSize = true;
+            this.lblpassword.Location = new System.Drawing.Point(94, 111);
+            this.lblpassword.Name = "lblpassword";
+            this.lblpassword.Size = new System.Drawing.Size(53, 13);
+            this.lblpassword.TabIndex = 4;
+            this.lblpassword.Text = "Password";
             // 
-            // txtusername
+            // lblusername
             // 
-            this.txtusername.Location = new System.Drawing.Point(171, 69);
-            this.txtusername.Name = "txtusername";
-            this.txtusername.Size = new System.Drawing.Size(148, 20);
-            this.txtusername.TabIndex = 1;
-            this.txtusername.Text = "admin";
+            this.lblusername.AutoSize = true;
+            this.lblusername.Location = new System.Drawing.Point(94, 72);
+            this.lblusername.Name = "lblusername";
+            this.lblusername.Size = new System.Drawing.Size(57, 13);
+            this.lblusername.TabIndex = 3;
+            this.lblusername.Text = "UserName";
             // 
             // txtpassword
             // 
@@ -81,23 +79,23 @@
             this.txtpassword.Text = "1234";
             this.txtpassword.UseSystemPasswordChar = true;
             // 
-            // lblusername
+            // txtusername
             // 
-            this.lblusername.AutoSize = true;
-            this.lblusername.Location = new System.Drawing.Point(94, 72);
-            this.lblusername.Name = "lblusername";
-            this.lblusername.Size = new System.Drawing.Size(57, 13);
-            this.lblusername.TabIndex = 3;
-            this.lblusername.Text = "UserName";
+            this.txtusername.Location = new System.Drawing.Point(171, 69);
+            this.txtusername.Name = "txtusername";
+            this.txtusername.Size = new System.Drawing.Size(148, 20);
+            this.txtusername.TabIndex = 1;
+            this.txtusername.Text = "admin";
             // 
-            // lblpassword
+            // bt_logon
             // 
-            this.lblpassword.AutoSize = true;
-            this.lblpassword.Location = new System.Drawing.Point(94, 111);
-            this.lblpassword.Name = "lblpassword";
-            this.lblpassword.Size = new System.Drawing.Size(53, 13);
-            this.lblpassword.TabIndex = 4;
-            this.lblpassword.Text = "Password";
+            this.bt_logon.Location = new System.Drawing.Point(171, 150);
+            this.bt_logon.Name = "bt_logon";
+            this.bt_logon.Size = new System.Drawing.Size(75, 23);
+            this.bt_logon.TabIndex = 0;
+            this.bt_logon.Text = "Logon";
+            this.bt_logon.UseVisualStyleBackColor = true;
+            this.bt_logon.Click += new System.EventHandler(this.bt_logon_Click);
             // 
             // LoginForm
             // 
@@ -105,7 +103,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(472, 270);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Form";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

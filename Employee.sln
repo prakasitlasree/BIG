@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIG.DataService", "BIG.Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIG.DataAccess", "BIG.DataAccess\BIG.DataAccess.csproj", "{37F86E69-43D3-43AF-B5DA-9651F0BE84D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MakarovDev.ExpandCollapsePanel", "..\..\..\_SourceCode\ExpandCollapsePanel-master\MakarovDev.ExpandCollapsePanel\MakarovDev.ExpandCollapsePanel.csproj", "{BE76A6FE-225F-4287-9CA0-231F5AF4CDC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{37F86E69-43D3-43AF-B5DA-9651F0BE84D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37F86E69-43D3-43AF-B5DA-9651F0BE84D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37F86E69-43D3-43AF-B5DA-9651F0BE84D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE76A6FE-225F-4287-9CA0-231F5AF4CDC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE76A6FE-225F-4287-9CA0-231F5AF4CDC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE76A6FE-225F-4287-9CA0-231F5AF4CDC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE76A6FE-225F-4287-9CA0-231F5AF4CDC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
