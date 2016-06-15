@@ -122,7 +122,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Img\maya_2015.png" />
+    <None Include="Resources\big_bg.png" />
+    <Content Include="Resources\gray_btn.png" />
+    <Content Include="Resources\green_btn.png" />
+    <Content Include="Resources\hr.png" />
+    <Content Include="Resources\red_btn.png" />
+    <Content Include="Resources\report.png" />
+    <Content Include="Resources\report1.png" />
+    <None Include="Resources\search.png" />
+    <Content Include="Resources\setting.png" />
+    <Content Include="Resources\violet_btn.png" />
+    <Content Include="Resources\yellow_btn.png" />
+    <None Include="Resources\bg.jpg" />
     <Content Include="Resources\BIG New LOGO 10-3-2016 บางบัวทอง.png" />
+    <None Include="Resources\Flow-HRMI.gif" />
+    <Content Include="Resources\blue_btn.png" />
     <Content Include="Resources\icon\3d bar chart.png" />
     <Content Include="Resources\icon\Abort.png" />
     <Content Include="Resources\icon\About.png" />
