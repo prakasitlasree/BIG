@@ -26,6 +26,14 @@ namespace BIG.DataAccess
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<LOGON> LOGONs { get; set; }
+        public DbSet<Logon> Logons { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Amphur> Amphurs { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Gender> Genders { get; set; }
+        public DbSet<Image> Images { get; set; }
+        public DbSet<Marital> Maritals { get; set; }
+        public DbSet<Position> Positions { get; set; }
+        public DbSet<Province> Provinces { get; set; }
     }
 }
