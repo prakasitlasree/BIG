@@ -12,13 +12,13 @@ namespace BIG.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Logon
+    public partial class Amphur
     {
-        public int ID { get; set; }
-        public string USERNAME { get; set; }
-        public string PASSWORD { get; set; }
-        public Nullable<System.DateTime> LAST_LOGIN { get; set; }
-        public Nullable<System.DateTime> CREATE_DATE { get; set; }
-        public Nullable<System.DateTime> MODIFIED_DATE { get; set; }
+        public string ID { get; set; }
+        public string NAME_EN { get; set; }
+        public string NAME_TH { get; set; }
+        public string PROVINCE_ID { get; set; }
+    
+        public virtual Province Province { get; set; }
     }
 }

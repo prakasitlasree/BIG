@@ -12,13 +12,13 @@ namespace BIG.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Logon
+    public partial class Address
     {
         public int ID { get; set; }
-        public string USERNAME { get; set; }
-        public string PASSWORD { get; set; }
-        public Nullable<System.DateTime> LAST_LOGIN { get; set; }
-        public Nullable<System.DateTime> CREATE_DATE { get; set; }
-        public Nullable<System.DateTime> MODIFIED_DATE { get; set; }
+        public string EMP_ID { get; set; }
+        public string ADDRESS1 { get; set; }
+        public string AMPHUR_ID { get; set; }
+        public string PROVINCE_ID { get; set; }
+        public string POSTCODE { get; set; }
     }
 }
