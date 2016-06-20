@@ -16,7 +16,7 @@ namespace BIG.DataService
            {
                using(var ctx = new BIG_DBEntities())
                {
-                   var list = ctx.LOGONs.Where(x => x.USERNAME == username && x.PASSWORD == password).ToList();
+                   var list = ctx.Logons.Where(x => x.USERNAME == username && x.PASSWORD == password).ToList();
                    if (list.Count() > 0)
                    {
                        result = true;

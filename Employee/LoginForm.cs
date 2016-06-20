@@ -20,17 +20,43 @@ namespace BIG.Present
 
         private void bt_logon_Click(object sender, EventArgs e)
         {
-            var obj = LogOnServices.Login(txtusername.Text, txtpassword.Text);
-            if (obj)
+            try
             {
-                var main = new MainForm();
-                main.Show();
-                this.Hide();
+                var obj = LogOnServices.Login(txtusername.Text, txtpassword.Text);
+                if (obj)
+                {
+                    var main = new MainForm();
+                    main.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("ไม่สามารถเข้าใช้งานระบบได้ กรุณาติดต่อผู้ดูแลระบบ");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Bye");
+                MessageBox.Show(ex.Message);
             }
+            
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            //DialogResult result = MessageBox.Show("คุณต้องการออกจากโปรแกรม?", "Confirmation", MessageBoxButtons.YesNoCancel);
+            //if (result == DialogResult.Yes)
+            //{
+                
+            //}
+            //else if (result == DialogResult.No)
+            //{
+            //    //...
+            //}
+            //else
+            //{
+            //    //...
+            //} 
         }
     }
 }

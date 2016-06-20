@@ -9,16 +9,11 @@ using System.Windows.Forms;
 
 namespace BIG.Present
 {
-    public partial class PersonalForm : Form
+    public partial class TestForm : Form
     {
-        public PersonalForm()
+        public TestForm()
         {
             InitializeComponent();
-        }
-
-        private void PersonalForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

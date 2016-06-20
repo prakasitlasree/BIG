@@ -32,11 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MakarovDev.ExpandCollapsePanel">
-      <HintPath>dll\MakarovDev.ExpandCollapsePanel.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Windows.Forms.Ribbon35">
+      <HintPath>..\..\..\..\_SourceCode\SourceCode\RibbonDemo\bin\Debug\System.Windows.Forms.Ribbon35.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,6 +74,12 @@
     <Compile Include="SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +102,9 @@
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -107,6 +117,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\_SourceCode\ExpandCollapsePanel-master\MakarovDev.ExpandCollapsePanel\MakarovDev.ExpandCollapsePanel.csproj">
+      <Project>{BE76A6FE-225F-4287-9CA0-231F5AF4CDC1}</Project>
+      <Name>MakarovDev.ExpandCollapsePanel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BIG.BusinessLogic\BIG.BusinessLogic.csproj">
+      <Project>{69648107-31d9-4687-a26c-8b17c6f0f640}</Project>
+      <Name>BIG.BusinessLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BIG.Common\BIG.Common.csproj">
       <Project>{4f539027-636d-4048-9df7-8b96fbe40c10}</Project>
       <Name>BIG.Common</Name>
@@ -123,14 +141,31 @@
   <ItemGroup>
     <Content Include="Img\maya_2015.png" />
     <None Include="Resources\big_bg.png" />
+    <Content Include="Resources\eval.png" />
+    <Content Include="Resources\exit.png" />
+    <Content Include="Resources\exit1.png" />
     <Content Include="Resources\gray_btn.png" />
     <Content Include="Resources\green_btn.png" />
     <Content Include="Resources\hr.png" />
+    <Content Include="Resources\lock_1.png" />
+    <Content Include="Resources\lock_2.png" />
+    <Content Include="Resources\lock_3.png" />
+    <Content Include="Resources\login_icon.png" />
+    <Content Include="Resources\login_icon_png.png" />
+    <Content Include="Resources\network.png" />
+    <Content Include="Resources\people.png" />
+    <Content Include="Resources\personal.png" />
+    <Content Include="Resources\ppl.png" />
     <Content Include="Resources\red_btn.png" />
     <Content Include="Resources\report.png" />
     <Content Include="Resources\report1.png" />
     <None Include="Resources\search.png" />
+    <Content Include="Resources\restart.png" />
+    <Content Include="Resources\search_.png" />
+    <Content Include="Resources\search_1.png" />
     <Content Include="Resources\setting.png" />
+    <Content Include="Resources\setting_1.png" />
+    <Content Include="Resources\skill.png" />
     <Content Include="Resources\violet_btn.png" />
     <Content Include="Resources\yellow_btn.png" />
     <None Include="Resources\bg.jpg" />

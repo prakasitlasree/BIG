@@ -30,5 +30,52 @@ namespace BIG.Present
         {
 
         }
+         
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("คุณต้องการออกจากโปรแกรม?", "Confirmation", MessageBoxButtons.YesNoCancel);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else if (result == DialogResult.No)
+            {
+                //...
+            }
+            else
+            {
+                //...
+            } 
+
+        }
+
+        private void lnk_employee_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            var personal = new PersonalForm();
+            personal.Show();
+        }
+
+        private void btn_employee_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var personal = new PersonalForm();
+            personal.Show();
+        }
+
+        private void btn_setting_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var personal = new TestForm();
+            personal.Show();
+        }
+
+        private void lnk_setting_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            var personal = new TestForm();
+            personal.Show();
+        }
     }
 }

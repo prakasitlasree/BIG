@@ -28,257 +28,289 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TabMenu = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PersonalForm));
+            this.advancedFlowLayoutPanel1 = new MakarovDev.ExpandCollapsePanel.AdvancedFlowLayoutPanel();
+            this.expandCollapsePanel1 = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
+            this.expandCollapsePanel2 = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.ribbonUpDown1 = new System.Windows.Forms.RibbonUpDown();
+            this.ribbon1 = new System.Windows.Forms.Ribbon();
+            this.ribbonOrbMenuItem1 = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.ribbonOrbMenuItem2 = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.ribbonOrbMenuItem3 = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.ribbonOrbMenuItem4 = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
+            this.ribbonTab4 = new System.Windows.Forms.RibbonTab();
+            this.gb_search = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_load = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_id_card = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txt_emp_id = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbl_emp_id = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btn_img_add = new System.Windows.Forms.PictureBox();
-            this.TabMenu.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.btn_search = new System.Windows.Forms.Button();
+            this.txt_pid = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.advancedFlowLayoutPanel1.SuspendLayout();
+            this.gb_search.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_img_add)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // TabMenu
+            // advancedFlowLayoutPanel1
             // 
-            this.TabMenu.Controls.Add(this.tabPage1);
-            this.TabMenu.Controls.Add(this.tabPage2);
-            this.TabMenu.Controls.Add(this.tabPage3);
-            this.TabMenu.Controls.Add(this.tabPage4);
-            this.TabMenu.Controls.Add(this.tabPage5);
-            this.TabMenu.Location = new System.Drawing.Point(0, -1);
-            this.TabMenu.Name = "TabMenu";
-            this.TabMenu.SelectedIndex = 0;
-            this.TabMenu.Size = new System.Drawing.Size(841, 588);
-            this.TabMenu.TabIndex = 6;
+            this.advancedFlowLayoutPanel1.AllowDrop = true;
+            this.advancedFlowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.advancedFlowLayoutPanel1.Controls.Add(this.expandCollapsePanel1);
+            this.advancedFlowLayoutPanel1.Controls.Add(this.expandCollapsePanel2);
+            this.advancedFlowLayoutPanel1.Location = new System.Drawing.Point(1, 71);
+            this.advancedFlowLayoutPanel1.Name = "advancedFlowLayoutPanel1";
+            this.advancedFlowLayoutPanel1.Size = new System.Drawing.Size(204, 688);
+            this.advancedFlowLayoutPanel1.TabIndex = 0;
             // 
-            // tabPage1
+            // expandCollapsePanel1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.GhostWhite;
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.comboBox1);
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.txt_id_card);
-            this.tabPage1.Controls.Add(this.txt_emp_id);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.lbl_emp_id);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(833, 562);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "ข้อมูลทั่วไป";
+            this.expandCollapsePanel1.ButtonSize = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonSize.Normal;
+            this.expandCollapsePanel1.ButtonStyle = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonStyle.Circle;
+            this.expandCollapsePanel1.ExpandedHeight = 0;
+            this.expandCollapsePanel1.IsExpanded = true;
+            this.expandCollapsePanel1.Location = new System.Drawing.Point(3, 3);
+            this.expandCollapsePanel1.Name = "expandCollapsePanel1";
+            this.expandCollapsePanel1.Size = new System.Drawing.Size(198, 228);
+            this.expandCollapsePanel1.TabIndex = 0;
+            this.expandCollapsePanel1.Text = "ข้อมูลพนักงานทั้งหมด";
+            this.expandCollapsePanel1.UseAnimation = true;
             // 
-            // textBox2
+            // expandCollapsePanel2
             // 
-            this.textBox2.Location = new System.Drawing.Point(420, 77);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(118, 20);
-            this.textBox2.TabIndex = 12;
-            this.textBox2.Text = "dd";
+            this.expandCollapsePanel2.ButtonSize = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonSize.Normal;
+            this.expandCollapsePanel2.ButtonStyle = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonStyle.Circle;
+            this.expandCollapsePanel2.ExpandedHeight = 0;
+            this.expandCollapsePanel2.IsExpanded = true;
+            this.expandCollapsePanel2.Location = new System.Drawing.Point(3, 237);
+            this.expandCollapsePanel2.Name = "expandCollapsePanel2";
+            this.expandCollapsePanel2.Size = new System.Drawing.Size(198, 362);
+            this.expandCollapsePanel2.TabIndex = 1;
+            this.expandCollapsePanel2.Text = "การตั้งค่าระบบ";
+            this.expandCollapsePanel2.UseAnimation = true;
             // 
-            // textBox1
+            // ribbonUpDown1
             // 
-            this.textBox1.Location = new System.Drawing.Point(327, 74);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(118, 20);
-            this.textBox1.TabIndex = 11;
+            this.ribbonUpDown1.TextBoxText = "";
+            this.ribbonUpDown1.TextBoxWidth = 50;
+            // 
+            // ribbon1
+            // 
+            this.ribbon1.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.ribbon1.Location = new System.Drawing.Point(0, 0);
+            this.ribbon1.Minimized = false;
+            this.ribbon1.Name = "ribbon1";
+            // 
+            // 
+            // 
+            this.ribbon1.OrbDropDown.BorderRoundness = 8;
+            this.ribbon1.OrbDropDown.Location = new System.Drawing.Point(0, 0);
+            this.ribbon1.OrbDropDown.MenuItems.Add(this.ribbonOrbMenuItem1);
+            this.ribbon1.OrbDropDown.MenuItems.Add(this.ribbonOrbMenuItem2);
+            this.ribbon1.OrbDropDown.MenuItems.Add(this.ribbonOrbMenuItem3);
+            this.ribbon1.OrbDropDown.MenuItems.Add(this.ribbonOrbMenuItem4);
+            this.ribbon1.OrbDropDown.Name = "";
+            this.ribbon1.OrbDropDown.Size = new System.Drawing.Size(527, 248);
+            this.ribbon1.OrbDropDown.TabIndex = 0;
+            this.ribbon1.OrbImage = null;
+            this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
+            this.ribbon1.Size = new System.Drawing.Size(1008, 48);
+            this.ribbon1.TabIndex = 1;
+            this.ribbon1.Tabs.Add(this.ribbonTab1);
+            this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 26, 20, 0);
+            this.ribbon1.Text = "ribbon1";
+            this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue;
+            // 
+            // ribbonOrbMenuItem1
+            // 
+            this.ribbonOrbMenuItem1.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.ribbonOrbMenuItem1.Image = global::BIG.Present.Properties.Resources.User_group;
+            this.ribbonOrbMenuItem1.SmallImage = global::BIG.Present.Properties.Resources.User_group;
+            this.ribbonOrbMenuItem1.Text = "ข้อมูลพนักงานทั้งหมด";
+            // 
+            // ribbonOrbMenuItem2
+            // 
+            this.ribbonOrbMenuItem2.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.ribbonOrbMenuItem2.Image = global::BIG.Present.Properties.Resources.Boss;
+            this.ribbonOrbMenuItem2.SmallImage = global::BIG.Present.Properties.Resources.Boss;
+            this.ribbonOrbMenuItem2.Text = "เพิ่มพนักงานใหม่";
+            // 
+            // ribbonOrbMenuItem3
+            // 
+            this.ribbonOrbMenuItem3.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.ribbonOrbMenuItem3.Image = global::BIG.Present.Properties.Resources.Application;
+            this.ribbonOrbMenuItem3.SmallImage = global::BIG.Present.Properties.Resources.Application;
+            this.ribbonOrbMenuItem3.Text = "ตั้งค่าระบบ";
+            // 
+            // ribbonOrbMenuItem4
+            // 
+            this.ribbonOrbMenuItem4.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.ribbonOrbMenuItem4.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem4.Image")));
+            this.ribbonOrbMenuItem4.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem4.SmallImage")));
+            this.ribbonOrbMenuItem4.Text = "ribbonOrbMenuItem4";
+            // 
+            // ribbonTab1
+            // 
+            this.ribbonTab1.Text = "";
+            // 
+            // ribbonTab4
+            // 
+            this.ribbonTab4.Text = null;
+            // 
+            // gb_search
+            // 
+            this.gb_search.AutoSize = true;
+            this.gb_search.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.gb_search.Controls.Add(this.groupBox2);
+            this.gb_search.Controls.Add(this.groupBox1);
+            this.gb_search.Controls.Add(this.dataGridView1);
+            this.gb_search.Location = new System.Drawing.Point(227, 71);
+            this.gb_search.Name = "gb_search";
+            this.gb_search.Size = new System.Drawing.Size(759, 674);
+            this.gb_search.TabIndex = 7;
+            this.gb_search.TabStop = false;
+            this.gb_search.Text = "ค้นหาพนักงาน";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.AutoSize = true;
+            this.groupBox2.Controls.Add(this.btn_load);
+            this.groupBox2.Location = new System.Drawing.Point(406, 14);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(347, 133);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            // 
+            // btn_load
+            // 
+            this.btn_load.Location = new System.Drawing.Point(81, 28);
+            this.btn_load.Name = "btn_load";
+            this.btn_load.Size = new System.Drawing.Size(189, 61);
+            this.btn_load.TabIndex = 0;
+            this.btn_load.Text = "โหลดข้อมูลจากเครื่องอ่านบัตร";
+            this.btn_load.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txt_emp_id);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.btn_search);
+            this.groupBox1.Controls.Add(this.txt_pid);
+            this.groupBox1.Location = new System.Drawing.Point(20, 14);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(380, 133);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(163, 77);
+            this.label2.Location = new System.Drawing.Point(21, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "ชื่อ-นามสกุล";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(245, 74);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(75, 21);
-            this.comboBox1.TabIndex = 9;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.pictureBox3);
-            this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.btn_img_add);
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(146, 212);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            // 
-            // txt_id_card
-            // 
-            this.txt_id_card.Location = new System.Drawing.Point(245, 45);
-            this.txt_id_card.Name = "txt_id_card";
-            this.txt_id_card.Size = new System.Drawing.Size(290, 20);
-            this.txt_id_card.TabIndex = 3;
+            this.label2.Size = new System.Drawing.Size(91, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "รหัสบัตรประชาชน";
             // 
             // txt_emp_id
             // 
-            this.txt_emp_id.Location = new System.Drawing.Point(245, 16);
+            this.txt_emp_id.Location = new System.Drawing.Point(119, 28);
             this.txt_emp_id.Name = "txt_emp_id";
-            this.txt_emp_id.Size = new System.Drawing.Size(290, 20);
-            this.txt_emp_id.TabIndex = 2;
+            this.txt_emp_id.Size = new System.Drawing.Size(200, 20);
+            this.txt_emp_id.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(158, 48);
+            this.label1.Location = new System.Drawing.Point(21, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "รหัสบัตรประชาชน";
+            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "รหัสพนักงาน";
             // 
-            // lbl_emp_id
+            // btn_search
             // 
-            this.lbl_emp_id.AutoSize = true;
-            this.lbl_emp_id.Location = new System.Drawing.Point(158, 19);
-            this.lbl_emp_id.Name = "lbl_emp_id";
-            this.lbl_emp_id.Size = new System.Drawing.Size(67, 13);
-            this.lbl_emp_id.TabIndex = 0;
-            this.lbl_emp_id.Text = "รหัสพนักงาน";
+            this.btn_search.Location = new System.Drawing.Point(119, 80);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(86, 34);
+            this.btn_search.TabIndex = 2;
+            this.btn_search.Text = "ค้นหา";
+            this.btn_search.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // txt_pid
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(541, 549);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "สถานภาพส่วนตัว";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.txt_pid.Location = new System.Drawing.Point(119, 54);
+            this.txt_pid.Name = "txt_pid";
+            this.txt_pid.Size = new System.Drawing.Size(200, 20);
+            this.txt_pid.TabIndex = 4;
             // 
-            // tabPage3
+            // dataGridView1
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(541, 549);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "การว่างจ้าง";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(541, 549);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "สถานที่ทำงาน";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(541, 549);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "ความสามารถ";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(6, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(132, 155);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::BIG.Present.Properties.Resources.Delete;
-            this.pictureBox3.Location = new System.Drawing.Point(104, 180);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox3.TabIndex = 7;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::BIG.Present.Properties.Resources.Refresh;
-            this.pictureBox2.Location = new System.Drawing.Point(56, 180);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btn_img_add
-            // 
-            this.btn_img_add.Image = global::BIG.Present.Properties.Resources.Add;
-            this.btn_img_add.Location = new System.Drawing.Point(12, 180);
-            this.btn_img_add.Name = "btn_img_add";
-            this.btn_img_add.Size = new System.Drawing.Size(24, 24);
-            this.btn_img_add.TabIndex = 5;
-            this.btn_img_add.TabStop = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(20, 152);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(733, 503);
+            this.dataGridView1.TabIndex = 7;
             // 
             // PersonalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(838, 586);
-            this.Controls.Add(this.TabMenu);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(1008, 761);
+            this.Controls.Add(this.gb_search);
+            this.Controls.Add(this.ribbon1);
+            this.Controls.Add(this.advancedFlowLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimizeBox = false;
             this.Name = "PersonalForm";
-            this.Text = "PersonalForm";
-            this.TabMenu.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.Text = "ข้อมูลพนักงาน";
+            this.Load += new System.EventHandler(this.PersonalForm_Load);
+            this.advancedFlowLayoutPanel1.ResumeLayout(false);
+            this.gb_search.ResumeLayout(false);
+            this.gb_search.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_img_add)).EndInit();
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl TabMenu;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private MakarovDev.ExpandCollapsePanel.AdvancedFlowLayoutPanel advancedFlowLayoutPanel1;
+        private MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel expandCollapsePanel1;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.RibbonUpDown ribbonUpDown1;
+        private System.Windows.Forms.Ribbon ribbon1;
+        private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem1;
+        private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem2;
+        private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem3;
+        private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem4;
+        private System.Windows.Forms.RibbonTab ribbonTab1;
+        private MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel expandCollapsePanel2;
+        private System.Windows.Forms.RibbonTab ribbonTab4;
+        private System.Windows.Forms.GroupBox gb_search;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btn_load;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox btn_img_add;
-        private System.Windows.Forms.TextBox txt_id_card;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_emp_id;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbl_emp_id;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button btn_search;
+        private System.Windows.Forms.TextBox txt_pid;
+        private System.Windows.Forms.DataGridView dataGridView1;
+
+
     }
 }

@@ -30,18 +30,31 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.btn_employee = new System.Windows.Forms.PictureBox();
+            this.lnk_employee = new System.Windows.Forms.LinkLabel();
+            this.btn_setting = new System.Windows.Forms.PictureBox();
+            this.lnk_setting = new System.Windows.Forms.LinkLabel();
+            this.btn_report = new System.Windows.Forms.PictureBox();
+            this.lnk_report = new System.Windows.Forms.LinkLabel();
+            this.btn_search = new System.Windows.Forms.PictureBox();
+            this.lnk_search = new System.Windows.Forms.LinkLabel();
+            this.btn_secure = new System.Windows.Forms.PictureBox();
+            this.btn_company = new System.Windows.Forms.PictureBox();
+            this.lnk_company = new System.Windows.Forms.LinkLabel();
+            this.lnk_secure = new System.Windows.Forms.LinkLabel();
+            this.btn_close = new System.Windows.Forms.PictureBox();
+            this.btn_eval = new System.Windows.Forms.PictureBox();
+            this.lnk_eval = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_employee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_setting)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_report)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_search)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_secure)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_company)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_close)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_eval)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -52,86 +65,170 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // pictureBox6
+            // btn_employee
             // 
-            this.pictureBox6.Image = global::BIG.Present.Properties.Resources.hr;
-            this.pictureBox6.Location = new System.Drawing.Point(197, 226);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(65, 68);
-            this.pictureBox6.TabIndex = 7;
-            this.pictureBox6.TabStop = false;
+            this.btn_employee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_employee.Image = global::BIG.Present.Properties.Resources.personal;
+            this.btn_employee.Location = new System.Drawing.Point(120, 287);
+            this.btn_employee.Name = "btn_employee";
+            this.btn_employee.Size = new System.Drawing.Size(75, 75);
+            this.btn_employee.TabIndex = 7;
+            this.btn_employee.TabStop = false;
+            this.btn_employee.Click += new System.EventHandler(this.btn_employee_Click);
             // 
-            // linkLabel1
+            // lnk_employee
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(202, 297);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(56, 21);
-            this.linkLabel1.TabIndex = 8;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "สมัครงาน";
+            this.lnk_employee.AutoSize = true;
+            this.lnk_employee.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lnk_employee.Location = new System.Drawing.Point(129, 365);
+            this.lnk_employee.Name = "lnk_employee";
+            this.lnk_employee.Size = new System.Drawing.Size(56, 21);
+            this.lnk_employee.TabIndex = 8;
+            this.lnk_employee.TabStop = true;
+            this.lnk_employee.Text = "สมัครงาน";
+            this.lnk_employee.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_employee_LinkClicked);
+            // 
+            // btn_setting
+            // 
+            this.btn_setting.Image = global::BIG.Present.Properties.Resources.setting;
+            this.btn_setting.Location = new System.Drawing.Point(660, 287);
+            this.btn_setting.Name = "btn_setting";
+            this.btn_setting.Size = new System.Drawing.Size(75, 75);
+            this.btn_setting.TabIndex = 9;
+            this.btn_setting.TabStop = false;
+            this.btn_setting.Click += new System.EventHandler(this.btn_setting_Click);
+            // 
+            // lnk_setting
+            // 
+            this.lnk_setting.AutoSize = true;
+            this.lnk_setting.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lnk_setting.Location = new System.Drawing.Point(656, 365);
+            this.lnk_setting.Name = "lnk_setting";
+            this.lnk_setting.Size = new System.Drawing.Size(63, 21);
+            this.lnk_setting.TabIndex = 10;
+            this.lnk_setting.TabStop = true;
+            this.lnk_setting.Text = "ตั้งค่าระบบ";
+            this.lnk_setting.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_setting_LinkClicked);
+            // 
+            // btn_report
+            // 
+            this.btn_report.Image = global::BIG.Present.Properties.Resources.skill;
+            this.btn_report.Location = new System.Drawing.Point(484, 487);
+            this.btn_report.Name = "btn_report";
+            this.btn_report.Size = new System.Drawing.Size(73, 68);
+            this.btn_report.TabIndex = 11;
+            this.btn_report.TabStop = false;
+            // 
+            // lnk_report
+            // 
+            this.lnk_report.AutoSize = true;
+            this.lnk_report.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lnk_report.Location = new System.Drawing.Point(494, 558);
+            this.lnk_report.Name = "lnk_report";
+            this.lnk_report.Size = new System.Drawing.Size(48, 21);
+            this.lnk_report.TabIndex = 12;
+            this.lnk_report.TabStop = true;
+            this.lnk_report.Text = "รายงาน";
+            this.lnk_report.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
+            // 
+            // btn_search
+            // 
+            this.btn_search.Image = global::BIG.Present.Properties.Resources.search_;
+            this.btn_search.Location = new System.Drawing.Point(221, 487);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(73, 68);
+            this.btn_search.TabIndex = 13;
+            this.btn_search.TabStop = false;
+            // 
+            // lnk_search
+            // 
+            this.lnk_search.AutoSize = true;
+            this.lnk_search.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lnk_search.Location = new System.Drawing.Point(240, 558);
+            this.lnk_search.Name = "lnk_search";
+            this.lnk_search.Size = new System.Drawing.Size(39, 21);
+            this.lnk_search.TabIndex = 15;
+            this.lnk_search.TabStop = true;
+            this.lnk_search.Text = "ค้นหา";
+            // 
+            // btn_secure
+            // 
+            this.btn_secure.Image = global::BIG.Present.Properties.Resources.lock_3;
+            this.btn_secure.Location = new System.Drawing.Point(625, 114);
+            this.btn_secure.Name = "btn_secure";
+            this.btn_secure.Size = new System.Drawing.Size(75, 75);
+            this.btn_secure.TabIndex = 16;
+            this.btn_secure.TabStop = false;
+            // 
+            // btn_company
+            // 
+            this.btn_company.Image = global::BIG.Present.Properties.Resources.network;
+            this.btn_company.Location = new System.Drawing.Point(228, 114);
+            this.btn_company.Name = "btn_company";
+            this.btn_company.Size = new System.Drawing.Size(75, 75);
+            this.btn_company.TabIndex = 17;
+            this.btn_company.TabStop = false;
+            // 
+            // lnk_company
+            // 
+            this.lnk_company.AutoSize = true;
+            this.lnk_company.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lnk_company.Location = new System.Drawing.Point(233, 192);
+            this.lnk_company.Name = "lnk_company";
+            this.lnk_company.Size = new System.Drawing.Size(68, 21);
+            this.lnk_company.TabIndex = 18;
+            this.lnk_company.TabStop = true;
+            this.lnk_company.Text = "ข้อมูลบริษัท";
+            // 
+            // lnk_secure
+            // 
+            this.lnk_secure.AutoSize = true;
+            this.lnk_secure.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lnk_secure.Location = new System.Drawing.Point(626, 192);
+            this.lnk_secure.Name = "lnk_secure";
+            this.lnk_secure.Size = new System.Drawing.Size(80, 21);
+            this.lnk_secure.TabIndex = 19;
+            this.lnk_secure.TabStop = true;
+            this.lnk_secure.Text = "ความปลอดภัย";
+            // 
+            // btn_close
+            // 
+            this.btn_close.Image = global::BIG.Present.Properties.Resources.exit1;
+            this.btn_close.Location = new System.Drawing.Point(810, -3);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(30, 30);
+            this.btn_close.TabIndex = 20;
+            this.btn_close.TabStop = false;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
+            // btn_eval
+            // 
+            this.btn_eval.Image = global::BIG.Present.Properties.Resources.eval;
+            this.btn_eval.Location = new System.Drawing.Point(430, 45);
+            this.btn_eval.Name = "btn_eval";
+            this.btn_eval.Size = new System.Drawing.Size(75, 75);
+            this.btn_eval.TabIndex = 21;
+            this.btn_eval.TabStop = false;
+            // 
+            // lnk_eval
+            // 
+            this.lnk_eval.AutoSize = true;
+            this.lnk_eval.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lnk_eval.Location = new System.Drawing.Point(443, 123);
+            this.lnk_eval.Name = "lnk_eval";
+            this.lnk_eval.Size = new System.Drawing.Size(49, 21);
+            this.lnk_eval.TabIndex = 22;
+            this.lnk_eval.TabStop = true;
+            this.lnk_eval.Text = "ประเมิน";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::BIG.Present.Properties.Resources.setting;
-            this.pictureBox1.Location = new System.Drawing.Point(611, 226);
+            this.pictureBox1.Image = global::BIG.Present.Properties.Resources.Home1;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 68);
-            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(613, 297);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(63, 21);
-            this.linkLabel2.TabIndex = 10;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "ตั้งค่าระบบ";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::BIG.Present.Properties.Resources.report1;
-            this.pictureBox2.Location = new System.Drawing.Point(488, 403);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(65, 68);
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
-            // linkLabel3
-            // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.linkLabel3.Location = new System.Drawing.Point(495, 474);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(48, 21);
-            this.linkLabel3.TabIndex = 12;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "รายงาน";
-            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::BIG.Present.Properties.Resources.search;
-            this.pictureBox3.Location = new System.Drawing.Point(235, 403);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(65, 68);
-            this.pictureBox3.TabIndex = 13;
-            this.pictureBox3.TabStop = false;
-            // 
-            // linkLabel4
-            // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.linkLabel4.Location = new System.Drawing.Point(239, 474);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(58, 21);
-            this.linkLabel4.TabIndex = 14;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "ลายนิ้วมือ";
             // 
             // MainForm
             // 
@@ -143,14 +240,22 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(841, 603);
             this.ControlBox = false;
-            this.Controls.Add(this.linkLabel4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.linkLabel3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.lnk_eval);
+            this.Controls.Add(this.btn_eval);
+            this.Controls.Add(this.btn_close);
+            this.Controls.Add(this.lnk_secure);
+            this.Controls.Add(this.lnk_company);
+            this.Controls.Add(this.btn_company);
+            this.Controls.Add(this.btn_secure);
+            this.Controls.Add(this.lnk_search);
+            this.Controls.Add(this.btn_search);
+            this.Controls.Add(this.lnk_report);
+            this.Controls.Add(this.btn_report);
+            this.Controls.Add(this.lnk_setting);
+            this.Controls.Add(this.btn_setting);
+            this.Controls.Add(this.lnk_employee);
+            this.Controls.Add(this.btn_employee);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -159,10 +264,15 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_employee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_setting)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_report)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_search)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_secure)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_company)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_close)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_eval)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,14 +281,22 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.PictureBox btn_employee;
+        private System.Windows.Forms.LinkLabel lnk_employee;
+        private System.Windows.Forms.PictureBox btn_setting;
+        private System.Windows.Forms.LinkLabel lnk_setting;
+        private System.Windows.Forms.PictureBox btn_report;
+        private System.Windows.Forms.LinkLabel lnk_report;
+        private System.Windows.Forms.PictureBox btn_search;
+        private System.Windows.Forms.LinkLabel lnk_search;
+        private System.Windows.Forms.PictureBox btn_secure;
+        private System.Windows.Forms.PictureBox btn_company;
+        private System.Windows.Forms.LinkLabel lnk_company;
+        private System.Windows.Forms.LinkLabel lnk_secure;
+        private System.Windows.Forms.PictureBox btn_close;
+        private System.Windows.Forms.PictureBox btn_eval;
+        private System.Windows.Forms.LinkLabel lnk_eval;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.LinkLabel linkLabel4;
 
 
 
