@@ -31,7 +31,8 @@
             <PropertyRef Name="EMP_ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="EMP_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EMP_ID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="ID_CARD" Type="nvarchar" MaxLength="14" Nullable="false" />
           <Property Name="FIRSTNAME_EN" Type="nvarchar" MaxLength="100" />
           <Property Name="MIDNAME_EN" Type="nvarchar" MaxLength="50" />
           <Property Name="LASTNAME_EN" Type="nvarchar" MaxLength="100" />
@@ -116,6 +117,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Employee_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="GENDER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="BIG_DBModelStoreContainer">
           <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Amphur" EntityType="Self.Amphur" Schema="dbo" store:Type="Tables" />
@@ -129,6 +142,10 @@
           <AssociationSet Name="FK_Amphur_Province" Association="Self.FK_Amphur_Province">
             <End Role="Province" EntitySet="Province" />
             <End Role="Amphur" EntitySet="Amphur" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Gender" Association="Self.FK_Employee_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Employee" EntitySet="Employee" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -148,6 +165,10 @@
           <AssociationSet Name="FK_Amphur_Province" Association="BIG_DBModel.FK_Amphur_Province">
             <End Role="Province" EntitySet="Provinces" />
             <End Role="Amphur" EntitySet="Amphurs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Gender" Association="BIG_DBModel.FK_Employee_Gender">
+            <End Role="Gender" EntitySet="Genders" />
+            <End Role="Employee" EntitySet="Employees" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Logon">
@@ -188,7 +209,7 @@
             <PropertyRef Name="EMP_ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EMP_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="FIRSTNAME_EN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="MIDNAME_EN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LASTNAME_EN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -209,6 +230,8 @@
           <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
           <Property Name="CREATEBY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MODIFIEDBY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_CARD" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Gender" Relationship="BIG_DBModel.FK_Employee_Gender" FromRole="Employee" ToRole="Gender" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -217,6 +240,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DESCRIPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employees" Relationship="BIG_DBModel.FK_Employee_Gender" FromRole="Gender" ToRole="Employee" />
         </EntityType>
         <EntityType Name="Image">
           <Key>
@@ -263,6 +287,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Employee_Gender">
+          <End Type="BIG_DBModel.Gender" Role="Gender" Multiplicity="0..1" />
+          <End Type="BIG_DBModel.Employee" Role="Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="GENDER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -306,6 +342,7 @@
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="BIG_DBModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="ID_CARD" ColumnName="ID_CARD" />
                 <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
                 <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
                 <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
@@ -409,6 +446,7 @@
         <EntityTypeShape EntityType="BIG_DBModel.Position" Width="1.5" PointX="6.75" PointY="6.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Province" Width="1.5" PointX="3.75" PointY="1" />
         <AssociationConnector Association="BIG_DBModel.FK_Amphur_Province" />
+        <AssociationConnector Association="BIG_DBModel.FK_Employee_Gender" />
       </Diagram>
     </Diagrams>
   </Designer>

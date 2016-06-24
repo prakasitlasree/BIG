@@ -51,19 +51,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BIGDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="BIGDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BIGDB.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="BIGDB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BIGDB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
+    <EntityDeploy Include="BIGDB.edmx" />
     <None Include="BIGDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BIGDB.Context.cs</LastGenOutput>

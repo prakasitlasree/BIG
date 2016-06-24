@@ -36,5 +36,8 @@ namespace BIG.Model
         public Nullable<System.DateTime> MODIFIED_DATE { get; set; }
         public string CREATEBY { get; set; }
         public string MODIFIEDBY { get; set; }
+        public string ID_CARD { get; set; }
+    
+        public virtual Gender Gender { get; set; }
     }
 }

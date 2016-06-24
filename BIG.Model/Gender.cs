@@ -14,8 +14,15 @@ namespace BIG.Model
     
     public partial class Gender
     {
+        public Gender()
+        {
+            this.Employees = new HashSet<Employee>();
+        }
+    
         public int ID { get; set; }
         public string NAME { get; set; }
         public string DESCRIPTION { get; set; }
+    
+        public virtual ICollection<Employee> Employees { get; set; }
     }
 }

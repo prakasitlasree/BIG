@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PersonalForm));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.ribbonUpDown1 = new System.Windows.Forms.RibbonUpDown();
-            this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonTab4 = new System.Windows.Forms.RibbonTab();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -81,6 +80,19 @@
             this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton2 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
+            this.ribbonOrbRecentItem1 = new System.Windows.Forms.RibbonOrbRecentItem();
+            this.ribbonOrbRecentItem2 = new System.Windows.Forms.RibbonOrbRecentItem();
+            this.ribbonOrbOptionButton1 = new System.Windows.Forms.RibbonOrbOptionButton();
+            this.ribbonOrbOptionButton2 = new System.Windows.Forms.RibbonOrbOptionButton();
+            this.ribbonOrbOptionButton3 = new System.Windows.Forms.RibbonOrbOptionButton();
+            this.ribbonOrbMenuItem5 = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.ribbonOrbMenuItem6 = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.ribbonSeparator1 = new System.Windows.Forms.RibbonSeparator();
+            this.ribbonOrbMenuItem7 = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.ribbonOrbMenuItem8 = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.advancedFlowLayoutPanel1.SuspendLayout();
@@ -111,10 +123,6 @@
             // 
             this.ribbonUpDown1.TextBoxText = "";
             this.ribbonUpDown1.TextBoxWidth = 50;
-            // 
-            // ribbonTab1
-            // 
-            this.ribbonTab1.Text = "";
             // 
             // ribbonTab4
             // 
@@ -344,9 +352,8 @@
             this.ribbon1.QuickAcessToolbar.Items.Add(this.ribbonButton2);
             this.ribbon1.QuickAcessToolbar.Items.Add(this.ribbonButton3);
             this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.ribbon1.Size = new System.Drawing.Size(1008, 54);
+            this.ribbon1.Size = new System.Drawing.Size(1008, 48);
             this.ribbon1.TabIndex = 1;
-            this.ribbon1.Tabs.Add(this.ribbonTab1);
             this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 26, 20, 0);
             this.ribbon1.Text = "ribbon1";
             this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue;
@@ -386,6 +393,7 @@
             this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel8.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tableLayoutPanel8.ColumnCount = 2;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
@@ -485,6 +493,7 @@
             this.tableLayoutPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel7.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tableLayoutPanel7.ColumnCount = 2;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
@@ -509,7 +518,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(168, 159);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(168, 171);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
             // linkLabel6
@@ -710,6 +719,78 @@
             this.ribbonButton3.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton3.SmallImage")));
             this.ribbonButton3.Text = "ribbonButton3";
             // 
+            // ribbonOrbRecentItem1
+            // 
+            this.ribbonOrbRecentItem1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem1.Image")));
+            this.ribbonOrbRecentItem1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem1.SmallImage")));
+            this.ribbonOrbRecentItem1.Text = "ribbonOrbRecentItem1";
+            // 
+            // ribbonOrbRecentItem2
+            // 
+            this.ribbonOrbRecentItem2.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem2.Image")));
+            this.ribbonOrbRecentItem2.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem2.SmallImage")));
+            this.ribbonOrbRecentItem2.Text = "ribbonOrbRecentItem2";
+            // 
+            // ribbonOrbOptionButton1
+            // 
+            this.ribbonOrbOptionButton1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbOptionButton1.Image")));
+            this.ribbonOrbOptionButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbOptionButton1.SmallImage")));
+            this.ribbonOrbOptionButton1.Text = "ribbonOrbOptionButton1";
+            // 
+            // ribbonOrbOptionButton2
+            // 
+            this.ribbonOrbOptionButton2.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbOptionButton2.Image")));
+            this.ribbonOrbOptionButton2.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbOptionButton2.SmallImage")));
+            this.ribbonOrbOptionButton2.Text = "ribbonOrbOptionButton2";
+            // 
+            // ribbonOrbOptionButton3
+            // 
+            this.ribbonOrbOptionButton3.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbOptionButton3.Image")));
+            this.ribbonOrbOptionButton3.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbOptionButton3.SmallImage")));
+            this.ribbonOrbOptionButton3.Text = "ribbonOrbOptionButton3";
+            // 
+            // ribbonOrbMenuItem5
+            // 
+            this.ribbonOrbMenuItem5.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.ribbonOrbMenuItem5.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem5.Image")));
+            this.ribbonOrbMenuItem5.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem5.SmallImage")));
+            this.ribbonOrbMenuItem5.Text = "ribbonOrbMenuItem5";
+            // 
+            // ribbonOrbMenuItem6
+            // 
+            this.ribbonOrbMenuItem6.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.ribbonOrbMenuItem6.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem6.Image")));
+            this.ribbonOrbMenuItem6.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem6.SmallImage")));
+            this.ribbonOrbMenuItem6.Text = "ribbonOrbMenuItem6";
+            // 
+            // ribbonOrbMenuItem7
+            // 
+            this.ribbonOrbMenuItem7.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.ribbonOrbMenuItem7.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem7.Image")));
+            this.ribbonOrbMenuItem7.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem7.SmallImage")));
+            this.ribbonOrbMenuItem7.Text = "ribbonOrbMenuItem7";
+            // 
+            // ribbonOrbMenuItem8
+            // 
+            this.ribbonOrbMenuItem8.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.ribbonOrbMenuItem8.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem8.Image")));
+            this.ribbonOrbMenuItem8.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem8.SmallImage")));
+            this.ribbonOrbMenuItem8.Text = "ribbonOrbMenuItem8";
+            // 
+            // ribbonPanel2
+            // 
+            this.ribbonPanel2.Text = "ribbonPanel2";
+            // 
+            // ribbonPanel1
+            // 
+            this.ribbonPanel1.Text = "ribbonPanel1";
+            // 
+            // ribbonTab1
+            // 
+            this.ribbonTab1.Panels.Add(this.ribbonPanel1);
+            this.ribbonTab1.Panels.Add(this.ribbonPanel2);
+            this.ribbonTab1.Text = "";
+            // 
             // PersonalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -766,7 +847,6 @@
         private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem2;
         private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem3;
         private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem4;
-        private System.Windows.Forms.RibbonTab ribbonTab1;
         private System.Windows.Forms.RibbonTab ribbonTab4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -812,6 +892,19 @@
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.RibbonOrbRecentItem ribbonOrbRecentItem1;
+        private System.Windows.Forms.RibbonOrbRecentItem ribbonOrbRecentItem2;
+        private System.Windows.Forms.RibbonOrbOptionButton ribbonOrbOptionButton1;
+        private System.Windows.Forms.RibbonOrbOptionButton ribbonOrbOptionButton2;
+        private System.Windows.Forms.RibbonOrbOptionButton ribbonOrbOptionButton3;
+        private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem5;
+        private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem6;
+        private System.Windows.Forms.RibbonSeparator ribbonSeparator1;
+        private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem7;
+        private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem8;
+        private System.Windows.Forms.RibbonPanel ribbonPanel2;
+        private System.Windows.Forms.RibbonPanel ribbonPanel1;
+        private System.Windows.Forms.RibbonTab ribbonTab1;
 
 
     }
