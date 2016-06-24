@@ -12,19 +12,14 @@ namespace BIG.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Amphur
+    public partial class ReferencePerson
     {
-        public Amphur()
-        {
-            this.Addresses = new HashSet<Address>();
-        }
-    
-        public string ID { get; set; }
-        public string NAME_EN { get; set; }
-        public string NAME_TH { get; set; }
-        public string PROVINCE_ID { get; set; }
-    
-        public virtual Province Province { get; set; }
-        public virtual ICollection<Address> Addresses { get; set; }
+        public int ID { get; set; }
+        public string EMP_ID { get; set; }
+        public string NAME { get; set; }
+        public Nullable<int> AGE { get; set; }
+        public string RELATIONSHIFT { get; set; }
+        public string ADDRESS { get; set; }
+        public string TELEPHONE { get; set; }
     }
 }

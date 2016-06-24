@@ -14,8 +14,15 @@ namespace BIG.Model
     
     public partial class Marital
     {
+        public Marital()
+        {
+            this.Employees = new HashSet<Employee>();
+        }
+    
         public int ID { get; set; }
         public string NAME { get; set; }
         public string DESCRIPTION { get; set; }
+    
+        public virtual ICollection<Employee> Employees { get; set; }
     }
 }

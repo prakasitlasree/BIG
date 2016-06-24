@@ -20,5 +20,10 @@ namespace BIG.Model
         public string AMPHUR_ID { get; set; }
         public string PROVINCE_ID { get; set; }
         public string POSTCODE { get; set; }
+        public Nullable<int> ADDRESSTYPE { get; set; }
+    
+        public virtual AddressType AddressType1 { get; set; }
+        public virtual Amphur Amphur { get; set; }
+        public virtual Province Province { get; set; }
     }
 }

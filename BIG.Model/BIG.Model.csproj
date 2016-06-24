@@ -49,6 +49,9 @@
     <Compile Include="Address.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="AddressType.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Amphur.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
@@ -56,6 +59,9 @@
       <DependentUpon>BIGDB.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Education.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
@@ -77,6 +83,15 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Province.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReferencePerson.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Title.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkExperience.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
   </ItemGroup>
