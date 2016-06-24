@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode55 = new System.Windows.Forms.TreeNode("สัญญาค้ำประกัน");
-            System.Windows.Forms.TreeNode treeNode56 = new System.Windows.Forms.TreeNode("สัญญาจ้างงาน");
-            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("รางวัน/ผลงานดีเด่น");
-            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("บันทึกการลงโทด");
-            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("พนักงานทดลองงาน");
-            System.Windows.Forms.TreeNode treeNode60 = new System.Windows.Forms.TreeNode("การปรับเงินเดือน");
-            System.Windows.Forms.TreeNode treeNode61 = new System.Windows.Forms.TreeNode("กองทุนสำรอง");
-            System.Windows.Forms.TreeNode treeNode62 = new System.Windows.Forms.TreeNode("ข้อมูลด้านสุขภาพ");
-            System.Windows.Forms.TreeNode treeNode63 = new System.Windows.Forms.TreeNode("การพ้นสภาพพนักงาน");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("สัญญาค้ำประกัน");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("สัญญาจ้างงาน");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("รางวัน/ผลงานดีเด่น");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("บันทึกการลงโทด");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("พนักงานทดลองงาน");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("การปรับเงินเดือน");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("กองทุนสำรอง");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("ข้อมูลด้านสุขภาพ");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("การพ้นสภาพพนักงาน");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -106,6 +106,7 @@
             this.ribbonOrbMenuItem2 = new System.Windows.Forms.RibbonOrbMenuItem();
             this.ribbonOrbMenuItem3 = new System.Windows.Forms.RibbonOrbMenuItem();
             this.ribbonOrbMenuItem4 = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.advancedFlowLayoutPanel1.SuspendLayout();
@@ -116,6 +117,7 @@
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.EmployeeTab.SuspendLayout();
+            this.General_Tab.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -345,6 +347,7 @@
             // 
             // General_Tab
             // 
+            this.General_Tab.Controls.Add(this.tableLayoutPanel9);
             this.General_Tab.Location = new System.Drawing.Point(4, 22);
             this.General_Tab.Name = "General_Tab";
             this.General_Tab.Padding = new System.Windows.Forms.Padding(3);
@@ -362,40 +365,40 @@
             this.treeView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeView3.Location = new System.Drawing.Point(0, 3);
             this.treeView3.Name = "treeView3";
-            treeNode55.BackColor = System.Drawing.Color.White;
-            treeNode55.Name = "Node0";
-            treeNode55.Text = "สัญญาค้ำประกัน";
-            treeNode56.Name = "Node1";
-            treeNode56.Text = "สัญญาจ้างงาน";
-            treeNode57.BackColor = System.Drawing.Color.White;
-            treeNode57.Name = "Node2";
-            treeNode57.Text = "รางวัน/ผลงานดีเด่น";
-            treeNode58.Name = "Node3";
-            treeNode58.Text = "บันทึกการลงโทด";
-            treeNode59.BackColor = System.Drawing.Color.White;
-            treeNode59.Name = "Node4";
-            treeNode59.Text = "พนักงานทดลองงาน";
-            treeNode60.Name = "Node0";
-            treeNode60.Text = "การปรับเงินเดือน";
-            treeNode61.BackColor = System.Drawing.Color.White;
-            treeNode61.Name = "Node1";
-            treeNode61.Text = "กองทุนสำรอง";
-            treeNode62.Name = "Node2";
-            treeNode62.Text = "ข้อมูลด้านสุขภาพ";
-            treeNode63.BackColor = System.Drawing.Color.White;
-            treeNode63.ImageKey = "(default)";
-            treeNode63.Name = "Node3";
-            treeNode63.Text = "การพ้นสภาพพนักงาน";
+            treeNode10.BackColor = System.Drawing.Color.White;
+            treeNode10.Name = "Node0";
+            treeNode10.Text = "สัญญาค้ำประกัน";
+            treeNode11.Name = "Node1";
+            treeNode11.Text = "สัญญาจ้างงาน";
+            treeNode12.BackColor = System.Drawing.Color.White;
+            treeNode12.Name = "Node2";
+            treeNode12.Text = "รางวัน/ผลงานดีเด่น";
+            treeNode13.Name = "Node3";
+            treeNode13.Text = "บันทึกการลงโทด";
+            treeNode14.BackColor = System.Drawing.Color.White;
+            treeNode14.Name = "Node4";
+            treeNode14.Text = "พนักงานทดลองงาน";
+            treeNode15.Name = "Node0";
+            treeNode15.Text = "การปรับเงินเดือน";
+            treeNode16.BackColor = System.Drawing.Color.White;
+            treeNode16.Name = "Node1";
+            treeNode16.Text = "กองทุนสำรอง";
+            treeNode17.Name = "Node2";
+            treeNode17.Text = "ข้อมูลด้านสุขภาพ";
+            treeNode18.BackColor = System.Drawing.Color.White;
+            treeNode18.ImageKey = "(default)";
+            treeNode18.Name = "Node3";
+            treeNode18.Text = "การพ้นสภาพพนักงาน";
             this.treeView3.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode55,
-            treeNode56,
-            treeNode57,
-            treeNode58,
-            treeNode59,
-            treeNode60,
-            treeNode61,
-            treeNode62,
-            treeNode63});
+            treeNode10,
+            treeNode11,
+            treeNode12,
+            treeNode13,
+            treeNode14,
+            treeNode15,
+            treeNode16,
+            treeNode17,
+            treeNode18});
             this.treeView3.Size = new System.Drawing.Size(165, 365);
             this.treeView3.TabIndex = 3;
             // 
@@ -464,7 +467,7 @@
             this.tableLayoutPanel7.ColumnCount = 3;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61538F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38462F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 262F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 267F));
             this.tableLayoutPanel7.Controls.Add(this.btn_cancle, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.btn_save, 0, 0);
             this.tableLayoutPanel7.Location = new System.Drawing.Point(173, 624);
@@ -478,7 +481,7 @@
             // 
             this.btn_cancle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_cancle.Location = new System.Drawing.Point(162, 3);
+            this.btn_cancle.Location = new System.Drawing.Point(160, 3);
             this.btn_cancle.Name = "btn_cancle";
             this.btn_cancle.Size = new System.Drawing.Size(150, 37);
             this.btn_cancle.TabIndex = 1;
@@ -797,6 +800,19 @@
             this.ribbonOrbMenuItem4.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem4.SmallImage")));
             this.ribbonOrbMenuItem4.Text = "ribbonOrbMenuItem4";
             // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(6, 6);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 2;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(502, 359);
+            this.tableLayoutPanel9.TabIndex = 0;
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -823,6 +839,7 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.EmployeeTab.ResumeLayout(false);
+            this.General_Tab.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
@@ -911,5 +928,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
     }
 }
