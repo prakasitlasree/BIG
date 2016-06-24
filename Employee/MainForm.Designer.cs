@@ -69,7 +69,7 @@
             // 
             this.btn_employee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_employee.Image = global::BIG.Present.Properties.Resources.personal;
-            this.btn_employee.Location = new System.Drawing.Point(120, 287);
+            this.btn_employee.Location = new System.Drawing.Point(167, 287);
             this.btn_employee.Name = "btn_employee";
             this.btn_employee.Size = new System.Drawing.Size(75, 75);
             this.btn_employee.TabIndex = 7;
@@ -80,7 +80,7 @@
             // 
             this.lnk_employee.AutoSize = true;
             this.lnk_employee.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lnk_employee.Location = new System.Drawing.Point(129, 365);
+            this.lnk_employee.Location = new System.Drawing.Point(174, 365);
             this.lnk_employee.Name = "lnk_employee";
             this.lnk_employee.Size = new System.Drawing.Size(56, 21);
             this.lnk_employee.TabIndex = 8;
@@ -91,7 +91,7 @@
             // btn_setting
             // 
             this.btn_setting.Image = global::BIG.Present.Properties.Resources.setting;
-            this.btn_setting.Location = new System.Drawing.Point(660, 287);
+            this.btn_setting.Location = new System.Drawing.Point(607, 276);
             this.btn_setting.Name = "btn_setting";
             this.btn_setting.Size = new System.Drawing.Size(75, 75);
             this.btn_setting.TabIndex = 9;
@@ -102,7 +102,7 @@
             // 
             this.lnk_setting.AutoSize = true;
             this.lnk_setting.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lnk_setting.Location = new System.Drawing.Point(656, 365);
+            this.lnk_setting.Location = new System.Drawing.Point(603, 354);
             this.lnk_setting.Name = "lnk_setting";
             this.lnk_setting.Size = new System.Drawing.Size(63, 21);
             this.lnk_setting.TabIndex = 10;
@@ -113,7 +113,7 @@
             // btn_report
             // 
             this.btn_report.Image = global::BIG.Present.Properties.Resources.skill;
-            this.btn_report.Location = new System.Drawing.Point(484, 487);
+            this.btn_report.Location = new System.Drawing.Point(481, 425);
             this.btn_report.Name = "btn_report";
             this.btn_report.Size = new System.Drawing.Size(73, 68);
             this.btn_report.TabIndex = 11;
@@ -123,7 +123,7 @@
             // 
             this.lnk_report.AutoSize = true;
             this.lnk_report.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lnk_report.Location = new System.Drawing.Point(494, 558);
+            this.lnk_report.Location = new System.Drawing.Point(496, 496);
             this.lnk_report.Name = "lnk_report";
             this.lnk_report.Size = new System.Drawing.Size(48, 21);
             this.lnk_report.TabIndex = 12;
@@ -134,7 +134,7 @@
             // btn_search
             // 
             this.btn_search.Image = global::BIG.Present.Properties.Resources.search_;
-            this.btn_search.Location = new System.Drawing.Point(221, 487);
+            this.btn_search.Location = new System.Drawing.Point(244, 425);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(73, 68);
             this.btn_search.TabIndex = 13;
@@ -144,7 +144,7 @@
             // 
             this.lnk_search.AutoSize = true;
             this.lnk_search.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lnk_search.Location = new System.Drawing.Point(240, 558);
+            this.lnk_search.Location = new System.Drawing.Point(262, 496);
             this.lnk_search.Name = "lnk_search";
             this.lnk_search.Size = new System.Drawing.Size(39, 21);
             this.lnk_search.TabIndex = 15;
