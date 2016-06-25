@@ -186,6 +186,7 @@
     <Content Include="Resources\setting.png" />
     <Content Include="Resources\setting_1.png" />
     <Content Include="Resources\skill.png" />
+    <None Include="Resources\User group.png" />
     <Content Include="Resources\violet_btn.png" />
     <Content Include="Resources\yellow_btn.png" />
     <None Include="Resources\bg.jpg" />

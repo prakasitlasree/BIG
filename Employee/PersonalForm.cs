@@ -57,5 +57,20 @@ namespace BIG.Present
             emp.Show();
             this.Hide();
         }
+
+        private void rb_new_emp_Click(object sender, EventArgs e)
+        {
+            var emp = new EmployeeForm();
+            emp.Show();
+            this.Hide();
+        }
+
+        private void rb_load_emp_Click(object sender, EventArgs e)
+        {
+            var emp = new EmployeeForm();
+            emp.LoadPID();
+            emp.Show();
+            this.Hide();
+        }
     }
 }

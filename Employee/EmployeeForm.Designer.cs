@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("สัญญาค้ำประกัน");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("สัญญาจ้างงาน");
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("รางวัน/ผลงานดีเด่น");
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("บันทึกการลงโทด");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("พนักงานทดลองงาน");
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("การปรับเงินเดือน");
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("กองทุนสำรอง");
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("ข้อมูลด้านสุขภาพ");
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("การพ้นสภาพพนักงาน");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("สัญญาค้ำประกัน");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("สัญญาจ้างงาน");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("รางวัน/ผลงานดีเด่น");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("บันทึกการลงโทด");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("พนักงานทดลองงาน");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("การปรับเงินเดือน");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("กองทุนสำรอง");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("ข้อมูลด้านสุขภาพ");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("การพ้นสภาพพนักงาน");
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.advancedFlowLayoutPanel1 = new MakarovDev.ExpandCollapsePanel.AdvancedFlowLayoutPanel();
@@ -260,9 +260,10 @@
             this.btn_ref_img = new System.Windows.Forms.PictureBox();
             this.btn_new_img = new System.Windows.Forms.PictureBox();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
-            this.ribbonOrbMenuItem5 = new System.Windows.Forms.RibbonOrbMenuItem();
-            this.ribbonOrbMenuItem6 = new System.Windows.Forms.RibbonOrbMenuItem();
-            this.ribbonOrbMenuItem7 = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.rb_new_emp = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.rb_load_emp = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.rb_save_emp = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.rb_close = new System.Windows.Forms.RibbonOrbMenuItem();
             this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.ribbonLabel1 = new System.Windows.Forms.RibbonLabel();
             this.ribbonLabel2 = new System.Windows.Forms.RibbonLabel();
@@ -609,7 +610,7 @@
             // 
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = global::BIG.Present.Properties.Resources.User_group;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(12, 63);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(24, 24);
@@ -656,40 +657,40 @@
             this.treeView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeView3.Location = new System.Drawing.Point(0, 3);
             this.treeView3.Name = "treeView3";
-            treeNode28.BackColor = System.Drawing.Color.White;
-            treeNode28.Name = "Node0";
-            treeNode28.Text = "สัญญาค้ำประกัน";
-            treeNode29.Name = "Node1";
-            treeNode29.Text = "สัญญาจ้างงาน";
-            treeNode30.BackColor = System.Drawing.Color.White;
-            treeNode30.Name = "Node2";
-            treeNode30.Text = "รางวัน/ผลงานดีเด่น";
-            treeNode31.Name = "Node3";
-            treeNode31.Text = "บันทึกการลงโทด";
-            treeNode32.BackColor = System.Drawing.Color.White;
-            treeNode32.Name = "Node4";
-            treeNode32.Text = "พนักงานทดลองงาน";
-            treeNode33.Name = "Node0";
-            treeNode33.Text = "การปรับเงินเดือน";
-            treeNode34.BackColor = System.Drawing.Color.White;
-            treeNode34.Name = "Node1";
-            treeNode34.Text = "กองทุนสำรอง";
-            treeNode35.Name = "Node2";
-            treeNode35.Text = "ข้อมูลด้านสุขภาพ";
-            treeNode36.BackColor = System.Drawing.Color.White;
-            treeNode36.ImageKey = "(default)";
-            treeNode36.Name = "Node3";
-            treeNode36.Text = "การพ้นสภาพพนักงาน";
+            treeNode10.BackColor = System.Drawing.Color.White;
+            treeNode10.Name = "Node0";
+            treeNode10.Text = "สัญญาค้ำประกัน";
+            treeNode11.Name = "Node1";
+            treeNode11.Text = "สัญญาจ้างงาน";
+            treeNode12.BackColor = System.Drawing.Color.White;
+            treeNode12.Name = "Node2";
+            treeNode12.Text = "รางวัน/ผลงานดีเด่น";
+            treeNode13.Name = "Node3";
+            treeNode13.Text = "บันทึกการลงโทด";
+            treeNode14.BackColor = System.Drawing.Color.White;
+            treeNode14.Name = "Node4";
+            treeNode14.Text = "พนักงานทดลองงาน";
+            treeNode15.Name = "Node0";
+            treeNode15.Text = "การปรับเงินเดือน";
+            treeNode16.BackColor = System.Drawing.Color.White;
+            treeNode16.Name = "Node1";
+            treeNode16.Text = "กองทุนสำรอง";
+            treeNode17.Name = "Node2";
+            treeNode17.Text = "ข้อมูลด้านสุขภาพ";
+            treeNode18.BackColor = System.Drawing.Color.White;
+            treeNode18.ImageKey = "(default)";
+            treeNode18.Name = "Node3";
+            treeNode18.Text = "การพ้นสภาพพนักงาน";
             this.treeView3.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode28,
-            treeNode29,
-            treeNode30,
-            treeNode31,
-            treeNode32,
-            treeNode33,
-            treeNode34,
-            treeNode35,
-            treeNode36});
+            treeNode10,
+            treeNode11,
+            treeNode12,
+            treeNode13,
+            treeNode14,
+            treeNode15,
+            treeNode16,
+            treeNode17,
+            treeNode18});
             this.treeView3.Size = new System.Drawing.Size(165, 365);
             this.treeView3.TabIndex = 3;
             // 
@@ -3073,7 +3074,7 @@
             this.tableLayoutPanel7.ColumnCount = 3;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61538F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38462F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 269F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 271F));
             this.tableLayoutPanel7.Controls.Add(this.btn_cancle, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.btn_save, 0, 0);
             this.tableLayoutPanel7.Location = new System.Drawing.Point(173, 624);
@@ -3087,7 +3088,7 @@
             // 
             this.btn_cancle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_cancle.Location = new System.Drawing.Point(159, 3);
+            this.btn_cancle.Location = new System.Drawing.Point(158, 3);
             this.btn_cancle.Name = "btn_cancle";
             this.btn_cancle.Size = new System.Drawing.Size(150, 37);
             this.btn_cancle.TabIndex = 1;
@@ -3100,7 +3101,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_save.Location = new System.Drawing.Point(3, 3);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(150, 37);
+            this.btn_save.Size = new System.Drawing.Size(149, 37);
             this.btn_save.TabIndex = 0;
             this.btn_save.Text = "บันทึก";
             this.btn_save.UseVisualStyleBackColor = true;
@@ -3191,11 +3192,12 @@
             // 
             this.ribbon1.OrbDropDown.BorderRoundness = 8;
             this.ribbon1.OrbDropDown.Location = new System.Drawing.Point(0, 0);
-            this.ribbon1.OrbDropDown.MenuItems.Add(this.ribbonOrbMenuItem5);
-            this.ribbon1.OrbDropDown.MenuItems.Add(this.ribbonOrbMenuItem6);
-            this.ribbon1.OrbDropDown.MenuItems.Add(this.ribbonOrbMenuItem7);
+            this.ribbon1.OrbDropDown.MenuItems.Add(this.rb_new_emp);
+            this.ribbon1.OrbDropDown.MenuItems.Add(this.rb_load_emp);
+            this.ribbon1.OrbDropDown.MenuItems.Add(this.rb_save_emp);
+            this.ribbon1.OrbDropDown.MenuItems.Add(this.rb_close);
             this.ribbon1.OrbDropDown.Name = "";
-            this.ribbon1.OrbDropDown.Size = new System.Drawing.Size(527, 204);
+            this.ribbon1.OrbDropDown.Size = new System.Drawing.Size(527, 248);
             this.ribbon1.OrbDropDown.TabIndex = 0;
             this.ribbon1.OrbImage = null;
             // 
@@ -3227,26 +3229,37 @@
             this.ribbon1.Text = "ribbon1";
             this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue;
             // 
-            // ribbonOrbMenuItem5
+            // rb_new_emp
             // 
-            this.ribbonOrbMenuItem5.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
-            this.ribbonOrbMenuItem5.Image = global::BIG.Present.Properties.Resources.Add;
-            this.ribbonOrbMenuItem5.SmallImage = global::BIG.Present.Properties.Resources.Add;
-            this.ribbonOrbMenuItem5.Text = "เพิ่มพนักงานใหม่";
+            this.rb_new_emp.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.rb_new_emp.Image = global::BIG.Present.Properties.Resources.Add;
+            this.rb_new_emp.SmallImage = global::BIG.Present.Properties.Resources.Add;
+            this.rb_new_emp.Text = "เพิ่มพนักงานใหม่";
+            this.rb_new_emp.Click += new System.EventHandler(this.rb_new_emp_Click);
             // 
-            // ribbonOrbMenuItem6
+            // rb_load_emp
             // 
-            this.ribbonOrbMenuItem6.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
-            this.ribbonOrbMenuItem6.Image = global::BIG.Present.Properties.Resources.Save;
-            this.ribbonOrbMenuItem6.SmallImage = global::BIG.Present.Properties.Resources.Save;
-            this.ribbonOrbMenuItem6.Text = "บันทึกข้อมูล";
+            this.rb_load_emp.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.rb_load_emp.Image = global::BIG.Present.Properties.Resources.Load;
+            this.rb_load_emp.SmallImage = global::BIG.Present.Properties.Resources.Load;
+            this.rb_load_emp.Text = "โหลดข้อมูลบัตร";
+            this.rb_load_emp.Click += new System.EventHandler(this.rb_load_emp_Click);
             // 
-            // ribbonOrbMenuItem7
+            // rb_save_emp
             // 
-            this.ribbonOrbMenuItem7.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
-            this.ribbonOrbMenuItem7.Image = global::BIG.Present.Properties.Resources.Close;
-            this.ribbonOrbMenuItem7.SmallImage = global::BIG.Present.Properties.Resources.Close;
-            this.ribbonOrbMenuItem7.Text = "ปิดโปรแกรม";
+            this.rb_save_emp.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.rb_save_emp.Image = global::BIG.Present.Properties.Resources.Save;
+            this.rb_save_emp.SmallImage = global::BIG.Present.Properties.Resources.Save;
+            this.rb_save_emp.Text = "บันทึก";
+            this.rb_save_emp.Click += new System.EventHandler(this.rb_save_emp_Click);
+            // 
+            // rb_close
+            // 
+            this.rb_close.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.rb_close.Image = global::BIG.Present.Properties.Resources.Close1;
+            this.rb_close.SmallImage = global::BIG.Present.Properties.Resources.Close1;
+            this.rb_close.Text = "ปิดโปรแกรม";
+            this.rb_close.Click += new System.EventHandler(this.rb_close_Click);
             // 
             // ribbonButton1
             // 
@@ -3631,9 +3644,9 @@
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button btn_cancle;
         private System.Windows.Forms.TreeView treeView3;
-        private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem5;
-        private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem6;
-        private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem7;
+        private System.Windows.Forms.RibbonOrbMenuItem rb_new_emp;
+        private System.Windows.Forms.RibbonOrbMenuItem rb_load_emp;
+        private System.Windows.Forms.RibbonOrbMenuItem rb_save_emp;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.PictureBox btn_delete_img;
@@ -3847,5 +3860,6 @@
         private System.Windows.Forms.CheckBox chk_have;
         private System.Windows.Forms.CheckBox chk_nothave;
         private System.Windows.Forms.ComboBox cbo_hospital;
+        private System.Windows.Forms.RibbonOrbMenuItem rb_close;
     }
 }

@@ -303,6 +303,16 @@ namespace BIG.Present.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Load {
+            get {
+                object obj = ResourceManager.GetObject("Load", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Lock {
             get {
                 object obj = ResourceManager.GetObject("Lock", resourceCulture);
@@ -525,7 +535,7 @@ namespace BIG.Present.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap User_group {
             get {
-                object obj = ResourceManager.GetObject("User group", resourceCulture);
+                object obj = ResourceManager.GetObject("User_group", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
