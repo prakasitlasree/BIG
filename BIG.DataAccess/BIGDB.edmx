@@ -11,11 +11,11 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EMP_ID" Type="nvarchar" MaxLength="50" />
-          <Property Name="ADDRESS" Type="nvarchar" MaxLength="250" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="250" />
           <Property Name="AMPHUR_ID" Type="varchar" MaxLength="4" />
           <Property Name="PROVINCE_ID" Type="varchar" MaxLength="2" />
           <Property Name="POSTCODE" Type="nchar" MaxLength="10" />
-          <Property Name="ADDRESSTYPE" Type="int" />
+          <Property Name="ADDRESSTYPE_ID" Type="int" />
         </EntityType>
         <EntityType Name="AddressType">
           <Key>
@@ -44,6 +44,16 @@
           <Property Name="GRADUETED" Type="nvarchar" MaxLength="250" />
           <Property Name="YEAR" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Emp_Images">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMP_ID" Type="nvarchar" MaxLength="10" />
+          <Property Name="PIC_PROFILE" Type="varbinary(max)" />
+          <Property Name="TYPE" Type="nvarchar" MaxLength="50" />
+          <Property Name="CREATE_DATE" Type="datetime" />
+        </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="ID" />
@@ -70,6 +80,7 @@
           <Property Name="RACE" Type="nvarchar" MaxLength="50" />
           <Property Name="NATIONALITY" Type="nvarchar" MaxLength="50" />
           <Property Name="POSITION_ID" Type="int" />
+          <Property Name="RELEGION" Type="nvarchar" MaxLength="50" />
           <Property Name="MARITAL_ID" Type="int" />
           <Property Name="MOBILE" Type="nvarchar" MaxLength="50" />
           <Property Name="HOMEPHONE" Type="nvarchar" MaxLength="50" />
@@ -88,14 +99,6 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NAME" Type="nvarchar" MaxLength="50" />
           <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="250" />
-        </EntityType>
-        <EntityType Name="Images">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="EMP_ID" Type="nvarchar" MaxLength="10" />
-          <Property Name="PIC_PROFILE" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Logon">
           <Key>
@@ -172,7 +175,7 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Address">
-              <PropertyRef Name="ADDRESSTYPE" />
+              <PropertyRef Name="ADDRESSTYPE_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -277,9 +280,9 @@
           <EntitySet Name="AddressType" EntityType="Self.AddressType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Amphur" EntityType="Self.Amphur" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Emp_Images" EntityType="Self.Emp_Images" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Images" EntityType="Self.Images" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Logon" EntityType="Self.Logon" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Marital" EntityType="Self.Marital" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
@@ -330,10 +333,8 @@
       <Schema Namespace="BIG_DBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="BIG_DBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Logons" EntityType="BIG_DBModel.Logon" />
-          <EntitySet Name="Addresses" EntityType="BIG_DBModel.Address" />
           <EntitySet Name="Amphurs" EntityType="BIG_DBModel.Amphur" />
           <EntitySet Name="Genders" EntityType="BIG_DBModel.Gender" />
-          <EntitySet Name="Images" EntityType="BIG_DBModel.Image" />
           <EntitySet Name="Maritals" EntityType="BIG_DBModel.Marital" />
           <EntitySet Name="Positions" EntityType="BIG_DBModel.Position" />
           <EntitySet Name="Provinces" EntityType="BIG_DBModel.Province" />
@@ -341,24 +342,11 @@
             <End Role="Province" EntitySet="Provinces" />
             <End Role="Amphur" EntitySet="Amphurs" />
           </AssociationSet>
-          <EntitySet Name="AddressTypes" EntityType="BIG_DBModel.AddressType" />
           <EntitySet Name="Educations" EntityType="BIG_DBModel.Education" />
-          <EntitySet Name="Employees" EntityType="BIG_DBModel.Employee" />
           <EntitySet Name="ReferencePersons" EntityType="BIG_DBModel.ReferencePerson" />
           <EntitySet Name="Titles" EntityType="BIG_DBModel.Title" />
           <EntitySet Name="WorkExperiences" EntityType="BIG_DBModel.WorkExperience" />
-          <AssociationSet Name="FK_Address_AddressType" Association="BIG_DBModel.FK_Address_AddressType">
-            <End Role="AddressType" EntitySet="AddressTypes" />
-            <End Role="Address" EntitySet="Addresses" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Address_Amphur" Association="BIG_DBModel.FK_Address_Amphur">
-            <End Role="Amphur" EntitySet="Amphurs" />
-            <End Role="Address" EntitySet="Addresses" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Address_Province" Association="BIG_DBModel.FK_Address_Province">
-            <End Role="Province" EntitySet="Provinces" />
-            <End Role="Address" EntitySet="Addresses" />
-          </AssociationSet>
+          <EntitySet Name="Employees" EntityType="BIG_DBModel.Employee" />
           <AssociationSet Name="FK_Employee_Gender" Association="BIG_DBModel.FK_Employee_Gender">
             <End Role="Gender" EntitySet="Genders" />
             <End Role="Employee" EntitySet="Employees" />
@@ -379,7 +367,22 @@
             <End Role="Title" EntitySet="Titles" />
             <End Role="Employee" EntitySet="Employees" />
           </AssociationSet>
-        </EntityContainer>
+          <EntitySet Name="AddressTypes" EntityType="BIG_DBModel.AddressType" />
+          <EntitySet Name="Addresses" EntityType="BIG_DBModel.Address" />
+          <AssociationSet Name="FK_Address_AddressType" Association="BIG_DBModel.FK_Address_AddressType">
+            <End Role="AddressType" EntitySet="AddressTypes" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Address_Amphur" Association="BIG_DBModel.FK_Address_Amphur">
+            <End Role="Amphur" EntitySet="Amphurs" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Address_Province" Association="BIG_DBModel.FK_Address_Province">
+            <End Role="Province" EntitySet="Provinces" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <EntitySet Name="Emp_Images" EntityType="BIG_DBModel.Emp_Images" />
+          </EntityContainer>
         <EntityType Name="Logon">
           <Key>
             <PropertyRef Name="ID" />
@@ -390,21 +393,6 @@
           <Property Name="LAST_LOGIN" Type="DateTime" Precision="3" />
           <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
           <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="Address">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EMP_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ADDRESS1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="AMPHUR_ID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
-          <Property Name="PROVINCE_ID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="POSTCODE" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="ADDRESSTYPE" Type="Int32" />
-          <NavigationProperty Name="AddressType1" Relationship="BIG_DBModel.FK_Address_AddressType" FromRole="Address" ToRole="AddressType" />
-          <NavigationProperty Name="Amphur" Relationship="BIG_DBModel.FK_Address_Amphur" FromRole="Address" ToRole="Amphur" />
-          <NavigationProperty Name="Province" Relationship="BIG_DBModel.FK_Address_Province" FromRole="Address" ToRole="Province" />
         </EntityType>
         <EntityType Name="Amphur">
           <Key>
@@ -425,14 +413,6 @@
           <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DESCRIPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Employees" Relationship="BIG_DBModel.FK_Employee_Gender" FromRole="Gender" ToRole="Employee" />
-        </EntityType>
-        <EntityType Name="Image">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="EMP_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="PIC_PROFILE" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Marital">
           <Key>
@@ -460,8 +440,8 @@
           <Property Name="NAME_EN" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="NAME_TH" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Amphurs" Relationship="BIG_DBModel.FK_Amphur_Province" FromRole="Province" ToRole="Amphur" />
-          <NavigationProperty Name="Addresses" Relationship="BIG_DBModel.FK_Address_Province" FromRole="Province" ToRole="Address" />
           <NavigationProperty Name="Employees" Relationship="BIG_DBModel.FK_Employee_Province" FromRole="Province" ToRole="Employee" />
+          <NavigationProperty Name="Addresses" Relationship="BIG_DBModel.FK_Address_Province" FromRole="Province" ToRole="Address" />
         </EntityType>
         <Association Name="FK_Amphur_Province">
           <End Type="BIG_DBModel.Province" Role="Province" Multiplicity="0..1" />
@@ -475,15 +455,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="AddressType">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DESCRIPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Addresses" Relationship="BIG_DBModel.FK_Address_AddressType" FromRole="AddressType" ToRole="Address" />
-        </EntityType>
         <EntityType Name="Education">
           <Key>
             <PropertyRef Name="ID" />
@@ -493,48 +464,6 @@
           <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="GRADUETED" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="YEAR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Employee">
-          <Key>
-            <PropertyRef Name="ID" />
-            <PropertyRef Name="EMP_ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EMP_ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="ID_CARD" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
-          <Property Name="TITLE_ID" Type="Int32" />
-          <Property Name="FIRSTNAME_EN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="MIDNAME_EN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="LASTNAME_EN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="FIRSTNAME_TH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="MIDNAME_TH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="LASTNAME_TH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="NICKNAME_EN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="NICKNAME_TH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="GENDER_ID" Type="Int32" />
-          <Property Name="DATEOFBIRTH" Type="DateTime" Precision="3" />
-          <Property Name="BIRTH_PLACE_CONTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="BIRTH_PLACE_PROVINCE_ID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="HEIGHT" Type="Int32" />
-          <Property Name="WEIGHT" Type="Int32" />
-          <Property Name="RACE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="NATIONALITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="POSITION_ID" Type="Int32" />
-          <Property Name="MARITAL_ID" Type="Int32" />
-          <Property Name="MOBILE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="HOMEPHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="BLOODGROUP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="STATUS" Type="Boolean" />
-          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
-          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
-          <Property Name="CREATEBY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MODIFIEDBY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Gender" Relationship="BIG_DBModel.FK_Employee_Gender" FromRole="Employee" ToRole="Gender" />
-          <NavigationProperty Name="Marital" Relationship="BIG_DBModel.FK_Employee_Marital" FromRole="Employee" ToRole="Marital" />
-          <NavigationProperty Name="Position" Relationship="BIG_DBModel.FK_Employee_Position" FromRole="Employee" ToRole="Position" />
-          <NavigationProperty Name="Province" Relationship="BIG_DBModel.FK_Employee_Province" FromRole="Employee" ToRole="Province" />
-          <NavigationProperty Name="Title" Relationship="BIG_DBModel.FK_Employee_Title" FromRole="Employee" ToRole="Title" />
         </EntityType>
         <EntityType Name="ReferencePerson">
           <Key>
@@ -569,42 +498,49 @@
           <Property Name="PERIOD" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="RESIGN_REASON" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
-        <Association Name="FK_Address_AddressType">
-          <End Type="BIG_DBModel.AddressType" Role="AddressType" Multiplicity="0..1" />
-          <End Type="BIG_DBModel.Address" Role="Address" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AddressType">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Address">
-              <PropertyRef Name="ADDRESSTYPE" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Address_Amphur">
-          <End Type="BIG_DBModel.Amphur" Role="Amphur" Multiplicity="0..1" />
-          <End Type="BIG_DBModel.Address" Role="Address" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Amphur">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Address">
-              <PropertyRef Name="AMPHUR_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Address_Province">
-          <End Type="BIG_DBModel.Province" Role="Province" Multiplicity="0..1" />
-          <End Type="BIG_DBModel.Address" Role="Address" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Province">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Address">
-              <PropertyRef Name="PROVINCE_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="EMP_ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ID_CARD" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="TITLE_ID" Type="Int32" />
+          <Property Name="FIRSTNAME_EN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MIDNAME_EN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LASTNAME_EN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FIRSTNAME_TH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MIDNAME_TH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LASTNAME_TH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NICKNAME_EN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NICKNAME_TH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GENDER_ID" Type="Int32" />
+          <Property Name="DATEOFBIRTH" Type="DateTime" Precision="3" />
+          <Property Name="BIRTH_PLACE_CONTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BIRTH_PLACE_PROVINCE_ID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="HEIGHT" Type="Int32" />
+          <Property Name="WEIGHT" Type="Int32" />
+          <Property Name="RACE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NATIONALITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="POSITION_ID" Type="Int32" />
+          <Property Name="RELEGION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MARITAL_ID" Type="Int32" />
+          <Property Name="MOBILE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HOMEPHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BLOODGROUP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="Boolean" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEBY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFIEDBY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Gender" Relationship="BIG_DBModel.FK_Employee_Gender" FromRole="Employee" ToRole="Gender" />
+          <NavigationProperty Name="Marital" Relationship="BIG_DBModel.FK_Employee_Marital" FromRole="Employee" ToRole="Marital" />
+          <NavigationProperty Name="Position" Relationship="BIG_DBModel.FK_Employee_Position" FromRole="Employee" ToRole="Position" />
+          <NavigationProperty Name="Province" Relationship="BIG_DBModel.FK_Employee_Province" FromRole="Employee" ToRole="Province" />
+          <NavigationProperty Name="Title" Relationship="BIG_DBModel.FK_Employee_Title" FromRole="Employee" ToRole="Title" />
+        </EntityType>
         <Association Name="FK_Employee_Gender">
           <End Type="BIG_DBModel.Gender" Role="Gender" Multiplicity="0..1" />
           <End Type="BIG_DBModel.Employee" Role="Employee" Multiplicity="*" />
@@ -665,7 +601,77 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <EntityType Name="AddressType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Addresses" Relationship="BIG_DBModel.FK_Address_AddressType" FromRole="AddressType" ToRole="Address" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="AMPHUR_ID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="PROVINCE_ID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="POSTCODE" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ADDRESSTYPE_ID" Type="Int32" />
+          <NavigationProperty Name="AddressType" Relationship="BIG_DBModel.FK_Address_AddressType" FromRole="Address" ToRole="AddressType" />
+          <NavigationProperty Name="Amphur" Relationship="BIG_DBModel.FK_Address_Amphur" FromRole="Address" ToRole="Amphur" />
+          <NavigationProperty Name="Province" Relationship="BIG_DBModel.FK_Address_Province" FromRole="Address" ToRole="Province" />
+        </EntityType>
+        <Association Name="FK_Address_AddressType">
+          <End Type="BIG_DBModel.AddressType" Role="AddressType" Multiplicity="0..1" />
+          <End Type="BIG_DBModel.Address" Role="Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="ADDRESSTYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Address_Amphur">
+          <End Type="BIG_DBModel.Amphur" Role="Amphur" Multiplicity="0..1" />
+          <End Type="BIG_DBModel.Address" Role="Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Amphur">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="AMPHUR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Address_Province">
+          <End Type="BIG_DBModel.Province" Role="Province" Multiplicity="0..1" />
+          <End Type="BIG_DBModel.Address" Role="Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Province">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="PROVINCE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Emp_Images">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PIC_PROFILE" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -679,19 +685,6 @@
                 <ScalarProperty Name="LAST_LOGIN" ColumnName="LAST_LOGIN" />
                 <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
                 <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Addresses">
-            <EntityTypeMapping TypeName="BIG_DBModel.Address">
-              <MappingFragment StoreEntitySet="Address">
-                <ScalarProperty Name="ADDRESSTYPE" ColumnName="ADDRESSTYPE" />
-                <ScalarProperty Name="POSTCODE" ColumnName="POSTCODE" />
-                <ScalarProperty Name="PROVINCE_ID" ColumnName="PROVINCE_ID" />
-                <ScalarProperty Name="AMPHUR_ID" ColumnName="AMPHUR_ID" />
-                <ScalarProperty Name="ADDRESS1" ColumnName="ADDRESS" />
-                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -711,15 +704,6 @@
               <MappingFragment StoreEntitySet="Gender">
                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Images">
-            <EntityTypeMapping TypeName="BIG_DBModel.Image">
-              <MappingFragment StoreEntitySet="Images">
-                <ScalarProperty Name="PIC_PROFILE" ColumnName="PIC_PROFILE" />
-                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -751,58 +735,12 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="AddressTypes">
-            <EntityTypeMapping TypeName="BIG_DBModel.AddressType">
-              <MappingFragment StoreEntitySet="AddressType">
-                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
-                <ScalarProperty Name="NAME" ColumnName="NAME" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Educations">
             <EntityTypeMapping TypeName="BIG_DBModel.Education">
               <MappingFragment StoreEntitySet="Education">
                 <ScalarProperty Name="YEAR" ColumnName="YEAR" />
                 <ScalarProperty Name="GRADUETED" ColumnName="GRADUETED" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
-                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Employees">
-            <EntityTypeMapping TypeName="BIG_DBModel.Employee">
-              <MappingFragment StoreEntitySet="Employee">
-                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
-                <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
-                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
-                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
-                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
-                <ScalarProperty Name="BLOODGROUP" ColumnName="BLOODGROUP" />
-                <ScalarProperty Name="HOMEPHONE" ColumnName="HOMEPHONE" />
-                <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
-                <ScalarProperty Name="MARITAL_ID" ColumnName="MARITAL_ID" />
-                <ScalarProperty Name="POSITION_ID" ColumnName="POSITION_ID" />
-                <ScalarProperty Name="NATIONALITY" ColumnName="NATIONALITY" />
-                <ScalarProperty Name="RACE" ColumnName="RACE" />
-                <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
-                <ScalarProperty Name="HEIGHT" ColumnName="HEIGHT" />
-                <ScalarProperty Name="BIRTH_PLACE_PROVINCE_ID" ColumnName="BIRTH_PLACE_PROVINCE_ID" />
-                <ScalarProperty Name="BIRTH_PLACE_CONTRY" ColumnName="BIRTH_PLACE_CONTRY" />
-                <ScalarProperty Name="DATEOFBIRTH" ColumnName="DATEOFBIRTH" />
-                <ScalarProperty Name="GENDER_ID" ColumnName="GENDER_ID" />
-                <ScalarProperty Name="NICKNAME_TH" ColumnName="NICKNAME_TH" />
-                <ScalarProperty Name="NICKNAME_EN" ColumnName="NICKNAME_EN" />
-                <ScalarProperty Name="LASTNAME_TH" ColumnName="LASTNAME_TH" />
-                <ScalarProperty Name="MIDNAME_TH" ColumnName="MIDNAME_TH" />
-                <ScalarProperty Name="FIRSTNAME_TH" ColumnName="FIRSTNAME_TH" />
-                <ScalarProperty Name="LASTNAME_EN" ColumnName="LASTNAME_EN" />
-                <ScalarProperty Name="MIDNAME_EN" ColumnName="MIDNAME_EN" />
-                <ScalarProperty Name="FIRSTNAME_EN" ColumnName="FIRSTNAME_EN" />
-                <ScalarProperty Name="TITLE_ID" ColumnName="TITLE_ID" />
-                <ScalarProperty Name="ID_CARD" ColumnName="ID_CARD" />
                 <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
@@ -843,6 +781,77 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="BIG_DBModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+                <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="BLOODGROUP" ColumnName="BLOODGROUP" />
+                <ScalarProperty Name="HOMEPHONE" ColumnName="HOMEPHONE" />
+                <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+                <ScalarProperty Name="MARITAL_ID" ColumnName="MARITAL_ID" />
+                <ScalarProperty Name="RELEGION" ColumnName="RELEGION" />
+                <ScalarProperty Name="POSITION_ID" ColumnName="POSITION_ID" />
+                <ScalarProperty Name="NATIONALITY" ColumnName="NATIONALITY" />
+                <ScalarProperty Name="RACE" ColumnName="RACE" />
+                <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
+                <ScalarProperty Name="HEIGHT" ColumnName="HEIGHT" />
+                <ScalarProperty Name="BIRTH_PLACE_PROVINCE_ID" ColumnName="BIRTH_PLACE_PROVINCE_ID" />
+                <ScalarProperty Name="BIRTH_PLACE_CONTRY" ColumnName="BIRTH_PLACE_CONTRY" />
+                <ScalarProperty Name="DATEOFBIRTH" ColumnName="DATEOFBIRTH" />
+                <ScalarProperty Name="GENDER_ID" ColumnName="GENDER_ID" />
+                <ScalarProperty Name="NICKNAME_TH" ColumnName="NICKNAME_TH" />
+                <ScalarProperty Name="NICKNAME_EN" ColumnName="NICKNAME_EN" />
+                <ScalarProperty Name="LASTNAME_TH" ColumnName="LASTNAME_TH" />
+                <ScalarProperty Name="MIDNAME_TH" ColumnName="MIDNAME_TH" />
+                <ScalarProperty Name="FIRSTNAME_TH" ColumnName="FIRSTNAME_TH" />
+                <ScalarProperty Name="LASTNAME_EN" ColumnName="LASTNAME_EN" />
+                <ScalarProperty Name="MIDNAME_EN" ColumnName="MIDNAME_EN" />
+                <ScalarProperty Name="FIRSTNAME_EN" ColumnName="FIRSTNAME_EN" />
+                <ScalarProperty Name="TITLE_ID" ColumnName="TITLE_ID" />
+                <ScalarProperty Name="ID_CARD" ColumnName="ID_CARD" />
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AddressTypes">
+            <EntityTypeMapping TypeName="BIG_DBModel.AddressType">
+              <MappingFragment StoreEntitySet="AddressType">
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Addresses">
+            <EntityTypeMapping TypeName="BIG_DBModel.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="ADDRESSTYPE_ID" ColumnName="ADDRESSTYPE_ID" />
+                <ScalarProperty Name="POSTCODE" ColumnName="POSTCODE" />
+                <ScalarProperty Name="PROVINCE_ID" ColumnName="PROVINCE_ID" />
+                <ScalarProperty Name="AMPHUR_ID" ColumnName="AMPHUR_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emp_Images">
+            <EntityTypeMapping TypeName="BIG_DBModel.Emp_Images">
+              <MappingFragment StoreEntitySet="Emp_Images">
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="PIC_PROFILE" ColumnName="PIC_PROFILE" />
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -867,29 +876,29 @@
     <Diagrams>
       <Diagram DiagramId="416fbd80b228408ca4ab59ee2aaa52eb" Name="Diagram1">
         <EntityTypeShape EntityType="BIG_DBModel.Logon" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="BIG_DBModel.Address" Width="1.5" PointX="0.75" PointY="3.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Amphur" Width="1.5" PointX="6" PointY="0.875" />
         <EntityTypeShape EntityType="BIG_DBModel.Gender" Width="1.5" PointX="4.75" PointY="3.75" />
-        <EntityTypeShape EntityType="BIG_DBModel.Image" Width="1.5" PointX="6.75" PointY="3.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Marital" Width="1.5" PointX="4.75" PointY="6.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Position" Width="1.5" PointX="6.75" PointY="6.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Province" Width="1.5" PointX="3.75" PointY="1" />
         <AssociationConnector Association="BIG_DBModel.FK_Amphur_Province" />
-        <EntityTypeShape EntityType="BIG_DBModel.AddressType" Width="1.5" PointX="0.75" PointY="8.375" />
         <EntityTypeShape EntityType="BIG_DBModel.Education" Width="1.5" PointX="3.375" PointY="9.75" />
-        <EntityTypeShape EntityType="BIG_DBModel.Employee" Width="1.5" PointX="9" PointY="0.75" />
-        <EntityTypeShape EntityType="BIG_DBModel.ReferencePerson" Width="1.5" PointX="9.375" PointY="9.75" />
+        <EntityTypeShape EntityType="BIG_DBModel.ReferencePerson" Width="2.375" PointX="9.375" PointY="9.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Title" Width="1.5" PointX="6.75" PointY="9.875" />
         <EntityTypeShape EntityType="BIG_DBModel.WorkExperience" Width="1.5" PointX="11.375" PointY="0.75" />
-        <AssociationConnector Association="BIG_DBModel.FK_Address_AddressType" />
-        <AssociationConnector Association="BIG_DBModel.FK_Address_Amphur" />
-        <AssociationConnector Association="BIG_DBModel.FK_Address_Province" />
+        <EntityTypeShape EntityType="BIG_DBModel.Employee" Width="1.5" PointX="9" PointY="0.75" />
         <AssociationConnector Association="BIG_DBModel.FK_Employee_Gender" />
         <AssociationConnector Association="BIG_DBModel.FK_Employee_Marital" />
         <AssociationConnector Association="BIG_DBModel.FK_Employee_Position" />
         <AssociationConnector Association="BIG_DBModel.FK_Employee_Province" />
         <AssociationConnector Association="BIG_DBModel.FK_Employee_Title" />
-      </Diagram>
+        <EntityTypeShape EntityType="BIG_DBModel.AddressType" Width="1.5" PointX="6" PointY="17.25" />
+        <EntityTypeShape EntityType="BIG_DBModel.Address" Width="1.5" PointX="11.25" PointY="5.5" />
+        <AssociationConnector Association="BIG_DBModel.FK_Address_AddressType" />
+        <AssociationConnector Association="BIG_DBModel.FK_Address_Amphur" />
+        <AssociationConnector Association="BIG_DBModel.FK_Address_Province" />
+        <EntityTypeShape EntityType="BIG_DBModel.Emp_Images" Width="1.5" PointX="0.75" PointY="3.75" />
+        </Diagram>
     </Diagrams>
   </Designer>
 </edmx:Edmx>

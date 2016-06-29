@@ -12,10 +12,12 @@ namespace BIG.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Image
+    public partial class Emp_Images
     {
-        public string ID { get; set; }
+        public int ID { get; set; }
         public string EMP_ID { get; set; }
         public byte[] PIC_PROFILE { get; set; }
+        public string TYPE { get; set; }
+        public Nullable<System.DateTime> CREATE_DATE { get; set; }
     }
 }

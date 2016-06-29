@@ -16,6 +16,7 @@ namespace BIG.Present
         public PersonalForm()
         {
             InitializeComponent();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
         private void PersonalForm_Load(object sender, EventArgs e)
@@ -66,6 +67,22 @@ namespace BIG.Present
         }
 
         private void rb_load_emp_Click(object sender, EventArgs e)
+        {
+            var emp = new EmployeeForm();
+            emp.LoadPID();
+            emp.Show();
+            this.Hide();
+           
+        }
+
+        private void rb_home_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var mainform = new MainForm();
+            mainform.Show();
+        }
+
+        private void rb_load_pid_Click(object sender, EventArgs e)
         {
             var emp = new EmployeeForm();
             emp.LoadPID();

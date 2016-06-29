@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.TreeNode treeNode82 = new System.Windows.Forms.TreeNode("สัญญาค้ำประกัน");
+            System.Windows.Forms.TreeNode treeNode83 = new System.Windows.Forms.TreeNode("สัญญาจ้างงาน");
+            System.Windows.Forms.TreeNode treeNode84 = new System.Windows.Forms.TreeNode("รางวัน/ผลงานดีเด่น");
+            System.Windows.Forms.TreeNode treeNode85 = new System.Windows.Forms.TreeNode("บันทึกการลงโทด");
+            System.Windows.Forms.TreeNode treeNode86 = new System.Windows.Forms.TreeNode("พนักงานทดลองงาน");
+            System.Windows.Forms.TreeNode treeNode87 = new System.Windows.Forms.TreeNode("การปรับเงินเดือน");
+            System.Windows.Forms.TreeNode treeNode88 = new System.Windows.Forms.TreeNode("กองทุนสำรอง");
+            System.Windows.Forms.TreeNode treeNode89 = new System.Windows.Forms.TreeNode("ข้อมูลด้านสุขภาพ");
+            System.Windows.Forms.TreeNode treeNode90 = new System.Windows.Forms.TreeNode("การพ้นสภาพพนักงาน");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("สัญญาค้ำประกัน");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("สัญญาจ้างงาน");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("รางวัน/ผลงานดีเด่น");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("บันทึกการลงโทด");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("พนักงานทดลองงาน");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("การปรับเงินเดือน");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("กองทุนสำรอง");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("ข้อมูลด้านสุขภาพ");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("การพ้นสภาพพนักงาน");
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.advancedFlowLayoutPanel1 = new MakarovDev.ExpandCollapsePanel.AdvancedFlowLayoutPanel();
@@ -45,15 +45,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.left_menu2 = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.treeView3 = new System.Windows.Forms.TreeView();
@@ -71,23 +66,23 @@
             this.txt_weight = new System.Windows.Forms.TextBox();
             this.cbo_sex = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbo_bp_prov = new System.Windows.Forms.ComboBox();
+            this.cbo_bp_ctr = new System.Windows.Forms.ComboBox();
             this.txt_nick_en = new System.Windows.Forms.TextBox();
             this.txt_nick_th = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbo_title_en = new System.Windows.Forms.ComboBox();
             this.txt_emp_fname_en = new System.Windows.Forms.TextBox();
             this.txt_emp_lname_en = new System.Windows.Forms.TextBox();
             this.txt_pid = new System.Windows.Forms.TextBox();
             this.txt_empid = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.txt_emp_lname_th = new System.Windows.Forms.TextBox();
-            this.cbo_title_en = new System.Windows.Forms.ComboBox();
+            this.cbo_title_th = new System.Windows.Forms.ComboBox();
             this.txt_emp_fname_th = new System.Windows.Forms.TextBox();
             this.dob = new System.Windows.Forms.DateTimePicker();
             this.txt_height = new System.Windows.Forms.TextBox();
-            this.cbo_ = new System.Windows.Forms.ComboBox();
+            this.cbo_relegion = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -254,34 +249,11 @@
             this.btn_cancle = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_delete_img = new System.Windows.Forms.PictureBox();
-            this.btn_ref_img = new System.Windows.Forms.PictureBox();
-            this.btn_new_img = new System.Windows.Forms.PictureBox();
-            this.ribbon1 = new System.Windows.Forms.Ribbon();
-            this.rb_new_emp = new System.Windows.Forms.RibbonOrbMenuItem();
-            this.rb_load_emp = new System.Windows.Forms.RibbonOrbMenuItem();
-            this.rb_save_emp = new System.Windows.Forms.RibbonOrbMenuItem();
-            this.rb_close = new System.Windows.Forms.RibbonOrbMenuItem();
-            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.ribbonLabel1 = new System.Windows.Forms.RibbonLabel();
             this.ribbonLabel2 = new System.Windows.Forms.RibbonLabel();
-            this.ribbonButton2 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton4 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton5 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton6 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton7 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton8 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton9 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton10 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton11 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton12 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton13 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton14 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton15 = new System.Windows.Forms.RibbonButton();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
             this.ribbonTab3 = new System.Windows.Forms.RibbonTab();
             this.ribbonTab4 = new System.Windows.Forms.RibbonTab();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
@@ -296,21 +268,89 @@
             this.ribbonSeparator9 = new System.Windows.Forms.RibbonSeparator();
             this.ribbonSeparator10 = new System.Windows.Forms.RibbonSeparator();
             this.ribbonSeparator11 = new System.Windows.Forms.RibbonSeparator();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pic_emp = new System.Windows.Forms.PictureBox();
+            this.btn_delete_img = new System.Windows.Forms.PictureBox();
+            this.btn_ref_img = new System.Windows.Forms.PictureBox();
+            this.btn_new_img = new System.Windows.Forms.PictureBox();
+            this.rb_new_emp = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.rb_load_emp = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.rb_save_emp = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.rb_close = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton2 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton4 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton5 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton6 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton7 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton8 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton9 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton10 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton11 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton12 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton13 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton14 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton15 = new System.Windows.Forms.RibbonButton();
             this.ribbonOrbMenuItem1 = new System.Windows.Forms.RibbonOrbMenuItem();
             this.ribbonOrbMenuItem2 = new System.Windows.Forms.RibbonOrbMenuItem();
             this.ribbonOrbMenuItem3 = new System.Windows.Forms.RibbonOrbMenuItem();
             this.ribbonOrbMenuItem4 = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.ribbonButton16 = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonButton17 = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel9 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonButton18 = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel10 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonButton19 = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel11 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonButton20 = new System.Windows.Forms.RibbonButton();
+            this.ribbonOrbMenuItem5 = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.rb_home = new System.Windows.Forms.RibbonButton();
+            this.rb_new = new System.Windows.Forms.RibbonButton();
+            this.rb_load_pid = new System.Windows.Forms.RibbonButton();
+            this.rb_save = new System.Windows.Forms.RibbonButton();
+            this.rb_print = new System.Windows.Forms.RibbonButton();
+            this.rb_logout = new System.Windows.Forms.RibbonButton();
+            this.rb_exit = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton21 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton22 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton23 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton24 = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel8 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonTab8 = new System.Windows.Forms.RibbonTab();
+            this.main = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonPanel4 = new System.Windows.Forms.RibbonPanel();
+            this.rb_main = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonPanel6 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonPanel12 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonTab5 = new System.Windows.Forms.RibbonTab();
+            this.ribbon1 = new System.Windows.Forms.Ribbon();
+            this.ribbonSeparator12 = new System.Windows.Forms.RibbonSeparator();
+            this.ribbonSeparator13 = new System.Windows.Forms.RibbonSeparator();
+            this.ribbonSeparator14 = new System.Windows.Forms.RibbonSeparator();
+            this.ribbonTab6 = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel13 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonTab7 = new System.Windows.Forms.RibbonTab();
+            this.ribbonTab9 = new System.Windows.Forms.RibbonTab();
+            this.ribbonTab10 = new System.Windows.Forms.RibbonTab();
+            this.ribbonSeparator15 = new System.Windows.Forms.RibbonSeparator();
+            this.ribbonTab11 = new System.Windows.Forms.RibbonTab();
+            this.ribbonTab12 = new System.Windows.Forms.RibbonTab();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.advancedFlowLayoutPanel1.SuspendLayout();
             this.left_menu1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.left_menu2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -393,8 +433,13 @@
             this.tableLayoutPanel71.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_emp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_delete_img)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_ref_img)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_new_img)).BeginInit();
@@ -408,16 +453,18 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 61);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 96);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 697);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 662);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 190F));
@@ -428,7 +475,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1002, 691);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1002, 656);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // advancedFlowLayoutPanel1
@@ -517,28 +564,6 @@
             this.linkLabel5.TabStop = true;
             this.linkLabel5.Text = "ประสบการณ์ทำงาน";
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox6.Image = global::BIG.Present.Properties.Resources.Script;
-            this.pictureBox6.Location = new System.Drawing.Point(12, 123);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox6.TabIndex = 11;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::BIG.Present.Properties.Resources.Info;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
             // linkLabel1
             // 
             this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -562,28 +587,6 @@
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "การศึกษา";
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Image = global::BIG.Present.Properties.Resources.Toolbox;
-            this.pictureBox5.Location = new System.Drawing.Point(12, 93);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(23, 24);
-            this.pictureBox5.TabIndex = 9;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::BIG.Present.Properties.Resources.Home;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 33);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
-            // 
             // linkLabel2
             // 
             this.linkLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -605,17 +608,6 @@
             this.linkLabel3.TabIndex = 6;
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "สมาชิกในครอบครัว";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(12, 63);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox4.TabIndex = 7;
-            this.pictureBox4.TabStop = false;
             // 
             // left_menu2
             // 
@@ -657,40 +649,40 @@
             this.treeView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeView3.Location = new System.Drawing.Point(0, 3);
             this.treeView3.Name = "treeView3";
-            treeNode10.BackColor = System.Drawing.Color.White;
-            treeNode10.Name = "Node0";
-            treeNode10.Text = "สัญญาค้ำประกัน";
-            treeNode11.Name = "Node1";
-            treeNode11.Text = "สัญญาจ้างงาน";
-            treeNode12.BackColor = System.Drawing.Color.White;
-            treeNode12.Name = "Node2";
-            treeNode12.Text = "รางวัน/ผลงานดีเด่น";
-            treeNode13.Name = "Node3";
-            treeNode13.Text = "บันทึกการลงโทด";
-            treeNode14.BackColor = System.Drawing.Color.White;
-            treeNode14.Name = "Node4";
-            treeNode14.Text = "พนักงานทดลองงาน";
-            treeNode15.Name = "Node0";
-            treeNode15.Text = "การปรับเงินเดือน";
-            treeNode16.BackColor = System.Drawing.Color.White;
-            treeNode16.Name = "Node1";
-            treeNode16.Text = "กองทุนสำรอง";
-            treeNode17.Name = "Node2";
-            treeNode17.Text = "ข้อมูลด้านสุขภาพ";
-            treeNode18.BackColor = System.Drawing.Color.White;
-            treeNode18.ImageKey = "(default)";
-            treeNode18.Name = "Node3";
-            treeNode18.Text = "การพ้นสภาพพนักงาน";
+            treeNode82.BackColor = System.Drawing.Color.White;
+            treeNode82.Name = "Node0";
+            treeNode82.Text = "สัญญาค้ำประกัน";
+            treeNode83.Name = "Node1";
+            treeNode83.Text = "สัญญาจ้างงาน";
+            treeNode84.BackColor = System.Drawing.Color.White;
+            treeNode84.Name = "Node2";
+            treeNode84.Text = "รางวัน/ผลงานดีเด่น";
+            treeNode85.Name = "Node3";
+            treeNode85.Text = "บันทึกการลงโทด";
+            treeNode86.BackColor = System.Drawing.Color.White;
+            treeNode86.Name = "Node4";
+            treeNode86.Text = "พนักงานทดลองงาน";
+            treeNode87.Name = "Node0";
+            treeNode87.Text = "การปรับเงินเดือน";
+            treeNode88.BackColor = System.Drawing.Color.White;
+            treeNode88.Name = "Node1";
+            treeNode88.Text = "กองทุนสำรอง";
+            treeNode89.Name = "Node2";
+            treeNode89.Text = "ข้อมูลด้านสุขภาพ";
+            treeNode90.BackColor = System.Drawing.Color.White;
+            treeNode90.ImageKey = "(default)";
+            treeNode90.Name = "Node3";
+            treeNode90.Text = "การพ้นสภาพพนักงาน";
             this.treeView3.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode10,
-            treeNode11,
-            treeNode12,
-            treeNode13,
-            treeNode14,
-            treeNode15,
-            treeNode16,
-            treeNode17,
-            treeNode18});
+            treeNode82,
+            treeNode83,
+            treeNode84,
+            treeNode85,
+            treeNode86,
+            treeNode87,
+            treeNode88,
+            treeNode89,
+            treeNode90});
             this.treeView3.Size = new System.Drawing.Size(165, 365);
             this.treeView3.TabIndex = 3;
             // 
@@ -711,9 +703,6 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -724,8 +713,8 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(794, 675);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(794, 635);
             this.tableLayoutPanel3.TabIndex = 12;
             // 
             // EmployeeTab
@@ -743,7 +732,7 @@
             this.EmployeeTab.Location = new System.Drawing.Point(173, 3);
             this.EmployeeTab.Name = "EmployeeTab";
             this.EmployeeTab.SelectedIndex = 0;
-            this.EmployeeTab.Size = new System.Drawing.Size(618, 615);
+            this.EmployeeTab.Size = new System.Drawing.Size(618, 555);
             this.EmployeeTab.TabIndex = 1;
             // 
             // General_Tab
@@ -752,7 +741,7 @@
             this.General_Tab.Location = new System.Drawing.Point(4, 22);
             this.General_Tab.Name = "General_Tab";
             this.General_Tab.Padding = new System.Windows.Forms.Padding(3);
-            this.General_Tab.Size = new System.Drawing.Size(610, 589);
+            this.General_Tab.Size = new System.Drawing.Size(610, 529);
             this.General_Tab.TabIndex = 0;
             this.General_Tab.Text = "ข้อมูลทั่วไป";
             this.General_Tab.UseVisualStyleBackColor = true;
@@ -780,7 +769,7 @@
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 1, 2);
             this.tableLayoutPanel9.Controls.Add(this.dob, 1, 6);
             this.tableLayoutPanel9.Controls.Add(this.txt_height, 1, 9);
-            this.tableLayoutPanel9.Controls.Add(this.cbo_, 1, 13);
+            this.tableLayoutPanel9.Controls.Add(this.cbo_relegion, 1, 13);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel13, 0, 13);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel14, 0, 12);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel16, 0, 11);
@@ -811,7 +800,7 @@
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(598, 577);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(598, 517);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
             // tableLayoutPanel23
@@ -865,9 +854,9 @@
             this.cbo_race.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbo_race.FormattingEnabled = true;
             this.cbo_race.Items.AddRange(new object[] {
-            "ชาย",
-            "หญิง",
-            "อื่นๆ"});
+            "ไทย",
+            "ลาว",
+            "พม่า"});
             this.cbo_race.Location = new System.Drawing.Point(153, 427);
             this.cbo_race.Name = "cbo_race";
             this.cbo_race.Size = new System.Drawing.Size(200, 21);
@@ -878,9 +867,9 @@
             this.cbo_nationality.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbo_nationality.FormattingEnabled = true;
             this.cbo_nationality.Items.AddRange(new object[] {
-            "ชาย",
-            "หญิง",
-            "อื่นๆ"});
+            "ไทย",
+            "ลาว",
+            "พม่า"});
             this.cbo_nationality.Location = new System.Drawing.Point(153, 392);
             this.cbo_nationality.Name = "cbo_nationality";
             this.cbo_nationality.Size = new System.Drawing.Size(200, 21);
@@ -893,6 +882,7 @@
             this.txt_weight.Name = "txt_weight";
             this.txt_weight.Size = new System.Drawing.Size(200, 20);
             this.txt_weight.TabIndex = 25;
+            this.txt_weight.Text = "0";
             // 
             // cbo_sex
             // 
@@ -913,8 +903,8 @@
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.27184F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.72816F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel12.Controls.Add(this.comboBox3, 1, 0);
-            this.tableLayoutPanel12.Controls.Add(this.comboBox2, 0, 0);
+            this.tableLayoutPanel12.Controls.Add(this.cbo_bp_prov, 1, 0);
+            this.tableLayoutPanel12.Controls.Add(this.cbo_bp_ctr, 0, 0);
             this.tableLayoutPanel12.Location = new System.Drawing.Point(153, 248);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
@@ -922,31 +912,31 @@
             this.tableLayoutPanel12.Size = new System.Drawing.Size(412, 29);
             this.tableLayoutPanel12.TabIndex = 24;
             // 
-            // comboBox3
+            // cbo_bp_prov
             // 
-            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.cbo_bp_prov.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbo_bp_prov.FormattingEnabled = true;
+            this.cbo_bp_prov.Items.AddRange(new object[] {
             "นาย",
             "นาง",
             "นางสาว"});
-            this.comboBox3.Location = new System.Drawing.Point(205, 4);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(200, 21);
-            this.comboBox3.TabIndex = 27;
+            this.cbo_bp_prov.Location = new System.Drawing.Point(205, 4);
+            this.cbo_bp_prov.Name = "cbo_bp_prov";
+            this.cbo_bp_prov.Size = new System.Drawing.Size(200, 21);
+            this.cbo_bp_prov.TabIndex = 27;
             // 
-            // comboBox2
+            // cbo_bp_ctr
             // 
-            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbo_bp_ctr.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbo_bp_ctr.FormattingEnabled = true;
+            this.cbo_bp_ctr.Items.AddRange(new object[] {
             "นาย",
             "นาง",
             "นางสาว"});
-            this.comboBox2.Location = new System.Drawing.Point(3, 4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(196, 21);
-            this.comboBox2.TabIndex = 26;
+            this.cbo_bp_ctr.Location = new System.Drawing.Point(3, 4);
+            this.cbo_bp_ctr.Name = "cbo_bp_ctr";
+            this.cbo_bp_ctr.Size = new System.Drawing.Size(196, 21);
+            this.cbo_bp_ctr.TabIndex = 26;
             // 
             // txt_nick_en
             // 
@@ -970,7 +960,7 @@
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.36735F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.81633F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.81633F));
-            this.tableLayoutPanel11.Controls.Add(this.comboBox1, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.cbo_title_en, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.txt_emp_fname_en, 1, 0);
             this.tableLayoutPanel11.Controls.Add(this.txt_emp_lname_en, 2, 0);
             this.tableLayoutPanel11.Location = new System.Drawing.Point(153, 108);
@@ -981,18 +971,18 @@
             this.tableLayoutPanel11.Size = new System.Drawing.Size(412, 29);
             this.tableLayoutPanel11.TabIndex = 19;
             // 
-            // comboBox1
+            // cbo_title_en
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "นาย",
-            "นาง",
-            "นางสาว"});
-            this.comboBox1.Location = new System.Drawing.Point(3, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(69, 21);
-            this.comboBox1.TabIndex = 16;
+            this.cbo_title_en.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbo_title_en.FormattingEnabled = true;
+            this.cbo_title_en.Items.AddRange(new object[] {
+            "Mr.",
+            "Mrs.",
+            "Miss."});
+            this.cbo_title_en.Location = new System.Drawing.Point(3, 4);
+            this.cbo_title_en.Name = "cbo_title_en";
+            this.cbo_title_en.Size = new System.Drawing.Size(69, 21);
+            this.cbo_title_en.TabIndex = 16;
             // 
             // txt_emp_fname_en
             // 
@@ -1033,7 +1023,7 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.81633F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.81633F));
             this.tableLayoutPanel10.Controls.Add(this.txt_emp_lname_th, 2, 0);
-            this.tableLayoutPanel10.Controls.Add(this.cbo_title_en, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.cbo_title_th, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.txt_emp_fname_th, 1, 0);
             this.tableLayoutPanel10.Location = new System.Drawing.Point(153, 73);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -1051,18 +1041,18 @@
             this.txt_emp_lname_th.Size = new System.Drawing.Size(162, 20);
             this.txt_emp_lname_th.TabIndex = 18;
             // 
-            // cbo_title_en
+            // cbo_title_th
             // 
-            this.cbo_title_en.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbo_title_en.FormattingEnabled = true;
-            this.cbo_title_en.Items.AddRange(new object[] {
+            this.cbo_title_th.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbo_title_th.FormattingEnabled = true;
+            this.cbo_title_th.Items.AddRange(new object[] {
             "นาย",
             "นาง",
             "นางสาว"});
-            this.cbo_title_en.Location = new System.Drawing.Point(3, 4);
-            this.cbo_title_en.Name = "cbo_title_en";
-            this.cbo_title_en.Size = new System.Drawing.Size(69, 21);
-            this.cbo_title_en.TabIndex = 16;
+            this.cbo_title_th.Location = new System.Drawing.Point(3, 4);
+            this.cbo_title_th.Name = "cbo_title_th";
+            this.cbo_title_th.Size = new System.Drawing.Size(69, 21);
+            this.cbo_title_th.TabIndex = 16;
             // 
             // txt_emp_fname_th
             // 
@@ -1087,19 +1077,20 @@
             this.txt_height.Name = "txt_height";
             this.txt_height.Size = new System.Drawing.Size(200, 20);
             this.txt_height.TabIndex = 22;
+            this.txt_height.Text = "0";
             // 
-            // cbo_
+            // cbo_relegion
             // 
-            this.cbo_.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbo_.FormattingEnabled = true;
-            this.cbo_.Items.AddRange(new object[] {
-            "ชาย",
-            "หญิง",
-            "อื่นๆ"});
-            this.cbo_.Location = new System.Drawing.Point(153, 462);
-            this.cbo_.Name = "cbo_";
-            this.cbo_.Size = new System.Drawing.Size(200, 21);
-            this.cbo_.TabIndex = 28;
+            this.cbo_relegion.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbo_relegion.FormattingEnabled = true;
+            this.cbo_relegion.Items.AddRange(new object[] {
+            "พุทธ",
+            "คริสต์",
+            "อิสลาม"});
+            this.cbo_relegion.Location = new System.Drawing.Point(153, 462);
+            this.cbo_relegion.Name = "cbo_relegion";
+            this.cbo_relegion.Size = new System.Drawing.Size(200, 21);
+            this.cbo_relegion.TabIndex = 28;
             // 
             // tableLayoutPanel13
             // 
@@ -1817,6 +1808,7 @@
             this.p_cbo_prov.Name = "p_cbo_prov";
             this.p_cbo_prov.Size = new System.Drawing.Size(200, 21);
             this.p_cbo_prov.TabIndex = 57;
+            this.p_cbo_prov.SelectedIndexChanged += new System.EventHandler(this.p_cbo_prov_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -2152,6 +2144,7 @@
             this.c_cbo_prov.Name = "c_cbo_prov";
             this.c_cbo_prov.Size = new System.Drawing.Size(200, 21);
             this.c_cbo_prov.TabIndex = 57;
+            this.c_cbo_prov.SelectedIndexChanged += new System.EventHandler(this.c_cbo_prov_SelectedIndexChanged);
             // 
             // tab_Education
             // 
@@ -3074,10 +3067,10 @@
             this.tableLayoutPanel7.ColumnCount = 3;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61538F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38462F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 271F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 301F));
             this.tableLayoutPanel7.Controls.Add(this.btn_cancle, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.btn_save, 0, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(173, 624);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(173, 564);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -3088,9 +3081,9 @@
             // 
             this.btn_cancle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_cancle.Location = new System.Drawing.Point(158, 3);
+            this.btn_cancle.Location = new System.Drawing.Point(143, 3);
             this.btn_cancle.Name = "btn_cancle";
-            this.btn_cancle.Size = new System.Drawing.Size(150, 37);
+            this.btn_cancle.Size = new System.Drawing.Size(142, 37);
             this.btn_cancle.TabIndex = 1;
             this.btn_cancle.Text = "ยกเลิก";
             this.btn_cancle.UseVisualStyleBackColor = true;
@@ -3101,7 +3094,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_save.Location = new System.Drawing.Point(3, 3);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(149, 37);
+            this.btn_save.Size = new System.Drawing.Size(134, 37);
             this.btn_save.TabIndex = 0;
             this.btn_save.Text = "บันทึก";
             this.btn_save.UseVisualStyleBackColor = true;
@@ -3112,7 +3105,7 @@
             this.tableLayoutPanel4.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.pictureBox1, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.pic_emp, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 1);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -3121,16 +3114,6 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.59575F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(160, 235);
             this.tableLayoutPanel4.TabIndex = 3;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pictureBox1.Image = global::BIG.Present.Properties.Resources.ee;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(152, 187);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // tableLayoutPanel5
             // 
@@ -3148,6 +3131,108 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(149, 33);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
+            // ribbonLabel1
+            // 
+            this.ribbonLabel1.Text = "ribbonLabel1";
+            // 
+            // ribbonLabel2
+            // 
+            this.ribbonLabel2.Text = "ribbonLabel2";
+            // 
+            // ribbonTab2
+            // 
+            this.ribbonTab2.Panels.Add(this.ribbonPanel1);
+            this.ribbonTab2.Text = "Load";
+            // 
+            // ribbonPanel1
+            // 
+            this.ribbonPanel1.Text = "ribbonPanel1";
+            // 
+            // ribbonTab3
+            // 
+            this.ribbonTab3.Text = "Save";
+            // 
+            // ribbonTab4
+            // 
+            this.ribbonTab4.Text = "Print";
+            // 
+            // ribbonTab1
+            // 
+            this.ribbonTab1.Text = "Close";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // ribbonPanel2
+            // 
+            this.ribbonPanel2.Text = null;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.Image = global::BIG.Present.Properties.Resources.Script;
+            this.pictureBox6.Location = new System.Drawing.Point(12, 123);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox6.TabIndex = 11;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::BIG.Present.Properties.Resources.Info;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = global::BIG.Present.Properties.Resources.Toolbox;
+            this.pictureBox5.Location = new System.Drawing.Point(12, 93);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(23, 24);
+            this.pictureBox5.TabIndex = 9;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::BIG.Present.Properties.Resources.Home;
+            this.pictureBox3.Location = new System.Drawing.Point(12, 33);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox3.TabIndex = 5;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(12, 63);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox4.TabIndex = 7;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pic_emp
+            // 
+            this.pic_emp.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pic_emp.Image = global::BIG.Present.Properties.Resources.ee;
+            this.pic_emp.Location = new System.Drawing.Point(4, 4);
+            this.pic_emp.Name = "pic_emp";
+            this.pic_emp.Size = new System.Drawing.Size(152, 187);
+            this.pic_emp.TabIndex = 0;
+            this.pic_emp.TabStop = false;
+            // 
             // btn_delete_img
             // 
             this.btn_delete_img.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -3158,6 +3243,7 @@
             this.btn_delete_img.Size = new System.Drawing.Size(26, 26);
             this.btn_delete_img.TabIndex = 2;
             this.btn_delete_img.TabStop = false;
+            this.btn_delete_img.Click += new System.EventHandler(this.btn_delete_img_Click);
             // 
             // btn_ref_img
             // 
@@ -3180,54 +3266,7 @@
             this.btn_new_img.Size = new System.Drawing.Size(26, 26);
             this.btn_new_img.TabIndex = 0;
             this.btn_new_img.TabStop = false;
-            // 
-            // ribbon1
-            // 
-            this.ribbon1.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.ribbon1.Location = new System.Drawing.Point(0, 0);
-            this.ribbon1.Minimized = false;
-            this.ribbon1.Name = "ribbon1";
-            // 
-            // 
-            // 
-            this.ribbon1.OrbDropDown.BorderRoundness = 8;
-            this.ribbon1.OrbDropDown.Location = new System.Drawing.Point(0, 0);
-            this.ribbon1.OrbDropDown.MenuItems.Add(this.rb_new_emp);
-            this.ribbon1.OrbDropDown.MenuItems.Add(this.rb_load_emp);
-            this.ribbon1.OrbDropDown.MenuItems.Add(this.rb_save_emp);
-            this.ribbon1.OrbDropDown.MenuItems.Add(this.rb_close);
-            this.ribbon1.OrbDropDown.Name = "";
-            this.ribbon1.OrbDropDown.Size = new System.Drawing.Size(527, 248);
-            this.ribbon1.OrbDropDown.TabIndex = 0;
-            this.ribbon1.OrbImage = null;
-            // 
-            // 
-            // 
-            this.ribbon1.QuickAcessToolbar.Items.Add(this.ribbonButton1);
-            this.ribbon1.QuickAcessToolbar.Items.Add(this.ribbonButton2);
-            this.ribbon1.QuickAcessToolbar.Items.Add(this.ribbonButton3);
-            this.ribbon1.QuickAcessToolbar.Items.Add(this.ribbonButton4);
-            this.ribbon1.QuickAcessToolbar.Items.Add(this.ribbonButton5);
-            this.ribbon1.QuickAcessToolbar.Items.Add(this.ribbonButton6);
-            this.ribbon1.QuickAcessToolbar.Items.Add(this.ribbonButton7);
-            this.ribbon1.QuickAcessToolbar.Items.Add(this.ribbonButton8);
-            this.ribbon1.QuickAcessToolbar.Items.Add(this.ribbonButton9);
-            this.ribbon1.QuickAcessToolbar.Items.Add(this.ribbonButton10);
-            this.ribbon1.QuickAcessToolbar.Items.Add(this.ribbonButton11);
-            this.ribbon1.QuickAcessToolbar.Items.Add(this.ribbonButton12);
-            this.ribbon1.QuickAcessToolbar.Items.Add(this.ribbonButton13);
-            this.ribbon1.QuickAcessToolbar.Items.Add(this.ribbonButton14);
-            this.ribbon1.QuickAcessToolbar.Items.Add(this.ribbonButton15);
-            this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.ribbon1.Size = new System.Drawing.Size(1008, 63);
-            this.ribbon1.TabIndex = 2;
-            this.ribbon1.Tabs.Add(this.ribbonTab2);
-            this.ribbon1.Tabs.Add(this.ribbonTab3);
-            this.ribbon1.Tabs.Add(this.ribbonTab4);
-            this.ribbon1.Tabs.Add(this.ribbonTab1);
-            this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 26, 20, 0);
-            this.ribbon1.Text = "ribbon1";
-            this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue;
+            this.btn_new_img.Click += new System.EventHandler(this.btn_new_img_Click);
             // 
             // rb_new_emp
             // 
@@ -3269,14 +3308,6 @@
             this.ribbonButton1.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
             this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
             this.ribbonButton1.Text = "ribbonButton1";
-            // 
-            // ribbonLabel1
-            // 
-            this.ribbonLabel1.Text = "ribbonLabel1";
-            // 
-            // ribbonLabel2
-            // 
-            this.ribbonLabel2.Text = "ribbonLabel2";
             // 
             // ribbonButton2
             // 
@@ -3376,22 +3407,6 @@
             this.ribbonButton15.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton15.SmallImage")));
             this.ribbonButton15.Text = "ribbonButton15";
             // 
-            // ribbonTab2
-            // 
-            this.ribbonTab2.Text = "Load";
-            // 
-            // ribbonTab3
-            // 
-            this.ribbonTab3.Text = "Save";
-            // 
-            // ribbonTab4
-            // 
-            this.ribbonTab4.Text = "Print";
-            // 
-            // ribbonTab1
-            // 
-            this.ribbonTab1.Text = "Close";
-            // 
             // ribbonOrbMenuItem1
             // 
             this.ribbonOrbMenuItem1.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
@@ -3420,14 +3435,273 @@
             this.ribbonOrbMenuItem4.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem4.SmallImage")));
             this.ribbonOrbMenuItem4.Text = "ribbonOrbMenuItem4";
             // 
+            // ribbonButton16
+            // 
+            this.ribbonButton16.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton16.Image")));
+            this.ribbonButton16.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton16.SmallImage")));
+            // 
+            // ribbonPanel7
+            // 
+            this.ribbonPanel7.Items.Add(this.ribbonButton17);
+            this.ribbonPanel7.Text = "...";
+            // 
+            // ribbonButton17
+            // 
+            this.ribbonButton17.Image = global::BIG.Present.Properties.Resources.Stock_graph;
+            this.ribbonButton17.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton17.SmallImage")));
+            this.ribbonButton17.Text = "รายงานทั้งหมด";
+            // 
+            // ribbonPanel9
+            // 
+            this.ribbonPanel9.Items.Add(this.ribbonButton18);
+            this.ribbonPanel9.Text = "";
+            // 
+            // ribbonButton18
+            // 
+            this.ribbonButton18.Image = global::BIG.Present.Properties.Resources.Boss;
+            this.ribbonButton18.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton18.SmallImage")));
+            this.ribbonButton18.Text = "ตามชื่อพนักงาน";
+            // 
+            // ribbonPanel10
+            // 
+            this.ribbonPanel10.Items.Add(this.ribbonButton19);
+            this.ribbonPanel10.Text = "";
+            // 
+            // ribbonButton19
+            // 
+            this.ribbonButton19.Image = global::BIG.Present.Properties.Resources.Find;
+            this.ribbonButton19.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton19.SmallImage")));
+            this.ribbonButton19.Text = "ตามรหัสพนักงาน";
+            // 
+            // ribbonPanel11
+            // 
+            this.ribbonPanel11.Items.Add(this.ribbonButton20);
+            this.ribbonPanel11.Text = "";
+            // 
+            // ribbonButton20
+            // 
+            this.ribbonButton20.Image = global::BIG.Present.Properties.Resources.Upload;
+            this.ribbonButton20.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton20.SmallImage")));
+            this.ribbonButton20.Text = "ตามบัตรประชาชน";
+            // 
+            // ribbonOrbMenuItem5
+            // 
+            this.ribbonOrbMenuItem5.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.ribbonOrbMenuItem5.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem5.Image")));
+            this.ribbonOrbMenuItem5.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem5.SmallImage")));
+            this.ribbonOrbMenuItem5.Text = "ribbonOrbMenuItem1";
+            // 
+            // rb_home
+            // 
+            this.rb_home.Image = global::BIG.Present.Properties.Resources.Home;
+            this.rb_home.SmallImage = ((System.Drawing.Image)(resources.GetObject("rb_home.SmallImage")));
+            this.rb_home.Text = "หน้าหลัก";
+            this.rb_home.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            this.rb_home.Click += new System.EventHandler(this.rb_home_Click);
+            // 
+            // rb_new
+            // 
+            this.rb_new.Image = global::BIG.Present.Properties.Resources.User_group;
+            this.rb_new.SmallImage = ((System.Drawing.Image)(resources.GetObject("rb_new.SmallImage")));
+            this.rb_new.Text = "เพิ่มพนักงาน";
+            this.rb_new.Click += new System.EventHandler(this.rb_new_Click);
+            // 
+            // rb_load_pid
+            // 
+            this.rb_load_pid.Image = global::BIG.Present.Properties.Resources.Sync;
+            this.rb_load_pid.SmallImage = ((System.Drawing.Image)(resources.GetObject("rb_load_pid.SmallImage")));
+            this.rb_load_pid.Text = "โหลดบัตรประชาชน";
+            this.rb_load_pid.Click += new System.EventHandler(this.rb_load_pid_Click);
+            // 
+            // rb_save
+            // 
+            this.rb_save.Image = global::BIG.Present.Properties.Resources.Save;
+            this.rb_save.SmallImage = ((System.Drawing.Image)(resources.GetObject("rb_save.SmallImage")));
+            this.rb_save.Text = "บันทึกข้อมูล";
+            this.rb_save.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            // 
+            // rb_print
+            // 
+            this.rb_print.Image = global::BIG.Present.Properties.Resources.Print;
+            this.rb_print.SmallImage = ((System.Drawing.Image)(resources.GetObject("rb_print.SmallImage")));
+            this.rb_print.Text = "พิมพ์รายงาน";
+            this.rb_print.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            // 
+            // rb_logout
+            // 
+            this.rb_logout.Image = global::BIG.Present.Properties.Resources.Unlock;
+            this.rb_logout.SmallImage = ((System.Drawing.Image)(resources.GetObject("rb_logout.SmallImage")));
+            this.rb_logout.Text = "ออกจากระบบ";
+            this.rb_logout.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            // 
+            // rb_exit
+            // 
+            this.rb_exit.Image = global::BIG.Present.Properties.Resources.Turn_off;
+            this.rb_exit.SmallImage = ((System.Drawing.Image)(resources.GetObject("rb_exit.SmallImage")));
+            this.rb_exit.Text = "ปิดโปรแกรม";
+            this.rb_exit.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            this.rb_exit.Click += new System.EventHandler(this.rb_exit_Click);
+            // 
+            // ribbonButton21
+            // 
+            this.ribbonButton21.Image = global::BIG.Present.Properties.Resources.Toolbox2;
+            this.ribbonButton21.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton21.SmallImage")));
+            this.ribbonButton21.Text = "ค้นหาตามไซต์งาน";
+            // 
+            // ribbonButton22
+            // 
+            this.ribbonButton22.Image = global::BIG.Present.Properties.Resources.Blue_pin;
+            this.ribbonButton22.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton22.SmallImage")));
+            this.ribbonButton22.Text = "ค้นหาตามเขต";
+            // 
+            // ribbonButton23
+            // 
+            this.ribbonButton23.Image = global::BIG.Present.Properties.Resources.People1;
+            this.ribbonButton23.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton23.SmallImage")));
+            this.ribbonButton23.Text = "ค้นหาตามชื่อ-สกุล";
+            // 
+            // ribbonButton24
+            // 
+            this.ribbonButton24.Image = global::BIG.Present.Properties.Resources.Calendar;
+            this.ribbonButton24.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton24.SmallImage")));
+            this.ribbonButton24.Text = "ค้นหาตามวันเริ่มงาน";
+            // 
+            // ribbonPanel8
+            // 
+            this.ribbonPanel8.Items.Add(this.ribbonButton23);
+            this.ribbonPanel8.Items.Add(this.ribbonButton24);
+            this.ribbonPanel8.Text = "";
+            // 
+            // ribbonTab8
+            // 
+            this.ribbonTab8.Text = "ตั้งค่าโปรแกรม";
+            // 
+            // main
+            // 
+            this.main.Panels.Add(this.ribbonPanel3);
+            this.main.Panels.Add(this.ribbonPanel4);
+            this.main.Text = "รายการหลัก";
+            // 
+            // ribbonPanel3
+            // 
+            this.ribbonPanel3.Text = "main menu";
+            // 
+            // ribbonPanel4
+            // 
+            this.ribbonPanel4.Text = "ribbonPanel4";
+            // 
+            // rb_main
+            // 
+            this.rb_main.Panels.Add(this.ribbonPanel5);
+            this.rb_main.Panels.Add(this.ribbonPanel6);
+            this.rb_main.Panels.Add(this.ribbonPanel12);
+            this.rb_main.Text = "รายการหลัก";
+            // 
+            // ribbonPanel5
+            // 
+            this.ribbonPanel5.Items.Add(this.rb_home);
+            this.ribbonPanel5.Items.Add(this.rb_new);
+            this.ribbonPanel5.Items.Add(this.rb_load_pid);
+            this.ribbonPanel5.Text = "";
+            // 
+            // ribbonPanel6
+            // 
+            this.ribbonPanel6.Items.Add(this.rb_save);
+            this.ribbonPanel6.Items.Add(this.rb_print);
+            this.ribbonPanel6.Text = "";
+            // 
+            // ribbonPanel12
+            // 
+            this.ribbonPanel12.Items.Add(this.rb_logout);
+            this.ribbonPanel12.Items.Add(this.rb_exit);
+            this.ribbonPanel12.Text = "";
+            // 
+            // ribbonTab5
+            // 
+            this.ribbonTab5.Text = "ribbonTab3";
+            // 
+            // ribbon1
+            // 
+            this.ribbon1.CaptionBarVisible = false;
+            this.ribbon1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ribbon1.Location = new System.Drawing.Point(0, 0);
+            this.ribbon1.Minimized = false;
+            this.ribbon1.Name = "ribbon1";
+            // 
+            // 
+            // 
+            this.ribbon1.OrbDropDown.BorderRoundness = 8;
+            this.ribbon1.OrbDropDown.Location = new System.Drawing.Point(0, 0);
+            this.ribbon1.OrbDropDown.MenuItems.Add(this.ribbonOrbMenuItem5);
+            this.ribbon1.OrbDropDown.MenuItems.Add(this.ribbonSeparator12);
+            this.ribbon1.OrbDropDown.MenuItems.Add(this.ribbonSeparator13);
+            this.ribbon1.OrbDropDown.MenuItems.Add(this.ribbonSeparator14);
+            this.ribbon1.OrbDropDown.Name = "";
+            this.ribbon1.OrbDropDown.Size = new System.Drawing.Size(527, 125);
+            this.ribbon1.OrbDropDown.TabIndex = 0;
+            this.ribbon1.OrbImage = null;
+            this.ribbon1.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2013;
+            // 
+            // 
+            // 
+            this.ribbon1.QuickAcessToolbar.Visible = false;
+            this.ribbon1.RibbonTabFont = new System.Drawing.Font("Viner Hand ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ribbon1.Size = new System.Drawing.Size(1008, 96);
+            this.ribbon1.TabIndex = 4;
+            this.ribbon1.Tabs.Add(this.rb_main);
+            this.ribbon1.Tabs.Add(this.ribbonTab6);
+            this.ribbon1.Tabs.Add(this.ribbonTab7);
+            this.ribbon1.Tabs.Add(this.ribbonTab9);
+            this.ribbon1.Tabs.Add(this.ribbonTab10);
+            this.ribbon1.Tabs.Add(this.ribbonTab8);
+            this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 2, 20, 0);
+            this.ribbon1.Text = "ribbon1";
+            this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue;
+            // 
+            // ribbonTab6
+            // 
+            this.ribbonTab6.Panels.Add(this.ribbonPanel13);
+            this.ribbonTab6.Panels.Add(this.ribbonPanel8);
+            this.ribbonTab6.Text = "ค้นหา";
+            // 
+            // ribbonPanel13
+            // 
+            this.ribbonPanel13.Items.Add(this.ribbonButton21);
+            this.ribbonPanel13.Items.Add(this.ribbonButton22);
+            this.ribbonPanel13.Text = "";
+            // 
+            // ribbonTab7
+            // 
+            this.ribbonTab7.Panels.Add(this.ribbonPanel7);
+            this.ribbonTab7.Panels.Add(this.ribbonPanel9);
+            this.ribbonTab7.Panels.Add(this.ribbonPanel10);
+            this.ribbonTab7.Panels.Add(this.ribbonPanel11);
+            this.ribbonTab7.Text = "รายงาน";
+            // 
+            // ribbonTab9
+            // 
+            this.ribbonTab9.Text = "ข้อมูลบริษัท";
+            // 
+            // ribbonTab10
+            // 
+            this.ribbonTab10.Text = "";
+            // 
+            // ribbonTab11
+            // 
+            this.ribbonTab11.Text = "ตั้งค่าระบบ";
+            // 
+            // ribbonTab12
+            // 
+            this.ribbonTab12.Text = "ข้อมูลโปรแกรม";
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1008, 761);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.ribbon1);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1024, 800);
@@ -3444,11 +3718,6 @@
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.left_menu2.ResumeLayout(false);
             this.left_menu2.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -3588,8 +3857,13 @@
             this.tableLayoutPanel71.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_emp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_delete_img)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_ref_img)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_new_img)).EndInit();
@@ -3606,7 +3880,7 @@
         private MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel left_menu2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pic_emp;
         private System.Windows.Forms.TabControl EmployeeTab;
         private System.Windows.Forms.TabPage General_Tab;
         private System.Windows.Forms.TabPage tab_Address;
@@ -3615,7 +3889,6 @@
         private System.Windows.Forms.TabPage tab_Experience;
         private System.Windows.Forms.TabPage tab_Reference;
         private System.Windows.Forms.TabPage tab_SSO;
-        private System.Windows.Forms.Ribbon ribbon1;
         private System.Windows.Forms.RibbonButton ribbonButton1;
         private System.Windows.Forms.RibbonLabel ribbonLabel1;
         private System.Windows.Forms.RibbonLabel ribbonLabel2;
@@ -3682,12 +3955,12 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txt_empid;
         private System.Windows.Forms.TextBox txt_pid;
-        private System.Windows.Forms.ComboBox cbo_title_en;
+        private System.Windows.Forms.ComboBox cbo_title_th;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.TextBox txt_emp_lname_th;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.TextBox txt_emp_lname_en;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbo_title_en;
         private System.Windows.Forms.TextBox txt_emp_fname_en;
         private System.Windows.Forms.TextBox txt_nick_en;
         private System.Windows.Forms.TextBox txt_nick_th;
@@ -3695,13 +3968,13 @@
         private System.Windows.Forms.DateTimePicker dob;
         private System.Windows.Forms.TextBox txt_emp_fname_th;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbo_bp_ctr;
+        private System.Windows.Forms.ComboBox cbo_bp_prov;
         private System.Windows.Forms.ComboBox cbo_sex;
         private System.Windows.Forms.TextBox txt_weight;
         private System.Windows.Forms.ComboBox cbo_nationality;
         private System.Windows.Forms.ComboBox cbo_race;
-        private System.Windows.Forms.ComboBox cbo_;
+        private System.Windows.Forms.ComboBox cbo_relegion;
         private System.Windows.Forms.RibbonButton ribbonButton5;
         private System.Windows.Forms.RibbonButton ribbonButton6;
         private System.Windows.Forms.RibbonButton ribbonButton7;
@@ -3861,5 +4134,51 @@
         private System.Windows.Forms.CheckBox chk_nothave;
         private System.Windows.Forms.ComboBox cbo_hospital;
         private System.Windows.Forms.RibbonOrbMenuItem rb_close;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.RibbonPanel ribbonPanel1;
+        private System.Windows.Forms.RibbonButton ribbonButton16;
+        private System.Windows.Forms.RibbonPanel ribbonPanel2;
+        private System.Windows.Forms.RibbonPanel ribbonPanel7;
+        private System.Windows.Forms.RibbonButton ribbonButton17;
+        private System.Windows.Forms.RibbonPanel ribbonPanel9;
+        private System.Windows.Forms.RibbonButton ribbonButton18;
+        private System.Windows.Forms.RibbonPanel ribbonPanel10;
+        private System.Windows.Forms.RibbonButton ribbonButton19;
+        private System.Windows.Forms.RibbonPanel ribbonPanel11;
+        private System.Windows.Forms.RibbonButton ribbonButton20;
+        private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem5;
+        private System.Windows.Forms.RibbonButton rb_home;
+        private System.Windows.Forms.RibbonButton rb_new;
+        private System.Windows.Forms.RibbonButton rb_load_pid;
+        private System.Windows.Forms.RibbonButton rb_save;
+        private System.Windows.Forms.RibbonButton rb_print;
+        private System.Windows.Forms.RibbonButton rb_logout;
+        private System.Windows.Forms.RibbonButton rb_exit;
+        private System.Windows.Forms.RibbonButton ribbonButton21;
+        private System.Windows.Forms.RibbonButton ribbonButton22;
+        private System.Windows.Forms.RibbonButton ribbonButton23;
+        private System.Windows.Forms.RibbonButton ribbonButton24;
+        private System.Windows.Forms.RibbonPanel ribbonPanel8;
+        private System.Windows.Forms.RibbonTab ribbonTab8;
+        private System.Windows.Forms.RibbonTab main;
+        private System.Windows.Forms.RibbonPanel ribbonPanel3;
+        private System.Windows.Forms.RibbonPanel ribbonPanel4;
+        private System.Windows.Forms.RibbonTab rb_main;
+        private System.Windows.Forms.RibbonPanel ribbonPanel5;
+        private System.Windows.Forms.RibbonPanel ribbonPanel6;
+        private System.Windows.Forms.RibbonPanel ribbonPanel12;
+        private System.Windows.Forms.RibbonTab ribbonTab5;
+        private System.Windows.Forms.Ribbon ribbon1;
+        private System.Windows.Forms.RibbonSeparator ribbonSeparator12;
+        private System.Windows.Forms.RibbonSeparator ribbonSeparator13;
+        private System.Windows.Forms.RibbonSeparator ribbonSeparator14;
+        private System.Windows.Forms.RibbonTab ribbonTab6;
+        private System.Windows.Forms.RibbonPanel ribbonPanel13;
+        private System.Windows.Forms.RibbonTab ribbonTab7;
+        private System.Windows.Forms.RibbonTab ribbonTab9;
+        private System.Windows.Forms.RibbonTab ribbonTab10;
+        private System.Windows.Forms.RibbonSeparator ribbonSeparator15;
+        private System.Windows.Forms.RibbonTab ribbonTab11;
+        private System.Windows.Forms.RibbonTab ribbonTab12;
     }
 }

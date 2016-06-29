@@ -66,10 +66,10 @@
     <Compile Include="Employee.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Gender.cs">
+    <Compile Include="Emp_Images.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Image.cs">
+    <Compile Include="Gender.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Logon.cs">

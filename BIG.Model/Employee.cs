@@ -35,6 +35,7 @@ namespace BIG.Model
         public string RACE { get; set; }
         public string NATIONALITY { get; set; }
         public Nullable<int> POSITION_ID { get; set; }
+        public string RELEGION { get; set; }
         public Nullable<int> MARITAL_ID { get; set; }
         public string MOBILE { get; set; }
         public string HOMEPHONE { get; set; }

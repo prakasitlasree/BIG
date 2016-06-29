@@ -96,6 +96,12 @@
     <Compile Include="TestForm.Designer.cs">
       <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
@@ -159,6 +168,16 @@
   <ItemGroup>
     <Content Include="Img\maya_2015.png" />
     <None Include="Resources\big_bg.png" />
+    <None Include="Resources\48_home.png" />
+    <None Include="Resources\48_man_woman.png" />
+    <None Include="Resources\48_search1.png" />
+    <None Include="Resources\48_save_1.jpg" />
+    <None Include="Resources\48_save_2.png" />
+    <None Include="Resources\48_close.png" />
+    <None Include="Resources\48_add.png" />
+    <None Include="Resources\48_load.png" />
+    <None Include="Resources\48_print.png" />
+    <None Include="Resources\48_logout.png" />
     <Content Include="Resources\ee.jpg" />
     <Content Include="Resources\emploee.png" />
     <Content Include="Resources\eval.png" />
@@ -420,6 +439,9 @@
     <Content Include="Resources\icon\Zoom.png" />
     <Content Include="Resources\LOGO BIG INTERSAVEGUARD GROUP.png" />
     <None Include="Resources\maya_2015.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Action\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

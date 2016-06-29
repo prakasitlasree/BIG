@@ -17,8 +17,8 @@ namespace BIG.Model
         public Province()
         {
             this.Amphurs = new HashSet<Amphur>();
-            this.Addresses = new HashSet<Address>();
             this.Employees = new HashSet<Employee>();
+            this.Addresses = new HashSet<Address>();
         }
     
         public string ID { get; set; }
@@ -26,7 +26,7 @@ namespace BIG.Model
         public string NAME_TH { get; set; }
     
         public virtual ICollection<Amphur> Amphurs { get; set; }
-        public virtual ICollection<Address> Addresses { get; set; }
         public virtual ICollection<Employee> Employees { get; set; }
+        public virtual ICollection<Address> Addresses { get; set; }
     }
 }

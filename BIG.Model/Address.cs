@@ -16,13 +16,13 @@ namespace BIG.Model
     {
         public int ID { get; set; }
         public string EMP_ID { get; set; }
-        public string ADDRESS1 { get; set; }
+        public string NAME { get; set; }
         public string AMPHUR_ID { get; set; }
         public string PROVINCE_ID { get; set; }
         public string POSTCODE { get; set; }
-        public Nullable<int> ADDRESSTYPE { get; set; }
+        public Nullable<int> ADDRESSTYPE_ID { get; set; }
     
-        public virtual AddressType AddressType1 { get; set; }
+        public virtual AddressType AddressType { get; set; }
         public virtual Amphur Amphur { get; set; }
         public virtual Province Province { get; set; }
     }
