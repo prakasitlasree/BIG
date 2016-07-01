@@ -44,7 +44,7 @@
             this.btn_close = new System.Windows.Forms.PictureBox();
             this.btn_eval = new System.Windows.Forms.PictureBox();
             this.lnk_eval = new System.Windows.Forms.LinkLabel();
-            this.home = new System.Windows.Forms.PictureBox();
+            this.btn_home = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btn_employee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_setting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_report)).BeginInit();
@@ -53,7 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_company)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_eval)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.home)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_employee
@@ -192,8 +192,9 @@
             // 
             // btn_close
             // 
+            this.btn_close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_close.Image = global::BIG.Present.Properties.Resources.Close2;
-            this.btn_close.Location = new System.Drawing.Point(805, 27);
+            this.btn_close.Location = new System.Drawing.Point(815, 1);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(24, 24);
             this.btn_close.TabIndex = 20;
@@ -222,14 +223,15 @@
             this.lnk_eval.TabStop = true;
             this.lnk_eval.Text = "ประเมิน";
             // 
-            // home
+            // btn_home
             // 
-            this.home.Image = global::BIG.Present.Properties.Resources.Home1;
-            this.home.Location = new System.Drawing.Point(12, 27);
-            this.home.Name = "home";
-            this.home.Size = new System.Drawing.Size(24, 24);
-            this.home.TabIndex = 23;
-            this.home.TabStop = false;
+            this.btn_home.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_home.Image = global::BIG.Present.Properties.Resources.Home1;
+            this.btn_home.Location = new System.Drawing.Point(1, 1);
+            this.btn_home.Name = "btn_home";
+            this.btn_home.Size = new System.Drawing.Size(24, 24);
+            this.btn_home.TabIndex = 23;
+            this.btn_home.TabStop = false;
             // 
             // MainForm
             // 
@@ -241,10 +243,10 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(841, 603);
             this.ControlBox = false;
-            this.Controls.Add(this.home);
+            this.Controls.Add(this.btn_close);
+            this.Controls.Add(this.btn_home);
             this.Controls.Add(this.lnk_eval);
             this.Controls.Add(this.btn_eval);
-            this.Controls.Add(this.btn_close);
             this.Controls.Add(this.lnk_secure);
             this.Controls.Add(this.lnk_company);
             this.Controls.Add(this.btn_company);
@@ -263,6 +265,8 @@
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "โปรแกรมจัดการข้อมูลพนักงาน";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btn_employee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_setting)).EndInit();
@@ -272,7 +276,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_company)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_close)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_eval)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.home)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_home)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,7 +299,7 @@
         private System.Windows.Forms.PictureBox btn_close;
         private System.Windows.Forms.PictureBox btn_eval;
         private System.Windows.Forms.LinkLabel lnk_eval;
-        private System.Windows.Forms.PictureBox home;
+        private System.Windows.Forms.PictureBox btn_home;
 
 
 

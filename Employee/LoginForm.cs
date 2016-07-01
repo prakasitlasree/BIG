@@ -43,7 +43,7 @@ namespace BIG.Present
 
         private void btn_close_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
             //DialogResult result = MessageBox.Show("คุณต้องการออกจากโปรแกรม?", "Confirmation", MessageBoxButtons.YesNoCancel);
             //if (result == DialogResult.Yes)
             //{

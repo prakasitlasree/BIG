@@ -166,7 +166,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Img\maya_2015.png" />
     <None Include="Resources\big_bg.png" />
     <None Include="Resources\48_home.png" />
     <None Include="Resources\48_man_woman.png" />
@@ -183,9 +182,6 @@
     <Content Include="Resources\eval.png" />
     <Content Include="Resources\exit.png" />
     <Content Include="Resources\exit1.png" />
-    <Content Include="Resources\gray_btn.png" />
-    <Content Include="Resources\green_btn.png" />
-    <Content Include="Resources\hr.png" />
     <Content Include="Resources\lock_1.png" />
     <Content Include="Resources\lock_2.png" />
     <Content Include="Resources\lock_3.png" />
@@ -195,10 +191,6 @@
     <Content Include="Resources\people.png" />
     <Content Include="Resources\personal.png" />
     <Content Include="Resources\ppl.png" />
-    <Content Include="Resources\red_btn.png" />
-    <Content Include="Resources\report.png" />
-    <Content Include="Resources\report1.png" />
-    <None Include="Resources\search.png" />
     <Content Include="Resources\restart.png" />
     <Content Include="Resources\search_.png" />
     <Content Include="Resources\search_1.png" />
@@ -206,12 +198,9 @@
     <Content Include="Resources\setting_1.png" />
     <Content Include="Resources\skill.png" />
     <None Include="Resources\User group.png" />
-    <Content Include="Resources\violet_btn.png" />
-    <Content Include="Resources\yellow_btn.png" />
     <None Include="Resources\bg.jpg" />
     <Content Include="Resources\BIG New LOGO 10-3-2016 บางบัวทอง.png" />
     <None Include="Resources\Flow-HRMI.gif" />
-    <Content Include="Resources\blue_btn.png" />
     <Content Include="Resources\icon\3d bar chart.png" />
     <Content Include="Resources\icon\Abort.png" />
     <Content Include="Resources\icon\About.png" />
@@ -438,10 +427,10 @@
     <Content Include="Resources\icon\Yes.png" />
     <Content Include="Resources\icon\Zoom.png" />
     <Content Include="Resources\LOGO BIG INTERSAVEGUARD GROUP.png" />
-    <None Include="Resources\maya_2015.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Action\" />
+    <Folder Include="Img\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
