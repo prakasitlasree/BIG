@@ -19,5 +19,7 @@ namespace BIG.Model
         public string NAME { get; set; }
         public string GRADUETED { get; set; }
         public string YEAR { get; set; }
+        public Nullable<System.DateTime> CREATED_DATE { get; set; }
+        public Nullable<System.DateTime> MODIFIED_DATE { get; set; }
     }
 }

@@ -23,7 +23,5 @@ namespace BIG.Model
         public Nullable<int> ADDRESSTYPE_ID { get; set; }
     
         public virtual AddressType AddressType { get; set; }
-        public virtual Amphur Amphur { get; set; }
-        public virtual Province Province { get; set; }
     }
 }

@@ -50,7 +50,6 @@ namespace BIG.Model
         public virtual Gender Gender { get; set; }
         public virtual Marital Marital { get; set; }
         public virtual Position Position { get; set; }
-        public virtual Province Province { get; set; }
         public virtual Title Title { get; set; }
     }
 }

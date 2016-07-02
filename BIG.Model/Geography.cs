@@ -12,11 +12,9 @@ namespace BIG.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Province
+    public partial class Geography
     {
-        public int PROVINCE_ID { get; set; }
-        public string PROVINCE_CODE { get; set; }
-        public string PROVINCE_NAME { get; set; }
         public int GEO_ID { get; set; }
+        public string GEO_NAME { get; set; }
     }
 }

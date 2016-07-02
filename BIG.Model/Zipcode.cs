@@ -12,11 +12,13 @@ namespace BIG.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Province
+    public partial class Zipcode
     {
-        public int PROVINCE_ID { get; set; }
-        public string PROVINCE_CODE { get; set; }
-        public string PROVINCE_NAME { get; set; }
-        public int GEO_ID { get; set; }
+        public int ZIPCODE_ID { get; set; }
+        public string DISTRICT_CODE { get; set; }
+        public string PROVINCE_ID { get; set; }
+        public string AMPHUR_ID { get; set; }
+        public string DISTRICT_ID { get; set; }
+        public string ZIPCODE1 { get; set; }
     }
 }

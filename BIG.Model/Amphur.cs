@@ -14,17 +14,10 @@ namespace BIG.Model
     
     public partial class Amphur
     {
-        public Amphur()
-        {
-            this.Addresses = new HashSet<Address>();
-        }
-    
-        public string ID { get; set; }
-        public string NAME_EN { get; set; }
-        public string NAME_TH { get; set; }
-        public string PROVINCE_ID { get; set; }
-    
-        public virtual Province Province { get; set; }
-        public virtual ICollection<Address> Addresses { get; set; }
+        public int AMPHUR_ID { get; set; }
+        public string AMPHUR_CODE { get; set; }
+        public string AMPHUR_NAME { get; set; }
+        public int GEO_ID { get; set; }
+        public int PROVINCE_ID { get; set; }
     }
 }

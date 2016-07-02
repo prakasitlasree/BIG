@@ -60,16 +60,28 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="CompanyInfo.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="District.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Education.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeImage.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Emp_Images.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Gender.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Geography.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Logon.cs">
@@ -92,6 +104,9 @@
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
     <Compile Include="WorkExperience.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Zipcode.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
   </ItemGroup>
