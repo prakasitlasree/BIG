@@ -120,7 +120,6 @@
             this.ribbonTab5 = new System.Windows.Forms.RibbonTab();
             this.ribbonTab6 = new System.Windows.Forms.RibbonTab();
             this.ribbonTab7 = new System.Windows.Forms.RibbonTab();
-            this.ribbonTab8 = new System.Windows.Forms.RibbonTab();
             this.main = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel12 = new System.Windows.Forms.RibbonPanel();
             this.ribbonPanel13 = new System.Windows.Forms.RibbonPanel();
@@ -210,7 +209,7 @@
             this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 375F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 453F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 456F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 1, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
@@ -830,7 +829,6 @@
             this.ribbon1.Tabs.Add(this.ribbonTab5);
             this.ribbon1.Tabs.Add(this.ribbonTab6);
             this.ribbon1.Tabs.Add(this.ribbonTab7);
-            this.ribbon1.Tabs.Add(this.ribbonTab8);
             this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 2, 20, 0);
             this.ribbon1.Text = "ribbon1";
             this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue;
@@ -888,10 +886,6 @@
             // ribbonTab7
             // 
             this.ribbonTab7.Text = "";
-            // 
-            // ribbonTab8
-            // 
-            this.ribbonTab8.Text = "ตั้งค่าโปรแกรม";
             // 
             // main
             // 
@@ -1050,7 +1044,6 @@
         private System.Windows.Forms.RibbonTab ribbonTab5;
         private System.Windows.Forms.RibbonTab ribbonTab6;
         private System.Windows.Forms.RibbonTab ribbonTab7;
-        private System.Windows.Forms.RibbonTab ribbonTab8;
         private System.Windows.Forms.RibbonTab main;
         private System.Windows.Forms.RibbonPanel ribbonPanel12;
         private System.Windows.Forms.RibbonPanel ribbonPanel13;

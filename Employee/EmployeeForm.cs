@@ -11,6 +11,8 @@ using BIG.Model;
 using BIG.Common;
 using System.IO;
 using BIG.DataService;
+using System.Globalization;
+using System.Threading;
 
 namespace BIG.Present
 {
@@ -21,8 +23,14 @@ namespace BIG.Present
         public EmployeeForm()
         {
             InitializeComponent();
+            initialCombobox();
+            //dob.Format = DateTimePickerFormat.Custom;
+            //string[] formats = dob.Value.GetDateTimeFormats(culture);
+            //dob.CustomFormat = formats[0];
+
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
+
         #region ===Properties===
 
         private byte[] _photo;
@@ -51,7 +59,10 @@ namespace BIG.Present
                 c_cbo_prov.Items.Add("จังหวัด" + item.NAME_TH);
             }
 
-            cbo_bp_prov.SelectedIndex = 1;
+            if (cbo_bp_prov.Items.Count > 0)
+            {
+                cbo_bp_prov.SelectedIndex = 1;
+            }
             cbo_bp_ctr.Items.Clear();
             cbo_bp_ctr.Items.Add("ไทย");
             cbo_bp_ctr.SelectedIndex = 0;
@@ -246,15 +257,15 @@ namespace BIG.Present
 
             try
             {
-                 
+
                 initialCombobox();
                 var idcard = CardID.readAll(true);
                 if (idcard != null)
                 {
                     var lastemp_id = DataService.EmployeeServices.GetLastEmployeeID();
-                     
+
                     lastemp_id = DateTime.Now.ToString("yyMMddHHmm");
-                     
+
 
                     txt_empid.Text = lastemp_id;
                     txt_pid.Text = idcard.Citizenid;
@@ -385,7 +396,7 @@ namespace BIG.Present
 
         private void EmployeeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -475,7 +486,8 @@ namespace BIG.Present
             {
                 c_cbo_amp.Items.Add("อำเภอ" + item.NAME_TH);
             }
-
+            c_cbo_amp.SelectedIndex = 0;
+            txt_postcode.Focus();
         }
 
         private void p_cbo_prov_SelectedIndexChanged(object sender, EventArgs e)
@@ -487,6 +499,8 @@ namespace BIG.Present
             {
                 p_cbo_amp.Items.Add("อำเภอ" + item.NAME_TH);
             }
+            p_cbo_amp.SelectedIndex = 0;
+            txt_p_postcode.Focus();
         }
 
         private void btn_new_img_Click(object sender, EventArgs e)
@@ -505,8 +519,8 @@ namespace BIG.Present
                     {
                         var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
                         var myBitmap = new Bitmap(file);
-                        var myThumbnail = myBitmap.GetThumbnailImage(150, 187, myCallback, IntPtr.Zero);
-                        pic_emp.Image = myThumbnail;
+                        var myThumbnail = myBitmap.GetThumbnailImage(150, 149, myCallback, IntPtr.Zero);
+                        pic_current.Image = myThumbnail;
 
                     }
                     catch (Exception ex)
@@ -524,7 +538,7 @@ namespace BIG.Present
 
         private void btn_delete_img_Click(object sender, EventArgs e)
         {
-            pic_emp.Image = BIG.Present.Properties.Resources.ee;
+            pic_current.Image = BIG.Present.Properties.Resources.big_employee;
         }
 
         private void rb_home_Click(object sender, EventArgs e)
@@ -544,12 +558,18 @@ namespace BIG.Present
 
         private void rb_load_pid_Click(object sender, EventArgs e)
         {
+
             LoadPID();
         }
 
         private void rb_exit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+
+        }
+
+        private void rb_save_Click(object sender, EventArgs e)
+        {
 
         }
 

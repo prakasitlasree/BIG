@@ -213,6 +213,16 @@ namespace BIG.Present.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap big_employee {
+            get {
+                object obj = ResourceManager.GetObject("big_employee", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Blue_pin {
             get {
                 object obj = ResourceManager.GetObject("Blue pin", resourceCulture);
@@ -316,6 +326,16 @@ namespace BIG.Present.Properties {
         internal static System.Drawing.Bitmap ee {
             get {
                 object obj = ResourceManager.GetObject("ee", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap emploee {
+            get {
+                object obj = ResourceManager.GetObject("emploee", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -496,6 +516,46 @@ namespace BIG.Present.Properties {
         internal static System.Drawing.Bitmap personal {
             get {
                 object obj = ResourceManager.GetObject("personal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pid_icon {
+            get {
+                object obj = ResourceManager.GetObject("pid_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pid_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("pid_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pid_img {
+            get {
+                object obj = ResourceManager.GetObject("pid_img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pid_img1 {
+            get {
+                object obj = ResourceManager.GetObject("pid_img1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

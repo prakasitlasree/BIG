@@ -177,6 +177,7 @@
     <None Include="Resources\48_load.png" />
     <None Include="Resources\48_print.png" />
     <None Include="Resources\48_logout.png" />
+    <None Include="Resources\big_employee.png" />
     <Content Include="Resources\ee.jpg" />
     <Content Include="Resources\emploee.png" />
     <Content Include="Resources\eval.png" />
@@ -190,6 +191,10 @@
     <Content Include="Resources\network.png" />
     <Content Include="Resources\people.png" />
     <Content Include="Resources\personal.png" />
+    <None Include="Resources\pid_img.png" />
+    <None Include="Resources\pid_img1.png" />
+    <None Include="Resources\pid_icon.png" />
+    <None Include="Resources\pid_icon1.png" />
     <Content Include="Resources\ppl.png" />
     <Content Include="Resources\restart.png" />
     <Content Include="Resources\search_.png" />
@@ -430,7 +435,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Action\" />
-    <Folder Include="Img\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
