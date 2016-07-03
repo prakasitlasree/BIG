@@ -286,37 +286,37 @@ namespace BIG.Present
             this.tableLayoutPanel29 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel89 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.txt_tn_3 = new System.Windows.Forms.TextBox();
+            this.txt_tn_dt_3 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel90 = new System.Windows.Forms.TableLayoutPanel();
             this.label82 = new System.Windows.Forms.Label();
             this.tableLayoutPanel91 = new System.Windows.Forms.TableLayoutPanel();
             this.label83 = new System.Windows.Forms.Label();
             this.tableLayoutPanel92 = new System.Windows.Forms.TableLayoutPanel();
             this.label84 = new System.Windows.Forms.Label();
-            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.txt_tn_yr_3 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel50 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_tn_1 = new System.Windows.Forms.TextBox();
+            this.txt_tn_dt_1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel51 = new System.Windows.Forms.TableLayoutPanel();
             this.label39 = new System.Windows.Forms.Label();
             this.tableLayoutPanel52 = new System.Windows.Forms.TableLayoutPanel();
             this.label51 = new System.Windows.Forms.Label();
             this.tableLayoutPanel53 = new System.Windows.Forms.TableLayoutPanel();
             this.label53 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_tn_yr_1 = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel85 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.txt_tn_2 = new System.Windows.Forms.TextBox();
+            this.txt_tn_dt_2 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel86 = new System.Windows.Forms.TableLayoutPanel();
             this.label79 = new System.Windows.Forms.Label();
             this.tableLayoutPanel87 = new System.Windows.Forms.TableLayoutPanel();
             this.label80 = new System.Windows.Forms.Label();
             this.tableLayoutPanel88 = new System.Windows.Forms.TableLayoutPanel();
             this.label81 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.txt_tn_yr_2 = new System.Windows.Forms.TextBox();
             this.tab_Experience = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel30 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel54 = new System.Windows.Forms.TableLayoutPanel();
@@ -3816,12 +3816,12 @@ namespace BIG.Present
             this.tableLayoutPanel89.ColumnCount = 2;
             this.tableLayoutPanel89.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel89.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel89.Controls.Add(this.textBox23, 1, 0);
-            this.tableLayoutPanel89.Controls.Add(this.textBox24, 1, 2);
+            this.tableLayoutPanel89.Controls.Add(this.txt_tn_3, 1, 0);
+            this.tableLayoutPanel89.Controls.Add(this.txt_tn_dt_3, 1, 2);
             this.tableLayoutPanel89.Controls.Add(this.tableLayoutPanel90, 0, 2);
             this.tableLayoutPanel89.Controls.Add(this.tableLayoutPanel91, 0, 0);
             this.tableLayoutPanel89.Controls.Add(this.tableLayoutPanel92, 0, 1);
-            this.tableLayoutPanel89.Controls.Add(this.textBox25, 1, 1);
+            this.tableLayoutPanel89.Controls.Add(this.txt_tn_yr_3, 1, 1);
             this.tableLayoutPanel89.Location = new System.Drawing.Point(6, 20);
             this.tableLayoutPanel89.Name = "tableLayoutPanel89";
             this.tableLayoutPanel89.RowCount = 3;
@@ -3833,23 +3833,23 @@ namespace BIG.Present
             this.tableLayoutPanel89.Size = new System.Drawing.Size(578, 144);
             this.tableLayoutPanel89.TabIndex = 2;
             // 
-            // textBox23
+            // txt_tn_3
             // 
-            this.textBox23.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox23.Location = new System.Drawing.Point(153, 7);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(300, 20);
-            this.textBox23.TabIndex = 54;
-            this.textBox23.Text = " ";
+            this.txt_tn_3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_tn_3.Location = new System.Drawing.Point(153, 7);
+            this.txt_tn_3.Name = "txt_tn_3";
+            this.txt_tn_3.Size = new System.Drawing.Size(300, 20);
+            this.txt_tn_3.TabIndex = 54;
+            this.txt_tn_3.Text = " ";
             // 
-            // textBox24
+            // txt_tn_dt_3
             // 
-            this.textBox24.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox24.Location = new System.Drawing.Point(153, 76);
-            this.textBox24.Multiline = true;
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(300, 61);
-            this.textBox24.TabIndex = 55;
+            this.txt_tn_dt_3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_tn_dt_3.Location = new System.Drawing.Point(153, 76);
+            this.txt_tn_dt_3.Multiline = true;
+            this.txt_tn_dt_3.Name = "txt_tn_dt_3";
+            this.txt_tn_dt_3.Size = new System.Drawing.Size(300, 61);
+            this.txt_tn_dt_3.TabIndex = 55;
             // 
             // tableLayoutPanel90
             // 
@@ -3920,13 +3920,13 @@ namespace BIG.Present
             this.label84.TabIndex = 0;
             this.label84.Text = "ปีที่สำเร็จ";
             // 
-            // textBox25
+            // txt_tn_yr_3
             // 
-            this.textBox25.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox25.Location = new System.Drawing.Point(153, 42);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(300, 20);
-            this.textBox25.TabIndex = 56;
+            this.txt_tn_yr_3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_tn_yr_3.Location = new System.Drawing.Point(153, 42);
+            this.txt_tn_yr_3.Name = "txt_tn_yr_3";
+            this.txt_tn_yr_3.Size = new System.Drawing.Size(300, 20);
+            this.txt_tn_yr_3.TabIndex = 56;
             // 
             // groupBox3
             // 
@@ -3946,12 +3946,12 @@ namespace BIG.Present
             this.tableLayoutPanel50.ColumnCount = 2;
             this.tableLayoutPanel50.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel50.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel50.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel50.Controls.Add(this.textBox2, 1, 2);
+            this.tableLayoutPanel50.Controls.Add(this.txt_tn_1, 1, 0);
+            this.tableLayoutPanel50.Controls.Add(this.txt_tn_dt_1, 1, 2);
             this.tableLayoutPanel50.Controls.Add(this.tableLayoutPanel51, 0, 2);
             this.tableLayoutPanel50.Controls.Add(this.tableLayoutPanel52, 0, 0);
             this.tableLayoutPanel50.Controls.Add(this.tableLayoutPanel53, 0, 1);
-            this.tableLayoutPanel50.Controls.Add(this.textBox3, 1, 1);
+            this.tableLayoutPanel50.Controls.Add(this.txt_tn_yr_1, 1, 1);
             this.tableLayoutPanel50.Location = new System.Drawing.Point(6, 20);
             this.tableLayoutPanel50.Name = "tableLayoutPanel50";
             this.tableLayoutPanel50.RowCount = 3;
@@ -3963,23 +3963,23 @@ namespace BIG.Present
             this.tableLayoutPanel50.Size = new System.Drawing.Size(578, 144);
             this.tableLayoutPanel50.TabIndex = 2;
             // 
-            // textBox1
+            // txt_tn_1
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox1.Location = new System.Drawing.Point(153, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(300, 20);
-            this.textBox1.TabIndex = 54;
-            this.textBox1.Text = " ";
+            this.txt_tn_1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_tn_1.Location = new System.Drawing.Point(153, 7);
+            this.txt_tn_1.Name = "txt_tn_1";
+            this.txt_tn_1.Size = new System.Drawing.Size(300, 20);
+            this.txt_tn_1.TabIndex = 54;
+            this.txt_tn_1.Text = " ";
             // 
-            // textBox2
+            // txt_tn_dt_1
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox2.Location = new System.Drawing.Point(153, 76);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(300, 61);
-            this.textBox2.TabIndex = 55;
+            this.txt_tn_dt_1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_tn_dt_1.Location = new System.Drawing.Point(153, 76);
+            this.txt_tn_dt_1.Multiline = true;
+            this.txt_tn_dt_1.Name = "txt_tn_dt_1";
+            this.txt_tn_dt_1.Size = new System.Drawing.Size(300, 61);
+            this.txt_tn_dt_1.TabIndex = 55;
             // 
             // tableLayoutPanel51
             // 
@@ -4050,13 +4050,13 @@ namespace BIG.Present
             this.label53.TabIndex = 0;
             this.label53.Text = "ปีที่สำเร็จ";
             // 
-            // textBox3
+            // txt_tn_yr_1
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox3.Location = new System.Drawing.Point(153, 42);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(300, 20);
-            this.textBox3.TabIndex = 56;
+            this.txt_tn_yr_1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_tn_yr_1.Location = new System.Drawing.Point(153, 42);
+            this.txt_tn_yr_1.Name = "txt_tn_yr_1";
+            this.txt_tn_yr_1.Size = new System.Drawing.Size(300, 20);
+            this.txt_tn_yr_1.TabIndex = 56;
             // 
             // groupBox8
             // 
@@ -4076,12 +4076,12 @@ namespace BIG.Present
             this.tableLayoutPanel85.ColumnCount = 2;
             this.tableLayoutPanel85.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel85.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel85.Controls.Add(this.textBox20, 1, 0);
-            this.tableLayoutPanel85.Controls.Add(this.textBox21, 1, 2);
+            this.tableLayoutPanel85.Controls.Add(this.txt_tn_2, 1, 0);
+            this.tableLayoutPanel85.Controls.Add(this.txt_tn_dt_2, 1, 2);
             this.tableLayoutPanel85.Controls.Add(this.tableLayoutPanel86, 0, 2);
             this.tableLayoutPanel85.Controls.Add(this.tableLayoutPanel87, 0, 0);
             this.tableLayoutPanel85.Controls.Add(this.tableLayoutPanel88, 0, 1);
-            this.tableLayoutPanel85.Controls.Add(this.textBox22, 1, 1);
+            this.tableLayoutPanel85.Controls.Add(this.txt_tn_yr_2, 1, 1);
             this.tableLayoutPanel85.Location = new System.Drawing.Point(6, 20);
             this.tableLayoutPanel85.Name = "tableLayoutPanel85";
             this.tableLayoutPanel85.RowCount = 3;
@@ -4093,23 +4093,23 @@ namespace BIG.Present
             this.tableLayoutPanel85.Size = new System.Drawing.Size(578, 144);
             this.tableLayoutPanel85.TabIndex = 2;
             // 
-            // textBox20
+            // txt_tn_2
             // 
-            this.textBox20.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox20.Location = new System.Drawing.Point(153, 7);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(300, 20);
-            this.textBox20.TabIndex = 54;
-            this.textBox20.Text = " ";
+            this.txt_tn_2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_tn_2.Location = new System.Drawing.Point(153, 7);
+            this.txt_tn_2.Name = "txt_tn_2";
+            this.txt_tn_2.Size = new System.Drawing.Size(300, 20);
+            this.txt_tn_2.TabIndex = 54;
+            this.txt_tn_2.Text = " ";
             // 
-            // textBox21
+            // txt_tn_dt_2
             // 
-            this.textBox21.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox21.Location = new System.Drawing.Point(153, 76);
-            this.textBox21.Multiline = true;
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(300, 61);
-            this.textBox21.TabIndex = 55;
+            this.txt_tn_dt_2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_tn_dt_2.Location = new System.Drawing.Point(153, 76);
+            this.txt_tn_dt_2.Multiline = true;
+            this.txt_tn_dt_2.Name = "txt_tn_dt_2";
+            this.txt_tn_dt_2.Size = new System.Drawing.Size(300, 61);
+            this.txt_tn_dt_2.TabIndex = 55;
             // 
             // tableLayoutPanel86
             // 
@@ -4180,13 +4180,13 @@ namespace BIG.Present
             this.label81.TabIndex = 0;
             this.label81.Text = "ปีที่สำเร็จ";
             // 
-            // textBox22
+            // txt_tn_yr_2
             // 
-            this.textBox22.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox22.Location = new System.Drawing.Point(153, 42);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(300, 20);
-            this.textBox22.TabIndex = 56;
+            this.txt_tn_yr_2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_tn_yr_2.Location = new System.Drawing.Point(153, 42);
+            this.txt_tn_yr_2.Name = "txt_tn_yr_2";
+            this.txt_tn_yr_2.Size = new System.Drawing.Size(300, 20);
+            this.txt_tn_yr_2.TabIndex = 56;
             // 
             // tab_Experience
             // 
@@ -5552,7 +5552,7 @@ namespace BIG.Present
             this.tableLayoutPanel7.ColumnCount = 3;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61538F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38462F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 322F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 324F));
             this.tableLayoutPanel7.Controls.Add(this.btn_cancle, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.btn_save, 0, 0);
             this.tableLayoutPanel7.Location = new System.Drawing.Point(173, 577);
@@ -5567,9 +5567,9 @@ namespace BIG.Present
             this.btn_cancle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_cancle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cancle.Location = new System.Drawing.Point(137, 3);
+            this.btn_cancle.Location = new System.Drawing.Point(136, 3);
             this.btn_cancle.Name = "btn_cancle";
-            this.btn_cancle.Size = new System.Drawing.Size(135, 37);
+            this.btn_cancle.Size = new System.Drawing.Size(134, 37);
             this.btn_cancle.TabIndex = 1;
             this.btn_cancle.Text = "ยกเลิก";
             this.btn_cancle.UseVisualStyleBackColor = true;
@@ -5581,7 +5581,7 @@ namespace BIG.Present
             this.btn_save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_save.Location = new System.Drawing.Point(3, 3);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(128, 37);
+            this.btn_save.Size = new System.Drawing.Size(127, 37);
             this.btn_save.TabIndex = 0;
             this.btn_save.Text = "บันทึก";
             this.btn_save.UseVisualStyleBackColor = true;
@@ -6634,37 +6634,37 @@ namespace BIG.Present
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel29;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel89;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.TextBox txt_tn_3;
+        private System.Windows.Forms.TextBox txt_tn_dt_3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel90;
         private System.Windows.Forms.Label label82;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel91;
         private System.Windows.Forms.Label label83;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel92;
         private System.Windows.Forms.Label label84;
-        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.TextBox txt_tn_yr_3;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel50;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_tn_1;
+        private System.Windows.Forms.TextBox txt_tn_dt_1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel51;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel52;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel53;
         private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_tn_yr_1;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel85;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.TextBox txt_tn_2;
+        private System.Windows.Forms.TextBox txt_tn_dt_2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel86;
         private System.Windows.Forms.Label label79;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel87;
         private System.Windows.Forms.Label label80;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel88;
         private System.Windows.Forms.Label label81;
-        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox txt_tn_yr_2;
         private System.Windows.Forms.TabPage tab_Experience;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel30;
         private System.Windows.Forms.TabPage tab_Reference;

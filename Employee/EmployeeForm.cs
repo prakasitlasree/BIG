@@ -347,7 +347,50 @@ namespace BIG.Present
             return lstEdu;
         }
 
+        private List<BIG.Model.Training> getTrainingListfrominput()
+        {
+            var lstTrain = new List<BIG.Model.Training>();
+            try 
+            {
+                if (txt_tn_1.Text != "")
+                { 
+                    var tn = new BIG.Model.Training();
+                    tn.TYPE = "ครั้งที่1";
+                    tn.EMP_ID = txt_empid.Text; 
+                    tn.COURSE = txt_tn_1.Text;  
+                    tn.DETAILS = txt_tn_dt_1.Text;
+                    tn.YEAR = txt_tn_yr_1.Text;
+                    lstTrain.Add(tn);
+                }
+                if (txt_tn_2.Text != "")
+                {
+                    var tn = new BIG.Model.Training();
+                    tn.TYPE = "ครั้งที่2";
+                    tn.EMP_ID = txt_empid.Text; 
+                    tn.COURSE = txt_tn_2.Text;  
+                    tn.DETAILS = txt_tn_dt_2.Text;
+                    tn.YEAR = txt_tn_yr_2.Text;
 
+                    lstTrain.Add(tn);
+                }
+                if (txt_tn_3.Text != "")
+                {
+                    var tn = new BIG.Model.Training();
+                    tn.TYPE = "ครั้งที่3";
+                    tn.EMP_ID = txt_empid.Text;
+                    tn.COURSE = txt_tn_3.Text;
+                    tn.DETAILS = txt_tn_dt_3.Text;
+                    tn.YEAR = txt_tn_yr_3.Text;
+
+                    lstTrain.Add(tn);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lstTrain;
+        }
 
         private EmployeeImage getPhotoEmployee()
         {
@@ -450,6 +493,11 @@ namespace BIG.Present
         private void CreateEducation(List<BIG.Model.Education> lstEdu)
         {
             EducationServices.SaveEducation(lstEdu);
+        }
+
+        private void CreateTraining(List<BIG.Model.Training> lstTrain)
+        {
+            TrainingServices.SaveTraining(lstTrain);
         }
 
         private string GenNewEmployeeID()
@@ -624,6 +672,8 @@ namespace BIG.Present
                 CreateEducation(listEdu);
 
                 //Training
+                var listTrain = getTrainingListfrominput();
+                CreateTraining(listTrain);
 
                 return result;
             }
