@@ -37,9 +37,24 @@ namespace BIG.Present
             get { return _photo; }
             set { _photo = value; }
         }
+         
+        private List<Province> _province;
 
-        public List<Province> ListProvince { get; set; }
+        public List<Province> ListProvinces
+        {
+            get  
+            {
+                if (_province != null || _province.Count == 0)
+                {
+                    
+                  _province =  ProvinceServices.GetListProvince().ToList();
 
+                } 
+               return _province;
+            
+            }
+            set { _province = value; }
+        }
         #endregion
 
         #region ===Method===
@@ -88,7 +103,9 @@ namespace BIG.Present
 
         private void InitialProvince()
         {
-            var listprov = DataService.ProvinceServices.GetListProvince();
+            var listprov = ProvinceServices.GetListProvince();
+
+            ListProvinces = listprov;
 
             var prov1 = listprov.Select(x => new { x.PROVINCE_ID,x.PROVINCE_NAME}).ToList();
 
@@ -140,28 +157,24 @@ namespace BIG.Present
         {
             var addrType = DataService.AddressServices.GetAddressTypeList();
             c_add_type.Items.Clear();
-            foreach (var item in addrType) 
-            {
-                c_add_type.Items.Add(item.NAME);
-            }
+            c_add_type.DataSource = addrType;
+            c_add_type.DisplayMember = "NAME";
+            c_add_type.ValueMember = "ID"; 
+             
         }
 
         private void InitialPosition()
         { 
             var lstpos = PossitionDataService.GetAll();
             cbo_possition.Items.Clear();
-            foreach (var item in lstpos)
-            {
-                var cbitem = new ComboboxItem();
-                cbitem.Text = item.NAME;
-                cbitem.Value = item.ID;
-                cbo_possition.Items.Add(cbitem);
-            }
+            cbo_possition.DataSource = lstpos;
+            cbo_possition.DisplayMember = "NAME";
+            cbo_possition.ValueMember = "ID";
+             
             if (cbo_possition.Items.Count > 0)
             {
                 cbo_possition.SelectedIndex = 0;
-            }
-
+            } 
         }
 
         private BIG.Model.Employee getEmployeefrominput()
@@ -169,36 +182,38 @@ namespace BIG.Present
 
             var emp = new BIG.Model.Employee();
             try
-            {
-
+            { 
                 //General 
                 emp = new BIG.Model.Employee();
                 emp.EMP_ID = txt_empid.Text; //รหัสพนักงาน
                 emp.ID_CARD = txt_pid.Text; // บัตรประชาชน
                 emp.TITLE_ID = Convert.ToInt32(cbo_title_th.SelectedIndex + 1); //คำนำหน้า
+
                 emp.FIRSTNAME_TH = txt_emp_fname_th.Text; //ชื่อไทย
                 emp.LASTNAME_TH = txt_emp_lname_th.Text; //นามสกุลไทย
                 emp.FIRSTNAME_EN = txt_emp_fname_en.Text; //ชื่ออังกฤษ
                 emp.LASTNAME_EN = txt_emp_lname_en.Text; //นามสกุลอังกฤษ
                 emp.NICKNAME_TH = txt_nick_th.Text; //ชื่อเล่น
-                emp.NICKNAME_EN = txt_possition.Text; //ตำแหน่ง
+
+                emp.POSITION_ID = Convert.ToInt16(cbo_possition.SelectedValue.ToString()); //ตำแหน่ง
                 emp.DATEOFBIRTH = Convert.ToDateTime(dob.Text);//ว ด ป เกิด
-                emp.BIRTH_PLACE_PROVINCE = (cbo_bp_prov.SelectedItem as ComboboxItem).Text; //จังหวัดที่เกิด
-                emp.BIRTH_PLACE_CONTRY = cbo_bp_ctr.SelectedItem.ToString(); //ปรเเทศ เกิด
+                emp.DATESTARTWORK = Convert.ToDateTime(date_start_work.Text);//ว ด ป เริ่มงาน
+
+                emp.BIRTH_PLACE_PROVINCE = cbo_bp_prov.SelectedValue.ToString(); //จังหวัดที่เกิด
+                emp.BIRTH_PLACE_CONTRY = cbo_bp_ctr.SelectedItem.ToString(); //ปรเเทศ เกิด 
                 emp.GENDER_ID = Convert.ToInt32(cbo_sex.SelectedIndex + 1); //เพศ
                 emp.HEIGHT = Convert.ToInt32(txt_height.Text); //สูง
                 emp.WEIGHT = Convert.ToInt32(txt_weight.Text); //น้ำหนัก
                 emp.RACE = cbo_race.SelectedItem.ToString(); //เชื้อชาติ
                 emp.NATIONALITY = cbo_nationality.SelectedItem.ToString();//สัญชาติ
                 emp.RELEGION = cbo_relegion.SelectedItem.ToString(); //ศาสนา
-                emp.MARITAL_ID = 1; //สถานะสมรส
-                emp.POSITION_ID = Convert.ToInt16((cbo_possition.SelectedItem as ComboboxItem).Value); //ตำแหน่ง
+                //emp.MARITAL_ID = 1; //สถานะสมรส 
 
                 return emp;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("getEmployeefrominput" + ex.Message);
                 return emp;
             }
 
@@ -237,7 +252,7 @@ namespace BIG.Present
                     Ret = ms.ToArray();
                 }
             }
-            catch (Exception) { throw; }
+            catch (Exception ex) { throw ex; }
             return Ret;
         }
 
@@ -247,34 +262,92 @@ namespace BIG.Present
             var listAddress = new List<BIG.Model.Address>();
             try
             {
-                //Current Address
-                var current_addr = new BIG.Model.Address();
+                if (c_txt_no.Text != "")
+                {
+                    //Current Address
+                    var current_addr = new BIG.Model.Address();
 
-                current_addr.EMP_ID = txt_empid.Text;
-                current_addr.NAME = c_txt_no.Text + " " + c_txt_soi.Text + " " + c_txt_rd.Text + " " + c_txt_tumbol.Text + " ";
-                current_addr.AMPHUR_ID = c_cbo_amp.SelectedValue.ToString();
-                current_addr.PROVINCE_ID = c_cbo_prov.SelectedValue.ToString();
-                current_addr.POSTCODE = "00000";
+                    current_addr.EMP_ID = txt_empid.Text;
+                    current_addr.NAME = c_txt_no.Text + " " + c_txt_soi.Text + " " + c_txt_rd.Text + " " + c_txt_tumbol.Text + " ";
+                    current_addr.AMPHUR_ID = c_cbo_amp.SelectedValue.ToString();
+                    current_addr.PROVINCE_ID = c_cbo_prov.SelectedValue.ToString();
+                    current_addr.POSTCODE = c_txt_postcode.Text;
+                    current_addr.ADDRESSTYPE_ID = Convert.ToInt16(c_add_type.SelectedValue.ToString());
 
-                //Permanent Address
-                var permanent_addr = new BIG.Model.Address();
+                    listAddress.Add(current_addr);
+                }
+                
 
-                permanent_addr.EMP_ID = txt_empid.Text;
-                permanent_addr.NAME = p_txt_no.Text + " " + p_txt_soi.Text + " " + p_txt_road.Text + " " + p_txt_tumbol.Text + " ";
-                permanent_addr.AMPHUR_ID = p_cbo_amp.SelectedValue.ToString();
-                permanent_addr.PROVINCE_ID = p_cbo_prov.SelectedValue.ToString();
-                permanent_addr.POSTCODE = "00000";
+                if (p_txt_no.Text != "")
+                {
+                    //Permanent Address
+                    var permanent_addr = new BIG.Model.Address();
 
-                listAddress.Add(current_addr);
-                listAddress.Add(permanent_addr);
+                    permanent_addr.EMP_ID = txt_empid.Text;
+                    permanent_addr.NAME = p_txt_no.Text + " " + p_txt_soi.Text + " " + p_txt_road.Text + " " + p_txt_tumbol.Text + " ";
+                    permanent_addr.AMPHUR_ID = p_cbo_amp.SelectedValue.ToString();
+                    permanent_addr.PROVINCE_ID = p_cbo_prov.SelectedValue.ToString();
+                    permanent_addr.POSTCODE = p_txt_postcode.Text;
 
+                    listAddress.Add(permanent_addr);
+
+                } 
                 return listAddress;
             }
             catch (Exception ex)
             {
-                return listAddress;
+                throw ex;
             }
         }
+
+        private List<BIG.Model.Education> getEducationListfrominput()
+        { 
+            var lstEdu = new List<BIG.Model.Education>();
+            try
+            {
+                if (txt_edu_nm_1.Text != "")
+                {
+                    //University
+                    var edu = new BIG.Model.Education();
+                    edu.EDU_TYPE = "อุดมศึกษา/มหาวิทยาลัย";
+                    edu.EMP_ID = txt_empid.Text;
+                    edu.NAME = txt_edu_nm_1.Text;
+                    edu.GRADUETED = txt_graduated_1.Text;
+                    edu.YEAR = txt_edu_yr_1.Text;
+
+                    lstEdu.Add(edu);
+                }
+                if (txt_edu_nm_2.Text != "")
+                {
+                    var edu = new BIG.Model.Education();
+                    edu.EDU_TYPE = "มัธยมศึกษา/ประกาศนียบัตรวิชาชีพ";
+                    edu.EMP_ID = txt_empid.Text;
+                    edu.NAME = txt_edu_nm_2.Text;
+                    edu.GRADUETED = txt_graduated_2.Text;
+                    edu.YEAR = txt_edu_yr_2.Text;
+
+                    lstEdu.Add(edu);
+                }
+                if (txt_edu_nm_3.Text != "")
+                {
+                    var edu = new BIG.Model.Education();
+                    edu.EDU_TYPE = "ประถมศึกษา";
+                    edu.EMP_ID = txt_empid.Text;
+                    edu.NAME = txt_edu_nm_3.Text;
+                    edu.GRADUETED = txt_graduated_3.Text;
+                    edu.YEAR = txt_edu_yr_3.Text;
+
+                    lstEdu.Add(edu);
+                }             
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lstEdu;
+        }
+
+
 
         private EmployeeImage getPhotoEmployee()
         {
@@ -289,8 +362,26 @@ namespace BIG.Present
             }
             catch (Exception ex)
             {
+                throw ex;
+            }
+            return ret;
+        }
 
-                throw;
+        private CurrentImage getCurrentPhotoEmployee()
+        {
+            var ret = new CurrentImage(); 
+
+            try
+            {
+                var myBitmap = pic_current.Image;
+                ret.EMP_ID = txt_empid.Text;
+                ret.PIC_PROFILE = ConvertImageToByteArray(myBitmap, System.Drawing.Imaging.ImageFormat.Jpeg);
+                ret.TYPE = System.Drawing.Imaging.ImageFormat.Jpeg.ToString();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
             return ret;
         }
@@ -323,7 +414,7 @@ namespace BIG.Present
             var ret = new Model.Employee();
             try
             {
-                var obj = DataService.EmployeeServices.GetEmployeeByIDCard(idcard); 
+                var obj = EmployeeServices.GetEmployeeByIDCard(idcard); 
                 if (obj != null)
                 {
                     ret = obj;
@@ -353,15 +444,20 @@ namespace BIG.Present
 
         private void CreateAddress(List<BIG.Model.Address> listAddress)
         {
-            DataService.AddressServices.SaveAddress(listAddress);
+            AddressServices.SaveAddress(listAddress);
         }
-         
+
+        private void CreateEducation(List<BIG.Model.Education> lstEdu)
+        {
+            EducationServices.SaveEducation(lstEdu);
+        }
+
         private string GenNewEmployeeID()
         {
             var ret = "";
             try
             {
-                var lastemp_id = DataService.EmployeeServices.GetLastEmployeeID();
+                var lastemp_id = EmployeeServices.GetLastEmployeeID();
                 var running = lastemp_id.Substring(lastemp_id.Length - 3, 3);
                 var nextnumber = Convert.ToDecimal(running) + 1;
                 lastemp_id = DateTime.Now.ToString("yyMMdd") + String.Format("{0:000}", nextnumber); ;
@@ -370,6 +466,25 @@ namespace BIG.Present
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            return ret;
+        }
+
+        private int GetProvinceIDByName(string province_nm)
+        {
+            var ret = 0;
+            try
+            {
+                province_nm = province_nm.Replace("จังหวัด", "");
+                var obj = ListProvinces.Where(x => x.PROVINCE_NAME == province_nm).FirstOrDefault();
+                if (obj != null)
+                {
+                    ret = obj.PROVINCE_ID;
+                }
+            }
+            catch (Exception ex)
+            { 
+                throw ex;
             }
             return ret;
         }
@@ -393,6 +508,17 @@ namespace BIG.Present
                     {
                         MessageBox.Show("      พบข้อมูลอยู่ในระบบ" + "\r\n\n" + "     รหัสบัตรประชาชน => " + idcard.Citizenid + "\n\n" + "     ชื่อ-สกุล" + empObj.FIRSTNAME_TH + " " + empObj.LASTNAME_TH);
                         lb_isnewemp.Text = "*มีอยู่แล้วในระบบ";
+                        txt_empid.Text = empObj.EMP_ID;
+                        txt_pid.Text = empObj.ID_CARD;
+                        cbo_title_th.SelectedItem = idcard.Th_Prefix;
+                        cbo_title_en.SelectedItem = idcard.En_Prefix;
+                        txt_emp_fname_th.Text = empObj.FIRSTNAME_TH;
+                        txt_emp_lname_th.Text = empObj.LASTNAME_TH;
+                        txt_emp_fname_en.Text = empObj.FIRSTNAME_EN;
+                        txt_emp_lname_en.Text = empObj.LASTNAME_EN;
+                        dob.Value = empObj.DATEOFBIRTH.Value ;
+                        date_start_work.Value = empObj.DATESTARTWORK.Value;
+                        cbo_bp_prov.SelectedValue = GetProvinceIDByName(idcard.addrProvince);
                     }
                     else
                     {
@@ -408,7 +534,7 @@ namespace BIG.Present
                         txt_emp_fname_en.Text = idcard.En_Firstname;
                         txt_emp_lname_en.Text = idcard.En_Lastname;
                         dob.Value = idcard.Birthday;
-                        cbo_bp_ctr.SelectedValue = idcard.addrProvince;
+                        cbo_bp_prov.SelectedValue = GetProvinceIDByName(idcard.addrProvince);
 
 
                         //Gender
@@ -425,7 +551,7 @@ namespace BIG.Present
                         c_txt_rd.Text = idcard.addrRoad;
                         c_txt_soi.Text = "";
                         c_txt_tumbol.Text = idcard.addrTambol;
-                        c_cbo_prov.SelectedText = idcard.addrProvince;
+                        c_cbo_prov.SelectedValue = GetProvinceIDByName(idcard.addrProvince);
                         c_cbo_amp.SelectedText = idcard.addrAmphur;
 
                         //permanent address
@@ -481,12 +607,23 @@ namespace BIG.Present
                 }
 
 
+                //Photo PID
                 var photo = getPhotoEmployee();
                 UploadPhoto(photo);
+
+                //Current Photo
+                var cphoto = getCurrentPhotoEmployee();
+                UploadCurrentPhoto(cphoto);
 
                 //Save Address
                 var listAddress = getAddressListfrominput();
                 CreateAddress(listAddress);
+
+                //Save Education 
+                var listEdu = getEducationListfrominput();
+                CreateEducation(listEdu);
+
+                //Training
 
                 return result;
             }
@@ -504,6 +641,22 @@ namespace BIG.Present
             {
                 ProfileImageDataService.DeletePhoto(Img);
                 ProfileImageDataService.UploadPhoto(Img);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return result;
+        }
+
+        private bool UploadCurrentPhoto(CurrentImage Img)
+        {
+            var result = false; 
+            try
+            {
+                CurrentImageService.DeletePhoto(Img);
+                CurrentImageService.UploadPhoto(Img);
             }
             catch (Exception ex)
             {
@@ -551,8 +704,23 @@ namespace BIG.Present
             else if (result == DialogResult.No)
             {
                 //...
+            } 
+        }
+        private void rb_save_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("คุณต้องการบันทึกข้อมูลพนักงาน?", "Confirmation", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                this.Save();
+                MessageBox.Show("บันทึกข้อมูลบัตรประชาชนเรียบร้อย!!!");
+                this.Hide();
+                var fm = new EmployeeForm();
+                fm.Show();
             }
-
+            else if (result == DialogResult.No)
+            {
+                //...
+            } 
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -629,7 +797,7 @@ namespace BIG.Present
                 c_cbo_amp.ValueMember = "AMPHUR_ID";
             } 
 
-            txt_postcode.Focus();
+            c_txt_postcode.Focus();
         }
 
         private void p_cbo_prov_SelectedIndexChanged(object sender, EventArgs e)
@@ -712,11 +880,7 @@ namespace BIG.Present
             Application.Exit();
 
         }
-
-        private void rb_save_Click(object sender, EventArgs e)
-        {
-
-        }
+         
 
         private void rb_logout_Click(object sender, EventArgs e)
         {
@@ -737,5 +901,15 @@ namespace BIG.Present
         }
 
         #endregion
+
+        private void chk_have_sso_CheckedChanged(object sender, EventArgs e)
+        {
+            txt_sso_hospital.Enabled = true;
+        }
+
+        private void chk_nothave_sso_CheckedChanged(object sender, EventArgs e)
+        {
+            cbo_sso_hospital.Enabled = true;
+        }
     }
 }

@@ -17,7 +17,12 @@ namespace BIG.DataService
             {
                 using (var ctx = new BIG_DBEntities())
                 {
-                    result = ctx.Provinces.ToList();
+                    var lst = ctx.Provinces.ToList();
+                    foreach (var item in lst)
+                    {
+                        item.PROVINCE_NAME.Replace("   ", "");
+                        result.Add(item);
+                    }
                 }
                 return result;
             }
@@ -36,6 +41,27 @@ namespace BIG.DataService
               { 
                   result = ctx.Amphurs.Where(x => x.PROVINCE_ID == province_id).ToList();
                    
+              }
+              return result;
+          }
+          catch (Exception ex)
+          {
+              return result;
+          }
+      }
+
+      public static int GetProvinceIDByName(string province_nm)
+      {
+          var result = 0;
+          try
+          {
+              using (var ctx = new BIG_DBEntities())
+              {
+                  var obj = ctx.Provinces.Where(x => x.PROVINCE_NAME == province_nm).FirstOrDefault();
+                  if (obj != null)
+                  {
+                      result = obj.PROVINCE_ID;
+                  }
               }
               return result;
           }

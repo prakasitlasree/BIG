@@ -63,6 +63,9 @@
     <Compile Include="CompanyInfo.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="CurrentImage.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Custom\ComboboxItem.cs" />
     <Compile Include="District.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
@@ -101,7 +104,13 @@
     <Compile Include="Site.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="SSO.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Title.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Training.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
     <Compile Include="WorkExperience.cs">

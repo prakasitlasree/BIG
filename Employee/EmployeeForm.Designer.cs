@@ -146,7 +146,6 @@ namespace BIG.Present
             this.tableLayoutPanel100 = new System.Windows.Forms.TableLayoutPanel();
             this.lb_isnewemp = new System.Windows.Forms.Label();
             this.txt_empid = new System.Windows.Forms.TextBox();
-            this.txt_possition = new System.Windows.Forms.TextBox();
             this.cbo_possition = new System.Windows.Forms.ComboBox();
             this.tab_finger = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel93 = new System.Windows.Forms.TableLayoutPanel();
@@ -203,7 +202,7 @@ namespace BIG.Present
             this.tableLayoutPanel75 = new System.Windows.Forms.TableLayoutPanel();
             this.label71 = new System.Windows.Forms.Label();
             this.label72 = new System.Windows.Forms.Label();
-            this.txt_p_postcode = new System.Windows.Forms.TextBox();
+            this.p_txt_postcode = new System.Windows.Forms.TextBox();
             this.p_txt_road = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel43 = new System.Windows.Forms.TableLayoutPanel();
             this.label44 = new System.Windows.Forms.Label();
@@ -247,7 +246,7 @@ namespace BIG.Present
             this.tableLayoutPanel74 = new System.Windows.Forms.TableLayoutPanel();
             this.label68 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
-            this.txt_postcode = new System.Windows.Forms.TextBox();
+            this.c_txt_postcode = new System.Windows.Forms.TextBox();
             this.tab_Education = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel28 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -256,9 +255,9 @@ namespace BIG.Present
             this.label76 = new System.Windows.Forms.Label();
             this.tableLayoutPanel83 = new System.Windows.Forms.TableLayoutPanel();
             this.label77 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.txt_edu_nm_3 = new System.Windows.Forms.TextBox();
+            this.txt_graduated_3 = new System.Windows.Forms.TextBox();
+            this.txt_edu_yr_3 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel84 = new System.Windows.Forms.TableLayoutPanel();
             this.label78 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -267,9 +266,9 @@ namespace BIG.Present
             this.label43 = new System.Windows.Forms.Label();
             this.tableLayoutPanel79 = new System.Windows.Forms.TableLayoutPanel();
             this.label74 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.txt_edu_nm_2 = new System.Windows.Forms.TextBox();
+            this.txt_graduated_2 = new System.Windows.Forms.TextBox();
+            this.txt_edu_yr_2 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel80 = new System.Windows.Forms.TableLayoutPanel();
             this.label75 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -278,9 +277,9 @@ namespace BIG.Present
             this.label40 = new System.Windows.Forms.Label();
             this.tableLayoutPanel49 = new System.Windows.Forms.TableLayoutPanel();
             this.label54 = new System.Windows.Forms.Label();
-            this.txt_edu_name = new System.Windows.Forms.TextBox();
-            this.txt_graduated = new System.Windows.Forms.TextBox();
-            this.txt_yr_grad = new System.Windows.Forms.TextBox();
+            this.txt_edu_nm_1 = new System.Windows.Forms.TextBox();
+            this.txt_graduated_1 = new System.Windows.Forms.TextBox();
+            this.txt_edu_yr_1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel48 = new System.Windows.Forms.TableLayoutPanel();
             this.label52 = new System.Windows.Forms.Label();
             this.tab_Training = new System.Windows.Forms.TabPage();
@@ -320,54 +319,107 @@ namespace BIG.Present
             this.textBox22 = new System.Windows.Forms.TextBox();
             this.tab_Experience = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel30 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel54 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel104 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel105 = new System.Windows.Forms.TableLayoutPanel();
+            this.label99 = new System.Windows.Forms.Label();
+            this.txt_ext_comname_3 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel106 = new System.Windows.Forms.TableLayoutPanel();
+            this.label100 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel107 = new System.Windows.Forms.TableLayoutPanel();
+            this.label101 = new System.Windows.Forms.Label();
+            this.txt_we_pos3 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel110 = new System.Windows.Forms.TableLayoutPanel();
+            this.label104 = new System.Windows.Forms.Label();
+            this.txt_exp_salary_3 = new System.Windows.Forms.TextBox();
+            this.txt_exp_period_3 = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel55 = new System.Windows.Forms.TableLayoutPanel();
-            this.label55 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel56 = new System.Windows.Forms.TableLayoutPanel();
-            this.label56 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel108 = new System.Windows.Forms.TableLayoutPanel();
+            this.label102 = new System.Windows.Forms.Label();
+            this.txt_ext_comname_1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel57 = new System.Windows.Forms.TableLayoutPanel();
-            this.label57 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
             this.tableLayoutPanel58 = new System.Windows.Forms.TableLayoutPanel();
-            this.label58 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.txt_we_pos1 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel56 = new System.Windows.Forms.TableLayoutPanel();
+            this.label55 = new System.Windows.Forms.Label();
+            this.txt_exp_salary_1 = new System.Windows.Forms.TextBox();
+            this.txt_exp_period_1 = new System.Windows.Forms.TextBox();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel59 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel101 = new System.Windows.Forms.TableLayoutPanel();
+            this.label58 = new System.Windows.Forms.Label();
+            this.txt_ext_comname_2 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel102 = new System.Windows.Forms.TableLayoutPanel();
             this.label59 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel103 = new System.Windows.Forms.TableLayoutPanel();
+            this.label67 = new System.Windows.Forms.Label();
+            this.txt_we_pos2 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel109 = new System.Windows.Forms.TableLayoutPanel();
+            this.label103 = new System.Windows.Forms.Label();
+            this.txt_exp_salary_2 = new System.Windows.Forms.TextBox();
+            this.txt_exp_period_2 = new System.Windows.Forms.TextBox();
             this.tab_Reference = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel60 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel116 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel117 = new System.Windows.Forms.TableLayoutPanel();
+            this.label108 = new System.Windows.Forms.Label();
+            this.txt_ref_name_3 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel118 = new System.Windows.Forms.TableLayoutPanel();
+            this.label109 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel119 = new System.Windows.Forms.TableLayoutPanel();
+            this.label110 = new System.Windows.Forms.Label();
+            this.txt_ref_relation_3 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel120 = new System.Windows.Forms.TableLayoutPanel();
+            this.label111 = new System.Windows.Forms.Label();
+            this.txt_ref_contact_3 = new System.Windows.Forms.TextBox();
+            this.txt_ref_add_3 = new System.Windows.Forms.TextBox();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel61 = new System.Windows.Forms.TableLayoutPanel();
-            this.label60 = new System.Windows.Forms.Label();
             this.tableLayoutPanel62 = new System.Windows.Forms.TableLayoutPanel();
-            this.label61 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.txt_ref_name_1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel63 = new System.Windows.Forms.TableLayoutPanel();
-            this.label62 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label61 = new System.Windows.Forms.Label();
             this.tableLayoutPanel64 = new System.Windows.Forms.TableLayoutPanel();
-            this.label63 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label62 = new System.Windows.Forms.Label();
+            this.txt_ref_relation_1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel65 = new System.Windows.Forms.TableLayoutPanel();
+            this.label63 = new System.Windows.Forms.Label();
+            this.txt_ref_contact_1 = new System.Windows.Forms.TextBox();
+            this.txt_ref_add_1 = new System.Windows.Forms.TextBox();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel111 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel112 = new System.Windows.Forms.TableLayoutPanel();
             this.label64 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.txt_ref_name_2 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel113 = new System.Windows.Forms.TableLayoutPanel();
+            this.label105 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel114 = new System.Windows.Forms.TableLayoutPanel();
+            this.label106 = new System.Windows.Forms.Label();
+            this.txt_ref_relation_2 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel115 = new System.Windows.Forms.TableLayoutPanel();
+            this.label107 = new System.Windows.Forms.Label();
+            this.txt_ref_contact_2 = new System.Windows.Forms.TextBox();
+            this.txt_ref_add_2 = new System.Windows.Forms.TextBox();
             this.tab_SSO = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel66 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel68 = new System.Windows.Forms.TableLayoutPanel();
             this.label66 = new System.Windows.Forms.Label();
-            this.txt_hospital_name = new System.Windows.Forms.TextBox();
-            this.chk_have = new System.Windows.Forms.CheckBox();
+            this.txt_sso_hospital = new System.Windows.Forms.TextBox();
+            this.chk_have_sso = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel67 = new System.Windows.Forms.TableLayoutPanel();
             this.label65 = new System.Windows.Forms.Label();
-            this.chk_nothave = new System.Windows.Forms.CheckBox();
+            this.chk_nothave_sso = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel71 = new System.Windows.Forms.TableLayoutPanel();
             this.label69 = new System.Windows.Forms.Label();
-            this.cbo_hospital = new System.Windows.Forms.ComboBox();
+            this.cbo_sso_hospital = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label25 = new System.Windows.Forms.Label();
             this.pic_emp = new System.Windows.Forms.PictureBox();
@@ -586,21 +638,46 @@ namespace BIG.Present
             this.tableLayoutPanel88.SuspendLayout();
             this.tab_Experience.SuspendLayout();
             this.tableLayoutPanel30.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.tableLayoutPanel54.SuspendLayout();
+            this.groupBox15.SuspendLayout();
+            this.tableLayoutPanel104.SuspendLayout();
+            this.tableLayoutPanel105.SuspendLayout();
+            this.tableLayoutPanel106.SuspendLayout();
+            this.tableLayoutPanel107.SuspendLayout();
+            this.tableLayoutPanel110.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.tableLayoutPanel55.SuspendLayout();
-            this.tableLayoutPanel56.SuspendLayout();
+            this.tableLayoutPanel108.SuspendLayout();
             this.tableLayoutPanel57.SuspendLayout();
             this.tableLayoutPanel58.SuspendLayout();
+            this.tableLayoutPanel56.SuspendLayout();
+            this.groupBox14.SuspendLayout();
             this.tableLayoutPanel59.SuspendLayout();
+            this.tableLayoutPanel101.SuspendLayout();
+            this.tableLayoutPanel102.SuspendLayout();
+            this.tableLayoutPanel103.SuspendLayout();
+            this.tableLayoutPanel109.SuspendLayout();
             this.tab_Reference.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tableLayoutPanel60.SuspendLayout();
+            this.groupBox18.SuspendLayout();
+            this.tableLayoutPanel116.SuspendLayout();
+            this.tableLayoutPanel117.SuspendLayout();
+            this.tableLayoutPanel118.SuspendLayout();
+            this.tableLayoutPanel119.SuspendLayout();
+            this.tableLayoutPanel120.SuspendLayout();
+            this.groupBox16.SuspendLayout();
             this.tableLayoutPanel61.SuspendLayout();
             this.tableLayoutPanel62.SuspendLayout();
             this.tableLayoutPanel63.SuspendLayout();
             this.tableLayoutPanel64.SuspendLayout();
             this.tableLayoutPanel65.SuspendLayout();
+            this.groupBox17.SuspendLayout();
+            this.tableLayoutPanel111.SuspendLayout();
+            this.tableLayoutPanel112.SuspendLayout();
+            this.tableLayoutPanel113.SuspendLayout();
+            this.tableLayoutPanel114.SuspendLayout();
+            this.tableLayoutPanel115.SuspendLayout();
             this.tab_SSO.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.tableLayoutPanel66.SuspendLayout();
@@ -1570,7 +1647,6 @@ namespace BIG.Present
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel97, 0, 3);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel73, 1, 4);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel100, 1, 0);
-            this.tableLayoutPanel9.Controls.Add(this.txt_possition, 1, 10);
             this.tableLayoutPanel9.Controls.Add(this.cbo_possition, 1, 1);
             this.tableLayoutPanel9.Location = new System.Drawing.Point(6, 13);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
@@ -2027,15 +2103,6 @@ namespace BIG.Present
             this.txt_empid.Name = "txt_empid";
             this.txt_empid.Size = new System.Drawing.Size(199, 20);
             this.txt_empid.TabIndex = 14;
-            // 
-            // txt_possition
-            // 
-            this.txt_possition.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_possition.Location = new System.Drawing.Point(153, 357);
-            this.txt_possition.Name = "txt_possition";
-            this.txt_possition.Size = new System.Drawing.Size(200, 20);
-            this.txt_possition.TabIndex = 21;
-            this.txt_possition.Text = "พนักงานรักษาความปลอดภัย";
             // 
             // cbo_possition
             // 
@@ -2555,7 +2622,7 @@ namespace BIG.Present
             this.tableLayoutPanel39.Controls.Add(this.p_cbo_prov, 3, 1);
             this.tableLayoutPanel39.Controls.Add(this.p_cbo_amp, 3, 2);
             this.tableLayoutPanel39.Controls.Add(this.tableLayoutPanel75, 2, 3);
-            this.tableLayoutPanel39.Controls.Add(this.txt_p_postcode, 3, 3);
+            this.tableLayoutPanel39.Controls.Add(this.p_txt_postcode, 3, 3);
             this.tableLayoutPanel39.Controls.Add(this.p_txt_road, 1, 3);
             this.tableLayoutPanel39.Controls.Add(this.tableLayoutPanel43, 0, 3);
             this.tableLayoutPanel39.Controls.Add(this.tableLayoutPanel42, 0, 2);
@@ -2753,13 +2820,13 @@ namespace BIG.Present
             this.label72.TabIndex = 0;
             this.label72.Text = "รหัสไปรษณีย์";
             // 
-            // txt_p_postcode
+            // p_txt_postcode
             // 
-            this.txt_p_postcode.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_p_postcode.Location = new System.Drawing.Point(733, 112);
-            this.txt_p_postcode.Name = "txt_p_postcode";
-            this.txt_p_postcode.Size = new System.Drawing.Size(200, 20);
-            this.txt_p_postcode.TabIndex = 62;
+            this.p_txt_postcode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.p_txt_postcode.Location = new System.Drawing.Point(733, 112);
+            this.p_txt_postcode.Name = "p_txt_postcode";
+            this.p_txt_postcode.Size = new System.Drawing.Size(200, 20);
+            this.p_txt_postcode.TabIndex = 62;
             // 
             // p_txt_road
             // 
@@ -2939,7 +3006,7 @@ namespace BIG.Present
             this.tableLayoutPanel31.Controls.Add(this.tableLayoutPanel34, 2, 2);
             this.tableLayoutPanel31.Controls.Add(this.c_cbo_amp, 3, 2);
             this.tableLayoutPanel31.Controls.Add(this.tableLayoutPanel74, 2, 3);
-            this.tableLayoutPanel31.Controls.Add(this.txt_postcode, 3, 3);
+            this.tableLayoutPanel31.Controls.Add(this.c_txt_postcode, 3, 3);
             this.tableLayoutPanel31.Location = new System.Drawing.Point(7, 20);
             this.tableLayoutPanel31.Name = "tableLayoutPanel31";
             this.tableLayoutPanel31.RowCount = 6;
@@ -3270,13 +3337,13 @@ namespace BIG.Present
             this.label70.TabIndex = 0;
             this.label70.Text = "รหัสไปรษณีย์";
             // 
-            // txt_postcode
+            // c_txt_postcode
             // 
-            this.txt_postcode.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_postcode.Location = new System.Drawing.Point(730, 112);
-            this.txt_postcode.Name = "txt_postcode";
-            this.txt_postcode.Size = new System.Drawing.Size(200, 20);
-            this.txt_postcode.TabIndex = 61;
+            this.c_txt_postcode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.c_txt_postcode.Location = new System.Drawing.Point(730, 112);
+            this.c_txt_postcode.Name = "c_txt_postcode";
+            this.c_txt_postcode.Size = new System.Drawing.Size(200, 20);
+            this.c_txt_postcode.TabIndex = 61;
             // 
             // tab_Education
             // 
@@ -3330,9 +3397,9 @@ namespace BIG.Present
             this.tableLayoutPanel81.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel81.Controls.Add(this.tableLayoutPanel82, 0, 1);
             this.tableLayoutPanel81.Controls.Add(this.tableLayoutPanel83, 0, 2);
-            this.tableLayoutPanel81.Controls.Add(this.textBox17, 1, 0);
-            this.tableLayoutPanel81.Controls.Add(this.textBox18, 1, 1);
-            this.tableLayoutPanel81.Controls.Add(this.textBox19, 1, 2);
+            this.tableLayoutPanel81.Controls.Add(this.txt_edu_nm_3, 1, 0);
+            this.tableLayoutPanel81.Controls.Add(this.txt_graduated_3, 1, 1);
+            this.tableLayoutPanel81.Controls.Add(this.txt_edu_yr_3, 1, 2);
             this.tableLayoutPanel81.Controls.Add(this.tableLayoutPanel84, 0, 0);
             this.tableLayoutPanel81.Location = new System.Drawing.Point(3, 25);
             this.tableLayoutPanel81.Name = "tableLayoutPanel81";
@@ -3391,30 +3458,30 @@ namespace BIG.Present
             this.label77.TabIndex = 0;
             this.label77.Text = "ปีที่สำเร็จ";
             // 
-            // textBox17
+            // txt_edu_nm_3
             // 
-            this.textBox17.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox17.Location = new System.Drawing.Point(153, 7);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(300, 20);
-            this.textBox17.TabIndex = 54;
-            this.textBox17.Text = " ";
+            this.txt_edu_nm_3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_edu_nm_3.Location = new System.Drawing.Point(153, 7);
+            this.txt_edu_nm_3.Name = "txt_edu_nm_3";
+            this.txt_edu_nm_3.Size = new System.Drawing.Size(300, 20);
+            this.txt_edu_nm_3.TabIndex = 54;
+            this.txt_edu_nm_3.Text = " ";
             // 
-            // textBox18
+            // txt_graduated_3
             // 
-            this.textBox18.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox18.Location = new System.Drawing.Point(153, 42);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(300, 20);
-            this.textBox18.TabIndex = 55;
+            this.txt_graduated_3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_graduated_3.Location = new System.Drawing.Point(153, 42);
+            this.txt_graduated_3.Name = "txt_graduated_3";
+            this.txt_graduated_3.Size = new System.Drawing.Size(300, 20);
+            this.txt_graduated_3.TabIndex = 55;
             // 
-            // textBox19
+            // txt_edu_yr_3
             // 
-            this.textBox19.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox19.Location = new System.Drawing.Point(153, 77);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(300, 20);
-            this.textBox19.TabIndex = 56;
+            this.txt_edu_yr_3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_edu_yr_3.Location = new System.Drawing.Point(153, 77);
+            this.txt_edu_yr_3.Name = "txt_edu_yr_3";
+            this.txt_edu_yr_3.Size = new System.Drawing.Size(300, 20);
+            this.txt_edu_yr_3.TabIndex = 56;
             // 
             // tableLayoutPanel84
             // 
@@ -3461,9 +3528,9 @@ namespace BIG.Present
             this.tableLayoutPanel77.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel77.Controls.Add(this.tableLayoutPanel78, 0, 1);
             this.tableLayoutPanel77.Controls.Add(this.tableLayoutPanel79, 0, 2);
-            this.tableLayoutPanel77.Controls.Add(this.textBox14, 1, 0);
-            this.tableLayoutPanel77.Controls.Add(this.textBox15, 1, 1);
-            this.tableLayoutPanel77.Controls.Add(this.textBox16, 1, 2);
+            this.tableLayoutPanel77.Controls.Add(this.txt_edu_nm_2, 1, 0);
+            this.tableLayoutPanel77.Controls.Add(this.txt_graduated_2, 1, 1);
+            this.tableLayoutPanel77.Controls.Add(this.txt_edu_yr_2, 1, 2);
             this.tableLayoutPanel77.Controls.Add(this.tableLayoutPanel80, 0, 0);
             this.tableLayoutPanel77.Location = new System.Drawing.Point(3, 25);
             this.tableLayoutPanel77.Name = "tableLayoutPanel77";
@@ -3522,30 +3589,30 @@ namespace BIG.Present
             this.label74.TabIndex = 0;
             this.label74.Text = "ปีที่สำเร็จ";
             // 
-            // textBox14
+            // txt_edu_nm_2
             // 
-            this.textBox14.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox14.Location = new System.Drawing.Point(153, 7);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(300, 20);
-            this.textBox14.TabIndex = 54;
-            this.textBox14.Text = " ";
+            this.txt_edu_nm_2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_edu_nm_2.Location = new System.Drawing.Point(153, 7);
+            this.txt_edu_nm_2.Name = "txt_edu_nm_2";
+            this.txt_edu_nm_2.Size = new System.Drawing.Size(300, 20);
+            this.txt_edu_nm_2.TabIndex = 54;
+            this.txt_edu_nm_2.Text = " ";
             // 
-            // textBox15
+            // txt_graduated_2
             // 
-            this.textBox15.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox15.Location = new System.Drawing.Point(153, 42);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(300, 20);
-            this.textBox15.TabIndex = 55;
+            this.txt_graduated_2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_graduated_2.Location = new System.Drawing.Point(153, 42);
+            this.txt_graduated_2.Name = "txt_graduated_2";
+            this.txt_graduated_2.Size = new System.Drawing.Size(300, 20);
+            this.txt_graduated_2.TabIndex = 55;
             // 
-            // textBox16
+            // txt_edu_yr_2
             // 
-            this.textBox16.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox16.Location = new System.Drawing.Point(153, 77);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(300, 20);
-            this.textBox16.TabIndex = 56;
+            this.txt_edu_yr_2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_edu_yr_2.Location = new System.Drawing.Point(153, 77);
+            this.txt_edu_yr_2.Name = "txt_edu_yr_2";
+            this.txt_edu_yr_2.Size = new System.Drawing.Size(300, 20);
+            this.txt_edu_yr_2.TabIndex = 56;
             // 
             // tableLayoutPanel80
             // 
@@ -3592,9 +3659,9 @@ namespace BIG.Present
             this.tableLayoutPanel41.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel41.Controls.Add(this.tableLayoutPanel47, 0, 1);
             this.tableLayoutPanel41.Controls.Add(this.tableLayoutPanel49, 0, 2);
-            this.tableLayoutPanel41.Controls.Add(this.txt_edu_name, 1, 0);
-            this.tableLayoutPanel41.Controls.Add(this.txt_graduated, 1, 1);
-            this.tableLayoutPanel41.Controls.Add(this.txt_yr_grad, 1, 2);
+            this.tableLayoutPanel41.Controls.Add(this.txt_edu_nm_1, 1, 0);
+            this.tableLayoutPanel41.Controls.Add(this.txt_graduated_1, 1, 1);
+            this.tableLayoutPanel41.Controls.Add(this.txt_edu_yr_1, 1, 2);
             this.tableLayoutPanel41.Controls.Add(this.tableLayoutPanel48, 0, 0);
             this.tableLayoutPanel41.Location = new System.Drawing.Point(3, 25);
             this.tableLayoutPanel41.Name = "tableLayoutPanel41";
@@ -3653,30 +3720,30 @@ namespace BIG.Present
             this.label54.TabIndex = 0;
             this.label54.Text = "ปีที่สำเร็จ";
             // 
-            // txt_edu_name
+            // txt_edu_nm_1
             // 
-            this.txt_edu_name.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_edu_name.Location = new System.Drawing.Point(153, 7);
-            this.txt_edu_name.Name = "txt_edu_name";
-            this.txt_edu_name.Size = new System.Drawing.Size(300, 20);
-            this.txt_edu_name.TabIndex = 54;
-            this.txt_edu_name.Text = " ";
+            this.txt_edu_nm_1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_edu_nm_1.Location = new System.Drawing.Point(153, 7);
+            this.txt_edu_nm_1.Name = "txt_edu_nm_1";
+            this.txt_edu_nm_1.Size = new System.Drawing.Size(300, 20);
+            this.txt_edu_nm_1.TabIndex = 54;
+            this.txt_edu_nm_1.Text = " ";
             // 
-            // txt_graduated
+            // txt_graduated_1
             // 
-            this.txt_graduated.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_graduated.Location = new System.Drawing.Point(153, 42);
-            this.txt_graduated.Name = "txt_graduated";
-            this.txt_graduated.Size = new System.Drawing.Size(300, 20);
-            this.txt_graduated.TabIndex = 55;
+            this.txt_graduated_1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_graduated_1.Location = new System.Drawing.Point(153, 42);
+            this.txt_graduated_1.Name = "txt_graduated_1";
+            this.txt_graduated_1.Size = new System.Drawing.Size(300, 20);
+            this.txt_graduated_1.TabIndex = 55;
             // 
-            // txt_yr_grad
+            // txt_edu_yr_1
             // 
-            this.txt_yr_grad.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_yr_grad.Location = new System.Drawing.Point(153, 77);
-            this.txt_yr_grad.Name = "txt_yr_grad";
-            this.txt_yr_grad.Size = new System.Drawing.Size(300, 20);
-            this.txt_yr_grad.TabIndex = 56;
+            this.txt_edu_yr_1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_edu_yr_1.Location = new System.Drawing.Point(153, 77);
+            this.txt_edu_yr_1.Name = "txt_edu_yr_1";
+            this.txt_edu_yr_1.Size = new System.Drawing.Size(300, 20);
+            this.txt_edu_yr_1.TabIndex = 56;
             // 
             // tableLayoutPanel48
             // 
@@ -4139,93 +4206,281 @@ namespace BIG.Present
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel30.ColumnCount = 1;
             this.tableLayoutPanel30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel30.Controls.Add(this.groupBox5, 0, 0);
-            this.tableLayoutPanel30.Location = new System.Drawing.Point(7, 6);
+            this.tableLayoutPanel30.Controls.Add(this.tableLayoutPanel54, 0, 0);
+            this.tableLayoutPanel30.Location = new System.Drawing.Point(6, 8);
             this.tableLayoutPanel30.Name = "tableLayoutPanel30";
             this.tableLayoutPanel30.RowCount = 1;
             this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 577F));
-            this.tableLayoutPanel30.Size = new System.Drawing.Size(1173, 577);
+            this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 528F));
+            this.tableLayoutPanel30.Size = new System.Drawing.Size(1173, 528);
             this.tableLayoutPanel30.TabIndex = 2;
+            // 
+            // tableLayoutPanel54
+            // 
+            this.tableLayoutPanel54.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel54.ColumnCount = 1;
+            this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel54.Controls.Add(this.groupBox15, 0, 2);
+            this.tableLayoutPanel54.Controls.Add(this.groupBox5, 0, 0);
+            this.tableLayoutPanel54.Controls.Add(this.groupBox14, 0, 1);
+            this.tableLayoutPanel54.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel54.Name = "tableLayoutPanel54";
+            this.tableLayoutPanel54.RowCount = 3;
+            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel54.Size = new System.Drawing.Size(1167, 522);
+            this.tableLayoutPanel54.TabIndex = 0;
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox15.Controls.Add(this.tableLayoutPanel104);
+            this.groupBox15.Location = new System.Drawing.Point(3, 351);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(1161, 168);
+            this.groupBox15.TabIndex = 3;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "ประสบการณ์ทำงาน";
+            // 
+            // tableLayoutPanel104
+            // 
+            this.tableLayoutPanel104.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel104.ColumnCount = 2;
+            this.tableLayoutPanel104.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel104.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel104.Controls.Add(this.tableLayoutPanel105, 0, 3);
+            this.tableLayoutPanel104.Controls.Add(this.txt_ext_comname_3, 1, 0);
+            this.tableLayoutPanel104.Controls.Add(this.tableLayoutPanel106, 0, 0);
+            this.tableLayoutPanel104.Controls.Add(this.tableLayoutPanel107, 0, 1);
+            this.tableLayoutPanel104.Controls.Add(this.txt_we_pos3, 1, 1);
+            this.tableLayoutPanel104.Controls.Add(this.tableLayoutPanel110, 0, 2);
+            this.tableLayoutPanel104.Controls.Add(this.txt_exp_salary_3, 1, 2);
+            this.tableLayoutPanel104.Controls.Add(this.txt_exp_period_3, 1, 3);
+            this.tableLayoutPanel104.Location = new System.Drawing.Point(6, 21);
+            this.tableLayoutPanel104.Name = "tableLayoutPanel104";
+            this.tableLayoutPanel104.RowCount = 4;
+            this.tableLayoutPanel104.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel104.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel104.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel104.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel104.Size = new System.Drawing.Size(578, 142);
+            this.tableLayoutPanel104.TabIndex = 3;
+            // 
+            // tableLayoutPanel105
+            // 
+            this.tableLayoutPanel105.ColumnCount = 2;
+            this.tableLayoutPanel105.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel105.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel105.Controls.Add(this.label99, 0, 0);
+            this.tableLayoutPanel105.Location = new System.Drawing.Point(3, 108);
+            this.tableLayoutPanel105.Name = "tableLayoutPanel105";
+            this.tableLayoutPanel105.RowCount = 1;
+            this.tableLayoutPanel105.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel105.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel105.TabIndex = 57;
+            // 
+            // label99
+            // 
+            this.label99.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label99.AutoSize = true;
+            this.label99.Location = new System.Drawing.Point(71, 8);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(52, 13);
+            this.label99.TabIndex = 0;
+            this.label99.Text = "ระยะเวลา";
+            // 
+            // txt_ext_comname_3
+            // 
+            this.txt_ext_comname_3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_ext_comname_3.Location = new System.Drawing.Point(153, 7);
+            this.txt_ext_comname_3.Name = "txt_ext_comname_3";
+            this.txt_ext_comname_3.Size = new System.Drawing.Size(300, 20);
+            this.txt_ext_comname_3.TabIndex = 54;
+            this.txt_ext_comname_3.Text = " ";
+            // 
+            // tableLayoutPanel106
+            // 
+            this.tableLayoutPanel106.ColumnCount = 2;
+            this.tableLayoutPanel106.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel106.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel106.Controls.Add(this.label100, 0, 0);
+            this.tableLayoutPanel106.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel106.Name = "tableLayoutPanel106";
+            this.tableLayoutPanel106.RowCount = 1;
+            this.tableLayoutPanel106.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel106.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel106.TabIndex = 45;
+            // 
+            // label100
+            // 
+            this.label100.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label100.AutoSize = true;
+            this.label100.Location = new System.Drawing.Point(75, 8);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(48, 13);
+            this.label100.TabIndex = 0;
+            this.label100.Text = "ชื่อบริษัท";
+            // 
+            // tableLayoutPanel107
+            // 
+            this.tableLayoutPanel107.ColumnCount = 2;
+            this.tableLayoutPanel107.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel107.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel107.Controls.Add(this.label101, 0, 0);
+            this.tableLayoutPanel107.Location = new System.Drawing.Point(3, 38);
+            this.tableLayoutPanel107.Name = "tableLayoutPanel107";
+            this.tableLayoutPanel107.RowCount = 1;
+            this.tableLayoutPanel107.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel107.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel107.TabIndex = 49;
+            // 
+            // label101
+            // 
+            this.label101.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label101.AutoSize = true;
+            this.label101.Location = new System.Drawing.Point(76, 8);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(47, 13);
+            this.label101.TabIndex = 0;
+            this.label101.Text = "ตำแหน่ง";
+            // 
+            // txt_we_pos3
+            // 
+            this.txt_we_pos3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_we_pos3.Location = new System.Drawing.Point(153, 42);
+            this.txt_we_pos3.Name = "txt_we_pos3";
+            this.txt_we_pos3.Size = new System.Drawing.Size(300, 20);
+            this.txt_we_pos3.TabIndex = 56;
+            // 
+            // tableLayoutPanel110
+            // 
+            this.tableLayoutPanel110.ColumnCount = 2;
+            this.tableLayoutPanel110.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel110.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel110.Controls.Add(this.label104, 0, 0);
+            this.tableLayoutPanel110.Location = new System.Drawing.Point(3, 73);
+            this.tableLayoutPanel110.Name = "tableLayoutPanel110";
+            this.tableLayoutPanel110.RowCount = 1;
+            this.tableLayoutPanel110.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel110.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel110.TabIndex = 47;
+            // 
+            // label104
+            // 
+            this.label104.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label104.AutoSize = true;
+            this.label104.Location = new System.Drawing.Point(64, 8);
+            this.label104.Name = "label104";
+            this.label104.Size = new System.Drawing.Size(59, 13);
+            this.label104.TabIndex = 0;
+            this.label104.Text = "อัตราค่าจ้าง";
+            // 
+            // txt_exp_salary_3
+            // 
+            this.txt_exp_salary_3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_exp_salary_3.Location = new System.Drawing.Point(153, 77);
+            this.txt_exp_salary_3.Name = "txt_exp_salary_3";
+            this.txt_exp_salary_3.Size = new System.Drawing.Size(300, 20);
+            this.txt_exp_salary_3.TabIndex = 58;
+            // 
+            // txt_exp_period_3
+            // 
+            this.txt_exp_period_3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_exp_period_3.Location = new System.Drawing.Point(153, 113);
+            this.txt_exp_period_3.Name = "txt_exp_period_3";
+            this.txt_exp_period_3.Size = new System.Drawing.Size(300, 20);
+            this.txt_exp_period_3.TabIndex = 59;
             // 
             // groupBox5
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox5.Controls.Add(this.tableLayoutPanel54);
+            this.groupBox5.Controls.Add(this.tableLayoutPanel55);
             this.groupBox5.Location = new System.Drawing.Point(3, 3);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1167, 571);
-            this.groupBox5.TabIndex = 0;
+            this.groupBox5.Size = new System.Drawing.Size(1161, 168);
+            this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "เรียงจากล่าสุด";
-            // 
-            // tableLayoutPanel54
-            // 
-            this.tableLayoutPanel54.ColumnCount = 2;
-            this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel54.Controls.Add(this.tableLayoutPanel55, 0, 1);
-            this.tableLayoutPanel54.Controls.Add(this.tableLayoutPanel56, 0, 0);
-            this.tableLayoutPanel54.Controls.Add(this.tableLayoutPanel57, 0, 2);
-            this.tableLayoutPanel54.Controls.Add(this.textBox4, 1, 0);
-            this.tableLayoutPanel54.Controls.Add(this.textBox5, 1, 1);
-            this.tableLayoutPanel54.Controls.Add(this.textBox6, 1, 2);
-            this.tableLayoutPanel54.Controls.Add(this.tableLayoutPanel58, 0, 3);
-            this.tableLayoutPanel54.Controls.Add(this.textBox7, 1, 3);
-            this.tableLayoutPanel54.Controls.Add(this.tableLayoutPanel59, 0, 4);
-            this.tableLayoutPanel54.Controls.Add(this.textBox8, 1, 4);
-            this.tableLayoutPanel54.Location = new System.Drawing.Point(6, 20);
-            this.tableLayoutPanel54.Name = "tableLayoutPanel54";
-            this.tableLayoutPanel54.RowCount = 8;
-            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel54.Size = new System.Drawing.Size(578, 280);
-            this.tableLayoutPanel54.TabIndex = 3;
+            this.groupBox5.Text = "ประสบการณ์ทำงานล่าสุด";
             // 
             // tableLayoutPanel55
             // 
+            this.tableLayoutPanel55.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel55.ColumnCount = 2;
+            this.tableLayoutPanel55.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel55.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel55.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tableLayoutPanel55.Controls.Add(this.label55, 0, 0);
-            this.tableLayoutPanel55.Location = new System.Drawing.Point(3, 38);
+            this.tableLayoutPanel55.Controls.Add(this.tableLayoutPanel108, 0, 3);
+            this.tableLayoutPanel55.Controls.Add(this.txt_ext_comname_1, 1, 0);
+            this.tableLayoutPanel55.Controls.Add(this.tableLayoutPanel57, 0, 0);
+            this.tableLayoutPanel55.Controls.Add(this.tableLayoutPanel58, 0, 1);
+            this.tableLayoutPanel55.Controls.Add(this.txt_we_pos1, 1, 1);
+            this.tableLayoutPanel55.Controls.Add(this.tableLayoutPanel56, 0, 2);
+            this.tableLayoutPanel55.Controls.Add(this.txt_exp_salary_1, 1, 2);
+            this.tableLayoutPanel55.Controls.Add(this.txt_exp_period_1, 1, 3);
+            this.tableLayoutPanel55.Location = new System.Drawing.Point(6, 20);
             this.tableLayoutPanel55.Name = "tableLayoutPanel55";
-            this.tableLayoutPanel55.RowCount = 1;
-            this.tableLayoutPanel55.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel55.Size = new System.Drawing.Size(144, 29);
-            this.tableLayoutPanel55.TabIndex = 47;
+            this.tableLayoutPanel55.RowCount = 4;
+            this.tableLayoutPanel55.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel55.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel55.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel55.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel55.Size = new System.Drawing.Size(578, 145);
+            this.tableLayoutPanel55.TabIndex = 2;
             // 
-            // label55
+            // tableLayoutPanel108
             // 
-            this.label55.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(76, 8);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(47, 13);
-            this.label55.TabIndex = 0;
-            this.label55.Text = "ตำแหน่ง";
+            this.tableLayoutPanel108.ColumnCount = 2;
+            this.tableLayoutPanel108.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel108.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel108.Controls.Add(this.label102, 0, 0);
+            this.tableLayoutPanel108.Location = new System.Drawing.Point(3, 108);
+            this.tableLayoutPanel108.Name = "tableLayoutPanel108";
+            this.tableLayoutPanel108.RowCount = 1;
+            this.tableLayoutPanel108.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel108.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel108.TabIndex = 57;
             // 
-            // tableLayoutPanel56
+            // label102
             // 
-            this.tableLayoutPanel56.ColumnCount = 2;
-            this.tableLayoutPanel56.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel56.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tableLayoutPanel56.Controls.Add(this.label56, 0, 0);
-            this.tableLayoutPanel56.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel56.Name = "tableLayoutPanel56";
-            this.tableLayoutPanel56.RowCount = 1;
-            this.tableLayoutPanel56.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel56.Size = new System.Drawing.Size(144, 29);
-            this.tableLayoutPanel56.TabIndex = 45;
+            this.label102.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label102.AutoSize = true;
+            this.label102.Location = new System.Drawing.Point(71, 8);
+            this.label102.Name = "label102";
+            this.label102.Size = new System.Drawing.Size(52, 13);
+            this.label102.TabIndex = 0;
+            this.label102.Text = "ระยะเวลา";
+            // 
+            // txt_ext_comname_1
+            // 
+            this.txt_ext_comname_1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_ext_comname_1.Location = new System.Drawing.Point(153, 7);
+            this.txt_ext_comname_1.Name = "txt_ext_comname_1";
+            this.txt_ext_comname_1.Size = new System.Drawing.Size(300, 20);
+            this.txt_ext_comname_1.TabIndex = 54;
+            this.txt_ext_comname_1.Text = " ";
+            // 
+            // tableLayoutPanel57
+            // 
+            this.tableLayoutPanel57.ColumnCount = 2;
+            this.tableLayoutPanel57.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel57.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel57.Controls.Add(this.label56, 0, 0);
+            this.tableLayoutPanel57.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel57.Name = "tableLayoutPanel57";
+            this.tableLayoutPanel57.RowCount = 1;
+            this.tableLayoutPanel57.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel57.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel57.TabIndex = 45;
             // 
             // label56
             // 
@@ -4237,66 +4492,127 @@ namespace BIG.Present
             this.label56.TabIndex = 0;
             this.label56.Text = "ชื่อบริษัท";
             // 
-            // tableLayoutPanel57
-            // 
-            this.tableLayoutPanel57.ColumnCount = 2;
-            this.tableLayoutPanel57.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel57.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tableLayoutPanel57.Controls.Add(this.label57, 0, 0);
-            this.tableLayoutPanel57.Location = new System.Drawing.Point(3, 73);
-            this.tableLayoutPanel57.Name = "tableLayoutPanel57";
-            this.tableLayoutPanel57.RowCount = 1;
-            this.tableLayoutPanel57.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel57.Size = new System.Drawing.Size(144, 29);
-            this.tableLayoutPanel57.TabIndex = 49;
-            // 
-            // label57
-            // 
-            this.label57.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(64, 8);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(59, 13);
-            this.label57.TabIndex = 0;
-            this.label57.Text = "อัตราค่าจ้าง";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox4.Location = new System.Drawing.Point(153, 7);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(300, 20);
-            this.textBox4.TabIndex = 54;
-            this.textBox4.Text = " ";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox5.Location = new System.Drawing.Point(153, 42);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(300, 20);
-            this.textBox5.TabIndex = 55;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox6.Location = new System.Drawing.Point(153, 77);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(300, 20);
-            this.textBox6.TabIndex = 56;
-            // 
             // tableLayoutPanel58
             // 
             this.tableLayoutPanel58.ColumnCount = 2;
             this.tableLayoutPanel58.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel58.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tableLayoutPanel58.Controls.Add(this.label58, 0, 0);
-            this.tableLayoutPanel58.Location = new System.Drawing.Point(3, 108);
+            this.tableLayoutPanel58.Controls.Add(this.label57, 0, 0);
+            this.tableLayoutPanel58.Location = new System.Drawing.Point(3, 38);
             this.tableLayoutPanel58.Name = "tableLayoutPanel58";
             this.tableLayoutPanel58.RowCount = 1;
             this.tableLayoutPanel58.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel58.Size = new System.Drawing.Size(144, 29);
-            this.tableLayoutPanel58.TabIndex = 57;
+            this.tableLayoutPanel58.TabIndex = 49;
+            // 
+            // label57
+            // 
+            this.label57.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(76, 8);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(47, 13);
+            this.label57.TabIndex = 0;
+            this.label57.Text = "ตำแหน่ง";
+            // 
+            // txt_we_pos1
+            // 
+            this.txt_we_pos1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_we_pos1.Location = new System.Drawing.Point(153, 42);
+            this.txt_we_pos1.Name = "txt_we_pos1";
+            this.txt_we_pos1.Size = new System.Drawing.Size(300, 20);
+            this.txt_we_pos1.TabIndex = 56;
+            // 
+            // tableLayoutPanel56
+            // 
+            this.tableLayoutPanel56.ColumnCount = 2;
+            this.tableLayoutPanel56.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel56.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel56.Controls.Add(this.label55, 0, 0);
+            this.tableLayoutPanel56.Location = new System.Drawing.Point(3, 73);
+            this.tableLayoutPanel56.Name = "tableLayoutPanel56";
+            this.tableLayoutPanel56.RowCount = 1;
+            this.tableLayoutPanel56.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel56.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel56.TabIndex = 47;
+            // 
+            // label55
+            // 
+            this.label55.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(64, 8);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(59, 13);
+            this.label55.TabIndex = 0;
+            this.label55.Text = "อัตราค่าจ้าง";
+            // 
+            // txt_exp_salary_1
+            // 
+            this.txt_exp_salary_1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_exp_salary_1.Location = new System.Drawing.Point(153, 77);
+            this.txt_exp_salary_1.Name = "txt_exp_salary_1";
+            this.txt_exp_salary_1.Size = new System.Drawing.Size(300, 20);
+            this.txt_exp_salary_1.TabIndex = 58;
+            // 
+            // txt_exp_period_1
+            // 
+            this.txt_exp_period_1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_exp_period_1.Location = new System.Drawing.Point(153, 115);
+            this.txt_exp_period_1.Name = "txt_exp_period_1";
+            this.txt_exp_period_1.Size = new System.Drawing.Size(300, 20);
+            this.txt_exp_period_1.TabIndex = 59;
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox14.Controls.Add(this.tableLayoutPanel59);
+            this.groupBox14.Location = new System.Drawing.Point(3, 177);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(1161, 168);
+            this.groupBox14.TabIndex = 2;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "ประสบการณ์ทำงาน";
+            // 
+            // tableLayoutPanel59
+            // 
+            this.tableLayoutPanel59.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel59.ColumnCount = 2;
+            this.tableLayoutPanel59.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel59.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel59.Controls.Add(this.tableLayoutPanel101, 0, 3);
+            this.tableLayoutPanel59.Controls.Add(this.txt_ext_comname_2, 1, 0);
+            this.tableLayoutPanel59.Controls.Add(this.tableLayoutPanel102, 0, 0);
+            this.tableLayoutPanel59.Controls.Add(this.tableLayoutPanel103, 0, 1);
+            this.tableLayoutPanel59.Controls.Add(this.txt_we_pos2, 1, 1);
+            this.tableLayoutPanel59.Controls.Add(this.tableLayoutPanel109, 0, 2);
+            this.tableLayoutPanel59.Controls.Add(this.txt_exp_salary_2, 1, 2);
+            this.tableLayoutPanel59.Controls.Add(this.txt_exp_period_2, 1, 3);
+            this.tableLayoutPanel59.Location = new System.Drawing.Point(9, 17);
+            this.tableLayoutPanel59.Name = "tableLayoutPanel59";
+            this.tableLayoutPanel59.RowCount = 4;
+            this.tableLayoutPanel59.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel59.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel59.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel59.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel59.Size = new System.Drawing.Size(578, 145);
+            this.tableLayoutPanel59.TabIndex = 3;
+            // 
+            // tableLayoutPanel101
+            // 
+            this.tableLayoutPanel101.ColumnCount = 2;
+            this.tableLayoutPanel101.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel101.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel101.Controls.Add(this.label58, 0, 0);
+            this.tableLayoutPanel101.Location = new System.Drawing.Point(3, 108);
+            this.tableLayoutPanel101.Name = "tableLayoutPanel101";
+            this.tableLayoutPanel101.RowCount = 1;
+            this.tableLayoutPanel101.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel101.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel101.TabIndex = 57;
             // 
             // label58
             // 
@@ -4308,44 +4624,107 @@ namespace BIG.Present
             this.label58.TabIndex = 0;
             this.label58.Text = "ระยะเวลา";
             // 
-            // textBox7
+            // txt_ext_comname_2
             // 
-            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox7.Location = new System.Drawing.Point(153, 112);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(300, 20);
-            this.textBox7.TabIndex = 58;
+            this.txt_ext_comname_2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_ext_comname_2.Location = new System.Drawing.Point(153, 7);
+            this.txt_ext_comname_2.Name = "txt_ext_comname_2";
+            this.txt_ext_comname_2.Size = new System.Drawing.Size(300, 20);
+            this.txt_ext_comname_2.TabIndex = 54;
+            this.txt_ext_comname_2.Text = " ";
             // 
-            // tableLayoutPanel59
+            // tableLayoutPanel102
             // 
-            this.tableLayoutPanel59.ColumnCount = 2;
-            this.tableLayoutPanel59.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel59.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tableLayoutPanel59.Controls.Add(this.label59, 0, 0);
-            this.tableLayoutPanel59.Location = new System.Drawing.Point(3, 143);
-            this.tableLayoutPanel59.Name = "tableLayoutPanel59";
-            this.tableLayoutPanel59.RowCount = 1;
-            this.tableLayoutPanel59.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel59.Size = new System.Drawing.Size(144, 29);
-            this.tableLayoutPanel59.TabIndex = 59;
+            this.tableLayoutPanel102.ColumnCount = 2;
+            this.tableLayoutPanel102.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel102.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel102.Controls.Add(this.label59, 0, 0);
+            this.tableLayoutPanel102.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel102.Name = "tableLayoutPanel102";
+            this.tableLayoutPanel102.RowCount = 1;
+            this.tableLayoutPanel102.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel102.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel102.TabIndex = 45;
             // 
             // label59
             // 
             this.label59.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(49, 8);
+            this.label59.Location = new System.Drawing.Point(75, 8);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(74, 13);
+            this.label59.Size = new System.Drawing.Size(48, 13);
             this.label59.TabIndex = 0;
-            this.label59.Text = "สาเหตุที่ลาออก";
+            this.label59.Text = "ชื่อบริษัท";
             // 
-            // textBox8
+            // tableLayoutPanel103
             // 
-            this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox8.Location = new System.Drawing.Point(153, 147);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(300, 20);
-            this.textBox8.TabIndex = 60;
+            this.tableLayoutPanel103.ColumnCount = 2;
+            this.tableLayoutPanel103.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel103.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel103.Controls.Add(this.label67, 0, 0);
+            this.tableLayoutPanel103.Location = new System.Drawing.Point(3, 38);
+            this.tableLayoutPanel103.Name = "tableLayoutPanel103";
+            this.tableLayoutPanel103.RowCount = 1;
+            this.tableLayoutPanel103.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel103.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel103.TabIndex = 49;
+            // 
+            // label67
+            // 
+            this.label67.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(76, 8);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(47, 13);
+            this.label67.TabIndex = 0;
+            this.label67.Text = "ตำแหน่ง";
+            // 
+            // txt_we_pos2
+            // 
+            this.txt_we_pos2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_we_pos2.Location = new System.Drawing.Point(153, 42);
+            this.txt_we_pos2.Name = "txt_we_pos2";
+            this.txt_we_pos2.Size = new System.Drawing.Size(300, 20);
+            this.txt_we_pos2.TabIndex = 56;
+            // 
+            // tableLayoutPanel109
+            // 
+            this.tableLayoutPanel109.ColumnCount = 2;
+            this.tableLayoutPanel109.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel109.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel109.Controls.Add(this.label103, 0, 0);
+            this.tableLayoutPanel109.Location = new System.Drawing.Point(3, 73);
+            this.tableLayoutPanel109.Name = "tableLayoutPanel109";
+            this.tableLayoutPanel109.RowCount = 1;
+            this.tableLayoutPanel109.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel109.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel109.TabIndex = 47;
+            // 
+            // label103
+            // 
+            this.label103.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label103.AutoSize = true;
+            this.label103.Location = new System.Drawing.Point(64, 8);
+            this.label103.Name = "label103";
+            this.label103.Size = new System.Drawing.Size(59, 13);
+            this.label103.TabIndex = 0;
+            this.label103.Text = "อัตราค่าจ้าง";
+            // 
+            // txt_exp_salary_2
+            // 
+            this.txt_exp_salary_2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_exp_salary_2.Location = new System.Drawing.Point(153, 77);
+            this.txt_exp_salary_2.Name = "txt_exp_salary_2";
+            this.txt_exp_salary_2.Size = new System.Drawing.Size(300, 20);
+            this.txt_exp_salary_2.TabIndex = 58;
+            // 
+            // txt_exp_period_2
+            // 
+            this.txt_exp_period_2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_exp_period_2.Location = new System.Drawing.Point(153, 115);
+            this.txt_exp_period_2.Name = "txt_exp_period_2";
+            this.txt_exp_period_2.Size = new System.Drawing.Size(300, 20);
+            this.txt_exp_period_2.TabIndex = 59;
             // 
             // tab_Reference
             // 
@@ -4366,75 +4745,276 @@ namespace BIG.Present
             this.groupBox6.Controls.Add(this.tableLayoutPanel60);
             this.groupBox6.Location = new System.Drawing.Point(10, 9);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(1167, 571);
+            this.groupBox6.Size = new System.Drawing.Size(1167, 527);
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             // 
             // tableLayoutPanel60
             // 
-            this.tableLayoutPanel60.ColumnCount = 2;
-            this.tableLayoutPanel60.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel60.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel60.ColumnCount = 1;
             this.tableLayoutPanel60.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel60.Controls.Add(this.tableLayoutPanel61, 0, 1);
-            this.tableLayoutPanel60.Controls.Add(this.tableLayoutPanel62, 0, 0);
-            this.tableLayoutPanel60.Controls.Add(this.tableLayoutPanel63, 0, 2);
-            this.tableLayoutPanel60.Controls.Add(this.textBox9, 1, 0);
-            this.tableLayoutPanel60.Controls.Add(this.textBox10, 1, 1);
-            this.tableLayoutPanel60.Controls.Add(this.textBox11, 1, 2);
-            this.tableLayoutPanel60.Controls.Add(this.tableLayoutPanel64, 0, 3);
-            this.tableLayoutPanel60.Controls.Add(this.textBox12, 1, 3);
-            this.tableLayoutPanel60.Controls.Add(this.tableLayoutPanel65, 0, 4);
-            this.tableLayoutPanel60.Controls.Add(this.textBox13, 1, 4);
-            this.tableLayoutPanel60.Location = new System.Drawing.Point(7, 13);
+            this.tableLayoutPanel60.Controls.Add(this.groupBox18, 0, 2);
+            this.tableLayoutPanel60.Controls.Add(this.groupBox16, 0, 0);
+            this.tableLayoutPanel60.Controls.Add(this.groupBox17, 0, 1);
+            this.tableLayoutPanel60.Location = new System.Drawing.Point(6, 13);
             this.tableLayoutPanel60.Name = "tableLayoutPanel60";
-            this.tableLayoutPanel60.RowCount = 8;
-            this.tableLayoutPanel60.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel60.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel60.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel60.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel60.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel60.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel60.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel60.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel60.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel60.Size = new System.Drawing.Size(578, 280);
-            this.tableLayoutPanel60.TabIndex = 4;
+            this.tableLayoutPanel60.RowCount = 3;
+            this.tableLayoutPanel60.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel60.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel60.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel60.Size = new System.Drawing.Size(1155, 508);
+            this.tableLayoutPanel60.TabIndex = 0;
+            // 
+            // groupBox18
+            // 
+            this.groupBox18.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox18.Controls.Add(this.tableLayoutPanel116);
+            this.groupBox18.Location = new System.Drawing.Point(3, 341);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(1149, 164);
+            this.groupBox18.TabIndex = 4;
+            this.groupBox18.TabStop = false;
+            this.groupBox18.Text = "บุคคลอ้างอืง คนที่ 3";
+            // 
+            // tableLayoutPanel116
+            // 
+            this.tableLayoutPanel116.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel116.ColumnCount = 2;
+            this.tableLayoutPanel116.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel116.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel116.Controls.Add(this.tableLayoutPanel117, 0, 3);
+            this.tableLayoutPanel116.Controls.Add(this.txt_ref_name_3, 1, 0);
+            this.tableLayoutPanel116.Controls.Add(this.tableLayoutPanel118, 0, 0);
+            this.tableLayoutPanel116.Controls.Add(this.tableLayoutPanel119, 0, 1);
+            this.tableLayoutPanel116.Controls.Add(this.txt_ref_relation_3, 1, 1);
+            this.tableLayoutPanel116.Controls.Add(this.tableLayoutPanel120, 0, 2);
+            this.tableLayoutPanel116.Controls.Add(this.txt_ref_contact_3, 1, 2);
+            this.tableLayoutPanel116.Controls.Add(this.txt_ref_add_3, 1, 3);
+            this.tableLayoutPanel116.Location = new System.Drawing.Point(6, 17);
+            this.tableLayoutPanel116.Name = "tableLayoutPanel116";
+            this.tableLayoutPanel116.RowCount = 4;
+            this.tableLayoutPanel116.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel116.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel116.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel116.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel116.Size = new System.Drawing.Size(566, 141);
+            this.tableLayoutPanel116.TabIndex = 2;
+            // 
+            // tableLayoutPanel117
+            // 
+            this.tableLayoutPanel117.ColumnCount = 2;
+            this.tableLayoutPanel117.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel117.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel117.Controls.Add(this.label108, 0, 0);
+            this.tableLayoutPanel117.Location = new System.Drawing.Point(3, 108);
+            this.tableLayoutPanel117.Name = "tableLayoutPanel117";
+            this.tableLayoutPanel117.RowCount = 1;
+            this.tableLayoutPanel117.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel117.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel117.TabIndex = 57;
+            // 
+            // label108
+            // 
+            this.label108.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label108.AutoSize = true;
+            this.label108.Location = new System.Drawing.Point(96, 8);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(27, 13);
+            this.label108.TabIndex = 0;
+            this.label108.Text = "ที่อยู่";
+            // 
+            // txt_ref_name_3
+            // 
+            this.txt_ref_name_3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_ref_name_3.Location = new System.Drawing.Point(153, 7);
+            this.txt_ref_name_3.Name = "txt_ref_name_3";
+            this.txt_ref_name_3.Size = new System.Drawing.Size(300, 20);
+            this.txt_ref_name_3.TabIndex = 54;
+            this.txt_ref_name_3.Text = " ";
+            // 
+            // tableLayoutPanel118
+            // 
+            this.tableLayoutPanel118.ColumnCount = 2;
+            this.tableLayoutPanel118.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel118.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel118.Controls.Add(this.label109, 0, 0);
+            this.tableLayoutPanel118.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel118.Name = "tableLayoutPanel118";
+            this.tableLayoutPanel118.RowCount = 1;
+            this.tableLayoutPanel118.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel118.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel118.TabIndex = 45;
+            // 
+            // label109
+            // 
+            this.label109.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label109.AutoSize = true;
+            this.label109.Location = new System.Drawing.Point(81, 8);
+            this.label109.Name = "label109";
+            this.label109.Size = new System.Drawing.Size(42, 13);
+            this.label109.TabIndex = 0;
+            this.label109.Text = "ชื่อ-สกุล";
+            // 
+            // tableLayoutPanel119
+            // 
+            this.tableLayoutPanel119.ColumnCount = 2;
+            this.tableLayoutPanel119.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel119.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel119.Controls.Add(this.label110, 0, 0);
+            this.tableLayoutPanel119.Location = new System.Drawing.Point(3, 38);
+            this.tableLayoutPanel119.Name = "tableLayoutPanel119";
+            this.tableLayoutPanel119.RowCount = 1;
+            this.tableLayoutPanel119.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel119.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel119.TabIndex = 49;
+            // 
+            // label110
+            // 
+            this.label110.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label110.AutoSize = true;
+            this.label110.Location = new System.Drawing.Point(9, 8);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(114, 13);
+            this.label110.TabIndex = 0;
+            this.label110.Text = "มีความสำพันธ์เกี่ยวข้อง";
+            // 
+            // txt_ref_relation_3
+            // 
+            this.txt_ref_relation_3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_ref_relation_3.Location = new System.Drawing.Point(153, 42);
+            this.txt_ref_relation_3.Name = "txt_ref_relation_3";
+            this.txt_ref_relation_3.Size = new System.Drawing.Size(300, 20);
+            this.txt_ref_relation_3.TabIndex = 56;
+            // 
+            // tableLayoutPanel120
+            // 
+            this.tableLayoutPanel120.ColumnCount = 2;
+            this.tableLayoutPanel120.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel120.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel120.Controls.Add(this.label111, 0, 0);
+            this.tableLayoutPanel120.Location = new System.Drawing.Point(3, 73);
+            this.tableLayoutPanel120.Name = "tableLayoutPanel120";
+            this.tableLayoutPanel120.RowCount = 1;
+            this.tableLayoutPanel120.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel120.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel120.TabIndex = 47;
+            // 
+            // label111
+            // 
+            this.label111.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label111.AutoSize = true;
+            this.label111.Location = new System.Drawing.Point(65, 8);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(58, 13);
+            this.label111.TabIndex = 0;
+            this.label111.Text = "เบอร์ติดต่อ";
+            // 
+            // txt_ref_contact_3
+            // 
+            this.txt_ref_contact_3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_ref_contact_3.Location = new System.Drawing.Point(153, 77);
+            this.txt_ref_contact_3.Name = "txt_ref_contact_3";
+            this.txt_ref_contact_3.Size = new System.Drawing.Size(300, 20);
+            this.txt_ref_contact_3.TabIndex = 58;
+            // 
+            // txt_ref_add_3
+            // 
+            this.txt_ref_add_3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_ref_add_3.Location = new System.Drawing.Point(153, 113);
+            this.txt_ref_add_3.Name = "txt_ref_add_3";
+            this.txt_ref_add_3.Size = new System.Drawing.Size(300, 20);
+            this.txt_ref_add_3.TabIndex = 59;
+            // 
+            // groupBox16
+            // 
+            this.groupBox16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox16.Controls.Add(this.tableLayoutPanel61);
+            this.groupBox16.Location = new System.Drawing.Point(3, 3);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(1149, 163);
+            this.groupBox16.TabIndex = 2;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "บุคคลอ้างอืง คนที่ 1";
             // 
             // tableLayoutPanel61
             // 
+            this.tableLayoutPanel61.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel61.ColumnCount = 2;
+            this.tableLayoutPanel61.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel61.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel61.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tableLayoutPanel61.Controls.Add(this.label60, 0, 0);
-            this.tableLayoutPanel61.Location = new System.Drawing.Point(3, 38);
+            this.tableLayoutPanel61.Controls.Add(this.tableLayoutPanel62, 0, 3);
+            this.tableLayoutPanel61.Controls.Add(this.txt_ref_name_1, 1, 0);
+            this.tableLayoutPanel61.Controls.Add(this.tableLayoutPanel63, 0, 0);
+            this.tableLayoutPanel61.Controls.Add(this.tableLayoutPanel64, 0, 1);
+            this.tableLayoutPanel61.Controls.Add(this.txt_ref_relation_1, 1, 1);
+            this.tableLayoutPanel61.Controls.Add(this.tableLayoutPanel65, 0, 2);
+            this.tableLayoutPanel61.Controls.Add(this.txt_ref_contact_1, 1, 2);
+            this.tableLayoutPanel61.Controls.Add(this.txt_ref_add_1, 1, 3);
+            this.tableLayoutPanel61.Location = new System.Drawing.Point(6, 17);
             this.tableLayoutPanel61.Name = "tableLayoutPanel61";
-            this.tableLayoutPanel61.RowCount = 1;
-            this.tableLayoutPanel61.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel61.Size = new System.Drawing.Size(144, 29);
-            this.tableLayoutPanel61.TabIndex = 47;
-            // 
-            // label60
-            // 
-            this.label60.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(7, 8);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(116, 13);
-            this.label60.TabIndex = 0;
-            this.label60.Text = "มีความสัมพันธ์เกี่ยวข้อง";
+            this.tableLayoutPanel61.RowCount = 4;
+            this.tableLayoutPanel61.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel61.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel61.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel61.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel61.Size = new System.Drawing.Size(566, 140);
+            this.tableLayoutPanel61.TabIndex = 2;
             // 
             // tableLayoutPanel62
             // 
             this.tableLayoutPanel62.ColumnCount = 2;
             this.tableLayoutPanel62.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel62.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tableLayoutPanel62.Controls.Add(this.label61, 0, 0);
-            this.tableLayoutPanel62.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel62.Controls.Add(this.label60, 0, 0);
+            this.tableLayoutPanel62.Location = new System.Drawing.Point(3, 108);
             this.tableLayoutPanel62.Name = "tableLayoutPanel62";
             this.tableLayoutPanel62.RowCount = 1;
             this.tableLayoutPanel62.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel62.Size = new System.Drawing.Size(144, 29);
-            this.tableLayoutPanel62.TabIndex = 45;
+            this.tableLayoutPanel62.TabIndex = 57;
+            // 
+            // label60
+            // 
+            this.label60.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(96, 8);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(27, 13);
+            this.label60.TabIndex = 0;
+            this.label60.Text = "ที่อยู่";
+            // 
+            // txt_ref_name_1
+            // 
+            this.txt_ref_name_1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_ref_name_1.Location = new System.Drawing.Point(153, 7);
+            this.txt_ref_name_1.Name = "txt_ref_name_1";
+            this.txt_ref_name_1.Size = new System.Drawing.Size(300, 20);
+            this.txt_ref_name_1.TabIndex = 54;
+            this.txt_ref_name_1.Text = " ";
+            // 
+            // tableLayoutPanel63
+            // 
+            this.tableLayoutPanel63.ColumnCount = 2;
+            this.tableLayoutPanel63.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel63.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel63.Controls.Add(this.label61, 0, 0);
+            this.tableLayoutPanel63.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel63.Name = "tableLayoutPanel63";
+            this.tableLayoutPanel63.RowCount = 1;
+            this.tableLayoutPanel63.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel63.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel63.TabIndex = 45;
             // 
             // label61
             // 
@@ -4446,66 +5026,49 @@ namespace BIG.Present
             this.label61.TabIndex = 0;
             this.label61.Text = "ชื่อ-สกุล";
             // 
-            // tableLayoutPanel63
-            // 
-            this.tableLayoutPanel63.ColumnCount = 2;
-            this.tableLayoutPanel63.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel63.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tableLayoutPanel63.Controls.Add(this.label62, 0, 0);
-            this.tableLayoutPanel63.Location = new System.Drawing.Point(3, 73);
-            this.tableLayoutPanel63.Name = "tableLayoutPanel63";
-            this.tableLayoutPanel63.RowCount = 1;
-            this.tableLayoutPanel63.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel63.Size = new System.Drawing.Size(144, 29);
-            this.tableLayoutPanel63.TabIndex = 49;
-            // 
-            // label62
-            // 
-            this.label62.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(96, 8);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(27, 13);
-            this.label62.TabIndex = 0;
-            this.label62.Text = "ที่อยู่";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox9.Location = new System.Drawing.Point(153, 7);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(300, 20);
-            this.textBox9.TabIndex = 54;
-            this.textBox9.Text = " ";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox10.Location = new System.Drawing.Point(153, 42);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(300, 20);
-            this.textBox10.TabIndex = 55;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox11.Location = new System.Drawing.Point(153, 77);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(300, 20);
-            this.textBox11.TabIndex = 56;
-            // 
             // tableLayoutPanel64
             // 
             this.tableLayoutPanel64.ColumnCount = 2;
             this.tableLayoutPanel64.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel64.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tableLayoutPanel64.Controls.Add(this.label63, 0, 0);
-            this.tableLayoutPanel64.Location = new System.Drawing.Point(3, 108);
+            this.tableLayoutPanel64.Controls.Add(this.label62, 0, 0);
+            this.tableLayoutPanel64.Location = new System.Drawing.Point(3, 38);
             this.tableLayoutPanel64.Name = "tableLayoutPanel64";
             this.tableLayoutPanel64.RowCount = 1;
             this.tableLayoutPanel64.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel64.Size = new System.Drawing.Size(144, 29);
-            this.tableLayoutPanel64.TabIndex = 57;
+            this.tableLayoutPanel64.TabIndex = 49;
+            // 
+            // label62
+            // 
+            this.label62.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(9, 8);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(114, 13);
+            this.label62.TabIndex = 0;
+            this.label62.Text = "มีความสำพันธ์เกี่ยวข้อง";
+            // 
+            // txt_ref_relation_1
+            // 
+            this.txt_ref_relation_1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_ref_relation_1.Location = new System.Drawing.Point(153, 42);
+            this.txt_ref_relation_1.Name = "txt_ref_relation_1";
+            this.txt_ref_relation_1.Size = new System.Drawing.Size(300, 20);
+            this.txt_ref_relation_1.TabIndex = 56;
+            // 
+            // tableLayoutPanel65
+            // 
+            this.tableLayoutPanel65.ColumnCount = 2;
+            this.tableLayoutPanel65.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel65.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel65.Controls.Add(this.label63, 0, 0);
+            this.tableLayoutPanel65.Location = new System.Drawing.Point(3, 73);
+            this.tableLayoutPanel65.Name = "tableLayoutPanel65";
+            this.tableLayoutPanel65.RowCount = 1;
+            this.tableLayoutPanel65.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel65.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel65.TabIndex = 47;
             // 
             // label63
             // 
@@ -4517,44 +5080,185 @@ namespace BIG.Present
             this.label63.TabIndex = 0;
             this.label63.Text = "เบอร์ติดต่อ";
             // 
-            // textBox12
+            // txt_ref_contact_1
             // 
-            this.textBox12.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox12.Location = new System.Drawing.Point(153, 112);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(300, 20);
-            this.textBox12.TabIndex = 58;
+            this.txt_ref_contact_1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_ref_contact_1.Location = new System.Drawing.Point(153, 77);
+            this.txt_ref_contact_1.Name = "txt_ref_contact_1";
+            this.txt_ref_contact_1.Size = new System.Drawing.Size(300, 20);
+            this.txt_ref_contact_1.TabIndex = 58;
             // 
-            // tableLayoutPanel65
+            // txt_ref_add_1
             // 
-            this.tableLayoutPanel65.ColumnCount = 2;
-            this.tableLayoutPanel65.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel65.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tableLayoutPanel65.Controls.Add(this.label64, 0, 0);
-            this.tableLayoutPanel65.Location = new System.Drawing.Point(3, 143);
-            this.tableLayoutPanel65.Name = "tableLayoutPanel65";
-            this.tableLayoutPanel65.RowCount = 1;
-            this.tableLayoutPanel65.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel65.Size = new System.Drawing.Size(144, 29);
-            this.tableLayoutPanel65.TabIndex = 59;
+            this.txt_ref_add_1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_ref_add_1.Location = new System.Drawing.Point(153, 112);
+            this.txt_ref_add_1.Name = "txt_ref_add_1";
+            this.txt_ref_add_1.Size = new System.Drawing.Size(300, 20);
+            this.txt_ref_add_1.TabIndex = 59;
+            // 
+            // groupBox17
+            // 
+            this.groupBox17.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox17.Controls.Add(this.tableLayoutPanel111);
+            this.groupBox17.Location = new System.Drawing.Point(3, 172);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(1149, 163);
+            this.groupBox17.TabIndex = 3;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "บุคคลอ้างอืง คนที่ 2";
+            // 
+            // tableLayoutPanel111
+            // 
+            this.tableLayoutPanel111.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel111.ColumnCount = 2;
+            this.tableLayoutPanel111.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel111.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel111.Controls.Add(this.tableLayoutPanel112, 0, 3);
+            this.tableLayoutPanel111.Controls.Add(this.txt_ref_name_2, 1, 0);
+            this.tableLayoutPanel111.Controls.Add(this.tableLayoutPanel113, 0, 0);
+            this.tableLayoutPanel111.Controls.Add(this.tableLayoutPanel114, 0, 1);
+            this.tableLayoutPanel111.Controls.Add(this.txt_ref_relation_2, 1, 1);
+            this.tableLayoutPanel111.Controls.Add(this.tableLayoutPanel115, 0, 2);
+            this.tableLayoutPanel111.Controls.Add(this.txt_ref_contact_2, 1, 2);
+            this.tableLayoutPanel111.Controls.Add(this.txt_ref_add_2, 1, 3);
+            this.tableLayoutPanel111.Location = new System.Drawing.Point(6, 17);
+            this.tableLayoutPanel111.Name = "tableLayoutPanel111";
+            this.tableLayoutPanel111.RowCount = 4;
+            this.tableLayoutPanel111.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel111.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel111.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel111.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel111.Size = new System.Drawing.Size(566, 140);
+            this.tableLayoutPanel111.TabIndex = 2;
+            // 
+            // tableLayoutPanel112
+            // 
+            this.tableLayoutPanel112.ColumnCount = 2;
+            this.tableLayoutPanel112.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel112.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel112.Controls.Add(this.label64, 0, 0);
+            this.tableLayoutPanel112.Location = new System.Drawing.Point(3, 108);
+            this.tableLayoutPanel112.Name = "tableLayoutPanel112";
+            this.tableLayoutPanel112.RowCount = 1;
+            this.tableLayoutPanel112.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel112.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel112.TabIndex = 57;
             // 
             // label64
             // 
             this.label64.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(98, 8);
+            this.label64.Location = new System.Drawing.Point(96, 8);
             this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(25, 13);
+            this.label64.Size = new System.Drawing.Size(27, 13);
             this.label64.TabIndex = 0;
-            this.label64.Text = "อายุ";
+            this.label64.Text = "ที่อยู่";
             // 
-            // textBox13
+            // txt_ref_name_2
             // 
-            this.textBox13.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox13.Location = new System.Drawing.Point(153, 147);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(300, 20);
-            this.textBox13.TabIndex = 60;
+            this.txt_ref_name_2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_ref_name_2.Location = new System.Drawing.Point(153, 7);
+            this.txt_ref_name_2.Name = "txt_ref_name_2";
+            this.txt_ref_name_2.Size = new System.Drawing.Size(300, 20);
+            this.txt_ref_name_2.TabIndex = 54;
+            this.txt_ref_name_2.Text = " ";
+            // 
+            // tableLayoutPanel113
+            // 
+            this.tableLayoutPanel113.ColumnCount = 2;
+            this.tableLayoutPanel113.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel113.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel113.Controls.Add(this.label105, 0, 0);
+            this.tableLayoutPanel113.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel113.Name = "tableLayoutPanel113";
+            this.tableLayoutPanel113.RowCount = 1;
+            this.tableLayoutPanel113.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel113.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel113.TabIndex = 45;
+            // 
+            // label105
+            // 
+            this.label105.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label105.AutoSize = true;
+            this.label105.Location = new System.Drawing.Point(81, 8);
+            this.label105.Name = "label105";
+            this.label105.Size = new System.Drawing.Size(42, 13);
+            this.label105.TabIndex = 0;
+            this.label105.Text = "ชื่อ-สกุล";
+            // 
+            // tableLayoutPanel114
+            // 
+            this.tableLayoutPanel114.ColumnCount = 2;
+            this.tableLayoutPanel114.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel114.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel114.Controls.Add(this.label106, 0, 0);
+            this.tableLayoutPanel114.Location = new System.Drawing.Point(3, 38);
+            this.tableLayoutPanel114.Name = "tableLayoutPanel114";
+            this.tableLayoutPanel114.RowCount = 1;
+            this.tableLayoutPanel114.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel114.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel114.TabIndex = 49;
+            // 
+            // label106
+            // 
+            this.label106.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label106.AutoSize = true;
+            this.label106.Location = new System.Drawing.Point(9, 8);
+            this.label106.Name = "label106";
+            this.label106.Size = new System.Drawing.Size(114, 13);
+            this.label106.TabIndex = 0;
+            this.label106.Text = "มีความสำพันธ์เกี่ยวข้อง";
+            // 
+            // txt_ref_relation_2
+            // 
+            this.txt_ref_relation_2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_ref_relation_2.Location = new System.Drawing.Point(153, 42);
+            this.txt_ref_relation_2.Name = "txt_ref_relation_2";
+            this.txt_ref_relation_2.Size = new System.Drawing.Size(300, 20);
+            this.txt_ref_relation_2.TabIndex = 56;
+            // 
+            // tableLayoutPanel115
+            // 
+            this.tableLayoutPanel115.ColumnCount = 2;
+            this.tableLayoutPanel115.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel115.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel115.Controls.Add(this.label107, 0, 0);
+            this.tableLayoutPanel115.Location = new System.Drawing.Point(3, 73);
+            this.tableLayoutPanel115.Name = "tableLayoutPanel115";
+            this.tableLayoutPanel115.RowCount = 1;
+            this.tableLayoutPanel115.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel115.Size = new System.Drawing.Size(144, 29);
+            this.tableLayoutPanel115.TabIndex = 47;
+            // 
+            // label107
+            // 
+            this.label107.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label107.AutoSize = true;
+            this.label107.Location = new System.Drawing.Point(65, 8);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(58, 13);
+            this.label107.TabIndex = 0;
+            this.label107.Text = "เบอร์ติดต่อ";
+            // 
+            // txt_ref_contact_2
+            // 
+            this.txt_ref_contact_2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_ref_contact_2.Location = new System.Drawing.Point(153, 77);
+            this.txt_ref_contact_2.Name = "txt_ref_contact_2";
+            this.txt_ref_contact_2.Size = new System.Drawing.Size(300, 20);
+            this.txt_ref_contact_2.TabIndex = 58;
+            // 
+            // txt_ref_add_2
+            // 
+            this.txt_ref_add_2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_ref_add_2.Location = new System.Drawing.Point(153, 112);
+            this.txt_ref_add_2.Name = "txt_ref_add_2";
+            this.txt_ref_add_2.Size = new System.Drawing.Size(300, 20);
+            this.txt_ref_add_2.TabIndex = 59;
             // 
             // tab_SSO
             // 
@@ -4585,12 +5289,12 @@ namespace BIG.Present
             this.tableLayoutPanel66.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
             this.tableLayoutPanel66.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel66.Controls.Add(this.tableLayoutPanel68, 0, 0);
-            this.tableLayoutPanel66.Controls.Add(this.txt_hospital_name, 1, 1);
-            this.tableLayoutPanel66.Controls.Add(this.chk_have, 1, 0);
+            this.tableLayoutPanel66.Controls.Add(this.txt_sso_hospital, 1, 1);
+            this.tableLayoutPanel66.Controls.Add(this.chk_have_sso, 1, 0);
             this.tableLayoutPanel66.Controls.Add(this.tableLayoutPanel67, 0, 1);
-            this.tableLayoutPanel66.Controls.Add(this.chk_nothave, 1, 2);
+            this.tableLayoutPanel66.Controls.Add(this.chk_nothave_sso, 1, 2);
             this.tableLayoutPanel66.Controls.Add(this.tableLayoutPanel71, 0, 2);
-            this.tableLayoutPanel66.Controls.Add(this.cbo_hospital, 1, 3);
+            this.tableLayoutPanel66.Controls.Add(this.cbo_sso_hospital, 1, 3);
             this.tableLayoutPanel66.Location = new System.Drawing.Point(6, 13);
             this.tableLayoutPanel66.Name = "tableLayoutPanel66";
             this.tableLayoutPanel66.RowCount = 8;
@@ -4628,24 +5332,26 @@ namespace BIG.Present
             this.label66.TabIndex = 0;
             this.label66.Text = "เคยมีบัตรรับรองสิทธิ์สถานพยาบาลหรือไม่";
             // 
-            // txt_hospital_name
+            // txt_sso_hospital
             // 
-            this.txt_hospital_name.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_hospital_name.Location = new System.Drawing.Point(253, 42);
-            this.txt_hospital_name.Name = "txt_hospital_name";
-            this.txt_hospital_name.Size = new System.Drawing.Size(300, 20);
-            this.txt_hospital_name.TabIndex = 55;
+            this.txt_sso_hospital.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_sso_hospital.Enabled = false;
+            this.txt_sso_hospital.Location = new System.Drawing.Point(253, 42);
+            this.txt_sso_hospital.Name = "txt_sso_hospital";
+            this.txt_sso_hospital.Size = new System.Drawing.Size(300, 20);
+            this.txt_sso_hospital.TabIndex = 55;
             // 
-            // chk_have
+            // chk_have_sso
             // 
-            this.chk_have.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.chk_have.AutoSize = true;
-            this.chk_have.Location = new System.Drawing.Point(253, 9);
-            this.chk_have.Name = "chk_have";
-            this.chk_have.Size = new System.Drawing.Size(52, 17);
-            this.chk_have.TabIndex = 61;
-            this.chk_have.Text = "เคยมี";
-            this.chk_have.UseVisualStyleBackColor = true;
+            this.chk_have_sso.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.chk_have_sso.AutoSize = true;
+            this.chk_have_sso.Location = new System.Drawing.Point(253, 9);
+            this.chk_have_sso.Name = "chk_have_sso";
+            this.chk_have_sso.Size = new System.Drawing.Size(52, 17);
+            this.chk_have_sso.TabIndex = 61;
+            this.chk_have_sso.Text = "เคยมี";
+            this.chk_have_sso.UseVisualStyleBackColor = true;
+            this.chk_have_sso.CheckedChanged += new System.EventHandler(this.chk_have_sso_CheckedChanged);
             // 
             // tableLayoutPanel67
             // 
@@ -4670,16 +5376,17 @@ namespace BIG.Present
             this.label65.TabIndex = 0;
             this.label65.Text = "ชื่อโรงพยาบาล";
             // 
-            // chk_nothave
+            // chk_nothave_sso
             // 
-            this.chk_nothave.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.chk_nothave.AutoSize = true;
-            this.chk_nothave.Location = new System.Drawing.Point(253, 79);
-            this.chk_nothave.Name = "chk_nothave";
-            this.chk_nothave.Size = new System.Drawing.Size(65, 17);
-            this.chk_nothave.TabIndex = 62;
-            this.chk_nothave.Text = "ไม่เคยมี";
-            this.chk_nothave.UseVisualStyleBackColor = true;
+            this.chk_nothave_sso.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.chk_nothave_sso.AutoSize = true;
+            this.chk_nothave_sso.Location = new System.Drawing.Point(253, 79);
+            this.chk_nothave_sso.Name = "chk_nothave_sso";
+            this.chk_nothave_sso.Size = new System.Drawing.Size(65, 17);
+            this.chk_nothave_sso.TabIndex = 62;
+            this.chk_nothave_sso.Text = "ไม่เคยมี";
+            this.chk_nothave_sso.UseVisualStyleBackColor = true;
+            this.chk_nothave_sso.CheckedChanged += new System.EventHandler(this.chk_nothave_sso_CheckedChanged);
             // 
             // tableLayoutPanel71
             // 
@@ -4704,18 +5411,19 @@ namespace BIG.Present
             this.label69.TabIndex = 0;
             this.label69.Text = "โปรดเลือกสถานพยาบาล";
             // 
-            // cbo_hospital
+            // cbo_sso_hospital
             // 
-            this.cbo_hospital.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbo_hospital.FormattingEnabled = true;
-            this.cbo_hospital.Items.AddRange(new object[] {
+            this.cbo_sso_hospital.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbo_sso_hospital.Enabled = false;
+            this.cbo_sso_hospital.FormattingEnabled = true;
+            this.cbo_sso_hospital.Items.AddRange(new object[] {
             "ชาย",
             "หญิง",
             "อื่นๆ"});
-            this.cbo_hospital.Location = new System.Drawing.Point(253, 112);
-            this.cbo_hospital.Name = "cbo_hospital";
-            this.cbo_hospital.Size = new System.Drawing.Size(300, 21);
-            this.cbo_hospital.TabIndex = 63;
+            this.cbo_sso_hospital.Location = new System.Drawing.Point(253, 112);
+            this.cbo_sso_hospital.Name = "cbo_sso_hospital";
+            this.cbo_sso_hospital.Size = new System.Drawing.Size(300, 21);
+            this.cbo_sso_hospital.TabIndex = 63;
             // 
             // tableLayoutPanel4
             // 
@@ -4844,7 +5552,7 @@ namespace BIG.Present
             this.tableLayoutPanel7.ColumnCount = 3;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61538F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38462F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 319F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 322F));
             this.tableLayoutPanel7.Controls.Add(this.btn_cancle, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.btn_save, 0, 0);
             this.tableLayoutPanel7.Location = new System.Drawing.Point(173, 577);
@@ -4859,9 +5567,9 @@ namespace BIG.Present
             this.btn_cancle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_cancle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cancle.Location = new System.Drawing.Point(138, 3);
+            this.btn_cancle.Location = new System.Drawing.Point(137, 3);
             this.btn_cancle.Name = "btn_cancle";
-            this.btn_cancle.Size = new System.Drawing.Size(137, 37);
+            this.btn_cancle.Size = new System.Drawing.Size(135, 37);
             this.btn_cancle.TabIndex = 1;
             this.btn_cancle.Text = "ยกเลิก";
             this.btn_cancle.UseVisualStyleBackColor = true;
@@ -4873,7 +5581,7 @@ namespace BIG.Present
             this.btn_save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_save.Location = new System.Drawing.Point(3, 3);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(129, 37);
+            this.btn_save.Size = new System.Drawing.Size(128, 37);
             this.btn_save.TabIndex = 0;
             this.btn_save.Text = "บันทึก";
             this.btn_save.UseVisualStyleBackColor = true;
@@ -5541,23 +6249,55 @@ namespace BIG.Present
             this.tableLayoutPanel88.PerformLayout();
             this.tab_Experience.ResumeLayout(false);
             this.tableLayoutPanel30.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
             this.tableLayoutPanel54.ResumeLayout(false);
-            this.tableLayoutPanel54.PerformLayout();
+            this.groupBox15.ResumeLayout(false);
+            this.tableLayoutPanel104.ResumeLayout(false);
+            this.tableLayoutPanel104.PerformLayout();
+            this.tableLayoutPanel105.ResumeLayout(false);
+            this.tableLayoutPanel105.PerformLayout();
+            this.tableLayoutPanel106.ResumeLayout(false);
+            this.tableLayoutPanel106.PerformLayout();
+            this.tableLayoutPanel107.ResumeLayout(false);
+            this.tableLayoutPanel107.PerformLayout();
+            this.tableLayoutPanel110.ResumeLayout(false);
+            this.tableLayoutPanel110.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
             this.tableLayoutPanel55.ResumeLayout(false);
             this.tableLayoutPanel55.PerformLayout();
-            this.tableLayoutPanel56.ResumeLayout(false);
-            this.tableLayoutPanel56.PerformLayout();
+            this.tableLayoutPanel108.ResumeLayout(false);
+            this.tableLayoutPanel108.PerformLayout();
             this.tableLayoutPanel57.ResumeLayout(false);
             this.tableLayoutPanel57.PerformLayout();
             this.tableLayoutPanel58.ResumeLayout(false);
             this.tableLayoutPanel58.PerformLayout();
+            this.tableLayoutPanel56.ResumeLayout(false);
+            this.tableLayoutPanel56.PerformLayout();
+            this.groupBox14.ResumeLayout(false);
             this.tableLayoutPanel59.ResumeLayout(false);
             this.tableLayoutPanel59.PerformLayout();
+            this.tableLayoutPanel101.ResumeLayout(false);
+            this.tableLayoutPanel101.PerformLayout();
+            this.tableLayoutPanel102.ResumeLayout(false);
+            this.tableLayoutPanel102.PerformLayout();
+            this.tableLayoutPanel103.ResumeLayout(false);
+            this.tableLayoutPanel103.PerformLayout();
+            this.tableLayoutPanel109.ResumeLayout(false);
+            this.tableLayoutPanel109.PerformLayout();
             this.tab_Reference.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.tableLayoutPanel60.ResumeLayout(false);
-            this.tableLayoutPanel60.PerformLayout();
+            this.groupBox18.ResumeLayout(false);
+            this.tableLayoutPanel116.ResumeLayout(false);
+            this.tableLayoutPanel116.PerformLayout();
+            this.tableLayoutPanel117.ResumeLayout(false);
+            this.tableLayoutPanel117.PerformLayout();
+            this.tableLayoutPanel118.ResumeLayout(false);
+            this.tableLayoutPanel118.PerformLayout();
+            this.tableLayoutPanel119.ResumeLayout(false);
+            this.tableLayoutPanel119.PerformLayout();
+            this.tableLayoutPanel120.ResumeLayout(false);
+            this.tableLayoutPanel120.PerformLayout();
+            this.groupBox16.ResumeLayout(false);
             this.tableLayoutPanel61.ResumeLayout(false);
             this.tableLayoutPanel61.PerformLayout();
             this.tableLayoutPanel62.ResumeLayout(false);
@@ -5568,6 +6308,17 @@ namespace BIG.Present
             this.tableLayoutPanel64.PerformLayout();
             this.tableLayoutPanel65.ResumeLayout(false);
             this.tableLayoutPanel65.PerformLayout();
+            this.groupBox17.ResumeLayout(false);
+            this.tableLayoutPanel111.ResumeLayout(false);
+            this.tableLayoutPanel111.PerformLayout();
+            this.tableLayoutPanel112.ResumeLayout(false);
+            this.tableLayoutPanel112.PerformLayout();
+            this.tableLayoutPanel113.ResumeLayout(false);
+            this.tableLayoutPanel113.PerformLayout();
+            this.tableLayoutPanel114.ResumeLayout(false);
+            this.tableLayoutPanel114.PerformLayout();
+            this.tableLayoutPanel115.ResumeLayout(false);
+            this.tableLayoutPanel115.PerformLayout();
             this.tab_SSO.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.tableLayoutPanel66.ResumeLayout(false);
@@ -5749,7 +6500,6 @@ namespace BIG.Present
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.ComboBox cbo_bp_prov;
         private System.Windows.Forms.ComboBox cbo_bp_ctr;
-        private System.Windows.Forms.TextBox txt_possition;
         private System.Windows.Forms.TextBox txt_nick_th;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.ComboBox cbo_title_en;
@@ -5800,7 +6550,7 @@ namespace BIG.Present
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel75;
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.TextBox txt_p_postcode;
+        private System.Windows.Forms.TextBox p_txt_postcode;
         private System.Windows.Forms.TextBox p_txt_road;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel43;
         private System.Windows.Forms.Label label44;
@@ -5844,7 +6594,7 @@ namespace BIG.Present
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel74;
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.TextBox txt_postcode;
+        private System.Windows.Forms.TextBox c_txt_postcode;
         private System.Windows.Forms.TabPage tab_Education;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel28;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -5853,9 +6603,9 @@ namespace BIG.Present
         private System.Windows.Forms.Label label76;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel83;
         private System.Windows.Forms.Label label77;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox txt_edu_nm_3;
+        private System.Windows.Forms.TextBox txt_graduated_3;
+        private System.Windows.Forms.TextBox txt_edu_yr_3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel84;
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -5864,9 +6614,9 @@ namespace BIG.Present
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel79;
         private System.Windows.Forms.Label label74;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox txt_edu_nm_2;
+        private System.Windows.Forms.TextBox txt_graduated_2;
+        private System.Windows.Forms.TextBox txt_edu_yr_2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel80;
         private System.Windows.Forms.Label label75;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -5875,9 +6625,9 @@ namespace BIG.Present
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel49;
         private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.TextBox txt_edu_name;
-        private System.Windows.Forms.TextBox txt_graduated;
-        private System.Windows.Forms.TextBox txt_yr_grad;
+        private System.Windows.Forms.TextBox txt_edu_nm_1;
+        private System.Windows.Forms.TextBox txt_graduated_1;
+        private System.Windows.Forms.TextBox txt_edu_yr_1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel48;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.TabPage tab_Training;
@@ -5917,54 +6667,21 @@ namespace BIG.Present
         private System.Windows.Forms.TextBox textBox22;
         private System.Windows.Forms.TabPage tab_Experience;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel30;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel54;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel55;
-        private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel56;
-        private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel57;
-        private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel58;
-        private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel59;
-        private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TabPage tab_Reference;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel60;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel61;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel62;
-        private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel63;
-        private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel64;
-        private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel65;
-        private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TabPage tab_SSO;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel66;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel68;
         private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.TextBox txt_hospital_name;
-        private System.Windows.Forms.CheckBox chk_have;
+        private System.Windows.Forms.TextBox txt_sso_hospital;
+        private System.Windows.Forms.CheckBox chk_have_sso;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel67;
         private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.CheckBox chk_nothave;
+        private System.Windows.Forms.CheckBox chk_nothave_sso;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel71;
         private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.ComboBox cbo_hospital;
+        private System.Windows.Forms.ComboBox cbo_sso_hospital;
         private System.Windows.Forms.TabPage tab_finger;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel93;
         private System.Windows.Forms.GroupBox groupBox12;
@@ -6018,5 +6735,91 @@ namespace BIG.Present
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel100;
         private System.Windows.Forms.Label lb_isnewemp;
         private System.Windows.Forms.ComboBox cbo_possition;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel54;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel104;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel105;
+        private System.Windows.Forms.Label label99;
+        private System.Windows.Forms.TextBox txt_ext_comname_3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel106;
+        private System.Windows.Forms.Label label100;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel107;
+        private System.Windows.Forms.Label label101;
+        private System.Windows.Forms.TextBox txt_we_pos3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel110;
+        private System.Windows.Forms.Label label104;
+        private System.Windows.Forms.TextBox txt_exp_salary_3;
+        private System.Windows.Forms.TextBox txt_exp_period_3;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel55;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel108;
+        private System.Windows.Forms.Label label102;
+        private System.Windows.Forms.TextBox txt_ext_comname_1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel57;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel58;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.TextBox txt_we_pos1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel56;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.TextBox txt_exp_salary_1;
+        private System.Windows.Forms.TextBox txt_exp_period_1;
+        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel59;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel101;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.TextBox txt_ext_comname_2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel102;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel103;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.TextBox txt_we_pos2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel109;
+        private System.Windows.Forms.Label label103;
+        private System.Windows.Forms.TextBox txt_exp_salary_2;
+        private System.Windows.Forms.TextBox txt_exp_period_2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel60;
+        private System.Windows.Forms.GroupBox groupBox16;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel61;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel62;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.TextBox txt_ref_name_1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel63;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel64;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.TextBox txt_ref_relation_1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel65;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.TextBox txt_ref_contact_1;
+        private System.Windows.Forms.TextBox txt_ref_add_1;
+        private System.Windows.Forms.GroupBox groupBox18;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel116;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel117;
+        private System.Windows.Forms.Label label108;
+        private System.Windows.Forms.TextBox txt_ref_name_3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel118;
+        private System.Windows.Forms.Label label109;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel119;
+        private System.Windows.Forms.Label label110;
+        private System.Windows.Forms.TextBox txt_ref_relation_3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel120;
+        private System.Windows.Forms.Label label111;
+        private System.Windows.Forms.TextBox txt_ref_contact_3;
+        private System.Windows.Forms.TextBox txt_ref_add_3;
+        private System.Windows.Forms.GroupBox groupBox17;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel111;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel112;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.TextBox txt_ref_name_2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel113;
+        private System.Windows.Forms.Label label105;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel114;
+        private System.Windows.Forms.Label label106;
+        private System.Windows.Forms.TextBox txt_ref_relation_2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel115;
+        private System.Windows.Forms.Label label107;
+        private System.Windows.Forms.TextBox txt_ref_contact_2;
+        private System.Windows.Forms.TextBox txt_ref_add_2;
     }
 }

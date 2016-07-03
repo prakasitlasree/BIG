@@ -46,6 +46,16 @@
           <Property Name="PROVINCE" Type="nvarchar" MaxLength="250" />
           <Property Name="POSTCODE" Type="nvarchar" MaxLength="250" />
         </EntityType>
+        <EntityType Name="CurrentImages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMP_ID" Type="nvarchar" MaxLength="14" />
+          <Property Name="PIC_PROFILE" Type="varbinary(max)" />
+          <Property Name="TYPE" Type="nvarchar" MaxLength="50" />
+          <Property Name="CREATE_DATE" Type="datetime" />
+        </EntityType>
         <EntityType Name="District">
           <Key>
             <PropertyRef Name="DISTRICT_ID" />
@@ -62,7 +72,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="EMP_ID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="EMP_ID" Type="nvarchar" MaxLength="14" Nullable="false" />
+          <Property Name="EDU_TYPE" Type="nvarchar" MaxLength="50" />
           <Property Name="NAME" Type="nvarchar" MaxLength="250" />
           <Property Name="GRADUETED" Type="nvarchar" MaxLength="250" />
           <Property Name="YEAR" Type="nvarchar" MaxLength="50" />
@@ -88,6 +99,7 @@
           <Property Name="NICKNAME_TH" Type="nvarchar" MaxLength="50" />
           <Property Name="GENDER_ID" Type="int" />
           <Property Name="DATEOFBIRTH" Type="datetime" />
+          <Property Name="DATESTARTWORK" Type="datetime" />
           <Property Name="BIRTH_PLACE_CONTRY" Type="nvarchar" MaxLength="100" />
           <Property Name="BIRTH_PLACE_PROVINCE" Type="nvarchar" MaxLength="200" />
           <Property Name="HEIGHT" Type="int" />
@@ -112,7 +124,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="EMP_ID" Type="nvarchar" MaxLength="10" />
+          <Property Name="EMP_ID" Type="nvarchar" MaxLength="14" />
           <Property Name="PIC_PROFILE" Type="varbinary(max)" />
           <Property Name="TYPE" Type="nvarchar" MaxLength="50" />
           <Property Name="CREATE_DATE" Type="datetime" />
@@ -173,7 +185,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="EMP_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMP_ID" Type="nvarchar" MaxLength="14" />
           <Property Name="NAME" Type="nvarchar" MaxLength="50" />
           <Property Name="AGE" Type="int" />
           <Property Name="RELATIONSHIFT" Type="nvarchar" MaxLength="50" />
@@ -189,6 +201,15 @@
           <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="250" />
           <Property Name="CREATE_DATE" Type="datetime" />
         </EntityType>
+        <EntityType Name="SSO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMP_ID" Type="nvarchar" MaxLength="14" />
+          <Property Name="HOSPITAL_NAME" Type="nvarchar" MaxLength="250" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+        </EntityType>
         <EntityType Name="Title">
           <Key>
             <PropertyRef Name="ID" />
@@ -197,12 +218,25 @@
           <Property Name="NAME" Type="nvarchar" MaxLength="50" />
           <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Training">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMP_ID" Type="nvarchar" MaxLength="14" Nullable="false" />
+          <Property Name="TYPE" Type="nvarchar" MaxLength="50" />
+          <Property Name="COURSE" Type="nvarchar" MaxLength="250" />
+          <Property Name="DETAILS" Type="nvarchar" MaxLength="250" />
+          <Property Name="YEAR" Type="nvarchar" MaxLength="50" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="MODIFIED_DATE" Type="datetime" />
+        </EntityType>
         <EntityType Name="WorkExperience">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="EMP_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMP_ID" Type="nvarchar" MaxLength="14" />
           <Property Name="NAME" Type="nvarchar" MaxLength="250" />
           <Property Name="POSITION" Type="nvarchar" MaxLength="250" />
           <Property Name="SALARY" Type="nvarchar" MaxLength="50" />
@@ -285,6 +319,7 @@
           <EntitySet Name="AddressType" EntityType="Self.AddressType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Amphur" EntityType="Self.Amphur" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CompanyInfo" EntityType="Self.CompanyInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CurrentImages" EntityType="Self.CurrentImages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="District" EntityType="Self.District" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
@@ -297,7 +332,9 @@
           <EntitySet Name="Province" EntityType="Self.Province" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ReferencePerson" EntityType="Self.ReferencePerson" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sites" EntityType="Self.Sites" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SSO" EntityType="Self.SSO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Title" EntityType="Self.Title" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Training" EntityType="Self.Training" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WorkExperience" EntityType="Self.WorkExperience" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Zipcode" EntityType="Self.Zipcode" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Address_AddressType" Association="Self.FK_Address_AddressType">
@@ -365,6 +402,9 @@
             <End Role="Title" EntitySet="Titles" />
             <End Role="Employee" EntitySet="Employees" />
           </AssociationSet>
+          <EntitySet Name="CurrentImages" EntityType="BIG_DBModel.CurrentImage" />
+          <EntitySet Name="SSOes" EntityType="BIG_DBModel.SSO" />
+          <EntitySet Name="Trainings" EntityType="BIG_DBModel.Training" />
           </EntityContainer>
         <EntityType Name="Logon">
           <Key>
@@ -409,19 +449,20 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="EMP_ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_ID" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
           <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="GRADUETED" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="YEAR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
           <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="EDU_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ReferencePerson">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EMP_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_ID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
           <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="AGE" Type="Int32" />
           <Property Name="RELATIONSHIFT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -442,7 +483,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EMP_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_ID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
           <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="POSITION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="SALARY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -520,7 +561,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EMP_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_ID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
           <Property Name="PIC_PROFILE" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
@@ -580,6 +621,7 @@
           <Property Name="NICKNAME_TH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GENDER_ID" Type="Int32" />
           <Property Name="DATEOFBIRTH" Type="DateTime" Precision="3" />
+          <Property Name="DATESTARTWORK" Type="DateTime" Precision="3" />
           <Property Name="BIRTH_PLACE_CONTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="BIRTH_PLACE_PROVINCE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="HEIGHT" Type="Int32" />
@@ -651,6 +693,38 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="CurrentImage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_ID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="PIC_PROFILE" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="SSO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_ID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="HOSPITAL_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Training">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_ID" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="COURSE" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DETAILS" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="YEAR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -699,6 +773,7 @@
           <EntitySetMapping Name="Educations">
             <EntityTypeMapping TypeName="BIG_DBModel.Education">
               <MappingFragment StoreEntitySet="Education">
+                <ScalarProperty Name="EDU_TYPE" ColumnName="EDU_TYPE" />
                 <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
                 <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
                 <ScalarProperty Name="YEAR" ColumnName="YEAR" />
@@ -873,6 +948,7 @@
                 <ScalarProperty Name="HEIGHT" ColumnName="HEIGHT" />
                 <ScalarProperty Name="BIRTH_PLACE_PROVINCE" ColumnName="BIRTH_PLACE_PROVINCE" />
                 <ScalarProperty Name="BIRTH_PLACE_CONTRY" ColumnName="BIRTH_PLACE_CONTRY" />
+                <ScalarProperty Name="DATESTARTWORK" ColumnName="DATESTARTWORK" />
                 <ScalarProperty Name="DATEOFBIRTH" ColumnName="DATEOFBIRTH" />
                 <ScalarProperty Name="GENDER_ID" ColumnName="GENDER_ID" />
                 <ScalarProperty Name="NICKNAME_TH" ColumnName="NICKNAME_TH" />
@@ -885,6 +961,41 @@
                 <ScalarProperty Name="FIRSTNAME_EN" ColumnName="FIRSTNAME_EN" />
                 <ScalarProperty Name="TITLE_ID" ColumnName="TITLE_ID" />
                 <ScalarProperty Name="ID_CARD" ColumnName="ID_CARD" />
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurrentImages">
+            <EntityTypeMapping TypeName="BIG_DBModel.CurrentImage">
+              <MappingFragment StoreEntitySet="CurrentImages">
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="PIC_PROFILE" ColumnName="PIC_PROFILE" />
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SSOes">
+            <EntityTypeMapping TypeName="BIG_DBModel.SSO">
+              <MappingFragment StoreEntitySet="SSO">
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="HOSPITAL_NAME" ColumnName="HOSPITAL_NAME" />
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trainings">
+            <EntityTypeMapping TypeName="BIG_DBModel.Training">
+              <MappingFragment StoreEntitySet="Training">
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="DETAILS" ColumnName="DETAILS" />
+                <ScalarProperty Name="COURSE" ColumnName="COURSE" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
                 <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
@@ -937,6 +1048,9 @@
         <AssociationConnector Association="BIG_DBModel.FK_Employee_Marital" />
         <AssociationConnector Association="BIG_DBModel.FK_Employee_Position" />
         <AssociationConnector Association="BIG_DBModel.FK_Employee_Title" />
+        <EntityTypeShape EntityType="BIG_DBModel.CurrentImage" Width="1.5" PointX="12.375" PointY="12.75" />
+        <EntityTypeShape EntityType="BIG_DBModel.SSO" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BIG_DBModel.Training" Width="1.5" PointX="13.375" PointY="3.75" />
         </Diagram>
     </Diagrams>
   </Designer>

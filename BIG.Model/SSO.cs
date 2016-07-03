@@ -12,15 +12,11 @@ namespace BIG.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Education
+    public partial class SSO
     {
         public int ID { get; set; }
         public string EMP_ID { get; set; }
-        public string NAME { get; set; }
-        public string GRADUETED { get; set; }
-        public string YEAR { get; set; }
+        public string HOSPITAL_NAME { get; set; }
         public Nullable<System.DateTime> CREATED_DATE { get; set; }
-        public Nullable<System.DateTime> MODIFIED_DATE { get; set; }
-        public string EDU_TYPE { get; set; }
     }
 }

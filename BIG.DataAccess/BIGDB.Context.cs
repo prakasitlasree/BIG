@@ -47,5 +47,8 @@ namespace BIG.DataAccess
         public DbSet<Zipcode> Zipcodes { get; set; }
         public DbSet<Site> Sites { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<CurrentImage> CurrentImages { get; set; }
+        public DbSet<SSO> SSOes { get; set; }
+        public DbSet<Training> Trainings { get; set; }
     }
 }

@@ -28,6 +28,7 @@ namespace BIG.Model
         public string NICKNAME_TH { get; set; }
         public Nullable<int> GENDER_ID { get; set; }
         public Nullable<System.DateTime> DATEOFBIRTH { get; set; }
+        public Nullable<System.DateTime> DATESTARTWORK { get; set; }
         public string BIRTH_PLACE_CONTRY { get; set; }
         public string BIRTH_PLACE_PROVINCE { get; set; }
         public Nullable<int> HEIGHT { get; set; }

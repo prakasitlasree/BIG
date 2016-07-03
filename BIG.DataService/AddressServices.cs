@@ -49,5 +49,41 @@ namespace BIG.DataService
               return result;
           }
       }
+
+      public static List<Address> GetAll()
+      {
+          var result = new List<Address>();
+          try
+          {
+              using (var ctx = new BIG_DBEntities())
+              { 
+
+                  result = ctx.Addresses.ToList(); 
+              }
+              return result;
+          }
+          catch (Exception ex)
+          {
+              throw ex;
+          }
+      }
+
+      public static List<Address> GetByEmployeeID(string emp)
+      {
+          var result = new List<Address>();
+          try
+          {
+              using (var ctx = new BIG_DBEntities())
+              {
+
+                  result = ctx.Addresses.Where(x=> x.EMP_ID == emp).ToList();
+              }
+              return result;
+          }
+          catch (Exception ex)
+          {
+              throw ex;
+          }
+      }
     }
 }

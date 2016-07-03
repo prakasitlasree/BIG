@@ -46,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddressServices.cs" />
+    <Compile Include="CurrentImageService.cs" />
+    <Compile Include="EducationServices.cs" />
     <Compile Include="EmployeeServices.cs" />
     <Compile Include="LogOnServices.cs" />
     <Compile Include="PossitionDataService.cs" />
