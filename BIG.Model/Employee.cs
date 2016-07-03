@@ -29,7 +29,7 @@ namespace BIG.Model
         public Nullable<int> GENDER_ID { get; set; }
         public Nullable<System.DateTime> DATEOFBIRTH { get; set; }
         public string BIRTH_PLACE_CONTRY { get; set; }
-        public string BIRTH_PLACE_PROVINCE_ID { get; set; }
+        public string BIRTH_PLACE_PROVINCE { get; set; }
         public Nullable<int> HEIGHT { get; set; }
         public Nullable<int> WEIGHT { get; set; }
         public string RACE { get; set; }

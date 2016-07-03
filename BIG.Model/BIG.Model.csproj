@@ -63,6 +63,7 @@
     <Compile Include="CompanyInfo.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Custom\ComboboxItem.cs" />
     <Compile Include="District.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
@@ -73,9 +74,6 @@
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
     <Compile Include="EmployeeImage.cs">
-      <DependentUpon>BIGDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Emp_Images.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Gender.cs">
@@ -98,6 +96,9 @@
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
     <Compile Include="ReferencePerson.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Site.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Title.cs">

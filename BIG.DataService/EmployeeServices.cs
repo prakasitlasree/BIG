@@ -28,17 +28,16 @@ namespace BIG.DataService
             }
         }
 
-        public static List<Employee> GetListPID()
+        public static Employee  GetEmployeeByIDCard(string idcard)
         {
-            var result = new List<Employee>();
-            try
+            var result = new  Employee();
+            try 
             {
                 using (var ctx = new BIG_DBEntities())
                 {
-                    result = ctx.Employees.ToList();
-
+                    result = ctx.Employees.Where(x => x.ID_CARD == idcard).FirstOrDefault(); 
                 }
-                return result;
+                return result; 
             }
             catch (Exception ex)
             {
@@ -83,7 +82,7 @@ namespace BIG.DataService
                         empctx.NICKNAME_TH = employee.LASTNAME_TH;
                         empctx.NICKNAME_EN = employee.NICKNAME_EN;
                         empctx.DATEOFBIRTH = employee.DATEOFBIRTH;
-                        empctx.BIRTH_PLACE_PROVINCE_ID = employee.BIRTH_PLACE_PROVINCE_ID;
+                        empctx.BIRTH_PLACE_PROVINCE = employee.BIRTH_PLACE_PROVINCE;
                         empctx.BIRTH_PLACE_CONTRY = employee.BIRTH_PLACE_CONTRY;
                         empctx.GENDER_ID = employee.GENDER_ID;
                         empctx.HEIGHT = employee.HEIGHT;
@@ -115,8 +114,7 @@ namespace BIG.DataService
                     if (empctx != null)
                     {
                         emp_id = empctx.EMP_ID;
-                    }
-                    
+                    } 
                 }
                 return emp_id;
             }

@@ -4,53 +4,49 @@ using System.Linq;
 using System.Text;
 using BIG.Model;
 using BIG.DataAccess;
+
 namespace BIG.DataService
 {
-    public static class ProfileImageDataService
+    public static class SitesDataService
     {
-        public static bool UploadPhoto(EmployeeImage Photo)
+        public static List<Site> GetListSiteLocation()
         {
-            var result = false;
+            var result = new List<Site>();
             try
-            { 
+            {
                 using (var ctx = new BIG_DBEntities())
                 {
+                    result = ctx.Sites.ToList();
 
-                    ctx.EmployeeImages.Add(Photo); 
-                    ctx.SaveChanges();
                 }
+                return result;
             }
             catch (Exception ex)
             {
-                throw ex;
+                return result;
             }
-
-            return result;
         }
 
-        public static bool DeletePhoto(EmployeeImage Img)
+        public static bool SaveSites(Site obj)
         {
-            var result = false; 
             try
             {
                 using (var ctx = new BIG_DBEntities())
                 {
-
-                    var pho = ctx.EmployeeImages.Where(x => x.EMP_ID == Img.EMP_ID).FirstOrDefault();
-                    if (pho != null)
+                    if (obj != null)
                     {
-                        ctx.EmployeeImages.Remove(pho);
+                        ctx.Sites.Add(obj); 
+                        ctx.SaveChanges();
                     }
-                    ctx.SaveChanges();
+
                 }
+                return true;
             }
             catch (Exception ex)
             {
+
                 throw ex;
             }
-
-            return result;
         }
-
     }
 }

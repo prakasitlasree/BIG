@@ -92,9 +92,11 @@ namespace BIG.Present
 
         private void rb_new_Click(object sender, EventArgs e)
         {
+            this.UseWaitCursor = true;
             var emp = new EmployeeForm(); 
             emp.Show();
             this.Hide();
+            this.UseWaitCursor = false;
         }
     }
 }

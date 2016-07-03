@@ -54,6 +54,12 @@
     <Compile Include="EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddSite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddSite.Designer.cs">
+      <DependentUpon>FormAddSite.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </Compile>
     <EmbeddedResource Include="EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddSite.resx">
+      <DependentUpon>FormAddSite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -183,6 +192,9 @@
     <Content Include="Resources\eval.png" />
     <Content Include="Resources\exit.png" />
     <Content Include="Resources\exit1.png" />
+    <None Include="Resources\finger_icon.jpg" />
+    <None Include="Resources\finger_icon1.jpg" />
+    <None Include="Resources\finger_icon2.jpg" />
     <Content Include="Resources\lock_1.png" />
     <Content Include="Resources\lock_2.png" />
     <Content Include="Resources\lock_3.png" />

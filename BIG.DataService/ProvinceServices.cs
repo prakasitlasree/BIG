@@ -18,7 +18,6 @@ namespace BIG.DataService
                 using (var ctx = new BIG_DBEntities())
                 {
                     result = ctx.Provinces.ToList();
-
                 }
                 return result;
             }
@@ -28,16 +27,14 @@ namespace BIG.DataService
             }
         }
 
-      public static List<Amphur> GetListAmphur(string provincename)
+      public static List<Amphur> GetListAmphur(int province_id)
       {
           var result = new List<Amphur>();
           try
-          {
-              provincename = provincename.Replace("จังหวัด", "");
+          { 
               using (var ctx = new BIG_DBEntities())
-              {
-                  var pro_id = ctx.Provinces.Where(x => x.NAME_TH == provincename).FirstOrDefault();
-                  result = ctx.Amphurs.Where(x=> x.PROVINCE_ID == pro_id.ID).ToList();
+              { 
+                  result = ctx.Amphurs.Where(x => x.PROVINCE_ID == province_id).ToList();
                    
               }
               return result;

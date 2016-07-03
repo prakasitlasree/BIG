@@ -48,9 +48,11 @@
     <Compile Include="AddressServices.cs" />
     <Compile Include="EmployeeServices.cs" />
     <Compile Include="LogOnServices.cs" />
+    <Compile Include="PossitionDataService.cs" />
     <Compile Include="ProfileImageDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProvinceServices.cs" />
+    <Compile Include="SitesDataService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BIG.Common\BIG.Common.csproj">
