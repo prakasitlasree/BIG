@@ -324,7 +324,7 @@ namespace BIG.Present
             this.tableLayoutPanel104 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel105 = new System.Windows.Forms.TableLayoutPanel();
             this.label99 = new System.Windows.Forms.Label();
-            this.txt_ext_comname_3 = new System.Windows.Forms.TextBox();
+            this.txt_exp_comname_3 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel106 = new System.Windows.Forms.TableLayoutPanel();
             this.label100 = new System.Windows.Forms.Label();
             this.tableLayoutPanel107 = new System.Windows.Forms.TableLayoutPanel();
@@ -338,12 +338,12 @@ namespace BIG.Present
             this.tableLayoutPanel55 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel108 = new System.Windows.Forms.TableLayoutPanel();
             this.label102 = new System.Windows.Forms.Label();
-            this.txt_ext_comname_1 = new System.Windows.Forms.TextBox();
+            this.txt_exp_comname_1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel57 = new System.Windows.Forms.TableLayoutPanel();
             this.label56 = new System.Windows.Forms.Label();
             this.tableLayoutPanel58 = new System.Windows.Forms.TableLayoutPanel();
             this.label57 = new System.Windows.Forms.Label();
-            this.txt_we_pos1 = new System.Windows.Forms.TextBox();
+            this.txt_exp_pos1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel56 = new System.Windows.Forms.TableLayoutPanel();
             this.label55 = new System.Windows.Forms.Label();
             this.txt_exp_salary_1 = new System.Windows.Forms.TextBox();
@@ -352,7 +352,7 @@ namespace BIG.Present
             this.tableLayoutPanel59 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel101 = new System.Windows.Forms.TableLayoutPanel();
             this.label58 = new System.Windows.Forms.Label();
-            this.txt_ext_comname_2 = new System.Windows.Forms.TextBox();
+            this.txt_exp_comname_2 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel102 = new System.Windows.Forms.TableLayoutPanel();
             this.label59 = new System.Windows.Forms.Label();
             this.tableLayoutPanel103 = new System.Windows.Forms.TableLayoutPanel();
@@ -4256,7 +4256,7 @@ namespace BIG.Present
             this.tableLayoutPanel104.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel104.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel104.Controls.Add(this.tableLayoutPanel105, 0, 3);
-            this.tableLayoutPanel104.Controls.Add(this.txt_ext_comname_3, 1, 0);
+            this.tableLayoutPanel104.Controls.Add(this.txt_exp_comname_3, 1, 0);
             this.tableLayoutPanel104.Controls.Add(this.tableLayoutPanel106, 0, 0);
             this.tableLayoutPanel104.Controls.Add(this.tableLayoutPanel107, 0, 1);
             this.tableLayoutPanel104.Controls.Add(this.txt_we_pos3, 1, 1);
@@ -4296,14 +4296,14 @@ namespace BIG.Present
             this.label99.TabIndex = 0;
             this.label99.Text = "ระยะเวลา";
             // 
-            // txt_ext_comname_3
+            // txt_exp_comname_3
             // 
-            this.txt_ext_comname_3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_ext_comname_3.Location = new System.Drawing.Point(153, 7);
-            this.txt_ext_comname_3.Name = "txt_ext_comname_3";
-            this.txt_ext_comname_3.Size = new System.Drawing.Size(300, 20);
-            this.txt_ext_comname_3.TabIndex = 54;
-            this.txt_ext_comname_3.Text = " ";
+            this.txt_exp_comname_3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_exp_comname_3.Location = new System.Drawing.Point(153, 7);
+            this.txt_exp_comname_3.Name = "txt_exp_comname_3";
+            this.txt_exp_comname_3.Size = new System.Drawing.Size(300, 20);
+            this.txt_exp_comname_3.TabIndex = 54;
+            this.txt_exp_comname_3.Text = " ";
             // 
             // tableLayoutPanel106
             // 
@@ -4420,10 +4420,10 @@ namespace BIG.Present
             this.tableLayoutPanel55.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel55.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel55.Controls.Add(this.tableLayoutPanel108, 0, 3);
-            this.tableLayoutPanel55.Controls.Add(this.txt_ext_comname_1, 1, 0);
+            this.tableLayoutPanel55.Controls.Add(this.txt_exp_comname_1, 1, 0);
             this.tableLayoutPanel55.Controls.Add(this.tableLayoutPanel57, 0, 0);
             this.tableLayoutPanel55.Controls.Add(this.tableLayoutPanel58, 0, 1);
-            this.tableLayoutPanel55.Controls.Add(this.txt_we_pos1, 1, 1);
+            this.tableLayoutPanel55.Controls.Add(this.txt_exp_pos1, 1, 1);
             this.tableLayoutPanel55.Controls.Add(this.tableLayoutPanel56, 0, 2);
             this.tableLayoutPanel55.Controls.Add(this.txt_exp_salary_1, 1, 2);
             this.tableLayoutPanel55.Controls.Add(this.txt_exp_period_1, 1, 3);
@@ -4460,14 +4460,14 @@ namespace BIG.Present
             this.label102.TabIndex = 0;
             this.label102.Text = "ระยะเวลา";
             // 
-            // txt_ext_comname_1
+            // txt_exp_comname_1
             // 
-            this.txt_ext_comname_1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_ext_comname_1.Location = new System.Drawing.Point(153, 7);
-            this.txt_ext_comname_1.Name = "txt_ext_comname_1";
-            this.txt_ext_comname_1.Size = new System.Drawing.Size(300, 20);
-            this.txt_ext_comname_1.TabIndex = 54;
-            this.txt_ext_comname_1.Text = " ";
+            this.txt_exp_comname_1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_exp_comname_1.Location = new System.Drawing.Point(153, 7);
+            this.txt_exp_comname_1.Name = "txt_exp_comname_1";
+            this.txt_exp_comname_1.Size = new System.Drawing.Size(300, 20);
+            this.txt_exp_comname_1.TabIndex = 54;
+            this.txt_exp_comname_1.Text = " ";
             // 
             // tableLayoutPanel57
             // 
@@ -4515,13 +4515,13 @@ namespace BIG.Present
             this.label57.TabIndex = 0;
             this.label57.Text = "ตำแหน่ง";
             // 
-            // txt_we_pos1
+            // txt_exp_pos1
             // 
-            this.txt_we_pos1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_we_pos1.Location = new System.Drawing.Point(153, 42);
-            this.txt_we_pos1.Name = "txt_we_pos1";
-            this.txt_we_pos1.Size = new System.Drawing.Size(300, 20);
-            this.txt_we_pos1.TabIndex = 56;
+            this.txt_exp_pos1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_exp_pos1.Location = new System.Drawing.Point(153, 42);
+            this.txt_exp_pos1.Name = "txt_exp_pos1";
+            this.txt_exp_pos1.Size = new System.Drawing.Size(300, 20);
+            this.txt_exp_pos1.TabIndex = 56;
             // 
             // tableLayoutPanel56
             // 
@@ -4584,7 +4584,7 @@ namespace BIG.Present
             this.tableLayoutPanel59.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel59.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel59.Controls.Add(this.tableLayoutPanel101, 0, 3);
-            this.tableLayoutPanel59.Controls.Add(this.txt_ext_comname_2, 1, 0);
+            this.tableLayoutPanel59.Controls.Add(this.txt_exp_comname_2, 1, 0);
             this.tableLayoutPanel59.Controls.Add(this.tableLayoutPanel102, 0, 0);
             this.tableLayoutPanel59.Controls.Add(this.tableLayoutPanel103, 0, 1);
             this.tableLayoutPanel59.Controls.Add(this.txt_we_pos2, 1, 1);
@@ -4624,14 +4624,14 @@ namespace BIG.Present
             this.label58.TabIndex = 0;
             this.label58.Text = "ระยะเวลา";
             // 
-            // txt_ext_comname_2
+            // txt_exp_comname_2
             // 
-            this.txt_ext_comname_2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_ext_comname_2.Location = new System.Drawing.Point(153, 7);
-            this.txt_ext_comname_2.Name = "txt_ext_comname_2";
-            this.txt_ext_comname_2.Size = new System.Drawing.Size(300, 20);
-            this.txt_ext_comname_2.TabIndex = 54;
-            this.txt_ext_comname_2.Text = " ";
+            this.txt_exp_comname_2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_exp_comname_2.Location = new System.Drawing.Point(153, 7);
+            this.txt_exp_comname_2.Name = "txt_exp_comname_2";
+            this.txt_exp_comname_2.Size = new System.Drawing.Size(300, 20);
+            this.txt_exp_comname_2.TabIndex = 54;
+            this.txt_exp_comname_2.Text = " ";
             // 
             // tableLayoutPanel102
             // 
@@ -5552,7 +5552,7 @@ namespace BIG.Present
             this.tableLayoutPanel7.ColumnCount = 3;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61538F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38462F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 324F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 325F));
             this.tableLayoutPanel7.Controls.Add(this.btn_cancle, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.btn_save, 0, 0);
             this.tableLayoutPanel7.Location = new System.Drawing.Point(173, 577);
@@ -5567,7 +5567,7 @@ namespace BIG.Present
             this.btn_cancle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_cancle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cancle.Location = new System.Drawing.Point(136, 3);
+            this.btn_cancle.Location = new System.Drawing.Point(135, 3);
             this.btn_cancle.Name = "btn_cancle";
             this.btn_cancle.Size = new System.Drawing.Size(134, 37);
             this.btn_cancle.TabIndex = 1;
@@ -5581,7 +5581,7 @@ namespace BIG.Present
             this.btn_save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_save.Location = new System.Drawing.Point(3, 3);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(127, 37);
+            this.btn_save.Size = new System.Drawing.Size(126, 37);
             this.btn_save.TabIndex = 0;
             this.btn_save.Text = "บันทึก";
             this.btn_save.UseVisualStyleBackColor = true;
@@ -6740,7 +6740,7 @@ namespace BIG.Present
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel104;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel105;
         private System.Windows.Forms.Label label99;
-        private System.Windows.Forms.TextBox txt_ext_comname_3;
+        private System.Windows.Forms.TextBox txt_exp_comname_3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel106;
         private System.Windows.Forms.Label label100;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel107;
@@ -6754,12 +6754,12 @@ namespace BIG.Present
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel55;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel108;
         private System.Windows.Forms.Label label102;
-        private System.Windows.Forms.TextBox txt_ext_comname_1;
+        private System.Windows.Forms.TextBox txt_exp_comname_1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel57;
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel58;
         private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.TextBox txt_we_pos1;
+        private System.Windows.Forms.TextBox txt_exp_pos1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel56;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.TextBox txt_exp_salary_1;
@@ -6768,7 +6768,7 @@ namespace BIG.Present
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel59;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel101;
         private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.TextBox txt_ext_comname_2;
+        private System.Windows.Forms.TextBox txt_exp_comname_2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel102;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel103;

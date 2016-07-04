@@ -45,8 +45,8 @@ namespace BIG.DataService
             }
         }
 
-        public static bool AddEmployee(Employee employee)
-        {
+        public static bool SaveEmployee(Employee employee)
+        { 
             try
             {
                 using (var ctx = new BIG_DBEntities())

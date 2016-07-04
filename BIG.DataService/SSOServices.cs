@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using BIG.Model;
 using BIG.DataAccess;
+
 namespace BIG.DataService
-{
-    public partial class EducationServices
+{ 
+    public partial class SSOServices
     {
-        public static bool SaveEducation(List<Education> listEdu)
+        public static bool SaveSSO(List<SSO> list)
         {
             try
-            {
+            { 
                 using (var ctx = new BIG_DBEntities())
-                { 
-                    foreach (var objAdd in listEdu)
+                {
+                    foreach (var objAdd in list)
                     {
-                        ctx.Educations.Add(objAdd);
+                        ctx.SSOes.Add(objAdd);
                     }
                     ctx.SaveChanges();
                 }
@@ -30,15 +30,15 @@ namespace BIG.DataService
             }
         }
 
-        public static List<Education> GetAll()
+        public static List<SSO> GetAll()
         {
-            var result = new List<Education>();
+            var result = new List<SSO>();
             try
             {
                 using (var ctx = new BIG_DBEntities())
                 {
 
-                    result = ctx.Educations.ToList();
+                    result = ctx.SSOes.ToList();
 
 
                 }
@@ -50,15 +50,15 @@ namespace BIG.DataService
             }
         }
 
-        public static List<Education> GetByEmployeeID(string emp)
+        public static List<SSO> GetByEmployeeID(string emp)
         {
-            var result = new List<Education>();
+            var result = new List<SSO>();
             try
             {
                 using (var ctx = new BIG_DBEntities())
-                { 
-                    result = ctx.Educations.Where(x=> x.EMP_ID == emp).ToList();
-                     
+                {
+                    result = ctx.SSOes.Where(x => x.EMP_ID == emp).ToList();
+
                 }
                 return result;
             }
@@ -67,7 +67,6 @@ namespace BIG.DataService
                 throw ex;
             }
         }
-
         public static void DeleteByEmployeeID(string emp_id)
         {
             try
@@ -75,10 +74,10 @@ namespace BIG.DataService
                 using (var ctx = new BIG_DBEntities())
                 {
 
-                    var obj = ctx.Educations.Where(x => x.EMP_ID == emp_id).FirstOrDefault();
+                    var obj = ctx.SSOes.Where(x => x.EMP_ID == emp_id).FirstOrDefault();
                     if (obj != null)
                     {
-                        ctx.Educations.Remove(obj);
+                        ctx.SSOes.Remove(obj);
                     }
                     ctx.SaveChanges();
                 }

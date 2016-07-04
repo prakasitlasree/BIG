@@ -54,8 +54,11 @@
     <Compile Include="ProfileImageDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProvinceServices.cs" />
+    <Compile Include="ReferencePersonServices.cs" />
     <Compile Include="SitesDataService.cs" />
+    <Compile Include="SSOServices.cs" />
     <Compile Include="TrainingServices.cs" />
+    <Compile Include="WorkExperienceServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BIG.Common\BIG.Common.csproj">

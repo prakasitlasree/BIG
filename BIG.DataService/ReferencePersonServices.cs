@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using BIG.Model;
 using BIG.DataAccess;
+
 namespace BIG.DataService
 {
-    public partial class EducationServices
+    public partial class ReferencePersonServices
     {
-        public static bool SaveEducation(List<Education> listEdu)
+        public static bool SaveReferencePerson(List<ReferencePerson> list)
         {
             try
-            {
+            { 
                 using (var ctx = new BIG_DBEntities())
-                { 
-                    foreach (var objAdd in listEdu)
+                {
+                    foreach (var objAdd in list)
                     {
-                        ctx.Educations.Add(objAdd);
+                        ctx.ReferencePersons.Add(objAdd);
                     }
                     ctx.SaveChanges();
                 }
@@ -30,17 +30,16 @@ namespace BIG.DataService
             }
         }
 
-        public static List<Education> GetAll()
+        public static List<ReferencePerson> GetAll()
         {
-            var result = new List<Education>();
+            var result = new List<ReferencePerson>();
             try
             {
                 using (var ctx = new BIG_DBEntities())
                 {
 
-                    result = ctx.Educations.ToList();
-
-
+                    result = ctx.ReferencePersons.ToList();
+                     
                 }
                 return result;
             }
@@ -50,15 +49,15 @@ namespace BIG.DataService
             }
         }
 
-        public static List<Education> GetByEmployeeID(string emp)
+        public static List<ReferencePerson> GetByEmployeeID(string emp)
         {
-            var result = new List<Education>();
+            var result = new List<ReferencePerson>();
             try
             {
                 using (var ctx = new BIG_DBEntities())
-                { 
-                    result = ctx.Educations.Where(x=> x.EMP_ID == emp).ToList();
-                     
+                {
+                    result = ctx.ReferencePersons.Where(x => x.EMP_ID == emp).ToList();
+
                 }
                 return result;
             }
@@ -75,10 +74,10 @@ namespace BIG.DataService
                 using (var ctx = new BIG_DBEntities())
                 {
 
-                    var obj = ctx.Educations.Where(x => x.EMP_ID == emp_id).FirstOrDefault();
+                    var obj = ctx.ReferencePersons.Where(x => x.EMP_ID == emp_id).FirstOrDefault();
                     if (obj != null)
                     {
-                        ctx.Educations.Remove(obj);
+                        ctx.ReferencePersons.Remove(obj);
                     }
                     ctx.SaveChanges();
                 }

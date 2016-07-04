@@ -262,7 +262,7 @@ namespace BIG.Present
             var listAddress = new List<BIG.Model.Address>();
             try
             {
-                if (c_txt_no.Text != "")
+                if (c_txt_no.Text != "" && txt_empid.Text != "")
                 {
                     //Current Address
                     var current_addr = new BIG.Model.Address();
@@ -276,9 +276,9 @@ namespace BIG.Present
 
                     listAddress.Add(current_addr);
                 }
-                
 
-                if (p_txt_no.Text != "")
+
+                if (p_txt_no.Text != "" && txt_empid.Text != "")
                 {
                     //Permanent Address
                     var permanent_addr = new BIG.Model.Address();
@@ -305,7 +305,7 @@ namespace BIG.Present
             var lstEdu = new List<BIG.Model.Education>();
             try
             {
-                if (txt_edu_nm_1.Text != "")
+                if (txt_edu_nm_1.Text != "" && txt_empid.Text != "")
                 {
                     //University
                     var edu = new BIG.Model.Education();
@@ -317,7 +317,7 @@ namespace BIG.Present
 
                     lstEdu.Add(edu);
                 }
-                if (txt_edu_nm_2.Text != "")
+                if (txt_edu_nm_2.Text != "" && txt_empid.Text != "")
                 {
                     var edu = new BIG.Model.Education();
                     edu.EDU_TYPE = "มัธยมศึกษา/ประกาศนียบัตรวิชาชีพ";
@@ -328,7 +328,7 @@ namespace BIG.Present
 
                     lstEdu.Add(edu);
                 }
-                if (txt_edu_nm_3.Text != "")
+                if (txt_edu_nm_3.Text != "" && txt_empid.Text != "")
                 {
                     var edu = new BIG.Model.Education();
                     edu.EDU_TYPE = "ประถมศึกษา";
@@ -352,7 +352,7 @@ namespace BIG.Present
             var lstTrain = new List<BIG.Model.Training>();
             try 
             {
-                if (txt_tn_1.Text != "")
+                if (txt_tn_1.Text != "" && txt_empid.Text != "")
                 { 
                     var tn = new BIG.Model.Training();
                     tn.TYPE = "ครั้งที่1";
@@ -362,7 +362,7 @@ namespace BIG.Present
                     tn.YEAR = txt_tn_yr_1.Text;
                     lstTrain.Add(tn);
                 }
-                if (txt_tn_2.Text != "")
+                if (txt_tn_2.Text != "" && txt_empid.Text != "")
                 {
                     var tn = new BIG.Model.Training();
                     tn.TYPE = "ครั้งที่2";
@@ -373,7 +373,7 @@ namespace BIG.Present
 
                     lstTrain.Add(tn);
                 }
-                if (txt_tn_3.Text != "")
+                if (txt_tn_3.Text != "" && txt_empid.Text != "")
                 {
                     var tn = new BIG.Model.Training();
                     tn.TYPE = "ครั้งที่3";
@@ -390,6 +390,129 @@ namespace BIG.Present
                 throw ex;
             }
             return lstTrain;
+        }
+
+        private List<BIG.Model.WorkExperience> getExperienceListfrominput()
+        {
+            var explist = new List<BIG.Model.WorkExperience>();
+            try
+            {
+                if (txt_exp_comname_1.Text != "" && txt_empid.Text != "")
+                {
+                    var exp = new BIG.Model.WorkExperience();
+                    exp.TYPE = "บริษัทล่าสุด";
+                    exp.EMP_ID = txt_empid.Text;
+                    exp.NAME = txt_exp_comname_1.Text;
+                    exp.POSITION = txt_exp_pos1.Text;
+                    exp.SALARY = txt_exp_salary_1.Text;
+                    exp.PERIOD = txt_exp_period_1.Text;
+                    explist.Add(exp);
+                }
+                if (txt_exp_comname_1.Text != "" && txt_empid.Text != "")
+                {
+                    var exp = new BIG.Model.WorkExperience();
+                    exp.TYPE = "บริษัทที่ 2";
+                    exp.EMP_ID = txt_empid.Text;
+                    exp.NAME = txt_exp_comname_1.Text;
+                    exp.POSITION = txt_exp_pos1.Text;
+                    exp.SALARY = txt_exp_salary_1.Text;
+                    exp.PERIOD = txt_exp_period_1.Text;
+                     
+                    explist.Add(exp);
+                }
+                if (txt_exp_comname_1.Text != "" && txt_empid.Text != "")
+                {
+                    var exp = new BIG.Model.WorkExperience();
+                    exp.TYPE = "บริษัทที่ 3";
+                    exp.EMP_ID = txt_empid.Text;
+                    exp.NAME = txt_exp_comname_1.Text;
+                    exp.POSITION = txt_exp_pos1.Text;
+                    exp.SALARY = txt_exp_salary_1.Text;
+                    exp.PERIOD = txt_exp_period_1.Text;
+                    explist.Add(exp);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return explist;
+        }
+
+        private List<BIG.Model.ReferencePerson> getRefPersonListfrominput()
+        {
+            var explist = new List<BIG.Model.ReferencePerson>();
+            try
+            {
+                if (txt_ref_name_1.Text != "" && txt_empid.Text != "")
+                {
+                    var refp = new BIG.Model.ReferencePerson();
+                    refp.TYPE = "1";
+                    refp.EMP_ID = txt_empid.Text;
+                    refp.NAME = txt_ref_name_1.Text;
+                    refp.TELEPHONE = txt_ref_contact_1.Text;
+                    refp.ADDRESS = txt_ref_add_1.Text;
+                    
+                    explist.Add(refp);
+                }
+                if (txt_ref_name_2.Text != "" && txt_empid.Text != "")
+                {
+                    var refp = new BIG.Model.ReferencePerson();
+                    refp.TYPE = "2";
+                    refp.EMP_ID = txt_empid.Text;
+                    refp.NAME = txt_ref_name_2.Text;
+                    refp.TELEPHONE = txt_ref_contact_2.Text;
+                    refp.ADDRESS = txt_ref_add_2.Text;
+
+                    explist.Add(refp);
+                }
+                if (txt_ref_name_3.Text != "" && txt_empid.Text != "")
+                {
+                    var refp = new BIG.Model.ReferencePerson();
+                    refp.TYPE = "3";
+                    refp.EMP_ID = txt_empid.Text;
+                    refp.NAME = txt_ref_name_3.Text;
+                    refp.TELEPHONE = txt_ref_contact_3.Text;
+                    refp.ADDRESS = txt_ref_add_3.Text;
+
+                    explist.Add(refp);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return explist;
+        }
+
+        private List<BIG.Model.SSO> getSSOListfrominput() 
+        {
+            var ssoList = new List<BIG.Model.SSO>();
+            try
+            {
+                if (txt_sso_hospital.Text != "" && txt_empid.Text != "" && (chk_have_sso.Checked == true || chk_nothave_sso.Checked == true))
+                {
+                    var sso = new BIG.Model.SSO();
+
+                    sso.EMP_ID = txt_empid.Text;
+                    if (chk_have_sso.Checked == true)
+                    {
+                        sso.HOSPITAL_NAME = txt_sso_hospital.Text;
+                    }
+                    if (chk_nothave_sso.Checked == true)
+                    {
+                        sso.HOSPITAL_NAME = cbo_sso_hospital.SelectedText;
+                    }
+                    
+                    ssoList.Add(sso);
+                }
+                 
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return ssoList;
         }
 
         private EmployeeImage getPhotoEmployee()
@@ -434,7 +557,7 @@ namespace BIG.Present
             var result = false;
             try
             {
-                var obj = DataService.EmployeeServices.GetEmployeeByIDCard(idcard); 
+                var obj = EmployeeServices.GetEmployeeByIDCard(idcard); 
                 if (obj != null)
                 {
                     result = true;
@@ -477,7 +600,7 @@ namespace BIG.Present
 
         private void CreateNewEmployee(BIG.Model.Employee emp)
         {
-            EmployeeServices.AddEmployee(emp);
+            EmployeeServices.SaveEmployee(emp);
         }
 
         private void UpdateEmployee(BIG.Model.Employee emp)
@@ -485,10 +608,13 @@ namespace BIG.Present
             EmployeeServices.UpdateEmployee(emp);
         }
 
+
         private void CreateAddress(List<BIG.Model.Address> listAddress)
         {
             AddressServices.SaveAddress(listAddress);
         }
+
+
 
         private void CreateEducation(List<BIG.Model.Education> lstEdu)
         {
@@ -499,6 +625,23 @@ namespace BIG.Present
         {
             TrainingServices.SaveTraining(lstTrain);
         }
+
+        private void CreateWorkExp(List<BIG.Model.WorkExperience> lstExp)
+        {
+            WorkExperienceServices.SaveExperience(lstExp);
+        }
+
+        private void CreateRefPerson(List<BIG.Model.ReferencePerson> lstRef)
+        {
+            ReferencePersonServices.SaveReferencePerson(lstRef);
+        }
+
+        private void CreateSSO(List<BIG.Model.SSO> lstSSO)
+        {
+            SSOServices.SaveSSO(lstSSO);
+        }
+
+
 
         private string GenNewEmployeeID()
         {
@@ -647,6 +790,30 @@ namespace BIG.Present
                     //add new employee
                     CreateNewEmployee(employee);
 
+                    //Save Address
+                    var listAddress = getAddressListfrominput();
+                    CreateAddress(listAddress);
+
+                    //Save Education 
+                    var listEdu = getEducationListfrominput();
+                    CreateEducation(listEdu);
+
+                    //Training
+                    var listTrain = getTrainingListfrominput();
+                    CreateTraining(listTrain);
+
+                    //Work Exp
+                    var listExp = getExperienceListfrominput();
+                    CreateWorkExp(listExp);
+
+                    //Reference_person
+                    var listRefPerson = getRefPersonListfrominput();
+                    CreateRefPerson(listRefPerson);
+
+                    //SSO
+                    var listSSO = getSSOListfrominput();
+                    CreateSSO(listSSO);
+
                 }
                 else
                 {
@@ -663,17 +830,7 @@ namespace BIG.Present
                 var cphoto = getCurrentPhotoEmployee();
                 UploadCurrentPhoto(cphoto);
 
-                //Save Address
-                var listAddress = getAddressListfrominput();
-                CreateAddress(listAddress);
-
-                //Save Education 
-                var listEdu = getEducationListfrominput();
-                CreateEducation(listEdu);
-
-                //Training
-                var listTrain = getTrainingListfrominput();
-                CreateTraining(listTrain);
+                
 
                 return result;
             }

@@ -67,5 +67,26 @@ namespace BIG.DataService
                 throw ex;
             }
         }
+
+        public static void DeleteByEmployeeID(string emp_id)
+        {
+            try
+            {
+                using (var ctx = new BIG_DBEntities())
+                {
+
+                    var obj = ctx.Trainings.Where(x => x.EMP_ID == emp_id).FirstOrDefault();
+                    if (obj != null)
+                    {
+                        ctx.Trainings.Remove(obj);
+                    }
+                    ctx.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

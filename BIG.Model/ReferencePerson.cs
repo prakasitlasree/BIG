@@ -16,6 +16,7 @@ namespace BIG.Model
     {
         public int ID { get; set; }
         public string EMP_ID { get; set; }
+        public string TYPE { get; set; }
         public string NAME { get; set; }
         public Nullable<int> AGE { get; set; }
         public string RELATIONSHIFT { get; set; }

@@ -33,9 +33,7 @@ namespace BIG.DataAccess
         public DbSet<Marital> Maritals { get; set; }
         public DbSet<Position> Positions { get; set; }
         public DbSet<Education> Educations { get; set; }
-        public DbSet<ReferencePerson> ReferencePersons { get; set; }
         public DbSet<Title> Titles { get; set; }
-        public DbSet<WorkExperience> WorkExperiences { get; set; }
         public DbSet<AddressType> AddressTypes { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Amphur> Amphurs { get; set; }
@@ -50,5 +48,7 @@ namespace BIG.DataAccess
         public DbSet<CurrentImage> CurrentImages { get; set; }
         public DbSet<SSO> SSOes { get; set; }
         public DbSet<Training> Trainings { get; set; }
+        public DbSet<WorkExperience> WorkExperiences { get; set; }
+        public DbSet<ReferencePerson> ReferencePersons { get; set; }
     }
 }
