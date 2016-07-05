@@ -9,10 +9,16 @@ namespace BIG.DataService
 {
     public partial class TrainingServices
     {
-        public static bool SaveTraining(List<Training> list)
+        public static bool Add(List<Training> list)
         { 
             try
             {
+                var obj = list.FirstOrDefault();
+                if (obj != null)
+                {
+                    DeleteByEmployeeID(obj.EMP_ID);
+                }
+
                 using (var ctx = new BIG_DBEntities())
                 {
                     foreach (var objAdd in list)
@@ -39,8 +45,7 @@ namespace BIG.DataService
                 {
 
                     result = ctx.Trainings.ToList();
-
-
+                     
                 }
                 return result;
             }

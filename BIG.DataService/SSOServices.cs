@@ -9,10 +9,16 @@ namespace BIG.DataService
 { 
     public partial class SSOServices
     {
-        public static bool SaveSSO(List<SSO> list)
+        public static bool Add(List<SSO> list)
         {
             try
-            { 
+            {
+                var obj = list.FirstOrDefault();
+                if (obj != null)
+                {
+                    DeleteByEmployeeID(obj.EMP_ID);
+                }
+
                 using (var ctx = new BIG_DBEntities())
                 {
                     foreach (var objAdd in list)

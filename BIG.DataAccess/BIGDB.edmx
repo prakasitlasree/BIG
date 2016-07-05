@@ -52,7 +52,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EMP_ID" Type="nvarchar" MaxLength="14" />
-          <Property Name="PIC_PROFILE" Type="varbinary(max)" />
+          <Property Name="PHOTO" Type="varbinary(max)" />
           <Property Name="TYPE" Type="nvarchar" MaxLength="50" />
           <Property Name="CREATE_DATE" Type="datetime" />
         </EntityType>
@@ -125,7 +125,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EMP_ID" Type="nvarchar" MaxLength="14" />
-          <Property Name="PIC_PROFILE" Type="varbinary(max)" />
+          <Property Name="PHOTO" Type="varbinary(max)" />
           <Property Name="TYPE" Type="nvarchar" MaxLength="50" />
           <Property Name="CREATE_DATE" Type="datetime" />
         </EntityType>
@@ -163,6 +163,16 @@
           <Property Name="NAME" Type="nvarchar" MaxLength="50" />
           <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="250" />
         </EntityType>
+        <EntityType Name="OtherDocuments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMP_ID" Type="nvarchar" MaxLength="14" />
+          <Property Name="PHOTO" Type="varbinary(max)" />
+          <Property Name="TYPE" Type="nvarchar" MaxLength="50" />
+          <Property Name="CREATE_DATE" Type="datetime" />
+        </EntityType>
         <EntityType Name="Position">
           <Key>
             <PropertyRef Name="ID" />
@@ -179,6 +189,16 @@
           <Property Name="PROVINCE_CODE" Type="varchar" MaxLength="2" Nullable="false" />
           <Property Name="PROVINCE_NAME" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="GEO_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReferenceDocuments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMP_ID" Type="nvarchar" MaxLength="14" />
+          <Property Name="PHOTO" Type="varbinary(max)" />
+          <Property Name="TYPE" Type="nvarchar" MaxLength="50" />
+          <Property Name="CREATE_DATE" Type="datetime" />
         </EntityType>
         <EntityType Name="ReferencePerson">
           <Key>
@@ -330,8 +350,10 @@
           <EntitySet Name="Geography" EntityType="Self.Geography" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Logon" EntityType="Self.Logon" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Marital" EntityType="Self.Marital" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OtherDocuments" EntityType="Self.OtherDocuments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Province" EntityType="Self.Province" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReferenceDocuments" EntityType="Self.ReferenceDocuments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ReferencePerson" EntityType="Self.ReferencePerson" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sites" EntityType="Self.Sites" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SSO" EntityType="Self.SSO" Schema="dbo" store:Type="Tables" />
@@ -402,11 +424,13 @@
             <End Role="Title" EntitySet="Titles" />
             <End Role="Employee" EntitySet="Employees" />
           </AssociationSet>
-          <EntitySet Name="CurrentImages" EntityType="BIG_DBModel.CurrentImage" />
           <EntitySet Name="SSOes" EntityType="BIG_DBModel.SSO" />
           <EntitySet Name="Trainings" EntityType="BIG_DBModel.Training" />
           <EntitySet Name="WorkExperiences" EntityType="BIG_DBModel.WorkExperience" />
           <EntitySet Name="ReferencePersons" EntityType="BIG_DBModel.ReferencePerson" />
+          <EntitySet Name="CurrentImages" EntityType="BIG_DBModel.CurrentImage" />
+          <EntitySet Name="OtherDocuments" EntityType="BIG_DBModel.OtherDocument" />
+          <EntitySet Name="ReferenceDocuments" EntityType="BIG_DBModel.ReferenceDocument" />
           </EntityContainer>
         <EntityType Name="Logon">
           <Key>
@@ -543,6 +567,7 @@
           <Property Name="PIC_PROFILE" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Geography">
           <Key>
@@ -671,16 +696,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="CurrentImage">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EMP_ID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
-          <Property Name="PIC_PROFILE" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
-        </EntityType>
         <EntityType Name="SSO">
           <Key>
             <PropertyRef Name="ID" />
@@ -728,6 +743,36 @@
           <Property Name="RELATIONSHIFT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ADDRESS" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="TELEPHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CurrentImage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_ID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OtherDocument">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_ID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ReferenceDocument">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_ID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -857,9 +902,9 @@
           <EntitySetMapping Name="EmployeeImages">
             <EntityTypeMapping TypeName="BIG_DBModel.EmployeeImage">
               <MappingFragment StoreEntitySet="EmployeeImages">
+                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
                 <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
                 <ScalarProperty Name="TYPE" ColumnName="TYPE" />
-                <ScalarProperty Name="PIC_PROFILE" ColumnName="PIC_PROFILE" />
                 <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
@@ -944,17 +989,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="CurrentImages">
-            <EntityTypeMapping TypeName="BIG_DBModel.CurrentImage">
-              <MappingFragment StoreEntitySet="CurrentImages">
-                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
-                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
-                <ScalarProperty Name="PIC_PROFILE" ColumnName="PIC_PROFILE" />
-                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="SSOes">
             <EntityTypeMapping TypeName="BIG_DBModel.SSO">
               <MappingFragment StoreEntitySet="SSO">
@@ -1007,6 +1041,39 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="CurrentImages">
+            <EntityTypeMapping TypeName="BIG_DBModel.CurrentImage">
+              <MappingFragment StoreEntitySet="CurrentImages">
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OtherDocuments">
+            <EntityTypeMapping TypeName="BIG_DBModel.OtherDocument">
+              <MappingFragment StoreEntitySet="OtherDocuments">
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReferenceDocuments">
+            <EntityTypeMapping TypeName="BIG_DBModel.ReferenceDocument">
+              <MappingFragment StoreEntitySet="ReferenceDocuments">
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1029,7 +1096,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram DiagramId="416fbd80b228408ca4ab59ee2aaa52eb" Name="Diagram1" ZoomLevel="82">
+      <Diagram DiagramId="416fbd80b228408ca4ab59ee2aaa52eb" Name="Diagram1" ZoomLevel="80">
         <EntityTypeShape EntityType="BIG_DBModel.Logon" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Gender" Width="1.5" PointX="4.75" PointY="3.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Marital" Width="1.5" PointX="4.75" PointY="6.75" />
@@ -1052,11 +1119,13 @@
         <AssociationConnector Association="BIG_DBModel.FK_Employee_Marital" />
         <AssociationConnector Association="BIG_DBModel.FK_Employee_Position" />
         <AssociationConnector Association="BIG_DBModel.FK_Employee_Title" />
-        <EntityTypeShape EntityType="BIG_DBModel.CurrentImage" Width="1.5" PointX="12.375" PointY="12.75" />
         <EntityTypeShape EntityType="BIG_DBModel.SSO" Width="1.5" PointX="13.375" PointY="0.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Training" Width="1.5" PointX="13.375" PointY="3.75" />
         <EntityTypeShape EntityType="BIG_DBModel.WorkExperience" Width="1.5" PointX="8.375" PointY="13.75" />
         <EntityTypeShape EntityType="BIG_DBModel.ReferencePerson" Width="1.5" PointX="9.375" PointY="9.75" />
+        <EntityTypeShape EntityType="BIG_DBModel.CurrentImage" Width="1.5" PointX="11.375" PointY="12.75" />
+        <EntityTypeShape EntityType="BIG_DBModel.OtherDocument" Width="1.5" PointX="13.375" PointY="12.75" />
+        <EntityTypeShape EntityType="BIG_DBModel.ReferenceDocument" Width="1.5" PointX="15.375" PointY="0.75" />
         </Diagram>
     </Diagrams>
   </Designer>

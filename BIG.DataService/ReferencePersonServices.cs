@@ -9,10 +9,16 @@ namespace BIG.DataService
 {
     public partial class ReferencePersonServices
     {
-        public static bool SaveReferencePerson(List<ReferencePerson> list)
+        public static bool Add(List<ReferencePerson> list)
         {
             try
-            { 
+            {
+                var obj = list.FirstOrDefault();
+                if (obj != null)
+                {
+                    DeleteByEmployeeID(obj.EMP_ID);
+                }
+
                 using (var ctx = new BIG_DBEntities())
                 {
                     foreach (var objAdd in list)

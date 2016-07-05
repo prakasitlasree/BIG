@@ -8,10 +8,16 @@ namespace BIG.DataService
 {
     public partial class WorkExperienceServices
     {
-        public static bool SaveExperience(List<WorkExperience> list)
+        public static bool Add(List<WorkExperience> list)
         {
             try 
             {
+                var obj = list.FirstOrDefault();
+                if (obj != null)
+                {
+                    DeleteByEmployeeID(obj.EMP_ID);
+                }
+
                 using (var ctx = new BIG_DBEntities())
                 {
                     foreach (var objAdd in list)

@@ -9,10 +9,15 @@ namespace BIG.DataService
 {
     public partial class EducationServices
     {
-        public static bool SaveEducation(List<Education> listEdu)
+        public static bool Add(List<Education> listEdu)
         {
             try
             {
+                var obj = listEdu.FirstOrDefault();
+                if (obj != null)
+                {
+                    DeleteByEmployeeID(obj.EMP_ID);
+                } 
                 using (var ctx = new BIG_DBEntities())
                 { 
                     foreach (var objAdd in listEdu)

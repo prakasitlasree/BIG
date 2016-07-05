@@ -8,25 +8,25 @@ namespace BIG.DataService
 {
     public partial class AddressServices
     {
-        public static bool SaveAddress(List<Address> listAddress)
+        public static bool Add(List<Address> list)
         {
             try
             {
-                var obj = listAddress.FirstOrDefault();
+                var obj = list.FirstOrDefault();
                 if (obj != null)
-                { 
-                    DeleteAddressByEmployeeID(obj.EMP_ID);
+                {
+                    DeleteByEmployeeID(obj.EMP_ID);
                 }
 
                 using (var ctx = new BIG_DBEntities())
                 {
-                    foreach (var objAdd in listAddress)
+                    foreach (var objAdd in list)
                     {
                         ctx.Addresses.Add(objAdd);
 
                     }
                     ctx.SaveChanges();
-                }
+                } 
                 return true;
             }
             catch (Exception ex)
@@ -35,14 +35,35 @@ namespace BIG.DataService
                 throw ex;
             }
         }
-
-        public static bool UpdateAddress(List<Address> listAddress)
+         
+        public static void DeleteByEmployeeID(string emp_id)
         {
             try
             {
                 using (var ctx = new BIG_DBEntities())
                 {
-                    foreach (var objAdd in listAddress)
+
+                    var obj = ctx.Addresses.Where(x => x.EMP_ID == emp_id).FirstOrDefault();
+                    if (obj != null)
+                    {
+                        ctx.Addresses.Remove(obj);
+                    }
+                    ctx.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static bool UpdateAddress(List<Address> list)
+        {
+            try
+            {
+                using (var ctx = new BIG_DBEntities())
+                {
+                    foreach (var objAdd in list)
                     {
                         ctx.Addresses.Add(objAdd);
 
@@ -114,25 +135,5 @@ namespace BIG.DataService
             }
         }
 
-        public static void DeleteByEmployeeID(string emp_id)
-        {
-            try
-            { 
-                using (var ctx = new BIG_DBEntities())
-                {
-
-                    var obj = ctx.Addresses.Where(x => x.EMP_ID == emp_id).FirstOrDefault();
-                    if (obj != null)
-                    {
-                        ctx.Addresses.Remove(obj);
-                    }
-                    ctx.SaveChanges();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            } 
-        }
     }
 }

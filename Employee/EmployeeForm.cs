@@ -23,7 +23,7 @@ namespace BIG.Present
         public EmployeeForm()
         {
             InitializeComponent();
-            initialCombobox(); 
+            initialCombobox();
 
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
@@ -37,24 +37,41 @@ namespace BIG.Present
             get { return _photo; }
             set { _photo = value; }
         }
-         
+
         private List<Province> _province;
 
         public List<Province> ListProvinces
         {
-            get  
+            get
             {
                 if (_province != null || _province.Count == 0)
                 {
-                    
-                  _province =  ProvinceServices.GetListProvince().ToList();
 
-                } 
-               return _province;
-            
+                    _province = ProvinceServices.GetListProvince().ToList();
+
+                }
+                return _province;
+
             }
             set { _province = value; }
         }
+
+        private List<OtherDocument> _otherdoc;
+
+        public List<OtherDocument> OtherDoc
+        {
+            get { return _otherdoc; }
+            set { _otherdoc = value; }
+        }
+
+        private List<ReferenceDocument> _refdoc;
+
+        public List<ReferenceDocument> RefDoc 
+        {
+            get { return _refdoc; }
+            set { _refdoc = value; }
+        }
+
         #endregion
 
         #region ===Method===
@@ -80,9 +97,9 @@ namespace BIG.Present
 
             //addrestype
             this.InitialAddressType();
-             
+
             //etc
-            
+
             if (c_add_type.Items.Count > 0)
             {
                 c_add_type.SelectedIndex = 0;
@@ -98,7 +115,7 @@ namespace BIG.Present
             if (cbo_nationality.Items.Count > 0)
             {
                 cbo_nationality.SelectedIndex = 0;
-            } 
+            }
         }
 
         private void InitialProvince()
@@ -107,12 +124,12 @@ namespace BIG.Present
 
             ListProvinces = listprov;
 
-            var prov1 = listprov.Select(x => new { x.PROVINCE_ID,x.PROVINCE_NAME}).ToList();
+            var prov1 = listprov.Select(x => new { x.PROVINCE_ID, x.PROVINCE_NAME }).ToList();
 
             var prov2 = listprov.Select(x => new { x.PROVINCE_ID, x.PROVINCE_NAME }).ToList();
 
             var prov3 = listprov.Select(x => new { x.PROVINCE_ID, x.PROVINCE_NAME }).ToList();
-             
+
             cbo_bp_prov.Items.Clear();
             c_cbo_prov.Items.Clear();
             p_cbo_prov.Items.Clear();
@@ -135,22 +152,22 @@ namespace BIG.Present
 
         private void InitialAmphur()
         {
-           
+
             if (p_cbo_prov.SelectedItem != null)
-            { 
+            {
                 var listamp = ProvinceServices.GetListAmphur(Convert.ToInt16(p_cbo_prov.SelectedValue.ToString()));
 
                 p_cbo_amp.DataSource = listamp;
                 p_cbo_amp.DisplayMember = "AMPHUR_NAME";
-                p_cbo_amp.ValueMember = "AMPHUR_ID"; 
+                p_cbo_amp.ValueMember = "AMPHUR_ID";
             }
             if (c_cbo_prov.SelectedItem != null)
-            { 
+            {
                 var listamp = ProvinceServices.GetListAmphur(Convert.ToInt16(c_cbo_prov.SelectedValue.ToString()));
                 c_cbo_amp.DataSource = listamp;
                 c_cbo_amp.DisplayMember = "AMPHUR_NAME";
-                c_cbo_amp.ValueMember = "AMPHUR_ID"; 
-            } 
+                c_cbo_amp.ValueMember = "AMPHUR_ID";
+            }
         }
 
         private void InitialAddressType()
@@ -159,22 +176,22 @@ namespace BIG.Present
             c_add_type.Items.Clear();
             c_add_type.DataSource = addrType;
             c_add_type.DisplayMember = "NAME";
-            c_add_type.ValueMember = "ID"; 
-             
+            c_add_type.ValueMember = "ID";
+
         }
 
         private void InitialPosition()
-        { 
+        {
             var lstpos = PossitionDataService.GetAll();
             cbo_possition.Items.Clear();
             cbo_possition.DataSource = lstpos;
             cbo_possition.DisplayMember = "NAME";
             cbo_possition.ValueMember = "ID";
-             
+
             if (cbo_possition.Items.Count > 0)
             {
                 cbo_possition.SelectedIndex = 0;
-            } 
+            }
         }
 
         private BIG.Model.Employee getEmployeefrominput()
@@ -182,7 +199,7 @@ namespace BIG.Present
 
             var emp = new BIG.Model.Employee();
             try
-            { 
+            {
                 //General 
                 emp = new BIG.Model.Employee();
                 emp.EMP_ID = txt_empid.Text; //รหัสพนักงาน
@@ -291,7 +308,7 @@ namespace BIG.Present
 
                     listAddress.Add(permanent_addr);
 
-                } 
+                }
                 return listAddress;
             }
             catch (Exception ex)
@@ -301,7 +318,7 @@ namespace BIG.Present
         }
 
         private List<BIG.Model.Education> getEducationListfrominput()
-        { 
+        {
             var lstEdu = new List<BIG.Model.Education>();
             try
             {
@@ -338,7 +355,7 @@ namespace BIG.Present
                     edu.YEAR = txt_edu_yr_3.Text;
 
                     lstEdu.Add(edu);
-                }             
+                }
             }
             catch (Exception ex)
             {
@@ -350,14 +367,14 @@ namespace BIG.Present
         private List<BIG.Model.Training> getTrainingListfrominput()
         {
             var lstTrain = new List<BIG.Model.Training>();
-            try 
+            try
             {
                 if (txt_tn_1.Text != "" && txt_empid.Text != "")
-                { 
+                {
                     var tn = new BIG.Model.Training();
                     tn.TYPE = "ครั้งที่1";
-                    tn.EMP_ID = txt_empid.Text; 
-                    tn.COURSE = txt_tn_1.Text;  
+                    tn.EMP_ID = txt_empid.Text;
+                    tn.COURSE = txt_tn_1.Text;
                     tn.DETAILS = txt_tn_dt_1.Text;
                     tn.YEAR = txt_tn_yr_1.Text;
                     lstTrain.Add(tn);
@@ -366,8 +383,8 @@ namespace BIG.Present
                 {
                     var tn = new BIG.Model.Training();
                     tn.TYPE = "ครั้งที่2";
-                    tn.EMP_ID = txt_empid.Text; 
-                    tn.COURSE = txt_tn_2.Text;  
+                    tn.EMP_ID = txt_empid.Text;
+                    tn.COURSE = txt_tn_2.Text;
                     tn.DETAILS = txt_tn_dt_2.Text;
                     tn.YEAR = txt_tn_yr_2.Text;
 
@@ -417,7 +434,7 @@ namespace BIG.Present
                     exp.POSITION = txt_exp_pos1.Text;
                     exp.SALARY = txt_exp_salary_1.Text;
                     exp.PERIOD = txt_exp_period_1.Text;
-                     
+
                     explist.Add(exp);
                 }
                 if (txt_exp_comname_1.Text != "" && txt_empid.Text != "")
@@ -452,7 +469,7 @@ namespace BIG.Present
                     refp.NAME = txt_ref_name_1.Text;
                     refp.TELEPHONE = txt_ref_contact_1.Text;
                     refp.ADDRESS = txt_ref_add_1.Text;
-                    
+
                     explist.Add(refp);
                 }
                 if (txt_ref_name_2.Text != "" && txt_empid.Text != "")
@@ -485,7 +502,7 @@ namespace BIG.Present
             return explist;
         }
 
-        private List<BIG.Model.SSO> getSSOListfrominput() 
+        private List<BIG.Model.SSO> getSSOListfrominput()
         {
             var ssoList = new List<BIG.Model.SSO>();
             try
@@ -503,10 +520,10 @@ namespace BIG.Present
                     {
                         sso.HOSPITAL_NAME = cbo_sso_hospital.SelectedText;
                     }
-                    
+
                     ssoList.Add(sso);
                 }
-                 
+
             }
             catch (Exception ex)
             {
@@ -535,7 +552,7 @@ namespace BIG.Present
 
         private CurrentImage getCurrentPhotoEmployee()
         {
-            var ret = new CurrentImage(); 
+            var ret = new CurrentImage();
 
             try
             {
@@ -557,7 +574,7 @@ namespace BIG.Present
             var result = false;
             try
             {
-                var obj = EmployeeServices.GetEmployeeByIDCard(idcard); 
+                var obj = EmployeeServices.GetEmployeeByIDCard(idcard);
                 if (obj != null)
                 {
                     result = true;
@@ -580,11 +597,11 @@ namespace BIG.Present
             var ret = new Model.Employee();
             try
             {
-                var obj = EmployeeServices.GetEmployeeByIDCard(idcard); 
+                var obj = EmployeeServices.GetEmployeeByIDCard(idcard);
                 if (obj != null)
                 {
                     ret = obj;
-                } 
+                }
                 else
                 {
                     return obj;
@@ -593,14 +610,14 @@ namespace BIG.Present
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                 
+
             }
             return ret;
         }
 
         private void CreateNewEmployee(BIG.Model.Employee emp)
         {
-            EmployeeServices.SaveEmployee(emp);
+            EmployeeServices.Add(emp);
         }
 
         private void UpdateEmployee(BIG.Model.Employee emp)
@@ -608,37 +625,34 @@ namespace BIG.Present
             EmployeeServices.UpdateEmployee(emp);
         }
 
-
         private void CreateAddress(List<BIG.Model.Address> listAddress)
         {
-            AddressServices.SaveAddress(listAddress);
+            AddressServices.Add(listAddress);
         }
-
-
 
         private void CreateEducation(List<BIG.Model.Education> lstEdu)
         {
-            EducationServices.SaveEducation(lstEdu);
+            EducationServices.Add(lstEdu);
         }
 
         private void CreateTraining(List<BIG.Model.Training> lstTrain)
         {
-            TrainingServices.SaveTraining(lstTrain);
+            TrainingServices.Add(lstTrain);
         }
 
         private void CreateWorkExp(List<BIG.Model.WorkExperience> lstExp)
         {
-            WorkExperienceServices.SaveExperience(lstExp);
+            WorkExperienceServices.Add(lstExp);
         }
 
         private void CreateRefPerson(List<BIG.Model.ReferencePerson> lstRef)
         {
-            ReferencePersonServices.SaveReferencePerson(lstRef);
+            ReferencePersonServices.Add(lstRef);
         }
 
         private void CreateSSO(List<BIG.Model.SSO> lstSSO)
         {
-            SSOServices.SaveSSO(lstSSO);
+            SSOServices.Add(lstSSO);
         }
 
 
@@ -674,7 +688,7 @@ namespace BIG.Present
                 }
             }
             catch (Exception ex)
-            { 
+            {
                 throw ex;
             }
             return ret;
@@ -691,7 +705,7 @@ namespace BIG.Present
                 var idcard = CardID.readAll(true);
                 if (idcard != null)
                 {
-                    
+
                     var empObj = GetEmployeeByIDCard(idcard.Citizenid);
 
                     //มีข้อมูลพนักงานอยู่ในระบบ
@@ -707,7 +721,7 @@ namespace BIG.Present
                         txt_emp_lname_th.Text = empObj.LASTNAME_TH;
                         txt_emp_fname_en.Text = empObj.FIRSTNAME_EN;
                         txt_emp_lname_en.Text = empObj.LASTNAME_EN;
-                        dob.Value = empObj.DATEOFBIRTH.Value ;
+                        dob.Value = empObj.DATEOFBIRTH.Value;
                         date_start_work.Value = empObj.DATESTARTWORK.Value;
                         cbo_bp_prov.SelectedValue = GetProvinceIDByName(idcard.addrProvince);
                     }
@@ -763,7 +777,7 @@ namespace BIG.Present
                             var myThumbnail = myBitmap.GetThumbnailImage(150, 187, myCallback, IntPtr.Zero);
                             pic_emp.Image = myThumbnail;
                         }
-                    } 
+                    }
                 }
 
             }
@@ -790,30 +804,6 @@ namespace BIG.Present
                     //add new employee
                     CreateNewEmployee(employee);
 
-                    //Save Address
-                    var listAddress = getAddressListfrominput();
-                    CreateAddress(listAddress);
-
-                    //Save Education 
-                    var listEdu = getEducationListfrominput();
-                    CreateEducation(listEdu);
-
-                    //Training
-                    var listTrain = getTrainingListfrominput();
-                    CreateTraining(listTrain);
-
-                    //Work Exp
-                    var listExp = getExperienceListfrominput();
-                    CreateWorkExp(listExp);
-
-                    //Reference_person
-                    var listRefPerson = getRefPersonListfrominput();
-                    CreateRefPerson(listRefPerson);
-
-                    //SSO
-                    var listSSO = getSSOListfrominput();
-                    CreateSSO(listSSO);
-
                 }
                 else
                 {
@@ -830,7 +820,29 @@ namespace BIG.Present
                 var cphoto = getCurrentPhotoEmployee();
                 UploadCurrentPhoto(cphoto);
 
-                
+                //Save Address
+                var listAddress = getAddressListfrominput();
+                CreateAddress(listAddress);
+
+                //Save Education 
+                var listEdu = getEducationListfrominput();
+                CreateEducation(listEdu);
+
+                //Training
+                var listTrain = getTrainingListfrominput();
+                CreateTraining(listTrain);
+
+                //Work Exp
+                var listExp = getExperienceListfrominput();
+                CreateWorkExp(listExp);
+
+                //Reference_person
+                var listRefPerson = getRefPersonListfrominput();
+                CreateRefPerson(listRefPerson);
+
+                //SSO
+                var listSSO = getSSOListfrominput();
+                CreateSSO(listSSO);
 
                 return result;
             }
@@ -846,7 +858,6 @@ namespace BIG.Present
             var result = false;
             try
             {
-                ProfileImageDataService.DeletePhoto(Img);
                 ProfileImageDataService.UploadPhoto(Img);
             }
             catch (Exception ex)
@@ -859,10 +870,9 @@ namespace BIG.Present
 
         private bool UploadCurrentPhoto(CurrentImage Img)
         {
-            var result = false; 
+            var result = false;
             try
             {
-                CurrentImageService.DeletePhoto(Img);
                 CurrentImageService.UploadPhoto(Img);
             }
             catch (Exception ex)
@@ -876,14 +886,14 @@ namespace BIG.Present
         #endregion
 
         #region ===Events===
-         
+
         public EmployeeForm(BIG.Model.Employee emp)
         {
             this.employee = emp;
         }
 
         public BIG.Model.Employee employee { get; set; }
-  
+
         private void EmployeeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             DialogResult result = MessageBox.Show("คุณต้องการออกจากโปรแกรมจัดการข้อมูลลพนักงานหรือไม่?", "Confirmation", MessageBoxButtons.YesNo);
@@ -911,7 +921,7 @@ namespace BIG.Present
             else if (result == DialogResult.No)
             {
                 //...
-            } 
+            }
         }
         private void rb_save_Click(object sender, EventArgs e)
         {
@@ -927,7 +937,7 @@ namespace BIG.Present
             else if (result == DialogResult.No)
             {
                 //...
-            } 
+            }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -1002,7 +1012,7 @@ namespace BIG.Present
                 c_cbo_amp.DataSource = listamp1;
                 c_cbo_amp.DisplayMember = "AMPHUR_NAME";
                 c_cbo_amp.ValueMember = "AMPHUR_ID";
-            } 
+            }
 
             c_txt_postcode.Focus();
         }
@@ -1020,7 +1030,7 @@ namespace BIG.Present
                 p_cbo_amp.DisplayMember = "AMPHUR_NAME";
                 p_cbo_amp.ValueMember = "AMPHUR_ID";
             }
-             
+
         }
 
         private void btn_new_img_Click(object sender, EventArgs e)
@@ -1087,7 +1097,7 @@ namespace BIG.Present
             Application.Exit();
 
         }
-         
+
 
         private void rb_logout_Click(object sender, EventArgs e)
         {
@@ -1107,7 +1117,6 @@ namespace BIG.Present
             ReloadSites();
         }
 
-        #endregion
 
         private void chk_have_sso_CheckedChanged(object sender, EventArgs e)
         {
@@ -1118,5 +1127,265 @@ namespace BIG.Present
         {
             cbo_sso_hospital.Enabled = true;
         }
+
+        #endregion
+
+        #region ===Upload doc idcard===
+         
+        private void btn_upload_copy_idcard_Click(object sender, EventArgs e)
+        {
+            this.openFileDialog1.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+
+            this.openFileDialog1.Multiselect = false;
+            this.openFileDialog1.Title = "Select Photo";
+
+            DialogResult dr = this.openFileDialog1.ShowDialog();
+            if (dr == System.Windows.Forms.DialogResult.OK)
+            {
+                foreach (String file in openFileDialog1.FileNames)
+                {
+                    try
+                    {
+                        var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
+                        var myBitmap = new Bitmap(file);
+                        var myThumbnail = myBitmap.GetThumbnailImage(360, 450, myCallback, IntPtr.Zero);
+                        pic_copy_idcard.Image = myThumbnail;
+
+                        if (txt_empid.Text != "")
+                        {
+                            var obj = new ReferenceDocument();
+                            obj.EMP_ID = txt_empid.Text;
+                            obj.PIC_PROFILE = ConvertImageToByteArray(myThumbnail, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            obj.TYPE = "สำเนาบัตรประชาชน";
+                            
+                            RefDoc.Add(obj);
+                        }
+                       
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("btn_upload_copy_idcard_Click: " + ex.Message);
+                    }
+                }
+            }
+        }
+        
+        //
+        private void btn_refresh_copy_idcard_Click(object sender, EventArgs e)
+        {
+
+        }
+         
+        private void btn_delete_copy_idcard_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+         
+        #region ===Upload ทะเบียนบ้าน===
+
+        private void btn_upload_copy_home_Click(object sender, EventArgs e)
+        {
+            this.openFileDialog1.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+
+            this.openFileDialog1.Multiselect = false;
+            this.openFileDialog1.Title = "Select Photo";
+
+            DialogResult dr = this.openFileDialog1.ShowDialog();
+            if (dr == System.Windows.Forms.DialogResult.OK)
+            {
+                foreach (String file in openFileDialog1.FileNames)
+                {
+                    try
+                    {
+                        var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
+                        var myBitmap = new Bitmap(file);
+                        var myThumbnail = myBitmap.GetThumbnailImage(360, 450, myCallback, IntPtr.Zero);
+                        pic_copy_home.Image = myThumbnail;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("btn_upload_copy_home_Click: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+        private void btn_refresh_copy_home_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btn_delete_copy_home_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
+        #region ===Upload ใบผ่านทหาร ===
+
+        private void btn_upload_copy_military_Click(object sender, EventArgs e)
+        {
+            this.openFileDialog1.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+
+            this.openFileDialog1.Multiselect = false;
+            this.openFileDialog1.Title = "Select Photo";
+
+            DialogResult dr = this.openFileDialog1.ShowDialog();
+            if (dr == System.Windows.Forms.DialogResult.OK)
+            {
+                foreach (String file in openFileDialog1.FileNames)
+                {
+                    try
+                    {
+                        var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
+                        var myBitmap = new Bitmap(file);
+                        var myThumbnail = myBitmap.GetThumbnailImage(360, 450, myCallback, IntPtr.Zero);
+                        pic_copy_military.Image = myThumbnail;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("btn_upload_copy_home_Click: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+        private void btn_upload_refresh_military_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_delete_copy_military_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
+        #region ===Upload เอกสารแต่งตั้ง ===
+
+        private void btn_upload_promote_Click(object sender, EventArgs e)
+        {
+            this.openFileDialog1.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+
+            this.openFileDialog1.Multiselect = false;
+            this.openFileDialog1.Title = "Select Photo";
+
+            DialogResult dr = this.openFileDialog1.ShowDialog();
+            if (dr == System.Windows.Forms.DialogResult.OK)
+            {
+                foreach (String file in openFileDialog1.FileNames)
+                {
+                    try
+                    {
+                        var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
+                        var myBitmap = new Bitmap(file);
+                        var myThumbnail = myBitmap.GetThumbnailImage(360, 450, myCallback, IntPtr.Zero);
+                        pic_promote.Image = myThumbnail;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("btn_upload_copy_home_Click: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+        private void btn_refresh_promote_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_delete_promote_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+         
+        #region ===Upload เอกสารเพิ่มเงิน ===
+        private void btn_upload_salary_Click(object sender, EventArgs e)
+        {
+            this.openFileDialog1.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+
+            this.openFileDialog1.Multiselect = false;
+            this.openFileDialog1.Title = "Select Photo";
+
+            DialogResult dr = this.openFileDialog1.ShowDialog();
+            if (dr == System.Windows.Forms.DialogResult.OK)
+            {
+                foreach (String file in openFileDialog1.FileNames)
+                {
+                    try
+                    {
+                        var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
+                        var myBitmap = new Bitmap(file);
+                        var myThumbnail = myBitmap.GetThumbnailImage(360, 450, myCallback, IntPtr.Zero);
+                        pic_saraly.Image = myThumbnail;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("btn_upload_copy_home_Click: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+        private void btn_refresh_salary_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_delete_salary_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+         
+        #region ===Upload ใบเตือน ===
+        private void btn_upload_warning_Click(object sender, EventArgs e)
+        {
+            //pic_warning
+            this.openFileDialog1.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+
+            this.openFileDialog1.Multiselect = false;
+            this.openFileDialog1.Title = "Select Photo";
+
+            DialogResult dr = this.openFileDialog1.ShowDialog();
+            if (dr == System.Windows.Forms.DialogResult.OK)
+            {
+                foreach (String file in openFileDialog1.FileNames)
+                {
+                    try
+                    {
+                        var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
+                        var myBitmap = new Bitmap(file);
+                        var myThumbnail = myBitmap.GetThumbnailImage(360, 450, myCallback, IntPtr.Zero);
+                        pic_warning.Image = myThumbnail;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("btn_upload_copy_home_Click: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+        private void btn_refresh_warning_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_delete_warning_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 }

@@ -91,11 +91,17 @@
     <Compile Include="Marital.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="OtherDocument.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Position.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Province.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReferenceDocument.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
     <Compile Include="ReferencePerson.cs">

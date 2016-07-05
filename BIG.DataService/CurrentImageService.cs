@@ -14,9 +14,13 @@ namespace BIG.DataService
             var result = false;
             try
             {
-                using (var ctx = new BIG_DBEntities())
+                if (Photo != null)
                 {
+                    DeletePhoto(Photo.EMP_ID);
+                }
 
+                using (var ctx = new BIG_DBEntities())
+                { 
                     ctx.CurrentImages.Add(Photo);
                     ctx.SaveChanges();
                 }
@@ -29,20 +33,37 @@ namespace BIG.DataService
             return result;
         }
 
-        public static bool DeletePhoto(CurrentImage Img)
-        {
-            var result = false;
+        public static void DeletePhoto(string emp_id)
+        { 
             try
             {
                 using (var ctx = new BIG_DBEntities())
                 {
 
-                    var pho = ctx.CurrentImages.Where(x => x.EMP_ID == Img.EMP_ID).FirstOrDefault();
+                    var pho = ctx.CurrentImages.Where(x => x.EMP_ID == emp_id).FirstOrDefault();
                     if (pho != null)
                     {
                         ctx.CurrentImages.Remove(pho);
                     }
                     ctx.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            } 
+        }
+
+        public static CurrentImage GetByEmployeeID(string emp)
+        {
+            var result = new CurrentImage();
+            try
+            {
+                using (var ctx = new BIG_DBEntities())
+                {
+
+                    result = ctx.CurrentImages.Where(x => x.EMP_ID == emp).FirstOrDefault();
+
                 }
             }
             catch (Exception ex)

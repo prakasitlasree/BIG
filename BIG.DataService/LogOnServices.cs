@@ -24,7 +24,6 @@ namespace BIG.DataService
                    else
                    { result = false; }
                }
-               
            }
            catch (Exception ex)
            {
