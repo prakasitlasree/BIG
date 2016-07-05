@@ -68,39 +68,63 @@ namespace BIG.DataService
         {
             try
             {
-                using (var ctx = new BIG_DBEntities())
-                {
+                DeleteByEmployeeID(employee.EMP_ID);
+                Add(employee);
 
-                    var emp = ctx.Employees.Where(x => x.EMP_ID == employee.EMP_ID).FirstOrDefault();
-                    if (emp != null)
-                    {
-                        emp.TITLE_ID =employee.TITLE_ID;
-                        emp.FIRSTNAME_TH = employee.FIRSTNAME_TH;
-                        emp.LASTNAME_TH =  employee.LASTNAME_TH;
-                        emp.FIRSTNAME_EN = employee.FIRSTNAME_EN;
-                        emp.LASTNAME_EN = employee.LASTNAME_EN;
-                        emp.NICKNAME_TH = employee.LASTNAME_TH;
-                        emp.NICKNAME_EN = employee.NICKNAME_EN;
-                        emp.DATEOFBIRTH = employee.DATEOFBIRTH;
-                        emp.BIRTH_PLACE_PROVINCE = employee.BIRTH_PLACE_PROVINCE;
-                        emp.BIRTH_PLACE_CONTRY = employee.BIRTH_PLACE_CONTRY;
-                        emp.DATESTARTWORK = employee.DATESTARTWORK;
-                        emp.MOBILE = employee.MOBILE;
-                        emp.HOMEPHONE = employee.HOMEPHONE;
-                        emp.MODIFIED_DATE = DateTime.Now; 
-                        emp.GENDER_ID = employee.GENDER_ID;
-                        emp.HEIGHT = employee.HEIGHT;
-                        emp.WEIGHT = employee.WEIGHT;
-                        emp.RACE = employee.RACE;
-                        emp.NATIONALITY = employee.NATIONALITY;
-                        emp.RELEGION = employee.RELEGION;
-                    }
-                    ctx.SaveChanges();
-                }
+                //using (var ctx = new BIG_DBEntities())
+                //{ 
+                //    var emp = ctx.Employees.Where(x => x.EMP_ID == employee.EMP_ID).FirstOrDefault();
+                //    if (emp != null)
+                //    {
+                //        emp.TITLE_ID =employee.TITLE_ID;
+                //        emp.FIRSTNAME_TH = employee.FIRSTNAME_TH;
+                //        emp.LASTNAME_TH =  employee.LASTNAME_TH;
+                //        emp.FIRSTNAME_EN = employee.FIRSTNAME_EN;
+                //        emp.LASTNAME_EN = employee.LASTNAME_EN;
+                //        emp.NICKNAME_TH = employee.LASTNAME_TH;
+                //        emp.NICKNAME_EN = employee.NICKNAME_EN;
+                //        emp.DATEOFBIRTH = employee.DATEOFBIRTH;
+                //        emp.BIRTH_PLACE_PROVINCE = employee.BIRTH_PLACE_PROVINCE;
+                //        emp.BIRTH_PLACE_CONTRY = employee.BIRTH_PLACE_CONTRY;
+                //        emp.DATESTARTWORK = employee.DATESTARTWORK;
+                //        emp.MOBILE = employee.MOBILE;
+                //        emp.HOMEPHONE = employee.HOMEPHONE;
+                //        emp.MODIFIED_DATE = DateTime.Now; 
+                //        emp.GENDER_ID = employee.GENDER_ID;
+                //        emp.HEIGHT = employee.HEIGHT;
+                //        emp.WEIGHT = employee.WEIGHT;
+                //        emp.RACE = employee.RACE;
+                //        emp.NATIONALITY = employee.NATIONALITY;
+                //        emp.RELEGION = employee.RELEGION;
+                //    }
+                //    ctx.SaveChanges();
+                //}
                 return true;
             }
             catch (Exception ex)
             { 
+                throw ex;
+            }
+        }
+
+
+        public static void DeleteByEmployeeID(string emp_id)
+        {
+            try
+            {
+                using (var ctx = new BIG_DBEntities())
+                {
+
+                    var obj = ctx.Employees.Where(x => x.EMP_ID == emp_id).FirstOrDefault();
+                    if (obj != null)
+                    {
+                        ctx.Employees.Remove(obj);
+                    }
+                    ctx.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
         }
@@ -126,5 +150,7 @@ namespace BIG.DataService
                 throw ex;
             }
         }
+
+
     }
 }

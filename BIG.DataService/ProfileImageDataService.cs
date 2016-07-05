@@ -39,10 +39,13 @@ namespace BIG.DataService
             {
                 using (var ctx = new BIG_DBEntities())
                 {
-                    var pho = ctx.EmployeeImages.Where(x => x.EMP_ID == emp_id).FirstOrDefault();
-                    if (pho != null)
+                    var list = ctx.EmployeeImages.Where(x => x.EMP_ID == emp_id).ToList();
+                    foreach (var obj in list)
                     {
-                        ctx.EmployeeImages.Remove(pho);
+                        if (obj != null)
+                        {
+                            ctx.EmployeeImages.Remove(obj);
+                        }
                     }
                     ctx.SaveChanges();
                 }

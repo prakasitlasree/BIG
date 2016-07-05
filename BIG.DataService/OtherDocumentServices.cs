@@ -13,18 +13,21 @@ namespace BIG.DataService
         {
             try
             {
-                var obj = list.FirstOrDefault();
-                if (obj != null)
+                if (list != null)
                 {
-                    DeleteByEmployeeID(obj.EMP_ID);
-                }
-                using (var ctx = new BIG_DBEntities())
-                {
-                    foreach (var objAdd in list)
+                    var obj = list.FirstOrDefault();
+                    if (obj != null)
                     {
-                        ctx.OtherDocuments.Add(objAdd);
+                        DeleteByEmployeeID(obj.EMP_ID);
                     }
-                    ctx.SaveChanges();
+                    using (var ctx = new BIG_DBEntities())
+                    {
+                        foreach (var objAdd in list)
+                        {
+                            ctx.OtherDocuments.Add(objAdd);
+                        }
+                        ctx.SaveChanges();
+                    }
                 }
                 return true;
             }

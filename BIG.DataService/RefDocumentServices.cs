@@ -6,25 +6,28 @@ using System.Text;
 using BIG.Model;
 using BIG.DataAccess;
 namespace BIG.DataService
-{ 
+{
     public partial class RefDocumentServices
     {
         public static bool Add(List<ReferenceDocument> list)
         {
             try
             {
-                var obj = list.FirstOrDefault();
-                if (obj != null)
-                {
-                    DeleteByEmployeeID(obj.EMP_ID);
-                }
-                using (var ctx = new BIG_DBEntities())
-                {
-                    foreach (var objAdd in list)
+                if (list != null)
+                { 
+                    var obj = list.FirstOrDefault();
+                    if (obj != null)
                     {
-                        ctx.ReferenceDocuments.Add(objAdd);
+                        DeleteByEmployeeID(obj.EMP_ID);
                     }
-                    ctx.SaveChanges();
+                    using (var ctx = new BIG_DBEntities())
+                    {
+                        foreach (var objAdd in list)
+                        {
+                            ctx.ReferenceDocuments.Add(objAdd);
+                        }
+                        ctx.SaveChanges();
+                    } 
                 }
                 return true;
             }
@@ -87,7 +90,7 @@ namespace BIG.DataService
                         {
                             ctx.ReferenceDocuments.Remove(obj);
                         }
-                    } 
+                    }
                     ctx.SaveChanges();
                 }
             }

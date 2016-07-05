@@ -78,13 +78,15 @@ namespace BIG.DataService
             try
             {
                 using (var ctx = new BIG_DBEntities())
-                {
-
-                    var obj = ctx.Trainings.Where(x => x.EMP_ID == emp_id).FirstOrDefault();
-                    if (obj != null)
+                { 
+                    var list = ctx.Trainings.Where(x => x.EMP_ID == emp_id).ToList();
+                    foreach (var obj in list)
                     {
-                        ctx.Trainings.Remove(obj);
-                    }
+                        if (obj != null)
+                        {
+                            ctx.Trainings.Remove(obj);
+                        }
+                    } 
                     ctx.SaveChanges();
                 }
             }
