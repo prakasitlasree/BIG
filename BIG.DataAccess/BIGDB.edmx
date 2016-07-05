@@ -402,7 +402,6 @@
           <EntitySet Name="Amphurs" EntityType="BIG_DBModel.Amphur" />
           <EntitySet Name="CompanyInfoes" EntityType="BIG_DBModel.CompanyInfo" />
           <EntitySet Name="Districts" EntityType="BIG_DBModel.District" />
-          <EntitySet Name="EmployeeImages" EntityType="BIG_DBModel.EmployeeImage" />
           <EntitySet Name="Geographies" EntityType="BIG_DBModel.Geography" />
           <EntitySet Name="Provinces" EntityType="BIG_DBModel.Province" />
           <EntitySet Name="Zipcodes" EntityType="BIG_DBModel.Zipcode" />
@@ -431,6 +430,7 @@
           <EntitySet Name="CurrentImages" EntityType="BIG_DBModel.CurrentImage" />
           <EntitySet Name="OtherDocuments" EntityType="BIG_DBModel.OtherDocument" />
           <EntitySet Name="ReferenceDocuments" EntityType="BIG_DBModel.ReferenceDocument" />
+          <EntitySet Name="EmployeeImages" EntityType="BIG_DBModel.EmployeeImage" />
           </EntityContainer>
         <EntityType Name="Logon">
           <Key>
@@ -557,17 +557,6 @@
           <Property Name="AMPHUR_ID" Type="Int32" Nullable="false" />
           <Property Name="PROVINCE_ID" Type="Int32" Nullable="false" />
           <Property Name="GEO_ID" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="EmployeeImage">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EMP_ID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
-          <Property Name="PIC_PROFILE" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
-          <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Geography">
           <Key>
@@ -774,6 +763,16 @@
           <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="EmployeeImage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_ID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -896,17 +895,6 @@
                 <ScalarProperty Name="DISTRICT_NAME" ColumnName="DISTRICT_NAME" />
                 <ScalarProperty Name="DISTRICT_CODE" ColumnName="DISTRICT_CODE" />
                 <ScalarProperty Name="DISTRICT_ID" ColumnName="DISTRICT_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="EmployeeImages">
-            <EntityTypeMapping TypeName="BIG_DBModel.EmployeeImage">
-              <MappingFragment StoreEntitySet="EmployeeImages">
-                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
-                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
-                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
-                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1074,6 +1062,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeImages">
+            <EntityTypeMapping TypeName="BIG_DBModel.EmployeeImage">
+              <MappingFragment StoreEntitySet="EmployeeImages">
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1109,7 +1108,6 @@
         <EntityTypeShape EntityType="BIG_DBModel.Amphur" Width="1.5" PointX="3.75" PointY="0.75" />
         <EntityTypeShape EntityType="BIG_DBModel.CompanyInfo" Width="1.5" PointX="5.75" PointY="0.75" />
         <EntityTypeShape EntityType="BIG_DBModel.District" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="BIG_DBModel.EmployeeImage" Width="1.5" PointX="0.75" PointY="9.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Geography" Width="1.5" PointX="0.75" PointY="12.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Province" Width="1.5" PointX="5.75" PointY="12.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Zipcode" Width="1.5" PointX="12.75" PointY="9.75" />
@@ -1126,6 +1124,7 @@
         <EntityTypeShape EntityType="BIG_DBModel.CurrentImage" Width="1.5" PointX="11.375" PointY="12.75" />
         <EntityTypeShape EntityType="BIG_DBModel.OtherDocument" Width="1.5" PointX="13.375" PointY="12.75" />
         <EntityTypeShape EntityType="BIG_DBModel.ReferenceDocument" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BIG_DBModel.EmployeeImage" Width="1.5" PointX="0.75" PointY="9.75" />
         </Diagram>
     </Diagrams>
   </Designer>

@@ -558,7 +558,7 @@ namespace BIG.Present
             {
                 var myBitmap = pic_current.Image;
                 ret.EMP_ID = txt_empid.Text;
-                ret.PIC_PROFILE = ConvertImageToByteArray(myBitmap, System.Drawing.Imaging.ImageFormat.Jpeg);
+                ret.PHOTO = ConvertImageToByteArray(myBitmap, System.Drawing.Imaging.ImageFormat.Jpeg);
                 ret.TYPE = System.Drawing.Imaging.ImageFormat.Jpeg.ToString();
             }
             catch (Exception ex)
@@ -655,7 +655,15 @@ namespace BIG.Present
             SSOServices.Add(lstSSO);
         }
 
+        private void CreateReferenceDoc(List<BIG.Model.ReferenceDocument> list)
+        {
+            RefDocumentServices.Add(list);
+        }
 
+        private void CreateOtherDoc(List<BIG.Model.OtherDocument> list)
+        {
+            OtherDocumentServices.Add(list);
+        }
 
         private string GenNewEmployeeID()
         {
@@ -843,6 +851,12 @@ namespace BIG.Present
                 //SSO
                 var listSSO = getSSOListfrominput();
                 CreateSSO(listSSO);
+
+                //Reference Documents
+                CreateReferenceDoc(RefDoc);
+
+                //Other Documents
+                CreateOtherDoc(OtherDoc);
 
                 return result;
             }
@@ -1155,7 +1169,7 @@ namespace BIG.Present
                         {
                             var obj = new ReferenceDocument();
                             obj.EMP_ID = txt_empid.Text;
-                            obj.PIC_PROFILE = ConvertImageToByteArray(myThumbnail, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            obj.PHOTO = ConvertImageToByteArray(myThumbnail, System.Drawing.Imaging.ImageFormat.Jpeg);
                             obj.TYPE = "สำเนาบัตรประชาชน";
                             
                             RefDoc.Add(obj);
@@ -1169,8 +1183,7 @@ namespace BIG.Present
                 }
             }
         }
-        
-        //
+         
         private void btn_refresh_copy_idcard_Click(object sender, EventArgs e)
         {
 
@@ -1178,7 +1191,12 @@ namespace BIG.Present
          
         private void btn_delete_copy_idcard_Click(object sender, EventArgs e)
         {
-
+            var refdoc = RefDoc.Where(x => x.TYPE == "สำเนาบัตรประชาชน").FirstOrDefault();
+            if (txt_empid.Text != "" && refdoc != null)
+            {
+                refdoc.TYPE = "Delete";
+                pic_copy_idcard.Image = null;
+            }
         }
         #endregion
          
@@ -1202,7 +1220,15 @@ namespace BIG.Present
                         var myBitmap = new Bitmap(file);
                         var myThumbnail = myBitmap.GetThumbnailImage(360, 450, myCallback, IntPtr.Zero);
                         pic_copy_home.Image = myThumbnail;
+                        if (txt_empid.Text != "")
+                        {
+                            var obj = new ReferenceDocument();
+                            obj.EMP_ID = txt_empid.Text;
+                            obj.PHOTO = ConvertImageToByteArray(myThumbnail, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            obj.TYPE = "สำเนาทะเบียนบ้าน";
 
+                            RefDoc.Add(obj);
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -1218,7 +1244,12 @@ namespace BIG.Present
         }
         private void btn_delete_copy_home_Click(object sender, EventArgs e)
         {
-
+            var refdoc = RefDoc.Where(x => x.TYPE == "สำเนาบัตรประชาชน").FirstOrDefault();
+            if (txt_empid.Text != "" && refdoc != null)
+            {
+                refdoc.TYPE = "Delete";
+                pic_copy_home.Image = null;
+            }
         }
 
         #endregion
@@ -1242,8 +1273,16 @@ namespace BIG.Present
                         var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
                         var myBitmap = new Bitmap(file);
                         var myThumbnail = myBitmap.GetThumbnailImage(360, 450, myCallback, IntPtr.Zero);
-                        pic_copy_military.Image = myThumbnail;
+                        pic_copy_military.Image = myThumbnail; 
+                        if (txt_empid.Text != "")
+                        {
+                            var obj = new ReferenceDocument();
+                            obj.EMP_ID = txt_empid.Text;
+                            obj.PHOTO = ConvertImageToByteArray(myThumbnail, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            obj.TYPE = "สำเนาใบผ่านทหาร";
 
+                            RefDoc.Add(obj);
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -1260,7 +1299,12 @@ namespace BIG.Present
 
         private void btn_delete_copy_military_Click(object sender, EventArgs e)
         {
-
+            var refdoc = RefDoc.Where(x => x.TYPE == "สำเนาใบผ่านทหาร").FirstOrDefault();
+            if (txt_empid.Text != "" && refdoc != null)
+            {
+                refdoc.TYPE = "Delete";
+                pic_copy_military.Image = null;
+            }
         }
 
         #endregion
@@ -1286,6 +1330,15 @@ namespace BIG.Present
                         var myThumbnail = myBitmap.GetThumbnailImage(360, 450, myCallback, IntPtr.Zero);
                         pic_promote.Image = myThumbnail;
 
+                        if (txt_empid.Text != "")
+                        {
+                            var obj = new OtherDocument();
+                            obj.EMP_ID = txt_empid.Text;
+                            obj.PHOTO = ConvertImageToByteArray(myThumbnail, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            obj.TYPE = "เอกสารแต่งตั้ง";
+
+                            OtherDoc.Add(obj);
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -1302,7 +1355,12 @@ namespace BIG.Present
 
         private void btn_delete_promote_Click(object sender, EventArgs e)
         {
-
+            var refdoc = RefDoc.Where(x => x.TYPE == "เอกสารแต่งตั้ง").FirstOrDefault();
+            if (txt_empid.Text != "" && refdoc != null)
+            {
+                refdoc.TYPE = "Delete";
+                pic_promote.Image = null;
+            }
         }
 
         #endregion
@@ -1326,7 +1384,15 @@ namespace BIG.Present
                         var myBitmap = new Bitmap(file);
                         var myThumbnail = myBitmap.GetThumbnailImage(360, 450, myCallback, IntPtr.Zero);
                         pic_saraly.Image = myThumbnail;
+                        if (txt_empid.Text != "")
+                        {
+                            var obj = new OtherDocument();
+                            obj.EMP_ID = txt_empid.Text;
+                            obj.PHOTO = ConvertImageToByteArray(myThumbnail, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            obj.TYPE = "เอกสารเพิ่มเงิน";
 
+                            OtherDoc.Add(obj);
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -1343,7 +1409,12 @@ namespace BIG.Present
 
         private void btn_delete_salary_Click(object sender, EventArgs e)
         {
-
+            var refdoc = RefDoc.Where(x => x.TYPE == "เอกสารแต่งตั้ง").FirstOrDefault();
+            if (txt_empid.Text != "" && refdoc != null)
+            {
+                refdoc.TYPE = "Delete";
+                pic_saraly.Image = null;
+            }
         }
         #endregion
          
@@ -1368,6 +1439,15 @@ namespace BIG.Present
                         var myThumbnail = myBitmap.GetThumbnailImage(360, 450, myCallback, IntPtr.Zero);
                         pic_warning.Image = myThumbnail;
 
+                        if (txt_empid.Text != "")
+                        {
+                            var obj = new OtherDocument();
+                            obj.EMP_ID = txt_empid.Text;
+                            obj.PHOTO = ConvertImageToByteArray(myThumbnail, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            obj.TYPE = "ใบเตือน";
+
+                            OtherDoc.Add(obj);
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -1384,7 +1464,12 @@ namespace BIG.Present
 
         private void btn_delete_warning_Click(object sender, EventArgs e)
         {
-
+            var refdoc = RefDoc.Where(x => x.TYPE == "ใบเตือน").FirstOrDefault();
+            if (txt_empid.Text != "" && refdoc != null)
+            {
+                refdoc.TYPE = "Delete";
+                pic_warning.Image = null;
+            }
         }
         #endregion
     }

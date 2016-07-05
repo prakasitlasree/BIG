@@ -50,10 +50,12 @@
     <Compile Include="EducationServices.cs" />
     <Compile Include="EmployeeServices.cs" />
     <Compile Include="LogOnServices.cs" />
+    <Compile Include="OtherDocumentServices.cs" />
     <Compile Include="PossitionDataService.cs" />
     <Compile Include="ProfileImageDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProvinceServices.cs" />
+    <Compile Include="RefDocumentServices.cs" />
     <Compile Include="ReferencePersonServices.cs" />
     <Compile Include="SitesDataService.cs" />
     <Compile Include="SSOServices.cs" />

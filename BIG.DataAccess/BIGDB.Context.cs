@@ -39,7 +39,6 @@ namespace BIG.DataAccess
         public DbSet<Amphur> Amphurs { get; set; }
         public DbSet<CompanyInfo> CompanyInfoes { get; set; }
         public DbSet<District> Districts { get; set; }
-        public DbSet<EmployeeImage> EmployeeImages { get; set; }
         public DbSet<Geography> Geographies { get; set; }
         public DbSet<Province> Provinces { get; set; }
         public DbSet<Zipcode> Zipcodes { get; set; }
@@ -52,5 +51,6 @@ namespace BIG.DataAccess
         public DbSet<CurrentImage> CurrentImages { get; set; }
         public DbSet<OtherDocument> OtherDocuments { get; set; }
         public DbSet<ReferenceDocument> ReferenceDocuments { get; set; }
+        public DbSet<EmployeeImage> EmployeeImages { get; set; }
     }
 }
