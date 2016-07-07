@@ -22,5 +22,16 @@ namespace BIG.Present.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LASREE1\\SQLEXPRESS_NEW;Initial Catalog=BIG_DB;Persist Security Info=T" +
+            "rue;User ID=big")]
+        public string BIG_DBConnectionString {
+            get {
+                return ((string)(this["BIG_DBConnectionString"]));
+            }
+        }
     }
 }

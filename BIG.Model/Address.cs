@@ -21,6 +21,9 @@ namespace BIG.Model
         public string PROVINCE_ID { get; set; }
         public string POSTCODE { get; set; }
         public Nullable<int> ADDRESSTYPE_ID { get; set; }
+        public string DESCRIPTION { get; set; }
+        public Nullable<System.DateTime> CREATED_DATE { get; set; }
+        public Nullable<System.DateTime> MODIFIED_DATE { get; set; }
     
         public virtual AddressType AddressType { get; set; }
     }

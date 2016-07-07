@@ -112,6 +112,7 @@
             this.btn_report.Size = new System.Drawing.Size(73, 68);
             this.btn_report.TabIndex = 11;
             this.btn_report.TabStop = false;
+            this.btn_report.Click += new System.EventHandler(this.btn_report_Click);
             // 
             // lnk_report
             // 

@@ -16,11 +16,11 @@ namespace BIG.Model
     {
         public int ID { get; set; }
         public string EMP_ID { get; set; }
+        public string EDU_TYPE { get; set; }
         public string NAME { get; set; }
         public string GRADUETED { get; set; }
         public string YEAR { get; set; }
         public Nullable<System.DateTime> CREATED_DATE { get; set; }
         public Nullable<System.DateTime> MODIFIED_DATE { get; set; }
-        public string EDU_TYPE { get; set; }
     }
 }

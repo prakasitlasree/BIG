@@ -26,11 +26,7 @@ namespace BIG.Present
 
         }
 
-        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-         
+       
 
         private void btn_close_Click(object sender, EventArgs e)
         {
@@ -78,5 +74,21 @@ namespace BIG.Present
             var personal = new TestForm();
             personal.Show();
         }
+
+        private void btn_report_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
+            var frm = new ReportEmployee();
+            frm.Show();
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        { 
+            this.Close();
+            var frm = new ReportEmployee();
+            frm.Show();
+        }
+         
     }
 }

@@ -42,11 +42,13 @@ namespace BIG.DataService
             {
                 using (var ctx = new BIG_DBEntities())
                 {
-
-                    var obj = ctx.Addresses.Where(x => x.EMP_ID == emp_id).FirstOrDefault();
-                    if (obj != null)
+                    var list = ctx.Addresses.Where(x => x.EMP_ID == emp_id).ToList();
+                    foreach (var obj in list)
                     {
-                        ctx.Addresses.Remove(obj);
+                        if (obj != null)
+                        {
+                            ctx.Addresses.Remove(obj);
+                        }
                     }
                     ctx.SaveChanges();
                 }

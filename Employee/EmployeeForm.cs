@@ -195,13 +195,11 @@ namespace BIG.Present
         }
 
         private BIG.Model.Employee getEmployeefrominput()
-        {
-
+        { 
             var emp = new BIG.Model.Employee();
             try
             {
-                //General 
-                emp = new BIG.Model.Employee();
+                //General  
                 emp.EMP_ID = txt_empid.Text; //รหัสพนักงาน
                 emp.ID_CARD = txt_pid.Text; // บัตรประชาชน
                 emp.TITLE_ID = Convert.ToInt32(cbo_title_th.SelectedIndex + 1); //คำนำหน้า
@@ -230,8 +228,7 @@ namespace BIG.Present
             }
             catch (Exception ex)
             {
-                MessageBox.Show("getEmployeefrominput" + ex.Message);
-                return emp;
+                throw ex;
             }
 
 
@@ -290,7 +287,7 @@ namespace BIG.Present
                     current_addr.PROVINCE_ID = c_cbo_prov.SelectedValue.ToString();
                     current_addr.POSTCODE = c_txt_postcode.Text;
                     current_addr.ADDRESSTYPE_ID = Convert.ToInt16(c_add_type.SelectedValue.ToString());
-
+                    current_addr.DESCRIPTION = "ที่อยู่ปัจจุบัน";
                     listAddress.Add(current_addr);
                 }
 
@@ -305,7 +302,7 @@ namespace BIG.Present
                     permanent_addr.AMPHUR_ID = p_cbo_amp.SelectedValue.ToString();
                     permanent_addr.PROVINCE_ID = p_cbo_prov.SelectedValue.ToString();
                     permanent_addr.POSTCODE = p_txt_postcode.Text;
-
+                    permanent_addr.DESCRIPTION = "ที่อยู่ตามทะเบียนบ้าน";
                     listAddress.Add(permanent_addr);
 
                 }
@@ -540,7 +537,7 @@ namespace BIG.Present
             {
                 var myBitmap = pic_emp.Image;
                 ret.EMP_ID = txt_empid.Text;
-                ret.PIC_PROFILE = ConvertImageToByteArray(myBitmap, System.Drawing.Imaging.ImageFormat.Jpeg);
+                ret.PHOTO = ConvertImageToByteArray(myBitmap, System.Drawing.Imaging.ImageFormat.Jpeg);
                 ret.TYPE = System.Drawing.Imaging.ImageFormat.Jpeg.ToString();
             }
             catch (Exception ex)
@@ -671,6 +668,10 @@ namespace BIG.Present
             try
             {
                 var lastemp_id = EmployeeServices.GetLastEmployeeID();
+                if (lastemp_id =="")
+                {
+                    lastemp_id = "BIGS590101000";
+                }
                 var running = lastemp_id.Substring(lastemp_id.Length - 3, 3);
                 var nextnumber = Convert.ToDecimal(running) + 1;
                 lastemp_id = DateTime.Now.ToString("yyMMdd") + String.Format("{0:000}", nextnumber); ;
@@ -678,7 +679,7 @@ namespace BIG.Present
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                throw ex;
             }
             return ret;
         }
@@ -732,6 +733,49 @@ namespace BIG.Present
                         dob.Value = empObj.DATEOFBIRTH.Value;
                         date_start_work.Value = empObj.DATESTARTWORK.Value;
                         cbo_bp_prov.SelectedValue = GetProvinceIDByName(idcard.addrProvince);
+
+                        //Gender
+                        if (idcard.Sex == "1")
+                        {
+                            cbo_sex.SelectedIndex = 0;
+                        }
+                        else
+                        { cbo_sex.SelectedIndex = 1; }
+                        //Cureent Address
+
+                        c_txt_no.Text = idcard.addrHouseNo + " " + idcard.addrVillageNo + " " + idcard.addrLane + " " + idcard.addrRoad;
+                        c_txt_rd.Text = idcard.addrRoad;
+                        c_txt_soi.Text = "";
+                        c_txt_tumbol.Text = idcard.addrTambol;
+                        c_cbo_prov.SelectedValue = GetProvinceIDByName(idcard.addrProvince);
+                        c_cbo_amp.SelectedText = idcard.addrAmphur;
+
+                        //permanent address
+                        p_txt_no.Text = idcard.addrHouseNo + " " + idcard.addrVillageNo + " " + idcard.addrLane + " " + idcard.addrRoad;
+                        p_txt_road.Text = idcard.addrRoad;
+                        p_txt_soi.Text = "";
+                        p_txt_tumbol.Text = idcard.addrTambol;
+                        p_cbo_prov.SelectedText = idcard.addrProvince;
+                        p_cbo_amp.SelectedText = idcard.addrAmphur;
+
+                        if (idcard.PhotoRaw != null)
+                        {
+                            this.EmployeePhoto = idcard.PhotoRaw;
+                             
+                            var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
+                            var myBitmap = new Bitmap(byteArrayToImage(idcard.PhotoRaw));
+                            var myThumbnail = myBitmap.GetThumbnailImage(150, 187, myCallback, IntPtr.Zero);
+                            pic_emp.Image = myThumbnail;
+                        }
+
+                        var cimg = CurrentImageService.GetByEmployeeID(empObj.EMP_ID);
+                        if (cimg != null)
+                        {
+                            var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
+                            var myBitmap = new Bitmap(byteArrayToImage(cimg.PHOTO));
+                            var myThumbnail = myBitmap.GetThumbnailImage(150, 187, myCallback, IntPtr.Zero);
+                            pic_current.Image = myThumbnail;
+                        }
                     }
                     else
                     {
@@ -774,6 +818,7 @@ namespace BIG.Present
                         p_txt_tumbol.Text = idcard.addrTambol;
                         p_cbo_prov.SelectedText = idcard.addrProvince;
                         p_cbo_amp.SelectedText = idcard.addrAmphur;
+
                         //image
                         if (idcard.PhotoRaw != null)
                         {
@@ -910,15 +955,15 @@ namespace BIG.Present
 
         private void EmployeeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            DialogResult result = MessageBox.Show("คุณต้องการออกจากโปรแกรมจัดการข้อมูลลพนักงานหรือไม่?", "Confirmation", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-            else if (result == DialogResult.No)
-            {
-                //...
-            }
+            //DialogResult result = MessageBox.Show("คุณต้องการออกจากโปรแกรมจัดการข้อมูลลพนักงานหรือไม่?", "Confirmation", MessageBoxButtons.YesNo);
+            //if (result == DialogResult.Yes)
+            //{
+            //    Application.Exit();
+            //}
+            //else if (result == DialogResult.No)
+            //{
+            //    //...
+            //}
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -1049,11 +1094,10 @@ namespace BIG.Present
 
         private void btn_new_img_Click(object sender, EventArgs e)
         {
-            this.openFileDialog1.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+            //this.openFileDialog1.Filter = "Images(*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
 
-            this.openFileDialog1.Multiselect = false;
-            this.openFileDialog1.Title = "Select Photo";
-
+            //this.openFileDialog1.Multiselect = false;
+            //this.openFileDialog1.Title = "Select Photo"; 
             DialogResult dr = this.openFileDialog1.ShowDialog();
             if (dr == System.Windows.Forms.DialogResult.OK)
             {

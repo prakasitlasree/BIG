@@ -16,6 +16,9 @@
           <Property Name="PROVINCE_ID" Type="varchar" MaxLength="2" />
           <Property Name="POSTCODE" Type="nchar" MaxLength="10" />
           <Property Name="ADDRESSTYPE_ID" Type="int" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="250" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="MODIFIED_DATE" Type="datetime" />
         </EntityType>
         <EntityType Name="AddressType">
           <Key>
@@ -391,14 +394,8 @@
           <EntitySet Name="Genders" EntityType="BIG_DBModel.Gender" />
           <EntitySet Name="Maritals" EntityType="BIG_DBModel.Marital" />
           <EntitySet Name="Positions" EntityType="BIG_DBModel.Position" />
-          <EntitySet Name="Educations" EntityType="BIG_DBModel.Education" />
           <EntitySet Name="Titles" EntityType="BIG_DBModel.Title" />
           <EntitySet Name="AddressTypes" EntityType="BIG_DBModel.AddressType" />
-          <EntitySet Name="Addresses" EntityType="BIG_DBModel.Address" />
-          <AssociationSet Name="FK_Address_AddressType" Association="BIG_DBModel.FK_Address_AddressType">
-            <End Role="AddressType" EntitySet="AddressTypes" />
-            <End Role="Address" EntitySet="Addresses" />
-          </AssociationSet>
           <EntitySet Name="Amphurs" EntityType="BIG_DBModel.Amphur" />
           <EntitySet Name="CompanyInfoes" EntityType="BIG_DBModel.CompanyInfo" />
           <EntitySet Name="Districts" EntityType="BIG_DBModel.District" />
@@ -431,6 +428,12 @@
           <EntitySet Name="OtherDocuments" EntityType="BIG_DBModel.OtherDocument" />
           <EntitySet Name="ReferenceDocuments" EntityType="BIG_DBModel.ReferenceDocument" />
           <EntitySet Name="EmployeeImages" EntityType="BIG_DBModel.EmployeeImage" />
+          <EntitySet Name="Educations" EntityType="BIG_DBModel.Education" />
+          <EntitySet Name="Addresses" EntityType="BIG_DBModel.Address" />
+          <AssociationSet Name="FK_Address_AddressType" Association="BIG_DBModel.FK_Address_AddressType">
+            <End Role="AddressType" EntitySet="AddressTypes" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="Logon">
           <Key>
@@ -470,19 +473,6 @@
           <Property Name="DESCRIPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Employees" Relationship="BIG_DBModel.FK_Employee_Position" FromRole="Position" ToRole="Employee" />
         </EntityType>
-        <EntityType Name="Education">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="EMP_ID" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
-          <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="GRADUETED" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="YEAR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
-          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
-          <Property Name="EDU_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="Title">
           <Key>
             <PropertyRef Name="ID" />
@@ -501,31 +491,6 @@
           <Property Name="DESCRIPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Addresses" Relationship="BIG_DBModel.FK_Address_AddressType" FromRole="AddressType" ToRole="Address" />
         </EntityType>
-        <EntityType Name="Address">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EMP_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="AMPHUR_ID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
-          <Property Name="PROVINCE_ID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="POSTCODE" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="ADDRESSTYPE_ID" Type="Int32" />
-          <NavigationProperty Name="AddressType" Relationship="BIG_DBModel.FK_Address_AddressType" FromRole="Address" ToRole="AddressType" />
-        </EntityType>
-        <Association Name="FK_Address_AddressType">
-          <End Type="BIG_DBModel.AddressType" Role="AddressType" Multiplicity="0..1" />
-          <End Type="BIG_DBModel.Address" Role="Address" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AddressType">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Address">
-              <PropertyRef Name="ADDRESSTYPE_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Amphur">
           <Key>
             <PropertyRef Name="AMPHUR_ID" />
@@ -773,6 +738,47 @@
           <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="Education">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_ID" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="EDU_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="GRADUETED" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="YEAR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="AMPHUR_ID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="PROVINCE_ID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="POSTCODE" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ADDRESSTYPE_ID" Type="Int32" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="AddressType" Relationship="BIG_DBModel.FK_Address_AddressType" FromRole="Address" ToRole="AddressType" />
+        </EntityType>
+        <Association Name="FK_Address_AddressType">
+          <End Type="BIG_DBModel.AddressType" Role="AddressType" Multiplicity="0..1" />
+          <End Type="BIG_DBModel.Address" Role="Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="ADDRESSTYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -818,20 +824,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Educations">
-            <EntityTypeMapping TypeName="BIG_DBModel.Education">
-              <MappingFragment StoreEntitySet="Education">
-                <ScalarProperty Name="EDU_TYPE" ColumnName="EDU_TYPE" />
-                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
-                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
-                <ScalarProperty Name="GRADUETED" ColumnName="GRADUETED" />
-                <ScalarProperty Name="NAME" ColumnName="NAME" />
-                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Titles">
             <EntityTypeMapping TypeName="BIG_DBModel.Title">
               <MappingFragment StoreEntitySet="Title">
@@ -846,19 +838,6 @@
               <MappingFragment StoreEntitySet="AddressType">
                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Addresses">
-            <EntityTypeMapping TypeName="BIG_DBModel.Address">
-              <MappingFragment StoreEntitySet="Address">
-                <ScalarProperty Name="ADDRESSTYPE_ID" ColumnName="ADDRESSTYPE_ID" />
-                <ScalarProperty Name="POSTCODE" ColumnName="POSTCODE" />
-                <ScalarProperty Name="PROVINCE_ID" ColumnName="PROVINCE_ID" />
-                <ScalarProperty Name="AMPHUR_ID" ColumnName="AMPHUR_ID" />
-                <ScalarProperty Name="NAME" ColumnName="NAME" />
-                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1073,6 +1052,36 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Educations">
+            <EntityTypeMapping TypeName="BIG_DBModel.Education">
+              <MappingFragment StoreEntitySet="Education">
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="GRADUETED" ColumnName="GRADUETED" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="EDU_TYPE" ColumnName="EDU_TYPE" />
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Addresses">
+            <EntityTypeMapping TypeName="BIG_DBModel.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="ADDRESSTYPE_ID" ColumnName="ADDRESSTYPE_ID" />
+                <ScalarProperty Name="POSTCODE" ColumnName="POSTCODE" />
+                <ScalarProperty Name="PROVINCE_ID" ColumnName="PROVINCE_ID" />
+                <ScalarProperty Name="AMPHUR_ID" ColumnName="AMPHUR_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1100,11 +1109,8 @@
         <EntityTypeShape EntityType="BIG_DBModel.Gender" Width="1.5" PointX="4.75" PointY="3.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Marital" Width="1.5" PointX="4.75" PointY="6.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Position" Width="1.5" PointX="6.75" PointY="6.75" />
-        <EntityTypeShape EntityType="BIG_DBModel.Education" Width="1.5" PointX="3.375" PointY="9.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Title" Width="1.5" PointX="6.75" PointY="9.875" />
         <EntityTypeShape EntityType="BIG_DBModel.AddressType" Width="1.5" PointX="6" PointY="17.25" />
-        <EntityTypeShape EntityType="BIG_DBModel.Address" Width="1.5" PointX="11.25" PointY="5.5" />
-        <AssociationConnector Association="BIG_DBModel.FK_Address_AddressType" />
         <EntityTypeShape EntityType="BIG_DBModel.Amphur" Width="1.5" PointX="3.75" PointY="0.75" />
         <EntityTypeShape EntityType="BIG_DBModel.CompanyInfo" Width="1.5" PointX="5.75" PointY="0.75" />
         <EntityTypeShape EntityType="BIG_DBModel.District" Width="1.5" PointX="0.75" PointY="6.75" />
@@ -1125,6 +1131,9 @@
         <EntityTypeShape EntityType="BIG_DBModel.OtherDocument" Width="1.5" PointX="13.375" PointY="12.75" />
         <EntityTypeShape EntityType="BIG_DBModel.ReferenceDocument" Width="1.5" PointX="15.375" PointY="0.75" />
         <EntityTypeShape EntityType="BIG_DBModel.EmployeeImage" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="BIG_DBModel.Education" Width="1.5" PointX="0.75" PointY="15.75" />
+        <EntityTypeShape EntityType="BIG_DBModel.Address" Width="1.5" PointX="8.25" PointY="17.625" />
+        <AssociationConnector Association="BIG_DBModel.FK_Address_AddressType" />
         </Diagram>
     </Diagrams>
   </Designer>
