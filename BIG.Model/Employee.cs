@@ -33,6 +33,8 @@ namespace BIG.Model
         public string BIRTH_PLACE_PROVINCE { get; set; }
         public Nullable<int> HEIGHT { get; set; }
         public Nullable<int> WEIGHT { get; set; }
+        public string APPEARANCE { get; set; }
+        public string DEFECT { get; set; }
         public string RACE { get; set; }
         public string NATIONALITY { get; set; }
         public Nullable<int> POSITION_ID { get; set; }

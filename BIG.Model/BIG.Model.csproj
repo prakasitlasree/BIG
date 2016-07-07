@@ -79,6 +79,12 @@
     <Compile Include="EmployeeImage.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Equiptment.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FingerScan.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Gender.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>

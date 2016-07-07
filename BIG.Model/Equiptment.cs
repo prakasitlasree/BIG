@@ -12,15 +12,13 @@ namespace BIG.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class CompanyInfo
+    public partial class Equiptment
     {
         public int ID { get; set; }
-        public string NAME { get; set; }
-        public string LOCATION { get; set; }
-        public string AMPHUR { get; set; }
-        public string PROVINCE { get; set; }
-        public string POSTCODE { get; set; }
-        public string NAME_EN { get; set; }
-        public string NAME_TH { get; set; }
+        public string EMP_ID { get; set; }
+        public string EQUIP_NAME { get; set; }
+        public string EQUIP_AMOUNT { get; set; }
+        public Nullable<System.DateTime> CREATED_DATE { get; set; }
+        public Nullable<System.DateTime> MODIFIED_DATE { get; set; }
     }
 }

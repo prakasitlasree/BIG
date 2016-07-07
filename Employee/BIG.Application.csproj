@@ -51,6 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BIG_DBDataSet.cs">
+      <DependentUpon>BIG_DBDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="BIG_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,6 +96,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportAllEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportAllEmployeeForm.Designer.cs">
+      <DependentUpon>ReportAllEmployeeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportEmployee.cs">
       <SubType>Form</SubType>
@@ -142,6 +152,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportAllEmployeeForm.resx">
+      <DependentUpon>ReportAllEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportEmployee.resx">
       <DependentUpon>ReportEmployee.cs</DependentUpon>

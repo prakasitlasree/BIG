@@ -137,5 +137,40 @@ namespace BIG.DataService
             }
         }
 
+        public static Address  GetCurrentByEmployeeID(string emp)
+        {
+            var result = new  Address();
+            try 
+            {
+                using (var ctx = new BIG_DBEntities())
+                {
+
+                    result = ctx.Addresses.Where(x => x.EMP_ID == emp && x.ADDRESSTYPE_ID != null).FirstOrDefault();
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static Address GetPermanentByEmployeeID(string emp)
+        {
+            var result = new Address(); 
+            try
+            {
+                using (var ctx = new BIG_DBEntities())
+                {
+
+                    result = ctx.Addresses.Where(x => x.EMP_ID == emp && x.ADDRESSTYPE_ID == null).FirstOrDefault();
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

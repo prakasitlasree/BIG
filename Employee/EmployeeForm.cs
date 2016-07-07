@@ -66,7 +66,7 @@ namespace BIG.Present
 
         private List<ReferenceDocument> _refdoc;
 
-        public List<ReferenceDocument> RefDoc 
+        public List<ReferenceDocument> RefDoc
         {
             get { return _refdoc; }
             set { _refdoc = value; }
@@ -195,7 +195,7 @@ namespace BIG.Present
         }
 
         private BIG.Model.Employee getEmployeefrominput()
-        { 
+        {
             var emp = new BIG.Model.Employee();
             try
             {
@@ -529,6 +529,124 @@ namespace BIG.Present
             return ssoList;
         }
 
+        private List<BIG.Model.Equiptment> getEquiptListfrominput()
+        {
+            var equipt = new List<BIG.Model.Equiptment>();
+            try
+            {
+                var eq = new BIG.Model.Equiptment();
+                if (txt_eq_1.Text != "")
+                {
+                    eq.EMP_ID = txt_empid.Text;
+                    eq.EQUIP_NAME = "ประกัน";
+                    eq.EQUIP_AMOUNT = txt_eq_1.Text;
+                    equipt.Add(eq);
+                }
+
+                if (txt_eq_2.Text != "")
+                {
+                    eq = new BIG.Model.Equiptment();
+                    eq.EMP_ID = txt_empid.Text;
+                    eq.EQUIP_NAME = "ค่าชุด";
+                    eq.EQUIP_AMOUNT = txt_eq_2.Text;
+                    equipt.Add(eq);
+                }
+                if (txt_eq_3.Text != "")
+                {
+                    eq = new BIG.Model.Equiptment();
+                    eq.EMP_ID = txt_empid.Text;
+                    eq.EQUIP_NAME = "สายนกหวีด";
+                    eq.EQUIP_AMOUNT = txt_eq_3.Text;
+                    equipt.Add(eq);
+                }
+                if (txt_eq_4.Text != "")
+                {
+                    eq = new BIG.Model.Equiptment();
+                    eq.EMP_ID = txt_empid.Text;
+                    eq.EQUIP_NAME = "แถบสี";
+                    eq.EQUIP_AMOUNT = txt_eq_4.Text;
+                    equipt.Add(eq);
+                }
+                if (txt_eq_5.Text != "")
+                {
+                    eq = new BIG.Model.Equiptment();
+                    eq.EMP_ID = txt_empid.Text;
+                    eq.EQUIP_NAME = "กนกคอ";
+                    eq.EQUIP_AMOUNT = txt_eq_5.Text;
+                    equipt.Add(eq);
+                }
+                if (txt_eq_6.Text != "")
+                {
+                    eq = new BIG.Model.Equiptment();
+                    eq.EMP_ID = txt_empid.Text;
+                    eq.EQUIP_NAME = "เข็มบรรเทา";
+                    eq.EQUIP_AMOUNT = txt_eq_6.Text;
+                    equipt.Add(eq);
+                }
+                if (txt_eq_7.Text != "")
+                {
+                    eq = new BIG.Model.Equiptment();
+                    eq.EMP_ID = txt_empid.Text;
+                    eq.EQUIP_NAME = "เข็มขัด";
+                    eq.EQUIP_AMOUNT = txt_eq_7.Text;
+                    equipt.Add(eq);
+                }
+                if (txt_eq_8.Text != "")
+                {
+                    eq = new BIG.Model.Equiptment();
+                    eq.EMP_ID = txt_empid.Text;
+                    eq.EQUIP_NAME = "ดิ้ว";
+                    eq.EQUIP_AMOUNT = txt_eq_8.Text;
+                    equipt.Add(eq);
+                }
+                if (txt_eq_9.Text != "")
+                {
+                    eq = new BIG.Model.Equiptment();
+                    eq.EMP_ID = txt_empid.Text;
+                    eq.EQUIP_NAME = "หมวก";
+                    eq.EQUIP_AMOUNT = txt_eq_9.Text;
+                    equipt.Add(eq);
+                }
+                if (txt_eq_10.Text != "")
+                {
+                    eq = new BIG.Model.Equiptment();
+                    eq.EMP_ID = txt_empid.Text;
+                    eq.EQUIP_NAME = "รองเท้า";
+                    eq.EQUIP_AMOUNT = txt_eq_10.Text;
+                    equipt.Add(eq);
+                }
+                if (txt_eq_11.Text != "")
+                {
+                    eq = new BIG.Model.Equiptment();
+                    eq.EMP_ID = txt_empid.Text;
+                    eq.EQUIP_NAME = "ถุงเท้า";
+                    eq.EQUIP_AMOUNT = txt_eq_11.Text;
+                    equipt.Add(eq);
+                }
+                if (txt_eq_12.Text != "")
+                {
+                    eq = new BIG.Model.Equiptment();
+                    eq.EMP_ID = txt_empid.Text;
+                    eq.EQUIP_NAME = "เสื้อยืด";
+                    eq.EQUIP_AMOUNT = txt_eq_12.Text;
+                    equipt.Add(eq);
+                }
+                if (txt_eq_13.Text != "")
+                {
+                    eq = new BIG.Model.Equiptment();
+                    eq.EMP_ID = txt_empid.Text;
+                    eq.EQUIP_NAME = "ค่าบัตร";
+                    eq.EQUIP_AMOUNT = txt_eq_13.Text;
+                    equipt.Add(eq);
+                }
+                 
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return equipt;
+        }
         private EmployeeImage getPhotoEmployee()
         {
             var ret = new EmployeeImage();
@@ -662,13 +780,18 @@ namespace BIG.Present
             OtherDocumentServices.Add(list);
         }
 
+        private void CreateEquipment(List<BIG.Model.Equiptment> lstEQ)
+        {
+            EquiptmentServices.Add(lstEQ);
+        }
+
         private string GenNewEmployeeID()
         {
             var ret = "";
             try
             {
                 var lastemp_id = EmployeeServices.GetLastEmployeeID();
-                if (lastemp_id =="")
+                if (lastemp_id == "")
                 {
                     lastemp_id = "BIGS590101000";
                 }
@@ -721,61 +844,7 @@ namespace BIG.Present
                     if (empObj != null)
                     {
                         MessageBox.Show("      พบข้อมูลอยู่ในระบบ" + "\r\n\n" + "     รหัสบัตรประชาชน => " + idcard.Citizenid + "\n\n" + "     ชื่อ-สกุล" + empObj.FIRSTNAME_TH + " " + empObj.LASTNAME_TH);
-                        lb_isnewemp.Text = "*มีอยู่แล้วในระบบ";
-                        txt_empid.Text = empObj.EMP_ID;
-                        txt_pid.Text = empObj.ID_CARD;
-                        cbo_title_th.SelectedItem = idcard.Th_Prefix;
-                        cbo_title_en.SelectedItem = idcard.En_Prefix;
-                        txt_emp_fname_th.Text = empObj.FIRSTNAME_TH;
-                        txt_emp_lname_th.Text = empObj.LASTNAME_TH;
-                        txt_emp_fname_en.Text = empObj.FIRSTNAME_EN;
-                        txt_emp_lname_en.Text = empObj.LASTNAME_EN;
-                        dob.Value = empObj.DATEOFBIRTH.Value;
-                        date_start_work.Value = empObj.DATESTARTWORK.Value;
-                        cbo_bp_prov.SelectedValue = GetProvinceIDByName(idcard.addrProvince);
-
-                        //Gender
-                        if (idcard.Sex == "1")
-                        {
-                            cbo_sex.SelectedIndex = 0;
-                        }
-                        else
-                        { cbo_sex.SelectedIndex = 1; }
-                        //Cureent Address
-
-                        c_txt_no.Text = idcard.addrHouseNo + " " + idcard.addrVillageNo + " " + idcard.addrLane + " " + idcard.addrRoad;
-                        c_txt_rd.Text = idcard.addrRoad;
-                        c_txt_soi.Text = "";
-                        c_txt_tumbol.Text = idcard.addrTambol;
-                        c_cbo_prov.SelectedValue = GetProvinceIDByName(idcard.addrProvince);
-                        c_cbo_amp.SelectedText = idcard.addrAmphur;
-
-                        //permanent address
-                        p_txt_no.Text = idcard.addrHouseNo + " " + idcard.addrVillageNo + " " + idcard.addrLane + " " + idcard.addrRoad;
-                        p_txt_road.Text = idcard.addrRoad;
-                        p_txt_soi.Text = "";
-                        p_txt_tumbol.Text = idcard.addrTambol;
-                        p_cbo_prov.SelectedText = idcard.addrProvince;
-                        p_cbo_amp.SelectedText = idcard.addrAmphur;
-
-                        if (idcard.PhotoRaw != null)
-                        {
-                            this.EmployeePhoto = idcard.PhotoRaw;
-                             
-                            var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
-                            var myBitmap = new Bitmap(byteArrayToImage(idcard.PhotoRaw));
-                            var myThumbnail = myBitmap.GetThumbnailImage(150, 187, myCallback, IntPtr.Zero);
-                            pic_emp.Image = myThumbnail;
-                        }
-
-                        var cimg = CurrentImageService.GetByEmployeeID(empObj.EMP_ID);
-                        if (cimg != null)
-                        {
-                            var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
-                            var myBitmap = new Bitmap(byteArrayToImage(cimg.PHOTO));
-                            var myThumbnail = myBitmap.GetThumbnailImage(150, 187, myCallback, IntPtr.Zero);
-                            pic_current.Image = myThumbnail;
-                        }
+                        SetObjectToControl(empObj);
                     }
                     else
                     {
@@ -824,11 +893,8 @@ namespace BIG.Present
                         {
                             this.EmployeePhoto = idcard.PhotoRaw;
 
-                            //add to picture box
-                            var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
-                            var myBitmap = new Bitmap(byteArrayToImage(idcard.PhotoRaw));
-                            var myThumbnail = myBitmap.GetThumbnailImage(150, 187, myCallback, IntPtr.Zero);
-                            pic_emp.Image = myThumbnail;
+                            //add to picture box 
+                            pic_emp.Image = GetImage(idcard.PhotoRaw,150,187);
                         }
                     }
                 }
@@ -842,6 +908,85 @@ namespace BIG.Present
             {
                 this.UseWaitCursor = false;
             }
+        }
+
+        private void SetObjectToControl(Model.Employee empObj)
+        {
+            lb_isnewemp.Text = "*มีอยู่แล้วในระบบ";
+            txt_empid.Text = empObj.EMP_ID;
+            txt_pid.Text = empObj.ID_CARD;
+            cbo_title_th.SelectedItem = empObj.TITLE_ID;
+            cbo_title_en.SelectedItem = empObj.TITLE_ID;
+            txt_emp_fname_th.Text = empObj.FIRSTNAME_TH;
+            txt_emp_lname_th.Text = empObj.LASTNAME_TH;
+            txt_emp_fname_en.Text = empObj.FIRSTNAME_EN;
+            txt_emp_lname_en.Text = empObj.LASTNAME_EN;
+            dob.Value = empObj.DATEOFBIRTH.Value;
+            date_start_work.Value = empObj.DATESTARTWORK.Value;
+            cbo_bp_prov.SelectedValue = GetProvinceIDByName(empObj.BIRTH_PLACE_PROVINCE);
+
+            //Gender
+            if (empObj.GENDER_ID == 1)
+            {
+                cbo_sex.SelectedIndex = 0;
+            }
+            else
+            { cbo_sex.SelectedIndex = 1; }
+            //Cureent Address
+            var current = AddressServices.GetCurrentByEmployeeID(empObj.EMP_ID);
+            c_txt_no.Text = current.NAME; 
+            c_txt_soi.Text = "";
+            c_txt_tumbol.Text = "";
+            c_cbo_prov.SelectedValue = current.PROVINCE_ID;
+            c_cbo_amp.SelectedText = current.AMPHUR_ID;
+
+            //permanent address
+            var permanent = AddressServices.GetPermanentByEmployeeID(empObj.EMP_ID);
+            p_txt_no.Text = current.NAME; 
+            p_txt_soi.Text = "";
+            p_txt_tumbol.Text = "";
+            p_cbo_prov.SelectedText = permanent.PROVINCE_ID;
+            p_cbo_amp.SelectedText = permanent.AMPHUR_ID;
+
+            var profile = ProfileImageDataService.GetByEmployeeID(empObj.EMP_ID);
+            if (profile != null)
+            {  
+                pic_emp.Image = GetImage(profile.PHOTO, 150, 187); 
+            }
+
+            var cimg = CurrentImageService.GetByEmployeeID(empObj.EMP_ID);
+            if (cimg != null)
+            { 
+                pic_current.Image = GetImage(cimg.PHOTO,150,187); 
+            }
+
+            //Finger
+            var finger = FingerScanServices.GetObjByEmployeeID(empObj.EMP_ID);
+            if (finger != null)
+            {
+                l_finger_1.Image = GetImage(finger.LEFTFINGER1, 150, 158);
+                l_finger_2.Image = GetImage(finger.LEFTFINGER2, 150, 158);
+                l_finger_3.Image = GetImage(finger.LEFTFINGER3, 150, 158);
+                l_finger_4.Image = GetImage(finger.LEFTFINGER4, 150, 158);
+                l_finger_5.Image = GetImage(finger.LEFTFINGER5, 150, 158);
+
+                R_finger_1.Image = GetImage(finger.RIGHTFINGER1,150,158);
+                R_finger_2.Image = GetImage(finger.RIGHTFINGER2, 150, 158);
+                R_finger_3.Image = GetImage(finger.RIGHTFINGER3, 150, 158);
+                R_finger_4.Image = GetImage(finger.RIGHTFINGER4, 150, 158);
+                 R_finger_5.Image = GetImage(finger.RIGHTFINGER5, 150, 158);
+            } 
+
+            //Address
+             
+        }
+
+        private Image GetImage(byte[] PHOTO,int width,int height)
+        {
+            var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
+            var myBitmap = new Bitmap(byteArrayToImage(PHOTO));
+            var myThumbnail = myBitmap.GetThumbnailImage(width, height, myCallback, IntPtr.Zero);
+            return myThumbnail;
         }
 
         private bool Save()
@@ -902,6 +1047,10 @@ namespace BIG.Present
 
                 //Other Documents
                 CreateOtherDoc(OtherDoc);
+
+                //Equipments
+                var listEquip = getEquiptListfrominput();
+                CreateEquipment(listEquip);
 
                 return result;
             }
@@ -973,9 +1122,9 @@ namespace BIG.Present
             {
                 this.Save();
                 MessageBox.Show("บันทึกข้อมูลบัตรประชาชนเรียบร้อย!!!");
-                this.Hide();
-                var fm = new EmployeeForm();
-                fm.Show();
+                //this.Hide();
+                //var fm = new EmployeeForm();
+                //fm.Show();
             }
             else if (result == DialogResult.No)
             {
@@ -1189,7 +1338,7 @@ namespace BIG.Present
         #endregion
 
         #region ===Upload doc idcard===
-         
+
         private void btn_upload_copy_idcard_Click(object sender, EventArgs e)
         {
             this.openFileDialog1.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
@@ -1215,10 +1364,10 @@ namespace BIG.Present
                             obj.EMP_ID = txt_empid.Text;
                             obj.PHOTO = ConvertImageToByteArray(myThumbnail, System.Drawing.Imaging.ImageFormat.Jpeg);
                             obj.TYPE = "สำเนาบัตรประชาชน";
-                            
+
                             RefDoc.Add(obj);
                         }
-                       
+
                     }
                     catch (Exception ex)
                     {
@@ -1227,12 +1376,12 @@ namespace BIG.Present
                 }
             }
         }
-         
+
         private void btn_refresh_copy_idcard_Click(object sender, EventArgs e)
         {
 
         }
-         
+
         private void btn_delete_copy_idcard_Click(object sender, EventArgs e)
         {
             var refdoc = RefDoc.Where(x => x.TYPE == "สำเนาบัตรประชาชน").FirstOrDefault();
@@ -1243,7 +1392,7 @@ namespace BIG.Present
             }
         }
         #endregion
-         
+
         #region ===Upload ทะเบียนบ้าน===
 
         private void btn_upload_copy_home_Click(object sender, EventArgs e)
@@ -1317,7 +1466,7 @@ namespace BIG.Present
                         var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
                         var myBitmap = new Bitmap(file);
                         var myThumbnail = myBitmap.GetThumbnailImage(360, 450, myCallback, IntPtr.Zero);
-                        pic_copy_military.Image = myThumbnail; 
+                        pic_copy_military.Image = myThumbnail;
                         if (txt_empid.Text != "")
                         {
                             var obj = new ReferenceDocument();
@@ -1408,7 +1557,7 @@ namespace BIG.Present
         }
 
         #endregion
-         
+
         #region ===Upload เอกสารเพิ่มเงิน ===
         private void btn_upload_salary_Click(object sender, EventArgs e)
         {
@@ -1461,7 +1610,7 @@ namespace BIG.Present
             }
         }
         #endregion
-         
+
         #region ===Upload ใบเตือน ===
         private void btn_upload_warning_Click(object sender, EventArgs e)
         {

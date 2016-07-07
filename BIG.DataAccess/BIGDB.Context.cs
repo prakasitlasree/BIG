@@ -41,7 +41,6 @@ namespace BIG.DataAccess
         public DbSet<Province> Provinces { get; set; }
         public DbSet<Zipcode> Zipcodes { get; set; }
         public DbSet<Site> Sites { get; set; }
-        public DbSet<Employee> Employees { get; set; }
         public DbSet<SSO> SSOes { get; set; }
         public DbSet<Training> Trainings { get; set; }
         public DbSet<WorkExperience> WorkExperiences { get; set; }
@@ -52,5 +51,8 @@ namespace BIG.DataAccess
         public DbSet<EmployeeImage> EmployeeImages { get; set; }
         public DbSet<Education> Educations { get; set; }
         public DbSet<Address> Addresses { get; set; }
+        public DbSet<FingerScan> FingerScans { get; set; }
+        public DbSet<Equiptment> Equiptments { get; set; }
+        public DbSet<Employee> Employees { get; set; }
     }
 }
