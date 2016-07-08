@@ -18,6 +18,7 @@ namespace BIG.Model
         public string EMP_ID { get; set; }
         public string ID_CARD { get; set; }
         public Nullable<int> TITLE_ID { get; set; }
+        public Nullable<int> TITLE_ID_EN { get; set; }
         public string FIRSTNAME_EN { get; set; }
         public string MIDNAME_EN { get; set; }
         public string LASTNAME_EN { get; set; }
@@ -43,6 +44,7 @@ namespace BIG.Model
         public string MOBILE { get; set; }
         public string HOMEPHONE { get; set; }
         public string BLOODGROUP { get; set; }
+        public string AREA { get; set; }
         public string EMAIL { get; set; }
         public Nullable<bool> STATUS { get; set; }
         public Nullable<System.DateTime> CREATED_DATE { get; set; }
@@ -54,5 +56,6 @@ namespace BIG.Model
         public virtual Marital Marital { get; set; }
         public virtual Position Position { get; set; }
         public virtual Title Title { get; set; }
+        public virtual Title Title1 { get; set; }
     }
 }

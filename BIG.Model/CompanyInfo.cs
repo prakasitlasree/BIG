@@ -15,12 +15,11 @@ namespace BIG.Model
     public partial class CompanyInfo
     {
         public int ID { get; set; }
-        public string NAME { get; set; }
+        public string NAME_EN { get; set; }
+        public string NAME_TH { get; set; }
         public string LOCATION { get; set; }
         public string AMPHUR { get; set; }
         public string PROVINCE { get; set; }
         public string POSTCODE { get; set; }
-        public string NAME_EN { get; set; }
-        public string NAME_TH { get; set; }
     }
 }

@@ -7379,13 +7379,13 @@ emp.MOBILE +', ' + emp.HOMEPHONE as TELNO,
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"
 SELECT top 1 emp.ID,
- emp.EMP_ID, 
- emp.ID_CARD, 
- ti.NAME +' '+
- emp.FIRSTNAME_TH +' '+
- emp.LASTNAME_TH as FULLNAME,
- gen.NAME as GENDER, 
-dbo.Thaidate(emp.DATEOFBIRTH) AS DOB,
+ isnull(emp.EMP_ID,'') EMP_ID, 
+ isnull(emp.ID_CARD,'') ID_CARD, 
+ isnull(ti.NAME,'') +' '+
+ isnull(emp.FIRSTNAME_TH,'') +' '+
+ isnull(emp.LASTNAME_TH,'') as FULLNAME,
+ isnull(gen.NAME,'') as GENDER, 
+isnull(dbo.Thaidate(emp.DATEOFBIRTH),'') AS DOB,
 dbo.CALULATEAGE(CONVERT(VARCHAR(10),emp.DATEOFBIRTH,110)) AS AGE,
  emp.APPEARANCE,
 emp.DEFECT,
@@ -7620,7 +7620,8 @@ WHERE isnull(ADDRESSTYPE_ID,'') <> ''";
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"
-SELECT ID, EMP_ID,ad.NAME +' ' + ap.AMPHUR_NAME +' ' + pv.PROVINCE_NAME +' ' + ad.POSTCODE as FULLADDRESS
+SELECT ID, EMP_ID,isnull(ad.NAME,'') +' ' + isnull(ap.AMPHUR_NAME,'') +' ' + isnull(pv.PROVINCE_NAME,'') +' ' + isnull(ad.POSTCODE,'') as FULLADDRESS
+
 FROM dbo.Address ad
 LEFT JOIN PROVINCE pv on ad.PROVINCE_ID = pv.PROVINCE_ID
 LEFT JOIN Amphur ap on ad.AMPHUR_ID = ap.AMPHUR_ID 
@@ -8980,7 +8981,7 @@ SELECT ID, EMP_ID, PHOTO, TYPE, CREATE_DATE FROM OtherDocuments WHERE (ID = @ID)
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT ID, EMP_ID, PHOTO  \r\nFROM dbo.ReferenceDocuments\r\nWHERE EMP_ID = @emp_id\r\n" +
-                "AND [TYPE] =1";
+                "AND [TYPE] =\'สำเนาบัตรประชาชน\'";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emp_id", global::System.Data.SqlDbType.NVarChar, 14, global::System.Data.ParameterDirection.Input, 0, 0, "EMP_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -9329,15 +9330,16 @@ SELECT ID, EMP_ID, PHOTO, TYPE, CREATE_DATE FROM OtherDocuments WHERE (ID = @ID)
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "\r\nSELECT ID, EMP_ID, \'ชื่อ \' + [NAME]+\' อายุ \' +convert(nvarchar(20),AGE) +\' เกี่" +
-                "ยวข้องเป็น \' + RELATIONSHIFT +\' \' + [ADDRESS] AS FULLREFPERSON \r\nFROM dbo.Refere" +
-                "ncePerson\r\n WHERE [TYPE] =1";
+            this._commandCollection[0].CommandText = "\r\nSELECT ID, EMP_ID, \'ชื่อ \' + [NAME]+\' อายุ \' +convert(nvarchar(20),isnull(AGE,0" +
+                ")) +\' เกี่ยวข้องเป็น \' + isnull(RELATIONSHIFT,\'\') +\' \' + isnull([ADDRESS],\'\') AS" +
+                " FULLREFPERSON \r\nFROM dbo.ReferencePerson\r\n WHERE [TYPE] =1";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "\r\nSELECT ID, EMP_ID, \'ชื่อ \' + [NAME]+\' อายุ \' +convert(nvarchar(20),AGE) +\' เกี่" +
-                "ยวข้องเป็น \' + RELATIONSHIFT +\' \' + [ADDRESS] AS FULLREFPERSON \r\nFROM dbo.Refere" +
-                "ncePerson\r\nWHERE EMP_ID = @emp_id\r\nAND [TYPE] =1";
+            this._commandCollection[1].CommandText = "SELECT EMP_ID, \'ชื่อ \' + NAME + \' อายุ \' + CONVERT (nvarchar(20), ISNULL(AGE, 0))" +
+                " + \' ปี เกี่ยวข้องเป็น \' + ISNULL(RELATIONSHIFT, \'\') + \' \' + ISNULL(ADDRESS, \'\')" +
+                " AS FULLREFPERSON, ID FROM ReferencePerson WHERE (EMP_ID = @emp_id) AND (TYPE = " +
+                "1)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emp_id", global::System.Data.SqlDbType.NVarChar, 14, global::System.Data.ParameterDirection.Input, 0, 0, "EMP_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -9930,16 +9932,14 @@ SELECT ID, EMP_ID, HOSPITAL_NAME, CREATED_DATE FROM SSO WHERE (ID = @ID)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EMP_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMP_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Training] ([EMP_ID]) VALUES (@EMP_ID);\r\nSELECT TOP (1) ID, EMP" +
-                "_ID, \'หลักสูตร \' + COURSE + \' รายละเอียด \' + DETAILS + \' ปี \' + CONVERT (nvarcha" +
-                "r(20), YEAR) AS FULLTRAINING FROM Training WHERE (ID = SCOPE_IDENTITY()) ORDER B" +
-                "Y CREATED_DATE";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Training] ([EMP_ID]) VALUES (@EMP_ID);
+SELECT TOP (1) ID, EMP_ID, 'หลักสูตร ' + ISNULL(COURSE, '') + ' รายละเอียด ' + ISNULL(DETAILS, '') + ' ปี ' + CONVERT (nvarchar(20), YEAR) AS FULLTRAINING FROM Training WHERE (ID = SCOPE_IDENTITY()) ORDER BY CREATED_DATE";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMP_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMP_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Training] SET [EMP_ID] = @EMP_ID WHERE (([ID] = @Original_ID) AND ([EMP_ID] = @Original_EMP_ID));
-SELECT TOP (1) ID, EMP_ID, 'หลักสูตร ' + COURSE + ' รายละเอียด ' + DETAILS + ' ปี ' + CONVERT (nvarchar(20), YEAR) AS FULLTRAINING FROM Training WHERE (ID = @ID) ORDER BY CREATED_DATE";
+SELECT TOP (1) ID, EMP_ID, 'หลักสูตร ' + ISNULL(COURSE, '') + ' รายละเอียด ' + ISNULL(DETAILS, '') + ' ปี ' + CONVERT (nvarchar(20), YEAR) AS FULLTRAINING FROM Training WHERE (ID = @ID) ORDER BY CREATED_DATE";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMP_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMP_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -9960,15 +9960,15 @@ SELECT TOP (1) ID, EMP_ID, 'หลักสูตร ' + COURSE + ' รายล
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT top 1 ID, EMP_ID,\'หลักสูตร \' + COURSE +\' รายละเอียด \' + DETAILS +\' ปี \'+ c" +
-                "onvert(nvarchar(20),YEAR) as FULLTRAINING\r\n\r\nFROM dbo.Training\r\n \r\norder by CREA" +
-                "TED_DATE";
+            this._commandCollection[0].CommandText = "SELECT top 1 ID, EMP_ID,\'หลักสูตร \' + isnull(COURSE,\'\') +\' รายละเอียด \' + isnull(" +
+                "DETAILS,\'\') +\' ปี \'+ convert(nvarchar(20),YEAR) as FULLTRAINING\r\n\r\n\r\nFROM dbo.Tr" +
+                "aining\r\n \r\norder by CREATED_DATE";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT top 1 ID, EMP_ID,\'หลักสูตร \' + COURSE +\' รายละเอียด \' + DETAILS +\' ปี \'+ c" +
-                "onvert(nvarchar(20),YEAR) as FULLTRAINING\r\n\r\nFROM dbo.Training\r\nWHERE EMP_ID = @" +
-                "emp_id\r\norder by CREATED_DATE";
+            this._commandCollection[1].CommandText = "SELECT TOP (1) EMP_ID, \'หลักสูตร \' + ISNULL(COURSE, \'\') + \' รายละเอียด \' + ISNULL" +
+                "(DETAILS, \'\') + \' ปี \' + CONVERT (nvarchar(20), YEAR) AS FULLTRAINING, ID FROM T" +
+                "raining WHERE (EMP_ID = @emp_id) ORDER BY CREATED_DATE";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emp_id", global::System.Data.SqlDbType.NVarChar, 14, global::System.Data.ParameterDirection.Input, 0, 0, "EMP_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -10333,9 +10333,9 @@ SELECT TOP (1) ID, EMP_ID, 'ชื่อบริษัท/องค์กร ' 
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT top 1\r\n ID, EMP_ID,\'ชื่อบริษัท/องค์กร \' + [NAME] + \' ตำแหน่ง \'+ POSITION +" +
-                " \' ค่าจ้าง \'+ SALARY + \' ระยะเวลา \' + PERIOD \r\nas FULLEXP\r\n\r\n FROM dbo.WorkExper" +
-                "ience\r\nWHERE EMP_ID = @emp_id";
+            this._commandCollection[1].CommandText = "SELECT top 1\r\n ID, EMP_ID,\'ชื่อบริษัท/องค์กร \' + isnull([NAME],\'\') + \' ตำแหน่ง \'+" +
+                " isnull(POSITION,\'\')+ \' ค่าจ้าง \'+ isnull(SALARY,\'\') + \' ระยะเวลา \' + isnull(PER" +
+                "IOD,\'\') \r\nas FULLEXP\r\n\r\n FROM dbo.WorkExperience\r\nWHERE EMP_ID = @emp_id";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emp_id", global::System.Data.SqlDbType.NVarChar, 14, global::System.Data.ParameterDirection.Input, 0, 0, "EMP_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -11654,14 +11654,13 @@ SELECT TOP (1) ID, EMP_ID, LEFTFINGER1, LEFTFINGER2, LEFTFINGER3, LEFTFINGER4, L
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"
+            this._commandCollection[0].CommandText = @"SELECT ID, EMP_ID,isnull(ad.NAME,'') +' ' + isnull(ap.AMPHUR_NAME,'') +' ' + isnull(pv.PROVINCE_NAME,'') +' ' + isnull(ad.POSTCODE,'') as FULLADDRESS
 
-SELECT ID, EMP_ID,ad.NAME +' ' + ap.AMPHUR_NAME +' ' + pv.PROVINCE_NAME +' ' + ad.POSTCODE as FULLADDRESS
 FROM dbo.Address ad
 LEFT JOIN PROVINCE pv on ad.PROVINCE_ID = pv.PROVINCE_ID
 LEFT JOIN Amphur ap on ad.AMPHUR_ID = ap.AMPHUR_ID 
 
-WHERE ADDRESSTYPE_ID = NULL
+WHERE isnull(ADDRESSTYPE_ID,'') = ''
 and EMP_ID = @emp_id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emp_id", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "EMP_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

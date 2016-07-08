@@ -17,12 +17,15 @@ namespace BIG.Model
         public Title()
         {
             this.Employees = new HashSet<Employee>();
+            this.Employees1 = new HashSet<Employee>();
         }
     
         public int ID { get; set; }
         public string NAME { get; set; }
         public string DESCRIPTION { get; set; }
+        public string TYPE { get; set; }
     
         public virtual ICollection<Employee> Employees { get; set; }
+        public virtual ICollection<Employee> Employees1 { get; set; }
     }
 }
