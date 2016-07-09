@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
+using Neurotec.Biometrics;
 namespace Employee
 {
     static class Program
@@ -21,7 +22,9 @@ namespace Employee
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+             
+             Application.Run(new LoginForm());
+             
         }
     }
 }

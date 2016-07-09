@@ -7,30 +7,32 @@ using BIG.DataAccess;
 
 namespace BIG.DataService
 {
-    
+
     public partial class FingerScanServices
     {
-        public static bool Add(List<FingerScan> list)
+        public static bool Add(FingerScan fin)
         {
+            var oldfin = new FingerScan();
             try
             {
-                var obj = list.FirstOrDefault();
-                if (obj != null)
+                if (fin != null)
                 {
-                    DeleteByEmployeeID(obj.EMP_ID);
-                }
-                using (var ctx = new BIG_DBEntities())
-                {
-                    foreach (var objAdd in list)
-                    {
-                        ctx.FingerScans.Add(objAdd);
+                    oldfin = GetObjByEmployeeID(fin.EMP_ID);
+
+                    DeleteByEmployeeID(fin.EMP_ID);
+
+                    using (var ctx = new BIG_DBEntities())
+                    { 
+                        ctx.FingerScans.Add(fin);
+                        ctx.SaveChanges();
                     }
-                    ctx.SaveChanges();
                 }
+
                 return true;
             }
             catch (Exception ex)
-            { 
+            {
+                Add(oldfin);
                 throw ex;
             }
         }
@@ -44,7 +46,7 @@ namespace BIG.DataService
                 {
 
                     result = ctx.FingerScans.ToList();
-                     
+
                 }
                 return result;
             }
@@ -72,9 +74,9 @@ namespace BIG.DataService
             }
         }
 
-        public static FingerScan  GetObjByEmployeeID(string emp)
+        public static FingerScan GetObjByEmployeeID(string emp)
         {
-            var result = new  FingerScan();
+            var result = new FingerScan();
             try
             {
                 using (var ctx = new BIG_DBEntities())

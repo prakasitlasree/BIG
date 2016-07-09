@@ -46,7 +46,6 @@ namespace BIG.DataAccess
         public DbSet<ReferenceDocument> ReferenceDocuments { get; set; }
         public DbSet<ReferencePerson> ReferencePersons { get; set; }
         public DbSet<Site> Sites { get; set; }
-        public DbSet<SSO> SSOes { get; set; }
         public DbSet<Training> Trainings { get; set; }
         public DbSet<WorkExperience> WorkExperiences { get; set; }
         public DbSet<Zipcode> Zipcodes { get; set; }
@@ -54,5 +53,7 @@ namespace BIG.DataAccess
         public DbSet<Title> Titles { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<AddressType> AddressTypes { get; set; }
+        public DbSet<Hospital> Hospitals { get; set; }
+        public DbSet<SSO> SSOes { get; set; }
     }
 }

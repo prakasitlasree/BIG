@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource11 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource12 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource13 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource14 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource15 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource16 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource17 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource18 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource19 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource20 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource10 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportEmployee));
             this.AddressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BIG_DBDataSet = new BIG.Present.BIG_DBDataSet();
@@ -186,36 +186,36 @@
             this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource11.Name = "DSAddress";
-            reportDataSource11.Value = this.AddressBindingSource;
-            reportDataSource12.Name = "DS_IDCARD";
-            reportDataSource12.Value = this.ReferenceDocumentsBindingSource;
-            reportDataSource13.Name = "DSEmployeePhoto";
-            reportDataSource13.Value = this.CurrentImagesBindingSource;
-            reportDataSource14.Name = "DSRefPerson";
-            reportDataSource14.Value = this.ReferencePersonBindingSource;
-            reportDataSource15.Name = "DSTraining";
-            reportDataSource15.Value = this.TrainingBindingSource;
-            reportDataSource16.Name = "DSExp";
-            reportDataSource16.Value = this.WorkExperienceBindingSource;
-            reportDataSource17.Name = "DSFingerScan";
-            reportDataSource17.Value = this.FingerScanBindingSource;
-            reportDataSource18.Name = "DSEmployee";
-            reportDataSource18.Value = this.EmployeeBindingSource;
-            reportDataSource19.Name = "DSPermanantAddr";
-            reportDataSource19.Value = this.PermanentAddressBindingSource;
-            reportDataSource20.Name = "DSEDU";
-            reportDataSource20.Value = this.EducationBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource11);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource12);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource13);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource14);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource15);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource16);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource17);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource18);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource19);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource20);
+            reportDataSource1.Name = "DSAddress";
+            reportDataSource1.Value = this.AddressBindingSource;
+            reportDataSource2.Name = "DS_IDCARD";
+            reportDataSource2.Value = this.ReferenceDocumentsBindingSource;
+            reportDataSource3.Name = "DSEmployeePhoto";
+            reportDataSource3.Value = this.CurrentImagesBindingSource;
+            reportDataSource4.Name = "DSRefPerson";
+            reportDataSource4.Value = this.ReferencePersonBindingSource;
+            reportDataSource5.Name = "DSTraining";
+            reportDataSource5.Value = this.TrainingBindingSource;
+            reportDataSource6.Name = "DSExp";
+            reportDataSource6.Value = this.WorkExperienceBindingSource;
+            reportDataSource7.Name = "DSFingerScan";
+            reportDataSource7.Value = this.FingerScanBindingSource;
+            reportDataSource8.Name = "DSEmployee";
+            reportDataSource8.Value = this.EmployeeBindingSource;
+            reportDataSource9.Name = "DSPermanantAddr";
+            reportDataSource9.Value = this.PermanentAddressBindingSource;
+            reportDataSource10.Name = "DSEDU";
+            reportDataSource10.Value = this.EducationBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource5);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource6);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource7);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource8);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource9);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource10);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "BIG.Present.EmployeeDetailReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(3, 43);
             this.reportViewer1.Name = "reportViewer1";
@@ -370,7 +370,7 @@
             this.rb_exit.SmallImage = ((System.Drawing.Image)(resources.GetObject("rb_exit.SmallImage")));
             this.rb_exit.Text = "ปิดโปรแกรม";
             this.rb_exit.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
-            this.rb_exit.CanvasChanged += new System.EventHandler(this.rb_exit_CanvasChanged);
+            this.rb_exit.Click += new System.EventHandler(this.rb_exit_Click);
             // 
             // ribbonTab2
             // 

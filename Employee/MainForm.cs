@@ -6,16 +6,22 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Neurotec.Biometrics;
 namespace BIG.Present
 {
     public partial class MainForm : Form
     {
+
+        Nffv _engine;
         public MainForm()
         {
             InitializeComponent();
         }
-
+        public MainForm(Nffv engine)
+        {
+            _engine = engine;
+            InitializeComponent();
+        }
         private void MainForm_Load(object sender, EventArgs e)
         {
 
@@ -63,16 +69,76 @@ namespace BIG.Present
 
         private void btn_setting_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var personal = new TestForm();
-            personal.Show();
+            Neurotec.Biometrics.Nffv engine = null;
+            try
+            {
+
+                try
+                {
+                    engine = new Neurotec.Biometrics.Nffv("FingerprintDB.CSharpSample.dat", "", "UareU");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + "Failed to initialize Nffv or create/load database.\r\n" +
+                    "Please check if:\r\n - Provided password is correct;\r\n - Database filename is correct;\r\n" +
+                    " - Scanners are used properly.\r\n", "Nffv C# Sample", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                //Application.Run(new MainForm(engine, chooseScannerForm.UserDatabase)); 
+                this.Hide();
+                var personal = new TestForm(engine);
+                personal.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    string.Format("An error has occured: {0}", ex.Message), "Nffv C# Sample",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (engine != null)
+                {
+                    engine.Dispose();
+                }
+            } 
         }
 
         private void lnk_setting_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
-            var personal = new TestForm();
-            personal.Show();
+            Neurotec.Biometrics.Nffv engine = null;
+            try
+            {
+
+                try
+                {
+                    engine = new Neurotec.Biometrics.Nffv("FingerprintDB.CSharpSample.dat", "", "UareU");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + "Failed to initialize Nffv or create/load database.\r\n" +
+                    "Please check if:\r\n - Provided password is correct;\r\n - Database filename is correct;\r\n" +
+                    " - Scanners are used properly.\r\n", "Nffv C# Sample", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                //Application.Run(new MainForm(engine, chooseScannerForm.UserDatabase)); 
+                this.Hide();
+                var personal = new TestForm(engine);
+                personal.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    string.Format("An error has occured: {0}", ex.Message), "Nffv C# Sample",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (engine != null)
+                {
+                    engine.Dispose();
+                }
+            } 
         }
 
         private void btn_report_Click(object sender, EventArgs e)

@@ -9,12 +9,20 @@ using System.Windows.Forms;
 using BIG.Model;
 using BIG.DataService;
 
+using Neurotec.Biometrics;
 namespace BIG.Present
 {
     public partial class LoginForm : Form
     {
+        Nffv _engine;
         public LoginForm()
         {
+            InitializeComponent();
+        }
+
+        public LoginForm(Nffv engine)
+        {
+            _engine = engine;
             InitializeComponent();
         }
 

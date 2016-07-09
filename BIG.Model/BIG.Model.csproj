@@ -91,6 +91,9 @@
     <Compile Include="Geography.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Hospital.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Logon.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>

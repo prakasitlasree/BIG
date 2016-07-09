@@ -98,7 +98,7 @@ namespace BIG.Present
 
         private void ReportEmployee_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Hide();
+            this.Close();
             var form = new MainForm();
             form.Show();
         }
@@ -110,23 +110,28 @@ namespace BIG.Present
 
         private void rb_logout_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             var form = new LoginForm();
             form.Show();
         }
 
         private void rb_home_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             var form = new MainForm();
             form.Show();
         }
 
         private void rb_new_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             var form = new EmployeeForm();
             form.Show();
+        }
+
+        private void rb_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

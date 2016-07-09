@@ -31,15 +31,15 @@ namespace BIG.Present
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("สัญญาค้ำประกัน");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("สัญญาจ้างงาน");
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("รางวัน/ผลงานดีเด่น");
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("บันทึกการลงโทด");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("พนักงานทดลองงาน");
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("การปรับเงินเดือน");
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("กองทุนสำรอง");
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("ข้อมูลด้านสุขภาพ");
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("การพ้นสภาพพนักงาน");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("สัญญาค้ำประกัน");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("สัญญาจ้างงาน");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("รางวัล/ผลงานดีเด่น");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("บันทึกการลงโทษ");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("พนักงานทดลองงาน");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("การปรับเงินเดือน");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("กองทุนสำรอง");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("ข้อมูลด้านสุขภาพ");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("การพ้นสภาพพนักงาน");
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.advancedFlowLayoutPanel1 = new MakarovDev.ExpandCollapsePanel.AdvancedFlowLayoutPanel();
@@ -419,13 +419,8 @@ namespace BIG.Present
             this.tableLayoutPanel66 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel68 = new System.Windows.Forms.TableLayoutPanel();
             this.label66 = new System.Windows.Forms.Label();
-            this.txt_sso_hospital = new System.Windows.Forms.TextBox();
             this.chk_have_sso = new System.Windows.Forms.CheckBox();
-            this.tableLayoutPanel67 = new System.Windows.Forms.TableLayoutPanel();
-            this.label65 = new System.Windows.Forms.Label();
             this.chk_nothave_sso = new System.Windows.Forms.CheckBox();
-            this.tableLayoutPanel71 = new System.Windows.Forms.TableLayoutPanel();
-            this.label69 = new System.Windows.Forms.Label();
             this.cbo_sso_hospital = new System.Windows.Forms.ComboBox();
             this.tab_doc = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel121 = new System.Windows.Forms.TableLayoutPanel();
@@ -619,6 +614,14 @@ namespace BIG.Present
             this.ribbonOrbMenuItem3 = new System.Windows.Forms.RibbonOrbMenuItem();
             this.ribbonOrbMenuItem4 = new System.Windows.Forms.RibbonOrbMenuItem();
             this.ribbonButton16 = new System.Windows.Forms.RibbonButton();
+            this.cbo_sso_prov = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel158 = new System.Windows.Forms.TableLayoutPanel();
+            this.label127 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel159 = new System.Windows.Forms.TableLayoutPanel();
+            this.txt_sso_manual_hospital = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel67 = new System.Windows.Forms.TableLayoutPanel();
+            this.label65 = new System.Windows.Forms.Label();
+            this.chk_manual_hospital = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.advancedFlowLayoutPanel1.SuspendLayout();
@@ -788,8 +791,6 @@ namespace BIG.Present
             this.groupBox7.SuspendLayout();
             this.tableLayoutPanel66.SuspendLayout();
             this.tableLayoutPanel68.SuspendLayout();
-            this.tableLayoutPanel67.SuspendLayout();
-            this.tableLayoutPanel71.SuspendLayout();
             this.tab_doc.SuspendLayout();
             this.tableLayoutPanel121.SuspendLayout();
             this.tableLayoutPanel122.SuspendLayout();
@@ -867,6 +868,9 @@ namespace BIG.Present
             ((System.ComponentModel.ISupportInitialize)(this.btn_ref_img)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_new_img)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel158.SuspendLayout();
+            this.tableLayoutPanel159.SuspendLayout();
+            this.tableLayoutPanel67.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -1136,40 +1140,40 @@ namespace BIG.Present
             this.treeView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeView3.Location = new System.Drawing.Point(0, 3);
             this.treeView3.Name = "treeView3";
-            treeNode28.BackColor = System.Drawing.Color.White;
-            treeNode28.Name = "Node0";
-            treeNode28.Text = "สัญญาค้ำประกัน";
-            treeNode29.Name = "Node1";
-            treeNode29.Text = "สัญญาจ้างงาน";
-            treeNode30.BackColor = System.Drawing.Color.White;
-            treeNode30.Name = "Node2";
-            treeNode30.Text = "รางวัน/ผลงานดีเด่น";
-            treeNode31.Name = "Node3";
-            treeNode31.Text = "บันทึกการลงโทด";
-            treeNode32.BackColor = System.Drawing.Color.White;
-            treeNode32.Name = "Node4";
-            treeNode32.Text = "พนักงานทดลองงาน";
-            treeNode33.Name = "Node0";
-            treeNode33.Text = "การปรับเงินเดือน";
-            treeNode34.BackColor = System.Drawing.Color.White;
-            treeNode34.Name = "Node1";
-            treeNode34.Text = "กองทุนสำรอง";
-            treeNode35.Name = "Node2";
-            treeNode35.Text = "ข้อมูลด้านสุขภาพ";
-            treeNode36.BackColor = System.Drawing.Color.White;
-            treeNode36.ImageKey = "(default)";
-            treeNode36.Name = "Node3";
-            treeNode36.Text = "การพ้นสภาพพนักงาน";
+            treeNode1.BackColor = System.Drawing.Color.White;
+            treeNode1.Name = "Node0";
+            treeNode1.Text = "สัญญาค้ำประกัน";
+            treeNode2.Name = "Node1";
+            treeNode2.Text = "สัญญาจ้างงาน";
+            treeNode3.BackColor = System.Drawing.Color.White;
+            treeNode3.Name = "Node2";
+            treeNode3.Text = "รางวัล/ผลงานดีเด่น";
+            treeNode4.Name = "Node3";
+            treeNode4.Text = "บันทึกการลงโทษ";
+            treeNode5.BackColor = System.Drawing.Color.White;
+            treeNode5.Name = "Node4";
+            treeNode5.Text = "พนักงานทดลองงาน";
+            treeNode6.Name = "Node0";
+            treeNode6.Text = "การปรับเงินเดือน";
+            treeNode7.BackColor = System.Drawing.Color.White;
+            treeNode7.Name = "Node1";
+            treeNode7.Text = "กองทุนสำรอง";
+            treeNode8.Name = "Node2";
+            treeNode8.Text = "ข้อมูลด้านสุขภาพ";
+            treeNode9.BackColor = System.Drawing.Color.White;
+            treeNode9.ImageKey = "(default)";
+            treeNode9.Name = "Node3";
+            treeNode9.Text = "การพ้นสภาพพนักงาน";
             this.treeView3.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode28,
-            treeNode29,
-            treeNode30,
-            treeNode31,
-            treeNode32,
-            treeNode33,
-            treeNode34,
-            treeNode35,
-            treeNode36});
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4,
+            treeNode5,
+            treeNode6,
+            treeNode7,
+            treeNode8,
+            treeNode9});
             this.treeView3.Size = new System.Drawing.Size(165, 365);
             this.treeView3.TabIndex = 3;
             // 
@@ -2469,7 +2473,7 @@ namespace BIG.Present
             this.tableLayoutPanel95.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel95.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel95.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel95.Size = new System.Drawing.Size(1162, 228);
+            this.tableLayoutPanel95.Size = new System.Drawing.Size(1162, 239);
             this.tableLayoutPanel95.TabIndex = 1;
             // 
             // R_finger_5
@@ -2478,9 +2482,10 @@ namespace BIG.Present
             this.R_finger_5.Image = global::BIG.Present.Properties.Resources.finger_icon2;
             this.R_finger_5.Location = new System.Drawing.Point(970, 25);
             this.R_finger_5.Name = "R_finger_5";
-            this.R_finger_5.Size = new System.Drawing.Size(150, 158);
+            this.R_finger_5.Size = new System.Drawing.Size(150, 169);
             this.R_finger_5.TabIndex = 14;
             this.R_finger_5.TabStop = false;
+            this.R_finger_5.Click += new System.EventHandler(this.R_finger_5_Click);
             // 
             // R_finger_4
             // 
@@ -2488,9 +2493,10 @@ namespace BIG.Present
             this.R_finger_4.Image = global::BIG.Present.Properties.Resources.finger_icon2;
             this.R_finger_4.Location = new System.Drawing.Point(737, 25);
             this.R_finger_4.Name = "R_finger_4";
-            this.R_finger_4.Size = new System.Drawing.Size(150, 158);
+            this.R_finger_4.Size = new System.Drawing.Size(150, 169);
             this.R_finger_4.TabIndex = 13;
             this.R_finger_4.TabStop = false;
+            this.R_finger_4.Click += new System.EventHandler(this.R_finger_4_Click);
             // 
             // R_finger_3
             // 
@@ -2498,9 +2504,10 @@ namespace BIG.Present
             this.R_finger_3.Image = global::BIG.Present.Properties.Resources.finger_icon2;
             this.R_finger_3.Location = new System.Drawing.Point(505, 25);
             this.R_finger_3.Name = "R_finger_3";
-            this.R_finger_3.Size = new System.Drawing.Size(150, 158);
+            this.R_finger_3.Size = new System.Drawing.Size(150, 169);
             this.R_finger_3.TabIndex = 12;
             this.R_finger_3.TabStop = false;
+            this.R_finger_3.Click += new System.EventHandler(this.R_finger_3_Click);
             // 
             // R_finger_2
             // 
@@ -2508,9 +2515,10 @@ namespace BIG.Present
             this.R_finger_2.Image = global::BIG.Present.Properties.Resources.finger_icon2;
             this.R_finger_2.Location = new System.Drawing.Point(273, 25);
             this.R_finger_2.Name = "R_finger_2";
-            this.R_finger_2.Size = new System.Drawing.Size(150, 158);
+            this.R_finger_2.Size = new System.Drawing.Size(150, 169);
             this.R_finger_2.TabIndex = 11;
             this.R_finger_2.TabStop = false;
+            this.R_finger_2.Click += new System.EventHandler(this.R_finger_2_Click);
             // 
             // label90
             // 
@@ -2571,56 +2579,61 @@ namespace BIG.Present
             // 
             this.btn_R_1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_R_1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_R_1.Location = new System.Drawing.Point(4, 192);
+            this.btn_R_1.Location = new System.Drawing.Point(4, 203);
             this.btn_R_1.Name = "btn_R_1";
             this.btn_R_1.Size = new System.Drawing.Size(225, 30);
             this.btn_R_1.TabIndex = 5;
             this.btn_R_1.Text = "สแกน";
             this.btn_R_1.UseVisualStyleBackColor = true;
+            this.btn_R_1.Click += new System.EventHandler(this.btn_R_1_Click);
             // 
             // btn_R_2
             // 
             this.btn_R_2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_R_2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_R_2.Location = new System.Drawing.Point(236, 192);
+            this.btn_R_2.Location = new System.Drawing.Point(236, 203);
             this.btn_R_2.Name = "btn_R_2";
             this.btn_R_2.Size = new System.Drawing.Size(225, 30);
             this.btn_R_2.TabIndex = 6;
             this.btn_R_2.Text = "สแกน";
             this.btn_R_2.UseVisualStyleBackColor = true;
+            this.btn_R_2.Click += new System.EventHandler(this.btn_R_2_Click);
             // 
             // btn_R_3
             // 
             this.btn_R_3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_R_3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_R_3.Location = new System.Drawing.Point(468, 192);
+            this.btn_R_3.Location = new System.Drawing.Point(468, 203);
             this.btn_R_3.Name = "btn_R_3";
             this.btn_R_3.Size = new System.Drawing.Size(225, 30);
             this.btn_R_3.TabIndex = 7;
             this.btn_R_3.Text = "สแกน";
             this.btn_R_3.UseVisualStyleBackColor = true;
+            this.btn_R_3.Click += new System.EventHandler(this.btn_R_3_Click);
             // 
             // btn_R_4
             // 
             this.btn_R_4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_R_4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_R_4.Location = new System.Drawing.Point(700, 192);
+            this.btn_R_4.Location = new System.Drawing.Point(700, 203);
             this.btn_R_4.Name = "btn_R_4";
             this.btn_R_4.Size = new System.Drawing.Size(225, 30);
             this.btn_R_4.TabIndex = 8;
             this.btn_R_4.Text = "สแกน";
             this.btn_R_4.UseVisualStyleBackColor = true;
+            this.btn_R_4.Click += new System.EventHandler(this.btn_R_4_Click);
             // 
             // btn_R_5
             // 
             this.btn_R_5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_R_5.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_R_5.Location = new System.Drawing.Point(932, 192);
+            this.btn_R_5.Location = new System.Drawing.Point(932, 203);
             this.btn_R_5.Name = "btn_R_5";
             this.btn_R_5.Size = new System.Drawing.Size(226, 30);
             this.btn_R_5.TabIndex = 9;
             this.btn_R_5.Text = "สแกน";
             this.btn_R_5.UseVisualStyleBackColor = true;
+            this.btn_R_5.Click += new System.EventHandler(this.btn_R_5_Click);
             // 
             // R_finger_1
             // 
@@ -2628,9 +2641,10 @@ namespace BIG.Present
             this.R_finger_1.Image = global::BIG.Present.Properties.Resources.finger_icon2;
             this.R_finger_1.Location = new System.Drawing.Point(41, 25);
             this.R_finger_1.Name = "R_finger_1";
-            this.R_finger_1.Size = new System.Drawing.Size(150, 158);
+            this.R_finger_1.Size = new System.Drawing.Size(150, 169);
             this.R_finger_1.TabIndex = 10;
             this.R_finger_1.TabStop = false;
+            this.R_finger_1.Click += new System.EventHandler(this.R_finger_1_Click);
             // 
             // groupBox12
             // 
@@ -2690,6 +2704,7 @@ namespace BIG.Present
             this.l_finger_5.Size = new System.Drawing.Size(150, 158);
             this.l_finger_5.TabIndex = 14;
             this.l_finger_5.TabStop = false;
+            this.l_finger_5.Click += new System.EventHandler(this.l_finger_5_Click);
             // 
             // l_finger_4
             // 
@@ -2700,6 +2715,7 @@ namespace BIG.Present
             this.l_finger_4.Size = new System.Drawing.Size(150, 158);
             this.l_finger_4.TabIndex = 13;
             this.l_finger_4.TabStop = false;
+            this.l_finger_4.Click += new System.EventHandler(this.l_finger_4_Click);
             // 
             // l_finger_3
             // 
@@ -2710,6 +2726,7 @@ namespace BIG.Present
             this.l_finger_3.Size = new System.Drawing.Size(150, 158);
             this.l_finger_3.TabIndex = 12;
             this.l_finger_3.TabStop = false;
+            this.l_finger_3.Click += new System.EventHandler(this.l_finger_3_Click);
             // 
             // l_finger_2
             // 
@@ -2720,6 +2737,7 @@ namespace BIG.Present
             this.l_finger_2.Size = new System.Drawing.Size(150, 158);
             this.l_finger_2.TabIndex = 11;
             this.l_finger_2.TabStop = false;
+            this.l_finger_2.Click += new System.EventHandler(this.l_finger_2_Click);
             // 
             // label89
             // 
@@ -2786,6 +2804,7 @@ namespace BIG.Present
             this.btn_L_1.TabIndex = 5;
             this.btn_L_1.Text = "สแกน";
             this.btn_L_1.UseVisualStyleBackColor = true;
+            this.btn_L_1.Click += new System.EventHandler(this.btn_L_1_Click);
             // 
             // btn_L_2
             // 
@@ -2797,6 +2816,7 @@ namespace BIG.Present
             this.btn_L_2.TabIndex = 6;
             this.btn_L_2.Text = "สแกน";
             this.btn_L_2.UseVisualStyleBackColor = true;
+            this.btn_L_2.Click += new System.EventHandler(this.btn_L_2_Click);
             // 
             // btn_L_3
             // 
@@ -2808,6 +2828,7 @@ namespace BIG.Present
             this.btn_L_3.TabIndex = 7;
             this.btn_L_3.Text = "สแกน";
             this.btn_L_3.UseVisualStyleBackColor = true;
+            this.btn_L_3.Click += new System.EventHandler(this.btn_L_3_Click);
             // 
             // btn_L_4
             // 
@@ -2819,6 +2840,7 @@ namespace BIG.Present
             this.btn_L_4.TabIndex = 8;
             this.btn_L_4.Text = "สแกน";
             this.btn_L_4.UseVisualStyleBackColor = true;
+            this.btn_L_4.Click += new System.EventHandler(this.btn_L_4_Click);
             // 
             // btn_L_5
             // 
@@ -2830,6 +2852,7 @@ namespace BIG.Present
             this.btn_L_5.TabIndex = 9;
             this.btn_L_5.Text = "สแกน";
             this.btn_L_5.UseVisualStyleBackColor = true;
+            this.btn_L_5.Click += new System.EventHandler(this.btn_L_5_Click);
             // 
             // l_finger_1
             // 
@@ -5527,12 +5550,13 @@ namespace BIG.Present
             this.tableLayoutPanel66.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
             this.tableLayoutPanel66.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel66.Controls.Add(this.tableLayoutPanel68, 0, 0);
-            this.tableLayoutPanel66.Controls.Add(this.txt_sso_hospital, 1, 1);
-            this.tableLayoutPanel66.Controls.Add(this.chk_have_sso, 1, 0);
-            this.tableLayoutPanel66.Controls.Add(this.tableLayoutPanel67, 0, 1);
-            this.tableLayoutPanel66.Controls.Add(this.chk_nothave_sso, 1, 2);
-            this.tableLayoutPanel66.Controls.Add(this.tableLayoutPanel71, 0, 2);
-            this.tableLayoutPanel66.Controls.Add(this.cbo_sso_hospital, 1, 3);
+            this.tableLayoutPanel66.Controls.Add(this.tableLayoutPanel159, 1, 0);
+            this.tableLayoutPanel66.Controls.Add(this.tableLayoutPanel158, 0, 1);
+            this.tableLayoutPanel66.Controls.Add(this.cbo_sso_prov, 1, 1);
+            this.tableLayoutPanel66.Controls.Add(this.cbo_sso_hospital, 1, 2);
+            this.tableLayoutPanel66.Controls.Add(this.tableLayoutPanel67, 0, 2);
+            this.tableLayoutPanel66.Controls.Add(this.txt_sso_manual_hospital, 1, 4);
+            this.tableLayoutPanel66.Controls.Add(this.chk_manual_hospital, 1, 3);
             this.tableLayoutPanel66.Location = new System.Drawing.Point(6, 13);
             this.tableLayoutPanel66.Name = "tableLayoutPanel66";
             this.tableLayoutPanel66.RowCount = 8;
@@ -5570,98 +5594,38 @@ namespace BIG.Present
             this.label66.TabIndex = 0;
             this.label66.Text = "เคยมีบัตรรับรองสิทธิ์สถานพยาบาลหรือไม่";
             // 
-            // txt_sso_hospital
-            // 
-            this.txt_sso_hospital.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_sso_hospital.Enabled = false;
-            this.txt_sso_hospital.Location = new System.Drawing.Point(253, 42);
-            this.txt_sso_hospital.Name = "txt_sso_hospital";
-            this.txt_sso_hospital.Size = new System.Drawing.Size(300, 20);
-            this.txt_sso_hospital.TabIndex = 55;
-            // 
             // chk_have_sso
             // 
             this.chk_have_sso.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.chk_have_sso.AutoSize = true;
-            this.chk_have_sso.Location = new System.Drawing.Point(253, 9);
+            this.chk_have_sso.Location = new System.Drawing.Point(3, 6);
             this.chk_have_sso.Name = "chk_have_sso";
             this.chk_have_sso.Size = new System.Drawing.Size(52, 17);
-            this.chk_have_sso.TabIndex = 61;
+            this.chk_have_sso.TabIndex = 1;
             this.chk_have_sso.Text = "เคยมี";
             this.chk_have_sso.UseVisualStyleBackColor = true;
             this.chk_have_sso.CheckedChanged += new System.EventHandler(this.chk_have_sso_CheckedChanged);
-            // 
-            // tableLayoutPanel67
-            // 
-            this.tableLayoutPanel67.ColumnCount = 2;
-            this.tableLayoutPanel67.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel67.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tableLayoutPanel67.Controls.Add(this.label65, 0, 0);
-            this.tableLayoutPanel67.Location = new System.Drawing.Point(3, 38);
-            this.tableLayoutPanel67.Name = "tableLayoutPanel67";
-            this.tableLayoutPanel67.RowCount = 1;
-            this.tableLayoutPanel67.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel67.Size = new System.Drawing.Size(244, 29);
-            this.tableLayoutPanel67.TabIndex = 47;
-            // 
-            // label65
-            // 
-            this.label65.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(149, 8);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(74, 13);
-            this.label65.TabIndex = 0;
-            this.label65.Text = "ชื่อโรงพยาบาล";
             // 
             // chk_nothave_sso
             // 
             this.chk_nothave_sso.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.chk_nothave_sso.AutoSize = true;
-            this.chk_nothave_sso.Location = new System.Drawing.Point(253, 79);
+            this.chk_nothave_sso.Location = new System.Drawing.Point(125, 6);
             this.chk_nothave_sso.Name = "chk_nothave_sso";
             this.chk_nothave_sso.Size = new System.Drawing.Size(65, 17);
-            this.chk_nothave_sso.TabIndex = 62;
+            this.chk_nothave_sso.TabIndex = 2;
             this.chk_nothave_sso.Text = "ไม่เคยมี";
             this.chk_nothave_sso.UseVisualStyleBackColor = true;
             this.chk_nothave_sso.CheckedChanged += new System.EventHandler(this.chk_nothave_sso_CheckedChanged);
             // 
-            // tableLayoutPanel71
-            // 
-            this.tableLayoutPanel71.ColumnCount = 2;
-            this.tableLayoutPanel71.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel71.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tableLayoutPanel71.Controls.Add(this.label69, 0, 0);
-            this.tableLayoutPanel71.Location = new System.Drawing.Point(3, 73);
-            this.tableLayoutPanel71.Name = "tableLayoutPanel71";
-            this.tableLayoutPanel71.RowCount = 1;
-            this.tableLayoutPanel71.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel71.Size = new System.Drawing.Size(244, 29);
-            this.tableLayoutPanel71.TabIndex = 59;
-            // 
-            // label69
-            // 
-            this.label69.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(103, 8);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(120, 13);
-            this.label69.TabIndex = 0;
-            this.label69.Text = "โปรดเลือกสถานพยาบาล";
-            // 
             // cbo_sso_hospital
             // 
             this.cbo_sso_hospital.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbo_sso_hospital.Enabled = false;
             this.cbo_sso_hospital.FormattingEnabled = true;
-            this.cbo_sso_hospital.Items.AddRange(new object[] {
-            "ชาย",
-            "หญิง",
-            "อื่นๆ"});
-            this.cbo_sso_hospital.Location = new System.Drawing.Point(253, 112);
+            this.cbo_sso_hospital.Location = new System.Drawing.Point(253, 77);
             this.cbo_sso_hospital.Name = "cbo_sso_hospital";
             this.cbo_sso_hospital.Size = new System.Drawing.Size(300, 21);
-            this.cbo_sso_hospital.TabIndex = 63;
+            this.cbo_sso_hospital.TabIndex = 4;
             // 
             // tab_doc
             // 
@@ -7021,7 +6985,7 @@ namespace BIG.Present
             this.tableLayoutPanel7.ColumnCount = 3;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61538F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38462F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 331F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 334F));
             this.tableLayoutPanel7.Controls.Add(this.btn_cancle, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.btn_save, 0, 0);
             this.tableLayoutPanel7.Location = new System.Drawing.Point(173, 577);
@@ -7036,9 +7000,9 @@ namespace BIG.Present
             this.btn_cancle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_cancle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cancle.Location = new System.Drawing.Point(132, 3);
+            this.btn_cancle.Location = new System.Drawing.Point(131, 3);
             this.btn_cancle.Name = "btn_cancle";
-            this.btn_cancle.Size = new System.Drawing.Size(131, 37);
+            this.btn_cancle.Size = new System.Drawing.Size(129, 37);
             this.btn_cancle.TabIndex = 1;
             this.btn_cancle.Text = "ยกเลิก";
             this.btn_cancle.UseVisualStyleBackColor = true;
@@ -7050,7 +7014,7 @@ namespace BIG.Present
             this.btn_save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_save.Location = new System.Drawing.Point(3, 3);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(123, 37);
+            this.btn_save.Size = new System.Drawing.Size(122, 37);
             this.btn_save.TabIndex = 0;
             this.btn_save.Text = "บันทึก";
             this.btn_save.UseVisualStyleBackColor = true;
@@ -7518,6 +7482,96 @@ namespace BIG.Present
             this.ribbonButton16.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton16.Image")));
             this.ribbonButton16.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton16.SmallImage")));
             // 
+            // cbo_sso_prov
+            // 
+            this.cbo_sso_prov.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbo_sso_prov.FormattingEnabled = true;
+            this.cbo_sso_prov.Location = new System.Drawing.Point(253, 42);
+            this.cbo_sso_prov.Name = "cbo_sso_prov";
+            this.cbo_sso_prov.Size = new System.Drawing.Size(300, 21);
+            this.cbo_sso_prov.TabIndex = 3;
+            this.cbo_sso_prov.SelectedIndexChanged += new System.EventHandler(this.cbo_sso_prov_SelectedIndexChanged);
+            // 
+            // tableLayoutPanel158
+            // 
+            this.tableLayoutPanel158.ColumnCount = 2;
+            this.tableLayoutPanel158.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel158.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel158.Controls.Add(this.label127, 0, 0);
+            this.tableLayoutPanel158.Location = new System.Drawing.Point(3, 38);
+            this.tableLayoutPanel158.Name = "tableLayoutPanel158";
+            this.tableLayoutPanel158.RowCount = 1;
+            this.tableLayoutPanel158.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel158.Size = new System.Drawing.Size(244, 29);
+            this.tableLayoutPanel158.TabIndex = 65;
+            // 
+            // label127
+            // 
+            this.label127.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label127.AutoSize = true;
+            this.label127.Location = new System.Drawing.Point(185, 8);
+            this.label127.Name = "label127";
+            this.label127.Size = new System.Drawing.Size(38, 13);
+            this.label127.TabIndex = 0;
+            this.label127.Text = "จังหวัด";
+            // 
+            // tableLayoutPanel159
+            // 
+            this.tableLayoutPanel159.ColumnCount = 2;
+            this.tableLayoutPanel159.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel159.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel159.Controls.Add(this.chk_have_sso, 0, 0);
+            this.tableLayoutPanel159.Controls.Add(this.chk_nothave_sso, 1, 0);
+            this.tableLayoutPanel159.Location = new System.Drawing.Point(253, 3);
+            this.tableLayoutPanel159.Name = "tableLayoutPanel159";
+            this.tableLayoutPanel159.RowCount = 1;
+            this.tableLayoutPanel159.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel159.Size = new System.Drawing.Size(244, 29);
+            this.tableLayoutPanel159.TabIndex = 66;
+            // 
+            // txt_sso_manual_hospital
+            // 
+            this.txt_sso_manual_hospital.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_sso_manual_hospital.Location = new System.Drawing.Point(253, 147);
+            this.txt_sso_manual_hospital.Name = "txt_sso_manual_hospital";
+            this.txt_sso_manual_hospital.Size = new System.Drawing.Size(300, 20);
+            this.txt_sso_manual_hospital.TabIndex = 5;
+            // 
+            // tableLayoutPanel67
+            // 
+            this.tableLayoutPanel67.ColumnCount = 2;
+            this.tableLayoutPanel67.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel67.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel67.Controls.Add(this.label65, 0, 0);
+            this.tableLayoutPanel67.Location = new System.Drawing.Point(3, 73);
+            this.tableLayoutPanel67.Name = "tableLayoutPanel67";
+            this.tableLayoutPanel67.RowCount = 1;
+            this.tableLayoutPanel67.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel67.Size = new System.Drawing.Size(244, 29);
+            this.tableLayoutPanel67.TabIndex = 67;
+            // 
+            // label65
+            // 
+            this.label65.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(103, 8);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(120, 13);
+            this.label65.TabIndex = 0;
+            this.label65.Text = "โปรดเลือกสถานพยาบาล";
+            // 
+            // chk_manual_hospital
+            // 
+            this.chk_manual_hospital.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.chk_manual_hospital.AutoSize = true;
+            this.chk_manual_hospital.Location = new System.Drawing.Point(253, 114);
+            this.chk_manual_hospital.Name = "chk_manual_hospital";
+            this.chk_manual_hospital.Size = new System.Drawing.Size(189, 17);
+            this.chk_manual_hospital.TabIndex = 68;
+            this.chk_manual_hospital.Text = "ไม่มีรายชื่อโรงพยาบาลในฐานข้อมูล";
+            this.chk_manual_hospital.UseVisualStyleBackColor = true;
+            this.chk_manual_hospital.CheckedChanged += new System.EventHandler(this.chk_manual_hospital_CheckedChanged);
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -7808,10 +7862,6 @@ namespace BIG.Present
             this.tableLayoutPanel66.PerformLayout();
             this.tableLayoutPanel68.ResumeLayout(false);
             this.tableLayoutPanel68.PerformLayout();
-            this.tableLayoutPanel67.ResumeLayout(false);
-            this.tableLayoutPanel67.PerformLayout();
-            this.tableLayoutPanel71.ResumeLayout(false);
-            this.tableLayoutPanel71.PerformLayout();
             this.tab_doc.ResumeLayout(false);
             this.tableLayoutPanel121.ResumeLayout(false);
             this.tableLayoutPanel122.ResumeLayout(false);
@@ -7906,6 +7956,12 @@ namespace BIG.Present
             ((System.ComponentModel.ISupportInitialize)(this.btn_ref_img)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_new_img)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel158.ResumeLayout(false);
+            this.tableLayoutPanel158.PerformLayout();
+            this.tableLayoutPanel159.ResumeLayout(false);
+            this.tableLayoutPanel159.PerformLayout();
+            this.tableLayoutPanel67.ResumeLayout(false);
+            this.tableLayoutPanel67.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -8240,13 +8296,8 @@ namespace BIG.Present
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel66;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel68;
         private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.TextBox txt_sso_hospital;
         private System.Windows.Forms.CheckBox chk_have_sso;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel67;
-        private System.Windows.Forms.Label label65;
         private System.Windows.Forms.CheckBox chk_nothave_sso;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel71;
-        private System.Windows.Forms.Label label69;
         private System.Windows.Forms.ComboBox cbo_sso_hospital;
         private System.Windows.Forms.TabPage tab_finger;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel93;
@@ -8492,5 +8543,13 @@ namespace BIG.Present
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel157;
         private System.Windows.Forms.Label label126;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel159;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel158;
+        private System.Windows.Forms.Label label127;
+        private System.Windows.Forms.ComboBox cbo_sso_prov;
+        private System.Windows.Forms.TextBox txt_sso_manual_hospital;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel67;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.CheckBox chk_manual_hospital;
     }
 }

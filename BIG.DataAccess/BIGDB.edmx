@@ -184,6 +184,17 @@
           <Property Name="GEO_ID" Type="int" Nullable="false" />
           <Property Name="GEO_NAME" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
+        <EntityType Name="Hospital">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="250" />
+          <Property Name="PROVINCE" Type="nvarchar" MaxLength="250" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="250" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+        </EntityType>
         <EntityType Name="Logon">
           <Key>
             <PropertyRef Name="ID" />
@@ -269,6 +280,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EMP_ID" Type="nvarchar" MaxLength="14" />
           <Property Name="HOSPITAL_NAME" Type="nvarchar" MaxLength="250" />
+          <Property Name="NOTINDATABASE" Type="bit" />
           <Property Name="CREATED_DATE" Type="datetime" />
         </EntityType>
         <EntityType Name="Title">
@@ -403,6 +415,7 @@
           <EntitySet Name="FingerScan" EntityType="Self.FingerScan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Geography" EntityType="Self.Geography" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hospital" EntityType="Self.Hospital" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Logon" EntityType="Self.Logon" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Marital" EntityType="Self.Marital" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OtherDocuments" EntityType="Self.OtherDocuments" Schema="dbo" store:Type="Tables" />
@@ -464,7 +477,6 @@
           <EntitySet Name="ReferenceDocuments" EntityType="BIG_DBModel.ReferenceDocument" />
           <EntitySet Name="ReferencePersons" EntityType="BIG_DBModel.ReferencePerson" />
           <EntitySet Name="Sites" EntityType="BIG_DBModel.Site" />
-          <EntitySet Name="SSOes" EntityType="BIG_DBModel.SSO" />
           <EntitySet Name="Trainings" EntityType="BIG_DBModel.Training" />
           <EntitySet Name="WorkExperiences" EntityType="BIG_DBModel.WorkExperience" />
           <EntitySet Name="Zipcodes" EntityType="BIG_DBModel.Zipcode" />
@@ -496,6 +508,8 @@
             <End Role="AddressType" EntitySet="AddressTypes" />
             <End Role="Address" EntitySet="Addresses" />
           </AssociationSet>
+          <EntitySet Name="Hospitals" EntityType="BIG_DBModel.Hospital" />
+          <EntitySet Name="SSOes" EntityType="BIG_DBModel.SSO" />
           </EntityContainer>
         <EntityType Name="Amphur">
           <Key>
@@ -688,15 +702,6 @@
           <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="DESCRIPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="SSO">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EMP_ID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
-          <Property Name="HOSPITAL_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Training">
           <Key>
@@ -893,6 +898,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Hospital">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PROVINCE" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="SSO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_ID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="HOSPITAL_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NOTINDATABASE" Type="Boolean" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1106,16 +1132,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SSOes">
-            <EntityTypeMapping TypeName="BIG_DBModel.SSO">
-              <MappingFragment StoreEntitySet="SSO">
-                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-                <ScalarProperty Name="HOSPITAL_NAME" ColumnName="HOSPITAL_NAME" />
-                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Trainings">
             <EntityTypeMapping TypeName="BIG_DBModel.Training">
               <MappingFragment StoreEntitySet="Training">
@@ -1236,6 +1252,29 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Hospitals">
+            <EntityTypeMapping TypeName="BIG_DBModel.Hospital">
+              <MappingFragment StoreEntitySet="Hospital">
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="PROVINCE" ColumnName="PROVINCE" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SSOes">
+            <EntityTypeMapping TypeName="BIG_DBModel.SSO">
+              <MappingFragment StoreEntitySet="SSO">
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="NOTINDATABASE" ColumnName="NOTINDATABASE" />
+                <ScalarProperty Name="HOSPITAL_NAME" ColumnName="HOSPITAL_NAME" />
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1277,7 +1316,6 @@
         <EntityTypeShape EntityType="BIG_DBModel.ReferenceDocument" Width="1.5" PointX="4.75" PointY="12.75" />
         <EntityTypeShape EntityType="BIG_DBModel.ReferencePerson" Width="1.5" PointX="9.75" PointY="12.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Site" Width="1.5" PointX="11.75" PointY="12.75" />
-        <EntityTypeShape EntityType="BIG_DBModel.SSO" Width="1.5" PointX="13.75" PointY="3.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Training" Width="1.5" PointX="13.75" PointY="6.75" />
         <EntityTypeShape EntityType="BIG_DBModel.WorkExperience" Width="1.5" PointX="6.75" PointY="13.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Zipcode" Width="1.5" PointX="13.75" PointY="10.75" />
@@ -1291,6 +1329,8 @@
         <EntityTypeShape EntityType="BIG_DBModel.Address" Width="1.5" PointX="5.625" PointY="1" />
         <EntityTypeShape EntityType="BIG_DBModel.AddressType" Width="1.5" PointX="3.375" PointY="1.875" />
         <AssociationConnector Association="BIG_DBModel.FK_Address_AddressType" />
+        <EntityTypeShape EntityType="BIG_DBModel.Hospital" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BIG_DBModel.SSO" Width="1.5" PointX="0.75" PointY="4.75" />
         </Diagram>
     </Diagrams>
   </Designer>
