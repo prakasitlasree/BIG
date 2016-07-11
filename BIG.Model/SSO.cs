@@ -17,6 +17,7 @@ namespace BIG.Model
         public int ID { get; set; }
         public string EMP_ID { get; set; }
         public string HOSPITAL_NAME { get; set; }
+        public string PROVINCE_NAME { get; set; }
         public Nullable<bool> NOTINDATABASE { get; set; }
         public Nullable<System.DateTime> CREATED_DATE { get; set; }
     }

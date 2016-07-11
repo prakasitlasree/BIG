@@ -98,9 +98,7 @@ namespace BIG.Present
 
         private void ReportEmployee_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Close();
-            var form = new MainForm();
-            form.Show();
+             
         }
 
         private void rb_exit_CanvasChanged(object sender, EventArgs e)

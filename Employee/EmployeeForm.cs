@@ -21,7 +21,7 @@ namespace BIG.Present
         private ThaiIDCard CardID = new ThaiIDCard();
         Nffv _engine;
         public EmployeeForm()
-        { 
+        {
             InitializeComponent();
             initialCombobox();
 
@@ -30,12 +30,22 @@ namespace BIG.Present
 
         public EmployeeForm(Nffv engine)
         {
-            
-            _engine = engine; 
-            InitializeComponent(); 
+
+            _engine = engine;
+            InitializeComponent();
             initialCombobox();
 
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+        }
+        public EmployeeForm(Nffv engine, string pid)
+        {
+
+            _engine = engine;
+            InitializeComponent();
+            initialCombobox();
+
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            SearchPID(pid);
         }
 
         #region ===Properties===
@@ -638,18 +648,26 @@ namespace BIG.Present
             {
                 if (txt_empid.Text != "" && (chk_have_sso.Checked == true || chk_nothave_sso.Checked == true))
                 {
-                    var sso = new BIG.Model.SSO();
+                    var sso = new SSO();
                     sso.EMP_ID = txt_empid.Text;
                     if (chk_manual_hospital.Checked)
                     {
                         sso.NOTINDATABASE = true;
                         sso.HOSPITAL_NAME = txt_sso_manual_hospital.Text;
+
                     }
                     else
                     {
-                        if (cbo_sso_hospital.SelectedValue != null)
+                        if (cbo_sso_hospital.SelectedValue != null && cbo_sso_prov.SelectedValue != null)
                         {
+
                             sso.HOSPITAL_NAME = cbo_sso_hospital.SelectedValue.ToString();
+                            sso.PROVINCE_NAME = cbo_sso_prov.SelectedValue.ToString();
+                            sso.NOTINDATABASE = false;
+                        }
+                        else
+                        {
+                            sso.HOSPITAL_NAME = cbo_sso_hospital.SelectedText;
                             sso.NOTINDATABASE = false;
                         }
                     }
@@ -1014,6 +1032,33 @@ namespace BIG.Present
             return ret;
         }
 
+        public void SearchPID(string id_card)
+        {
+            this.UseWaitCursor = true;
+
+            try
+            { 
+                var empObj = EmployeeServices.GetEmployeeByIDCard(id_card);
+
+                //มีข้อมูลพนักงานอยู่ในระบบ
+                if (empObj != null)
+                {
+                    MessageBox.Show("      พบข้อมูลอยู่ในระบบ" + "\r\n\n" + "     รหัสบัตรประชาชน => " + empObj.ID_CARD + "\n\n" + "     ชื่อ-สกุล" + empObj.FIRSTNAME_TH + " " + empObj.LASTNAME_TH);
+
+                    SetObjectToControl(empObj);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                this.UseWaitCursor = false;
+            }
+        }
+
         public void LoadPID()
         {
             this.UseWaitCursor = true;
@@ -1031,7 +1076,7 @@ namespace BIG.Present
                     {
                         MessageBox.Show("      พบข้อมูลอยู่ในระบบ" + "\r\n\n" + "     รหัสบัตรประชาชน => " + idcard.Citizenid + "\n\n" + "     ชื่อ-สกุล" + empObj.FIRSTNAME_TH + " " + empObj.LASTNAME_TH);
                         if (idcard.PhotoRaw != null)
-                        { 
+                        {
                             //add to picture box 
                             pic_emp.Image = GetImage(idcard.PhotoRaw, 150, 187);
                         }
@@ -1169,7 +1214,7 @@ namespace BIG.Present
                     c_txt_no.Text = current.NAME;
                     c_txt_soi.Text = "";
                     c_txt_tumbol.Text = current.DISTRICT;
-
+                    c_txt_postcode.Text = current.ZIPCODE;
                     int c_prv_index = c_cbo_prov.FindString(GetProvinceNameByID(Convert.ToInt16(current.PROVINCE_ID)));
                     c_cbo_prov.SelectedIndex = c_prv_index;
 
@@ -1185,7 +1230,7 @@ namespace BIG.Present
                     p_txt_no.Text = permanent.NAME;
                     p_txt_soi.Text = "";
                     p_txt_tumbol.Text = permanent.DISTRICT;
-
+                    p_txt_postcode.Text = permanent.ZIPCODE;
                     int p_prv_index = p_cbo_prov.FindString(GetProvinceNameByID(Convert.ToInt16(permanent.PROVINCE_ID)));
                     p_cbo_prov.SelectedIndex = p_prv_index;
 
@@ -1387,10 +1432,25 @@ namespace BIG.Present
                 var sso = SSOServices.GetByEmployeeID(empObj.EMP_ID);
                 if (sso != null)
                 {
+                    if (cbo_sso_prov.Items.Count == 0 || cbo_sso_prov.DataSource == null)
+                    {
+                        InitialSSOProvince();
+                    }
                     foreach (var item in sso)
                     {
-                        chk_have_sso.Checked = true;
-
+                        if (item.NOTINDATABASE == true)
+                        {
+                            chk_nothave_sso.Checked = true;
+                        }
+                        else
+                        {
+                            chk_nothave_sso.Checked = false;
+                            chk_have_sso.Checked = true;
+                            int idx1 = cbo_sso_prov.FindString(item.PROVINCE_NAME);
+                            cbo_sso_prov.SelectedIndex = idx1;
+                            int idx2 = cbo_sso_hospital.FindString(item.HOSPITAL_NAME);
+                            cbo_sso_hospital.SelectedIndex = idx2;
+                        }
                     }
                 }
             }
@@ -1711,9 +1771,10 @@ namespace BIG.Present
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var from = new MainForm();
-            this.Hide();
+            var from = new PersonalForm();
+            Close();
             from.Show();
+            
         }
 
         private void ribbon_tab_load_pid_ActiveChanged(object sender, EventArgs e)
@@ -2328,56 +2389,56 @@ namespace BIG.Present
 
         private void ribbonButton21_CanvasChanged(object sender, EventArgs e)
         {
-            this.Hide();
+            Close();
             var pform = new PersonalForm();
             pform.Show();
         }
 
         private void ribbonButton22_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Close();
             var pform = new PersonalForm();
             pform.Show();
         }
 
         private void ribbonButton23_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Close();
             var pform = new PersonalForm();
             pform.Show();
         }
 
         private void ribbonButton24_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Close();
             var pform = new PersonalForm();
             pform.Show();
         }
 
         private void ribbonButton17_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Close();
             var pform = new ReportEmployee();
             pform.Show();
         }
 
         private void ribbonButton18_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Close();
             var pform = new ReportEmployee();
             pform.Show();
         }
 
         private void ribbonButton19_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Close();
             var pform = new ReportEmployee();
             pform.Show();
         }
 
         private void ribbonButton20_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Close();
             var pform = new ReportEmployee();
             pform.Show();
         }
@@ -2430,7 +2491,7 @@ namespace BIG.Present
 
         private void StartScan(PictureBox pic)
         {
-             _engine = new Neurotec.Biometrics.Nffv("FingerprintDB.CSharpSample.dat", "", "UareU");
+            _engine = new Neurotec.Biometrics.Nffv("FingerprintDB.CSharpSample.dat", "", "UareU");
 
             try
             {
@@ -2476,7 +2537,7 @@ namespace BIG.Present
                 _engine.Users.Clear();
 
             }
-          
+
         }
         internal class EnrollmentResult
         {
@@ -2510,6 +2571,7 @@ namespace BIG.Present
         {
             StartScan(l_finger_3);
         }
+
         private void btn_L_4_Click(object sender, EventArgs e)
         {
             StartScan(l_finger_4);
@@ -2555,7 +2617,12 @@ namespace BIG.Present
         ///  Left Hand
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="e"></param> 
+        private void l_finger_1_Click(object sender, EventArgs e)
+        {
+            StartScan(l_finger_1);
+        }
+
         private void l_finger_2_Click(object sender, EventArgs e)
         {
             StartScan(l_finger_2);
@@ -2563,86 +2630,17 @@ namespace BIG.Present
 
         private void l_finger_3_Click(object sender, EventArgs e)
         {
-            try
-            {
-                RunWorkerCompletedEventArgs taskResult = BusyForm.RunLongTask("Waiting for fingerprint ...", new DoWorkEventHandler(doEnroll),
-                    false, null, new EventHandler(CancelScanningHandler));
-                EnrollmentResult enrollmentResult = (EnrollmentResult)taskResult.Result;
-                if (enrollmentResult.engineStatus == NffvStatus.TemplateCreated)
-                {
-                    NffvUser engineUser = enrollmentResult.engineUser;
-
-                    var bm = engineUser.GetBitmap();
-                    l_finger_3.Image = bm;
-                    FingerScans.LEFTFINGER3 = ConvertImageToByteArray(bm, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-                }
-                else
-                {
-                    NffvStatus engineStatus = enrollmentResult.engineStatus;
-                    MessageBox.Show(string.Format("Enrollment was not finished. Reason: {0}", engineStatus));
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            StartScan(l_finger_3);
         }
 
         private void l_finger_4_Click(object sender, EventArgs e)
         {
-            try
-            {
-                RunWorkerCompletedEventArgs taskResult = BusyForm.RunLongTask("Waiting for fingerprint ...", new DoWorkEventHandler(doEnroll),
-                    false, null, new EventHandler(CancelScanningHandler));
-                EnrollmentResult enrollmentResult = (EnrollmentResult)taskResult.Result;
-                if (enrollmentResult.engineStatus == NffvStatus.TemplateCreated)
-                {
-                    NffvUser engineUser = enrollmentResult.engineUser;
-
-                    var bm = engineUser.GetBitmap();
-                    l_finger_4.Image = bm;
-                    FingerScans.LEFTFINGER4 = ConvertImageToByteArray(bm, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-                }
-                else
-                {
-                    NffvStatus engineStatus = enrollmentResult.engineStatus;
-                    MessageBox.Show(string.Format("Enrollment was not finished. Reason: {0}", engineStatus));
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            StartScan(l_finger_4);
         }
 
         private void l_finger_5_Click(object sender, EventArgs e)
         {
-            try
-            {
-                RunWorkerCompletedEventArgs taskResult = BusyForm.RunLongTask("Waiting for fingerprint ...", new DoWorkEventHandler(doEnroll),
-                    false, null, new EventHandler(CancelScanningHandler));
-                EnrollmentResult enrollmentResult = (EnrollmentResult)taskResult.Result;
-                if (enrollmentResult.engineStatus == NffvStatus.TemplateCreated)
-                {
-                    NffvUser engineUser = enrollmentResult.engineUser;
-
-                    var bm = engineUser.GetBitmap();
-                    l_finger_5.Image = bm;
-                    FingerScans.LEFTFINGER5 = ConvertImageToByteArray(bm, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-                }
-                else
-                {
-                    NffvStatus engineStatus = enrollmentResult.engineStatus;
-                    MessageBox.Show(string.Format("Enrollment was not finished. Reason: {0}", engineStatus));
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            StartScan(l_finger_5);
         }
 
         /// <summary>
@@ -2652,142 +2650,27 @@ namespace BIG.Present
         /// <param name="e"></param>
         private void R_finger_1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                RunWorkerCompletedEventArgs taskResult = BusyForm.RunLongTask("Waiting for fingerprint ...", new DoWorkEventHandler(doEnroll),
-                    false, null, new EventHandler(CancelScanningHandler));
-                EnrollmentResult enrollmentResult = (EnrollmentResult)taskResult.Result;
-                if (enrollmentResult.engineStatus == NffvStatus.TemplateCreated)
-                {
-                    NffvUser engineUser = enrollmentResult.engineUser;
-
-                    var bm = engineUser.GetBitmap();
-                    R_finger_1.Image = bm;
-                    FingerScans.RIGHTFINGER1 = ConvertImageToByteArray(bm, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-                }
-                else
-                {
-                    NffvStatus engineStatus = enrollmentResult.engineStatus;
-                    MessageBox.Show(string.Format("Enrollment was not finished. Reason: {0}", engineStatus));
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            StartScan(R_finger_1);
         }
 
         private void R_finger_2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                RunWorkerCompletedEventArgs taskResult = BusyForm.RunLongTask("Waiting for fingerprint ...", new DoWorkEventHandler(doEnroll),
-                    false, null, new EventHandler(CancelScanningHandler));
-                EnrollmentResult enrollmentResult = (EnrollmentResult)taskResult.Result;
-                if (enrollmentResult.engineStatus == NffvStatus.TemplateCreated)
-                {
-                    NffvUser engineUser = enrollmentResult.engineUser;
-
-                    var bm = engineUser.GetBitmap();
-                    R_finger_2.Image = bm;
-                    FingerScans.RIGHTFINGER2 = ConvertImageToByteArray(bm, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-                }
-                else
-                {
-                    NffvStatus engineStatus = enrollmentResult.engineStatus;
-                    MessageBox.Show(string.Format("Enrollment was not finished. Reason: {0}", engineStatus));
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            StartScan(R_finger_2);
         }
 
         private void R_finger_3_Click(object sender, EventArgs e)
         {
-            try
-            {
-                RunWorkerCompletedEventArgs taskResult = BusyForm.RunLongTask("Waiting for fingerprint ...", new DoWorkEventHandler(doEnroll),
-                    false, null, new EventHandler(CancelScanningHandler));
-                EnrollmentResult enrollmentResult = (EnrollmentResult)taskResult.Result;
-                if (enrollmentResult.engineStatus == NffvStatus.TemplateCreated)
-                {
-                    NffvUser engineUser = enrollmentResult.engineUser;
-
-                    var bm = engineUser.GetBitmap();
-                    R_finger_3.Image = bm;
-                    FingerScans.RIGHTFINGER3 = ConvertImageToByteArray(bm, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-                }
-                else
-                {
-                    NffvStatus engineStatus = enrollmentResult.engineStatus;
-                    MessageBox.Show(string.Format("Enrollment was not finished. Reason: {0}", engineStatus));
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            StartScan(R_finger_3);
         }
 
         private void R_finger_4_Click(object sender, EventArgs e)
         {
-            try
-            {
-                RunWorkerCompletedEventArgs taskResult = BusyForm.RunLongTask("Waiting for fingerprint ...", new DoWorkEventHandler(doEnroll),
-                    false, null, new EventHandler(CancelScanningHandler));
-                EnrollmentResult enrollmentResult = (EnrollmentResult)taskResult.Result;
-                if (enrollmentResult.engineStatus == NffvStatus.TemplateCreated)
-                {
-                    NffvUser engineUser = enrollmentResult.engineUser;
-
-                    var bm = engineUser.GetBitmap();
-                    R_finger_4.Image = bm;
-                    FingerScans.RIGHTFINGER4 = ConvertImageToByteArray(bm, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-                }
-                else
-                {
-                    NffvStatus engineStatus = enrollmentResult.engineStatus;
-                    MessageBox.Show(string.Format("Enrollment was not finished. Reason: {0}", engineStatus));
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            StartScan(R_finger_4);
         }
 
         private void R_finger_5_Click(object sender, EventArgs e)
         {
-            try
-            {
-                RunWorkerCompletedEventArgs taskResult = BusyForm.RunLongTask("Waiting for fingerprint ...", new DoWorkEventHandler(doEnroll),
-                    false, null, new EventHandler(CancelScanningHandler));
-                EnrollmentResult enrollmentResult = (EnrollmentResult)taskResult.Result;
-                if (enrollmentResult.engineStatus == NffvStatus.TemplateCreated)
-                {
-                    NffvUser engineUser = enrollmentResult.engineUser;
-
-                    var bm = engineUser.GetBitmap();
-                    R_finger_5.Image = bm;
-                    FingerScans.RIGHTFINGER5 = ConvertImageToByteArray(bm, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-                }
-                else
-                {
-                    NffvStatus engineStatus = enrollmentResult.engineStatus;
-                    MessageBox.Show(string.Format("Enrollment was not finished. Reason: {0}", engineStatus));
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            StartScan(R_finger_5);
         }
         #endregion
 
@@ -2802,17 +2685,15 @@ namespace BIG.Present
         }
 
 
-
-
-
-
-
         #endregion
 
-
-
-
-
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            var from = new PersonalForm();
+             
+            from.Show();
+            Close();
+        }
 
 
     }
