@@ -48,6 +48,19 @@ namespace BIG.Present
             SearchPID(pid);
         }
 
+        public EmployeeForm(BIG.Model.Employee emp)
+        {
+            this.employee = emp;
+        }
+        public EmployeeForm(string emp_id)
+        {
+            
+            InitializeComponent();
+            initialCombobox();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            SearchEmpID(emp_id);
+        }
+
         #region ===Properties===
 
         private byte[] _photo;
@@ -1059,6 +1072,31 @@ namespace BIG.Present
             }
         }
 
+        public void SearchEmpID(string empid)
+        {
+            this.UseWaitCursor = true;
+
+            try
+            {
+                var empObj = EmployeeServices.GetEmployeeByEmpID(empid);
+
+                //มีข้อมูลพนักงานอยู่ในระบบ
+                if (empObj != null)
+                { 
+                    SetObjectToControl(empObj);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                this.UseWaitCursor = false;
+            }
+        }
+
         public void LoadPID()
         {
             this.UseWaitCursor = true;
@@ -1701,11 +1739,7 @@ namespace BIG.Present
 
         #region ===Events===
 
-        public EmployeeForm(BIG.Model.Employee emp)
-        {
-            this.employee = emp;
-        }
-
+        
         public BIG.Model.Employee employee { get; set; }
 
         private void EmployeeForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -2606,12 +2640,7 @@ namespace BIG.Present
         {
             StartScan(R_finger_5);
         }
-
-
-
-
-
-
+         
         #region picture click
         /// <summary>
         ///  Left Hand

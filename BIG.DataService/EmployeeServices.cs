@@ -45,6 +45,23 @@ namespace BIG.DataService
             }
         }
 
+        public static Employee GetEmployeeByEmpID(string empid)
+        {
+            var result = new Employee();
+            try
+            {
+                using (var ctx = new BIG_DBEntities())
+                {
+                    result = ctx.Employees.Where(x => x.EMP_ID == empid).FirstOrDefault();
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public static bool Add(Employee employee)
         { 
             try

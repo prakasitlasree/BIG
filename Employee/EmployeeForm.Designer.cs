@@ -31,15 +31,15 @@ namespace BIG.Present
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("สัญญาค้ำประกัน");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("สัญญาจ้างงาน");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("รางวัล/ผลงานดีเด่น");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("บันทึกการลงโทษ");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("พนักงานทดลองงาน");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("การปรับเงินเดือน");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("กองทุนสำรอง");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("ข้อมูลด้านสุขภาพ");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("การพ้นสภาพพนักงาน");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("สัญญาค้ำประกัน");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("สัญญาจ้างงาน");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("รางวัล/ผลงานดีเด่น");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("บันทึกการลงโทษ");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("พนักงานทดลองงาน");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("การปรับเงินเดือน");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("กองทุนสำรอง");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("ข้อมูลด้านสุขภาพ");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("การพ้นสภาพพนักงาน");
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.advancedFlowLayoutPanel1 = new MakarovDev.ExpandCollapsePanel.AdvancedFlowLayoutPanel();
@@ -1141,40 +1141,40 @@ namespace BIG.Present
             this.treeView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeView3.Location = new System.Drawing.Point(0, 3);
             this.treeView3.Name = "treeView3";
-            treeNode10.BackColor = System.Drawing.Color.White;
-            treeNode10.Name = "Node0";
-            treeNode10.Text = "สัญญาค้ำประกัน";
-            treeNode11.Name = "Node1";
-            treeNode11.Text = "สัญญาจ้างงาน";
-            treeNode12.BackColor = System.Drawing.Color.White;
-            treeNode12.Name = "Node2";
-            treeNode12.Text = "รางวัล/ผลงานดีเด่น";
-            treeNode13.Name = "Node3";
-            treeNode13.Text = "บันทึกการลงโทษ";
-            treeNode14.BackColor = System.Drawing.Color.White;
-            treeNode14.Name = "Node4";
-            treeNode14.Text = "พนักงานทดลองงาน";
-            treeNode15.Name = "Node0";
-            treeNode15.Text = "การปรับเงินเดือน";
-            treeNode16.BackColor = System.Drawing.Color.White;
-            treeNode16.Name = "Node1";
-            treeNode16.Text = "กองทุนสำรอง";
-            treeNode17.Name = "Node2";
-            treeNode17.Text = "ข้อมูลด้านสุขภาพ";
-            treeNode18.BackColor = System.Drawing.Color.White;
-            treeNode18.ImageKey = "(default)";
-            treeNode18.Name = "Node3";
-            treeNode18.Text = "การพ้นสภาพพนักงาน";
+            treeNode1.BackColor = System.Drawing.Color.White;
+            treeNode1.Name = "Node0";
+            treeNode1.Text = "สัญญาค้ำประกัน";
+            treeNode2.Name = "Node1";
+            treeNode2.Text = "สัญญาจ้างงาน";
+            treeNode3.BackColor = System.Drawing.Color.White;
+            treeNode3.Name = "Node2";
+            treeNode3.Text = "รางวัล/ผลงานดีเด่น";
+            treeNode4.Name = "Node3";
+            treeNode4.Text = "บันทึกการลงโทษ";
+            treeNode5.BackColor = System.Drawing.Color.White;
+            treeNode5.Name = "Node4";
+            treeNode5.Text = "พนักงานทดลองงาน";
+            treeNode6.Name = "Node0";
+            treeNode6.Text = "การปรับเงินเดือน";
+            treeNode7.BackColor = System.Drawing.Color.White;
+            treeNode7.Name = "Node1";
+            treeNode7.Text = "กองทุนสำรอง";
+            treeNode8.Name = "Node2";
+            treeNode8.Text = "ข้อมูลด้านสุขภาพ";
+            treeNode9.BackColor = System.Drawing.Color.White;
+            treeNode9.ImageKey = "(default)";
+            treeNode9.Name = "Node3";
+            treeNode9.Text = "การพ้นสภาพพนักงาน";
             this.treeView3.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode10,
-            treeNode11,
-            treeNode12,
-            treeNode13,
-            treeNode14,
-            treeNode15,
-            treeNode16,
-            treeNode17,
-            treeNode18});
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4,
+            treeNode5,
+            treeNode6,
+            treeNode7,
+            treeNode8,
+            treeNode9});
             this.treeView3.Size = new System.Drawing.Size(165, 365);
             this.treeView3.TabIndex = 3;
             // 
@@ -2243,8 +2243,8 @@ namespace BIG.Present
             // 
             this.tableLayoutPanel73.ColumnCount = 3;
             this.tableLayoutPanel73.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel73.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel73.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 182F));
+            this.tableLayoutPanel73.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel73.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel73.Controls.Add(this.btn_add_site, 1, 0);
             this.tableLayoutPanel73.Controls.Add(this.cbo_site, 0, 0);
             this.tableLayoutPanel73.Controls.Add(this.btn_refresh_site, 2, 0);
@@ -2283,7 +2283,7 @@ namespace BIG.Present
             // 
             this.btn_refresh_site.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_refresh_site.Image = global::BIG.Present.Properties.Resources.Refresh;
-            this.btn_refresh_site.Location = new System.Drawing.Point(235, 3);
+            this.btn_refresh_site.Location = new System.Drawing.Point(233, 3);
             this.btn_refresh_site.Name = "btn_refresh_site";
             this.btn_refresh_site.Size = new System.Drawing.Size(24, 23);
             this.btn_refresh_site.TabIndex = 27;
@@ -7097,7 +7097,7 @@ namespace BIG.Present
             this.tableLayoutPanel7.ColumnCount = 3;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61538F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38462F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 336F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 337F));
             this.tableLayoutPanel7.Controls.Add(this.btn_cancle, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.btn_save, 0, 0);
             this.tableLayoutPanel7.Location = new System.Drawing.Point(173, 577);
@@ -7112,7 +7112,7 @@ namespace BIG.Present
             this.btn_cancle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_cancle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cancle.Location = new System.Drawing.Point(130, 3);
+            this.btn_cancle.Location = new System.Drawing.Point(129, 3);
             this.btn_cancle.Name = "btn_cancle";
             this.btn_cancle.Size = new System.Drawing.Size(128, 37);
             this.btn_cancle.TabIndex = 1;
@@ -7126,7 +7126,7 @@ namespace BIG.Present
             this.btn_save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_save.Location = new System.Drawing.Point(3, 3);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(121, 37);
+            this.btn_save.Size = new System.Drawing.Size(120, 37);
             this.btn_save.TabIndex = 0;
             this.btn_save.Text = "บันทึก";
             this.btn_save.UseVisualStyleBackColor = true;

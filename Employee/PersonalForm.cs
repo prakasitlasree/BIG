@@ -20,47 +20,111 @@ namespace BIG.Present
             InitializeComponent();
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
+        private const int BUTTON_VIEW_COLUMN_INDEX = 8;
 
         private void PersonalForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void btn_search_Click(object sender, EventArgs e)
+        private void SetColumnHeader()
         {
-            
-            var lst = EmployeeServices.GetAll();
-             
+            foreach (DataGridViewColumn col in dataGridView1.Columns)
+            {
+                if (col.Index == 0)
+                {
+                    col.Width = 100;
+                    col.HeaderText = "รหัสพนักงาน";
+                }
+                if (col.Index == 1)
+                {
+                    col.Width = 150;
+                    col.HeaderText = "หมายเลขบัตรประชาชน";
+                }
+                if (col.Index == 2)
+                {
+                    col.Width = 170;
+                    col.HeaderText = "ชื่อ(TH)";
+                }
+                if (col.Index == 3)
+                {
+                    col.Width = 170;
+                    col.HeaderText = "นามสกุล(TH)";
+                }
+                if (col.Index == 4)
+                {
+                    col.Width = 150;
+                    col.HeaderText = "ชื่อ(EN)";
+                }
+                if (col.Index == 5)
+                {
+                    col.Width = 150;
+                    col.HeaderText = "นามสกุล(EN)";
+                } 
+                if (col.Index == 6)
+                {
+                    col.Width = 120;
+                    col.HeaderText = "หมายเลขโทรศัพท์";
+                }
+                if (col.Index == 7)
+                {
+                    col.HeaderText = "กรุ๊ปเลือด";
+                } 
+            }
         }
+        private void BindDataGrid(TextBox tx)
+        {
+            var lst = EmployeeServices.GetAll(); 
+            var ds = lst.Where(x => x.FIRSTNAME_TH.Contains(txt_name_sname.Text) || x.FIRSTNAME_EN.Contains(txt_name_sname.Text) || x.LASTNAME_TH.Contains(txt_name_sname.Text) || x.LASTNAME_EN.Contains(txt_name_sname.Text)).Select(x => new
+            { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.FIRSTNAME_EN, x.LASTNAME_EN, x.MOBILE, x.BLOODGROUP }).ToList();
+            var searchcol = new DataGridViewButtonColumn();
+            searchcol.Name = "View";
+            searchcol.Text = "View";
+            var printcol = new DataGridViewButtonColumn();
+            printcol.Name = "Print";
+            printcol.Text = "Print"; 
+            dataGridView1.Columns.Clear();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = ds; 
+            dataGridView1.Refresh();
+            if (dataGridView1.Columns["Search"] == null)
+            {
+                dataGridView1.Columns.Insert(BUTTON_VIEW_COLUMN_INDEX, searchcol);
+            }
+            if (dataGridView1.Columns["Print"] == null)
+            {
+                dataGridView1.Columns.Insert(BUTTON_VIEW_COLUMN_INDEX + 1, printcol);
+            }
 
+            SetColumnHeader();
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                DataGridViewCell cell = row.Cells[BUTTON_VIEW_COLUMN_INDEX];//Column Index
+                cell.Value = "View";
+                
+            }
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                DataGridViewCell cell = row.Cells[BUTTON_VIEW_COLUMN_INDEX + 1];//Column Index
+                cell.Value = "Print";
+            }
+        }
+       
         private void btn_search_Click_1(object sender, EventArgs e)
         {
-            var lst = EmployeeServices.GetAll();
             if (txt_name_sname.Text != "")
-            {
-
-                var ds = lst.Where(x => x.EMP_ID.Contains(txt_name_sname.Text)).Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.FIRSTNAME_EN, x.LASTNAME_EN, x.NATIONALITY, x.RELEGION, x.MOBILE, x.BLOODGROUP }).ToList();
-
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = ds;
+            {  
+                BindDataGrid(txt_name_sname);
             }
             else if (txt_pid.Text != "")
             {
-                var ds = lst.Where(x => x.ID_CARD.Contains(txt_name_sname.Text)).Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.FIRSTNAME_EN, x.LASTNAME_EN, x.NATIONALITY, x.RELEGION, x.MOBILE, x.BLOODGROUP }).ToList();
-
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = ds;
+                BindDataGrid(txt_pid);
             }
             else
             {
-                var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.FIRSTNAME_EN, x.LASTNAME_EN, x.NATIONALITY, x.RELEGION, x.MOBILE, x.BLOODGROUP }).ToList();
-
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = ds;
-
+                BindDataGrid(txt_site_location);
             }
-          
-
         }
 
         private void btn_load_pid_Click(object sender, EventArgs e)
@@ -73,7 +137,7 @@ namespace BIG.Present
 
         private void left_menu1_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void ribbonOrbMenuItem2_Click(object sender, EventArgs e)
@@ -85,13 +149,13 @@ namespace BIG.Present
 
         private void rb_new_emp_Click(object sender, EventArgs e)
         {
-             
+
         }
 
         private void rb_load_emp_Click(object sender, EventArgs e)
         {
-             
-           
+
+
         }
 
         private void rb_home_Click(object sender, EventArgs e)
@@ -103,12 +167,12 @@ namespace BIG.Present
 
         private void rb_load_pid_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void rb_new_Click(object sender, EventArgs e)
-        { 
-             
+        {
+
             Neurotec.Biometrics.Nffv engine = null;
             try
             {
@@ -125,9 +189,9 @@ namespace BIG.Present
                     return;
                 }
                 //Application.Run(new MainForm(engine, chooseScannerForm.UserDatabase)); 
-                
-                var personal = new EmployeeForm(engine);
-                personal.Show();
+
+                var emp = new EmployeeForm(engine);
+                emp.Show();
                 this.Hide();
             }
             catch (Exception ex)
@@ -142,13 +206,13 @@ namespace BIG.Present
                 {
                     engine.Dispose();
                 }
-            } 
+            }
         }
         private void btn_load_Click(object sender, EventArgs e)
         {
             Neurotec.Biometrics.Nffv engine = null;
             try
-            { 
+            {
                 try
                 {
                     engine = new Neurotec.Biometrics.Nffv("FingerprintDB.CSharpSample.dat", "", "UareU");
@@ -174,7 +238,7 @@ namespace BIG.Present
                     emp.Show();
                     this.Hide();
                 }
-              
+
             }
             catch (Exception ex)
             {
@@ -188,7 +252,7 @@ namespace BIG.Present
                 {
                     engine.Dispose();
                 }
-            } 
+            }
         }
 
         private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -212,7 +276,7 @@ namespace BIG.Present
 
         private void ribbonButton21_Click(object sender, EventArgs e)
         {
-            txt_area.Focus();
+         
         }
 
         private void ribbonButton14_Click(object sender, EventArgs e)
@@ -239,6 +303,28 @@ namespace BIG.Present
             Application.Exit();
         }
 
-        
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == BUTTON_VIEW_COLUMN_INDEX && e.RowIndex >= 0)
+            {
+                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    if (dataGridView1.Rows[e.RowIndex].Cells[0].Value != null)
+                    {
+                        this.UseWaitCursor = true;
+                        var emp_id = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        var form = new EmployeeForm(emp_id);
+                        form.Show();
+                        this.UseWaitCursor = false;
+                        Close();
+
+                    }
+                     
+                }
+                //Perform on button click code
+            }
+        }
+
+
     }
 }
