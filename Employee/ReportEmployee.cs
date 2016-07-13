@@ -52,6 +52,7 @@ namespace BIG.Present
 
                 this.ReferenceDocumentsTableAdapter.FillByEmpID(this.BIG_DBDataSet.ReferenceDocuments, txt_emp_id.Text);
 
+                this.CompanyInfoTableAdapter.Fill(this.BIG_DBDataSet.CompanyInfo);
 
                 this.reportViewer1.RefreshReport();
             }

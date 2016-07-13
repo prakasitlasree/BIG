@@ -12,9 +12,10 @@ using Neurotec.Biometrics;
 using System.IO;
 
 namespace BIG.Present
-{
+{ 
     public partial class PersonalForm : Form
     {
+        
         public PersonalForm()
         {
             InitializeComponent();
@@ -24,7 +25,19 @@ namespace BIG.Present
 
         private void PersonalForm_Load(object sender, EventArgs e)
         {
-
+            InitialSites();
+            if (txt_name_sname.Text != "")
+            {
+                BindDataGrid(txt_name_sname, false);
+            }
+            else if (txt_pid.Text != "")
+            {
+                BindDataGrid(txt_pid, false);
+            }
+            else
+            {
+                BindDataGrid(txt_name_sname, true);
+            }
         }
 
         private void SetColumnHeader()
@@ -60,7 +73,7 @@ namespace BIG.Present
                 {
                     col.Width = 150;
                     col.HeaderText = "นามสกุล(EN)";
-                } 
+                }
                 if (col.Index == 6)
                 {
                     col.Width = 120;
@@ -69,61 +82,102 @@ namespace BIG.Present
                 if (col.Index == 7)
                 {
                     col.HeaderText = "กรุ๊ปเลือด";
-                } 
+                }
             }
         }
-        private void BindDataGrid(TextBox tx)
+        private void BindDataGrid(TextBox tx,bool Site)
         {
-            var lst = EmployeeServices.GetAll(); 
-            var ds = lst.Where(x => x.FIRSTNAME_TH.Contains(txt_name_sname.Text) || x.FIRSTNAME_EN.Contains(txt_name_sname.Text) || x.LASTNAME_TH.Contains(txt_name_sname.Text) || x.LASTNAME_EN.Contains(txt_name_sname.Text)).Select(x => new
-            { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.FIRSTNAME_EN, x.LASTNAME_EN, x.MOBILE, x.BLOODGROUP }).ToList();
+            
+            
+            if (!Site)
+            {
+                var lst = EmployeeServices.GetAll();
+                var ds = lst.Where(x => x.FIRSTNAME_TH.Contains(txt_name_sname.Text) || x.FIRSTNAME_EN.Contains(txt_name_sname.Text) || x.LASTNAME_TH.Contains(txt_name_sname.Text) || x.LASTNAME_EN.Contains(txt_name_sname.Text)).Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.FIRSTNAME_EN, x.LASTNAME_EN, x.MOBILE, x.BLOODGROUP }).ToList();
+                dataGridView1.Columns.Clear();
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = ds;
+                dataGridView1.Refresh();
+            }
+            else
+            {
+                if (cbo_site.SelectedIndex != 0)
+                {
+                    var lst = EmployeeServices.GetBySite(cbo_site.SelectedItem.ToString());
+                    var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.FIRSTNAME_EN, x.LASTNAME_EN, x.MOBILE, x.BLOODGROUP }).ToList();
+                    dataGridView1.Columns.Clear();
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = ds;
+                    dataGridView1.Refresh();
+                }
+                else
+                {
+                    var lst = EmployeeServices.GetAll();
+                    var ds = lst.Where(x => x.FIRSTNAME_TH.Contains(txt_name_sname.Text) || x.FIRSTNAME_EN.Contains(txt_name_sname.Text) || x.LASTNAME_TH.Contains(txt_name_sname.Text) || x.LASTNAME_EN.Contains(txt_name_sname.Text)).Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.FIRSTNAME_EN, x.LASTNAME_EN, x.MOBILE, x.BLOODGROUP }).ToList();
+                    dataGridView1.Columns.Clear();
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = ds;
+                    dataGridView1.Refresh();
+                }
+                
+            }
+            
             var searchcol = new DataGridViewButtonColumn();
             searchcol.Name = "View";
-            searchcol.Text = "View";
-            var printcol = new DataGridViewButtonColumn();
-            printcol.Name = "Print";
-            printcol.Text = "Print"; 
-            dataGridView1.Columns.Clear();
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = ds; 
-            dataGridView1.Refresh();
+            searchcol.Text = "ดูข้อมูล";
+            //var printcol = new DataGridViewButtonColumn();
+            //printcol.Name = "Print";
+            //printcol.Text = "Print";
+            
             if (dataGridView1.Columns["Search"] == null)
             {
                 dataGridView1.Columns.Insert(BUTTON_VIEW_COLUMN_INDEX, searchcol);
             }
-            if (dataGridView1.Columns["Print"] == null)
-            {
-                dataGridView1.Columns.Insert(BUTTON_VIEW_COLUMN_INDEX + 1, printcol);
-            }
+            //if (dataGridView1.Columns["Print"] == null)
+            //{
+            //    dataGridView1.Columns.Insert(BUTTON_VIEW_COLUMN_INDEX + 1, printcol);
+            //}
 
             SetColumnHeader();
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 DataGridViewCell cell = row.Cells[BUTTON_VIEW_COLUMN_INDEX];//Column Index
-                cell.Value = "View";
-                
+                cell.Value = "ดูข้อมูล"; 
             }
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            //foreach (DataGridViewRow row in dataGridView1.Rows)
+            //{
+            //    DataGridViewCell cell = row.Cells[BUTTON_VIEW_COLUMN_INDEX + 1];//Column Index
+            //    cell.Value = "Print";
+            //}
+        }
+
+        public void InitialSites()
+        {
+            cbo_site.Items.Clear(); 
+            var lstSite = DataService.SitesDataService.GetListSiteLocation().OrderByDescending(x => x.CREATE_DATE).ToList();
+            cbo_site.Items.Add("==ทั้งหมด==");
+            foreach (var item in lstSite)
             {
-                DataGridViewCell cell = row.Cells[BUTTON_VIEW_COLUMN_INDEX + 1];//Column Index
-                cell.Value = "Print";
+                cbo_site.Items.Add(item.NAME);
+            }
+            if (cbo_site.Items.Count > 0)
+            {
+                cbo_site.SelectedIndex = 0;
             }
         }
-       
         private void btn_search_Click_1(object sender, EventArgs e)
         {
             if (txt_name_sname.Text != "")
-            {  
-                BindDataGrid(txt_name_sname);
+            {
+                BindDataGrid(txt_name_sname, false);
             }
             else if (txt_pid.Text != "")
             {
-                BindDataGrid(txt_pid);
+                BindDataGrid(txt_pid, false);
             }
             else
             {
-                BindDataGrid(txt_site_location);
+                BindDataGrid(txt_name_sname, true);
             }
         }
 
@@ -271,12 +325,12 @@ namespace BIG.Present
 
         private void ribbonButton20_Click(object sender, EventArgs e)
         {
-            txt_site_location.Focus();
+           
         }
 
         private void ribbonButton21_Click(object sender, EventArgs e)
         {
-         
+
         }
 
         private void ribbonButton14_Click(object sender, EventArgs e)
@@ -311,20 +365,59 @@ namespace BIG.Present
                 {
                     if (dataGridView1.Rows[e.RowIndex].Cells[0].Value != null)
                     {
-                        this.UseWaitCursor = true;
-                        var emp_id = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                        var form = new EmployeeForm(emp_id);
-                        form.Show();
-                        this.UseWaitCursor = false;
-                        Close();
 
-                    }
-                     
+                        this.Cursor = Cursors.WaitCursor;
+
+                        var emp_id = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        e_id = emp_id;
+                        if (backgroundWorker1.IsBusy == false)
+                        {
+                            backgroundWorker1.DoWork += new DoWorkEventHandler(backgroundWorker1_DoWork);
+                            backgroundWorker1.ProgressChanged += new ProgressChangedEventHandler(backgroundWorker1_ProgressChanged);
+                            backgroundWorker1.WorkerReportsProgress = true;
+                            backgroundWorker1.RunWorkerAsync();
+                        }
+                     } 
                 }
                 //Perform on button click code
             }
         }
+        public string e_id { get; set; }
+        void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        { 
+            BeginInvoke(new Action(() =>
+            {
+                var emp = new EmployeeForm(e_id,"View");
+                emp.Show();
+            })); 
+        }
 
+        void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        { 
+             
+        }
+         
+        private void backgroundWorker1_RunWorkerCompleted_1(object sender, RunWorkerCompletedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void worker_search_DoWork(object sender, DoWorkEventArgs e)
+        {
+            
+        }
+
+        private void worker_search_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void rb_setting_company_Click(object sender, EventArgs e)
+        {
+            var frm = new CompanyInfoForm();
+            frm.Show();
+            Close();
+        }
 
     }
 }

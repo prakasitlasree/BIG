@@ -95,12 +95,12 @@
             this.lnk_setting.AutoSize = true;
             this.lnk_setting.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lnk_setting.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lnk_setting.Location = new System.Drawing.Point(603, 354);
+            this.lnk_setting.Location = new System.Drawing.Point(612, 354);
             this.lnk_setting.Name = "lnk_setting";
-            this.lnk_setting.Size = new System.Drawing.Size(90, 21);
+            this.lnk_setting.Size = new System.Drawing.Size(65, 21);
             this.lnk_setting.TabIndex = 10;
             this.lnk_setting.TabStop = true;
-            this.lnk_setting.Text = "ทดสอบสแกนนิ้ว";
+            this.lnk_setting.Text = "ตั้งค่าบริษัท";
             this.lnk_setting.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_setting_LinkClicked);
             // 
             // btn_report

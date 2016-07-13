@@ -16,6 +16,7 @@ using System.Threading;
 using Neurotec.Biometrics;
 namespace BIG.Present
 {
+   
     public partial class EmployeeForm : Form
     {
         private ThaiIDCard CardID = new ThaiIDCard();
@@ -37,6 +38,7 @@ namespace BIG.Present
 
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
+
         public EmployeeForm(Nffv engine, string pid)
         {
 
@@ -52,13 +54,24 @@ namespace BIG.Present
         {
             this.employee = emp;
         }
-        public EmployeeForm(string emp_id)
+
+        public EmployeeForm(string emp_id,string mode)
         {
             
             InitializeComponent();
             initialCombobox();
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             SearchEmpID(emp_id);
+            if (mode == "View")
+            {
+
+                EmployeeMode(false);
+            }
+            else
+            {
+                EmployeeMode(true);
+            }
+            
         }
 
         #region ===Properties===
@@ -144,6 +157,40 @@ namespace BIG.Present
         #endregion
 
         #region ===Method===
+
+        private void EmployeeMode(bool isEnable)
+        { 
+            gb_emp_1.Enabled = isEnable;
+            gb_emp2.Enabled = isEnable;
+            gb_left_finger.Enabled = isEnable;
+            gb_right_finger.Enabled = isEnable;
+            gb_current_addr.Enabled = isEnable;
+            gb_p_addr.Enabled = isEnable;
+            gb_edu_1.Enabled = isEnable;
+            gb_edu_2.Enabled = isEnable;
+            gb_edu_3.Enabled = isEnable;
+            gb_tn_1.Enabled = isEnable;
+            gb_train_2.Enabled = isEnable;
+            gb_train_3.Enabled = isEnable;
+            gb_exp_1.Enabled = isEnable;
+            gb_exp_2.Enabled = isEnable;
+            gb_exp_3.Enabled = isEnable;
+            gb_ref_1.Enabled = isEnable;
+            gb_ref_2.Enabled = isEnable;
+            gb_ref_3.Enabled = isEnable;
+            gb_sso.Enabled = isEnable;
+            gb_copy_idcard.Enabled = isEnable;
+            gb_copyhome.Enabled = isEnable;
+            gb_copymiritaly.Enabled = isEnable;
+            gb_otherdoc_1.Enabled = isEnable;
+            gb_otherdoc_2.Enabled = isEnable;
+            gb_otherdoc_3.Enabled = isEnable;
+            gb_equip_1.Enabled = isEnable;
+            gb_equip_2.Enabled = isEnable;
+            btn_save.Enabled = isEnable;
+            btn_cancle.Enabled = isEnable;
+            rb_save.Enabled = isEnable;
+        }
 
         private void initialCombobox()
         {
@@ -331,6 +378,7 @@ namespace BIG.Present
                 emp.MOBILE = txt_mobile.Text;
                 emp.HOMEPHONE = txt_mobile.Text;
                 emp.CREATED_DATE = DateTime.Now;
+                emp.SITE_LOCATION = cbo_site.SelectedItem.ToString();
                 //emp.MARITAL_ID = 1; //สถานะสมรส 
 
                 return emp;
@@ -445,7 +493,7 @@ namespace BIG.Present
 
                     permanent_addr.EMP_ID = txt_empid.Text;
                     permanent_addr.NAME = p_txt_no.Text + " " + p_txt_soi.Text + " " + p_txt_road.Text;
-                    permanent_addr.DISTRICT = c_txt_tumbol.Text;
+                    permanent_addr.DISTRICT = p_txt_tumbol.Text;
                     permanent_addr.AMPHUR_ID = p_cbo_amp.SelectedValue.ToString();
                     permanent_addr.PROVINCE_ID = p_cbo_prov.SelectedValue.ToString();
                     permanent_addr.POSTCODE = p_txt_postcode.Text;
@@ -518,7 +566,7 @@ namespace BIG.Present
                 if (txt_tn_1.Text != "" && txt_empid.Text != "")
                 {
                     var tn = new BIG.Model.Training();
-                    tn.TYPE = "ครั้งที่1";
+                    tn.TYPE = "1";
                     tn.EMP_ID = txt_empid.Text;
                     tn.COURSE = txt_tn_1.Text;
                     tn.DETAILS = txt_tn_dt_1.Text;
@@ -529,7 +577,7 @@ namespace BIG.Present
                 if (txt_tn_2.Text != "" && txt_empid.Text != "")
                 {
                     var tn = new BIG.Model.Training();
-                    tn.TYPE = "ครั้งที่2";
+                    tn.TYPE = "2";
                     tn.EMP_ID = txt_empid.Text;
                     tn.COURSE = txt_tn_2.Text;
                     tn.DETAILS = txt_tn_dt_2.Text;
@@ -540,7 +588,7 @@ namespace BIG.Present
                 if (txt_tn_3.Text != "" && txt_empid.Text != "")
                 {
                     var tn = new BIG.Model.Training();
-                    tn.TYPE = "ครั้งที่3";
+                    tn.TYPE = "3";
                     tn.EMP_ID = txt_empid.Text;
                     tn.COURSE = txt_tn_3.Text;
                     tn.DETAILS = txt_tn_dt_3.Text;
@@ -564,7 +612,7 @@ namespace BIG.Present
                 if (txt_exp_comname_1.Text != "" && txt_empid.Text != "")
                 {
                     var exp = new BIG.Model.WorkExperience();
-                    exp.TYPE = "บริษัทล่าสุด";
+                    exp.TYPE = "1";
                     exp.EMP_ID = txt_empid.Text;
                     exp.NAME = txt_exp_comname_1.Text;
                     exp.POSITION = txt_exp_pos1.Text;
@@ -576,7 +624,7 @@ namespace BIG.Present
                 if (txt_exp_comname_1.Text != "" && txt_empid.Text != "")
                 {
                     var exp = new BIG.Model.WorkExperience();
-                    exp.TYPE = "บริษัทที่ 2";
+                    exp.TYPE = "2";
                     exp.EMP_ID = txt_empid.Text;
                     exp.NAME = txt_exp_comname_2.Text;
                     exp.POSITION = txt_we_pos2.Text;
@@ -588,7 +636,7 @@ namespace BIG.Present
                 if (txt_exp_comname_1.Text != "" && txt_empid.Text != "")
                 {
                     var exp = new BIG.Model.WorkExperience();
-                    exp.TYPE = "บริษัทที่ 3";
+                    exp.TYPE = "3";
                     exp.EMP_ID = txt_empid.Text;
                     exp.NAME = txt_exp_comname_3.Text;
                     exp.POSITION = txt_we_pos3.Text;
@@ -672,8 +720,7 @@ namespace BIG.Present
                     else
                     {
                         if (cbo_sso_hospital.SelectedValue != null && cbo_sso_prov.SelectedValue != null)
-                        {
-
+                        { 
                             sso.HOSPITAL_NAME = cbo_sso_hospital.SelectedValue.ToString();
                             sso.PROVINCE_NAME = cbo_sso_prov.SelectedValue.ToString();
                             sso.NOTINDATABASE = false;
@@ -827,6 +874,7 @@ namespace BIG.Present
             }
             return equipt;
         }
+
         private EmployeeImage getPhotoEmployee()
         {
             var ret = new EmployeeImage();
@@ -1360,19 +1408,19 @@ namespace BIG.Present
                 {
                     foreach (var item in tn)
                     {
-                        if (item.TYPE == "ครั้งที่1")
+                        if (item.TYPE == "1")
                         {
                             txt_tn_1.Text = item.COURSE;
                             txt_tn_yr_1.Text = item.YEAR;
                             txt_tn_dt_1.Text = item.DETAILS;
                         }
-                        if (item.TYPE == "ครั้งที่2")
+                        if (item.TYPE == "2")
                         {
                             txt_tn_2.Text = item.COURSE;
                             txt_tn_yr_2.Text = item.YEAR;
                             txt_tn_dt_2.Text = item.DETAILS;
                         }
-                        if (item.TYPE == "ครั้งที่3")
+                        if (item.TYPE == "3")
                         {
                             txt_tn_3.Text = item.COURSE;
                             txt_tn_yr_3.Text = item.YEAR;
@@ -1394,7 +1442,7 @@ namespace BIG.Present
                 {
                     foreach (var item in exp)
                     {
-                        if (item.TYPE == "บริษัทล่าสุด")
+                        if (item.TYPE == "1")
                         {
                             txt_exp_comname_1.Text = item.NAME;
                             txt_exp_period_1.Text = item.PERIOD;
@@ -1402,7 +1450,7 @@ namespace BIG.Present
                             txt_exp_salary_1.Text = item.SALARY;
 
                         }
-                        if (item.TYPE == "บริษัทที่ 2")
+                        if (item.TYPE == "2")
                         {
                             txt_exp_comname_2.Text = item.NAME;
                             txt_exp_period_2.Text = item.PERIOD;
@@ -1410,7 +1458,7 @@ namespace BIG.Present
                             txt_exp_salary_2.Text = item.SALARY;
 
                         }
-                        if (item.TYPE == "บริษัทที่ 3")
+                        if (item.TYPE == "3")
                         {
                             txt_exp_comname_3.Text = item.NAME;
                             txt_exp_period_3.Text = item.PERIOD;
@@ -1803,6 +1851,11 @@ namespace BIG.Present
             }
         }
 
+        private void rb_edit_Click(object sender, EventArgs e)
+        {
+            EmployeeMode(true);
+        }
+         
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var from = new PersonalForm();
@@ -1984,7 +2037,7 @@ namespace BIG.Present
         private void rb_load_pid_Click(object sender, EventArgs e)
         {
 
-            LoadPID();
+           
         }
 
         private void rb_exit_Click(object sender, EventArgs e)
@@ -2724,6 +2777,28 @@ namespace BIG.Present
             Close();
         }
 
+        private void rb_setting_company_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            var frm = new CompanyInfoForm();
+            frm.Show();
+            Close();
+        }
+
+        private void rb_load_idcard_Click(object sender, EventArgs e)
+        {
+            LoadPID();
+        }
+
+        private void rb_personal_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            var frm = new PersonalForm();
+            frm.Show();
+            Close();
+        }
+
+       
 
     }
 }

@@ -39,7 +39,7 @@ namespace BIG.Present
                 {
                     NffvUser engineUser = enrollmentResult.engineUser;
 
-                    pictureBox1.Image = engineUser.GetBitmap();
+                     
 
                 }
                 else

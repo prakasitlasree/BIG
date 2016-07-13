@@ -31,11 +31,9 @@ namespace BIG.DataAccess
         public DbSet<Address> Addresses { get; set; }
         public DbSet<AddressType> AddressTypes { get; set; }
         public DbSet<Amphur> Amphurs { get; set; }
-        public DbSet<CompanyInfo> CompanyInfoes { get; set; }
         public DbSet<CurrentImage> CurrentImages { get; set; }
         public DbSet<District> Districts { get; set; }
         public DbSet<Education> Educations { get; set; }
-        public DbSet<Employee> Employees { get; set; }
         public DbSet<EmployeeImage> EmployeeImages { get; set; }
         public DbSet<Equiptment> Equiptments { get; set; }
         public DbSet<FingerScan> FingerScans { get; set; }
@@ -55,5 +53,7 @@ namespace BIG.DataAccess
         public DbSet<Training> Trainings { get; set; }
         public DbSet<WorkExperience> WorkExperiences { get; set; }
         public DbSet<Zipcode> Zipcodes { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<CompanyInfo> CompanyInfoes { get; set; }
     }
 }

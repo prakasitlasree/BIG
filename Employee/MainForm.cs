@@ -55,105 +55,54 @@ namespace BIG.Present
 
         private void lnk_employee_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
+            Close();
             var personal = new PersonalForm();
             personal.Show();
+            
         }
 
         private void btn_employee_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Close();
+            this.Cursor = Cursors.WaitCursor;
             var personal = new PersonalForm();
             personal.Show();
+           
         }
 
         private void btn_setting_Click(object sender, EventArgs e)
         {
-            Neurotec.Biometrics.Nffv engine = null;
-            try
-            {
-
-                try
-                {
-                    engine = new Neurotec.Biometrics.Nffv("FingerprintDB.CSharpSample.dat", "", "UareU");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message + "Failed to initialize Nffv or create/load database.\r\n" +
-                    "Please check if:\r\n - Provided password is correct;\r\n - Database filename is correct;\r\n" +
-                    " - Scanners are used properly.\r\n", "Nffv C# Sample", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                //Application.Run(new MainForm(engine, chooseScannerForm.UserDatabase)); 
-                this.Hide();
-                var personal = new TestForm(engine);
-                personal.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    string.Format("An error has occured: {0}", ex.Message), "Nffv C# Sample",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (engine != null)
-                {
-                    engine.Dispose();
-                }
-            } 
+            Close();
+            this.Cursor = Cursors.WaitCursor;
+            var fm = new CompanyInfoForm();
+            fm.Show();
+           
         }
 
         private void lnk_setting_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Neurotec.Biometrics.Nffv engine = null;
-            try
-            {
-
-                try
-                {
-                    engine = new Neurotec.Biometrics.Nffv("FingerprintDB.CSharpSample.dat", "", "UareU");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message + "Failed to initialize Nffv or create/load database.\r\n" +
-                    "Please check if:\r\n - Provided password is correct;\r\n - Database filename is correct;\r\n" +
-                    " - Scanners are used properly.\r\n", "Nffv C# Sample", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                //Application.Run(new MainForm(engine, chooseScannerForm.UserDatabase)); 
-                this.Hide();
-                var personal = new TestForm(engine);
-                personal.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    string.Format("An error has occured: {0}", ex.Message), "Nffv C# Sample",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (engine != null)
-                {
-                    engine.Dispose();
-                }
-            } 
+            this.Cursor = Cursors.WaitCursor;
+            var fm = new CompanyInfoForm();
+            fm.Show();
+            Close();
         }
 
         private void btn_report_Click(object sender, EventArgs e)
         {
-
-            this.Close();
+            Close();
+            this.Cursor = Cursors.WaitCursor;
             var frm = new ReportEmployee();
             frm.Show();
+            
         }
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        { 
-            this.Close();
+        {
+            Close();
+            this.Cursor = Cursors.WaitCursor;
             var frm = new ReportEmployee();
             frm.Show();
+            
         }
          
     }

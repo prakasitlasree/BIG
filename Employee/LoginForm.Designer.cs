@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.gb_logon = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblpassword = new System.Windows.Forms.Label();
             this.lblusername = new System.Windows.Forms.Label();
             this.txtpassword = new System.Windows.Forms.TextBox();
@@ -39,11 +38,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_home = new System.Windows.Forms.PictureBox();
             this.btn_close = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.gb_logon.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_close)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // gb_logon
@@ -63,15 +63,6 @@
             this.gb_logon.Size = new System.Drawing.Size(463, 240);
             this.gb_logon.TabIndex = 0;
             this.gb_logon.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::BIG.Present.Properties.Resources.login_icon_png;
-            this.pictureBox2.Location = new System.Drawing.Point(58, 53);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(105, 133);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
             // 
             // lblpassword
             // 
@@ -111,6 +102,7 @@
             // 
             // bt_logon
             // 
+            this.bt_logon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_logon.Location = new System.Drawing.Point(235, 150);
             this.bt_logon.Name = "bt_logon";
             this.bt_logon.Size = new System.Drawing.Size(83, 36);
@@ -152,6 +144,16 @@
             this.btn_close.TabStop = false;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::BIG.Present.Properties.Resources.big_logo;
+            this.pictureBox2.Location = new System.Drawing.Point(16, 36);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,10 +174,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.gb_logon.ResumeLayout(false);
             this.gb_logon.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_close)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

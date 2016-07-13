@@ -88,6 +88,12 @@
     <Compile Include="BusyForm.Designer.cs">
       <DependentUpon>BusyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CompanyInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyInfoForm.Designer.cs">
+      <DependentUpon>CompanyInfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,8 +172,17 @@
     <Compile Include="UC\UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
+    <Compile Include="WaitingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitingForm.Designer.cs">
+      <DependentUpon>WaitingForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BusyForm.resx">
       <DependentUpon>BusyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyInfoForm.resx">
+      <DependentUpon>CompanyInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeDetailReport.rdlc" />
     <EmbeddedResource Include="EmployeeForm.resx">
@@ -211,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitingForm.resx">
+      <DependentUpon>WaitingForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="BIG_DBDataSet.xsc">
@@ -257,6 +275,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\user-add-icon.png" />
     <None Include="Resources\big_bg.png" />
     <None Include="Resources\48_home.png" />
     <None Include="Resources\48_man_woman.png" />
@@ -274,6 +293,7 @@
     <Content Include="dll\NffvJavaNative.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\big_logo.png" />
     <Content Include="Resources\ee.jpg" />
     <Content Include="Resources\emploee.png" />
     <Content Include="Resources\eval.png" />
@@ -282,6 +302,7 @@
     <None Include="Resources\finger_icon.jpg" />
     <None Include="Resources\finger_icon1.jpg" />
     <None Include="Resources\finger_icon2.jpg" />
+    <None Include="Resources\icon24_edit_male_user.png" />
     <Content Include="Resources\ico\3d bar chart.ico" />
     <Content Include="Resources\ico\abort.ico" />
     <Content Include="Resources\ico\about.ico" />

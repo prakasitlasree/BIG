@@ -24,7 +24,7 @@ dbo.Thaidate(emp.DATEOFBIRTH) AS DOB,
 dbo.CALULATEAGE(CONVERT(VARCHAR(10),emp.DATEOFBIRTH,110)) AS AGE,
  emp.APPEARANCE,
 emp.DEFECT,
-emp.MOBILE +', ' + emp.HOMEPHONE as TELNO,
+emp.MOBILE as TELNO,
  emp.DATESTARTWORK,
  emp.HEIGHT,
  emp.WEIGHT, 
@@ -79,7 +79,7 @@ isnull(dbo.Thaidate(emp.DATEOFBIRTH),'') AS DOB,
 dbo.CALULATEAGE(CONVERT(VARCHAR(10),emp.DATEOFBIRTH,110)) AS AGE,
  emp.APPEARANCE,
 emp.DEFECT,
-emp.MOBILE +', ' + emp.HOMEPHONE as TELNO,
+emp.MOBILE  as TELNO,
  emp.DATESTARTWORK,
  emp.HEIGHT,
  emp.WEIGHT, 
@@ -398,28 +398,36 @@ AND [TYPE] ='สำเนาบัตรประชาชน'</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReferencePersonTableAdapter" GeneratorDataComponentClassName="ReferencePersonTableAdapter" Name="ReferencePerson" UserDataComponentName="ReferencePersonTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BIG_DBConnectionString (Settings)" DbObjectName="BIG_DB.dbo.ReferencePerson" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BIG_DBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>
-SELECT ID, EMP_ID, 'ชื่อ ' + [NAME]+' อายุ ' +convert(nvarchar(20),isnull(AGE,0)) +' เกี่ยวข้องเป็น ' + isnull(RELATIONSHIFT,'') +' ' + isnull([ADDRESS],'') AS FULLREFPERSON 
-FROM dbo.ReferencePerson
- WHERE [TYPE] =1</CommandText>
+                    <CommandText> SELECT 
+
+max(case when TYPE = '1' then  ISNULL([NAME],'') + '  เกี่ยวข้องเป็น ' + ISNULL(RELATIONSHIFT, '') end) FULLREFPERSON1,
+max(case when TYPE = '2' then  ISNULL([NAME],'') + '  เกี่ยวข้องเป็น ' + ISNULL(RELATIONSHIFT, '') end) FULLREFPERSON2,
+max(case when TYPE = '3' then  ISNULL([NAME],'') + '  เกี่ยวข้องเป็น ' + ISNULL(RELATIONSHIFT, '') end) FULLREFPERSON3
+FROM ReferencePerson </CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="EMP_ID" DataSetColumn="EMP_ID" />
-              <Mapping SourceColumn="FULLREFPERSON" DataSetColumn="FULLREFPERSON" />
+              <Mapping SourceColumn="FULLREFPERSON1" DataSetColumn="FULLREFPERSON1" />
+              <Mapping SourceColumn="FULLREFPERSON2" DataSetColumn="FULLREFPERSON2" />
+              <Mapping SourceColumn="FULLREFPERSON3" DataSetColumn="FULLREFPERSON3" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="BIG_DBConnectionString (Settings)" DbObjectName="BIG_DB.dbo.ReferencePerson" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByEmpID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByEmpID" GeneratorSourceName="FillByEmpID" GetMethodModifier="Public" GetMethodName="GetDataByEmpID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByEmpID" UserSourceName="FillByEmpID">
+              <DbSource ConnectionRef="BIG_DBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByEmpID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByEmpID" GeneratorSourceName="FillByEmpID" GetMethodModifier="Public" GetMethodName="GetDataByEmpID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByEmpID" UserSourceName="FillByEmpID">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT EMP_ID, 'ชื่อ ' + NAME + ' อายุ ' + CONVERT (nvarchar(20), ISNULL(AGE, 0)) + ' ปี เกี่ยวข้องเป็น ' + ISNULL(RELATIONSHIFT, '') + ' ' + ISNULL(ADDRESS, '') AS FULLREFPERSON, ID FROM ReferencePerson WHERE (EMP_ID = @emp_id) AND (TYPE = 1)</CommandText>
+                    <CommandText>SELECT 
+
+max(case when TYPE = '1' then  ISNULL([NAME],'') + '  เกี่ยวข้องเป็น ' + ISNULL(RELATIONSHIFT, '') end) FULLREFPERSON1,
+max(case when TYPE = '2' then  ISNULL([NAME],'') + '  เกี่ยวข้องเป็น ' + ISNULL(RELATIONSHIFT, '') end) FULLREFPERSON2,
+max(case when TYPE = '3' then  ISNULL([NAME],'') + '  เกี่ยวข้องเป็น ' + ISNULL(RELATIONSHIFT, '') end) FULLREFPERSON3
+FROM ReferencePerson 
+WHERE (EMP_ID = @emp_id)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="emp_id" ColumnName="EMP_ID" DataSourceName="BIG_DB.dbo.ReferencePerson" DataTypeServer="nvarchar(14)" DbType="String" Direction="Input" ParameterName="@emp_id" Precision="0" ProviderType="NVarChar" Scale="0" Size="14" SourceColumn="EMP_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -493,60 +501,41 @@ SELECT ID, EMP_ID, HOSPITAL_NAME, CREATED_DATE FROM SSO WHERE (ID = @ID)</Comman
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TrainingTableAdapter" GeneratorDataComponentClassName="TrainingTableAdapter" Name="Training" UserDataComponentName="TrainingTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BIG_DBConnectionString (Settings)" DbObjectName="BIG_DB.dbo.Training" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <DeleteCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[Training] WHERE (([ID] = @Original_ID) AND ([EMP_ID] = @Original_EMP_ID))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_EMP_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EMP_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
-                <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[Training] ([EMP_ID]) VALUES (@EMP_ID);
-SELECT TOP (1) ID, EMP_ID, 'หลักสูตร ' + ISNULL(COURSE, '') + ' รายละเอียด ' + ISNULL(DETAILS, '') + ' ปี ' + CONVERT (nvarchar(20), YEAR) AS FULLTRAINING FROM Training WHERE (ID = SCOPE_IDENTITY()) ORDER BY CREATED_DATE</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@EMP_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EMP_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </InsertCommand>
+              <DbSource ConnectionRef="BIG_DBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT top 1 ID, EMP_ID,'หลักสูตร ' + isnull(COURSE,'') +' รายละเอียด ' + isnull(DETAILS,'') +' ปี '+ convert(nvarchar(20),YEAR) as FULLTRAINING
+                    <CommandText>SELECT  
 
+max(case when TYPE = 'ครั้งที่1' then isnull(COURSE,'')    end) COURSE_1,
+max(case when TYPE = 'ครั้งที่2' then isnull(COURSE,'')    end) COURSE_2,
+max(case when TYPE = 'ครั้งที่3' then isnull(COURSE,'')    end) COURSE_3
 
 FROM dbo.Training
- 
-order by CREATED_DATE</CommandText>
+ </CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
-                <UpdateCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[Training] SET [EMP_ID] = @EMP_ID WHERE (([ID] = @Original_ID) AND ([EMP_ID] = @Original_EMP_ID));
-SELECT TOP (1) ID, EMP_ID, 'หลักสูตร ' + ISNULL(COURSE, '') + ' รายละเอียด ' + ISNULL(DETAILS, '') + ' ปี ' + CONVERT (nvarchar(20), YEAR) AS FULLTRAINING FROM Training WHERE (ID = @ID) ORDER BY CREATED_DATE</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@EMP_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EMP_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_EMP_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EMP_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="ID" DataSourceName="BIG_DB.dbo.Training" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </UpdateCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="EMP_ID" DataSetColumn="EMP_ID" />
-              <Mapping SourceColumn="FULLTRAINING" DataSetColumn="FULLTRAINING" />
+              <Mapping SourceColumn="COURSE_1" DataSetColumn="COURSE_1" />
+              <Mapping SourceColumn="COURSE_2" DataSetColumn="COURSE_2" />
+              <Mapping SourceColumn="COURSE_3" DataSetColumn="COURSE_3" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="BIG_DBConnectionString (Settings)" DbObjectName="BIG_DB.dbo.Training" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByEmpID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByEmpID" GeneratorSourceName="FillByEmpID" GetMethodModifier="Public" GetMethodName="GetDataByEmpID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByEmpID" UserSourceName="FillByEmpID">
+              <DbSource ConnectionRef="BIG_DBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByEmpID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByEmpID" GeneratorSourceName="FillByEmpID" GetMethodModifier="Public" GetMethodName="GetDataByEmpID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByEmpID" UserSourceName="FillByEmpID">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT TOP (1) EMP_ID, 'หลักสูตร ' + ISNULL(COURSE, '') + ' รายละเอียด ' + ISNULL(DETAILS, '') + ' ปี ' + CONVERT (nvarchar(20), YEAR) AS FULLTRAINING, ID FROM Training WHERE (EMP_ID = @emp_id) ORDER BY CREATED_DATE</CommandText>
+                    <CommandText>SELECT  
+
+max(case when TYPE = 'ครั้งที่1' then isnull(COURSE,'')    end) COURSE_1,
+max(case when TYPE = 'ครั้งที่2' then isnull(COURSE,'')    end) COURSE_2,
+max(case when TYPE = 'ครั้งที่3' then isnull(COURSE,'')    end) COURSE_3
+
+FROM dbo.Training
+ 
+
+ WHERE (EMP_ID = @emp_id)  </CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="emp_id" ColumnName="EMP_ID" DataSourceName="BIG_DB.dbo.Training" DataTypeServer="nvarchar(14)" DbType="String" Direction="Input" ParameterName="@emp_id" Precision="0" ProviderType="NVarChar" Scale="0" Size="14" SourceColumn="EMP_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -557,64 +546,38 @@ SELECT TOP (1) ID, EMP_ID, 'หลักสูตร ' + ISNULL(COURSE, '') + ' 
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="WorkExperienceTableAdapter" GeneratorDataComponentClassName="WorkExperienceTableAdapter" Name="WorkExperience" UserDataComponentName="WorkExperienceTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BIG_DBConnectionString (Settings)" DbObjectName="BIG_DB.dbo.WorkExperience" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <DeleteCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[WorkExperience] WHERE (([ID] = @Original_ID) AND ((@IsNull_EMP_ID = 1 AND [EMP_ID] IS NULL) OR ([EMP_ID] = @Original_EMP_ID)))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EMP_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EMP_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_EMP_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EMP_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
-                <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[WorkExperience] ([EMP_ID]) VALUES (@EMP_ID);
-SELECT TOP (1) ID, EMP_ID, 'ชื่อบริษัท/องค์กร ' + NAME + ' ตำแหน่ง ' + POSITION + ' ค่าจ้าง ' + SALARY + ' ระยะเวลา ' + PERIOD AS FULLEXP FROM WorkExperience WHERE (ID = SCOPE_IDENTITY())</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@EMP_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EMP_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </InsertCommand>
+              <DbSource ConnectionRef="BIG_DBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT TOP 1
- ID, EMP_ID,'ชื่อบริษัท/องค์กร ' + [NAME] + ' ตำแหน่ง '+ POSITION + ' ค่าจ้าง '+ SALARY + ' ระยะเวลา ' + PERIOD as FULLEXP
+                    <CommandText>SELECT  
 
- FROM dbo.WorkExperience </CommandText>
+max(case when TYPE = '1' then isnull([NAME],'')    end) FULLEXP_1,
+max(case when TYPE = '2' then isnull([NAME],'')    end) FULLEXP_2,
+max(case when TYPE = '3' then isnull([NAME],'')    end) FULLEXP_3
+
+FROM dbo.WorkExperience </CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
-                <UpdateCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[WorkExperience] SET [EMP_ID] = @EMP_ID WHERE (([ID] = @Original_ID) AND ((@IsNull_EMP_ID = 1 AND [EMP_ID] IS NULL) OR ([EMP_ID] = @Original_EMP_ID)));
-SELECT TOP (1) ID, EMP_ID, 'ชื่อบริษัท/องค์กร ' + NAME + ' ตำแหน่ง ' + POSITION + ' ค่าจ้าง ' + SALARY + ' ระยะเวลา ' + PERIOD AS FULLEXP FROM WorkExperience WHERE (ID = @ID)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@EMP_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EMP_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EMP_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EMP_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_EMP_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EMP_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="ID" DataSourceName="BIG_DB.dbo.WorkExperience" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </UpdateCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="EMP_ID" DataSetColumn="EMP_ID" />
-              <Mapping SourceColumn="FULLEXP" DataSetColumn="FULLEXP" />
+              <Mapping SourceColumn="FULLEXP_1" DataSetColumn="FULLEXP_1" />
+              <Mapping SourceColumn="FULLEXP_2" DataSetColumn="FULLEXP_2" />
+              <Mapping SourceColumn="FULLEXP_3" DataSetColumn="FULLEXP_3" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="BIG_DBConnectionString (Settings)" DbObjectName="BIG_DB.dbo.WorkExperience" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByEmpID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByEmpID" GeneratorSourceName="FillByEmpID" GetMethodModifier="Public" GetMethodName="GetDataByEmpID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByEmpID" UserSourceName="FillByEmpID">
+              <DbSource ConnectionRef="BIG_DBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByEmpID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByEmpID" GeneratorSourceName="FillByEmpID" GetMethodModifier="Public" GetMethodName="GetDataByEmpID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByEmpID" UserSourceName="FillByEmpID">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT top 1
- ID, EMP_ID,'ชื่อบริษัท/องค์กร ' + isnull([NAME],'') + ' ตำแหน่ง '+ isnull(POSITION,'')+ ' ค่าจ้าง '+ isnull(SALARY,'') + ' ระยะเวลา ' + isnull(PERIOD,'') 
-as FULLEXP
+                    <CommandText>SELECT  
 
- FROM dbo.WorkExperience
+max(case when TYPE = '1' then isnull([NAME],'')    end) FULLEXP_1,
+max(case when TYPE = '2' then isnull([NAME],'')    end) FULLEXP_2,
+max(case when TYPE = '3' then isnull([NAME],'')    end) FULLEXP_3
+
+FROM dbo.WorkExperience 
+ 
 WHERE EMP_ID = @emp_id</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="emp_id" ColumnName="EMP_ID" DataSourceName="BIG_DB.dbo.WorkExperience" DataTypeServer="nvarchar(14)" DbType="String" Direction="Input" ParameterName="@emp_id" Precision="0" ProviderType="NVarChar" Scale="0" Size="14" SourceColumn="EMP_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -629,62 +592,63 @@ WHERE EMP_ID = @emp_id</CommandText>
               <DbSource ConnectionRef="BIG_DBConnectionString (Settings)" DbObjectName="BIG_DB.dbo.CompanyInfo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[CompanyInfo] WHERE (([ID] = @Original_ID) AND ((@IsNull_NAME = 1 AND [NAME] IS NULL) OR ([NAME] = @Original_NAME)) AND ((@IsNull_LOCATION = 1 AND [LOCATION] IS NULL) OR ([LOCATION] = @Original_LOCATION)) AND ((@IsNull_AMPHUR = 1 AND [AMPHUR] IS NULL) OR ([AMPHUR] = @Original_AMPHUR)) AND ((@IsNull_PROVINCE = 1 AND [PROVINCE] IS NULL) OR ([PROVINCE] = @Original_PROVINCE)) AND ((@IsNull_POSTCODE = 1 AND [POSTCODE] IS NULL) OR ([POSTCODE] = @Original_POSTCODE)))</CommandText>
+                    <CommandText>DELETE FROM [CompanyInfo] WHERE (([ID] = @Original_ID) AND ((@IsNull_NAME_EN = 1 AND [NAME_EN] IS NULL) OR ([NAME_EN] = @Original_NAME_EN)) AND ((@IsNull_NAME_TH = 1 AND [NAME_TH] IS NULL) OR ([NAME_TH] = @Original_NAME_TH)) AND ((@IsNull_LOCATION = 1 AND [LOCATION] IS NULL) OR ([LOCATION] = @Original_LOCATION)) AND ((@IsNull_TELEPHONE = 1 AND [TELEPHONE] IS NULL) OR ([TELEPHONE] = @Original_TELEPHONE)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NAME" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NAME" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NAME" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NAME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NAME_EN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NAME_EN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NAME_EN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NAME_EN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NAME_TH" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NAME_TH" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NAME_TH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NAME_TH" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_LOCATION" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LOCATION" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_LOCATION" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LOCATION" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_AMPHUR" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AMPHUR" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_AMPHUR" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="AMPHUR" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PROVINCE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PROVINCE" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_PROVINCE" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="PROVINCE" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_POSTCODE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="POSTCODE" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_POSTCODE" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="POSTCODE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TELEPHONE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TELEPHONE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_TELEPHONE" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TELEPHONE" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[CompanyInfo] ([NAME], [LOCATION], [AMPHUR], [PROVINCE], [POSTCODE]) VALUES (@NAME, @LOCATION, @AMPHUR, @PROVINCE, @POSTCODE);
-SELECT ID, NAME, LOCATION, AMPHUR, PROVINCE, POSTCODE FROM CompanyInfo WHERE (ID = SCOPE_IDENTITY())</CommandText>
+                    <CommandText>INSERT INTO [CompanyInfo] ([NAME_EN], [NAME_TH], [LOCATION], [TELEPHONE], [LOGO], [RIGHT_LOGO_1], [RIGHT_LOGO_2]) VALUES (@NAME_EN, @NAME_TH, @LOCATION, @TELEPHONE, @LOGO, @RIGHT_LOGO_1, @RIGHT_LOGO_2);
+SELECT TOP (1) ID, NAME_EN, NAME_TH, LOCATION, TELEPHONE, LOGO, RIGHT_LOGO_1, RIGHT_LOGO_2 FROM CompanyInfo WHERE (ID = SCOPE_IDENTITY())</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NAME" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NAME_EN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NAME_EN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NAME_TH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NAME_TH" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LOCATION" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LOCATION" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@AMPHUR" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="AMPHUR" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@PROVINCE" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="PROVINCE" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@POSTCODE" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="POSTCODE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TELEPHONE" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TELEPHONE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Binary" Direction="Input" ParameterName="@LOGO" Precision="0" ProviderType="VarBinary" Scale="0" Size="0" SourceColumn="LOGO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Binary" Direction="Input" ParameterName="@RIGHT_LOGO_1" Precision="0" ProviderType="VarBinary" Scale="0" Size="0" SourceColumn="RIGHT_LOGO_1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Binary" Direction="Input" ParameterName="@RIGHT_LOGO_2" Precision="0" ProviderType="VarBinary" Scale="0" Size="0" SourceColumn="RIGHT_LOGO_2" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, NAME, LOCATION, AMPHUR, PROVINCE, POSTCODE FROM dbo.CompanyInfo</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (1) ID, NAME_EN, NAME_TH, LOCATION, TELEPHONE, LOGO, RIGHT_LOGO_1, RIGHT_LOGO_2
+FROM            CompanyInfo</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[CompanyInfo] SET [NAME] = @NAME, [LOCATION] = @LOCATION, [AMPHUR] = @AMPHUR, [PROVINCE] = @PROVINCE, [POSTCODE] = @POSTCODE WHERE (([ID] = @Original_ID) AND ((@IsNull_NAME = 1 AND [NAME] IS NULL) OR ([NAME] = @Original_NAME)) AND ((@IsNull_LOCATION = 1 AND [LOCATION] IS NULL) OR ([LOCATION] = @Original_LOCATION)) AND ((@IsNull_AMPHUR = 1 AND [AMPHUR] IS NULL) OR ([AMPHUR] = @Original_AMPHUR)) AND ((@IsNull_PROVINCE = 1 AND [PROVINCE] IS NULL) OR ([PROVINCE] = @Original_PROVINCE)) AND ((@IsNull_POSTCODE = 1 AND [POSTCODE] IS NULL) OR ([POSTCODE] = @Original_POSTCODE)));
-SELECT ID, NAME, LOCATION, AMPHUR, PROVINCE, POSTCODE FROM CompanyInfo WHERE (ID = @ID)</CommandText>
+                    <CommandText>UPDATE [CompanyInfo] SET [NAME_EN] = @NAME_EN, [NAME_TH] = @NAME_TH, [LOCATION] = @LOCATION, [TELEPHONE] = @TELEPHONE, [LOGO] = @LOGO, [RIGHT_LOGO_1] = @RIGHT_LOGO_1, [RIGHT_LOGO_2] = @RIGHT_LOGO_2 WHERE (([ID] = @Original_ID) AND ((@IsNull_NAME_EN = 1 AND [NAME_EN] IS NULL) OR ([NAME_EN] = @Original_NAME_EN)) AND ((@IsNull_NAME_TH = 1 AND [NAME_TH] IS NULL) OR ([NAME_TH] = @Original_NAME_TH)) AND ((@IsNull_LOCATION = 1 AND [LOCATION] IS NULL) OR ([LOCATION] = @Original_LOCATION)) AND ((@IsNull_TELEPHONE = 1 AND [TELEPHONE] IS NULL) OR ([TELEPHONE] = @Original_TELEPHONE)));
+SELECT TOP (1) ID, NAME_EN, NAME_TH, LOCATION, TELEPHONE, LOGO, RIGHT_LOGO_1, RIGHT_LOGO_2 FROM CompanyInfo WHERE (ID = @ID)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NAME" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NAME_EN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NAME_EN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NAME_TH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NAME_TH" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LOCATION" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LOCATION" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@AMPHUR" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="AMPHUR" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@PROVINCE" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="PROVINCE" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@POSTCODE" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="POSTCODE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TELEPHONE" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TELEPHONE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Binary" Direction="Input" ParameterName="@LOGO" Precision="0" ProviderType="VarBinary" Scale="0" Size="0" SourceColumn="LOGO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Binary" Direction="Input" ParameterName="@RIGHT_LOGO_1" Precision="0" ProviderType="VarBinary" Scale="0" Size="0" SourceColumn="RIGHT_LOGO_1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Binary" Direction="Input" ParameterName="@RIGHT_LOGO_2" Precision="0" ProviderType="VarBinary" Scale="0" Size="0" SourceColumn="RIGHT_LOGO_2" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NAME" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NAME" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NAME" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NAME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NAME_EN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NAME_EN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NAME_EN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NAME_EN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NAME_TH" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NAME_TH" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NAME_TH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NAME_TH" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_LOCATION" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LOCATION" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_LOCATION" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LOCATION" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_AMPHUR" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AMPHUR" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_AMPHUR" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="AMPHUR" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PROVINCE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PROVINCE" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_PROVINCE" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="PROVINCE" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_POSTCODE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="POSTCODE" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_POSTCODE" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="POSTCODE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TELEPHONE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TELEPHONE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_TELEPHONE" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TELEPHONE" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="ID" DataSourceName="BIG_DB.dbo.CompanyInfo" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
@@ -693,11 +657,13 @@ SELECT ID, NAME, LOCATION, AMPHUR, PROVINCE, POSTCODE FROM CompanyInfo WHERE (ID
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="NAME" DataSetColumn="NAME" />
               <Mapping SourceColumn="LOCATION" DataSetColumn="LOCATION" />
-              <Mapping SourceColumn="AMPHUR" DataSetColumn="AMPHUR" />
-              <Mapping SourceColumn="PROVINCE" DataSetColumn="PROVINCE" />
-              <Mapping SourceColumn="POSTCODE" DataSetColumn="POSTCODE" />
+              <Mapping SourceColumn="NAME_EN" DataSetColumn="NAME_EN" />
+              <Mapping SourceColumn="NAME_TH" DataSetColumn="NAME_TH" />
+              <Mapping SourceColumn="TELEPHONE" DataSetColumn="TELEPHONE" />
+              <Mapping SourceColumn="LOGO" DataSetColumn="LOGO" />
+              <Mapping SourceColumn="RIGHT_LOGO_1" DataSetColumn="RIGHT_LOGO_1" />
+              <Mapping SourceColumn="RIGHT_LOGO_2" DataSetColumn="RIGHT_LOGO_2" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -837,7 +803,7 @@ and EMP_ID = @emp_id</CommandText>
   <xs:element name="BIG_DBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="BIG_DBDataSet" msprop:Generator_UserDSName="BIG_DBDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Employee" msprop:Generator_TableClassName="EmployeeDataTable" msprop:Generator_TableVarName="tableEmployee" msprop:Generator_TablePropName="Employee" msprop:Generator_RowDeletingName="EmployeeRowDeleting" msprop:Generator_RowChangingName="EmployeeRowChanging" msprop:Generator_RowEvHandlerName="EmployeeRowChangeEventHandler" msprop:Generator_RowDeletedName="EmployeeRowDeleted" msprop:Generator_UserTableName="Employee" msprop:Generator_RowChangedName="EmployeeRowChanged" msprop:Generator_RowEvArgName="EmployeeRowChangeEvent" msprop:Generator_RowClassName="EmployeeRow">
+        <xs:element name="Employee" msprop:Generator_TableClassName="EmployeeDataTable" msprop:Generator_TableVarName="tableEmployee" msprop:Generator_RowChangedName="EmployeeRowChanged" msprop:Generator_TablePropName="Employee" msprop:Generator_RowDeletingName="EmployeeRowDeleting" msprop:Generator_RowChangingName="EmployeeRowChanging" msprop:Generator_RowEvHandlerName="EmployeeRowChangeEventHandler" msprop:Generator_RowDeletedName="EmployeeRowDeleted" msprop:Generator_RowClassName="EmployeeRow" msprop:Generator_UserTableName="Employee" msprop:Generator_RowEvArgName="EmployeeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -945,7 +911,7 @@ and EMP_ID = @emp_id</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Address" msprop:Generator_TableClassName="AddressDataTable" msprop:Generator_TableVarName="tableAddress" msprop:Generator_RowChangedName="AddressRowChanged" msprop:Generator_TablePropName="Address" msprop:Generator_RowDeletingName="AddressRowDeleting" msprop:Generator_RowChangingName="AddressRowChanging" msprop:Generator_RowEvHandlerName="AddressRowChangeEventHandler" msprop:Generator_RowDeletedName="AddressRowDeleted" msprop:Generator_RowClassName="AddressRow" msprop:Generator_UserTableName="Address" msprop:Generator_RowEvArgName="AddressRowChangeEvent">
+        <xs:element name="Address" msprop:Generator_TableClassName="AddressDataTable" msprop:Generator_TableVarName="tableAddress" msprop:Generator_TablePropName="Address" msprop:Generator_RowDeletingName="AddressRowDeleting" msprop:Generator_RowChangingName="AddressRowChanging" msprop:Generator_RowEvHandlerName="AddressRowChangeEventHandler" msprop:Generator_RowDeletedName="AddressRowDeleted" msprop:Generator_UserTableName="Address" msprop:Generator_RowChangedName="AddressRowChanged" msprop:Generator_RowEvArgName="AddressRowChangeEvent" msprop:Generator_RowClassName="AddressRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -966,7 +932,7 @@ and EMP_ID = @emp_id</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CurrentImages" msprop:Generator_TableClassName="CurrentImagesDataTable" msprop:Generator_TableVarName="tableCurrentImages" msprop:Generator_RowChangedName="CurrentImagesRowChanged" msprop:Generator_TablePropName="CurrentImages" msprop:Generator_RowDeletingName="CurrentImagesRowDeleting" msprop:Generator_RowChangingName="CurrentImagesRowChanging" msprop:Generator_RowEvHandlerName="CurrentImagesRowChangeEventHandler" msprop:Generator_RowDeletedName="CurrentImagesRowDeleted" msprop:Generator_RowClassName="CurrentImagesRow" msprop:Generator_UserTableName="CurrentImages" msprop:Generator_RowEvArgName="CurrentImagesRowChangeEvent">
+        <xs:element name="CurrentImages" msprop:Generator_TableClassName="CurrentImagesDataTable" msprop:Generator_TableVarName="tableCurrentImages" msprop:Generator_TablePropName="CurrentImages" msprop:Generator_RowDeletingName="CurrentImagesRowDeleting" msprop:Generator_RowChangingName="CurrentImagesRowChanging" msprop:Generator_RowEvHandlerName="CurrentImagesRowChangeEventHandler" msprop:Generator_RowDeletedName="CurrentImagesRowDeleted" msprop:Generator_UserTableName="CurrentImages" msprop:Generator_RowChangedName="CurrentImagesRowChanged" msprop:Generator_RowEvArgName="CurrentImagesRowChangeEvent" msprop:Generator_RowClassName="CurrentImagesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -974,7 +940,7 @@ and EMP_ID = @emp_id</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Education" msprop:Generator_TableClassName="EducationDataTable" msprop:Generator_TableVarName="tableEducation" msprop:Generator_RowChangedName="EducationRowChanged" msprop:Generator_TablePropName="Education" msprop:Generator_RowDeletingName="EducationRowDeleting" msprop:Generator_RowChangingName="EducationRowChanging" msprop:Generator_RowEvHandlerName="EducationRowChangeEventHandler" msprop:Generator_RowDeletedName="EducationRowDeleted" msprop:Generator_RowClassName="EducationRow" msprop:Generator_UserTableName="Education" msprop:Generator_RowEvArgName="EducationRowChangeEvent">
+        <xs:element name="Education" msprop:Generator_TableClassName="EducationDataTable" msprop:Generator_TableVarName="tableEducation" msprop:Generator_TablePropName="Education" msprop:Generator_RowDeletingName="EducationRowDeleting" msprop:Generator_RowChangingName="EducationRowChanging" msprop:Generator_RowEvHandlerName="EducationRowChangeEventHandler" msprop:Generator_RowDeletedName="EducationRowDeleted" msprop:Generator_UserTableName="Education" msprop:Generator_RowChangedName="EducationRowChanged" msprop:Generator_RowEvArgName="EducationRowChangeEvent" msprop:Generator_RowClassName="EducationRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -995,7 +961,7 @@ and EMP_ID = @emp_id</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="OtherDocuments" msprop:Generator_TableClassName="OtherDocumentsDataTable" msprop:Generator_TableVarName="tableOtherDocuments" msprop:Generator_RowChangedName="OtherDocumentsRowChanged" msprop:Generator_TablePropName="OtherDocuments" msprop:Generator_RowDeletingName="OtherDocumentsRowDeleting" msprop:Generator_RowChangingName="OtherDocumentsRowChanging" msprop:Generator_RowEvHandlerName="OtherDocumentsRowChangeEventHandler" msprop:Generator_RowDeletedName="OtherDocumentsRowDeleted" msprop:Generator_RowClassName="OtherDocumentsRow" msprop:Generator_UserTableName="OtherDocuments" msprop:Generator_RowEvArgName="OtherDocumentsRowChangeEvent">
+        <xs:element name="OtherDocuments" msprop:Generator_TableClassName="OtherDocumentsDataTable" msprop:Generator_TableVarName="tableOtherDocuments" msprop:Generator_TablePropName="OtherDocuments" msprop:Generator_RowDeletingName="OtherDocumentsRowDeleting" msprop:Generator_RowChangingName="OtherDocumentsRowChanging" msprop:Generator_RowEvHandlerName="OtherDocumentsRowChangeEventHandler" msprop:Generator_RowDeletedName="OtherDocumentsRowDeleted" msprop:Generator_UserTableName="OtherDocuments" msprop:Generator_RowChangedName="OtherDocumentsRowChanged" msprop:Generator_RowEvArgName="OtherDocumentsRowChangeEvent" msprop:Generator_RowClassName="OtherDocumentsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1018,7 +984,7 @@ and EMP_ID = @emp_id</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ReferenceDocuments" msprop:Generator_TableClassName="ReferenceDocumentsDataTable" msprop:Generator_TableVarName="tableReferenceDocuments" msprop:Generator_RowChangedName="ReferenceDocumentsRowChanged" msprop:Generator_TablePropName="ReferenceDocuments" msprop:Generator_RowDeletingName="ReferenceDocumentsRowDeleting" msprop:Generator_RowChangingName="ReferenceDocumentsRowChanging" msprop:Generator_RowEvHandlerName="ReferenceDocumentsRowChangeEventHandler" msprop:Generator_RowDeletedName="ReferenceDocumentsRowDeleted" msprop:Generator_RowClassName="ReferenceDocumentsRow" msprop:Generator_UserTableName="ReferenceDocuments" msprop:Generator_RowEvArgName="ReferenceDocumentsRowChangeEvent">
+        <xs:element name="ReferenceDocuments" msprop:Generator_TableClassName="ReferenceDocumentsDataTable" msprop:Generator_TableVarName="tableReferenceDocuments" msprop:Generator_TablePropName="ReferenceDocuments" msprop:Generator_RowDeletingName="ReferenceDocumentsRowDeleting" msprop:Generator_RowChangingName="ReferenceDocumentsRowChanging" msprop:Generator_RowEvHandlerName="ReferenceDocumentsRowChangeEventHandler" msprop:Generator_RowDeletedName="ReferenceDocumentsRowDeleted" msprop:Generator_UserTableName="ReferenceDocuments" msprop:Generator_RowChangedName="ReferenceDocumentsRowChanged" msprop:Generator_RowEvArgName="ReferenceDocumentsRowChangeEvent" msprop:Generator_RowClassName="ReferenceDocumentsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1033,28 +999,34 @@ and EMP_ID = @emp_id</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ReferencePerson" msprop:Generator_TableClassName="ReferencePersonDataTable" msprop:Generator_TableVarName="tableReferencePerson" msprop:Generator_RowChangedName="ReferencePersonRowChanged" msprop:Generator_TablePropName="ReferencePerson" msprop:Generator_RowDeletingName="ReferencePersonRowDeleting" msprop:Generator_RowChangingName="ReferencePersonRowChanging" msprop:Generator_RowEvHandlerName="ReferencePersonRowChangeEventHandler" msprop:Generator_RowDeletedName="ReferencePersonRowDeleted" msprop:Generator_RowClassName="ReferencePersonRow" msprop:Generator_UserTableName="ReferencePerson" msprop:Generator_RowEvArgName="ReferencePersonRowChangeEvent">
+        <xs:element name="ReferencePerson" msprop:Generator_TableClassName="ReferencePersonDataTable" msprop:Generator_TableVarName="tableReferencePerson" msprop:Generator_TablePropName="ReferencePerson" msprop:Generator_RowDeletingName="ReferencePersonRowDeleting" msprop:Generator_RowChangingName="ReferencePersonRowChanging" msprop:Generator_RowEvHandlerName="ReferencePersonRowChangeEventHandler" msprop:Generator_RowDeletedName="ReferencePersonRowDeleted" msprop:Generator_UserTableName="ReferencePerson" msprop:Generator_RowChangedName="ReferencePersonRowChanged" msprop:Generator_RowEvArgName="ReferencePersonRowChangeEvent" msprop:Generator_RowClassName="ReferencePersonRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="EMP_ID" msprop:Generator_ColumnVarNameInTable="columnEMP_ID" msprop:Generator_ColumnPropNameInRow="EMP_ID" msprop:Generator_ColumnPropNameInTable="EMP_IDColumn" msprop:Generator_UserColumnName="EMP_ID" minOccurs="0">
+              <xs:element name="FULLREFPERSON1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFULLREFPERSON1" msprop:Generator_ColumnPropNameInRow="FULLREFPERSON1" msprop:Generator_ColumnPropNameInTable="FULLREFPERSON1Column" msprop:Generator_UserColumnName="FULLREFPERSON1" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="14" />
+                    <xs:maxLength value="124" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="FULLREFPERSON" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFULLREFPERSON" msprop:Generator_ColumnPropNameInRow="FULLREFPERSON" msprop:Generator_ColumnPropNameInTable="FULLREFPERSONColumn" msprop:Generator_UserColumnName="FULLREFPERSON" minOccurs="0">
+              <xs:element name="FULLREFPERSON2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFULLREFPERSON2" msprop:Generator_ColumnPropNameInRow="FULLREFPERSON2" msprop:Generator_ColumnPropNameInTable="FULLREFPERSON2Column" msprop:Generator_UserColumnName="FULLREFPERSON2" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="398" />
+                    <xs:maxLength value="124" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FULLREFPERSON3" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFULLREFPERSON3" msprop:Generator_ColumnPropNameInRow="FULLREFPERSON3" msprop:Generator_ColumnPropNameInTable="FULLREFPERSON3Column" msprop:Generator_UserColumnName="FULLREFPERSON3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="124" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SSO" msprop:Generator_TableClassName="SSODataTable" msprop:Generator_TableVarName="tableSSO" msprop:Generator_RowChangedName="SSORowChanged" msprop:Generator_TablePropName="SSO" msprop:Generator_RowDeletingName="SSORowDeleting" msprop:Generator_RowChangingName="SSORowChanging" msprop:Generator_RowEvHandlerName="SSORowChangeEventHandler" msprop:Generator_RowDeletedName="SSORowDeleted" msprop:Generator_RowClassName="SSORow" msprop:Generator_UserTableName="SSO" msprop:Generator_RowEvArgName="SSORowChangeEvent">
+        <xs:element name="SSO" msprop:Generator_TableClassName="SSODataTable" msprop:Generator_TableVarName="tableSSO" msprop:Generator_TablePropName="SSO" msprop:Generator_RowDeletingName="SSORowDeleting" msprop:Generator_RowChangingName="SSORowChanging" msprop:Generator_RowEvHandlerName="SSORowChangeEventHandler" msprop:Generator_RowDeletedName="SSORowDeleted" msprop:Generator_UserTableName="SSO" msprop:Generator_RowChangedName="SSORowChanged" msprop:Generator_RowEvArgName="SSORowChangeEvent" msprop:Generator_RowClassName="SSORow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1076,59 +1048,64 @@ and EMP_ID = @emp_id</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Training" msprop:Generator_TableClassName="TrainingDataTable" msprop:Generator_TableVarName="tableTraining" msprop:Generator_RowChangedName="TrainingRowChanged" msprop:Generator_TablePropName="Training" msprop:Generator_RowDeletingName="TrainingRowDeleting" msprop:Generator_RowChangingName="TrainingRowChanging" msprop:Generator_RowEvHandlerName="TrainingRowChangeEventHandler" msprop:Generator_RowDeletedName="TrainingRowDeleted" msprop:Generator_RowClassName="TrainingRow" msprop:Generator_UserTableName="Training" msprop:Generator_RowEvArgName="TrainingRowChangeEvent">
+        <xs:element name="Training" msprop:Generator_TableClassName="TrainingDataTable" msprop:Generator_TableVarName="tableTraining" msprop:Generator_TablePropName="Training" msprop:Generator_RowDeletingName="TrainingRowDeleting" msprop:Generator_RowChangingName="TrainingRowChanging" msprop:Generator_RowEvHandlerName="TrainingRowChangeEventHandler" msprop:Generator_RowDeletedName="TrainingRowDeleted" msprop:Generator_UserTableName="Training" msprop:Generator_RowChangedName="TrainingRowChanged" msprop:Generator_RowEvArgName="TrainingRowChangeEvent" msprop:Generator_RowClassName="TrainingRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="EMP_ID" msprop:Generator_ColumnVarNameInTable="columnEMP_ID" msprop:Generator_ColumnPropNameInRow="EMP_ID" msprop:Generator_ColumnPropNameInTable="EMP_IDColumn" msprop:Generator_UserColumnName="EMP_ID">
+              <xs:element name="COURSE_1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCOURSE_1" msprop:Generator_ColumnPropNameInRow="COURSE_1" msprop:Generator_ColumnPropNameInTable="COURSE_1Column" msprop:Generator_UserColumnName="COURSE_1" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="14" />
+                    <xs:maxLength value="512" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="FULLTRAINING" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFULLTRAINING" msprop:Generator_ColumnPropNameInRow="FULLTRAINING" msprop:Generator_ColumnPropNameInTable="FULLTRAININGColumn" msprop:Generator_UserColumnName="FULLTRAINING" minOccurs="0">
+              <xs:element name="COURSE_2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCOURSE_2" msprop:Generator_ColumnPropNameInRow="COURSE_2" msprop:Generator_ColumnPropNameInTable="COURSE_2Column" msprop:Generator_UserColumnName="COURSE_2" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="545" />
+                    <xs:maxLength value="512" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COURSE_3" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCOURSE_3" msprop:Generator_ColumnPropNameInRow="COURSE_3" msprop:Generator_ColumnPropNameInTable="COURSE_3Column" msprop:Generator_UserColumnName="COURSE_3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="512" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="WorkExperience" msprop:Generator_TableClassName="WorkExperienceDataTable" msprop:Generator_TableVarName="tableWorkExperience" msprop:Generator_RowChangedName="WorkExperienceRowChanged" msprop:Generator_TablePropName="WorkExperience" msprop:Generator_RowDeletingName="WorkExperienceRowDeleting" msprop:Generator_RowChangingName="WorkExperienceRowChanging" msprop:Generator_RowEvHandlerName="WorkExperienceRowChangeEventHandler" msprop:Generator_RowDeletedName="WorkExperienceRowDeleted" msprop:Generator_RowClassName="WorkExperienceRow" msprop:Generator_UserTableName="WorkExperience" msprop:Generator_RowEvArgName="WorkExperienceRowChangeEvent">
+        <xs:element name="WorkExperience" msprop:Generator_TableClassName="WorkExperienceDataTable" msprop:Generator_TableVarName="tableWorkExperience" msprop:Generator_TablePropName="WorkExperience" msprop:Generator_RowDeletingName="WorkExperienceRowDeleting" msprop:Generator_RowChangingName="WorkExperienceRowChanging" msprop:Generator_RowEvHandlerName="WorkExperienceRowChangeEventHandler" msprop:Generator_RowDeletedName="WorkExperienceRowDeleted" msprop:Generator_UserTableName="WorkExperience" msprop:Generator_RowChangedName="WorkExperienceRowChanged" msprop:Generator_RowEvArgName="WorkExperienceRowChangeEvent" msprop:Generator_RowClassName="WorkExperienceRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="EMP_ID" msprop:Generator_ColumnVarNameInTable="columnEMP_ID" msprop:Generator_ColumnPropNameInRow="EMP_ID" msprop:Generator_ColumnPropNameInTable="EMP_IDColumn" msprop:Generator_UserColumnName="EMP_ID" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="14" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="FULLEXP" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFULLEXP" msprop:Generator_ColumnPropNameInRow="FULLEXP" msprop:Generator_ColumnPropNameInTable="FULLEXPColumn" msprop:Generator_UserColumnName="FULLEXP" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="846" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="CompanyInfo" msprop:Generator_TableClassName="CompanyInfoDataTable" msprop:Generator_TableVarName="tableCompanyInfo" msprop:Generator_RowChangedName="CompanyInfoRowChanged" msprop:Generator_TablePropName="CompanyInfo" msprop:Generator_RowDeletingName="CompanyInfoRowDeleting" msprop:Generator_RowChangingName="CompanyInfoRowChanging" msprop:Generator_RowEvHandlerName="CompanyInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="CompanyInfoRowDeleted" msprop:Generator_RowClassName="CompanyInfoRow" msprop:Generator_UserTableName="CompanyInfo" msprop:Generator_RowEvArgName="CompanyInfoRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="NAME" msprop:Generator_ColumnVarNameInTable="columnNAME" msprop:Generator_ColumnPropNameInRow="NAME" msprop:Generator_ColumnPropNameInTable="NAMEColumn" msprop:Generator_UserColumnName="NAME" minOccurs="0">
+              <xs:element name="FULLEXP_1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFULLEXP_1" msprop:Generator_ColumnPropNameInRow="FULLEXP_1" msprop:Generator_ColumnPropNameInTable="FULLEXP_1Column" msprop:Generator_UserColumnName="FULLEXP_1" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="FULLEXP_2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFULLEXP_2" msprop:Generator_ColumnPropNameInRow="FULLEXP_2" msprop:Generator_ColumnPropNameInTable="FULLEXP_2Column" msprop:Generator_UserColumnName="FULLEXP_2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FULLEXP_3" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFULLEXP_3" msprop:Generator_ColumnPropNameInRow="FULLEXP_3" msprop:Generator_ColumnPropNameInTable="FULLEXP_3Column" msprop:Generator_UserColumnName="FULLEXP_3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CompanyInfo" msprop:Generator_TableClassName="CompanyInfoDataTable" msprop:Generator_TableVarName="tableCompanyInfo" msprop:Generator_TablePropName="CompanyInfo" msprop:Generator_RowDeletingName="CompanyInfoRowDeleting" msprop:Generator_RowChangingName="CompanyInfoRowChanging" msprop:Generator_RowEvHandlerName="CompanyInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="CompanyInfoRowDeleted" msprop:Generator_UserTableName="CompanyInfo" msprop:Generator_RowChangedName="CompanyInfoRowChanged" msprop:Generator_RowEvArgName="CompanyInfoRowChangeEvent" msprop:Generator_RowClassName="CompanyInfoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
               <xs:element name="LOCATION" msprop:Generator_ColumnVarNameInTable="columnLOCATION" msprop:Generator_ColumnPropNameInRow="LOCATION" msprop:Generator_ColumnPropNameInTable="LOCATIONColumn" msprop:Generator_UserColumnName="LOCATION" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1136,31 +1113,34 @@ and EMP_ID = @emp_id</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="AMPHUR" msprop:Generator_ColumnVarNameInTable="columnAMPHUR" msprop:Generator_ColumnPropNameInRow="AMPHUR" msprop:Generator_ColumnPropNameInTable="AMPHURColumn" msprop:Generator_UserColumnName="AMPHUR" minOccurs="0">
+              <xs:element name="NAME_EN" msprop:Generator_ColumnVarNameInTable="columnNAME_EN" msprop:Generator_ColumnPropNameInRow="NAME_EN" msprop:Generator_ColumnPropNameInTable="NAME_ENColumn" msprop:Generator_UserColumnName="NAME_EN" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PROVINCE" msprop:Generator_ColumnVarNameInTable="columnPROVINCE" msprop:Generator_ColumnPropNameInRow="PROVINCE" msprop:Generator_ColumnPropNameInTable="PROVINCEColumn" msprop:Generator_UserColumnName="PROVINCE" minOccurs="0">
+              <xs:element name="NAME_TH" msprop:Generator_ColumnVarNameInTable="columnNAME_TH" msprop:Generator_ColumnPropNameInRow="NAME_TH" msprop:Generator_ColumnPropNameInTable="NAME_THColumn" msprop:Generator_UserColumnName="NAME_TH" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="POSTCODE" msprop:Generator_ColumnVarNameInTable="columnPOSTCODE" msprop:Generator_ColumnPropNameInRow="POSTCODE" msprop:Generator_ColumnPropNameInTable="POSTCODEColumn" msprop:Generator_UserColumnName="POSTCODE" minOccurs="0">
+              <xs:element name="TELEPHONE" msprop:Generator_ColumnVarNameInTable="columnTELEPHONE" msprop:Generator_ColumnPropNameInRow="TELEPHONE" msprop:Generator_ColumnPropNameInTable="TELEPHONEColumn" msprop:Generator_UserColumnName="TELEPHONE" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="LOGO" msprop:Generator_ColumnVarNameInTable="columnLOGO" msprop:Generator_ColumnPropNameInRow="LOGO" msprop:Generator_ColumnPropNameInTable="LOGOColumn" msprop:Generator_UserColumnName="LOGO" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="RIGHT_LOGO_1" msprop:Generator_ColumnVarNameInTable="columnRIGHT_LOGO_1" msprop:Generator_ColumnPropNameInRow="RIGHT_LOGO_1" msprop:Generator_ColumnPropNameInTable="RIGHT_LOGO_1Column" msprop:Generator_UserColumnName="RIGHT_LOGO_1" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="RIGHT_LOGO_2" msprop:Generator_ColumnVarNameInTable="columnRIGHT_LOGO_2" msprop:Generator_ColumnPropNameInRow="RIGHT_LOGO_2" msprop:Generator_ColumnPropNameInTable="RIGHT_LOGO_2Column" msprop:Generator_UserColumnName="RIGHT_LOGO_2" type="xs:base64Binary" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="FingerScan" msprop:Generator_TableClassName="FingerScanDataTable" msprop:Generator_TableVarName="tableFingerScan" msprop:Generator_RowChangedName="FingerScanRowChanged" msprop:Generator_TablePropName="FingerScan" msprop:Generator_RowDeletingName="FingerScanRowDeleting" msprop:Generator_RowChangingName="FingerScanRowChanging" msprop:Generator_RowEvHandlerName="FingerScanRowChangeEventHandler" msprop:Generator_RowDeletedName="FingerScanRowDeleted" msprop:Generator_RowClassName="FingerScanRow" msprop:Generator_UserTableName="FingerScan" msprop:Generator_RowEvArgName="FingerScanRowChangeEvent">
+        <xs:element name="FingerScan" msprop:Generator_TableClassName="FingerScanDataTable" msprop:Generator_TableVarName="tableFingerScan" msprop:Generator_TablePropName="FingerScan" msprop:Generator_RowDeletingName="FingerScanRowDeleting" msprop:Generator_RowChangingName="FingerScanRowChanging" msprop:Generator_RowEvHandlerName="FingerScanRowChangeEventHandler" msprop:Generator_RowDeletedName="FingerScanRowDeleted" msprop:Generator_UserTableName="FingerScan" msprop:Generator_RowChangedName="FingerScanRowChanged" msprop:Generator_RowEvArgName="FingerScanRowChangeEvent" msprop:Generator_RowClassName="FingerScanRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1184,7 +1164,7 @@ and EMP_ID = @emp_id</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PermanentAddress" msprop:Generator_TableClassName="PermanentAddressDataTable" msprop:Generator_TableVarName="tablePermanentAddress" msprop:Generator_TablePropName="PermanentAddress" msprop:Generator_RowDeletingName="PermanentAddressRowDeleting" msprop:Generator_RowChangingName="PermanentAddressRowChanging" msprop:Generator_RowEvHandlerName="PermanentAddressRowChangeEventHandler" msprop:Generator_RowDeletedName="PermanentAddressRowDeleted" msprop:Generator_UserTableName="PermanentAddress" msprop:Generator_RowChangedName="PermanentAddressRowChanged" msprop:Generator_RowEvArgName="PermanentAddressRowChangeEvent" msprop:Generator_RowClassName="PermanentAddressRow">
+        <xs:element name="PermanentAddress" msprop:Generator_TableClassName="PermanentAddressDataTable" msprop:Generator_TableVarName="tablePermanentAddress" msprop:Generator_RowChangedName="PermanentAddressRowChanged" msprop:Generator_TablePropName="PermanentAddress" msprop:Generator_RowDeletingName="PermanentAddressRowDeleting" msprop:Generator_RowChangingName="PermanentAddressRowChanging" msprop:Generator_RowEvHandlerName="PermanentAddressRowChangeEventHandler" msprop:Generator_RowDeletedName="PermanentAddressRowDeleted" msprop:Generator_RowClassName="PermanentAddressRow" msprop:Generator_UserTableName="PermanentAddress" msprop:Generator_RowEvArgName="PermanentAddressRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1232,20 +1212,8 @@ and EMP_ID = @emp_id</CommandText>
       <xs:selector xpath=".//mstns:ReferenceDocuments" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
-    <xs:unique name="ReferencePerson_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:ReferencePerson" />
-      <xs:field xpath="mstns:ID" />
-    </xs:unique>
     <xs:unique name="SSO_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:SSO" />
-      <xs:field xpath="mstns:ID" />
-    </xs:unique>
-    <xs:unique name="Training_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Training" />
-      <xs:field xpath="mstns:ID" />
-    </xs:unique>
-    <xs:unique name="WorkExperience_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:WorkExperience" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
     <xs:unique name="CompanyInfo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">

@@ -36,7 +36,6 @@
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.rb_home = new System.Windows.Forms.RibbonButton();
             this.rb_new = new System.Windows.Forms.RibbonButton();
-            this.rb_load_pid = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
             this.rb_save = new System.Windows.Forms.RibbonButton();
             this.rb_print = new System.Windows.Forms.RibbonButton();
@@ -66,14 +65,13 @@
             this.ribbonPanel11 = new System.Windows.Forms.RibbonPanel();
             this.ribbonButton16 = new System.Windows.Forms.RibbonButton();
             this.ribbonTab6 = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel12 = new System.Windows.Forms.RibbonPanel();
+            this.rb_savecompany = new System.Windows.Forms.RibbonButton();
             this.ribbonTab7 = new System.Windows.Forms.RibbonTab();
-            this.ribbonTab8 = new System.Windows.Forms.RibbonTab();
             this.ribbonSeparator4 = new System.Windows.Forms.RibbonSeparator();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
             this.ribbonTab4 = new System.Windows.Forms.RibbonTab();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.SuspendLayout();
             // 
             // main
@@ -101,7 +99,6 @@
             // 
             this.ribbonPanel2.Items.Add(this.rb_home);
             this.ribbonPanel2.Items.Add(this.rb_new);
-            this.ribbonPanel2.Items.Add(this.rb_load_pid);
             this.ribbonPanel2.Text = "";
             // 
             // rb_home
@@ -113,15 +110,9 @@
             // 
             // rb_new
             // 
-            this.rb_new.Image = global::BIG.Present.Properties.Resources.User_group;
+            this.rb_new.Image = global::BIG.Present.Properties.Resources.user_add_icon;
             this.rb_new.SmallImage = ((System.Drawing.Image)(resources.GetObject("rb_new.SmallImage")));
             this.rb_new.Text = "เพิ่มพนักงาน";
-            // 
-            // rb_load_pid
-            // 
-            this.rb_load_pid.Image = global::BIG.Present.Properties.Resources.Sync;
-            this.rb_load_pid.SmallImage = ((System.Drawing.Image)(resources.GetObject("rb_load_pid.SmallImage")));
-            this.rb_load_pid.Text = "โหลดบัตรประชาชน";
             // 
             // ribbonPanel3
             // 
@@ -200,7 +191,6 @@
             this.ribbon1.Tabs.Add(this.ribbonTab5);
             this.ribbon1.Tabs.Add(this.ribbonTab6);
             this.ribbon1.Tabs.Add(this.ribbonTab7);
-            this.ribbon1.Tabs.Add(this.ribbonTab8);
             this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 2, 20, 0);
             this.ribbon1.Text = "ribbon1";
             this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue;
@@ -308,15 +298,23 @@
             // 
             // ribbonTab6
             // 
+            this.ribbonTab6.Panels.Add(this.ribbonPanel12);
             this.ribbonTab6.Text = "ข้อมูลบริษัท";
+            // 
+            // ribbonPanel12
+            // 
+            this.ribbonPanel12.Items.Add(this.rb_savecompany);
+            this.ribbonPanel12.Text = "";
+            // 
+            // rb_savecompany
+            // 
+            this.rb_savecompany.Image = global::BIG.Present.Properties.Resources.Save;
+            this.rb_savecompany.SmallImage = global::BIG.Present.Properties.Resources.Save;
+            this.rb_savecompany.Text = "บันทึกข้อมูล";
             // 
             // ribbonTab7
             // 
             this.ribbonTab7.Text = "";
-            // 
-            // ribbonTab8
-            // 
-            this.ribbonTab8.Text = "ตั้งค่าโปรแกรม";
             // 
             // ribbonTab2
             // 
@@ -326,35 +324,21 @@
             // 
             this.ribbonTab4.Text = "ข้อมูลโปรแกรม";
             // 
-            // button1
+            // ribbonButton1
             // 
-            this.button1.Location = new System.Drawing.Point(109, 175);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "ทดสอบ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(87, 219);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(130, 152);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.ribbonButton1.Image = global::BIG.Present.Properties.Resources.Save;
+            this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
+            this.ribbonButton1.Text = "บันทึกข้อมูล";
+            this.ribbonButton1.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
             // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(818, 583);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.ribbon1);
             this.Name = "TestForm";
             this.Text = "TestForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -369,7 +353,6 @@
         private System.Windows.Forms.Ribbon ribbon1;
         private System.Windows.Forms.RibbonButton rb_home;
         private System.Windows.Forms.RibbonButton rb_new;
-        private System.Windows.Forms.RibbonButton rb_load_pid;
         private System.Windows.Forms.RibbonPanel ribbonPanel3;
         private System.Windows.Forms.RibbonButton rb_save;
         private System.Windows.Forms.RibbonButton rb_print;
@@ -389,7 +372,6 @@
         private System.Windows.Forms.RibbonTab ribbonTab5;
         private System.Windows.Forms.RibbonTab ribbonTab6;
         private System.Windows.Forms.RibbonTab ribbonTab7;
-        private System.Windows.Forms.RibbonTab ribbonTab8;
         private System.Windows.Forms.RibbonPanel ribbonPanel7;
         private System.Windows.Forms.RibbonButton ribbonButton9;
         private System.Windows.Forms.RibbonButton ribbonButton12;
@@ -403,8 +385,9 @@
         private System.Windows.Forms.RibbonButton ribbonButton11;
         private System.Windows.Forms.RibbonPanel ribbonPanel11;
         private System.Windows.Forms.RibbonButton ribbonButton16;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RibbonPanel ribbonPanel12;
+        private System.Windows.Forms.RibbonButton rb_savecompany;
+        private System.Windows.Forms.RibbonButton ribbonButton1;
 
 
 

@@ -21,5 +21,9 @@ namespace BIG.Model
         public string AMPHUR { get; set; }
         public string PROVINCE { get; set; }
         public string POSTCODE { get; set; }
+        public string TELEPHONE { get; set; }
+        public byte[] LOGO { get; set; }
+        public byte[] RIGHT_LOGO_1 { get; set; }
+        public byte[] RIGHT_LOGO_2 { get; set; }
     }
 }

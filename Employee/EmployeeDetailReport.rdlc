@@ -31,10 +31,11 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!FULLNAME.Value</Value>
+                              <Value />
                               <Style>
                                 <FontFamily>Angsana New</FontFamily>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>14pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -49,16 +50,53 @@
                           <Color>LightGrey</Color>
                           <Style>None</Style>
                         </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <ColSpan>4</ColSpan>
                   </CellContents>
                 </TablixCell>
-                <TablixCell />
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="FULLNAME1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!FULLNAME.Value</Value>
+                              <Style>
+                                <FontFamily>Angsana New</FontFamily>
+                                <FontSize>14pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>FULLNAME1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>3</ColSpan>
+                  </CellContents>
+                </TablixCell>
                 <TablixCell />
                 <TablixCell />
               </TablixCells>
@@ -1466,7 +1504,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>ตำหนี/แผลเป็น</Value>
+                              <Value>ตำหนิ/แผลเป็น</Value>
                               <Style>
                                 <FontFamily>Angsana New</FontFamily>
                                 <FontSize>12pt</FontSize>
@@ -2679,7 +2717,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!FULLREFPERSON.Value, "DSRefPerson")</Value>
+                <Value>=First(Fields!FULLREFPERSON1.Value, "DSRefPerson")+", "+  First(Fields!FULLREFPERSON2.Value, "DSRefPerson")+ ", "+First(Fields!FULLREFPERSON3.Value, "DSRefPerson")</Value>
                 <Style>
                   <FontFamily>Angsana New</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -2716,7 +2754,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!FULLTRAINING.Value, "DSTraining")</Value>
+                <Value>=First(Fields!COURSE_1.Value, "DSTraining")+", "+ First(Fields!COURSE_2.Value, "DSTraining")+", "+First(Fields!COURSE_3.Value, "DSTraining")</Value>
                 <Style>
                   <FontFamily>Angsana New</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -2753,7 +2791,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!FULLEXP.Value, "DSExp")</Value>
+                <Value>=First(Fields!FULLEXP_1.Value, "DSExp")+", "+First(Fields!FULLEXP_2.Value, "DSExp") +", " +First(Fields!FULLEXP_3.Value, "DSExp")</Value>
                 <Style>
                   <FontFamily>Angsana New</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -2765,7 +2803,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox210</rd:DefaultName>
         <Top>10.8725cm</Top>
-        <Left>2.53784cm</Left>
+        <Left>2.52869cm</Left>
         <Height>0.6cm</Height>
         <Width>15.87964cm</Width>
         <ZIndex>26</ZIndex>
@@ -2795,43 +2833,14 @@
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
         <Image Name="Logo">
-          <Source>Embedded</Source>
-          <Value>big_logo</Value>
+          <Source>Database</Source>
+          <Value>=First(Fields!LOGO.Value, "DSCompanyInfo")</Value>
+          <MIMEType>image/jpeg</MIMEType>
           <Sizing>FitProportional</Sizing>
           <Top>0.36724cm</Top>
-          <Left>0.65828cm</Left>
+          <Left>0.27701cm</Left>
           <Height>2.58819cm</Height>
           <Width>2.58479cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
-        <Image Name="iso">
-          <Source>Embedded</Source>
-          <Value>iso</Value>
-          <Sizing>FitProportional</Sizing>
-          <Top>0.7146cm</Top>
-          <Left>12.87731cm</Left>
-          <Height>2.24083cm</Height>
-          <Width>3.69604cm</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
-        <Image Name="ssat">
-          <Source>Embedded</Source>
-          <Value>ssatlogo1</Value>
-          <Sizing>FitProportional</Sizing>
-          <Top>0.7146cm</Top>
-          <Left>16.74974cm</Left>
-          <Height>2.24083cm</Height>
-          <Width>2.24083cm</Width>
-          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2845,7 +2854,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>บริษัท บี.ไอ.จี.อินเตอร์เซฟการ์ด กรุ๊ป จำกัด</Value>
+                  <Value>=First(Fields!NAME_TH.Value, "DSCompanyInfo")</Value>
                   <Style>
                     <FontFamily>Angsana New</FontFamily>
                     <FontSize>16pt</FontSize>
@@ -2859,20 +2868,17 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox13</rd:DefaultName>
-          <Top>0.11148cm</Top>
-          <Left>4.30953cm</Left>
+          <Left>3.03819cm</Left>
           <Height>0.73229cm</Height>
-          <Width>7.52708cm</Width>
-          <ZIndex>3</ZIndex>
+          <Width>10.27127cm</Width>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
             <VerticalAlign>Middle</VerticalAlign>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
+            <PaddingLeft>1pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
           </Style>
         </Textbox>
         <Textbox Name="Textbox14">
@@ -2882,7 +2888,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>B.I.G INTERSAFEGUARD GROUP CO.,LTD.</Value>
+                  <Value>=First(Fields!NAME_EN.Value, "DSCompanyInfo")</Value>
                   <Style>
                     <FontFamily>Angsana New</FontFamily>
                     <FontSize>16pt</FontSize>
@@ -2896,20 +2902,18 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox13</rd:DefaultName>
-          <Top>0.84377cm</Top>
-          <Left>3.70099cm</Left>
+          <Top>0.7146cm</Top>
+          <Left>3.03819cm</Left>
           <Height>0.75875cm</Height>
-          <Width>8.87646cm</Width>
-          <ZIndex>4</ZIndex>
+          <Width>10.27127cm</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
             <VerticalAlign>Middle</VerticalAlign>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
+            <PaddingLeft>1pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
           </Style>
         </Textbox>
         <Textbox Name="Textbox15">
@@ -2919,23 +2923,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>81 หมู่ที่ 5 ต.ละหาร อ.บางบัวทอง จ.นนทบุรี 11110</Value>
-                  <Style>
-                    <FontFamily>Angsana New</FontFamily>
-                    <FontSize>15pt</FontSize>
-                    <FontWeight>Normal</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>โทรศัพท์ : 025714342, 025714343 โทรสาร : 025714344
-</Value>
+                  <Value>=First(Fields!LOCATION.Value, "DSCompanyInfo")</Value>
                   <Style>
                     <FontFamily>Angsana New</FontFamily>
                     <FontSize>15pt</FontSize>
@@ -2949,11 +2937,77 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox13</rd:DefaultName>
-          <Top>1.5496cm</Top>
-          <Left>3.66572cm</Left>
-          <Height>1.67042cm</Height>
-          <Width>9.03521cm</Width>
+          <Top>1.47335cm</Top>
+          <Left>3.03819cm</Left>
+          <Height>0.63642cm</Height>
+          <Width>10.27127cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>1pt</PaddingLeft>
+            <PaddingRight>1pt</PaddingRight>
+          </Style>
+        </Textbox>
+        <Image Name="iso">
+          <Source>Database</Source>
+          <Value>=First(Fields!RIGHT_LOGO_1.Value, "DSCompanyInfo")</Value>
+          <MIMEType>image/jpeg</MIMEType>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.7146cm</Top>
+          <Left>13.48585cm</Left>
+          <Height>2.24083cm</Height>
+          <Width>3.29917cm</Width>
+          <ZIndex>4</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Image Name="ssat">
+          <Source>Database</Source>
+          <Value>=First(Fields!RIGHT_LOGO_2.Value, "DSCompanyInfo")</Value>
+          <MIMEType>image/jpeg</MIMEType>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.7146cm</Top>
+          <Left>16.60863cm</Left>
+          <Height>2.24083cm</Height>
+          <Width>2.24083cm</Width>
           <ZIndex>5</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Textbox Name="Textbox17">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!TELEPHONE.Value, "DSCompanyInfo")</Value>
+                  <Style>
+                    <FontFamily>Angsana New</FontFamily>
+                    <FontSize>15pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox13</rd:DefaultName>
+          <Top>2.10977cm</Top>
+          <Left>3.03819cm</Left>
+          <Height>0.63642cm</Height>
+          <Width>10.27127cm</Width>
+          <ZIndex>6</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -3082,16 +3136,16 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="ID">
-          <DataField>ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="EMP_ID">
-          <DataField>EMP_ID</DataField>
+        <Field Name="FULLREFPERSON1">
+          <DataField>FULLREFPERSON1</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="FULLREFPERSON">
-          <DataField>FULLREFPERSON</DataField>
+        <Field Name="FULLREFPERSON2">
+          <DataField>FULLREFPERSON2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FULLREFPERSON3">
+          <DataField>FULLREFPERSON3</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -3110,16 +3164,16 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="ID">
-          <DataField>ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="EMP_ID">
-          <DataField>EMP_ID</DataField>
+        <Field Name="COURSE_1">
+          <DataField>COURSE_1</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="FULLTRAINING">
-          <DataField>FULLTRAINING</DataField>
+        <Field Name="COURSE_2">
+          <DataField>COURSE_2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="COURSE_3">
+          <DataField>COURSE_3</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -3138,16 +3192,16 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="ID">
-          <DataField>ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="EMP_ID">
-          <DataField>EMP_ID</DataField>
+        <Field Name="FULLEXP_1">
+          <DataField>FULLEXP_1</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="FULLEXP">
-          <DataField>FULLEXP</DataField>
+        <Field Name="FULLEXP_2">
+          <DataField>FULLEXP_2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FULLEXP_3">
+          <DataField>FULLEXP_3</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -3366,6 +3420,54 @@
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
         <rd:TableAdapterName>EducationTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DSCompanyInfo">
+      <Query>
+        <DataSourceName>BIG_DBDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="LOCATION">
+          <DataField>LOCATION</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NAME_EN">
+          <DataField>NAME_EN</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NAME_TH">
+          <DataField>NAME_TH</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TELEPHONE">
+          <DataField>TELEPHONE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LOGO">
+          <DataField>LOGO</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="RIGHT_LOGO_1">
+          <DataField>RIGHT_LOGO_1</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="RIGHT_LOGO_2">
+          <DataField>RIGHT_LOGO_2</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>CompanyInfo</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>CompanyInfoTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
