@@ -1822,15 +1822,7 @@ namespace BIG.Present
 
         private void EmployeeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //DialogResult result = MessageBox.Show("คุณต้องการออกจากโปรแกรมจัดการข้อมูลลพนักงานหรือไม่?", "Confirmation", MessageBoxButtons.YesNo);
-            //if (result == DialogResult.Yes)
-            //{
-            //    Application.Exit();
-            //}
-            //else if (result == DialogResult.No)
-            //{
-            //    //...
-            //}
+            
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -2372,7 +2364,8 @@ namespace BIG.Present
 
         private void btn_refresh_copy_home_Click(object sender, EventArgs e)
         {
-            var doc = RefDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "สำเนาทะเบียนบ้าน").FirstOrDefault();
+            var filename = listbox_refdoc_1.SelectedItem.ToString();
+            var doc = RefDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "สำเนาทะเบียนบ้าน" && x.FILENAME == filename).FirstOrDefault();
             if (doc != null)
             {
                 DownloadRefPDF(doc);
@@ -2448,7 +2441,8 @@ namespace BIG.Present
 
         private void btn_upload_refresh_military_Click(object sender, EventArgs e)
         {
-            var doc = RefDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "สำเนาใบผ่านทหาร").FirstOrDefault();
+            var filename = listbox_refdoc_2.SelectedItem.ToString();
+            var doc = RefDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "สำเนาใบผ่านทหาร" && x.FILENAME == filename).FirstOrDefault();
             if (doc != null)
             {
                 DownloadRefPDF(doc);
@@ -2527,7 +2521,8 @@ namespace BIG.Present
 
         private void btn_refresh_promote_Click(object sender, EventArgs e)
         {
-            var doc = OtherDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "เอกสารแต่งตั้ง").FirstOrDefault();
+            var filename = listbox_other_doc1.SelectedItem.ToString();
+            var doc = OtherDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "เอกสารแต่งตั้ง" && x.FILENAME == filename).FirstOrDefault();
             if (doc != null)
             {
                 DownloadOtherPDF(doc);
@@ -2602,7 +2597,8 @@ namespace BIG.Present
 
         private void btn_refresh_salary_Click(object sender, EventArgs e)
         {
-            var doc = OtherDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "เอกสารเพิ่มเงิน").FirstOrDefault();
+            var filename = listbox_other_doc2.SelectedItem.ToString();
+            var doc = OtherDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "เอกสารเพิ่มเงิน" && x.FILENAME == filename).FirstOrDefault();
             if (doc != null)
             {
                 DownloadOtherPDF(doc);
@@ -2677,7 +2673,8 @@ namespace BIG.Present
 
         private void btn_refresh_warning_Click(object sender, EventArgs e)
         {
-            var doc = OtherDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "ใบเตือน").FirstOrDefault();
+            var filename = listbox_other_doc3.SelectedItem.ToString();
+            var doc = OtherDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "ใบเตือน" && x.FILENAME == filename).FirstOrDefault();
             if (doc != null)
             {
                 DownloadOtherPDF(doc);

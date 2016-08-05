@@ -437,7 +437,7 @@ namespace BIG.Present
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor; 
+            //this.Cursor = Cursors.WaitCursor; 
             if (e.ColumnIndex == BUTTON_VIEW_COLUMN_INDEX && e.RowIndex >= 0)
             {
                 if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
