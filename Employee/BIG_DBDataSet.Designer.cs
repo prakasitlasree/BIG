@@ -10058,22 +10058,17 @@ SELECT ID, EMP_ID, HOSPITAL_NAME, CREATED_DATE FROM SSO WHERE (ID = @ID)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT  
-
-max(case when TYPE = 'ครั้งที่1' then isnull(COURSE,'')    end) COURSE_1,
-max(case when TYPE = 'ครั้งที่2' then isnull(COURSE,'')    end) COURSE_2,
-max(case when TYPE = 'ครั้งที่3' then isnull(COURSE,'')    end) COURSE_3
-
-FROM dbo.Training
- ";
+            this._commandCollection[0].CommandText = "SELECT  \r\n\r\nmax(case when TYPE = \'1\' then isnull(COURSE,\'\')    end) COURSE_1,\r\nma" +
+                "x(case when TYPE = \'2\' then isnull(COURSE,\'\')    end) COURSE_2,\r\nmax(case when T" +
+                "YPE = \'3\' then isnull(COURSE,\'\')    end) COURSE_3\r\n\r\nFROM dbo.Training\r\n ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"SELECT  
 
-max(case when TYPE = 'ครั้งที่1' then isnull(COURSE,'')    end) COURSE_1,
-max(case when TYPE = 'ครั้งที่2' then isnull(COURSE,'')    end) COURSE_2,
-max(case when TYPE = 'ครั้งที่3' then isnull(COURSE,'')    end) COURSE_3
+max(case when TYPE = '1' then isnull(COURSE,'')    end) COURSE_1,
+max(case when TYPE = '2' then isnull(COURSE,'')    end) COURSE_2,
+max(case when TYPE = '3' then isnull(COURSE,'')    end) COURSE_3
 
 FROM dbo.Training
  

@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource10 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource11 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource12 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource13 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource14 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource15 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource16 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource17 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource18 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource19 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource20 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource21 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource22 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportEmployee));
             this.AddressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BIG_DBDataSet = new BIG.Present.BIG_DBDataSet();
@@ -52,6 +52,7 @@
             this.EmployeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PermanentAddressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.EducationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CompanyInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.txt_emp_id = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
@@ -63,8 +64,8 @@
             this.rb_main = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.rb_home = new System.Windows.Forms.RibbonButton();
+            this.rb_personal = new System.Windows.Forms.RibbonButton();
             this.rb_new = new System.Windows.Forms.RibbonButton();
-            this.rb_load_pid = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
             this.rb_save = new System.Windows.Forms.RibbonButton();
             this.rb_print = new System.Windows.Forms.RibbonButton();
@@ -111,7 +112,6 @@
             this.ReferenceDocumentsTableAdapter = new BIG.Present.BIG_DBDataSetTableAdapters.ReferenceDocumentsTableAdapter();
             this.PermanentAddressTableAdapter = new BIG.Present.BIG_DBDataSetTableAdapters.PermanentAddressTableAdapter();
             this.EducationTableAdapter = new BIG.Present.BIG_DBDataSetTableAdapters.EducationTableAdapter();
-            this.CompanyInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CompanyInfoTableAdapter = new BIG.Present.BIG_DBDataSetTableAdapters.CompanyInfoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.AddressBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BIG_DBDataSet)).BeginInit();
@@ -124,10 +124,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PermanentAddressBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EducationBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CompanyInfoBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OtherDocumentsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CompanyInfoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // AddressBindingSource
@@ -185,44 +185,49 @@
             this.EducationBindingSource.DataMember = "Education";
             this.EducationBindingSource.DataSource = this.BIG_DBDataSet;
             // 
+            // CompanyInfoBindingSource
+            // 
+            this.CompanyInfoBindingSource.DataMember = "CompanyInfo";
+            this.CompanyInfoBindingSource.DataSource = this.BIG_DBDataSet;
+            // 
             // reportViewer1
             // 
             this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource1.Name = "DSAddress";
-            reportDataSource1.Value = this.AddressBindingSource;
-            reportDataSource2.Name = "DS_IDCARD";
-            reportDataSource2.Value = this.ReferenceDocumentsBindingSource;
-            reportDataSource3.Name = "DSEmployeePhoto";
-            reportDataSource3.Value = this.CurrentImagesBindingSource;
-            reportDataSource4.Name = "DSRefPerson";
-            reportDataSource4.Value = this.ReferencePersonBindingSource;
-            reportDataSource5.Name = "DSTraining";
-            reportDataSource5.Value = this.TrainingBindingSource;
-            reportDataSource6.Name = "DSExp";
-            reportDataSource6.Value = this.WorkExperienceBindingSource;
-            reportDataSource7.Name = "DSFingerScan";
-            reportDataSource7.Value = this.FingerScanBindingSource;
-            reportDataSource8.Name = "DSEmployee";
-            reportDataSource8.Value = this.EmployeeBindingSource;
-            reportDataSource9.Name = "DSPermanantAddr";
-            reportDataSource9.Value = this.PermanentAddressBindingSource;
-            reportDataSource10.Name = "DSEDU";
-            reportDataSource10.Value = this.EducationBindingSource;
-            reportDataSource11.Name = "DSCompanyInfo";
-            reportDataSource11.Value = this.CompanyInfoBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource5);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource6);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource7);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource8);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource9);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource10);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource11);
+            reportDataSource12.Name = "DSAddress";
+            reportDataSource12.Value = this.AddressBindingSource;
+            reportDataSource13.Name = "DS_IDCARD";
+            reportDataSource13.Value = this.ReferenceDocumentsBindingSource;
+            reportDataSource14.Name = "DSEmployeePhoto";
+            reportDataSource14.Value = this.CurrentImagesBindingSource;
+            reportDataSource15.Name = "DSRefPerson";
+            reportDataSource15.Value = this.ReferencePersonBindingSource;
+            reportDataSource16.Name = "DSTraining";
+            reportDataSource16.Value = this.TrainingBindingSource;
+            reportDataSource17.Name = "DSExp";
+            reportDataSource17.Value = this.WorkExperienceBindingSource;
+            reportDataSource18.Name = "DSFingerScan";
+            reportDataSource18.Value = this.FingerScanBindingSource;
+            reportDataSource19.Name = "DSEmployee";
+            reportDataSource19.Value = this.EmployeeBindingSource;
+            reportDataSource20.Name = "DSPermanantAddr";
+            reportDataSource20.Value = this.PermanentAddressBindingSource;
+            reportDataSource21.Name = "DSEDU";
+            reportDataSource21.Value = this.EducationBindingSource;
+            reportDataSource22.Name = "DSCompanyInfo";
+            reportDataSource22.Value = this.CompanyInfoBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource12);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource13);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource14);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource15);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource16);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource17);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource18);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource19);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource20);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource21);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource22);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "BIG.Present.EmployeeDetailReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(3, 43);
             this.reportViewer1.Name = "reportViewer1";
@@ -310,8 +315,8 @@
             // ribbonPanel2
             // 
             this.ribbonPanel2.Items.Add(this.rb_home);
+            this.ribbonPanel2.Items.Add(this.rb_personal);
             this.ribbonPanel2.Items.Add(this.rb_new);
-            this.ribbonPanel2.Items.Add(this.rb_load_pid);
             this.ribbonPanel2.Text = "";
             // 
             // rb_home
@@ -322,19 +327,19 @@
             this.rb_home.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
             this.rb_home.Click += new System.EventHandler(this.rb_home_Click);
             // 
+            // rb_personal
+            // 
+            this.rb_personal.Image = global::BIG.Present.Properties.Resources.People1;
+            this.rb_personal.SmallImage = ((System.Drawing.Image)(resources.GetObject("rb_personal.SmallImage")));
+            this.rb_personal.Text = "ประวัติพนักงาน";
+            this.rb_personal.Click += new System.EventHandler(this.rb_personal_Click);
+            // 
             // rb_new
             // 
-            this.rb_new.Image = global::BIG.Present.Properties.Resources.User_group;
+            this.rb_new.Image = global::BIG.Present.Properties.Resources.user_add_icon;
             this.rb_new.SmallImage = ((System.Drawing.Image)(resources.GetObject("rb_new.SmallImage")));
             this.rb_new.Text = "เพิ่มพนักงาน";
             this.rb_new.Click += new System.EventHandler(this.rb_new_Click);
-            // 
-            // rb_load_pid
-            // 
-            this.rb_load_pid.Enabled = false;
-            this.rb_load_pid.Image = global::BIG.Present.Properties.Resources.Sync;
-            this.rb_load_pid.SmallImage = ((System.Drawing.Image)(resources.GetObject("rb_load_pid.SmallImage")));
-            this.rb_load_pid.Text = "โหลดบัตรประชาชน";
             // 
             // ribbonPanel3
             // 
@@ -596,11 +601,6 @@
             // 
             this.EducationTableAdapter.ClearBeforeFill = true;
             // 
-            // CompanyInfoBindingSource
-            // 
-            this.CompanyInfoBindingSource.DataMember = "CompanyInfo";
-            this.CompanyInfoBindingSource.DataSource = this.BIG_DBDataSet;
-            // 
             // CompanyInfoTableAdapter
             // 
             this.CompanyInfoTableAdapter.ClearBeforeFill = true;
@@ -630,11 +630,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PermanentAddressBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EducationBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CompanyInfoBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OtherDocumentsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CompanyInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -676,7 +676,7 @@
         private System.Windows.Forms.RibbonPanel ribbonPanel2;
         private System.Windows.Forms.RibbonButton rb_home;
         private System.Windows.Forms.RibbonButton rb_new;
-        private System.Windows.Forms.RibbonButton rb_load_pid;
+        private System.Windows.Forms.RibbonButton rb_personal;
         private System.Windows.Forms.RibbonPanel ribbonPanel3;
         private System.Windows.Forms.RibbonButton rb_save;
         private System.Windows.Forms.RibbonButton rb_print;

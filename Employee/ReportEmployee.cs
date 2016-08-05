@@ -29,7 +29,7 @@ namespace BIG.Present
             //this.EmployeeTableAdapter.Fill(this.BIG_DBDataSet.Employee);
             try
             {
-                
+                this.Cursor = Cursors.WaitCursor;
                 BIG_DBDataSet.EnforceConstraints = false;
 
                 this.EmployeeTableAdapter.FillByEmpID(this.BIG_DBDataSet.Employee, txt_emp_id.Text);
@@ -55,6 +55,7 @@ namespace BIG.Present
                 this.CompanyInfoTableAdapter.Fill(this.BIG_DBDataSet.CompanyInfo);
 
                 this.reportViewer1.RefreshReport();
+                this.Cursor = Cursors.Default;
             }
             catch (Exception ex)
             {
@@ -115,22 +116,31 @@ namespace BIG.Present
         }
 
         private void rb_home_Click(object sender, EventArgs e)
-        {
+        { 
             this.Close();
             var form = new MainForm();
             form.Show();
         }
 
         private void rb_new_Click(object sender, EventArgs e)
-        {
+        { 
             this.Close();
             var form = new EmployeeForm();
             form.Show();
+            
         }
 
         private void rb_exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void rb_personal_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var frm = new PersonalForm();
+            frm.Show();
+            
         }
     }
 }

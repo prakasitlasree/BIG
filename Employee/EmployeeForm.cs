@@ -14,9 +14,10 @@ using BIG.DataService;
 using System.Globalization;
 using System.Threading;
 using Neurotec.Biometrics;
+using System.Diagnostics;
 namespace BIG.Present
 {
-   
+
     public partial class EmployeeForm : Form
     {
         private ThaiIDCard CardID = new ThaiIDCard();
@@ -55,9 +56,9 @@ namespace BIG.Present
             this.employee = emp;
         }
 
-        public EmployeeForm(string emp_id,string mode)
+        public EmployeeForm(string emp_id, string mode)
         {
-            
+
             InitializeComponent();
             initialCombobox();
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -71,7 +72,7 @@ namespace BIG.Present
             {
                 EmployeeMode(true);
             }
-            
+
         }
 
         #region ===Properties===
@@ -159,7 +160,7 @@ namespace BIG.Present
         #region ===Method===
 
         private void EmployeeMode(bool isEnable)
-        { 
+        {
             gb_emp_1.Enabled = isEnable;
             gb_emp2.Enabled = isEnable;
             gb_left_finger.Enabled = isEnable;
@@ -235,6 +236,7 @@ namespace BIG.Present
             {
                 cbo_nationality.SelectedIndex = 0;
             }
+            cbo_sex.SelectedIndex = 0;
         }
 
         private void InitialProvince()
@@ -428,14 +430,36 @@ namespace BIG.Present
 
         private bool ValidateData()
         {
-            if (txt_empid.Text == "" || txt_mobile.Text == "" || dob.Value == null || txt_pid.Text == "" || txt_emp_fname_th.Text == "" || txt_emp_lname_th.Text == "")
+            if (txt_empid.Text == "")
             {
+                MessageBox.Show("กรุณากรอกข้อมูล ==> รหัสพนักงาน <==");
+                EmployeeTab.SelectedTab = General_Tab;
+                txt_empid.Focus();
                 return false;
             }
-            if (cbo_sex.Text == "" || cbo_race.Text == "" || cbo_relegion.Text == "" || cbo_nationality.Text == "")
+            if (txt_pid.Text == "")
             {
+                MessageBox.Show("กรุณากรอกข้อมูล ==> หมายเลขบัตรประชาชน <== ");
+                EmployeeTab.SelectedTab = General_Tab;
+                txt_pid.Focus();
                 return false;
             }
+            if (txt_emp_fname_th.Text == "")
+            {
+                MessageBox.Show("กรุณากรอกข้อมูล ==> ชื่อ ภาษาไทย <== ");
+                EmployeeTab.SelectedTab = General_Tab;
+                txt_emp_fname_th.Focus();
+                return false;
+            }
+            if (txt_emp_lname_th.Text == "")
+            {
+                MessageBox.Show("กรุณากรอกข้อมูล ==> นามสกุลภาษาไทย <== ");
+                EmployeeTab.SelectedTab = General_Tab;
+                txt_emp_lname_th.Focus();
+                return false;
+            }
+
+
             return true;
         }
 
@@ -720,7 +744,7 @@ namespace BIG.Present
                     else
                     {
                         if (cbo_sso_hospital.SelectedValue != null && cbo_sso_prov.SelectedValue != null)
-                        { 
+                        {
                             sso.HOSPITAL_NAME = cbo_sso_hospital.SelectedValue.ToString();
                             sso.PROVINCE_NAME = cbo_sso_prov.SelectedValue.ToString();
                             sso.NOTINDATABASE = false;
@@ -1098,7 +1122,7 @@ namespace BIG.Present
             this.UseWaitCursor = true;
 
             try
-            { 
+            {
                 var empObj = EmployeeServices.GetEmployeeByIDCard(id_card);
 
                 //มีข้อมูลพนักงานอยู่ในระบบ
@@ -1130,7 +1154,7 @@ namespace BIG.Present
 
                 //มีข้อมูลพนักงานอยู่ในระบบ
                 if (empObj != null)
-                { 
+                {
                     SetObjectToControl(empObj);
                 }
 
@@ -1559,11 +1583,15 @@ namespace BIG.Present
                         }
                         if (item.TYPE == "สำเนาทะเบียนบ้าน")
                         {
-                            pic_copy_home.Image = GetImage(item.PHOTO, 367, 452);
+                            listbox_refdoc_1.Items.Add(item.FILENAME);
+                            RefDoc.Add(item);
+                            //pic_copy_home.Image = GetImage(item.PHOTO, 367, 452);
                         }
                         if (item.TYPE == "สำเนาใบผ่านทหาร")
                         {
-                            pic_copy_military.Image = GetImage(item.PHOTO, 367, 452);
+                            listbox_refdoc_2.Items.Add(item.FILENAME);
+                            RefDoc.Add(item);
+                            //pic_copy_military.Image = GetImage(item.PHOTO, 367, 452);
                         }
                     }
                 }
@@ -1583,15 +1611,18 @@ namespace BIG.Present
                     {
                         if (item.TYPE == "เอกสารแต่งตั้ง")
                         {
-                            pic_promote.Image = GetImage(item.PHOTO, 367, 452);
+                            listbox_other_doc1.Items.Add(item.FILENAME);
+                            OtherDoc.Add(item);
                         }
                         if (item.TYPE == "เอกสารเพิ่มเงิน")
                         {
-                            pic_saraly.Image = GetImage(item.PHOTO, 367, 452);
+                            listbox_other_doc2.Items.Add(item.FILENAME);
+                            OtherDoc.Add(item);
                         }
                         if (item.TYPE == "ใบเตือน")
                         {
-                            pic_warning.Image = GetImage(item.PHOTO, 367, 452);
+                            listbox_other_doc3.Items.Add(item.FILENAME);
+                            OtherDoc.Add(item);
                         }
                     }
                 }
@@ -1663,7 +1694,6 @@ namespace BIG.Present
                         }
                     }
                 }
-
             }
             catch (Exception ex)
             {
@@ -1787,7 +1817,7 @@ namespace BIG.Present
 
         #region ===Events===
 
-        
+
         public BIG.Model.Employee employee { get; set; }
 
         private void EmployeeForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -1823,7 +1853,7 @@ namespace BIG.Present
             }
             else
             {
-                MessageBox.Show("กรุณากรอกข้อมูลให้ครบถ้วน ตามเครื่องหมาย *");
+                // MessageBox.Show("กรุณากรอกข้อมูลให้ครบถ้วน ตามเครื่องหมาย *");
             }
 
         }
@@ -1842,12 +1872,11 @@ namespace BIG.Present
                 }
                 else if (result == DialogResult.No)
                 {
-                    //...
                 }
             }
             else
             {
-                MessageBox.Show("กรุณากรอกข้อมูลให้ครบถ้วน ตามเครื่องหมาย *");
+                //MessageBox.Show("กรุณากรอกข้อมูลให้ครบถ้วน ตามเครื่องหมาย *");
             }
         }
 
@@ -1855,13 +1884,10 @@ namespace BIG.Present
         {
             EmployeeMode(true);
         }
-         
+
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var from = new PersonalForm();
-            Close();
-            from.Show();
-            
+
         }
 
         private void ribbon_tab_load_pid_ActiveChanged(object sender, EventArgs e)
@@ -1923,7 +1949,7 @@ namespace BIG.Present
             DialogResult result = MessageBox.Show("คุณต้องการออกจากโปรแกรม?", "Confirmation", MessageBoxButtons.YesNoCancel);
             if (result == DialogResult.Yes)
             {
-                this.Close();
+                Application.Exit();
             }
             else if (result == DialogResult.No)
             {
@@ -1972,10 +1998,7 @@ namespace BIG.Present
 
         private void btn_new_img_Click(object sender, EventArgs e)
         {
-            //this.openFileDialog1.Filter = "Images(*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
 
-            //this.openFileDialog1.Multiselect = false;
-            //this.openFileDialog1.Title = "Select Photo"; 
             DialogResult dr = this.openFileDialog1.ShowDialog();
             if (dr == System.Windows.Forms.DialogResult.OK)
             {
@@ -1995,6 +2018,44 @@ namespace BIG.Present
                     }
                 }
             }
+        }
+
+        private void btn_new_img_card_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = this.openFileDialog1.ShowDialog();
+            if (dr == System.Windows.Forms.DialogResult.OK)
+            {
+                foreach (String file in openFileDialog1.FileNames)
+                {
+                    try
+                    {
+                        var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
+                        var myBitmap = new Bitmap(file);
+                        var myThumbnail = myBitmap.GetThumbnailImage(150, 149, myCallback, IntPtr.Zero);
+                        pic_emp.Image = myThumbnail;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+        private void btn_ref_img_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_new_img_del_Click(object sender, EventArgs e)
+        {
+            pic_emp.Image = BIG.Present.Properties.Resources.pid_icon1;
+        }
+
+        private void btn_new_img_refresh_Click(object sender, EventArgs e)
+        {
+
         }
 
         public bool ThumbnailCallback()
@@ -2028,16 +2089,36 @@ namespace BIG.Present
                 frm.Show();
                 Close();
             }
-
+            Close();
             var emp = new EmployeeForm(engine);
             emp.Show();
 
         }
 
+        private void rb_setting_company_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            var frm = new CompanyInfoForm();
+            frm.Show();
+            Close();
+        }
+
+        private void rb_load_idcard_Click(object sender, EventArgs e)
+        {
+            LoadPID();
+        }
+
+        private void rb_personal_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            var frm = new PersonalForm();
+            frm.Show();
+            Close();
+        }
+
         private void rb_load_pid_Click(object sender, EventArgs e)
         {
 
-           
         }
 
         private void rb_exit_Click(object sender, EventArgs e)
@@ -2045,7 +2126,6 @@ namespace BIG.Present
             Application.Exit();
 
         }
-
 
         private void rb_logout_Click(object sender, EventArgs e)
         {
@@ -2109,6 +2189,69 @@ namespace BIG.Present
 
         #endregion
 
+        private void DownloadRefPDF(ReferenceDocument doc)
+        {
+            FileStream FS = null;
+            byte[] dbbyte;
+            try
+            {
+                FolderBrowserDialog fbd = new FolderBrowserDialog();
+                DialogResult result = fbd.ShowDialog();
+                if (!string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    dbbyte = (byte[])doc.FILEBINARY;
+                    string filepath = fbd.SelectedPath + "\\" + doc.FILENAME;
+                    FS = new FileStream(filepath, System.IO.FileMode.Create);
+                    FS.Write(dbbyte, 0, dbbyte.Length);
+
+                    MessageBox.Show("ดาวน์โหลดเอกสาร " + doc.FILENAME + " เรียบร้อย!!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new System.ArgumentException(ex.Message);
+            }
+            finally
+            {
+                if (FS != null)
+                { 
+                    FS.Close();
+                }
+            }
+        }
+
+        private void DownloadOtherPDF(OtherDocument doc)
+        {
+            FileStream FS = null;
+            byte[] dbbyte;
+            try
+            {
+                FolderBrowserDialog fbd = new FolderBrowserDialog();
+                DialogResult result = fbd.ShowDialog();
+                if (!string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    dbbyte = (byte[])doc.FILEBINARY;
+                    string filepath = fbd.SelectedPath + "\\" + doc.FILENAME;
+                    FS = new FileStream(filepath, System.IO.FileMode.Create);
+                    FS.Write(dbbyte, 0, dbbyte.Length);
+
+                    MessageBox.Show("ดาวน์โหลดเอกสาร " + doc.FILENAME + " เรียบร้อย!!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new System.ArgumentException(ex.Message);
+            }
+            finally
+            {
+
+                if (FS != null)
+                {
+                    FS.Close();
+                }
+            }
+        }
+
         #region ===Upload doc idcard===
 
         private void btn_upload_copy_idcard_Click(object sender, EventArgs e)
@@ -2165,9 +2308,8 @@ namespace BIG.Present
             if (txt_empid.Text != "" && refdoc != null)
             {
                 refdoc.TYPE = "Delete";
-                pic_copy_idcard.Image = null;
-
             }
+            pic_copy_idcard.Image = BIG.Present.Properties.Resources.idcard_template;
         }
         #endregion
 
@@ -2175,11 +2317,9 @@ namespace BIG.Present
 
         private void btn_upload_copy_home_Click(object sender, EventArgs e)
         {
-            this.openFileDialog1.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
 
-            this.openFileDialog1.Multiselect = false;
-            this.openFileDialog1.Title = "Select Photo";
-
+            this.openFileDialog1.Multiselect = true;
+            this.openFileDialog1.Title = "Select file for upload";
             DialogResult dr = this.openFileDialog1.ShowDialog();
             if (dr == System.Windows.Forms.DialogResult.OK)
             {
@@ -2187,23 +2327,39 @@ namespace BIG.Present
                 {
                     try
                     {
-                        var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
-                        var myBitmap = new Bitmap(file);
-                        var myThumbnail = myBitmap.GetThumbnailImage(360, 450, myCallback, IntPtr.Zero);
-                        pic_copy_home.Image = myThumbnail;
+                        var arr = file.Split('\\');
+
+                        string filename = arr.Last();
+                        byte[] bytearr;
+                        using (var stream = new FileStream(file, FileMode.Open, FileAccess.Read))
+                        {
+                            using (var reader = new BinaryReader(stream))
+                            {
+                                bytearr = reader.ReadBytes((int)stream.Length);
+                            }
+                        }
                         if (txt_empid.Text != "")
                         {
-                            var doc = RefDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "สำเนาทะเบียนบ้าน").ToList();
+                            var doc = RefDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "สำเนาทะเบียนบ้าน" && x.FILENAME == filename).ToList();
                             foreach (var item in doc)
                             {
                                 RefDoc.Remove(item);
+                                listbox_refdoc_1.Items.Remove(item.FILENAME);
                             }
                             var obj = new ReferenceDocument();
                             obj.EMP_ID = txt_empid.Text;
-                            obj.PHOTO = ConvertImageToByteArray(myThumbnail, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            obj.FILEBINARY = bytearr;
+                            obj.FILENAME = filename;
+                            obj.FULLPATH = file.ToString();
                             obj.TYPE = "สำเนาทะเบียนบ้าน";
                             obj.CREATE_DATE = DateTime.Now;
                             RefDoc.Add(obj);
+                            listbox_refdoc_1.Items.Add(filename);
+                        }
+                        else
+                        {
+                            MessageBox.Show("กรุณากรอกข้อมูลรหัสพนักงาน");
+                            return;
                         }
                     }
                     catch (Exception ex)
@@ -2216,7 +2372,11 @@ namespace BIG.Present
 
         private void btn_refresh_copy_home_Click(object sender, EventArgs e)
         {
-
+            var doc = RefDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "สำเนาทะเบียนบ้าน").FirstOrDefault();
+            if (doc != null)
+            {
+                DownloadRefPDF(doc);
+            }
         }
         private void btn_delete_copy_home_Click(object sender, EventArgs e)
         {
@@ -2224,8 +2384,9 @@ namespace BIG.Present
             if (txt_empid.Text != "" && refdoc != null)
             {
                 refdoc.TYPE = "Delete";
-                pic_copy_home.Image = null;
+                listbox_refdoc_1.Items.Clear();
             }
+            listbox_refdoc_1.Items.Clear();
         }
 
         #endregion
@@ -2234,11 +2395,8 @@ namespace BIG.Present
 
         private void btn_upload_copy_military_Click(object sender, EventArgs e)
         {
-            this.openFileDialog1.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
-
-            this.openFileDialog1.Multiselect = false;
-            this.openFileDialog1.Title = "Select Photo";
-
+            this.openFileDialog1.Multiselect = true;
+            this.openFileDialog1.Title = "Select file for upload";
             DialogResult dr = this.openFileDialog1.ShowDialog();
             if (dr == System.Windows.Forms.DialogResult.OK)
             {
@@ -2246,23 +2404,38 @@ namespace BIG.Present
                 {
                     try
                     {
-                        var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
-                        var myBitmap = new Bitmap(file);
-                        var myThumbnail = myBitmap.GetThumbnailImage(360, 450, myCallback, IntPtr.Zero);
-                        pic_copy_military.Image = myThumbnail;
+                        var arr = file.Split('\\');
+                        string filename = arr.Last();
+                        byte[] bytearr;
+                        using (var stream = new FileStream(file, FileMode.Open, FileAccess.Read))
+                        {
+                            using (var reader = new BinaryReader(stream))
+                            {
+                                bytearr = reader.ReadBytes((int)stream.Length);
+                            }
+                        }
                         if (txt_empid.Text != "")
                         {
-                            var doc = RefDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "สำเนาใบผ่านทหาร").ToList();
+                            var doc = RefDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "สำเนาใบผ่านทหาร" && x.FILENAME == filename).ToList();
                             foreach (var item in doc)
                             {
                                 RefDoc.Remove(item);
+                                listbox_refdoc_2.Items.Remove(item.FILENAME);
                             }
                             var obj = new ReferenceDocument();
                             obj.EMP_ID = txt_empid.Text;
-                            obj.PHOTO = ConvertImageToByteArray(myThumbnail, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            obj.FILEBINARY = bytearr;
+                            obj.FILENAME = filename;
+                            obj.FULLPATH = file.ToString();
                             obj.TYPE = "สำเนาใบผ่านทหาร";
                             obj.CREATE_DATE = DateTime.Now;
                             RefDoc.Add(obj);
+                            listbox_refdoc_2.Items.Add(filename);
+                        }
+                        else
+                        {
+                            MessageBox.Show("กรุณากรอกข้อมูลรหัสพนักงาน");
+                            return;
                         }
                     }
                     catch (Exception ex)
@@ -2275,7 +2448,11 @@ namespace BIG.Present
 
         private void btn_upload_refresh_military_Click(object sender, EventArgs e)
         {
-
+            var doc = RefDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "สำเนาใบผ่านทหาร").FirstOrDefault();
+            if (doc != null)
+            {
+                DownloadRefPDF(doc);
+            }
         }
 
         private void btn_delete_copy_military_Click(object sender, EventArgs e)
@@ -2284,8 +2461,10 @@ namespace BIG.Present
             if (txt_empid.Text != "" && refdoc != null)
             {
                 refdoc.TYPE = "Delete";
-                pic_copy_military.Image = null;
+
+                //pic_copy_military.Image = null;
             }
+            listbox_refdoc_2.Items.Clear();
         }
 
         #endregion
@@ -2294,11 +2473,8 @@ namespace BIG.Present
 
         private void btn_upload_promote_Click(object sender, EventArgs e)
         {
-            this.openFileDialog1.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
-
-            this.openFileDialog1.Multiselect = false;
-            this.openFileDialog1.Title = "Select Photo";
-
+            this.openFileDialog1.Multiselect = true;
+            this.openFileDialog1.Title = "Select file for upload";
             DialogResult dr = this.openFileDialog1.ShowDialog();
             if (dr == System.Windows.Forms.DialogResult.OK)
             {
@@ -2306,24 +2482,44 @@ namespace BIG.Present
                 {
                     try
                     {
-                        var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
-                        var myBitmap = new Bitmap(file);
-                        var myThumbnail = myBitmap.GetThumbnailImage(360, 450, myCallback, IntPtr.Zero);
-                        pic_promote.Image = myThumbnail;
-
+                        var arr = file.Split('\\');
+                        string filename = arr.Last();
+                        byte[] bytearr;
+                        using (var stream = new FileStream(file, FileMode.Open, FileAccess.Read))
+                        {
+                            using (var reader = new BinaryReader(stream))
+                            {
+                                bytearr = reader.ReadBytes((int)stream.Length);
+                            }
+                        }
                         if (txt_empid.Text != "")
                         {
+                            var doc = OtherDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "เอกสารแต่งตั้ง" && x.FILENAME == filename).ToList();
+                            foreach (var item in doc)
+                            {
+                                OtherDoc.Remove(item);
+                                listbox_other_doc1.Items.Remove(item.FILENAME);
+
+                            }
                             var obj = new OtherDocument();
                             obj.EMP_ID = txt_empid.Text;
-                            obj.PHOTO = ConvertImageToByteArray(myThumbnail, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            obj.FILEBINARY = bytearr;
+                            obj.FILENAME = filename;
+                            obj.FULLPATH = file.ToString();
                             obj.TYPE = "เอกสารแต่งตั้ง";
                             obj.CREATE_DATE = DateTime.Now;
                             OtherDoc.Add(obj);
+                            listbox_other_doc1.Items.Add(filename);
+                        }
+                        else
+                        {
+                            MessageBox.Show("กรุณากรอกข้อมูลรหัสพนักงาน");
+                            return;
                         }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("btn_upload_copy_home_Click: " + ex.Message);
+                        MessageBox.Show("btn_upload_promote_Click: " + ex.Message);
                     }
                 }
             }
@@ -2331,7 +2527,11 @@ namespace BIG.Present
 
         private void btn_refresh_promote_Click(object sender, EventArgs e)
         {
-
+            var doc = OtherDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "เอกสารแต่งตั้ง").FirstOrDefault();
+            if (doc != null)
+            {
+                DownloadOtherPDF(doc);
+            }
         }
 
         private void btn_delete_promote_Click(object sender, EventArgs e)
@@ -2340,8 +2540,8 @@ namespace BIG.Present
             if (txt_empid.Text != "" && refdoc != null)
             {
                 refdoc.TYPE = "Delete";
-                pic_promote.Image = null;
             }
+            listbox_other_doc1.Items.Clear();
         }
 
         #endregion
@@ -2349,11 +2549,8 @@ namespace BIG.Present
         #region ===Upload เอกสารเพิ่มเงิน ===
         private void btn_upload_salary_Click(object sender, EventArgs e)
         {
-            this.openFileDialog1.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
-
-            this.openFileDialog1.Multiselect = false;
-            this.openFileDialog1.Title = "Select Photo";
-
+            this.openFileDialog1.Multiselect = true;
+            this.openFileDialog1.Title = "Select file for upload";
             DialogResult dr = this.openFileDialog1.ShowDialog();
             if (dr == System.Windows.Forms.DialogResult.OK)
             {
@@ -2361,18 +2558,38 @@ namespace BIG.Present
                 {
                     try
                     {
-                        var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
-                        var myBitmap = new Bitmap(file);
-                        var myThumbnail = myBitmap.GetThumbnailImage(360, 450, myCallback, IntPtr.Zero);
-                        pic_saraly.Image = myThumbnail;
+                        var arr = file.Split('\\');
+                        string filename = arr.Last();
+                        byte[] bytearr;
+                        using (var stream = new FileStream(file, FileMode.Open, FileAccess.Read))
+                        {
+                            using (var reader = new BinaryReader(stream))
+                            {
+                                bytearr = reader.ReadBytes((int)stream.Length);
+                            }
+                        }
                         if (txt_empid.Text != "")
                         {
+                            var doc = OtherDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "เอกสารเพิ่มเงิน" && x.FILENAME == filename).ToList();
+                            foreach (var item in doc)
+                            {
+                                OtherDoc.Remove(item);
+                                listbox_other_doc2.Items.Remove(item.FILENAME);
+                            }
                             var obj = new OtherDocument();
                             obj.EMP_ID = txt_empid.Text;
-                            obj.PHOTO = ConvertImageToByteArray(myThumbnail, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            obj.FILEBINARY = bytearr;
+                            obj.FILENAME = filename;
+                            obj.FULLPATH = file.ToString();
                             obj.TYPE = "เอกสารเพิ่มเงิน";
                             obj.CREATE_DATE = DateTime.Now;
                             OtherDoc.Add(obj);
+                            listbox_other_doc2.Items.Add(filename);
+                        }
+                        else
+                        {
+                            MessageBox.Show("กรุณากรอกข้อมูลรหัสพนักงาน");
+                            return;
                         }
                     }
                     catch (Exception ex)
@@ -2385,7 +2602,11 @@ namespace BIG.Present
 
         private void btn_refresh_salary_Click(object sender, EventArgs e)
         {
-
+            var doc = OtherDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "เอกสารเพิ่มเงิน").FirstOrDefault();
+            if (doc != null)
+            {
+                DownloadOtherPDF(doc);
+            }
         }
 
         private void btn_delete_salary_Click(object sender, EventArgs e)
@@ -2394,20 +2615,17 @@ namespace BIG.Present
             if (txt_empid.Text != "" && refdoc != null)
             {
                 refdoc.TYPE = "Delete";
-                pic_saraly.Image = null;
+
             }
+            listbox_other_doc2.Items.Clear();
         }
         #endregion
 
         #region ===Upload ใบเตือน ===
         private void btn_upload_warning_Click(object sender, EventArgs e)
         {
-            //pic_warning
-            this.openFileDialog1.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
-
-            this.openFileDialog1.Multiselect = false;
-            this.openFileDialog1.Title = "Select Photo";
-
+            this.openFileDialog1.Multiselect = true;
+            this.openFileDialog1.Title = "Select file for upload";
             DialogResult dr = this.openFileDialog1.ShowDialog();
             if (dr == System.Windows.Forms.DialogResult.OK)
             {
@@ -2415,19 +2633,38 @@ namespace BIG.Present
                 {
                     try
                     {
-                        var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
-                        var myBitmap = new Bitmap(file);
-                        var myThumbnail = myBitmap.GetThumbnailImage(360, 450, myCallback, IntPtr.Zero);
-                        pic_warning.Image = myThumbnail;
-
+                        var arr = file.Split('\\');
+                        string filename = arr.Last();
+                        byte[] bytearr;
+                        using (var stream = new FileStream(file, FileMode.Open, FileAccess.Read))
+                        {
+                            using (var reader = new BinaryReader(stream))
+                            {
+                                bytearr = reader.ReadBytes((int)stream.Length);
+                            }
+                        }
                         if (txt_empid.Text != "")
                         {
+                            var doc = OtherDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "ใบเตือน" && x.FILENAME == filename).ToList();
+                            foreach (var item in doc)
+                            {
+                                OtherDoc.Remove(item);
+                                listbox_other_doc2.Items.Remove(item.FILENAME);
+                            }
                             var obj = new OtherDocument();
                             obj.EMP_ID = txt_empid.Text;
-                            obj.PHOTO = ConvertImageToByteArray(myThumbnail, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            obj.FILEBINARY = bytearr;
+                            obj.FILENAME = filename;
+                            obj.FULLPATH = file.ToString();
                             obj.TYPE = "ใบเตือน";
                             obj.CREATE_DATE = DateTime.Now;
                             OtherDoc.Add(obj);
+                            listbox_other_doc3.Items.Add(filename);
+                        }
+                        else
+                        {
+                            MessageBox.Show("กรุณากรอกข้อมูลรหัสพนักงาน");
+                            return;
                         }
                     }
                     catch (Exception ex)
@@ -2440,7 +2677,11 @@ namespace BIG.Present
 
         private void btn_refresh_warning_Click(object sender, EventArgs e)
         {
-
+            var doc = OtherDoc.Where(x => x.EMP_ID == txt_empid.Text && x.TYPE == "ใบเตือน").FirstOrDefault();
+            if (doc != null)
+            {
+                DownloadOtherPDF(doc);
+            }
         }
 
         private void btn_delete_warning_Click(object sender, EventArgs e)
@@ -2449,8 +2690,8 @@ namespace BIG.Present
             if (txt_empid.Text != "" && refdoc != null)
             {
                 refdoc.TYPE = "Delete";
-                pic_warning.Image = null;
             }
+            listbox_other_doc3.Items.Clear();
         }
         #endregion
 
@@ -2459,18 +2700,15 @@ namespace BIG.Present
         {
             if (txt_empid.Text != "")
             {
-
                 var form = new ReportEmployee(txt_empid.Text);
                 Close();
                 form.Show();
             }
             else
             {
-
                 var form = new ReportEmployee(txt_empid.Text);
-                Close();
                 form.Show();
-
+                Close();
             }
         }
 
@@ -2532,44 +2770,44 @@ namespace BIG.Present
 
         private void linkLabel2_Click(object sender, EventArgs e)
         {
-            EmployeeTab.SelectedTab = tab_Address;
+
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            EmployeeTab.SelectedTab = tab_Address;
+
         }
 
         private void linkLabel3_Click(object sender, EventArgs e)
         {
-            EmployeeTab.SelectedTab = tab_Reference;
+
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            EmployeeTab.SelectedTab = tab_Reference;
+
         }
 
         private void linkLabel4_Click(object sender, EventArgs e)
         {
-            EmployeeTab.SelectedTab = tab_Education;
+
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            EmployeeTab.SelectedTab = tab_Education;
+
         }
 
         private void linkLabel5_Click(object sender, EventArgs e)
         {
 
-            EmployeeTab.SelectedTab = tab_Experience;
+
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
 
-            EmployeeTab.SelectedTab = tab_Experience;
+
         }
 
         #endregion
@@ -2693,7 +2931,7 @@ namespace BIG.Present
         {
             StartScan(R_finger_5);
         }
-         
+
         #region picture click
         /// <summary>
         ///  Left Hand
@@ -2760,45 +2998,33 @@ namespace BIG.Present
         {
             if (chk_manual_hospital.Checked)
             {
+                chk_have_sso.Checked = false;
+                chk_nothave_sso.Checked = false;
                 txt_sso_manual_hospital.Enabled = true;
             }
             else
-                txt_sso_manual_hospital.Enabled = false;
+            { chk_have_sso.Checked = true; }
+
         }
-
-
-        #endregion
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             var from = new PersonalForm();
-             
+
             from.Show();
             Close();
         }
+        #endregion
 
-        private void rb_setting_company_Click(object sender, EventArgs e)
+        private void ribbonButton21_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
-            var frm = new CompanyInfoForm();
-            frm.Show();
             Close();
-        }
-
-        private void rb_load_idcard_Click(object sender, EventArgs e)
-        {
-            LoadPID();
-        }
-
-        private void rb_personal_Click(object sender, EventArgs e)
-        {
             this.Cursor = Cursors.WaitCursor;
             var frm = new PersonalForm();
             frm.Show();
-            Close();
         }
 
-       
+
 
     }
 }

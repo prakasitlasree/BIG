@@ -136,6 +136,7 @@
             this.btn_search.Size = new System.Drawing.Size(73, 68);
             this.btn_search.TabIndex = 13;
             this.btn_search.TabStop = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // lnk_search
             // 
@@ -148,6 +149,7 @@
             this.lnk_search.TabIndex = 15;
             this.lnk_search.TabStop = true;
             this.lnk_search.Text = "ค้นหา";
+            this.lnk_search.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_search_LinkClicked);
             // 
             // btn_secure
             // 
@@ -162,11 +164,12 @@
             // 
             this.btn_company.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_company.Image = global::BIG.Present.Properties.Resources.network;
-            this.btn_company.Location = new System.Drawing.Point(244, 114);
+            this.btn_company.Location = new System.Drawing.Point(255, 114);
             this.btn_company.Name = "btn_company";
             this.btn_company.Size = new System.Drawing.Size(75, 75);
             this.btn_company.TabIndex = 17;
             this.btn_company.TabStop = false;
+            this.btn_company.Click += new System.EventHandler(this.btn_company_Click);
             // 
             // lnk_company
             // 
@@ -179,6 +182,7 @@
             this.lnk_company.TabIndex = 18;
             this.lnk_company.TabStop = true;
             this.lnk_company.Text = "ข้อมูลบริษัท";
+            this.lnk_company.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_company_LinkClicked);
             // 
             // lnk_secure
             // 

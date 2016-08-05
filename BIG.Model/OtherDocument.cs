@@ -17,6 +17,9 @@ namespace BIG.Model
         public int ID { get; set; }
         public string EMP_ID { get; set; }
         public byte[] PHOTO { get; set; }
+        public byte[] FILEBINARY { get; set; }
+        public string FILENAME { get; set; }
+        public string FULLPATH { get; set; }
         public string TYPE { get; set; }
         public Nullable<System.DateTime> CREATE_DATE { get; set; }
     }

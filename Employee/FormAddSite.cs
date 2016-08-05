@@ -37,7 +37,8 @@ namespace BIG.Present
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(" btn_save_Click : " + ex.Message);
+                    this.Close();
                 }
                 
             }

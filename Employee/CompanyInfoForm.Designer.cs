@@ -139,12 +139,14 @@
             this.ribbonButton14.Image = global::BIG.Present.Properties.Resources.People1;
             this.ribbonButton14.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton14.SmallImage")));
             this.ribbonButton14.Text = "ค้นหาตามชื่อ-สกุล";
+            this.ribbonButton14.Click += new System.EventHandler(this.ribbonButton14_Click);
             // 
             // ribbonButton15
             // 
             this.ribbonButton15.Image = global::BIG.Present.Properties.Resources.Calendar;
             this.ribbonButton15.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton15.SmallImage")));
             this.ribbonButton15.Text = "ค้นหาตามวันเริ่มงาน";
+            this.ribbonButton15.Click += new System.EventHandler(this.ribbonButton15_Click);
             // 
             // rb_tab_report
             // 
@@ -164,6 +166,7 @@
             this.ribbonButton9.Image = global::BIG.Present.Properties.Resources.Stock_graph;
             this.ribbonButton9.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.SmallImage")));
             this.ribbonButton9.Text = "รายงานทั้งหมด";
+            this.ribbonButton9.Click += new System.EventHandler(this.ribbonButton9_Click);
             // 
             // ribbonPanel9
             // 
@@ -175,6 +178,7 @@
             this.ribbonButton10.Image = global::BIG.Present.Properties.Resources.Boss;
             this.ribbonButton10.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton10.SmallImage")));
             this.ribbonButton10.Text = "ตามชื่อพนักงาน";
+            this.ribbonButton10.Click += new System.EventHandler(this.ribbonButton10_Click);
             // 
             // ribbonPanel10
             // 
@@ -186,6 +190,7 @@
             this.ribbonButton11.Image = global::BIG.Present.Properties.Resources.Find;
             this.ribbonButton11.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.SmallImage")));
             this.ribbonButton11.Text = "ตามรหัสพนักงาน";
+            this.ribbonButton11.Click += new System.EventHandler(this.ribbonButton11_Click);
             // 
             // ribbonPanel11
             // 
@@ -197,6 +202,7 @@
             this.ribbonButton16.Image = global::BIG.Present.Properties.Resources.Upload;
             this.ribbonButton16.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton16.SmallImage")));
             this.ribbonButton16.Text = "ตามบัตรประชาชน";
+            this.ribbonButton16.Click += new System.EventHandler(this.ribbonButton16_Click);
             // 
             // ribbonPanel12
             // 
@@ -208,6 +214,7 @@
             this.rb_savecompany.Image = global::BIG.Present.Properties.Resources.Application;
             this.rb_savecompany.SmallImage = global::BIG.Present.Properties.Resources.Save;
             this.rb_savecompany.Text = "ตั้งค่าข้อมูลบริษัท";
+            this.rb_savecompany.Click += new System.EventHandler(this.rb_savecompany_Click);
             // 
             // ribbonTab7
             // 
@@ -228,12 +235,14 @@
             this.ribbonButton12.Image = global::BIG.Present.Properties.Resources.Toolbox2;
             this.ribbonButton12.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton12.SmallImage")));
             this.ribbonButton12.Text = "ค้นหาตามไซต์งาน";
+            this.ribbonButton12.Click += new System.EventHandler(this.ribbonButton12_Click);
             // 
             // ribbonButton13
             // 
             this.ribbonButton13.Image = global::BIG.Present.Properties.Resources.Blue_pin;
             this.ribbonButton13.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton13.SmallImage")));
             this.ribbonButton13.Text = "ค้นหาตามเขต";
+            this.ribbonButton13.Click += new System.EventHandler(this.ribbonButton13_Click);
             // 
             // rb_tab_company
             // 
@@ -414,7 +423,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 172F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 3, 1);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.label4, 3, 0);
@@ -440,12 +449,12 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel9, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.pic_logo_2, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(796, 55);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(795, 55);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(166, 191);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(167, 191);
             this.tableLayoutPanel5.TabIndex = 9;
             // 
             // tableLayoutPanel9
@@ -463,7 +472,7 @@
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(158, 29);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(159, 29);
             this.tableLayoutPanel9.TabIndex = 3;
             // 
             // btn_upload_3
@@ -472,7 +481,7 @@
             this.btn_upload_3.ErrorImage = null;
             this.btn_upload_3.Image = global::BIG.Present.Properties.Resources.Add;
             this.btn_upload_3.InitialImage = null;
-            this.btn_upload_3.Location = new System.Drawing.Point(13, 3);
+            this.btn_upload_3.Location = new System.Drawing.Point(14, 3);
             this.btn_upload_3.Name = "btn_upload_3";
             this.btn_upload_3.Size = new System.Drawing.Size(25, 23);
             this.btn_upload_3.TabIndex = 2;
@@ -485,7 +494,7 @@
             this.btn_del_3.ErrorImage = null;
             this.btn_del_3.Image = global::BIG.Present.Properties.Resources.Delete;
             this.btn_del_3.InitialImage = null;
-            this.btn_del_3.Location = new System.Drawing.Point(118, 3);
+            this.btn_del_3.Location = new System.Drawing.Point(120, 3);
             this.btn_del_3.Name = "btn_del_3";
             this.btn_del_3.Size = new System.Drawing.Size(25, 23);
             this.btn_del_3.TabIndex = 3;
@@ -497,7 +506,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pic_logo_2.Location = new System.Drawing.Point(4, 4);
             this.pic_logo_2.Name = "pic_logo_2";
-            this.pic_logo_2.Size = new System.Drawing.Size(158, 128);
+            this.pic_logo_2.Size = new System.Drawing.Size(159, 128);
             this.pic_logo_2.TabIndex = 2;
             this.pic_logo_2.TabStop = false;
             // 
@@ -510,7 +519,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel8, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.pic_logo_1, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(625, 55);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(624, 55);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -580,9 +589,9 @@
             this.label4.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label4.Font = new System.Drawing.Font("Angsana New", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Chocolate;
-            this.label4.Location = new System.Drawing.Point(796, 1);
+            this.label4.Location = new System.Drawing.Point(795, 1);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(166, 50);
+            this.label4.Size = new System.Drawing.Size(167, 50);
             this.label4.TabIndex = 6;
             this.label4.Text = "Certificate";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -596,7 +605,7 @@
             this.label3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label3.Font = new System.Drawing.Font("Angsana New", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Chocolate;
-            this.label3.Location = new System.Drawing.Point(625, 1);
+            this.label3.Location = new System.Drawing.Point(624, 1);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(164, 50);
             this.label3.TabIndex = 5;
@@ -612,7 +621,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label2.Font = new System.Drawing.Font("Angsana New", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Chocolate;
-            this.label2.Location = new System.Drawing.Point(454, 1);
+            this.label2.Location = new System.Drawing.Point(453, 1);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 50);
             this.label2.TabIndex = 4;
@@ -630,7 +639,7 @@
             this.label1.ForeColor = System.Drawing.Color.Chocolate;
             this.label1.Location = new System.Drawing.Point(4, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(443, 50);
+            this.label1.Size = new System.Drawing.Size(442, 50);
             this.label1.TabIndex = 0;
             this.label1.Text = "ข้อมูลทั่วไป (ใช้แสดงหัวรายงาน)";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -644,7 +653,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.pic_company, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel7, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(454, 55);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(453, 55);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 155F));
@@ -731,7 +740,7 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(443, 324);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(442, 324);
             this.tableLayoutPanel6.TabIndex = 10;
             // 
             // label8
@@ -780,7 +789,7 @@
             this.txt_com_name_th.Location = new System.Drawing.Point(205, 4);
             this.txt_com_name_th.Multiline = true;
             this.txt_com_name_th.Name = "txt_com_name_th";
-            this.txt_com_name_th.Size = new System.Drawing.Size(234, 74);
+            this.txt_com_name_th.Size = new System.Drawing.Size(233, 74);
             this.txt_com_name_th.TabIndex = 1;
             // 
             // txt_comname_en
@@ -790,7 +799,7 @@
             this.txt_comname_en.Location = new System.Drawing.Point(205, 85);
             this.txt_comname_en.Multiline = true;
             this.txt_comname_en.Name = "txt_comname_en";
-            this.txt_comname_en.Size = new System.Drawing.Size(234, 74);
+            this.txt_comname_en.Size = new System.Drawing.Size(233, 74);
             this.txt_comname_en.TabIndex = 2;
             // 
             // txt_location
@@ -800,7 +809,7 @@
             this.txt_location.Location = new System.Drawing.Point(205, 166);
             this.txt_location.Multiline = true;
             this.txt_location.Name = "txt_location";
-            this.txt_location.Size = new System.Drawing.Size(234, 74);
+            this.txt_location.Size = new System.Drawing.Size(233, 74);
             this.txt_location.TabIndex = 3;
             // 
             // txt_tel
@@ -810,7 +819,7 @@
             this.txt_tel.Location = new System.Drawing.Point(205, 247);
             this.txt_tel.Multiline = true;
             this.txt_tel.Name = "txt_tel";
-            this.txt_tel.Size = new System.Drawing.Size(234, 74);
+            this.txt_tel.Size = new System.Drawing.Size(233, 74);
             this.txt_tel.TabIndex = 4;
             // 
             // label7

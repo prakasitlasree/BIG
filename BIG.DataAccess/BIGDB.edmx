@@ -226,6 +226,9 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EMP_ID" Type="nvarchar" MaxLength="14" />
           <Property Name="PHOTO" Type="varbinary(max)" />
+          <Property Name="FILEBINARY" Type="varbinary(max)" />
+          <Property Name="FILENAME" Type="nvarchar" MaxLength="250" />
+          <Property Name="FULLPATH" Type="nvarchar" MaxLength="250" />
           <Property Name="TYPE" Type="nvarchar" MaxLength="50" />
           <Property Name="CREATE_DATE" Type="datetime" />
         </EntityType>
@@ -253,6 +256,9 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EMP_ID" Type="nvarchar" MaxLength="14" />
           <Property Name="PHOTO" Type="varbinary(max)" />
+          <Property Name="FILEBINARY" Type="varbinary(max)" />
+          <Property Name="FILENAME" Type="nvarchar" MaxLength="250" />
+          <Property Name="FULLPATH" Type="nvarchar" MaxLength="250" />
           <Property Name="TYPE" Type="nvarchar" MaxLength="50" />
           <Property Name="CREATE_DATE" Type="datetime" />
         </EntityType>
@@ -479,10 +485,8 @@
           <EntitySet Name="Hospitals" EntityType="BIG_DBModel.Hospital" />
           <EntitySet Name="Logons" EntityType="BIG_DBModel.Logon" />
           <EntitySet Name="Maritals" EntityType="BIG_DBModel.Marital" />
-          <EntitySet Name="OtherDocuments" EntityType="BIG_DBModel.OtherDocument" />
           <EntitySet Name="Positions" EntityType="BIG_DBModel.Position" />
           <EntitySet Name="Provinces" EntityType="BIG_DBModel.Province" />
-          <EntitySet Name="ReferenceDocuments" EntityType="BIG_DBModel.ReferenceDocument" />
           <EntitySet Name="ReferencePersons" EntityType="BIG_DBModel.ReferencePerson" />
           <EntitySet Name="Sites" EntityType="BIG_DBModel.Site" />
           <EntitySet Name="SSOes" EntityType="BIG_DBModel.SSO" />
@@ -516,6 +520,8 @@
             <End Role="Employee" EntitySet="Employees" />
           </AssociationSet>
           <EntitySet Name="CompanyInfoes" EntityType="BIG_DBModel.CompanyInfo" />
+          <EntitySet Name="OtherDocuments" EntityType="BIG_DBModel.OtherDocument" />
+          <EntitySet Name="ReferenceDocuments" EntityType="BIG_DBModel.ReferenceDocument" />
           </EntityContainer>
         <EntityType Name="Address">
           <Key>
@@ -675,16 +681,6 @@
           <Property Name="DESCRIPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Employees" Relationship="BIG_DBModel.FK_Employee_Marital" FromRole="Marital" ToRole="Employee" />
         </EntityType>
-        <EntityType Name="OtherDocument">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EMP_ID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
-          <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
-        </EntityType>
         <EntityType Name="Position">
           <Key>
             <PropertyRef Name="ID" />
@@ -702,16 +698,6 @@
           <Property Name="PROVINCE_CODE" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
           <Property Name="PROVINCE_NAME" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="GEO_ID" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ReferenceDocument">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EMP_ID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
-          <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="ReferencePerson">
           <Key>
@@ -931,6 +917,32 @@
           <Property Name="RIGHT_LOGO_1" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="RIGHT_LOGO_2" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <EntityType Name="OtherDocument">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_ID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FILEBINARY" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FILENAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FULLPATH" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ReferenceDocument">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_ID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FILEBINARY" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FILENAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FULLPATH" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1105,17 +1117,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="OtherDocuments">
-            <EntityTypeMapping TypeName="BIG_DBModel.OtherDocument">
-              <MappingFragment StoreEntitySet="OtherDocuments">
-                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
-                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
-                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
-                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Positions">
             <EntityTypeMapping TypeName="BIG_DBModel.Position">
               <MappingFragment StoreEntitySet="Position">
@@ -1132,17 +1133,6 @@
                 <ScalarProperty Name="PROVINCE_NAME" ColumnName="PROVINCE_NAME" />
                 <ScalarProperty Name="PROVINCE_CODE" ColumnName="PROVINCE_CODE" />
                 <ScalarProperty Name="PROVINCE_ID" ColumnName="PROVINCE_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ReferenceDocuments">
-            <EntityTypeMapping TypeName="BIG_DBModel.ReferenceDocument">
-              <MappingFragment StoreEntitySet="ReferenceDocuments">
-                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
-                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
-                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
-                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1293,6 +1283,34 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="OtherDocuments">
+            <EntityTypeMapping TypeName="BIG_DBModel.OtherDocument">
+              <MappingFragment StoreEntitySet="OtherDocuments">
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="FULLPATH" ColumnName="FULLPATH" />
+                <ScalarProperty Name="FILENAME" ColumnName="FILENAME" />
+                <ScalarProperty Name="FILEBINARY" ColumnName="FILEBINARY" />
+                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReferenceDocuments">
+            <EntityTypeMapping TypeName="BIG_DBModel.ReferenceDocument">
+              <MappingFragment StoreEntitySet="ReferenceDocuments">
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="FULLPATH" ColumnName="FULLPATH" />
+                <ScalarProperty Name="FILENAME" ColumnName="FILENAME" />
+                <ScalarProperty Name="FILEBINARY" ColumnName="FILEBINARY" />
+                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1330,10 +1348,8 @@
         <EntityTypeShape EntityType="BIG_DBModel.Hospital" Width="1.5" PointX="11.75" PointY="6.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Logon" Width="1.5" PointX="11.75" PointY="9.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Marital" Width="1.5" PointX="0.75" PointY="10.5" />
-        <EntityTypeShape EntityType="BIG_DBModel.OtherDocument" Width="1.5" PointX="12.75" PointY="0.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Position" Width="1.5" PointX="0.75" PointY="1.375" />
         <EntityTypeShape EntityType="BIG_DBModel.Province" Width="1.5" PointX="4.75" PointY="12.75" />
-        <EntityTypeShape EntityType="BIG_DBModel.ReferenceDocument" Width="1.5" PointX="9.75" PointY="12.75" />
         <EntityTypeShape EntityType="BIG_DBModel.ReferencePerson" Width="1.5" PointX="11.75" PointY="12.75" />
         <EntityTypeShape EntityType="BIG_DBModel.Site" Width="1.5" PointX="13.75" PointY="3.75" />
         <EntityTypeShape EntityType="BIG_DBModel.SSO" Width="1.5" PointX="13.75" PointY="6.75" />
@@ -1349,6 +1365,8 @@
         <AssociationConnector Association="BIG_DBModel.FK_Employee_Title" />
         <AssociationConnector Association="BIG_DBModel.FK_Employee_Title_EN" />
         <EntityTypeShape EntityType="BIG_DBModel.CompanyInfo" Width="1.5" PointX="16.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BIG_DBModel.OtherDocument" Width="1.5" PointX="0.75" PointY="16.75" />
+        <EntityTypeShape EntityType="BIG_DBModel.ReferenceDocument" Width="1.5" PointX="2.75" PointY="16.75" />
       </Diagram>
     </Diagrams>
   </Designer>

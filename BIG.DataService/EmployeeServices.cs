@@ -17,7 +17,7 @@ namespace BIG.DataService
             {
                 using (var ctx = new BIG_DBEntities())
                 {
-                    result = ctx.Employees.Take(50).ToList();
+                    result = ctx.Employees.Take(50).OrderByDescending(o => o.EMP_ID).ToList();
 
                 }
                 return result;
@@ -44,6 +44,41 @@ namespace BIG.DataService
                 throw ex;
             }
         }
+
+        public static List<Employee> GetByArea(string area)
+        {
+            var result = new List<Employee>();
+            try 
+            {
+                using (var ctx = new BIG_DBEntities())
+                {
+                    result = ctx.Employees.Where(x => x.AREA.Contains(area)).Take(50).ToList(); 
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static List<Employee> GetByStartDate(DateTime date)
+        {
+            var result = new List<Employee>();
+            try
+            {
+                using (var ctx = new BIG_DBEntities())
+                {
+                    result = ctx.Employees.Where(x => x.DATESTARTWORK.Value == date).Take(50).ToList();
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public static Employee  GetEmployeeByIDCard(string idcard)
         {
             var result = new  Employee();

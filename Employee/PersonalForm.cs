@@ -21,8 +21,9 @@ namespace BIG.Present
             InitializeComponent();
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
-        private const int BUTTON_VIEW_COLUMN_INDEX = 8;
-
+        private const int BUTTON_VIEW_COLUMN_INDEX = 0;
+        private const int BUTTON_EDIT_COLUMN_INDEX = 1;
+        private const int BUTTON_PRINT_COLUMN_INDEX = 2; 
         private void PersonalForm_Load(object sender, EventArgs e)
         {
             InitialSites();
@@ -33,6 +34,10 @@ namespace BIG.Present
             else if (txt_pid.Text != "")
             {
                 BindDataGrid(txt_pid, false);
+            }
+            else if(txt_area.Text != "")
+            {
+                BindDataGridByArea(txt_area);
             }
             else
             {
@@ -46,53 +51,102 @@ namespace BIG.Present
             {
                 if (col.Index == 0)
                 {
-                    col.Width = 100;
-                    col.HeaderText = "รหัสพนักงาน";
+                    col.Width = 80;  
+                    col.HeaderText = "View";
                 }
                 if (col.Index == 1)
                 {
-                    col.Width = 150;
-                    col.HeaderText = "หมายเลขบัตรประชาชน";
+                    col.Width = 80;
+                    col.HeaderText = "Edit";
                 }
                 if (col.Index == 2)
                 {
-                    col.Width = 170;
-                    col.HeaderText = "ชื่อ(TH)";
+                    col.Width = 80;
+                    col.HeaderText = "Print";
                 }
                 if (col.Index == 3)
                 {
-                    col.Width = 170;
-                    col.HeaderText = "นามสกุล(TH)";
+                    col.Width = 100;
+                    col.HeaderText = "รหัสพนักงาน";
                 }
                 if (col.Index == 4)
                 {
                     col.Width = 150;
-                    col.HeaderText = "ชื่อ(EN)";
+                    col.HeaderText = "หมายเลขบัตรประชาชน";
                 }
                 if (col.Index == 5)
                 {
-                    col.Width = 150;
-                    col.HeaderText = "นามสกุล(EN)";
+                    col.Width = 170;
+                    col.HeaderText = "ชื่อ(TH)";
                 }
                 if (col.Index == 6)
+                {
+                    col.Width = 170;
+                    col.HeaderText = "นามสกุล(TH)";
+                } 
+                if (col.Index == 7)
                 {
                     col.Width = 120;
                     col.HeaderText = "หมายเลขโทรศัพท์";
                 }
-                if (col.Index == 7)
-                {
-                    col.HeaderText = "กรุ๊ปเลือด";
-                }
+                 
             }
+        }
+
+        private void SetButtonCommand()
+        {
+            try
+            {
+                var searchcol = new DataGridViewButtonColumn();
+                searchcol.Name = "View";
+                searchcol.Text = "ดูข้อมูล";
+
+                var editcol = new DataGridViewButtonColumn();
+                editcol.Name = "Edit";
+                editcol.Text = "แก้ไข";
+                var printcol = new DataGridViewButtonColumn();
+                printcol.Name = "Print";
+                printcol.Text = "พิมพ์รายงาน";
+
+                if (dataGridView1.Columns["View"] == null)
+                {
+                    dataGridView1.Columns.Insert(BUTTON_VIEW_COLUMN_INDEX, searchcol);
+                }
+                if (dataGridView1.Columns["Edit"] == null)
+                {
+                    dataGridView1.Columns.Insert(BUTTON_EDIT_COLUMN_INDEX, editcol);
+                }
+                if (dataGridView1.Columns["Print"] == null)
+                {
+                    dataGridView1.Columns.Insert(BUTTON_PRINT_COLUMN_INDEX, printcol);
+                } 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error SetButtonCommand : " + ex.Message);
+            }
+        }
+
+        private void SetButtonValue()
+        {
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                DataGridViewCell view = row.Cells[BUTTON_VIEW_COLUMN_INDEX];//Column Index
+                view.Value = "ดูข้อมูล";
+                DataGridViewCell edit = row.Cells[BUTTON_EDIT_COLUMN_INDEX];//Column Index
+                edit.Value = "แก้ไข";
+                DataGridViewCell print = row.Cells[BUTTON_PRINT_COLUMN_INDEX];//Column Index
+                print.Value = "พิมพ์รายงาน";
+            } 
         }
         private void BindDataGrid(TextBox tx,bool Site)
         {
-            
-            
             if (!Site)
             {
                 var lst = EmployeeServices.GetAll();
                 var ds = lst.Where(x => x.FIRSTNAME_TH.Contains(txt_name_sname.Text) || x.FIRSTNAME_EN.Contains(txt_name_sname.Text) || x.LASTNAME_TH.Contains(txt_name_sname.Text) || x.LASTNAME_EN.Contains(txt_name_sname.Text)).Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.FIRSTNAME_EN, x.LASTNAME_EN, x.MOBILE, x.BLOODGROUP }).ToList();
+               
+                
                 dataGridView1.Columns.Clear();
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = ds;
@@ -103,7 +157,7 @@ namespace BIG.Present
                 if (cbo_site.SelectedIndex != 0)
                 {
                     var lst = EmployeeServices.GetBySite(cbo_site.SelectedItem.ToString());
-                    var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.FIRSTNAME_EN, x.LASTNAME_EN, x.MOBILE, x.BLOODGROUP }).ToList();
+                    var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE }).ToList();
                     dataGridView1.Columns.Clear();
                     dataGridView1.DataSource = null;
                     dataGridView1.DataSource = ds;
@@ -112,43 +166,59 @@ namespace BIG.Present
                 else
                 {
                     var lst = EmployeeServices.GetAll();
-                    var ds = lst.Where(x => x.FIRSTNAME_TH.Contains(txt_name_sname.Text) || x.FIRSTNAME_EN.Contains(txt_name_sname.Text) || x.LASTNAME_TH.Contains(txt_name_sname.Text) || x.LASTNAME_EN.Contains(txt_name_sname.Text)).Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.FIRSTNAME_EN, x.LASTNAME_EN, x.MOBILE, x.BLOODGROUP }).ToList();
+                    var ds = lst.Where(x => x.FIRSTNAME_TH.Contains(txt_name_sname.Text) || x.FIRSTNAME_EN.Contains(txt_name_sname.Text) || x.LASTNAME_TH.Contains(txt_name_sname.Text) || x.LASTNAME_EN.Contains(txt_name_sname.Text)).Select(x =>
+                        new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE }).ToList();
                     dataGridView1.Columns.Clear();
                     dataGridView1.DataSource = null;
                     dataGridView1.DataSource = ds;
                     dataGridView1.Refresh();
-                }
-                
+                } 
             }
-            
-            var searchcol = new DataGridViewButtonColumn();
-            searchcol.Name = "View";
-            searchcol.Text = "ดูข้อมูล";
-            //var printcol = new DataGridViewButtonColumn();
-            //printcol.Name = "Print";
-            //printcol.Text = "Print";
-            
-            if (dataGridView1.Columns["Search"] == null)
-            {
-                dataGridView1.Columns.Insert(BUTTON_VIEW_COLUMN_INDEX, searchcol);
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            { 
+                dataGridView1.Columns[column.Name].SortMode = DataGridViewColumnSortMode.Automatic;
             }
-            //if (dataGridView1.Columns["Print"] == null)
-            //{
-            //    dataGridView1.Columns.Insert(BUTTON_VIEW_COLUMN_INDEX + 1, printcol);
-            //}
 
+            SetButtonCommand();
             SetColumnHeader();
+            SetButtonValue();
+            
+        }
 
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+        private void BindDataGridByArea(TextBox are)
+        {
+            var lst = EmployeeServices.GetByArea(are.Text);
+            var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE }).ToList();
+            dataGridView1.Columns.Clear();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = ds;
+            dataGridView1.Refresh();
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
-                DataGridViewCell cell = row.Cells[BUTTON_VIEW_COLUMN_INDEX];//Column Index
-                cell.Value = "ดูข้อมูล"; 
+                dataGridView1.Columns[column.Name].SortMode = DataGridViewColumnSortMode.Automatic;
             }
-            //foreach (DataGridViewRow row in dataGridView1.Rows)
-            //{
-            //    DataGridViewCell cell = row.Cells[BUTTON_VIEW_COLUMN_INDEX + 1];//Column Index
-            //    cell.Value = "Print";
-            //}
+
+            SetButtonCommand(); 
+            SetColumnHeader();
+            SetButtonValue();
+        }
+
+        private void BindDataGridByStartDate(DateTimePicker date)
+        {
+            var lst = EmployeeServices.GetByStartDate(date.Value);
+            var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE }).ToList();
+            dataGridView1.Columns.Clear();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = ds;
+            dataGridView1.Refresh();
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                dataGridView1.Columns[column.Name].SortMode = DataGridViewColumnSortMode.Automatic;
+            }
+
+            SetButtonCommand(); 
+            SetColumnHeader();
+            SetButtonValue();
         }
 
         public void InitialSites()
@@ -174,6 +244,14 @@ namespace BIG.Present
             else if (txt_pid.Text != "")
             {
                 BindDataGrid(txt_pid, false);
+            }
+            else if (txt_area.Text != "")
+            {
+                BindDataGridByArea(txt_area);
+            }
+            else if ((cbo_site.SelectedIndex == -1) && txt_name_sname.Text =="" && txt_pid.Text == "")// (txt_name_sname.Text == "") && (txt_pid.Text = ""))
+            {
+                 
             }
             else
             {
@@ -311,14 +389,14 @@ namespace BIG.Present
 
         private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
+            Close();
             var mainform = new MainForm();
             mainform.Show();
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Close();
             var mainform = new MainForm();
             mainform.Show();
         }
@@ -359,16 +437,14 @@ namespace BIG.Present
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor; 
             if (e.ColumnIndex == BUTTON_VIEW_COLUMN_INDEX && e.RowIndex >= 0)
             {
                 if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
                     if (dataGridView1.Rows[e.RowIndex].Cells[0].Value != null)
-                    {
-
-                        this.Cursor = Cursors.WaitCursor;
-
-                        var emp_id = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    {  
+                        var emp_id = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                         e_id = emp_id;
                         if (backgroundWorker1.IsBusy == false)
                         {
@@ -379,7 +455,34 @@ namespace BIG.Present
                         }
                      } 
                 }
-                //Perform on button click code
+                
+            }
+            else if (e.ColumnIndex == BUTTON_EDIT_COLUMN_INDEX && e.RowIndex >= 0)
+            {
+                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    if (dataGridView1.Rows[e.RowIndex].Cells[3].Value != null)
+                    {
+                        var emp_id = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                        e_id = emp_id;
+                        var emp = new EmployeeForm(e_id, "Edit");
+                        emp.Show();
+                        this.Close();
+                    }
+                }
+            }
+            else if (e.ColumnIndex == BUTTON_PRINT_COLUMN_INDEX && e.RowIndex >= 0)
+            {
+                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    if (dataGridView1.Rows[e.RowIndex].Cells[3].Value != null)
+                    {
+                        var emp_id = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                        var form = new ReportEmployee(emp_id); 
+                        form.Show();
+                        this.Close();
+                    }
+                }
             }
         }
         public string e_id { get; set; }
@@ -417,6 +520,79 @@ namespace BIG.Present
             var frm = new CompanyInfoForm();
             frm.Show();
             Close();
+        }
+
+        private void dt_startwork_ValueChanged(object sender, EventArgs e)
+        {
+            cbo_site.SelectedIndex = -1;
+            txt_name_sname.Text = "";
+            txt_pid.Text = "";
+            
+        }
+
+        private void cbo_order_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbo_order.SelectedIndex == 1)
+            {
+                var ds = dataGridView1.DataSource; 
+            }
+            else if (cbo_order.SelectedIndex == 2)
+            {
+                
+            }
+            else if (cbo_order.SelectedIndex == 3)
+            {
+
+            }
+            else if (cbo_order.SelectedIndex == 4)
+            {
+
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Close();
+            var form = new CompanyInfoForm();
+            form.Show();
+            
+        }
+
+        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Close();
+            var form = new CompanyInfoForm();
+            form.Show();
+           
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            Close();
+            var form = new EmployeeForm();
+            form.Show();
+            
+        }
+
+        private void linkLabel9_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Close();
+            var form = new EmployeeForm();
+            form.Show();
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            Close();
+            var form = new ReportEmployee();
+            form.Show();
+        }
+
+        private void linkLabel10_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Close();
+            var form = new ReportEmployee();
+            form.Show();
         }
 
     }

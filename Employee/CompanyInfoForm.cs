@@ -249,5 +249,78 @@ namespace BIG.Present
             frm.Show();
             Close();
         }
+
+        private void ribbonButton12_Click(object sender, EventArgs e)
+        {
+            Close();
+            this.Cursor = Cursors.WaitCursor;
+            var frm = new PersonalForm();
+            frm.Show();
+           
+        }
+
+        private void ribbonButton13_Click(object sender, EventArgs e)
+        {
+            Close();
+            this.Cursor = Cursors.WaitCursor;
+            var frm = new PersonalForm();
+            frm.Show();
+        }
+
+        private void ribbonButton14_Click(object sender, EventArgs e)
+        {
+            Close();
+            this.Cursor = Cursors.WaitCursor;
+            var frm = new PersonalForm();
+            frm.Show();
+        }
+
+        private void ribbonButton15_Click(object sender, EventArgs e)
+        {
+            Close();
+            this.Cursor = Cursors.WaitCursor;
+            var frm = new PersonalForm();
+            frm.Show();
+        }
+
+        private void ribbonButton9_Click(object sender, EventArgs e)
+        {
+            Close();
+            this.Cursor = Cursors.WaitCursor;
+            var frm = new ReportEmployee();
+            frm.Show();
+        }
+
+        private void ribbonButton10_Click(object sender, EventArgs e)
+        {
+            Close();
+            this.Cursor = Cursors.WaitCursor;
+            var frm = new ReportEmployee();
+            frm.Show();
+        }
+
+        private void ribbonButton11_Click(object sender, EventArgs e)
+        {
+            Close();
+            this.Cursor = Cursors.WaitCursor;
+            var frm = new ReportEmployee();
+            frm.Show();
+        }
+
+        private void ribbonButton16_Click(object sender, EventArgs e)
+        {
+            Close();
+            this.Cursor = Cursors.WaitCursor;
+            var frm = new ReportEmployee();
+            frm.Show();
+        }
+
+        private void rb_savecompany_Click(object sender, EventArgs e)
+        {
+            Close();
+            this.Cursor = Cursors.WaitCursor;
+            var frm = new CompanyInfoForm();
+            frm.Show();
+        }
     }
 }

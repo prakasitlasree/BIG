@@ -529,6 +529,7 @@
     <Content Include="Resources\ico\yellow tag.ico" />
     <Content Include="Resources\ico\yes.ico" />
     <Content Include="Resources\ico\zoom.ico" />
+    <None Include="Resources\idcard_template.jpg" />
     <Content Include="Resources\lock_1.png" />
     <Content Include="Resources\lock_2.png" />
     <Content Include="Resources\lock_3.png" />

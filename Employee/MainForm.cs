@@ -30,17 +30,13 @@ namespace BIG.Present
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
-        }
-
-       
-
+        } 
         private void btn_close_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("คุณต้องการออกจากโปรแกรม?", "ยินยันการออกจากโปรแกรม", MessageBoxButtons.YesNoCancel);
             if (result == DialogResult.Yes)
             {
-                Application.Exit();
-                //this.Close();
+                Application.Exit(); 
             }
             else if (result == DialogResult.No)
             {
@@ -57,8 +53,7 @@ namespace BIG.Present
         {
             Close();
             var personal = new PersonalForm();
-            personal.Show();
-            
+            personal.Show(); 
         }
 
         private void btn_employee_Click(object sender, EventArgs e)
@@ -81,10 +76,11 @@ namespace BIG.Present
 
         private void lnk_setting_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Close();
             this.Cursor = Cursors.WaitCursor;
             var fm = new CompanyInfoForm();
             fm.Show();
-            Close();
+            
         }
 
         private void btn_report_Click(object sender, EventArgs e)
@@ -102,7 +98,39 @@ namespace BIG.Present
             this.Cursor = Cursors.WaitCursor;
             var frm = new ReportEmployee();
             frm.Show();
-            
+             
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            Close();
+            this.Cursor = Cursors.WaitCursor;
+            var personal = new PersonalForm();
+            personal.Show();
+        }
+
+        private void lnk_search_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Close();
+            this.Cursor = Cursors.WaitCursor;
+            var personal = new PersonalForm();
+            personal.Show();
+        }
+
+        private void lnk_company_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Close();
+            this.Cursor = Cursors.WaitCursor;
+            var fm = new CompanyInfoForm();
+            fm.Show();
+        }
+
+        private void btn_company_Click(object sender, EventArgs e)
+        {
+            Close();
+            this.Cursor = Cursors.WaitCursor;
+            var fm = new CompanyInfoForm();
+            fm.Show();
         }
          
     }
