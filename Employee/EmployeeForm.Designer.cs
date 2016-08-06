@@ -33,28 +33,6 @@ namespace BIG.Present
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.advancedFlowLayoutPanel1 = new MakarovDev.ExpandCollapsePanel.AdvancedFlowLayoutPanel();
-            this.left_menu1 = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel9 = new System.Windows.Forms.LinkLabel();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.EmployeeTab = new System.Windows.Forms.TabControl();
@@ -628,21 +606,30 @@ namespace BIG.Present
             this.ribbonOrbMenuItem3 = new System.Windows.Forms.RibbonOrbMenuItem();
             this.ribbonOrbMenuItem4 = new System.Windows.Forms.RibbonOrbMenuItem();
             this.ribbonButton16 = new System.Windows.Forms.RibbonButton();
+            this.advancedFlowLayoutPanel1 = new MakarovDev.ExpandCollapsePanel.AdvancedFlowLayoutPanel();
+            this.left_menu1 = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel9 = new System.Windows.Forms.LinkLabel();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.advancedFlowLayoutPanel1.SuspendLayout();
-            this.left_menu1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.EmployeeTab.SuspendLayout();
@@ -882,6 +869,19 @@ namespace BIG.Present
             ((System.ComponentModel.ISupportInitialize)(this.btn_ref_img)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_new_img)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
+            this.advancedFlowLayoutPanel1.SuspendLayout();
+            this.left_menu1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -916,298 +916,6 @@ namespace BIG.Present
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1578, 656);
             this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // advancedFlowLayoutPanel1
-            // 
-            this.advancedFlowLayoutPanel1.AllowDrop = true;
-            this.advancedFlowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.advancedFlowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.advancedFlowLayoutPanel1.Controls.Add(this.left_menu1);
-            this.advancedFlowLayoutPanel1.Location = new System.Drawing.Point(5, 5);
-            this.advancedFlowLayoutPanel1.Name = "advancedFlowLayoutPanel1";
-            this.advancedFlowLayoutPanel1.Size = new System.Drawing.Size(184, 652);
-            this.advancedFlowLayoutPanel1.TabIndex = 11;
-            // 
-            // left_menu1
-            // 
-            this.left_menu1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.left_menu1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.left_menu1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.left_menu1.ButtonSize = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonSize.Normal;
-            this.left_menu1.ButtonStyle = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonStyle.Circle;
-            this.left_menu1.Controls.Add(this.panel1);
-            this.left_menu1.ExpandedHeight = 0;
-            this.left_menu1.IsExpanded = true;
-            this.left_menu1.Location = new System.Drawing.Point(3, 3);
-            this.left_menu1.Name = "left_menu1";
-            this.left_menu1.Size = new System.Drawing.Size(178, 356);
-            this.left_menu1.TabIndex = 0;
-            this.left_menu1.Text = "ข้อมูลการจ้างงาน";
-            this.left_menu1.UseAnimation = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.Controls.Add(this.tableLayoutPanel8);
-            this.panel1.Location = new System.Drawing.Point(4, 42);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(169, 311);
-            this.panel1.TabIndex = 1;
-            // 
-            // tableLayoutPanel8
-            // 
-            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel8.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel8.ColumnCount = 2;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel8.Controls.Add(this.linkLabel5, 1, 4);
-            this.tableLayoutPanel8.Controls.Add(this.pictureBox6, 0, 4);
-            this.tableLayoutPanel8.Controls.Add(this.pictureBox2, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.linkLabel1, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.linkLabel4, 1, 3);
-            this.tableLayoutPanel8.Controls.Add(this.pictureBox5, 0, 3);
-            this.tableLayoutPanel8.Controls.Add(this.pictureBox3, 0, 1);
-            this.tableLayoutPanel8.Controls.Add(this.linkLabel2, 1, 1);
-            this.tableLayoutPanel8.Controls.Add(this.linkLabel3, 1, 2);
-            this.tableLayoutPanel8.Controls.Add(this.pictureBox4, 0, 2);
-            this.tableLayoutPanel8.Controls.Add(this.linkLabel6, 1, 5);
-            this.tableLayoutPanel8.Controls.Add(this.linkLabel7, 1, 6);
-            this.tableLayoutPanel8.Controls.Add(this.linkLabel8, 1, 7);
-            this.tableLayoutPanel8.Controls.Add(this.linkLabel9, 1, 8);
-            this.tableLayoutPanel8.Controls.Add(this.pictureBox9, 0, 5);
-            this.tableLayoutPanel8.Controls.Add(this.pictureBox10, 0, 6);
-            this.tableLayoutPanel8.Controls.Add(this.pictureBox11, 0, 7);
-            this.tableLayoutPanel8.Controls.Add(this.pictureBox12, 0, 8);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 9;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(161, 282);
-            this.tableLayoutPanel8.TabIndex = 0;
-            // 
-            // linkLabel5
-            // 
-            this.linkLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel5.AutoSize = true;
-            this.linkLabel5.Location = new System.Drawing.Point(52, 132);
-            this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(105, 15);
-            this.linkLabel5.TabIndex = 10;
-            this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "พนักงานทดลองงาน";
-            this.linkLabel5.Click += new System.EventHandler(this.linkLabel5_Click);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox6.Image = global::BIG.Present.Properties.Resources.Person;
-            this.pictureBox6.Location = new System.Drawing.Point(12, 128);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox6.TabIndex = 11;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::BIG.Present.Properties.Resources.Script1;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(52, 8);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(105, 15);
-            this.linkLabel1.TabIndex = 0;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "สัญญาค้ำประกัน";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // linkLabel4
-            // 
-            this.linkLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Location = new System.Drawing.Point(52, 101);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(105, 15);
-            this.linkLabel4.TabIndex = 8;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "บันทึกการลงโทษ";
-            this.linkLabel4.Click += new System.EventHandler(this.linkLabel4_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Image = global::BIG.Present.Properties.Resources.Bad_mark;
-            this.pictureBox5.Location = new System.Drawing.Point(13, 97);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(23, 24);
-            this.pictureBox5.TabIndex = 9;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::BIG.Present.Properties.Resources.List;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 35);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(52, 39);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(105, 15);
-            this.linkLabel2.TabIndex = 4;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "สัญญาจ้างงาน";
-            this.linkLabel2.Click += new System.EventHandler(this.linkLabel2_Click);
-            // 
-            // linkLabel3
-            // 
-            this.linkLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Location = new System.Drawing.Point(52, 70);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(105, 15);
-            this.linkLabel3.TabIndex = 6;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "รางวัล/ผลงานดีเด่น";
-            this.linkLabel3.Click += new System.EventHandler(this.linkLabel3_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = global::BIG.Present.Properties.Resources.Good_mark;
-            this.pictureBox4.Location = new System.Drawing.Point(12, 66);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox4.TabIndex = 7;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // linkLabel6
-            // 
-            this.linkLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel6.AutoSize = true;
-            this.linkLabel6.Location = new System.Drawing.Point(52, 163);
-            this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(105, 15);
-            this.linkLabel6.TabIndex = 12;
-            this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "การปรับเงินเดือน";
-            // 
-            // linkLabel7
-            // 
-            this.linkLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel7.AutoSize = true;
-            this.linkLabel7.Location = new System.Drawing.Point(52, 194);
-            this.linkLabel7.Name = "linkLabel7";
-            this.linkLabel7.Size = new System.Drawing.Size(105, 15);
-            this.linkLabel7.TabIndex = 13;
-            this.linkLabel7.TabStop = true;
-            this.linkLabel7.Text = "กองทุนสำรอง";
-            // 
-            // linkLabel8
-            // 
-            this.linkLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel8.AutoSize = true;
-            this.linkLabel8.Location = new System.Drawing.Point(52, 225);
-            this.linkLabel8.Name = "linkLabel8";
-            this.linkLabel8.Size = new System.Drawing.Size(105, 15);
-            this.linkLabel8.TabIndex = 14;
-            this.linkLabel8.TabStop = true;
-            this.linkLabel8.Text = "ข้อมูลด้านสุขภาพ";
-            // 
-            // linkLabel9
-            // 
-            this.linkLabel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel9.AutoSize = true;
-            this.linkLabel9.Location = new System.Drawing.Point(52, 257);
-            this.linkLabel9.Name = "linkLabel9";
-            this.linkLabel9.Size = new System.Drawing.Size(105, 15);
-            this.linkLabel9.TabIndex = 15;
-            this.linkLabel9.TabStop = true;
-            this.linkLabel9.Text = "การพ้นสภาพ";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox9.Image = global::BIG.Present.Properties.Resources.Apply;
-            this.pictureBox9.Location = new System.Drawing.Point(12, 159);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox9.TabIndex = 16;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox10.Image = global::BIG.Present.Properties.Resources.Accounting;
-            this.pictureBox10.Location = new System.Drawing.Point(12, 190);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox10.TabIndex = 17;
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox11.Image = global::BIG.Present.Properties.Resources.Heart;
-            this.pictureBox11.Location = new System.Drawing.Point(12, 221);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox11.TabIndex = 18;
-            this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox12.Image = global::BIG.Present.Properties.Resources.Terminate;
-            this.pictureBox12.Location = new System.Drawing.Point(12, 252);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox12.TabIndex = 19;
-            this.pictureBox12.TabStop = false;
             // 
             // tableLayoutPanel6
             // 
@@ -1404,6 +1112,7 @@ namespace BIG.Present
             // 
             this.txt_pid.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_pid.Location = new System.Drawing.Point(153, 10);
+            this.txt_pid.MaxLength = 13;
             this.txt_pid.Name = "txt_pid";
             this.txt_pid.Size = new System.Drawing.Size(200, 20);
             this.txt_pid.TabIndex = 15;
@@ -1953,9 +1662,8 @@ namespace BIG.Present
             // tableLayoutPanel12
             // 
             this.tableLayoutPanel12.ColumnCount = 2;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.25121F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.74879F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84F));
             this.tableLayoutPanel12.Controls.Add(this.cbo_bp_prov, 1, 0);
             this.tableLayoutPanel12.Controls.Add(this.cbo_bp_ctr, 0, 0);
             this.tableLayoutPanel12.Location = new System.Drawing.Point(153, 323);
@@ -1973,9 +1681,9 @@ namespace BIG.Present
             "นาย",
             "นาง",
             "นางสาว"});
-            this.cbo_bp_prov.Location = new System.Drawing.Point(62, 4);
+            this.cbo_bp_prov.Location = new System.Drawing.Point(69, 4);
             this.cbo_bp_prov.Name = "cbo_bp_prov";
-            this.cbo_bp_prov.Size = new System.Drawing.Size(198, 21);
+            this.cbo_bp_prov.Size = new System.Drawing.Size(190, 21);
             this.cbo_bp_prov.TabIndex = 27;
             // 
             // cbo_bp_ctr
@@ -1988,7 +1696,7 @@ namespace BIG.Present
             "นางสาว"});
             this.cbo_bp_ctr.Location = new System.Drawing.Point(3, 4);
             this.cbo_bp_ctr.Name = "cbo_bp_ctr";
-            this.cbo_bp_ctr.Size = new System.Drawing.Size(52, 21);
+            this.cbo_bp_ctr.Size = new System.Drawing.Size(57, 21);
             this.cbo_bp_ctr.TabIndex = 26;
             // 
             // tableLayoutPanel20
@@ -2308,6 +2016,7 @@ namespace BIG.Present
             // 
             this.txt_empid.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_empid.Location = new System.Drawing.Point(3, 4);
+            this.txt_empid.MaxLength = 14;
             this.txt_empid.Name = "txt_empid";
             this.txt_empid.Size = new System.Drawing.Size(199, 20);
             this.txt_empid.TabIndex = 14;
@@ -7191,7 +6900,7 @@ namespace BIG.Present
             this.tableLayoutPanel7.ColumnCount = 3;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61538F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38462F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 368F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 371F));
             this.tableLayoutPanel7.Controls.Add(this.btn_cancle, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.btn_save, 0, 0);
             this.tableLayoutPanel7.Location = new System.Drawing.Point(173, 577);
@@ -7206,9 +6915,9 @@ namespace BIG.Present
             this.btn_cancle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_cancle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cancle.Location = new System.Drawing.Point(114, 3);
+            this.btn_cancle.Location = new System.Drawing.Point(113, 3);
             this.btn_cancle.Name = "btn_cancle";
-            this.btn_cancle.Size = new System.Drawing.Size(112, 37);
+            this.btn_cancle.Size = new System.Drawing.Size(110, 37);
             this.btn_cancle.TabIndex = 1;
             this.btn_cancle.Text = "ยกเลิก";
             this.btn_cancle.UseVisualStyleBackColor = true;
@@ -7220,7 +6929,7 @@ namespace BIG.Present
             this.btn_save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_save.Location = new System.Drawing.Point(3, 3);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(105, 37);
+            this.btn_save.Size = new System.Drawing.Size(104, 37);
             this.btn_save.TabIndex = 0;
             this.btn_save.Text = "บันทึก";
             this.btn_save.UseVisualStyleBackColor = true;
@@ -7725,6 +7434,298 @@ namespace BIG.Present
             this.ribbonButton16.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton16.Image")));
             this.ribbonButton16.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton16.SmallImage")));
             // 
+            // advancedFlowLayoutPanel1
+            // 
+            this.advancedFlowLayoutPanel1.AllowDrop = true;
+            this.advancedFlowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.advancedFlowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.advancedFlowLayoutPanel1.Controls.Add(this.left_menu1);
+            this.advancedFlowLayoutPanel1.Location = new System.Drawing.Point(5, 5);
+            this.advancedFlowLayoutPanel1.Name = "advancedFlowLayoutPanel1";
+            this.advancedFlowLayoutPanel1.Size = new System.Drawing.Size(184, 652);
+            this.advancedFlowLayoutPanel1.TabIndex = 11;
+            // 
+            // left_menu1
+            // 
+            this.left_menu1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.left_menu1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.left_menu1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.left_menu1.ButtonSize = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonSize.Normal;
+            this.left_menu1.ButtonStyle = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonStyle.Circle;
+            this.left_menu1.Controls.Add(this.panel1);
+            this.left_menu1.ExpandedHeight = 0;
+            this.left_menu1.IsExpanded = true;
+            this.left_menu1.Location = new System.Drawing.Point(3, 3);
+            this.left_menu1.Name = "left_menu1";
+            this.left_menu1.Size = new System.Drawing.Size(178, 356);
+            this.left_menu1.TabIndex = 0;
+            this.left_menu1.Text = "ข้อมูลการจ้างงาน";
+            this.left_menu1.UseAnimation = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.tableLayoutPanel8);
+            this.panel1.Location = new System.Drawing.Point(4, 42);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(169, 311);
+            this.panel1.TabIndex = 1;
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel8.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel8.Controls.Add(this.linkLabel5, 1, 4);
+            this.tableLayoutPanel8.Controls.Add(this.pictureBox6, 0, 4);
+            this.tableLayoutPanel8.Controls.Add(this.pictureBox2, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.linkLabel1, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.linkLabel4, 1, 3);
+            this.tableLayoutPanel8.Controls.Add(this.pictureBox5, 0, 3);
+            this.tableLayoutPanel8.Controls.Add(this.pictureBox3, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.linkLabel2, 1, 1);
+            this.tableLayoutPanel8.Controls.Add(this.linkLabel3, 1, 2);
+            this.tableLayoutPanel8.Controls.Add(this.pictureBox4, 0, 2);
+            this.tableLayoutPanel8.Controls.Add(this.linkLabel6, 1, 5);
+            this.tableLayoutPanel8.Controls.Add(this.linkLabel7, 1, 6);
+            this.tableLayoutPanel8.Controls.Add(this.linkLabel8, 1, 7);
+            this.tableLayoutPanel8.Controls.Add(this.linkLabel9, 1, 8);
+            this.tableLayoutPanel8.Controls.Add(this.pictureBox9, 0, 5);
+            this.tableLayoutPanel8.Controls.Add(this.pictureBox10, 0, 6);
+            this.tableLayoutPanel8.Controls.Add(this.pictureBox11, 0, 7);
+            this.tableLayoutPanel8.Controls.Add(this.pictureBox12, 0, 8);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 9;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(161, 282);
+            this.tableLayoutPanel8.TabIndex = 0;
+            // 
+            // linkLabel5
+            // 
+            this.linkLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel5.AutoSize = true;
+            this.linkLabel5.Location = new System.Drawing.Point(52, 132);
+            this.linkLabel5.Name = "linkLabel5";
+            this.linkLabel5.Size = new System.Drawing.Size(105, 15);
+            this.linkLabel5.TabIndex = 10;
+            this.linkLabel5.TabStop = true;
+            this.linkLabel5.Text = "พนักงานทดลองงาน";
+            this.linkLabel5.Click += new System.EventHandler(this.linkLabel5_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.Image = global::BIG.Present.Properties.Resources.Person;
+            this.pictureBox6.Location = new System.Drawing.Point(12, 128);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox6.TabIndex = 11;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::BIG.Present.Properties.Resources.Script1;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(52, 8);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(105, 15);
+            this.linkLabel1.TabIndex = 0;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "สัญญาค้ำประกัน";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // linkLabel4
+            // 
+            this.linkLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.Location = new System.Drawing.Point(52, 101);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(105, 15);
+            this.linkLabel4.TabIndex = 8;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "บันทึกการลงโทษ";
+            this.linkLabel4.Click += new System.EventHandler(this.linkLabel4_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = global::BIG.Present.Properties.Resources.Bad_mark;
+            this.pictureBox5.Location = new System.Drawing.Point(13, 97);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(23, 24);
+            this.pictureBox5.TabIndex = 9;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::BIG.Present.Properties.Resources.List;
+            this.pictureBox3.Location = new System.Drawing.Point(12, 35);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox3.TabIndex = 5;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(52, 39);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(105, 15);
+            this.linkLabel2.TabIndex = 4;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "สัญญาจ้างงาน";
+            this.linkLabel2.Click += new System.EventHandler(this.linkLabel2_Click);
+            // 
+            // linkLabel3
+            // 
+            this.linkLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel3.AutoSize = true;
+            this.linkLabel3.Location = new System.Drawing.Point(52, 70);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(105, 15);
+            this.linkLabel3.TabIndex = 6;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "รางวัล/ผลงานดีเด่น";
+            this.linkLabel3.Click += new System.EventHandler(this.linkLabel3_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = global::BIG.Present.Properties.Resources.Good_mark;
+            this.pictureBox4.Location = new System.Drawing.Point(12, 66);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox4.TabIndex = 7;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // linkLabel6
+            // 
+            this.linkLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel6.AutoSize = true;
+            this.linkLabel6.Location = new System.Drawing.Point(52, 163);
+            this.linkLabel6.Name = "linkLabel6";
+            this.linkLabel6.Size = new System.Drawing.Size(105, 15);
+            this.linkLabel6.TabIndex = 12;
+            this.linkLabel6.TabStop = true;
+            this.linkLabel6.Text = "การปรับเงินเดือน";
+            // 
+            // linkLabel7
+            // 
+            this.linkLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel7.AutoSize = true;
+            this.linkLabel7.Location = new System.Drawing.Point(52, 194);
+            this.linkLabel7.Name = "linkLabel7";
+            this.linkLabel7.Size = new System.Drawing.Size(105, 15);
+            this.linkLabel7.TabIndex = 13;
+            this.linkLabel7.TabStop = true;
+            this.linkLabel7.Text = "กองทุนสำรอง";
+            // 
+            // linkLabel8
+            // 
+            this.linkLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel8.AutoSize = true;
+            this.linkLabel8.Location = new System.Drawing.Point(52, 225);
+            this.linkLabel8.Name = "linkLabel8";
+            this.linkLabel8.Size = new System.Drawing.Size(105, 15);
+            this.linkLabel8.TabIndex = 14;
+            this.linkLabel8.TabStop = true;
+            this.linkLabel8.Text = "ข้อมูลด้านสุขภาพ";
+            // 
+            // linkLabel9
+            // 
+            this.linkLabel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel9.AutoSize = true;
+            this.linkLabel9.Location = new System.Drawing.Point(52, 257);
+            this.linkLabel9.Name = "linkLabel9";
+            this.linkLabel9.Size = new System.Drawing.Size(105, 15);
+            this.linkLabel9.TabIndex = 15;
+            this.linkLabel9.TabStop = true;
+            this.linkLabel9.Text = "การพ้นสภาพ";
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox9.Image = global::BIG.Present.Properties.Resources.Apply;
+            this.pictureBox9.Location = new System.Drawing.Point(12, 159);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox9.TabIndex = 16;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox10.Image = global::BIG.Present.Properties.Resources.Accounting;
+            this.pictureBox10.Location = new System.Drawing.Point(12, 190);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox10.TabIndex = 17;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox11.Image = global::BIG.Present.Properties.Resources.Heart;
+            this.pictureBox11.Location = new System.Drawing.Point(12, 221);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox11.TabIndex = 18;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox12.Image = global::BIG.Present.Properties.Resources.Terminate;
+            this.pictureBox12.Location = new System.Drawing.Point(12, 252);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox12.TabIndex = 19;
+            this.pictureBox12.TabStop = false;
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -7742,21 +7743,6 @@ namespace BIG.Present
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EmployeeForm_FormClosed);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.advancedFlowLayoutPanel1.ResumeLayout(false);
-            this.left_menu1.ResumeLayout(false);
-            this.left_menu1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.EmployeeTab.ResumeLayout(false);
@@ -8119,6 +8105,21 @@ namespace BIG.Present
             ((System.ComponentModel.ISupportInitialize)(this.btn_ref_img)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_new_img)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
+            this.advancedFlowLayoutPanel1.ResumeLayout(false);
+            this.left_menu1.ResumeLayout(false);
+            this.left_menu1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.ResumeLayout(false);
 
         }

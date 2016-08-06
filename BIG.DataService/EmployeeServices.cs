@@ -69,7 +69,8 @@ namespace BIG.DataService
             {
                 using (var ctx = new BIG_DBEntities())
                 {
-                    result = ctx.Employees.Where(x => x.DATESTARTWORK.Value == date).Take(50).ToList();
+                    var dt = new DateTime(date.Year, date.Month, date.Day);
+                    result = ctx.Employees.Where(x => x.DATESTARTWORK == dt).Take(50).ToList();
                 }
                 return result;
             }
@@ -119,7 +120,7 @@ namespace BIG.DataService
             {
                 using (var ctx = new BIG_DBEntities())
                 {
-
+                    employee.MODIFIED_DATE = DateTime.Now;
                     ctx.Employees.Add(employee);
                     ctx.SaveChanges();
                 }
@@ -127,7 +128,7 @@ namespace BIG.DataService
             }
             catch (Exception ex)
             {
-                return false;
+                //return false;
                 throw ex;
             }
         }
@@ -138,9 +139,8 @@ namespace BIG.DataService
             
             try
             { 
-                DeleteByEmployeeID(employee.EMP_ID);
-                Add(employee);
-                 
+                DeleteByEmployeeID(employee.EMP_ID); 
+                Add(employee); 
                 return true;
             }
             catch (Exception ex)
@@ -179,11 +179,16 @@ namespace BIG.DataService
             {
                 using (var ctx = new BIG_DBEntities())
                 {
-
-                    var empctx = ctx.Employees.OrderByDescending(x => x.CREATED_DATE).FirstOrDefault();
+                    var tempemp = "BIGS" + DateTime.Now.ToString("yyMMdd");
+                    var empctx = ctx.Employees.Where(x => x.EMP_ID.Contains(tempemp)).ToList();
                     if (empctx != null)
                     {
-                        emp_id = empctx.EMP_ID;
+                        var obj = empctx.OrderBy(x => x.EMP_ID).LastOrDefault();
+                        if (obj != null)
+                        {
+                            emp_id = obj.EMP_ID; 
+                        }
+                       // emp_id = empctx.EMP_ID; 
                     } 
                 }
                 return emp_id;

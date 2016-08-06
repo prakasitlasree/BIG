@@ -195,6 +195,8 @@ namespace BIG.Present
 
         private void initialCombobox()
         {
+            GenEmployeeID();
+
             //Province
             this.InitialProvince();
 
@@ -380,7 +382,10 @@ namespace BIG.Present
                 emp.MOBILE = txt_mobile.Text;
                 emp.HOMEPHONE = txt_mobile.Text;
                 emp.CREATED_DATE = DateTime.Now;
-                emp.SITE_LOCATION = cbo_site.SelectedItem.ToString();
+                if (cbo_site.SelectedItem != null)
+                { 
+                    emp.SITE_LOCATION = cbo_site.SelectedItem.ToString();
+                }
                 //emp.MARITAL_ID = 1; //สถานะสมรส 
 
                 return emp;
@@ -938,6 +943,19 @@ namespace BIG.Present
             return ret;
         }
 
+        private void getRefDocFormInput()
+        {
+            var obj = RefDoc.Where(x => x.TYPE == "สำเนาบัตรประชาชน").FirstOrDefault();
+            if (obj == null)
+            { 
+                var refdoc = new ReferenceDocument();
+                refdoc.EMP_ID = txt_empid.Text;
+                refdoc.PHOTO = ConvertImageToByteArray(pic_copy_idcard.Image, System.Drawing.Imaging.ImageFormat.Jpeg);
+                refdoc.TYPE = "สำเนาบัตรประชาชน";
+                refdoc.CREATE_DATE = DateTime.Now;
+                RefDoc.Add(refdoc);
+            } 
+        }
         private bool CheckAlreadyEmployee(string idcard)
         {
             var result = false;
@@ -1039,6 +1057,32 @@ namespace BIG.Present
                 throw ex;
             }
             return ret;
+        }
+
+        private void GenEmployeeID()
+        { 
+            try
+            {
+                var nextemp_id = "";
+                var lastemp_id = EmployeeServices.GetLastEmployeeID();
+                if (lastemp_id == "")
+                {
+                    lastemp_id = "BIGS590101000";
+                }
+                var running = lastemp_id.Substring(lastemp_id.Length - 3, 3);
+                var lastnumber = Convert.ToDecimal(running) ;
+                var nextnumber = Convert.ToDecimal(running) + 1;
+                lastemp_id = DateTime.Now.ToString("yyMMdd") + String.Format("{0:000}", lastnumber);
+                nextemp_id = DateTime.Now.ToString("yyMMdd") + String.Format("{0:000}", nextnumber);
+                var lastemp = "BIGS" + lastemp_id;
+                var nextemp = "BIGS" + nextemp_id;
+                lb_isnewemp.Text = "*รหัสพนักงานล่าสุด (" + lastemp + ")";
+                txt_empid.Text = nextemp;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            } 
         }
 
         private int GetProvinceIDByName(string province_nm)
@@ -1301,6 +1345,8 @@ namespace BIG.Present
                 int bp_idx = cbo_bp_prov.FindString(GetProvinceNameByID(Convert.ToInt16(empObj.BIRTH_PLACE_PROVINCE)));
                 cbo_bp_prov.SelectedIndex = bp_idx;
 
+                int site_idx = cbo_site.FindString(empObj.SITE_LOCATION);
+                cbo_site.SelectedIndex = site_idx;
                 //Gender
                 if (empObj.GENDER_ID == 1)
                 {
@@ -1583,13 +1629,31 @@ namespace BIG.Present
                         }
                         if (item.TYPE == "สำเนาทะเบียนบ้าน")
                         {
-                            listbox_refdoc_1.Items.Add(item.FILENAME);
+                            if (item.FILENAME != null)
+                            {
+                                listbox_refdoc_1.Items.Add(item.FILENAME);
+
+                            }
+                            else
+                            {
+                                listbox_refdoc_1.Items.Add(item.TYPE);
+
+                            }
                             RefDoc.Add(item);
                             //pic_copy_home.Image = GetImage(item.PHOTO, 367, 452);
                         }
                         if (item.TYPE == "สำเนาใบผ่านทหาร")
                         {
-                            listbox_refdoc_2.Items.Add(item.FILENAME);
+                            if (item.FILENAME != null)
+                            {
+                                listbox_refdoc_1.Items.Add(item.FILENAME);
+
+                            }
+                            else
+                            {
+                                listbox_refdoc_1.Items.Add(item.TYPE);
+
+                            }
                             RefDoc.Add(item);
                             //pic_copy_military.Image = GetImage(item.PHOTO, 367, 452);
                         }
@@ -1611,17 +1675,38 @@ namespace BIG.Present
                     {
                         if (item.TYPE == "เอกสารแต่งตั้ง")
                         {
-                            listbox_other_doc1.Items.Add(item.FILENAME);
+                            if (item.FILENAME != null)
+                            {
+                                listbox_other_doc1.Items.Add(item.FILENAME);
+                            }
+                            else
+                            {
+                                listbox_other_doc1.Items.Add(item.TYPE);
+                            }
                             OtherDoc.Add(item);
                         }
                         if (item.TYPE == "เอกสารเพิ่มเงิน")
                         {
-                            listbox_other_doc2.Items.Add(item.FILENAME);
+                            if (item.FILENAME != null)
+                            {
+                                listbox_other_doc1.Items.Add(item.FILENAME);
+                            }
+                            else
+                            {
+                                listbox_other_doc1.Items.Add(item.TYPE);
+                            }
                             OtherDoc.Add(item);
                         }
                         if (item.TYPE == "ใบเตือน")
                         {
-                            listbox_other_doc3.Items.Add(item.FILENAME);
+                            if (item.FILENAME != null)
+                            {
+                                listbox_other_doc1.Items.Add(item.FILENAME);
+                            }
+                            else
+                            {
+                                listbox_other_doc1.Items.Add(item.TYPE);
+                            }
                             OtherDoc.Add(item);
                         }
                     }
@@ -1711,7 +1796,7 @@ namespace BIG.Present
 
         private bool Save()
         {
-            var result = false;
+            var result = true;
             try
             {
                 //Get Object Employee
@@ -1765,6 +1850,7 @@ namespace BIG.Present
                 CreateSSO(listSSO);
 
                 //Reference Documents
+                getRefDocFormInput();
                 CreateReferenceDoc(RefDoc);
 
                 //Other Documents
@@ -1779,7 +1865,7 @@ namespace BIG.Present
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                return result;
+                return false;
             }
         }
 
@@ -1822,7 +1908,7 @@ namespace BIG.Present
 
         private void EmployeeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+           
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -1832,11 +1918,10 @@ namespace BIG.Present
                 DialogResult result = MessageBox.Show("คุณต้องการบันทึกข้อมูลพนักงาน?", "Confirmation", MessageBoxButtons.YesNoCancel);
                 if (result == DialogResult.Yes)
                 {
-                    this.Save();
-                    MessageBox.Show("บันทึกข้อมูลบัตรประชาชนเรียบร้อย!!!");
-                    //this.Hide();
-                    //var fm = new EmployeeForm();
-                    //fm.Show();
+                    if (this.Save())
+                    {
+                        MessageBox.Show("บันทึกข้อมูลพนักงานเรียบร้อย!!!");
+                    }
                 }
                 else if (result == DialogResult.No)
                 {
@@ -1856,11 +1941,10 @@ namespace BIG.Present
                 DialogResult result = MessageBox.Show("คุณต้องการบันทึกข้อมูลพนักงาน?", "Confirmation", MessageBoxButtons.YesNoCancel);
                 if (result == DialogResult.Yes)
                 {
-                    this.Save();
-                    MessageBox.Show("บันทึกข้อมูลบัตรประชาชนเรียบร้อย!!!");
-                    //this.Hide();
-                    //var fm = new EmployeeForm();
-                    //fm.Show();
+                    if (this.Save())
+                    {
+                        MessageBox.Show("บันทึกข้อมูลพนักงานเรียบร้อย!!!");
+                    }
                 }
                 else if (result == DialogResult.No)
                 {
@@ -2062,8 +2146,10 @@ namespace BIG.Present
 
         private void rb_home_Click(object sender, EventArgs e)
         {
-            var mainform = new MainForm();
-            mainform.Show();
+            //var mainform = new MainForm();
+            //mainform.Show();
+            var main = new PersonalForm();
+            main.Show();
             Close();
         }
 
@@ -2206,7 +2292,7 @@ namespace BIG.Present
             finally
             {
                 if (FS != null)
-                { 
+                {
                     FS.Close();
                 }
             }

@@ -118,7 +118,7 @@ namespace BIG.Present
         private void rb_home_Click(object sender, EventArgs e)
         { 
             this.Close();
-            var form = new MainForm();
+            var form = new PersonalForm();
             form.Show();
         }
 
