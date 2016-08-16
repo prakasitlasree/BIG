@@ -55,6 +55,7 @@
     <Compile Include="EquiptmentServices.cs" />
     <Compile Include="FingerScanServices.cs" />
     <Compile Include="LogOnServices.cs" />
+    <Compile Include="MasterConfigServices.cs" />
     <Compile Include="OtherDocumentServices.cs" />
     <Compile Include="PossitionDataService.cs" />
     <Compile Include="ProfileImageDataService.cs" />

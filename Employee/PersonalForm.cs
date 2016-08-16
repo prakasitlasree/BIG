@@ -156,7 +156,7 @@ namespace BIG.Present
             {
                 var lst = EmployeeServices.GetAll();
                 var ds = lst.Where(x => x.FIRSTNAME_TH.Contains(txt_name_sname.Text) || x.FIRSTNAME_EN.Contains(txt_name_sname.Text) || x.LASTNAME_TH.Contains(txt_name_sname.Text) || x.LASTNAME_EN.Contains(txt_name_sname.Text)).Select(x =>
-                    new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK,x.AREA }).ToList();
+                    new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK,x.AREA,x.STATUS }).ToList();
                
                 dataGridView1.Columns.Clear();
                 dataGridView1.DataSource = null;
@@ -168,7 +168,7 @@ namespace BIG.Present
                 if (cbo_site.SelectedIndex != 0)
                 {
                     var lst = EmployeeServices.GetBySite(cbo_site.SelectedItem.ToString());
-                    var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK, x.AREA }).ToList();
+                    var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK, x.AREA, x.STATUS }).ToList();
                     dataGridView1.Columns.Clear();
                     dataGridView1.DataSource = null;
                     dataGridView1.DataSource = ds;
@@ -178,7 +178,7 @@ namespace BIG.Present
                 {
                     var lst = EmployeeServices.GetAll();
                     var ds = lst.Where(x => x.FIRSTNAME_TH.Contains(txt_name_sname.Text) || x.FIRSTNAME_EN.Contains(txt_name_sname.Text) || x.LASTNAME_TH.Contains(txt_name_sname.Text) || x.LASTNAME_EN.Contains(txt_name_sname.Text)).Select(x =>
-                        new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK, x.AREA }).ToList();
+                        new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK, x.AREA, x.STATUS }).ToList();
                     dataGridView1.Columns.Clear();
                     dataGridView1.DataSource = null;
                     dataGridView1.DataSource = ds;
@@ -199,7 +199,7 @@ namespace BIG.Present
         private void BindDataGridByArea(TextBox are)
         {
             var lst = EmployeeServices.GetByArea(are.Text);
-            var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK, x.AREA }).ToList();
+            var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK, x.AREA, x.STATUS }).ToList();
             dataGridView1.Columns.Clear();
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = ds;
@@ -217,7 +217,7 @@ namespace BIG.Present
         private void BindDataGridByStartDate(DateTimePicker date)
         {
             var lst = EmployeeServices.GetByStartDate(date.Value);
-            var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK, x.AREA }).ToList();
+            var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK, x.AREA, x.STATUS }).ToList();
             dataGridView1.Columns.Clear();
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = ds;

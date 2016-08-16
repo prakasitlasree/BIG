@@ -206,6 +206,9 @@ namespace BIG.Present
             //Possition
             this.InitialPosition();
 
+            //Status
+            this.initialEmpStatus();
+
             //birth place
             cbo_bp_ctr.Items.Clear();
             cbo_bp_ctr.Items.Add("ไทย");
@@ -386,6 +389,10 @@ namespace BIG.Present
                 { 
                     emp.SITE_LOCATION = cbo_site.SelectedItem.ToString();
                 }
+                if (cbo_status.SelectedItem != null)
+                {
+                    emp.STATUS = cbo_status.SelectedItem.ToString();
+                }
                 //emp.MARITAL_ID = 1; //สถานะสมรส 
 
                 return emp;
@@ -425,6 +432,20 @@ namespace BIG.Present
             if (cbo_site.Items.Count > 0)
             {
                 cbo_site.SelectedIndex = 0;
+            }
+        }
+
+        public void initialEmpStatus()
+        {
+            cbo_status.Items.Clear();
+            var list = MasterConfigServices.GetEmployeeStatus().OrderBy(x => x.ID).ToList();
+            foreach (var item in list)
+            {
+                cbo_status.Items.Add(item.VALUE);
+            }
+            if (cbo_status.Items.Count > 0)
+            {
+                cbo_status.SelectedIndex = 0;
             }
         }
 
@@ -1084,7 +1105,7 @@ namespace BIG.Present
                 throw ex;
             } 
         }
-
+        
         private int GetProvinceIDByName(string province_nm)
         {
             var ret = 0;
@@ -1347,6 +1368,13 @@ namespace BIG.Present
 
                 int site_idx = cbo_site.FindString(empObj.SITE_LOCATION);
                 cbo_site.SelectedIndex = site_idx;
+
+                int status_idx = cbo_status.FindString(empObj.STATUS);
+                cbo_status.SelectedIndex = status_idx;
+                if (empObj.STATUS =="" || empObj.STATUS == null)
+                {
+                    cbo_status.SelectedIndex = 0;
+                }
                 //Gender
                 if (empObj.GENDER_ID == 1)
                 {

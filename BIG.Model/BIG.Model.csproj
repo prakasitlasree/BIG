@@ -100,6 +100,9 @@
     <Compile Include="Marital.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="MasterConfig.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="OtherDocument.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
