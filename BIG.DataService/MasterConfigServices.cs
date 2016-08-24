@@ -24,5 +24,21 @@ namespace BIG.DataService
                 throw ex;
             }
         }
+        public static List<MasterConfig> GetSubEmployeeStatus()
+        { 
+            try
+            {
+                using (var ctx = new BIG_DBEntities())
+                {
+                    var list = ctx.MasterConfigs.Where(x => x.NAME == "SUB_EMPLOYEE_STATUS").ToList();
+                    return list;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        
     }
 }

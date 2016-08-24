@@ -385,14 +385,24 @@ namespace BIG.Present
                 emp.MOBILE = txt_mobile.Text;
                 emp.HOMEPHONE = txt_mobile.Text;
                 emp.CREATED_DATE = DateTime.Now;
+                emp.REGIS_NO = txt_regis_no.Text;
                 if (cbo_site.SelectedItem != null)
-                { 
+                {
                     emp.SITE_LOCATION = cbo_site.SelectedItem.ToString();
                 }
                 if (cbo_status.SelectedItem != null)
                 {
                     emp.STATUS = cbo_status.SelectedItem.ToString();
                 }
+                if (cbo_substatus.SelectedItem != null)
+                {
+                    emp.SUBSTATUS = cbo_substatus.SelectedItem.ToString();
+                }
+                if (txt_reason.Text != "")
+                {
+                    emp.STATUS_REASON = txt_reason.Text;
+                }
+
                 //emp.MARITAL_ID = 1; //สถานะสมรส 
 
                 return emp;
@@ -448,7 +458,19 @@ namespace BIG.Present
                 cbo_status.SelectedIndex = 0;
             }
         }
-
+        public void initialSubEmpStatus()
+        {
+            cbo_substatus.Items.Clear();
+            var list = MasterConfigServices.GetSubEmployeeStatus().OrderBy(x => x.ID).ToList();
+            foreach (var item in list)
+            {
+                cbo_substatus.Items.Add(item.VALUE);
+            }
+            if (cbo_substatus.Items.Count > 0)
+            {
+                cbo_substatus.SelectedIndex = 0;
+            }
+        }
         private void ClearControl()
         {
 
@@ -968,14 +990,14 @@ namespace BIG.Present
         {
             var obj = RefDoc.Where(x => x.TYPE == "สำเนาบัตรประชาชน").FirstOrDefault();
             if (obj == null)
-            { 
+            {
                 var refdoc = new ReferenceDocument();
                 refdoc.EMP_ID = txt_empid.Text;
                 refdoc.PHOTO = ConvertImageToByteArray(pic_copy_idcard.Image, System.Drawing.Imaging.ImageFormat.Jpeg);
                 refdoc.TYPE = "สำเนาบัตรประชาชน";
                 refdoc.CREATE_DATE = DateTime.Now;
                 RefDoc.Add(refdoc);
-            } 
+            }
         }
         private bool CheckAlreadyEmployee(string idcard)
         {
@@ -1081,7 +1103,7 @@ namespace BIG.Present
         }
 
         private void GenEmployeeID()
-        { 
+        {
             try
             {
                 var nextemp_id = "";
@@ -1091,7 +1113,7 @@ namespace BIG.Present
                     lastemp_id = "BIGS590101000";
                 }
                 var running = lastemp_id.Substring(lastemp_id.Length - 3, 3);
-                var lastnumber = Convert.ToDecimal(running) ;
+                var lastnumber = Convert.ToDecimal(running);
                 var nextnumber = Convert.ToDecimal(running) + 1;
                 lastemp_id = DateTime.Now.ToString("yyMMdd") + String.Format("{0:000}", lastnumber);
                 nextemp_id = DateTime.Now.ToString("yyMMdd") + String.Format("{0:000}", nextnumber);
@@ -1103,9 +1125,9 @@ namespace BIG.Present
             catch (Exception ex)
             {
                 throw ex;
-            } 
+            }
         }
-        
+
         private int GetProvinceIDByName(string province_nm)
         {
             var ret = 0;
@@ -1366,12 +1388,25 @@ namespace BIG.Present
                 int bp_idx = cbo_bp_prov.FindString(GetProvinceNameByID(Convert.ToInt16(empObj.BIRTH_PLACE_PROVINCE)));
                 cbo_bp_prov.SelectedIndex = bp_idx;
 
+                txt_regis_no.Text = empObj.REGIS_NO;
+
+                //Status
                 int site_idx = cbo_site.FindString(empObj.SITE_LOCATION);
                 cbo_site.SelectedIndex = site_idx;
-
                 int status_idx = cbo_status.FindString(empObj.STATUS);
                 cbo_status.SelectedIndex = status_idx;
-                if (empObj.STATUS =="" || empObj.STATUS == null)
+                if (cbo_status.SelectedIndex == 1)
+                {
+                    int substatus = cbo_substatus.FindString(empObj.SUBSTATUS);
+                    cbo_substatus.SelectedIndex = substatus;
+                }
+                if (cbo_substatus.SelectedIndex == 2)
+                {
+                    txt_reason.Enabled = true;
+                    txt_reason.Text = empObj.STATUS_REASON;    
+                }
+
+                if (empObj.STATUS == "" || empObj.STATUS == null)
                 {
                     cbo_status.SelectedIndex = 0;
                 }
@@ -1936,7 +1971,7 @@ namespace BIG.Present
 
         private void EmployeeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-           
+
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -3133,6 +3168,40 @@ namespace BIG.Present
             this.Cursor = Cursors.WaitCursor;
             var frm = new PersonalForm();
             frm.Show();
+        }
+
+        private void cbo_status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbo_status.SelectedIndex == 1)
+            {
+                this.initialSubEmpStatus();
+                cbo_substatus.Enabled = true;
+                cbo_status.ForeColor = Color.Red;
+                cbo_substatus.ForeColor = Color.Red;
+            }
+            else
+            {
+                cbo_status.ForeColor = Color.Black;
+                cbo_substatus.Items.Clear();
+                txt_reason.Text = "";
+                txt_reason.Enabled = false;
+                cbo_substatus.Enabled = false;
+                cbo_substatus.ForeColor = Color.Black;
+            }
+        }
+
+        private void cbo_substatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbo_substatus.SelectedIndex == 2)
+            {
+                txt_reason.Enabled = true;
+                txt_reason.ForeColor = Color.Red;
+            }
+            else
+            {
+                txt_reason.Enabled = false;
+                txt_reason.ForeColor = Color.Black;
+            }
         }
 
 

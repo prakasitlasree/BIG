@@ -47,6 +47,9 @@ namespace BIG.Model
         public string AREA { get; set; }
         public string EMAIL { get; set; }
         public string STATUS { get; set; }
+        public string SUBSTATUS { get; set; }
+        public string STATUS_REASON { get; set; }
+        public string REGIS_NO { get; set; }
         public string SITE_LOCATION { get; set; }
         public Nullable<System.DateTime> CREATED_DATE { get; set; }
         public Nullable<System.DateTime> MODIFIED_DATE { get; set; }
