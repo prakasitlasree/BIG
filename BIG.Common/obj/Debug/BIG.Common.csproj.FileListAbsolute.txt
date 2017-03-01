@@ -1,0 +1,5 @@
+D:\_zBIG\SourceCode\BIG\BIG.Common\bin\Debug\BIG.Common.dll
+D:\_zBIG\SourceCode\BIG\BIG.Common\bin\Debug\BIG.Common.pdb
+D:\_zBIG\SourceCode\BIG\BIG.Common\bin\Debug\pcsc-sharp.dll
+D:\_zBIG\SourceCode\BIG\BIG.Common\obj\Debug\BIG.Common.dll
+D:\_zBIG\SourceCode\BIG\BIG.Common\obj\Debug\BIG.Common.pdb

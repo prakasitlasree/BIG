@@ -1,0 +1,15 @@
+D:\_zBIG\SourceCode\BIG\BIG.DataService\bin\Debug\BIG.DataService.dll.config
+D:\_zBIG\SourceCode\BIG\BIG.DataService\bin\Debug\BIG.DataService.dll
+D:\_zBIG\SourceCode\BIG\BIG.DataService\bin\Debug\BIG.DataService.pdb
+D:\_zBIG\SourceCode\BIG\BIG.DataService\bin\Debug\BIG.Common.dll
+D:\_zBIG\SourceCode\BIG\BIG.DataService\bin\Debug\BIG.DataAccess.dll
+D:\_zBIG\SourceCode\BIG\BIG.DataService\bin\Debug\BIG.Model.dll
+D:\_zBIG\SourceCode\BIG\BIG.DataService\bin\Debug\EntityFramework.dll
+D:\_zBIG\SourceCode\BIG\BIG.DataService\bin\Debug\pcsc-sharp.dll
+D:\_zBIG\SourceCode\BIG\BIG.DataService\bin\Debug\BIG.Common.pdb
+D:\_zBIG\SourceCode\BIG\BIG.DataService\bin\Debug\BIG.DataAccess.pdb
+D:\_zBIG\SourceCode\BIG\BIG.DataService\bin\Debug\BIG.Model.pdb
+D:\_zBIG\SourceCode\BIG\BIG.DataService\bin\Debug\EntityFramework.xml
+D:\_zBIG\SourceCode\BIG\BIG.DataService\obj\Debug\BIG.DataService.csprojResolveAssemblyReference.cache
+D:\_zBIG\SourceCode\BIG\BIG.DataService\obj\Debug\BIG.DataService.dll
+D:\_zBIG\SourceCode\BIG\BIG.DataService\obj\Debug\BIG.DataService.pdb
