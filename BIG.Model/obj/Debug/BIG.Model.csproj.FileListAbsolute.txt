@@ -5,3 +5,4 @@ D:\_zBIG\SourceCode\BIG\BIG.Model\bin\Debug\EntityFramework.dll
 D:\_zBIG\SourceCode\BIG\BIG.Model\bin\Debug\EntityFramework.xml
 D:\_zBIG\SourceCode\BIG\BIG.Model\obj\Debug\BIG.Model.dll
 D:\_zBIG\SourceCode\BIG\BIG.Model\obj\Debug\BIG.Model.pdb
+D:\_zBIG\SourceCode\BIG\BIG.Model\obj\Debug\BIG.Model.csprojResolveAssemblyReference.cache

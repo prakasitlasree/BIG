@@ -67,6 +67,9 @@
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Custom\ComboboxItem.cs" />
+    <Compile Include="Deduction.cs">
+      <DependentUpon>BIGDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="District.cs">
       <DependentUpon>BIGDB.tt</DependentUpon>
     </Compile>

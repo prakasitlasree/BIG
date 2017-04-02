@@ -14,10 +14,7 @@ D:\_zBIG\SourceCode\BIG\Employee\obj\Debug\BIG.Present.SplashScreen.resources
 D:\_zBIG\SourceCode\BIG\Employee\obj\Debug\BIG.Present.TestForm.resources
 D:\_zBIG\SourceCode\BIG\Employee\obj\Debug\BIG.Present.UC.UserControl1.resources
 D:\_zBIG\SourceCode\BIG\Employee\obj\Debug\BIG.Application.csproj.GenerateResource.Cache
-D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.Present.exe.config
 D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\dll\NffvJavaNative.dll
-D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.Present.exe
-D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.Present.pdb
 D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.BusinessLogic.dll
 D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.Common.dll
 D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.DataService.dll
@@ -35,5 +32,8 @@ D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.DataService.pdb
 D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.Model.pdb
 D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.DataAccess.pdb
 D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\EntityFramework.xml
-D:\_zBIG\SourceCode\BIG\Employee\obj\Debug\BIG.Present.exe
-D:\_zBIG\SourceCode\BIG\Employee\obj\Debug\BIG.Present.pdb
+D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.Present_V1.1.exe.config
+D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.Present_V1.1.exe
+D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.Present_V1.1.pdb
+D:\_zBIG\SourceCode\BIG\Employee\obj\Debug\BIG.Present_V1.1.exe
+D:\_zBIG\SourceCode\BIG\Employee\obj\Debug\BIG.Present_V1.1.pdb

@@ -53,6 +53,7 @@
       <End Role="Title" EntitySet="Titles" />
       <End Role="Employee" EntitySet="Employees" />
     </AssociationSet>
+    <EntitySet Name="Deductions" EntityType="BIG_DBModel.Deduction" />
   </EntityContainer>
   <EntityType Name="Address">
     <Key>
@@ -486,4 +487,16 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Deduction">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EMP_ID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="NO" Type="Int32" />
+    <Property Name="DATE" Type="DateTime" Precision="3" />
+    <Property Name="PRICE" Type="Int32" />
+    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
 </Schema>

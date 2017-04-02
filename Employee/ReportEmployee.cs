@@ -6,6 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using BIG.Model;
+using BIG.Common;
+using System.IO;
+using BIG.DataService;
 
 namespace BIG.Present
 {
@@ -25,6 +29,14 @@ namespace BIG.Present
         }
         private void ReportEmployee_Load(object sender, EventArgs e)
         {
+            var emp = EmployeeServices.GetAll();
+            var x = from p in emp
+                    select new { p.EMP_ID, FIRSTNAME_TH = string.Format("{0} {1}", p.FIRSTNAME_TH ,p.LASTNAME_TH) };
+
+            cbo_name.DataSource = x.ToList();
+            cbo_name.DisplayMember = "FIRSTNAME_TH";
+            cbo_name.ValueMember = "EMP_ID";
+
             // TODO: This line of code loads data into the 'BIG_DBDataSet.Employee' table. You can move, or remove it, as needed.
             //this.EmployeeTableAdapter.Fill(this.BIG_DBDataSet.Employee);
             try
@@ -97,10 +109,37 @@ namespace BIG.Present
                 txt_emp_id.Focus();
             }
         }
+        private void cbo_name_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var emp_id = cbo_name.SelectedValue.ToString();
 
+            BIG_DBDataSet.EnforceConstraints = false;
+
+            this.EmployeeTableAdapter.FillByEmpID(this.BIG_DBDataSet.Employee, emp_id);
+
+            this.PermanentAddressTableAdapter.FillByEmpID(this.BIG_DBDataSet.PermanentAddress, emp_id);
+
+            this.AddressTableAdapter.FillByEmpID(this.BIG_DBDataSet.Address, emp_id);
+
+            this.CurrentImagesTableAdapter.FillByEmpID(this.BIG_DBDataSet.CurrentImages, emp_id);
+
+            this.EducationTableAdapter.FillByEmpID(this.BIG_DBDataSet.Education, emp_id);
+
+            this.ReferencePersonTableAdapter.FillByEmpID(this.BIG_DBDataSet.ReferencePerson, emp_id);
+
+            this.TrainingTableAdapter.FillByEmpID(this.BIG_DBDataSet.Training, emp_id);
+
+            this.WorkExperienceTableAdapter.FillByEmpID(this.BIG_DBDataSet.WorkExperience, emp_id);
+
+            this.FingerScanTableAdapter.FillByEmpID(this.BIG_DBDataSet.FingerScan, emp_id);
+
+            this.ReferenceDocumentsTableAdapter.FillByEmpID(this.BIG_DBDataSet.ReferenceDocuments, emp_id);
+
+            this.reportViewer1.RefreshReport();
+        }
         private void ReportEmployee_FormClosed(object sender, FormClosedEventArgs e)
         {
-             
+
         }
 
         private void rb_exit_CanvasChanged(object sender, EventArgs e)
@@ -116,18 +155,18 @@ namespace BIG.Present
         }
 
         private void rb_home_Click(object sender, EventArgs e)
-        { 
+        {
             this.Close();
             var form = new PersonalForm();
             form.Show();
         }
 
         private void rb_new_Click(object sender, EventArgs e)
-        { 
+        {
             this.Close();
             var form = new EmployeeForm();
             form.Show();
-            
+
         }
 
         private void rb_exit_Click(object sender, EventArgs e)
@@ -140,7 +179,9 @@ namespace BIG.Present
             this.Close();
             var frm = new PersonalForm();
             frm.Show();
-            
+
         }
+
+
     }
 }

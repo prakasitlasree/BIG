@@ -56,5 +56,6 @@ namespace BIG.DataAccess
         public DbSet<WorkExperience> WorkExperiences { get; set; }
         public DbSet<Zipcode> Zipcodes { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Deduction> Deductions { get; set; }
     }
 }

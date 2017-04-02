@@ -30,16 +30,24 @@ namespace BIG.Present
         {
             try
             {
-                var obj = LogOnServices.Login(txtusername.Text, txtpassword.Text);
-                if (obj)
+                if (txtusername.Text !="" || txtpassword.Text !="")
                 {
-                    var main = new MainForm();
-                    main.Show();
-                    this.Hide();
-                }
+                    var obj = LogOnServices.Login(txtusername.Text, txtpassword.Text);
+                    if (obj)
+                    {
+                        var main = new MainForm();
+                        main.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("ไม่สามารถเข้าใช้งานระบบได้ กรุณาติดต่อผู้ดูแลระบบ");
+                        txtusername.Focus();
+                    }
+                } 
                 else
                 {
-                    MessageBox.Show("ไม่สามารถเข้าใช้งานระบบได้ กรุณาติดต่อผู้ดูแลระบบ");
+                    MessageBox.Show("กรุณากรอก username และ password");
                 }
             }
             catch (Exception ex)

@@ -376,5 +376,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Deductions">
+      <EntityTypeMapping TypeName="BIG_DBModel.Deduction">
+        <MappingFragment StoreEntitySet="Deductions">
+          <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="NO" ColumnName="NO" />
+          <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

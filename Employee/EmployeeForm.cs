@@ -363,11 +363,20 @@ namespace BIG.Present
                 emp.LASTNAME_TH = txt_emp_lname_th.Text; //นามสกุลไทย
                 emp.FIRSTNAME_EN = txt_emp_fname_en.Text; //ชื่ออังกฤษ
                 emp.LASTNAME_EN = txt_emp_lname_en.Text; //นามสกุลอังกฤษ
-                emp.NICKNAME_TH = txt_nick_th.Text; //ชื่อเล่น
+                //emp.NICKNAME_TH = txt_nick_th.Text; //ชื่อเล่น
 
                 emp.POSITION_ID = Convert.ToInt16(cbo_possition.SelectedValue.ToString()); //ตำแหน่ง
-                emp.DATEOFBIRTH = Convert.ToDateTime(dob.Text);//ว ด ป เกิด
-                emp.DATESTARTWORK = Convert.ToDateTime(date_start_work.Text);//ว ด ป เริ่มงาน
+                DateTime _dob = DateTime.MinValue;
+                if (DateTime.TryParse(dob.Text, out _dob))
+                {
+                    emp.DATEOFBIRTH = Convert.ToDateTime(dob.Text);//ว ด ป เกิด
+                }
+                DateTime _dsw = DateTime.MinValue;
+                if (DateTime.TryParse(date_start_work.Text, out _dsw))
+                {
+                    emp.DATESTARTWORK = Convert.ToDateTime(date_start_work.Text);//ว ด ป เริ่มงาน
+                }
+
 
                 emp.BIRTH_PLACE_PROVINCE = cbo_bp_prov.SelectedValue.ToString(); //จังหวัดที่เกิด
                 emp.BIRTH_PLACE_CONTRY = cbo_bp_ctr.SelectedItem.ToString(); //ปรเเทศ เกิด 
@@ -852,7 +861,7 @@ namespace BIG.Present
                 {
                     eq = new BIG.Model.Equiptment();
                     eq.EMP_ID = txt_empid.Text;
-                    eq.EQUIP_NAME = "แถบสี";
+                    eq.EQUIP_NAME = "เข็มขัด";
                     eq.EQUIP_AMOUNT = txt_eq_4.Text;
                     eq.CREATED_DATE = DateTime.Now;
                     equipt.Add(eq);
@@ -861,7 +870,7 @@ namespace BIG.Present
                 {
                     eq = new BIG.Model.Equiptment();
                     eq.EMP_ID = txt_empid.Text;
-                    eq.EQUIP_NAME = "กนกคอ";
+                    eq.EQUIP_NAME = "ดิ้ว";
                     eq.EQUIP_AMOUNT = txt_eq_5.Text;
                     eq.CREATED_DATE = DateTime.Now;
                     equipt.Add(eq);
@@ -870,7 +879,7 @@ namespace BIG.Present
                 {
                     eq = new BIG.Model.Equiptment();
                     eq.EMP_ID = txt_empid.Text;
-                    eq.EQUIP_NAME = "เข็มบรรเทา";
+                    eq.EQUIP_NAME = "หมวก";
                     eq.EQUIP_AMOUNT = txt_eq_6.Text;
                     eq.CREATED_DATE = DateTime.Now;
                     equipt.Add(eq);
@@ -879,72 +888,198 @@ namespace BIG.Present
                 {
                     eq = new BIG.Model.Equiptment();
                     eq.EMP_ID = txt_empid.Text;
-                    eq.EQUIP_NAME = "เข็มขัด";
+                    eq.EQUIP_NAME = "รองเท้า";
                     eq.EQUIP_AMOUNT = txt_eq_7.Text;
                     eq.CREATED_DATE = DateTime.Now;
                     equipt.Add(eq);
-                }
-                if (txt_eq_8.Text != "")
-                {
-                    eq = new BIG.Model.Equiptment();
-                    eq.EMP_ID = txt_empid.Text;
-                    eq.EQUIP_NAME = "ดิ้ว";
-                    eq.EQUIP_AMOUNT = txt_eq_8.Text;
-                    eq.CREATED_DATE = DateTime.Now;
-                    equipt.Add(eq);
-                }
-                if (txt_eq_9.Text != "")
-                {
-                    eq = new BIG.Model.Equiptment();
-                    eq.EMP_ID = txt_empid.Text;
-                    eq.EQUIP_NAME = "หมวก";
-                    eq.EQUIP_AMOUNT = txt_eq_9.Text;
-                    eq.CREATED_DATE = DateTime.Now;
-                    equipt.Add(eq);
-                }
-                if (txt_eq_10.Text != "")
-                {
-                    eq = new BIG.Model.Equiptment();
-                    eq.EMP_ID = txt_empid.Text;
-                    eq.EQUIP_NAME = "รองเท้า";
-                    eq.EQUIP_AMOUNT = txt_eq_10.Text;
-                    eq.CREATED_DATE = DateTime.Now;
-                    equipt.Add(eq);
-                }
-                if (txt_eq_11.Text != "")
-                {
-                    eq = new BIG.Model.Equiptment();
-                    eq.EMP_ID = txt_empid.Text;
-                    eq.EQUIP_NAME = "ถุงเท้า";
-                    eq.EQUIP_AMOUNT = txt_eq_11.Text;
-                    eq.CREATED_DATE = DateTime.Now;
-                    equipt.Add(eq);
-                }
-                if (txt_eq_12.Text != "")
-                {
-                    eq = new BIG.Model.Equiptment();
-                    eq.EMP_ID = txt_empid.Text;
-                    eq.EQUIP_NAME = "เสื้อยืด";
-                    eq.EQUIP_AMOUNT = txt_eq_12.Text;
-                    eq.CREATED_DATE = DateTime.Now;
-                    equipt.Add(eq);
-                }
-                if (txt_eq_13.Text != "")
-                {
-                    eq = new BIG.Model.Equiptment();
-                    eq.EMP_ID = txt_empid.Text;
-                    eq.EQUIP_NAME = "ค่าบัตร";
-                    eq.EQUIP_AMOUNT = txt_eq_13.Text;
-                    eq.CREATED_DATE = DateTime.Now;
-                    equipt.Add(eq);
-                }
-
+                }  
             }
             catch (Exception ex)
             {
                 throw ex;
             }
             return equipt;
+        }
+
+        private List<BIG.Model.Deduction> getDeductionListfrominput()
+        {
+            var deducList = new List<BIG.Model.Deduction>();
+            try
+            {
+                if (lbd1.Text.Contains("บาท"))
+                {
+                    var deduc = new BIG.Model.Deduction();
+                    deduc.NO = 1;
+                    deduc.EMP_ID = txt_empid.Text;
+                    deduc.CREATED_DATE = DateTime.Now;
+                    deduc.MODIFIED_DATE = DateTime.Now;
+                    DateTime date = DateTime.MinValue;
+                    if (DateTime.TryParse(dt_deduct1.Value.ToShortDateString(), out date))
+                    {
+
+                        deduc.DATE = date;
+                        deducList.Add(deduc);
+                    }
+                }
+                if (lbd2.Text.Contains("บาท"))
+                {
+                    var deduc = new BIG.Model.Deduction();
+                    deduc.NO = 2;
+                    deduc.EMP_ID = txt_empid.Text;
+                    deduc.CREATED_DATE = DateTime.Now;
+                    deduc.MODIFIED_DATE = DateTime.Now;
+                    DateTime date = DateTime.MinValue;
+                    if (DateTime.TryParse(dt_deduct2.Value.ToShortDateString(), out date))
+                    {
+                        deduc.DATE = date;
+                        deducList.Add(deduc);
+                    }
+                }
+                if (lbd3.Text.Contains("บาท"))
+                {
+                    var deduc = new BIG.Model.Deduction();
+                    deduc.NO = 3;
+                    deduc.EMP_ID = txt_empid.Text;
+                    deduc.CREATED_DATE = DateTime.Now;
+                    deduc.MODIFIED_DATE = DateTime.Now;
+                    DateTime date = DateTime.MinValue;
+                    if (DateTime.TryParse(dt_deduct3.Value.ToShortDateString(), out date))
+                    {
+                        deduc.DATE = date;
+                        deducList.Add(deduc);
+                    }
+                }
+                if (lbd4.Text.Contains("บาท"))
+                {
+                    var deduc = new BIG.Model.Deduction();
+                    deduc.NO = 4;
+                    deduc.EMP_ID = txt_empid.Text;
+                    deduc.CREATED_DATE = DateTime.Now;
+                    deduc.MODIFIED_DATE = DateTime.Now;
+                    DateTime date = DateTime.MinValue;
+                    if (DateTime.TryParse(dt_deduct4.Value.ToShortDateString(), out date))
+                    {
+                        deduc.DATE = date;
+                        deducList.Add(deduc);
+                    }
+                }
+                if (lbd5.Text.Contains("บาท"))
+                {
+                    var deduc = new BIG.Model.Deduction();
+                    deduc.NO = 5;
+                    deduc.EMP_ID = txt_empid.Text;
+                    deduc.CREATED_DATE = DateTime.Now;
+                    deduc.MODIFIED_DATE = DateTime.Now;
+                    DateTime date = DateTime.MinValue;
+                    if (DateTime.TryParse(dt_deduct5.Value.ToShortDateString(), out date))
+                    {
+                        deduc.DATE = date;
+                        deducList.Add(deduc);
+                    }
+                }
+                if (lbd6.Text.Contains("บาท"))
+                {
+                    var deduc = new BIG.Model.Deduction();
+                    deduc.NO = 6;
+                    deduc.EMP_ID = txt_empid.Text;
+                    deduc.CREATED_DATE = DateTime.Now;
+                    deduc.MODIFIED_DATE = DateTime.Now;
+                    DateTime date = DateTime.MinValue;
+                    if (DateTime.TryParse(dt_deduct6.Value.ToShortDateString(), out date))
+                    {
+                        deduc.DATE = date;
+                        deducList.Add(deduc);
+                    }
+                }
+                if (lbd7.Text.Contains("บาท"))
+                {
+                    var deduc = new BIG.Model.Deduction();
+                    deduc.NO = 7;
+                    deduc.EMP_ID = txt_empid.Text;
+                    deduc.CREATED_DATE = DateTime.Now;
+                    deduc.MODIFIED_DATE = DateTime.Now;
+                    DateTime date = DateTime.MinValue;
+                    if (DateTime.TryParse(dt_deduct7.Value.ToShortDateString(), out date))
+                    {
+                        deduc.DATE = date;
+                        deducList.Add(deduc);
+                    }
+                }
+                if (lbd8.Text.Contains("บาท"))
+                {
+                    var deduc = new BIG.Model.Deduction();
+                    deduc.NO = 8;
+                    deduc.EMP_ID = txt_empid.Text;
+                    deduc.CREATED_DATE = DateTime.Now;
+                    deduc.MODIFIED_DATE = DateTime.Now;
+                    DateTime date = DateTime.MinValue;
+                    if (DateTime.TryParse(dt_deduct8.Value.ToShortDateString(), out date))
+                    {
+                        deduc.DATE = date;
+                        deducList.Add(deduc);
+                    }
+                }
+
+                var tot = 0;
+                if (int.TryParse(txt_total.Text, out tot))
+                {
+                    var listdeduc = tot / 500;
+                    for (int i = 0; i < listdeduc; i++)
+                    {
+                        if (i == 0)
+                        {
+                            var obj = deducList.Where(o => o.NO == 1).FirstOrDefault();
+                            obj.PRICE = 500;
+                        }
+                        if (i == 1)
+                        {
+                            var obj = deducList.Where(o => o.NO == 2).FirstOrDefault();
+                            obj.PRICE = 500;
+                        }
+                        if (i == 2)
+                        {
+                            var obj = deducList.Where(o => o.NO == 3).FirstOrDefault();
+                            obj.PRICE = 500;
+                        }
+                        if (i == 3)
+                        {
+                            var obj = deducList.Where(o => o.NO == 4).FirstOrDefault();
+                            obj.PRICE = 500;
+                        }
+                        if (i == 4)
+                        {
+                            var obj = deducList.Where(o => o.NO == 5).FirstOrDefault();
+                            obj.PRICE = 500;
+                        }
+                        if (i == 5)
+                        {
+                            var obj = deducList.Where(o => o.NO == 6).FirstOrDefault();
+                            obj.PRICE = 500;
+                        }
+                        if (i == 6)
+                        {
+                            var obj = deducList.Where(o => o.NO == 7).FirstOrDefault();
+                            obj.PRICE = 500;
+                        }
+                        if (i == 7)
+                        {
+                            var obj = deducList.Where(o => o.NO == 8).FirstOrDefault();
+                            obj.PRICE = 500;
+                        }
+                    }
+                    var x = tot % 500;
+                    listdeduc = listdeduc + 1;
+
+                    var lastDeduc = deducList.Where(o => o.NO == listdeduc).FirstOrDefault();
+                    lastDeduc.PRICE = x;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return deducList;
         }
 
         private EmployeeImage getPhotoEmployee()
@@ -1079,7 +1214,10 @@ namespace BIG.Present
         {
             EquiptmentServices.Add(lstEQ);
         }
-
+        private void CreateDeduction(List<BIG.Model.Deduction> lstDe)
+        {
+            DeductionService.Add(lstDe);
+        }
         private string GenNewEmployeeID()
         {
             var ret = "";
@@ -1369,14 +1507,21 @@ namespace BIG.Present
                 txt_emp_lname_th.Text = empObj.LASTNAME_TH;
                 txt_emp_fname_en.Text = empObj.FIRSTNAME_EN;
                 txt_emp_lname_en.Text = empObj.LASTNAME_EN;
-                dob.Value = empObj.DATEOFBIRTH.Value;
-                date_start_work.Value = empObj.DATESTARTWORK.Value;
+                if (empObj.DATEOFBIRTH != null)
+                {
+                    dob.Value = empObj.DATEOFBIRTH.Value;
+                }
+                if (empObj.DATESTARTWORK != null)
+                {
+                    date_start_work.Value = empObj.DATESTARTWORK.Value;
+                }
+
                 txt_blood.Text = empObj.BLOODGROUP;
                 txt_apperance.Text = empObj.APPEARANCE;
                 txt_defect.Text = empObj.DEFECT;
                 txt_area.Text = empObj.AREA;
                 txt_mobile.Text = empObj.MOBILE;
-                txt_nick_th.Text = empObj.NICKNAME_TH;
+                //txt_nick_th.Text = empObj.NICKNAME_TH;
                 txt_height.Text = empObj.HEIGHT.ToString();
                 txt_weight.Text = empObj.WEIGHT.ToString();
 
@@ -1403,7 +1548,7 @@ namespace BIG.Present
                 if (cbo_substatus.SelectedIndex == 2)
                 {
                     txt_reason.Enabled = true;
-                    txt_reason.Text = empObj.STATUS_REASON;    
+                    txt_reason.Text = empObj.STATUS_REASON;
                 }
 
                 if (empObj.STATUS == "" || empObj.STATUS == null)
@@ -1784,62 +1929,144 @@ namespace BIG.Present
             {
                 //Equipment
                 var equip = EquiptmentServices.GetByEmployeeID(empObj.EMP_ID);
+                var deduc = DeductionService.GetByEmployeeID(empObj.EMP_ID);
+                if (deduc != null)
+                {
+                    foreach (var item in deduc)
+                    {
+                        if (item.NO == 1)
+                        {
+                            if (item.DATE != null)
+                            {
+                                lbd1.Text = "หักครั้งที่ 1 : " + item.PRICE.ToString() + " บาท";
+                                dt_deduct1.Value = item.DATE.Value;
+                            }
+                        }
+                        if (item.NO == 2)
+                        {
+                            if (item.DATE != null)
+                            {
+                                lbd2.Text = "หักครั้งที่ 2 : " + item.PRICE.ToString() + " บาท";
+                                dt_deduct2.Value = item.DATE.Value;
+                            }
+                        }
+                        if (item.NO == 3)
+                        {
+                            if (item.DATE != null)
+                            {
+                                lbd3.Text = "หักครั้งที่ 3 : " + item.PRICE.ToString() + " บาท";
+                                dt_deduct3.Value = item.DATE.Value;
+                            }
+                        }
+                        if (item.NO == 4)
+                        {
+                            if (item.DATE != null)
+                            {
+                                lbd4.Text = "หักครั้งที่ 4 : " + item.PRICE.ToString() + " บาท";
+                                dt_deduct4.Value = item.DATE.Value;
+                            }
+                        }
+                        if (item.NO == 5)
+                        {
+                            if (item.DATE != null)
+                            {
+                                lbd5.Text = "หักครั้งที่ 5 : " + item.PRICE.ToString() + " บาท";
+                                dt_deduct5.Value = item.DATE.Value;
+                            }
+                        }
+                        if (item.NO == 6)
+                        {
+                            if (item.DATE != null)
+                            {
+                                lbd6.Text = "หักครั้งที่ 6 : " + item.PRICE.ToString() + " บาท";
+                                dt_deduct6.Value = item.DATE.Value;
+                            }
+                        }
+                        if (item.NO == 7)
+                        {
+                            if (item.DATE != null)
+                            {
+                                lbd7.Text = "หักครั้งที่ 7 : " + item.PRICE.ToString() + " บาท";
+                                dt_deduct7.Value = item.DATE.Value;
+                            }
+                        }
+                        if (item.NO == 8)
+                        {
+                            if (item.DATE != null)
+                            {
+                                lbd8.Text = "หักครั้งที่ 8 : " + item.PRICE.ToString() + " บาท";
+                                dt_deduct8.Value = item.DATE.Value;
+                            }
+                        }
+                    }
+                }
+
                 if (equip != null)
                 {
                     foreach (var item in equip)
                     {
                         if (item.EQUIP_NAME == "ประกัน")
                         {
+                            chk_1.Checked = true;
                             txt_eq_1.Text = item.EQUIP_AMOUNT;
                         }
                         if (item.EQUIP_NAME == "ค่าชุด")
                         {
+                            chk_2.Checked = true;
                             txt_eq_2.Text = item.EQUIP_AMOUNT;
                         }
                         if (item.EQUIP_NAME == "สายนกหวีด")
                         {
+                            chk_3.Checked = true;
                             txt_eq_3.Text = item.EQUIP_AMOUNT;
                         }
-                        if (item.EQUIP_NAME == "แถบสี")
-                        {
-                            txt_eq_4.Text = item.EQUIP_AMOUNT;
-                        }
-                        if (item.EQUIP_NAME == "กนกคอ")
-                        {
-                            txt_eq_5.Text = item.EQUIP_AMOUNT;
-                        }
-                        if (item.EQUIP_NAME == "เข็มบรรเทา")
-                        {
-                            txt_eq_6.Text = item.EQUIP_AMOUNT;
-                        }
+                        //if (item.EQUIP_NAME == "แถบสี")
+                        //{
+                        //    chk_4.Checked = true;
+                        //    txt_eq_4.Text = item.EQUIP_AMOUNT;
+                        //}
+                        //if (item.EQUIP_NAME == "กนกคอ")
+                        //{
+                        //    chk_5.Checked = true;
+                        //    txt_eq_5.Text = item.EQUIP_AMOUNT;
+                        //}
+                        //if (item.EQUIP_NAME == "เข็มบรรเทา")
+                        //{
+                        //    chk_6.Checked = true;
+                        //    txt_eq_6.Text = item.EQUIP_AMOUNT;
+                        //}
                         if (item.EQUIP_NAME == "เข็มขัด")
                         {
-                            txt_eq_7.Text = item.EQUIP_AMOUNT;
+                            chk_4.Checked = true;
+                            txt_eq_4.Text = item.EQUIP_AMOUNT;
                         }
                         if (item.EQUIP_NAME == "ดิ้ว")
                         {
-                            txt_eq_8.Text = item.EQUIP_AMOUNT;
+                            chk_5.Checked = true;
+                            txt_eq_5.Text = item.EQUIP_AMOUNT;
                         }
                         if (item.EQUIP_NAME == "หมวก")
                         {
-                            txt_eq_9.Text = item.EQUIP_AMOUNT;
+                            chk_6.Checked = true;
+                            txt_eq_6.Text = item.EQUIP_AMOUNT;
                         }
                         if (item.EQUIP_NAME == "รองเท้า")
                         {
-                            txt_eq_10.Text = item.EQUIP_AMOUNT;
+                            chk_7.Checked = true;
+                            txt_eq_7.Text = item.EQUIP_AMOUNT;
                         }
-                        if (item.EQUIP_NAME == "ถุงเท้า")
-                        {
-                            txt_eq_11.Text = item.EQUIP_AMOUNT;
-                        }
-                        if (item.EQUIP_NAME == "เสื้อยืด")
-                        {
-                            txt_eq_12.Text = item.EQUIP_AMOUNT;
-                        }
-                        if (item.EQUIP_NAME == "ค่าบัตร")
-                        {
-                            txt_eq_13.Text = item.EQUIP_AMOUNT;
-                        }
+                        //if (item.EQUIP_NAME == "ถุงเท้า")
+                        //{
+                        //    txt_deduc4.Text = item.EQUIP_AMOUNT;
+                        //}
+                        //if (item.EQUIP_NAME == "เสื้อยืด")
+                        //{
+                        //    txt_deduc5.Text = item.EQUIP_AMOUNT;
+                        //}
+                        //if (item.EQUIP_NAME == "ค่าบัตร")
+                        //{
+                        //    txt_deduc6.Text = item.EQUIP_AMOUNT;
+                        //}
                     }
                 }
             }
@@ -1922,6 +2149,10 @@ namespace BIG.Present
                 //Equipments
                 var listEquip = getEquiptListfrominput();
                 CreateEquipment(listEquip);
+
+                //deduc
+                var listDeduc = getDeductionListfrominput();
+                CreateDeduction(listDeduc);
 
                 return result;
             }
@@ -3204,7 +3435,365 @@ namespace BIG.Present
             }
         }
 
+        #region == checkbox รายการเบิก ===
+        private void chk_1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_1.Checked)
+            {
+                txt_eq_1.Enabled = true;
 
+            }
+            else
+            {
+                txt_eq_1.Enabled = false;
+                txt_eq_1.Text = "";
+            }
+        }
 
+        private void chk_2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_2.Checked)
+            {
+                txt_eq_2.Enabled = true;
+            }
+            else
+            {
+                txt_eq_2.Enabled = false;
+                txt_eq_2.Text = "";
+            }
+        }
+
+        private void chk_3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_3.Checked)
+            {
+                txt_eq_3.Enabled = true;
+            }
+            else
+            {
+                txt_eq_3.Enabled = false;
+                txt_eq_3.Text = "";
+            }
+        }
+
+        private void chk_4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_4.Checked)
+            {
+                txt_eq_4.Enabled = true;
+            }
+            else
+            {
+                txt_eq_4.Enabled = false;
+                txt_eq_5.Text = "";
+            }
+        }
+
+        private void chk_5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_5.Checked)
+            {
+                txt_eq_5.Enabled = true;
+            }
+            else
+            {
+                txt_eq_5.Enabled = false;
+                txt_eq_6.Text = "";
+            }
+        }
+
+        private void chk_6_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_6.Checked)
+            {
+                txt_eq_6.Enabled = true;
+            }
+            else
+            {
+                txt_eq_6.Enabled = false;
+                txt_eq_6.Text = "";
+            }
+        }
+
+        private void chk_7_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_7.Checked)
+            {
+                txt_eq_7.Enabled = true;
+            }
+            else
+            {
+                txt_eq_7.Enabled = false;
+                txt_eq_7.Text = "";
+            }
+        }
+        #endregion
+
+        private void CalTotal()
+        {
+            try
+            {
+                var result1 = 0; var result2 = 0; var result3 = 0; var result4 = 0; var result5 = 0; var result6 = 0; var result7 = 0;
+                var no_1 = Int32.TryParse(txt_eq_1.Text, out result1);
+                var no_2 = Int32.TryParse(txt_eq_2.Text, out result2);
+                var no_3 = Int32.TryParse(txt_eq_3.Text, out result3);
+                var no_4 = Int32.TryParse(txt_eq_4.Text, out result4);
+                var no_5 = Int32.TryParse(txt_eq_5.Text, out result5);
+                var no_6 = Int32.TryParse(txt_eq_6.Text, out result6);
+                var no_7 = Int32.TryParse(txt_eq_7.Text, out result7);
+                //var deduc = 0; var deductotal = 0;
+                //if (int.TryParse(txt_deduc1.Text,out deduc))
+                //{
+                //    deductotal = deduc;
+                //}
+                //if (int.TryParse(txt_deduc2.Text, out deduc))
+                //{
+                //    deductotal = deductotal + deduc;
+                //}
+                //if (int.TryParse(txt_deduc3.Text, out deduc))
+                //{
+                //    deductotal = deductotal + deduc;
+                //}
+                //if (int.TryParse(txt_deduc4.Text, out deduc))
+                //{
+                //    deductotal = deductotal + deduc;
+                //}
+                //if (int.TryParse(txt_deduc5.Text, out deduc))
+                //{
+                //    deductotal = deductotal + deduc;
+                //}
+                //if (int.TryParse(txt_deduc6.Text, out deduc))
+                //{
+                //    deductotal = deductotal + deduc;
+                //}
+                var grandtotal = (result1 + result2 + result3 + result4 + result5 + result6 + result7);
+                txt_total.Text = grandtotal.ToString();
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
+        private void txt_eq_1_TextChanged(object sender, EventArgs e)
+        {
+            CalTotal();
+        }
+
+        private void txt_eq_2_TextChanged(object sender, EventArgs e)
+        {
+            CalTotal();
+        }
+
+        private void txt_eq_3_TextChanged(object sender, EventArgs e)
+        {
+            CalTotal();
+        }
+
+        private void txt_eq_4_TextChanged(object sender, EventArgs e)
+        {
+            CalTotal();
+        }
+
+        private void txt_eq_5_TextChanged(object sender, EventArgs e)
+        {
+            CalTotal();
+        }
+
+        private void txt_eq_6_TextChanged(object sender, EventArgs e)
+        {
+            CalTotal();
+        }
+
+        private void txt_eq_7_TextChanged(object sender, EventArgs e)
+        {
+            CalTotal();
+        }
+
+        private void txt_deduc1_TextChanged(object sender, EventArgs e)
+        {
+            CalTotal();
+        }
+
+        private void txt_deduc2_TextChanged(object sender, EventArgs e)
+        {
+            CalTotal();
+        }
+
+        private void txt_deduc3_TextChanged(object sender, EventArgs e)
+        {
+            CalTotal();
+        }
+
+        private void txt_deduc4_TextChanged(object sender, EventArgs e)
+        {
+            CalTotal();
+        }
+
+        private void txt_deduc5_TextChanged(object sender, EventArgs e)
+        {
+            CalTotal();
+        }
+
+        private void txt_deduc6_TextChanged(object sender, EventArgs e)
+        {
+            CalTotal();
+        }
+
+        private void CalDeduction()
+        {
+            var tot = 0;
+            if (int.TryParse(txt_total.Text, out tot))
+            {
+                var listdeduc = tot / 500;
+                for (int i = 0; i < listdeduc; i++)
+                {
+                    if (i == 0)
+                    {
+                        lbd1.Text = "หักครั้งที่ 1 : 500 บาท";
+                    }
+                    if (i == 1)
+                    {
+                        lbd2.Text = "หักครั้งที่ 2 : 500 บาท";
+                    }
+                    if (i == 2)
+                    {
+                        lbd3.Text = "หักครั้งที่ 3 : 500 บาท";
+                    }
+                    if (i == 3)
+                    {
+                        lbd4.Text = "หักครั้งที่ 4 : 500 บาท";
+                    }
+                    if (i == 4)
+                    {
+                        lbd5.Text = "หักครั้งที่ 5 : 500 บาท";
+                    }
+                    if (i == 5)
+                    {
+                        lbd5.Text = "หักครั้งที่ 6 : 500 บาท";
+                    }
+                    if (i == 6)
+                    {
+                        lbd5.Text = "หักครั้งที่ 7 : 500 บาท";
+                    }
+                    if (i == 7)
+                    {
+                        lbd5.Text = "หักครั้งที่ 8 : 500 บาท";
+                    }
+                }
+                var x = tot % 500;
+                listdeduc = listdeduc + 1;
+                if (listdeduc == 1)
+                {
+                    lbd1.Text = "หักครั้งที่ 1 : " + x.ToString() + " บาท";
+                }
+                if (listdeduc == 2)
+                {
+                    lbd2.Text = "หักครั้งที่ 2 : " + x.ToString() + " บาท";
+                }
+                if (listdeduc == 3)
+                {
+                    lbd3.Text = "หักครั้งที่ 3 : " + x.ToString() + " บาท";
+                }
+                if (listdeduc == 4)
+                {
+                    lbd4.Text = "หักครั้งที่ 4 : " + x.ToString() + " บาท";
+                }
+                if (listdeduc == 5)
+                {
+                    lbd5.Text = "หักครั้งที่ 5 : " + x.ToString() + " บาท";
+                }
+                if (listdeduc == 6)
+                {
+                    lbd6.Text = "หักครั้งที่ 6 : " + x.ToString() + " บาท";
+                }
+                if (listdeduc == 7)
+                {
+                    lbd7.Text = "หักครั้งที่ 7 : " + x.ToString() + " บาท";
+                }
+                if (listdeduc == 8)
+                {
+                    lbd8.Text = "หักครั้งที่ 8 : " + x.ToString() + " บาท";
+                }
+            }
+        }
+        private void cal_deduc_Click(object sender, EventArgs e)
+        {
+            var tot = 0;
+            if (int.TryParse(txt_total.Text, out tot))
+            {
+                var listdeduc = tot / 500;
+                for (int i = 0; i < listdeduc; i++)
+                {
+                    if (i == 0)
+                    {
+                        lbd1.Text = "หักครั้งที่ 1 : 500 บาท";
+                    }
+                    if (i == 1)
+                    {
+                        lbd2.Text = "หักครั้งที่ 2 : 500 บาท";
+                    }
+                    if (i == 2)
+                    {
+                        lbd3.Text = "หักครั้งที่ 3 : 500 บาท";
+                    }
+                    if (i == 3)
+                    {
+                        lbd4.Text = "หักครั้งที่ 4 : 500 บาท";
+                    }
+                    if (i == 4)
+                    {
+                        lbd5.Text = "หักครั้งที่ 5 : 500 บาท";
+                    }
+                    if (i == 5)
+                    {
+                        lbd5.Text = "หักครั้งที่ 6 : 500 บาท";
+                    }
+                    if (i == 6)
+                    {
+                        lbd5.Text = "หักครั้งที่ 7 : 500 บาท";
+                    }
+                    if (i == 7)
+                    {
+                        lbd5.Text = "หักครั้งที่ 8 : 500 บาท";
+                    }
+                }
+
+                var x = tot % 500;
+                listdeduc = listdeduc + 1;
+                if (listdeduc == 1)
+                {
+                    lbd1.Text = "หักครั้งที่ 1 : " + x.ToString() + " บาท";
+                }
+                if (listdeduc == 2)
+                {
+                    lbd2.Text = "หักครั้งที่ 2 : " + x.ToString() + " บาท";
+                }
+                if (listdeduc == 3)
+                {
+                    lbd3.Text = "หักครั้งที่ 3 : " + x.ToString() + " บาท";
+                }
+                if (listdeduc == 4)
+                {
+                    lbd4.Text = "หักครั้งที่ 4 : " + x.ToString() + " บาท";
+                }
+                if (listdeduc == 5)
+                {
+                    lbd5.Text = "หักครั้งที่ 5 : " + x.ToString() + " บาท";
+                }
+                if (listdeduc == 6)
+                {
+                    lbd6.Text = "หักครั้งที่ 6 : " + x.ToString() + " บาท";
+                }
+                if (listdeduc == 7)
+                {
+                    lbd7.Text = "หักครั้งที่ 7 : " + x.ToString() + " บาท";
+                }
+                if (listdeduc == 8)
+                {
+                    lbd8.Text = "หักครั้งที่ 8 : " + x.ToString() + " บาท";
+                }
+            }
+        }
     }
 }

@@ -99,7 +99,12 @@ namespace BIG.Present
                 if (col.Index == 8)
                 {
                     col.Width = 100;
-                    col.HeaderText = "เขต";
+                    col.HeaderText = "สถานะ";
+                }
+                if (col.Index == 9)
+                {
+                    col.Width = 100;
+                    col.HeaderText = "No";
                 }
             }
         }
@@ -156,8 +161,12 @@ namespace BIG.Present
             {
                 var lst = EmployeeServices.GetAll();
                 var ds = lst.Where(x => x.FIRSTNAME_TH.Contains(txt_name_sname.Text) || x.FIRSTNAME_EN.Contains(txt_name_sname.Text) || x.LASTNAME_TH.Contains(txt_name_sname.Text) || x.LASTNAME_EN.Contains(txt_name_sname.Text)).Select(x =>
-                    new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK,x.AREA,x.STATUS }).ToList();
-               
+                    new {x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK,x.STATUS, x.ID}).ToList();
+                int?  i = 0;
+                foreach (var item in ds)
+                {
+                     
+                }
                 dataGridView1.Columns.Clear();
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = ds;
@@ -168,7 +177,7 @@ namespace BIG.Present
                 if (cbo_site.SelectedIndex != 0)
                 {
                     var lst = EmployeeServices.GetBySite(cbo_site.SelectedItem.ToString());
-                    var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK, x.AREA, x.STATUS }).ToList();
+                    var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK,  x.STATUS , x.ID }).ToList();
                     dataGridView1.Columns.Clear();
                     dataGridView1.DataSource = null;
                     dataGridView1.DataSource = ds;
@@ -178,7 +187,7 @@ namespace BIG.Present
                 {
                     var lst = EmployeeServices.GetAll();
                     var ds = lst.Where(x => x.FIRSTNAME_TH.Contains(txt_name_sname.Text) || x.FIRSTNAME_EN.Contains(txt_name_sname.Text) || x.LASTNAME_TH.Contains(txt_name_sname.Text) || x.LASTNAME_EN.Contains(txt_name_sname.Text)).Select(x =>
-                        new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK, x.AREA, x.STATUS }).ToList();
+                        new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK,  x.STATUS, x.ID }).ToList();
                     dataGridView1.Columns.Clear();
                     dataGridView1.DataSource = null;
                     dataGridView1.DataSource = ds;
@@ -199,7 +208,7 @@ namespace BIG.Present
         private void BindDataGridByArea(TextBox are)
         {
             var lst = EmployeeServices.GetByArea(are.Text);
-            var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK, x.AREA, x.STATUS }).ToList();
+            var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK, x.STATUS ,x.ID }).ToList();
             dataGridView1.Columns.Clear();
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = ds;
@@ -217,7 +226,7 @@ namespace BIG.Present
         private void BindDataGridByStartDate(DateTimePicker date)
         {
             var lst = EmployeeServices.GetByStartDate(date.Value);
-            var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK, x.AREA, x.STATUS }).ToList();
+            var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK,  x.STATUS, x.ID }).ToList();
             dataGridView1.Columns.Clear();
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = ds;
@@ -448,7 +457,7 @@ namespace BIG.Present
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //this.Cursor = Cursors.WaitCursor; 
+           
             if (e.ColumnIndex == BUTTON_EDIT_COLUMN_INDEX && e.RowIndex >= 0)
             {
                 if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
@@ -461,39 +470,8 @@ namespace BIG.Present
                         emp.Show();
                         this.Close();
                     }
-                }
-
-                //if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-                //{
-                //    if (dataGridView1.Rows[e.RowIndex].Cells[0].Value != null)
-                //    {  
-                //        var emp_id = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-                //        e_id = emp_id;
-                //        if (backgroundWorker1.IsBusy == false)
-                //        {
-                //            backgroundWorker1.DoWork += new DoWorkEventHandler(backgroundWorker1_DoWork);
-                //            backgroundWorker1.ProgressChanged += new ProgressChangedEventHandler(backgroundWorker1_ProgressChanged);
-                //            backgroundWorker1.WorkerReportsProgress = true;
-                //            backgroundWorker1.RunWorkerAsync();
-                //        }
-                //     } 
-                //}
-                
-            }
-            //else if (e.ColumnIndex == BUTTON_EDIT_COLUMN_INDEX && e.RowIndex >= 0)
-            //{
-            //    if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-            //    {
-            //        if (dataGridView1.Rows[e.RowIndex].Cells[3].Value != null)
-            //        {
-            //            var emp_id = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            //            e_id = emp_id;
-            //            var emp = new EmployeeForm(e_id, "Edit");
-            //            emp.Show();
-            //            this.Close();
-            //        }
-            //    }
-            //}
+                } 
+            } 
             else if (e.ColumnIndex == BUTTON_PRINT_COLUMN_INDEX && e.RowIndex >= 0)
             {
                 if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
@@ -507,6 +485,39 @@ namespace BIG.Present
                     }
                 }
             }
+            else if ((e.ColumnIndex == 2 && e.RowIndex >= 0) || (e.ColumnIndex == 3 && e.RowIndex >= 0) || (e.ColumnIndex == 4 && e.RowIndex >= 0) || (e.ColumnIndex == 5 && e.RowIndex >= 0) || (e.ColumnIndex == 6 && e.RowIndex >= 0) || (e.ColumnIndex == 7 && e.RowIndex >= 0))
+            {
+                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    if (dataGridView1.Rows[e.RowIndex].Cells[2].Value != null)
+                    {
+                        var emp_id = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString(); 
+                        var profile = ProfileImageDataService.GetByEmployeeID(emp_id);
+                        if (profile != null)
+                        {
+                            pic_emp.Image = GetImage(profile.PHOTO, 190, 170);
+                        }
+                    }
+                }
+            }
+        }
+
+        private Image GetImage(byte[] PHOTO, int width, int height)
+        {
+            var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
+            var myBitmap = new Bitmap(byteArrayToImage(PHOTO));
+            var myThumbnail = myBitmap.GetThumbnailImage(width, height, myCallback, IntPtr.Zero);
+            return myThumbnail;
+        }
+        private System.Drawing.Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            System.Drawing.Image returnImage = System.Drawing.Image.FromStream(ms);
+            return returnImage;
+        }
+        public bool ThumbnailCallback()
+        {
+            return false;
         }
         public string e_id { get; set; }
         void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -618,5 +629,28 @@ namespace BIG.Present
             form.Show();
         }
 
+        private void dataGridView1_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((e.ColumnIndex == 2 && e.RowIndex >= 0) || (e.ColumnIndex == 3 && e.RowIndex >= 0) || (e.ColumnIndex == 4 && e.RowIndex >= 0) || (e.ColumnIndex == 5 && e.RowIndex >= 0) || (e.ColumnIndex == 6 && e.RowIndex >= 0) || (e.ColumnIndex == 7 && e.RowIndex >= 0))
+            {
+                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    if (dataGridView1.Rows[e.RowIndex].Cells[2].Value != null)
+                    {
+                        var emp_id = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                        var profile = ProfileImageDataService.GetByEmployeeID(emp_id);
+                        if (profile != null)
+                        {
+                            pic_emp.Image = GetImage(profile.PHOTO, 190, 170);
+                        }
+                    }
+                }
+            }
+        }
     }
 }

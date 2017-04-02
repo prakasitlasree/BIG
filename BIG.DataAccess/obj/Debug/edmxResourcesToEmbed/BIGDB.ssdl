@@ -61,6 +61,18 @@
     <Property Name="TYPE" Type="nvarchar" MaxLength="50" />
     <Property Name="CREATE_DATE" Type="datetime" />
   </EntityType>
+  <EntityType Name="Deductions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EMP_ID" Type="nvarchar" MaxLength="14" />
+    <Property Name="NO" Type="int" />
+    <Property Name="DATE" Type="datetime" />
+    <Property Name="PRICE" Type="int" />
+    <Property Name="CREATED_DATE" Type="datetime" />
+    <Property Name="MODIFIED_DATE" Type="datetime" />
+  </EntityType>
   <EntityType Name="District">
     <Key>
       <PropertyRef Name="DISTRICT_ID" />
@@ -426,6 +438,7 @@
     <EntitySet Name="Amphur" EntityType="Self.Amphur" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CompanyInfo" EntityType="Self.CompanyInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CurrentImages" EntityType="Self.CurrentImages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Deductions" EntityType="Self.Deductions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="District" EntityType="Self.District" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />

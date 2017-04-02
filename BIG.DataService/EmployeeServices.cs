@@ -17,7 +17,7 @@ namespace BIG.DataService
             {
                 using (var ctx = new BIG_DBEntities())
                 {
-                    result = ctx.Employees.Take(50).OrderByDescending(o => o.EMP_ID).ToList();
+                    result = ctx.Employees.Take(200).OrderByDescending(o => o.EMP_ID).ToList();
 
                 }
                 return result;

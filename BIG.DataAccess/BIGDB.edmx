@@ -66,6 +66,18 @@
           <Property Name="TYPE" Type="nvarchar" MaxLength="50" />
           <Property Name="CREATE_DATE" Type="datetime" />
         </EntityType>
+        <EntityType Name="Deductions">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMP_ID" Type="nvarchar" MaxLength="14" />
+          <Property Name="NO" Type="int" />
+          <Property Name="DATE" Type="datetime" />
+          <Property Name="PRICE" Type="int" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="MODIFIED_DATE" Type="datetime" />
+        </EntityType>
         <EntityType Name="District">
           <Key>
             <PropertyRef Name="DISTRICT_ID" />
@@ -431,6 +443,7 @@
           <EntitySet Name="Amphur" EntityType="Self.Amphur" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CompanyInfo" EntityType="Self.CompanyInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CurrentImages" EntityType="Self.CurrentImages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Deductions" EntityType="Self.Deductions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="District" EntityType="Self.District" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
@@ -536,6 +549,7 @@
             <End Role="Title" EntitySet="Titles" />
             <End Role="Employee" EntitySet="Employees" />
           </AssociationSet>
+          <EntitySet Name="Deductions" EntityType="BIG_DBModel.Deduction" />
           </EntityContainer>
         <EntityType Name="Address">
           <Key>
@@ -969,6 +983,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Deduction">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_ID" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="NO" Type="Int32" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
+          <Property Name="PRICE" Type="Int32" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1350,6 +1376,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Deductions">
+            <EntityTypeMapping TypeName="BIG_DBModel.Deduction">
+              <MappingFragment StoreEntitySet="Deductions">
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="NO" ColumnName="NO" />
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1407,6 +1446,7 @@
         <AssociationConnector Association="BIG_DBModel.FK_Employee_Position" />
         <AssociationConnector Association="BIG_DBModel.FK_Employee_Title" />
         <AssociationConnector Association="BIG_DBModel.FK_Employee_Title_EN" />
+        <EntityTypeShape EntityType="BIG_DBModel.Deduction" Width="1.5" PointX="0.75" PointY="16.75" />
       </Diagram>
     </Diagrams>
   </Designer>

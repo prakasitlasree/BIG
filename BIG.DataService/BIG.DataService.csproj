@@ -50,6 +50,7 @@
     <Compile Include="CommonServices.cs" />
     <Compile Include="CompanyInfoServices.cs" />
     <Compile Include="CurrentImageService.cs" />
+    <Compile Include="DeductionService.cs" />
     <Compile Include="EducationServices.cs" />
     <Compile Include="EmployeeServices.cs" />
     <Compile Include="EquiptmentServices.cs" />
