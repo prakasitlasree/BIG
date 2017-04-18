@@ -68,43 +68,55 @@ namespace BIG.Present
                 }
                 if (col.Index == 2)
                 {
-                    col.Width = 100;
-                    col.HeaderText = "รหัสพนักงาน";
+                    col.Width = 35;
+                    col.HeaderText = "No";  
                 }
                 if (col.Index == 3)
                 {
                     col.Width = 100;
-                    col.HeaderText = "หมายเลขบัตรประชาชน";
+                    col.HeaderText = "รหัสพนักงาน";
+                   
                 }
                 if (col.Index == 4)
                 {
-                    col.Width = 150;
-                    col.HeaderText = "ชื่อ(TH)";
+                    col.Width = 100;
+                    col.HeaderText = "หมายเลขบัตรประชาชน";
+                   
                 }
                 if (col.Index == 5)
                 {
                     col.Width = 150;
-                    col.HeaderText = "นามสกุล(TH)";
+                    col.HeaderText = "ชื่อ(TH)";
+                    
                 } 
                 if (col.Index == 6)
                 {
-                    col.Width = 100;
-                    col.HeaderText = "หมายเลขโทรศัพท์";
+                    col.Width = 150;
+                    col.HeaderText = "นามสกุล(TH)";
+                    
                 }
                 if (col.Index == 7)
                 {
-                    col.Width = 70;
-                    col.HeaderText = "วันที่เริ่มงาน";
+                    col.Width = 100;
+                    col.HeaderText = "หมายเลขโทรศัพท์";
+                    
                 }
                 if (col.Index == 8)
                 {
-                    col.Width = 100;
-                    col.HeaderText = "สถานะ";
+                    col.Width = 70;
+                    col.HeaderText = "วันที่เริ่มงาน";
+                    
                 }
                 if (col.Index == 9)
                 {
+                    col.Width = 70;
+                    col.HeaderText = "เขต";
+
+                }
+                if (col.Index == 10)
+                {
                     col.Width = 100;
-                    col.HeaderText = "No";
+                    col.HeaderText = "สถานะ";
                 }
             }
         }
@@ -112,22 +124,13 @@ namespace BIG.Present
         private void SetButtonCommand()
         {
             try
-            {
-                //var searchcol = new DataGridViewButtonColumn();
-                //searchcol.Name = "View";
-                //searchcol.Text = "ดูข้อมูล";
-
+            { 
                 var editcol = new DataGridViewButtonColumn();
                 editcol.Name = "Edit";
                 editcol.Text = "แก้ไข";
                 var printcol = new DataGridViewButtonColumn();
                 printcol.Name = "Print";
-                printcol.Text = "พิมพ์รายงาน";
-
-                //if (dataGridView1.Columns["View"] == null)
-                //{
-                //    dataGridView1.Columns.Insert(BUTTON_VIEW_COLUMN_INDEX, searchcol);
-                //}
+                printcol.Text = "พิมพ์รายงาน"; 
                 if (dataGridView1.Columns["Edit"] == null)
                 {
                     dataGridView1.Columns.Insert(BUTTON_EDIT_COLUMN_INDEX, editcol);
@@ -159,14 +162,11 @@ namespace BIG.Present
         {
             if (!Site)
             {
+                var i = 1;
                 var lst = EmployeeServices.GetAll();
                 var ds = lst.Where(x => x.FIRSTNAME_TH.Contains(txt_name_sname.Text) || x.FIRSTNAME_EN.Contains(txt_name_sname.Text) || x.LASTNAME_TH.Contains(txt_name_sname.Text) || x.LASTNAME_EN.Contains(txt_name_sname.Text)).Select(x =>
-                    new {x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK,x.STATUS, x.ID}).ToList();
-                int?  i = 0;
-                foreach (var item in ds)
-                {
-                     
-                }
+                    new {No = i++,x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK,x.AREA,x.STATUS}).ToList();
+                
                 dataGridView1.Columns.Clear();
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = ds;
@@ -176,8 +176,11 @@ namespace BIG.Present
             {
                 if (cbo_site.SelectedIndex != 0)
                 {
+                    var i = 1;
                     var lst = EmployeeServices.GetBySite(cbo_site.SelectedItem.ToString());
-                    var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK,  x.STATUS , x.ID }).ToList();
+                    var ds = lst.Select(x => 
+                    new { No = i++, x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK,  x.AREA,x.STATUS  }).ToList();
+                    
                     dataGridView1.Columns.Clear();
                     dataGridView1.DataSource = null;
                     dataGridView1.DataSource = ds;
@@ -186,8 +189,9 @@ namespace BIG.Present
                 else
                 {
                     var lst = EmployeeServices.GetAll();
-                    var ds = lst.Where(x => x.FIRSTNAME_TH.Contains(txt_name_sname.Text) || x.FIRSTNAME_EN.Contains(txt_name_sname.Text) || x.LASTNAME_TH.Contains(txt_name_sname.Text) || x.LASTNAME_EN.Contains(txt_name_sname.Text)).Select(x =>
-                        new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK,  x.STATUS, x.ID }).ToList();
+                    var i = 1;
+                    var ds = lst.Where(x => x.FIRSTNAME_TH.Contains(txt_name_sname.Text) || x.FIRSTNAME_EN.Contains(txt_name_sname.Text) || x.LASTNAME_TH.Contains(txt_name_sname.Text) || x.LASTNAME_EN.Contains(txt_name_sname.Text)).Select(x => 
+                    new { No = i++, x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK,  x.AREA, x.STATUS  }).ToList();
                     dataGridView1.Columns.Clear();
                     dataGridView1.DataSource = null;
                     dataGridView1.DataSource = ds;
@@ -207,8 +211,9 @@ namespace BIG.Present
 
         private void BindDataGridByArea(TextBox are)
         {
+            int i = 1;
             var lst = EmployeeServices.GetByArea(are.Text);
-            var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK, x.STATUS ,x.ID }).ToList();
+            var ds = lst.Select(x => new { No = i++, x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK, x.AREA, x.STATUS }).ToList();
             dataGridView1.Columns.Clear();
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = ds;
@@ -225,8 +230,9 @@ namespace BIG.Present
 
         private void BindDataGridByStartDate(DateTimePicker date)
         {
+            int i = 1;
             var lst = EmployeeServices.GetByStartDate(date.Value);
-            var ds = lst.Select(x => new { x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK,  x.STATUS, x.ID }).ToList();
+            var ds = lst.Select(x => new { No = i++, x.EMP_ID, x.ID_CARD, x.FIRSTNAME_TH, x.LASTNAME_TH, x.MOBILE, x.DATESTARTWORK, x.AREA, x.STATUS }).ToList();
             dataGridView1.Columns.Clear();
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = ds;
@@ -462,9 +468,9 @@ namespace BIG.Present
             {
                 if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
-                    if (dataGridView1.Rows[e.RowIndex].Cells[2].Value != null)
+                    if (dataGridView1.Rows[e.RowIndex].Cells[3].Value != null)
                     {
-                        var emp_id = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                        var emp_id = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                         e_id = emp_id;
                         var emp = new EmployeeForm(e_id, "Edit");
                         emp.Show();
@@ -476,9 +482,9 @@ namespace BIG.Present
             {
                 if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
-                    if (dataGridView1.Rows[e.RowIndex].Cells[2].Value != null)
+                    if (dataGridView1.Rows[e.RowIndex].Cells[3].Value != null)
                     {
-                        var emp_id = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                        var emp_id = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                         var form = new ReportEmployee(emp_id); 
                         form.Show();
                         this.Close();
@@ -489,9 +495,9 @@ namespace BIG.Present
             {
                 if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
-                    if (dataGridView1.Rows[e.RowIndex].Cells[2].Value != null)
+                    if (dataGridView1.Rows[e.RowIndex].Cells[3].Value != null)
                     {
-                        var emp_id = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString(); 
+                        var emp_id = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString(); 
                         var profile = ProfileImageDataService.GetByEmployeeID(emp_id);
                         if (profile != null)
                         {

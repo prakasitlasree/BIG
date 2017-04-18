@@ -30,7 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="pcsc-sharp">
+    <Reference Include="pcsc-sharp, Version=3.1.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>dll\pcsc-sharp.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
@@ -48,8 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APDU_THAILAND_IDCARD.cs" />
-    <Compile Include="APDU_THAILAND_IDCARD_3B67.cs" />
-    <Compile Include="APDU_THAILAND_IDCARD_3B68.cs" />
+    <Compile Include="APDU_THAILAND_IDCARD_TYPE_01.cs" />
+    <Compile Include="APDU_THAILAND_IDCARD_TYPE_02.cs" />
     <Compile Include="IAPDU_THAILAND_IDCARD.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

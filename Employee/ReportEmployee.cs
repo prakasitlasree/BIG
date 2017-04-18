@@ -30,12 +30,15 @@ namespace BIG.Present
         private void ReportEmployee_Load(object sender, EventArgs e)
         {
             var emp = EmployeeServices.GetAll();
-            var x = from p in emp
+            var ListEmp = from p in emp
                     select new { p.EMP_ID, FIRSTNAME_TH = string.Format("{0} {1}", p.FIRSTNAME_TH ,p.LASTNAME_TH) };
+            var obj = new { EMP_ID = "0", FIRSTNAME_TH = "กรุณาเลือก" };
 
-            cbo_name.DataSource = x.ToList();
+             
+            cbo_name.DataSource = ListEmp.ToList();
             cbo_name.DisplayMember = "FIRSTNAME_TH";
             cbo_name.ValueMember = "EMP_ID";
+            cbo_name.Text = "== กรุณาเลือก ==";
 
             // TODO: This line of code loads data into the 'BIG_DBDataSet.Employee' table. You can move, or remove it, as needed.
             //this.EmployeeTableAdapter.Fill(this.BIG_DBDataSet.Employee);
@@ -112,7 +115,10 @@ namespace BIG.Present
         private void cbo_name_SelectedIndexChanged(object sender, EventArgs e)
         {
             var emp_id = cbo_name.SelectedValue.ToString();
-
+            if (cbo_name.SelectedIndex != 0)
+            {
+                txt_emp_id.Text = "";
+            }
             BIG_DBDataSet.EnforceConstraints = false;
 
             this.EmployeeTableAdapter.FillByEmpID(this.BIG_DBDataSet.Employee, emp_id);

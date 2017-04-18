@@ -21,6 +21,7 @@ namespace BIG.Present
     public partial class EmployeeForm : Form
     {
         private ThaiIDCard CardID = new ThaiIDCard();
+        public string currentImgName = "";
         Nffv _engine;
         public EmployeeForm()
         {
@@ -220,6 +221,10 @@ namespace BIG.Present
             //amphur
             this.InitialAmphur();
 
+            //District
+            this.InitialDistrict();
+
+
             //addrestype
             this.InitialAddressType();
 
@@ -263,6 +268,7 @@ namespace BIG.Present
             cbo_bp_prov.Items.Clear();
             c_cbo_prov.Items.Clear();
             p_cbo_prov.Items.Clear();
+
             cbo_bp_prov.DataSource = prov1;
             cbo_bp_prov.DisplayMember = "PROVINCE_NAME";
             cbo_bp_prov.ValueMember = "PROVINCE_ID";
@@ -278,6 +284,7 @@ namespace BIG.Present
             cbo_bp_prov.SelectedIndex = 0;
             c_cbo_prov.SelectedIndex = 0;
             p_cbo_prov.SelectedIndex = 0;
+
         }
 
         private void InitialAmphur()
@@ -290,6 +297,10 @@ namespace BIG.Present
                 p_cbo_amp.DataSource = amp1;
                 p_cbo_amp.DisplayMember = "AMPHUR_NAME";
                 p_cbo_amp.ValueMember = "AMPHUR_ID";
+                if (amp1.Count > 0)
+                {
+                    p_cbo_amp.SelectedIndex = 0;
+                }
             }
             if (c_cbo_prov.SelectedItem != null)
             {
@@ -298,6 +309,37 @@ namespace BIG.Present
                 c_cbo_amp.DataSource = amp1;
                 c_cbo_amp.DisplayMember = "AMPHUR_NAME";
                 c_cbo_amp.ValueMember = "AMPHUR_ID";
+                if (amp1.Count > 0)
+                {
+                    c_cbo_amp.SelectedIndex = 0;
+                }
+            }
+        }
+        private void InitialDistrict()
+        {
+            if (c_cbo_amp.SelectedItem != null)
+            {
+                var listDistrict = DistrictService.GetDistrictByAmphurID(Convert.ToInt16(c_cbo_prov.SelectedValue.ToString()), Convert.ToInt16(c_cbo_amp.SelectedValue.ToString()));
+                var ds = listDistrict.Select(x => new { x.DISTRICT_ID, x.DISTRICT_NAME }).ToList();
+                c_cbo_distict.DataSource = ds;
+                c_cbo_distict.DisplayMember = "DISTRICT_NAME";
+                c_cbo_distict.ValueMember = "DISTRICT_ID";
+                if (ds.Count > 0)
+                {
+                    c_cbo_distict.SelectedIndex = 0;
+                }
+            }
+            if (p_cbo_amp.SelectedItem != null)
+            {
+                var listDistrict = DistrictService.GetDistrictByAmphurID(Convert.ToInt16(p_cbo_prov.SelectedValue.ToString()), Convert.ToInt16(p_cbo_amp.SelectedValue.ToString()));
+                var ds = listDistrict.Select(x => new { x.DISTRICT_ID, x.DISTRICT_NAME }).ToList();
+                p_cbo_district.DataSource = ds;
+                p_cbo_district.DisplayMember = "DISTRICT_NAME";
+                p_cbo_district.ValueMember = "DISTRICT_ID";
+                if (ds.Count > 0)
+                {
+                    p_cbo_district.SelectedIndex = 0;
+                }
             }
         }
 
@@ -892,7 +934,7 @@ namespace BIG.Present
                     eq.EQUIP_AMOUNT = txt_eq_7.Text;
                     eq.CREATED_DATE = DateTime.Now;
                     equipt.Add(eq);
-                }  
+                }
             }
             catch (Exception ex)
             {
@@ -1104,14 +1146,17 @@ namespace BIG.Present
         private CurrentImage getCurrentPhotoEmployee()
         {
             var ret = new CurrentImage();
-
             try
             {
-                var myBitmap = pic_current.Image;
-                ret.EMP_ID = txt_empid.Text;
-                ret.PHOTO = ConvertImageToByteArray(myBitmap, System.Drawing.Imaging.ImageFormat.Jpeg);
-                ret.TYPE = System.Drawing.Imaging.ImageFormat.Jpeg.ToString();
-                ret.CREATE_DATE = DateTime.Now;
+                if (currentImgName != "")
+                {
+                    var myBitmap = pic_current.Image;
+                    ret.EMP_ID = txt_empid.Text;
+                    ret.PHOTO = ConvertImageToByteArray(myBitmap, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    ret.TYPE = System.Drawing.Imaging.ImageFormat.Jpeg.ToString();
+                    ret.CREATE_DATE = DateTime.Now;
+                }
+
             }
             catch (Exception ex)
             {
@@ -1133,6 +1178,21 @@ namespace BIG.Present
                 refdoc.CREATE_DATE = DateTime.Now;
                 RefDoc.Add(refdoc);
             }
+        }
+
+        private string GetPostCode(string province, string amphur, string tambol)
+        {
+            var result = "";
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return result;
         }
         private bool CheckAlreadyEmployee(string idcard)
         {
@@ -1323,12 +1383,31 @@ namespace BIG.Present
             return ret;
         }
 
-        private string GetAmphureNameByID(int amp_id)
+        private string GetPermanentAmphureNameByID(int amp_id)
         {
             var ret = string.Empty;
             try
             {
                 var listamp = ProvinceServices.GetListAmphur(Convert.ToInt16(p_cbo_prov.SelectedValue.ToString()));
+                var obj = listamp.Where(x => x.AMPHUR_ID == amp_id).FirstOrDefault();
+                if (obj != null)
+                {
+                    ret = obj.AMPHUR_NAME;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return ret;
+        }
+
+        private string GetCurrentAmphureNameByID(int amp_id)
+        {
+            var ret = string.Empty;
+            try
+            {
+                var listamp = ProvinceServices.GetListAmphur(Convert.ToInt16(c_cbo_prov.SelectedValue.ToString()));
                 var obj = listamp.Where(x => x.AMPHUR_ID == amp_id).FirstOrDefault();
                 if (obj != null)
                 {
@@ -1401,7 +1480,7 @@ namespace BIG.Present
             try
             {
                 //initialCombobox();
-                var idcard = CardID.readAll(true);
+                var idcard = CardID.readAllPhoto(); //.readAll(true);
                 if (idcard != null)
                 {
                     var empObj = EmployeeServices.GetEmployeeByIDCard(idcard.Citizenid);
@@ -1410,12 +1489,43 @@ namespace BIG.Present
                     if (empObj != null)
                     {
                         MessageBox.Show("      พบข้อมูลอยู่ในระบบ" + "\r\n\n" + "     รหัสบัตรประชาชน => " + idcard.Citizenid + "\n\n" + "     ชื่อ-สกุล" + empObj.FIRSTNAME_TH + " " + empObj.LASTNAME_TH);
+                        
+                        SetObjectToControl(empObj);
                         if (idcard.PhotoRaw != null)
                         {
                             //add to picture box 
                             pic_emp.Image = GetImage(idcard.PhotoRaw, 150, 187);
                         }
-                        SetObjectToControl(empObj);
+                        else
+                        {
+                            if (idcard.PhotoBitmap != null)
+                            {
+                                var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
+                                var photo = idcard.PhotoBitmap.GetThumbnailImage(150, 187, myCallback, IntPtr.Zero);
+                                pic_emp.Image = photo;
+                            }
+                        }
+                        txt_pid.Text = idcard.Citizenid;
+                        cbo_title_th.SelectedItem = idcard.Th_Prefix;
+                        cbo_title_en.SelectedItem = idcard.En_Prefix;
+                        txt_emp_fname_th.Text = idcard.Th_Firstname;
+                        txt_emp_lname_th.Text = idcard.Th_Lastname;
+                        txt_emp_fname_en.Text = idcard.En_Firstname;
+                        txt_emp_lname_en.Text = idcard.En_Lastname;
+                        dob.Value = idcard.Birthday;
+                        int bp_prv_index = cbo_bp_prov.FindString(idcard.addrProvince.Replace("จังหวัด", ""));
+                        cbo_bp_prov.SelectedIndex = bp_prv_index;
+                        //permanent address
+                        p_txt_no.Text = idcard.addrHouseNo + " " + idcard.addrVillageNo + " " + idcard.addrLane + " " + idcard.addrRoad;
+                        p_txt_road.Text = idcard.addrRoad;
+                        p_txt_soi.Text = "";
+                        p_txt_tumbol.Text = idcard.addrTambol;
+
+                        int p_prv_idx = p_cbo_prov.FindString(idcard.addrProvince.Replace("จังหวัด", ""));
+                        p_cbo_prov.SelectedIndex = p_prv_idx; // GetProvinceIDByName(idcard.addrProvince);
+
+                        int p_amp_idx = p_cbo_amp.FindString(idcard.addrAmphur.Replace("อำเภอ", ""));
+                        p_cbo_amp.SelectedIndex = p_amp_idx;// GetAmphureIDByName(idcard.addrAmphur);
                     }
                     else
                     {
@@ -1456,6 +1566,9 @@ namespace BIG.Present
                         int c_am_idx = c_cbo_amp.FindString(idcard.addrAmphur.Replace("อำเภอ", ""));
                         c_cbo_amp.SelectedIndex = c_am_idx; //GetAmphureIDByName(idcard.addrAmphur);
 
+
+                        c_txt_postcode.Text = DistrictService.GetZipcodeByDistricName(idcard.addrTambol.Replace("ตำบล", ""));
+
                         //permanent address
                         p_txt_no.Text = idcard.addrHouseNo + " " + idcard.addrVillageNo + " " + idcard.addrLane + " " + idcard.addrRoad;
                         p_txt_road.Text = idcard.addrRoad;
@@ -1475,6 +1588,15 @@ namespace BIG.Present
 
                             //add to picture box 
                             pic_emp.Image = GetImage(idcard.PhotoRaw, 150, 187);
+                        }
+                        else
+                        {
+                            if (idcard.PhotoBitmap != null)
+                            {
+                                var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
+                                var photo = idcard.PhotoBitmap.GetThumbnailImage(150, 187, myCallback, IntPtr.Zero);
+                                pic_emp.Image = photo;
+                            }
                         }
                     }
                 }
@@ -1582,7 +1704,7 @@ namespace BIG.Present
                     int c_prv_index = c_cbo_prov.FindString(GetProvinceNameByID(Convert.ToInt16(current.PROVINCE_ID)));
                     c_cbo_prov.SelectedIndex = c_prv_index;
 
-                    int c_amp_index = c_cbo_amp.FindString(GetAmphureNameByID(Convert.ToInt16(current.AMPHUR_ID)));
+                    int c_amp_index = c_cbo_amp.FindString(GetCurrentAmphureNameByID(Convert.ToInt16(current.AMPHUR_ID)));
                     c_cbo_amp.SelectedIndex = c_amp_index;
 
                 }
@@ -1598,7 +1720,7 @@ namespace BIG.Present
                     int p_prv_index = p_cbo_prov.FindString(GetProvinceNameByID(Convert.ToInt16(permanent.PROVINCE_ID)));
                     p_cbo_prov.SelectedIndex = p_prv_index;
 
-                    int c_amp_index = p_cbo_amp.FindString(GetAmphureNameByID(Convert.ToInt16(permanent.AMPHUR_ID)));
+                    int c_amp_index = p_cbo_amp.FindString(GetPermanentAmphureNameByID(Convert.ToInt16(permanent.AMPHUR_ID)));
                     p_cbo_amp.SelectedIndex = c_amp_index;
                 }
             }
@@ -2341,9 +2463,7 @@ namespace BIG.Present
                     c_cbo_amp.DisplayMember = "AMPHUR_NAME";
                     c_cbo_amp.ValueMember = "AMPHUR_ID";
                 }
-            }
-
-            c_txt_postcode.Focus();
+            } 
         }
 
         private void p_cbo_prov_SelectedIndexChanged(object sender, EventArgs e)
@@ -2362,8 +2482,85 @@ namespace BIG.Present
                     p_cbo_amp.ValueMember = "AMPHUR_ID";
                 }
             }
+             
+        }
 
-            p_txt_postcode.Focus();
+        private void c_cbo_amp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (c_cbo_prov.SelectedValue != null && c_cbo_amp.SelectedValue != null)
+            {
+                int p_id = 0; int a_id = 0;
+                int.TryParse(c_cbo_prov.SelectedValue.ToString(), out p_id);
+                int.TryParse(c_cbo_amp.SelectedValue.ToString(), out a_id);
+
+                var listDistrict = DistrictService.GetDistrictByAmphurID(p_id, a_id);
+                var ds = listDistrict.Select(x => new { x.DISTRICT_ID, x.DISTRICT_NAME }).ToList();
+                c_cbo_distict.DataSource = ds;
+                c_cbo_distict.DisplayMember = "DISTRICT_NAME";
+                c_cbo_distict.ValueMember = "DISTRICT_ID";
+                if (ds.Count > 0)
+                {
+                    c_cbo_distict.SelectedIndex = 0;
+                    if (c_cbo_distict.SelectedValue != null)
+                    {
+                        var dis = c_cbo_distict.SelectedValue.ToString();
+                        c_txt_postcode.Text = DistrictService.GetZipcodeByDistricID(p_id.ToString(), a_id.ToString(), dis);
+                    }
+                }
+            }
+        }
+
+        private void p_cbo_amp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (p_cbo_prov.SelectedValue != null && p_cbo_amp.SelectedValue != null)
+            {
+                int p_id = 0; int a_id = 0;
+                int.TryParse(p_cbo_prov.SelectedValue.ToString(), out p_id);
+                int.TryParse(p_cbo_amp.SelectedValue.ToString(), out a_id);
+
+                var listDistrict = DistrictService.GetDistrictByAmphurID(p_id, a_id);
+                var ds = listDistrict.Select(x => new { x.DISTRICT_ID, x.DISTRICT_NAME }).ToList();
+                p_cbo_district.DataSource = ds;
+                p_cbo_district.DisplayMember = "DISTRICT_NAME";
+                p_cbo_district.ValueMember = "DISTRICT_ID";
+                if (ds.Count > 0)
+                {
+                    p_cbo_district.SelectedIndex = 0;
+                    if (p_cbo_district.SelectedValue != null)
+                    {
+                        var dis = p_cbo_district.SelectedValue.ToString();
+                        p_txt_postcode.Text = DistrictService.GetZipcodeByDistricID(p_id.ToString(), a_id.ToString(), dis);
+                    }
+                }
+            }
+        }
+
+        private void c_cbo_distict_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (c_cbo_prov.SelectedValue != null && c_cbo_amp.SelectedValue != null)
+            {
+                if (c_cbo_distict.SelectedValue != null)
+                {
+                    var p_id = c_cbo_prov.SelectedValue.ToString();
+                    var a_id = c_cbo_amp.SelectedValue.ToString();
+                    var dis = c_cbo_distict.SelectedValue.ToString();
+                    c_txt_postcode.Text = DistrictService.GetZipcodeByDistricID(p_id.ToString(), a_id.ToString(), dis);
+                }
+            }
+        }
+
+        private void p_cbo_district_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (p_cbo_prov.SelectedValue != null && p_cbo_amp.SelectedValue != null)
+            {
+                if (p_cbo_district.SelectedValue != null)
+                {
+                    var p_id = p_cbo_prov.SelectedValue.ToString();
+                    var a_id = p_cbo_amp.SelectedValue.ToString();
+                    var dis = p_cbo_district.SelectedValue.ToString();
+                    p_txt_postcode.Text = DistrictService.GetZipcodeByDistricID(p_id.ToString(), a_id.ToString(), dis);
+                }
+            }
         }
 
         private void btn_new_img_Click(object sender, EventArgs e)
@@ -2376,6 +2573,7 @@ namespace BIG.Present
                 {
                     try
                     {
+                        currentImgName = file;
                         var myCallback = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
                         var myBitmap = new Bitmap(file);
                         var myThumbnail = myBitmap.GetThumbnailImage(150, 149, myCallback, IntPtr.Zero);
@@ -2384,6 +2582,7 @@ namespace BIG.Present
                     }
                     catch (Exception ex)
                     {
+                        currentImgName = "";
                         MessageBox.Show("Error: " + ex.Message);
                     }
                 }
@@ -3529,6 +3728,8 @@ namespace BIG.Present
         }
         #endregion
 
+        #region ===== รายการหัก ======
+
         private void CalTotal()
         {
             try
@@ -3670,15 +3871,15 @@ namespace BIG.Present
                     }
                     if (i == 5)
                     {
-                        lbd5.Text = "หักครั้งที่ 6 : 500 บาท";
+                        lbd6.Text = "หักครั้งที่ 6 : 500 บาท";
                     }
                     if (i == 6)
                     {
-                        lbd5.Text = "หักครั้งที่ 7 : 500 บาท";
+                        lbd7.Text = "หักครั้งที่ 7 : 500 บาท";
                     }
                     if (i == 7)
                     {
-                        lbd5.Text = "หักครั้งที่ 8 : 500 บาท";
+                        lbd8.Text = "หักครั้งที่ 8 : 500 บาท";
                     }
                 }
                 var x = tot % 500;
@@ -3717,6 +3918,7 @@ namespace BIG.Present
                 }
             }
         }
+
         private void cal_deduc_Click(object sender, EventArgs e)
         {
             var tot = 0;
@@ -3747,15 +3949,15 @@ namespace BIG.Present
                     }
                     if (i == 5)
                     {
-                        lbd5.Text = "หักครั้งที่ 6 : 500 บาท";
+                        lbd6.Text = "หักครั้งที่ 6 : 500 บาท";
                     }
                     if (i == 6)
                     {
-                        lbd5.Text = "หักครั้งที่ 7 : 500 บาท";
+                        lbd7.Text = "หักครั้งที่ 7 : 500 บาท";
                     }
                     if (i == 7)
                     {
-                        lbd5.Text = "หักครั้งที่ 8 : 500 บาท";
+                        lbd8.Text = "หักครั้งที่ 8 : 500 บาท";
                     }
                 }
 
@@ -3795,5 +3997,9 @@ namespace BIG.Present
                 }
             }
         }
+
+        #endregion
+
+
     }
 }

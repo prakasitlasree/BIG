@@ -1,26 +1,457 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="BIG_DBDataSet">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>34b3a610-8a25-4485-a997-1067a7eef10b</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DSAddress">
+      <Fields>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EMP_ID">
+          <DataField>EMP_ID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FULLADDRESS">
+          <DataField>FULLADDRESS</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>BIG_DBDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>Address</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>AddressTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DS_IDCARD">
+      <Fields>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EMP_ID">
+          <DataField>EMP_ID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PHOTO">
+          <DataField>PHOTO</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>BIG_DBDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>ReferenceDocuments</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>ReferenceDocumentsTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DSEmployeePhoto">
+      <Fields>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="PHOTO">
+          <DataField>PHOTO</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>BIG_DBDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>CurrentImages</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>CurrentImagesTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DSRefPerson">
+      <Fields>
+        <Field Name="FULLREFPERSON1">
+          <DataField>FULLREFPERSON1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FULLREFPERSON2">
+          <DataField>FULLREFPERSON2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FULLREFPERSON3">
+          <DataField>FULLREFPERSON3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>BIG_DBDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>ReferencePerson</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>ReferencePersonTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DSTraining">
+      <Fields>
+        <Field Name="COURSE_1">
+          <DataField>COURSE_1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="COURSE_2">
+          <DataField>COURSE_2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="COURSE_3">
+          <DataField>COURSE_3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>BIG_DBDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>Training</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>TrainingTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DSExp">
+      <Fields>
+        <Field Name="FULLEXP_1">
+          <DataField>FULLEXP_1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FULLEXP_2">
+          <DataField>FULLEXP_2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FULLEXP_3">
+          <DataField>FULLEXP_3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>BIG_DBDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>WorkExperience</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>WorkExperienceTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DSFingerScan">
+      <Fields>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EMP_ID">
+          <DataField>EMP_ID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LEFTFINGER1">
+          <DataField>LEFTFINGER1</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="LEFTFINGER2">
+          <DataField>LEFTFINGER2</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="LEFTFINGER3">
+          <DataField>LEFTFINGER3</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="LEFTFINGER4">
+          <DataField>LEFTFINGER4</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="LEFTFINGER5">
+          <DataField>LEFTFINGER5</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="RIGHTFINGER1">
+          <DataField>RIGHTFINGER1</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="RIGHTFINGER2">
+          <DataField>RIGHTFINGER2</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="RIGHTFINGER3">
+          <DataField>RIGHTFINGER3</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="RIGHTFINGER4">
+          <DataField>RIGHTFINGER4</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="RIGHTFINGER5">
+          <DataField>RIGHTFINGER5</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>BIG_DBDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>FingerScan</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>FingerScanTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DSEmployee">
+      <Fields>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EMP_ID">
+          <DataField>EMP_ID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ID_CARD">
+          <DataField>ID_CARD</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DATESTARTWORK">
+          <DataField>DATESTARTWORK</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="HEIGHT">
+          <DataField>HEIGHT</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="WEIGHT">
+          <DataField>WEIGHT</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="RACE">
+          <DataField>RACE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NATIONALITY">
+          <DataField>NATIONALITY</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RELEGION">
+          <DataField>RELEGION</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BLOODGROUP">
+          <DataField>BLOODGROUP</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FULLNAME">
+          <DataField>FULLNAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="GENDER">
+          <DataField>GENDER</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AGE">
+          <DataField>AGE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="POSSITION">
+          <DataField>POSSITION</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOB">
+          <DataField>DOB</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="APPEARANCE">
+          <DataField>APPEARANCE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DEFECT">
+          <DataField>DEFECT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TELNO">
+          <DataField>TELNO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>BIG_DBDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>Employee</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>EmployeeTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DSPermanantAddr">
+      <Fields>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EMP_ID">
+          <DataField>EMP_ID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FULLADDRESS">
+          <DataField>FULLADDRESS</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>BIG_DBDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>PermanentAddress</rd:TableName>
+        <rd:TableAdapterFillMethod>FillByEmpID</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetDataByEmpID</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>PermanentAddressTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DSEDU">
+      <Fields>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EMP_ID">
+          <DataField>EMP_ID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FULLEDU">
+          <DataField>FULLEDU</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>BIG_DBDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>Education</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>EducationTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DSCompanyInfo">
+      <Fields>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="LOCATION">
+          <DataField>LOCATION</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NAME_EN">
+          <DataField>NAME_EN</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NAME_TH">
+          <DataField>NAME_TH</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TELEPHONE">
+          <DataField>TELEPHONE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LOGO">
+          <DataField>LOGO</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="RIGHT_LOGO_1">
+          <DataField>RIGHT_LOGO_1</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="RIGHT_LOGO_2">
+          <DataField>RIGHT_LOGO_2</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>BIG_DBDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>CompanyInfo</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>CompanyInfoTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
   <Body>
     <ReportItems>
       <Tablix Name="Tablix123">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.79488cm</Width>
+              <Width>0.70665in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.19176cm</Width>
+              <Width>0.8629in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.2507cm</Width>
+              <Width>0.8861in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>0.98425in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.61654cm</Height>
+              <Height>0.24273in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -102,7 +533,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.61654cm</Height>
+              <Height>0.24273in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -182,7 +613,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.61654cm</Height>
+              <Height>0.24273in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -262,7 +693,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.61654cm</Height>
+              <Height>0.24273in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -342,7 +773,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.61654cm</Height>
+              <Height>0.24273in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -422,7 +853,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.61654cm</Height>
+              <Height>0.24273in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -570,7 +1001,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.61654cm</Height>
+              <Height>0.24273in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -650,7 +1081,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.61654cm</Height>
+              <Height>0.24273in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -759,8 +1190,8 @@
         <DataSetName>DSEmployee</DataSetName>
         <Top>0.15256cm</Top>
         <Left>9.68013cm</Left>
-        <Height>4.93232cm</Height>
-        <Width>8.73734cm</Width>
+        <Height>4.93227cm</Height>
+        <Width>8.73735cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -860,33 +1291,33 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.07986cm</Width>
+              <Width>0.81884in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.32803cm</Width>
+              <Width>1.31025in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.44064cm</Width>
+              <Width>0.56718in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.09196cm</Width>
+              <Width>1.21731in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.54245cm</Width>
+              <Width>0.60726in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.79088cm</Width>
+              <Width>1.09877in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.25629cm</Width>
+              <Width>0.4946in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.57507cm</Width>
+              <Width>1.01381in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.56693cm</Height>
+              <Height>0.2232in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1169,7 +1600,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.56693cm</Height>
+              <Height>0.2232in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1250,7 +1681,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.56693cm</Height>
+              <Height>0.2232in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1331,7 +1762,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.56693cm</Height>
+              <Height>0.2232in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1412,7 +1843,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.56693cm</Height>
+              <Height>0.2232in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1493,7 +1924,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.56693cm</Height>
+              <Height>0.2232in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1605,8 +2036,8 @@
         <DataSetName>DSEmployee</DataSetName>
         <Top>5.49041cm</Top>
         <Left>0.343cm</Left>
-        <Height>3.40158cm</Height>
-        <Width>18.10518cm</Width>
+        <Height>3.40157cm</Height>
+        <Width>18.10517cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -1947,24 +2378,24 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.80273cm</Width>
+              <Width>1.10344in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.97826cm</Width>
+              <Width>1.17254in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.72378cm</Width>
+              <Width>1.07235in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.81197cm</Width>
+              <Width>1.10707in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.69493cm</Width>
+              <Width>1.061in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.62646cm</Height>
+              <Height>0.24664in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -2149,7 +2580,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>2.7784cm</Height>
+              <Height>1.09386in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -2255,8 +2686,8 @@
         <DataSetName>DSFingerScan</DataSetName>
         <Top>14.13092cm</Top>
         <Left>4.40581cm</Left>
-        <Height>3.40486cm</Height>
-        <Width>14.01167cm</Width>
+        <Height>3.40487cm</Height>
+        <Width>14.01166cm</Width>
         <ZIndex>19</ZIndex>
         <Style>
           <Border>
@@ -2269,24 +2700,24 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.80273cm</Width>
+              <Width>1.10344in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.97826cm</Width>
+              <Width>1.17254in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.72378cm</Width>
+              <Width>1.07235in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.81197cm</Width>
+              <Width>1.10707in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.69493cm</Width>
+              <Width>1.061in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.62646cm</Height>
+              <Height>0.24664in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -2486,7 +2917,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>2.71667cm</Height>
+              <Height>1.06956in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -2592,8 +3023,8 @@
         <DataSetName>DSFingerScan</DataSetName>
         <Top>17.78631cm</Top>
         <Left>4.40581cm</Left>
-        <Height>3.34313cm</Height>
-        <Width>14.01167cm</Width>
+        <Height>3.34315cm</Height>
+        <Width>14.01166cm</Width>
         <ZIndex>20</ZIndex>
         <Style>
           <Border>
@@ -2717,7 +3148,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!FULLREFPERSON1.Value, "DSRefPerson")+", "+  First(Fields!FULLREFPERSON2.Value, "DSRefPerson")+ ", "+First(Fields!FULLREFPERSON3.Value, "DSRefPerson")</Value>
+                <Value>=First(Fields!FULLREFPERSON1.Value, "DSRefPerson")+"  "+  First(Fields!FULLREFPERSON2.Value, "DSRefPerson")+ "  "+First(Fields!FULLREFPERSON3.Value, "DSRefPerson")</Value>
                 <Style>
                   <FontFamily>Angsana New</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -2754,7 +3185,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!COURSE_1.Value, "DSTraining")+", "+ First(Fields!COURSE_2.Value, "DSTraining")+", "+First(Fields!COURSE_3.Value, "DSTraining")</Value>
+                <Value>=First(Fields!COURSE_1.Value, "DSTraining")+"  "+ First(Fields!COURSE_2.Value, "DSTraining")</Value>
                 <Style>
                   <FontFamily>Angsana New</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -2791,7 +3222,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!FULLEXP_1.Value, "DSExp")+", "+First(Fields!FULLEXP_2.Value, "DSExp") +", " +First(Fields!FULLEXP_3.Value, "DSExp")</Value>
+                <Value>=First(Fields!FULLEXP_1.Value, "DSExp")+"  "+First(Fields!FULLEXP_2.Value, "DSExp") +"  " +First(Fields!FULLEXP_3.Value, "DSExp")</Value>
                 <Style>
                   <FontFamily>Angsana New</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -2955,10 +3386,10 @@
           <Value>=First(Fields!RIGHT_LOGO_1.Value, "DSCompanyInfo")</Value>
           <MIMEType>image/jpeg</MIMEType>
           <Sizing>FitProportional</Sizing>
-          <Top>0.7146cm</Top>
-          <Left>13.48585cm</Left>
-          <Height>2.24083cm</Height>
-          <Width>3.29917cm</Width>
+          <Top>0.3971cm</Top>
+          <Left>13.85481cm</Left>
+          <Height>2.03159cm</Height>
+          <Width>2.57743cm</Width>
           <ZIndex>4</ZIndex>
           <Style>
             <Border>
@@ -2971,9 +3402,9 @@
           <Value>=First(Fields!RIGHT_LOGO_2.Value, "DSCompanyInfo")</Value>
           <MIMEType>image/jpeg</MIMEType>
           <Sizing>FitProportional</Sizing>
-          <Top>0.7146cm</Top>
+          <Top>0.3971cm</Top>
           <Left>16.60863cm</Left>
-          <Height>2.24083cm</Height>
+          <Height>2.03159cm</Height>
           <Width>2.24083cm</Width>
           <ZIndex>5</ZIndex>
           <Style>
@@ -3039,438 +3470,6 @@
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>
-  <AutoRefresh>0</AutoRefresh>
-  <DataSources>
-    <DataSource Name="BIG_DBDataSet">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>34b3a610-8a25-4485-a997-1067a7eef10b</rd:DataSourceID>
-    </DataSource>
-  </DataSources>
-  <DataSets>
-    <DataSet Name="DSAddress">
-      <Query>
-        <DataSourceName>BIG_DBDataSet</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="ID">
-          <DataField>ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="EMP_ID">
-          <DataField>EMP_ID</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="FULLADDRESS">
-          <DataField>FULLADDRESS</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>Address</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>AddressTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="DS_IDCARD">
-      <Query>
-        <DataSourceName>BIG_DBDataSet</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="ID">
-          <DataField>ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="EMP_ID">
-          <DataField>EMP_ID</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="PHOTO">
-          <DataField>PHOTO</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>ReferenceDocuments</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>ReferenceDocumentsTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="DSEmployeePhoto">
-      <Query>
-        <DataSourceName>BIG_DBDataSet</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="ID">
-          <DataField>ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="PHOTO">
-          <DataField>PHOTO</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>CurrentImages</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>CurrentImagesTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="DSRefPerson">
-      <Query>
-        <DataSourceName>BIG_DBDataSet</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="FULLREFPERSON1">
-          <DataField>FULLREFPERSON1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="FULLREFPERSON2">
-          <DataField>FULLREFPERSON2</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="FULLREFPERSON3">
-          <DataField>FULLREFPERSON3</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>ReferencePerson</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>ReferencePersonTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="DSTraining">
-      <Query>
-        <DataSourceName>BIG_DBDataSet</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="COURSE_1">
-          <DataField>COURSE_1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="COURSE_2">
-          <DataField>COURSE_2</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="COURSE_3">
-          <DataField>COURSE_3</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>Training</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>TrainingTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="DSExp">
-      <Query>
-        <DataSourceName>BIG_DBDataSet</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="FULLEXP_1">
-          <DataField>FULLEXP_1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="FULLEXP_2">
-          <DataField>FULLEXP_2</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="FULLEXP_3">
-          <DataField>FULLEXP_3</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>WorkExperience</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>WorkExperienceTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="DSFingerScan">
-      <Query>
-        <DataSourceName>BIG_DBDataSet</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="ID">
-          <DataField>ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="EMP_ID">
-          <DataField>EMP_ID</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="LEFTFINGER1">
-          <DataField>LEFTFINGER1</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-        <Field Name="LEFTFINGER2">
-          <DataField>LEFTFINGER2</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-        <Field Name="LEFTFINGER3">
-          <DataField>LEFTFINGER3</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-        <Field Name="LEFTFINGER4">
-          <DataField>LEFTFINGER4</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-        <Field Name="LEFTFINGER5">
-          <DataField>LEFTFINGER5</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-        <Field Name="RIGHTFINGER1">
-          <DataField>RIGHTFINGER1</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-        <Field Name="RIGHTFINGER2">
-          <DataField>RIGHTFINGER2</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-        <Field Name="RIGHTFINGER3">
-          <DataField>RIGHTFINGER3</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-        <Field Name="RIGHTFINGER4">
-          <DataField>RIGHTFINGER4</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-        <Field Name="RIGHTFINGER5">
-          <DataField>RIGHTFINGER5</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>FingerScan</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>FingerScanTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="DSEmployee">
-      <Query>
-        <DataSourceName>BIG_DBDataSet</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="ID">
-          <DataField>ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="EMP_ID">
-          <DataField>EMP_ID</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ID_CARD">
-          <DataField>ID_CARD</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DATESTARTWORK">
-          <DataField>DATESTARTWORK</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="HEIGHT">
-          <DataField>HEIGHT</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="WEIGHT">
-          <DataField>WEIGHT</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="RACE">
-          <DataField>RACE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="NATIONALITY">
-          <DataField>NATIONALITY</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="RELEGION">
-          <DataField>RELEGION</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="BLOODGROUP">
-          <DataField>BLOODGROUP</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="FULLNAME">
-          <DataField>FULLNAME</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="GENDER">
-          <DataField>GENDER</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="AGE">
-          <DataField>AGE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="POSSITION">
-          <DataField>POSSITION</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DOB">
-          <DataField>DOB</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="APPEARANCE">
-          <DataField>APPEARANCE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DEFECT">
-          <DataField>DEFECT</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TELNO">
-          <DataField>TELNO</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>Employee</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>EmployeeTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="DSPermanantAddr">
-      <Query>
-        <DataSourceName>BIG_DBDataSet</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="ID">
-          <DataField>ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="EMP_ID">
-          <DataField>EMP_ID</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="FULLADDRESS">
-          <DataField>FULLADDRESS</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>PermanentAddress</rd:TableName>
-        <rd:TableAdapterFillMethod>FillByEmpID</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetDataByEmpID</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>PermanentAddressTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="DSEDU">
-      <Query>
-        <DataSourceName>BIG_DBDataSet</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="ID">
-          <DataField>ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="EMP_ID">
-          <DataField>EMP_ID</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="FULLEDU">
-          <DataField>FULLEDU</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>Education</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>EducationTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="DSCompanyInfo">
-      <Query>
-        <DataSourceName>BIG_DBDataSet</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="ID">
-          <DataField>ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="LOCATION">
-          <DataField>LOCATION</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="NAME_EN">
-          <DataField>NAME_EN</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="NAME_TH">
-          <DataField>NAME_TH</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TELEPHONE">
-          <DataField>TELEPHONE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="LOGO">
-          <DataField>LOGO</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-        <Field Name="RIGHT_LOGO_1">
-          <DataField>RIGHT_LOGO_1</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-        <Field Name="RIGHT_LOGO_2">
-          <DataField>RIGHT_LOGO_2</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>BIG_DBDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\_Job\BIG Project\_MainCode\Employee\Employee\BIG_DBDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>CompanyInfo</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>CompanyInfoTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-  </DataSets>
   <EmbeddedImages>
     <EmbeddedImage Name="big_logo">
       <MIMEType>image/png</MIMEType>
@@ -4529,6 +4528,6 @@ CCKeK0VpgDx5hG5v1JrwnxF8WdIj8QamjX9srLdSggzKCPnNew/Hr41af8MfAOqXiyoJhE0cKg4LuRgA
 qV2c5upz/wBtD/jWixGcz0eOl/4CjB08BHX6uvvZ9YeHvDvwU+ExWbRNEsGvIx8txIokkH/Ajk1zXxR/ay0nRbKTddpbxqPkgjPzt7ACvkPxbqd5HZylbudTtPIkI/rXiF5cS3E7vLK8r5+87En8zXo4HhWGa1lXzDESqNd/60+45cRnMsFD2eGpqF+x3nxg+Muq/FjWBNdFodPhJ+z227IH+0fU155u9qG60lfsGHw1LB0o0KEeWMdkfE1as683UqO7Z//Z</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
-  <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>2e2c75d2-ebfd-4314-8aa7-60ddf9ec4b12</rd:ReportID>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
 </Report>

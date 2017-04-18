@@ -7,7 +7,6 @@ using BIG.Model;
 using BIG.DataAccess;
 namespace BIG.DataService
 {
-    
     public static class AmphurServices
     {
         public static List<Amphur> GetListAmphur()
@@ -49,6 +48,21 @@ namespace BIG.DataService
                 return result;
             }
         }
- 
+        public static int GetAmphurIDbyName(string name)
+        {
+            var result = 0;
+            try
+            {
+                using (var ctx = new BIG_DBEntities())
+                {
+                    result = ctx.Amphurs.Where(x => x.AMPHUR_NAME.Contains(name)).Select(r => r.AMPHUR_ID).FirstOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+                return result;
+            }
+            return result;
+        }
     }
 }

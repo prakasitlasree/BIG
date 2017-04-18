@@ -51,6 +51,7 @@
     <Compile Include="CompanyInfoServices.cs" />
     <Compile Include="CurrentImageService.cs" />
     <Compile Include="DeductionService.cs" />
+    <Compile Include="DistrictService.cs" />
     <Compile Include="EducationServices.cs" />
     <Compile Include="EmployeeServices.cs" />
     <Compile Include="EquiptmentServices.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="PossitionDataService.cs" />
     <Compile Include="ProfileImageDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProvinceService.cs" />
     <Compile Include="ProvinceServices.cs" />
     <Compile Include="RefDocumentServices.cs" />
     <Compile Include="ReferencePersonServices.cs" />

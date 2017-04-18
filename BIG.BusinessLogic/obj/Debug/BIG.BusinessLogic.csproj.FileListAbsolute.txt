@@ -2,4 +2,3 @@ D:\_zBIG\SourceCode\BIG\BIG.BusinessLogic\bin\Debug\BIG.BusinessLogic.dll
 D:\_zBIG\SourceCode\BIG\BIG.BusinessLogic\bin\Debug\BIG.BusinessLogic.pdb
 D:\_zBIG\SourceCode\BIG\BIG.BusinessLogic\obj\Debug\BIG.BusinessLogic.dll
 D:\_zBIG\SourceCode\BIG\BIG.BusinessLogic\obj\Debug\BIG.BusinessLogic.pdb
-D:\_zBIG\SourceCode\BIG\BIG.BusinessLogic\obj\Debug\BIG.BusinessLogic.csprojResolveAssemblyReference.cache

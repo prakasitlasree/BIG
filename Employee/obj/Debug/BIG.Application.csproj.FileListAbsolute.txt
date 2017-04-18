@@ -25,7 +25,6 @@ D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\System.Windows.Forms.Ribbon35.dll
 D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\pcsc-sharp.dll
 D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.DataAccess.dll
 D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\EntityFramework.dll
-D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\Microsoft.SqlServer.Types.dll
 D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.BusinessLogic.pdb
 D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.Common.pdb
 D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.DataService.pdb
@@ -37,3 +36,5 @@ D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.Present_V1.1.exe
 D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.Present_V1.1.pdb
 D:\_zBIG\SourceCode\BIG\Employee\obj\Debug\BIG.Present_V1.1.exe
 D:\_zBIG\SourceCode\BIG\Employee\obj\Debug\BIG.Present_V1.1.pdb
+D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\Microsoft.SqlServer.Types.dll

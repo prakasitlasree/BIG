@@ -1,7 +1,9 @@
-﻿namespace BIG.Present {
-    
-    
-    public partial class BIG_DBDataSet {
+﻿namespace BIG.Present
+{
+
+
+    public partial class BIG_DBDataSet
+    {
     }
 }
 
