@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AllEmployeeDS" targetNamespace="http://tempuri.org/AllEmployeeDS.xsd" xmlns:mstns="http://tempuri.org/AllEmployeeDS.xsd" xmlns="http://tempuri.org/AllEmployeeDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BIG_DBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BIG_DBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BIG.Present.Properties.Settings.GlobalReference.Default.BIG_DBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EmployeeReportTableAdapter" GeneratorDataComponentClassName="EmployeeReportTableAdapter" Name="EmployeeReport" UserDataComponentName="EmployeeReportTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BIG_DBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select 
+ROW_NUMBER() OVER(ORDER BY e.ID DESC) AS RUNNING ,
+ e.EMP_ID,e.FIRSTNAME_TH , e.LASTNAME_TH, 
+YEAR(e.DATEOFBIRTH) + 543 as YEAR,
+
+CASE MONTH(e.DATEOFBIRTH)
+WHEN 1 THEN 'มกราคม'
+WHEN 2 THEN 'กุมภาพันธ์' 
+WHEN 3 THEN 'มีนาคม' 
+WHEN 4 THEN 'เมษายน' 
+WHEN 5 THEN 'พฤษภาคม'
+WHEN 6 THEN 'มิถุนายน'
+WHEN 7 THEN 'กรกฎาคม'
+WHEN 8 THEN 'สิงหาคม'
+WHEN 9 THEN 'กันยายน'
+WHEN 10 THEN 'ตุลาคม'
+WHEN 11 THEN 'พฤศจิกายน'
+WHEN 12 THEN 'ธันวาคม' 
+END as MONTH
+
+,DAY(e.DATEOFBIRTH) DAY, YEAR(getdate()) - YEAR(e.DATEOFBIRTH) AGE
+,a.NAME ADDRESS, a.DISTRICT,ap.AMPHUR_NAME,p.PROVINCE_NAME,a.ZIPCODE
+,edu.NAME +' '+ edu.GRADUETED as EDUCATION
+,e.ID_CARD, e.BLOODGROUP 
+
+from employee e
+left join  Address a  on e.EMP_ID = a.EMP_ID 
+left join Amphur ap on a.AMPHUR_ID = ap.AMPHUR_ID
+left join dbo.Province p on a.PROVINCE_ID = p.PROVINCE_ID 
+left join Education edu on e.EMP_ID = edu.EMP_ID
+
+where (isnull(a.DESCRIPTION,'ที่อยู่ตามทะเบียนบ้าน')) ='ที่อยู่ตามทะเบียนบ้าน'
+and (isnull(edu.EDU_TYPE,'ประถมศึกษา')) ='ประถมศึกษา'
+order by e.ID desc</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RUNNING" DataSetColumn="RUNNING" />
+              <Mapping SourceColumn="EMP_ID" DataSetColumn="EMP_ID" />
+              <Mapping SourceColumn="FIRSTNAME_TH" DataSetColumn="FIRSTNAME_TH" />
+              <Mapping SourceColumn="LASTNAME_TH" DataSetColumn="LASTNAME_TH" />
+              <Mapping SourceColumn="YEAR" DataSetColumn="YEAR" />
+              <Mapping SourceColumn="DAY" DataSetColumn="DAY" />
+              <Mapping SourceColumn="DISTRICT" DataSetColumn="DISTRICT" />
+              <Mapping SourceColumn="AMPHUR_NAME" DataSetColumn="AMPHUR_NAME" />
+              <Mapping SourceColumn="PROVINCE_NAME" DataSetColumn="PROVINCE_NAME" />
+              <Mapping SourceColumn="ZIPCODE" DataSetColumn="ZIPCODE" />
+              <Mapping SourceColumn="ID_CARD" DataSetColumn="ID_CARD" />
+              <Mapping SourceColumn="BLOODGROUP" DataSetColumn="BLOODGROUP" />
+              <Mapping SourceColumn="ADDRESS" DataSetColumn="ADDRESS" />
+              <Mapping SourceColumn="AGE" DataSetColumn="AGE" />
+              <Mapping SourceColumn="MONTH" DataSetColumn="MONTH" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="BIG_DBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByDateStartWork" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillByDateStartWork" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByDateStartWork">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select 
+ROW_NUMBER() OVER(ORDER BY e.ID DESC) AS RUNNING ,
+ e.EMP_ID,e.FIRSTNAME_TH , e.LASTNAME_TH, 
+YEAR(e.DATEOFBIRTH) + 543 as YEAR,
+
+CASE MONTH(e.DATEOFBIRTH)
+WHEN 1 THEN 'มกราคม'
+WHEN 2 THEN 'กุมภาพันธ์' 
+WHEN 3 THEN 'มีนาคม' 
+WHEN 4 THEN 'เมษายน' 
+WHEN 5 THEN 'พฤษภาคม'
+WHEN 6 THEN 'มิถุนายน'
+WHEN 7 THEN 'กรกฎาคม'
+WHEN 8 THEN 'สิงหาคม'
+WHEN 9 THEN 'กันยายน'
+WHEN 10 THEN 'ตุลาคม'
+WHEN 11 THEN 'พฤศจิกายน'
+WHEN 12 THEN 'ธันวาคม' 
+END as MONTH
+
+,DAY(e.DATEOFBIRTH) DAY, YEAR(getdate()) - YEAR(e.DATEOFBIRTH) AGE
+,a.NAME ADDRESS, a.DISTRICT,ap.AMPHUR_NAME,p.PROVINCE_NAME,a.ZIPCODE
+,edu.NAME +' '+ edu.GRADUETED as EDUCATION
+,e.ID_CARD, e.BLOODGROUP 
+
+from employee e
+left join  Address a  on e.EMP_ID = a.EMP_ID 
+left join Amphur ap on a.AMPHUR_ID = ap.AMPHUR_ID
+left join dbo.Province p on a.PROVINCE_ID = p.PROVINCE_ID 
+left join Education edu on e.EMP_ID = edu.EMP_ID
+
+where 
+e.DATESTARTWORK &gt;= @start_date and e.DATESTARTWORK &lt;= @end_date
+and (isnull(a.DESCRIPTION,'ที่อยู่ตามทะเบียนบ้าน')) ='ที่อยู่ตามทะเบียนบ้าน'
+and (isnull(edu.EDU_TYPE,'ประถมศึกษา')) ='ประถมศึกษา'
+order by e.ID desc</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="start_date" ColumnName="DATESTARTWORK" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@start_date" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DATESTARTWORK" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="end_date" ColumnName="DATESTARTWORK" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@end_date" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DATESTARTWORK" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AllEmployeeDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="AllEmployeeDS" msprop:Generator_UserDSName="AllEmployeeDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EmployeeReport" msprop:Generator_TableClassName="EmployeeReportDataTable" msprop:Generator_TableVarName="tableEmployeeReport" msprop:Generator_TablePropName="EmployeeReport" msprop:Generator_RowDeletingName="EmployeeReportRowDeleting" msprop:Generator_RowChangingName="EmployeeReportRowChanging" msprop:Generator_RowEvHandlerName="EmployeeReportRowChangeEventHandler" msprop:Generator_RowDeletedName="EmployeeReportRowDeleted" msprop:Generator_UserTableName="EmployeeReport" msprop:Generator_RowChangedName="EmployeeReportRowChanged" msprop:Generator_RowEvArgName="EmployeeReportRowChangeEvent" msprop:Generator_RowClassName="EmployeeReportRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RUNNING" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRUNNING" msprop:Generator_ColumnPropNameInRow="RUNNING" msprop:Generator_ColumnPropNameInTable="RUNNINGColumn" msprop:Generator_UserColumnName="RUNNING" type="xs:int" minOccurs="0" />
+              <xs:element name="EMP_ID" msprop:Generator_ColumnVarNameInTable="columnEMP_ID" msprop:Generator_ColumnPropNameInRow="EMP_ID" msprop:Generator_ColumnPropNameInTable="EMP_IDColumn" msprop:Generator_UserColumnName="EMP_ID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FIRSTNAME_TH" msprop:Generator_ColumnVarNameInTable="columnFIRSTNAME_TH" msprop:Generator_ColumnPropNameInRow="FIRSTNAME_TH" msprop:Generator_ColumnPropNameInTable="FIRSTNAME_THColumn" msprop:Generator_UserColumnName="FIRSTNAME_TH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LASTNAME_TH" msprop:Generator_ColumnVarNameInTable="columnLASTNAME_TH" msprop:Generator_ColumnPropNameInRow="LASTNAME_TH" msprop:Generator_ColumnPropNameInTable="LASTNAME_THColumn" msprop:Generator_UserColumnName="LASTNAME_TH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YEAR" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" msprop:Generator_UserColumnName="YEAR" type="xs:int" minOccurs="0" />
+              <xs:element name="DAY" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDAY" msprop:Generator_ColumnPropNameInRow="DAY" msprop:Generator_ColumnPropNameInTable="DAYColumn" msprop:Generator_UserColumnName="DAY" type="xs:int" minOccurs="0" />
+              <xs:element name="DISTRICT" msprop:Generator_ColumnVarNameInTable="columnDISTRICT" msprop:Generator_ColumnPropNameInRow="DISTRICT" msprop:Generator_ColumnPropNameInTable="DISTRICTColumn" msprop:Generator_UserColumnName="DISTRICT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AMPHUR_NAME" msprop:Generator_ColumnVarNameInTable="columnAMPHUR_NAME" msprop:Generator_ColumnPropNameInRow="AMPHUR_NAME" msprop:Generator_ColumnPropNameInTable="AMPHUR_NAMEColumn" msprop:Generator_UserColumnName="AMPHUR_NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PROVINCE_NAME" msprop:Generator_ColumnVarNameInTable="columnPROVINCE_NAME" msprop:Generator_ColumnPropNameInRow="PROVINCE_NAME" msprop:Generator_ColumnPropNameInTable="PROVINCE_NAMEColumn" msprop:Generator_UserColumnName="PROVINCE_NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ZIPCODE" msprop:Generator_ColumnVarNameInTable="columnZIPCODE" msprop:Generator_ColumnPropNameInRow="ZIPCODE" msprop:Generator_ColumnPropNameInTable="ZIPCODEColumn" msprop:Generator_UserColumnName="ZIPCODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_CARD" msprop:Generator_ColumnVarNameInTable="columnID_CARD" msprop:Generator_ColumnPropNameInRow="ID_CARD" msprop:Generator_ColumnPropNameInTable="ID_CARDColumn" msprop:Generator_UserColumnName="ID_CARD">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BLOODGROUP" msprop:Generator_ColumnVarNameInTable="columnBLOODGROUP" msprop:Generator_ColumnPropNameInRow="BLOODGROUP" msprop:Generator_ColumnPropNameInTable="BLOODGROUPColumn" msprop:Generator_UserColumnName="BLOODGROUP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ADDRESS" msprop:Generator_ColumnVarNameInTable="columnADDRESS" msprop:Generator_ColumnPropNameInRow="ADDRESS" msprop:Generator_ColumnPropNameInTable="ADDRESSColumn" msprop:Generator_UserColumnName="ADDRESS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AGE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAGE" msprop:Generator_ColumnPropNameInRow="AGE" msprop:Generator_ColumnPropNameInTable="AGEColumn" msprop:Generator_UserColumnName="AGE" type="xs:int" minOccurs="0" />
+              <xs:element name="MONTH" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" msprop:Generator_UserColumnName="MONTH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EDUCATION" msprop:Generator_ColumnVarNameInTable="columnEDUCATION" msprop:Generator_ColumnPropNameInRow="EDUCATION" msprop:Generator_ColumnPropNameInTable="EDUCATIONColumn" msprop:Generator_UserColumnName="EDUCATION" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -105,6 +105,7 @@
             this.txtpassword.Size = new System.Drawing.Size(185, 22);
             this.txtpassword.TabIndex = 2;
             this.txtpassword.UseSystemPasswordChar = true;
+            this.txtpassword.Enter += new System.EventHandler(this.txtpassword_Enter);
             // 
             // txtusername
             // 
@@ -113,6 +114,7 @@
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(185, 22);
             this.txtusername.TabIndex = 1;
+            this.txtusername.Enter += new System.EventHandler(this.txtusername_Enter);
             // 
             // bt_logon
             // 

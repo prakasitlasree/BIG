@@ -318,7 +318,7 @@ namespace BIG.Present
 
         private void rb_home_Click(object sender, EventArgs e)
         {
-            Close();
+            Hide();
             var mainform = new MainForm();
             mainform.Show();
         }
@@ -415,14 +415,14 @@ namespace BIG.Present
 
         private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Close();
+            Hide();
             var mainform = new MainForm();
             mainform.Show();
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            Close();
+            Hide();
             var mainform = new MainForm();
             mainform.Show();
         }
@@ -474,7 +474,7 @@ namespace BIG.Present
                         e_id = emp_id;
                         var emp = new EmployeeForm(e_id, "Edit");
                         emp.Show();
-                        this.Close();
+                        this.Hide();
                     }
                 } 
             } 
@@ -487,7 +487,7 @@ namespace BIG.Present
                         var emp_id = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                         var form = new ReportEmployee(emp_id); 
                         form.Show();
-                        this.Close();
+                        this.Hide();
                     }
                 }
             }
@@ -542,7 +542,7 @@ namespace BIG.Present
          
         private void backgroundWorker1_RunWorkerCompleted_1(object sender, RunWorkerCompletedEventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         private void worker_search_DoWork(object sender, DoWorkEventArgs e)
@@ -559,7 +559,7 @@ namespace BIG.Present
         {
             var frm = new CompanyInfoForm();
             frm.Show();
-            Close();
+            Hide();
         }
 
         private void dt_startwork_ValueChanged(object sender, EventArgs e)
@@ -592,7 +592,7 @@ namespace BIG.Present
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Close();
+            Hide();
             var form = new CompanyInfoForm();
             form.Show();
             
@@ -600,7 +600,7 @@ namespace BIG.Present
 
         private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Close();
+            Hide();
             var form = new CompanyInfoForm();
             form.Show();
            
@@ -608,7 +608,7 @@ namespace BIG.Present
 
         private void pictureBox9_Click(object sender, EventArgs e)
         {
-            Close();
+            Hide();
             var form = new EmployeeForm();
             form.Show();
             
@@ -616,21 +616,21 @@ namespace BIG.Present
 
         private void linkLabel9_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Close();
+            Hide();
             var form = new EmployeeForm();
             form.Show();
         }
 
         private void pictureBox10_Click(object sender, EventArgs e)
         {
-            Close();
+            Hide();
             var form = new ReportEmployee();
             form.Show();
         }
 
         private void linkLabel10_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Close();
+            Hide();
             var form = new ReportEmployee();
             form.Show();
         }
@@ -657,6 +657,27 @@ namespace BIG.Present
                     }
                 }
             }
+        }
+
+        private void ribbonAllEmployee_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var form = new ReportAllEmployeeForm();
+            form.Show();
+        }
+
+        private void rb_employee_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var form = new ReportEmployee();
+            form.Show();
+        }
+
+        private void PersonalForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Hide();
+            var form = new MainForm();
+            form.Show();
         }
     }
 }

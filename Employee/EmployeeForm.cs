@@ -17,23 +17,25 @@ using Neurotec.Biometrics;
 using System.Diagnostics;
 namespace BIG.Present
 {
-
+    
     public partial class EmployeeForm : Form
     {
+        WebCam webcam;
         private ThaiIDCard CardID = new ThaiIDCard();
         public string currentImgName = "";
         Nffv _engine;
+         
         public EmployeeForm()
         {
-            InitializeComponent();
+            
+            InitializeComponent(); 
             initialCombobox();
 
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
         public EmployeeForm(Nffv engine)
-        {
-
+        { 
             _engine = engine;
             InitializeComponent();
             initialCombobox();
@@ -42,8 +44,7 @@ namespace BIG.Present
         }
 
         public EmployeeForm(Nffv engine, string pid)
-        {
-
+        { 
             _engine = engine;
             InitializeComponent();
             initialCombobox();
@@ -53,13 +54,12 @@ namespace BIG.Present
         }
 
         public EmployeeForm(BIG.Model.Employee emp)
-        {
+        { 
             this.employee = emp;
         }
 
         public EmployeeForm(string emp_id, string mode)
-        {
-
+        { 
             InitializeComponent();
             initialCombobox();
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -75,7 +75,11 @@ namespace BIG.Present
             }
 
         }
-
+        private void EmployeeForm_Load(object sender, EventArgs e)
+        {
+            webcam = new WebCam();
+            webcam.InitializeWebCam(ref imgVideo);
+        }
         #region ===Properties===
 
         private byte[] _photo;
@@ -196,7 +200,8 @@ namespace BIG.Present
 
         private void initialCombobox()
         {
-            GenEmployeeID();
+            //GenEmployeeIDSamutSakorn();
+             GenEmployeeID();
 
             //Province
             this.InitialProvince();
@@ -315,6 +320,7 @@ namespace BIG.Present
                 }
             }
         }
+
         private void InitialDistrict()
         {
             if (c_cbo_amp.SelectedItem != null)
@@ -509,6 +515,7 @@ namespace BIG.Present
                 cbo_status.SelectedIndex = 0;
             }
         }
+
         public void initialSubEmpStatus()
         {
             cbo_substatus.Items.Clear();
@@ -522,6 +529,7 @@ namespace BIG.Present
                 cbo_substatus.SelectedIndex = 0;
             }
         }
+
         private void ClearControl()
         {
 
@@ -1194,6 +1202,7 @@ namespace BIG.Present
             }
             return result;
         }
+
         private bool CheckAlreadyEmployee(string idcard)
         {
             var result = false;
@@ -1221,10 +1230,12 @@ namespace BIG.Present
         {
             EmployeeServices.Add(emp);
         }
+
         private void UploadFingerScan(BIG.Model.FingerScan fin)
         {
             FingerScanServices.Add(fin);
         }
+
         private void UpdateEmployee(BIG.Model.Employee emp)
         {
             EmployeeServices.UpdateEmployee(emp);
@@ -1274,10 +1285,12 @@ namespace BIG.Present
         {
             EquiptmentServices.Add(lstEQ);
         }
+
         private void CreateDeduction(List<BIG.Model.Deduction> lstDe)
         {
             DeductionService.Add(lstDe);
         }
+
         private string GenNewEmployeeID()
         {
             var ret = "";
@@ -1286,7 +1299,7 @@ namespace BIG.Present
                 var lastemp_id = EmployeeServices.GetLastEmployeeID();
                 if (lastemp_id == "")
                 {
-                    lastemp_id = "BIGS590101000";
+                    lastemp_id = "60A000";
                 }
                 var running = lastemp_id.Substring(lastemp_id.Length - 3, 3);
                 var nextnumber = Convert.ToDecimal(running) + 1;
@@ -1299,13 +1312,15 @@ namespace BIG.Present
             }
             return ret;
         }
-
+        
         private void GenEmployeeID()
         {
             try
             {
                 var nextemp_id = "";
-                var lastemp_id = EmployeeServices.GetLastEmployeeID();
+                //var lastemp_id = EmployeeServices.GetLastEmployeeID(); 
+                var lastemp_id = EmployeeServices.GetLastEmployeeID(); 
+                 
                 if (lastemp_id == "")
                 {
                     lastemp_id = "BIGS590101000";
@@ -1320,6 +1335,55 @@ namespace BIG.Present
                 lb_isnewemp.Text = "*รหัสพนักงานล่าสุด (" + lastemp + ")";
                 txt_empid.Text = nextemp;
             }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private string GenNewEmployeeIDSamutSakorn()
+        {
+            var ret = "";
+            try
+            {
+                var lastemp_id = EmployeeServices.GetLastEmployeeIDSmutSakorn();
+                if (lastemp_id == "")
+                { 
+                    lastemp_id = "60A000";
+                }
+                var running = lastemp_id.Substring(lastemp_id.Length - 3, 3);
+                var nextnumber = Convert.ToDecimal(running) + 1;
+                lastemp_id = DateTime.Now.ToString("yy") + EmployeeServices.getMonth() + String.Format("{0:000}", nextnumber); ;
+                ret = lastemp_id;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return ret;
+        }
+
+        private void GenEmployeeIDSamutSakorn()
+        {
+            try
+            {
+                var nextemp_id = ""; 
+                var lastemp_id = EmployeeServices.GetLastEmployeeIDSmutSakorn();
+
+                if (lastemp_id == "")
+                { 
+                    lastemp_id = "60A000";
+                }
+                var running = lastemp_id.Substring(lastemp_id.Length - 3, 3);
+                var lastnumber = Convert.ToDecimal(running);
+                var nextnumber = Convert.ToDecimal(running) + 1;
+                lastemp_id = DateTime.Now.ToString("yy") + EmployeeServices.getMonth() + String.Format("{0:000}", lastnumber);
+                nextemp_id = DateTime.Now.ToString("yy") + EmployeeServices.getMonth() + String.Format("{0:000}", nextnumber);
+
+                lb_isnewemp.Text = "*รหัสพนักงานล่าสุด (" + lastemp_id + ")";
+                txt_empid.Text = nextemp_id;
+            }
+
             catch (Exception ex)
             {
                 throw ex;
@@ -1533,6 +1597,7 @@ namespace BIG.Present
                         //ไม่มีข้อมูลพนักงานอยู่ในระบบ
                         lb_isnewemp.Text = "*พนักงานใหม่";
                         txt_empid.Text = GenNewEmployeeID();
+                        //txt_empid.Text = GenNewEmployeeIDSamutSakorn();
                         txt_pid.Text = idcard.Citizenid;
                         cbo_title_th.SelectedItem = idcard.Th_Prefix;
                         cbo_title_en.SelectedItem = idcard.En_Prefix;
@@ -2176,19 +2241,7 @@ namespace BIG.Present
                         {
                             chk_7.Checked = true;
                             txt_eq_7.Text = item.EQUIP_AMOUNT;
-                        }
-                        //if (item.EQUIP_NAME == "ถุงเท้า")
-                        //{
-                        //    txt_deduc4.Text = item.EQUIP_AMOUNT;
-                        //}
-                        //if (item.EQUIP_NAME == "เสื้อยืด")
-                        //{
-                        //    txt_deduc5.Text = item.EQUIP_AMOUNT;
-                        //}
-                        //if (item.EQUIP_NAME == "ค่าบัตร")
-                        //{
-                        //    txt_deduc6.Text = item.EQUIP_AMOUNT;
-                        //}
+                        } 
                     }
                 }
             }
@@ -2315,16 +2368,80 @@ namespace BIG.Present
             return result;
         }
 
+        private void DownloadRefPDF(ReferenceDocument doc)
+        {
+            FileStream FS = null;
+            byte[] dbbyte;
+            try
+            {
+                FolderBrowserDialog fbd = new FolderBrowserDialog();
+                DialogResult result = fbd.ShowDialog();
+                if (!string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    dbbyte = (byte[])doc.FILEBINARY;
+                    string filepath = fbd.SelectedPath + "\\" + doc.FILENAME;
+                    FS = new FileStream(filepath, System.IO.FileMode.Create);
+                    FS.Write(dbbyte, 0, dbbyte.Length);
+
+                    MessageBox.Show("ดาวน์โหลดเอกสาร " + doc.FILENAME + " เรียบร้อย!!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new System.ArgumentException(ex.Message);
+            }
+            finally
+            {
+                if (FS != null)
+                {
+                    FS.Close();
+                }
+            }
+        }
+
+        private void DownloadOtherPDF(OtherDocument doc)
+        {
+            FileStream FS = null;
+            byte[] dbbyte;
+            try
+            {
+                FolderBrowserDialog fbd = new FolderBrowserDialog();
+                DialogResult result = fbd.ShowDialog();
+                if (!string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    dbbyte = (byte[])doc.FILEBINARY;
+                    string filepath = fbd.SelectedPath + "\\" + doc.FILENAME;
+                    FS = new FileStream(filepath, System.IO.FileMode.Create);
+                    FS.Write(dbbyte, 0, dbbyte.Length);
+
+                    MessageBox.Show("ดาวน์โหลดเอกสาร " + doc.FILENAME + " เรียบร้อย!!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new System.ArgumentException(ex.Message);
+            }
+            finally
+            {
+
+                if (FS != null)
+                {
+                    FS.Close();
+                }
+            }
+        }
+
         #endregion
 
         #region ===Events===
-
-
+         
         public BIG.Model.Employee employee { get; set; }
 
         private void EmployeeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            Hide();
+            var from = new PersonalForm();
+            from.Show(); 
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -2410,7 +2527,7 @@ namespace BIG.Present
                 MessageBox.Show("เครื่องสแกนนิ้วยังไม่พร้อมใช้งาน กรณาลองอีกครั้ง");// MessageBoxButtons.OK, MessageBoxIcon.Error);
                 var frm = new MainForm();
                 frm.Show();
-                Close();
+                Hide();
             }
 
             var emp = new EmployeeForm(engine);
@@ -2612,10 +2729,41 @@ namespace BIG.Present
             }
         }
 
+        #region ==== camera ====
+
+        private void bntCaptureIDCard_Click(object sender, EventArgs e)
+        {
+            imgCaptureIDCard.Image = imgVideo.Image;
+            pic_copy_idcard.Image = imgVideo.Image;
+        }
+
         private void btn_ref_img_Click(object sender, EventArgs e)
         {
-
+            EmployeeTab.SelectTab(tabCamera);
+            webcam.Start();
         }
+        private void bntCapture_Click(object sender, EventArgs e)
+        {
+            imgCurrentImage.Image = imgVideo.Image;
+            pic_current.Image =  imgVideo.Image;
+        }
+        private void bntSave_Click(object sender, EventArgs e)
+        {
+            pic_current.Image = imgCaptureIDCard.Image;
+        }
+
+        private void bntVideoFormat_Click(object sender, EventArgs e)
+        {
+            webcam.ResolutionSetting();
+        }
+        private void bntVideoSource_Click(object sender, EventArgs e)
+        {
+            webcam.AdvanceSetting();
+        }
+
+
+
+        #endregion
 
         private void btn_new_img_del_Click(object sender, EventArgs e)
         {
@@ -2643,7 +2791,7 @@ namespace BIG.Present
             //mainform.Show();
             var main = new PersonalForm();
             main.Show();
-            Close();
+            Hide();
         }
 
         private void rb_new_Click(object sender, EventArgs e)
@@ -2658,9 +2806,9 @@ namespace BIG.Present
                 MessageBox.Show("เครื่องสแกนนิ้วยังไม่พร้อมใช้งาน กรณาลองอีกครั้ง");// MessageBoxButtons.OK, MessageBoxIcon.Error);
                 var frm = new MainForm();
                 frm.Show();
-                Close();
+                
             }
-            Close();
+            Hide();
             var emp = new EmployeeForm(engine);
             emp.Show();
 
@@ -2671,7 +2819,7 @@ namespace BIG.Present
             this.Cursor = Cursors.WaitCursor;
             var frm = new CompanyInfoForm();
             frm.Show();
-            Close();
+            Hide();
         }
 
         private void rb_load_idcard_Click(object sender, EventArgs e)
@@ -2684,7 +2832,7 @@ namespace BIG.Present
             this.Cursor = Cursors.WaitCursor;
             var frm = new PersonalForm();
             frm.Show();
-            Close();
+            Hide();
         }
 
         private void rb_load_pid_Click(object sender, EventArgs e)
@@ -2700,7 +2848,7 @@ namespace BIG.Present
 
         private void rb_logout_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             var frm = new LoginForm();
             frm.Show();
         }
@@ -2759,70 +2907,7 @@ namespace BIG.Present
         }
 
         #endregion
-
-        private void DownloadRefPDF(ReferenceDocument doc)
-        {
-            FileStream FS = null;
-            byte[] dbbyte;
-            try
-            {
-                FolderBrowserDialog fbd = new FolderBrowserDialog();
-                DialogResult result = fbd.ShowDialog();
-                if (!string.IsNullOrWhiteSpace(fbd.SelectedPath))
-                {
-                    dbbyte = (byte[])doc.FILEBINARY;
-                    string filepath = fbd.SelectedPath + "\\" + doc.FILENAME;
-                    FS = new FileStream(filepath, System.IO.FileMode.Create);
-                    FS.Write(dbbyte, 0, dbbyte.Length);
-
-                    MessageBox.Show("ดาวน์โหลดเอกสาร " + doc.FILENAME + " เรียบร้อย!!!");
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new System.ArgumentException(ex.Message);
-            }
-            finally
-            {
-                if (FS != null)
-                {
-                    FS.Close();
-                }
-            }
-        }
-
-        private void DownloadOtherPDF(OtherDocument doc)
-        {
-            FileStream FS = null;
-            byte[] dbbyte;
-            try
-            {
-                FolderBrowserDialog fbd = new FolderBrowserDialog();
-                DialogResult result = fbd.ShowDialog();
-                if (!string.IsNullOrWhiteSpace(fbd.SelectedPath))
-                {
-                    dbbyte = (byte[])doc.FILEBINARY;
-                    string filepath = fbd.SelectedPath + "\\" + doc.FILENAME;
-                    FS = new FileStream(filepath, System.IO.FileMode.Create);
-                    FS.Write(dbbyte, 0, dbbyte.Length);
-
-                    MessageBox.Show("ดาวน์โหลดเอกสาร " + doc.FILENAME + " เรียบร้อย!!!");
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new System.ArgumentException(ex.Message);
-            }
-            finally
-            {
-
-                if (FS != null)
-                {
-                    FS.Close();
-                }
-            }
-        }
-
+        
         #region ===Upload doc idcard===
 
         private void btn_upload_copy_idcard_Click(object sender, EventArgs e)
@@ -3277,69 +3362,69 @@ namespace BIG.Present
             if (txt_empid.Text != "")
             {
                 var form = new ReportEmployee(txt_empid.Text);
-                Close();
+                Hide();
                 form.Show();
             }
             else
             {
                 var form = new ReportEmployee(txt_empid.Text);
                 form.Show();
-                Close();
+                Hide();
             }
         }
 
         private void ribbonButton21_CanvasChanged(object sender, EventArgs e)
         {
-            Close();
+            Hide();
             var pform = new PersonalForm();
             pform.Show();
         }
 
         private void ribbonButton22_Click(object sender, EventArgs e)
         {
-            Close();
+            Hide();
             var pform = new PersonalForm();
             pform.Show();
         }
 
         private void ribbonButton23_Click(object sender, EventArgs e)
         {
-            Close();
+            Hide();
             var pform = new PersonalForm();
             pform.Show();
         }
 
         private void ribbonButton24_Click(object sender, EventArgs e)
         {
-            Close();
+            Hide();
             var pform = new PersonalForm();
             pform.Show();
         }
 
         private void ribbonButton17_Click(object sender, EventArgs e)
         {
-            Close();
-            var pform = new ReportEmployee();
+            Hide();
+            var pform = new ReportAllEmployeeForm();
             pform.Show();
         }
 
         private void ribbonButton18_Click(object sender, EventArgs e)
         {
-            Close();
+            Hide();
             var pform = new ReportEmployee();
             pform.Show();
         }
 
         private void ribbonButton19_Click(object sender, EventArgs e)
         {
-            Close();
+            Hide();
             var pform = new ReportEmployee();
             pform.Show();
         }
 
         private void ribbonButton20_Click(object sender, EventArgs e)
         {
-            Close();
+            Hide();
             var pform = new ReportEmployee();
             pform.Show();
         }
@@ -3588,13 +3673,13 @@ namespace BIG.Present
             var from = new PersonalForm();
 
             from.Show();
-            Close();
+            Hide();
         }
         #endregion
 
         private void ribbonButton21_Click(object sender, EventArgs e)
         {
-            Close();
+            Hide();
             this.Cursor = Cursors.WaitCursor;
             var frm = new PersonalForm();
             frm.Show();
@@ -3998,8 +4083,14 @@ namespace BIG.Present
             }
         }
 
+
+
+
+
+
+
+
         #endregion
-
-
+         
     }
 }

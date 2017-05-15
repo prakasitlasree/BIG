@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PersonalForm));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.ribbonUpDown1 = new System.Windows.Forms.RibbonUpDown();
@@ -69,6 +69,7 @@
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.left_menu1 = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
+            this.pic_emp = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -85,16 +86,12 @@
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel9 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton10 = new System.Windows.Forms.RibbonButton();
-            this.ribbonPanel10 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton11 = new System.Windows.Forms.RibbonButton();
-            this.ribbonPanel11 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton16 = new System.Windows.Forms.RibbonButton();
+            this.rb_employee = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel8 = new System.Windows.Forms.RibbonPanel();
             this.ribbonButton14 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton15 = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton22 = new System.Windows.Forms.RibbonButton();
+            this.ribbonAllEmployee = new System.Windows.Forms.RibbonButton();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonSeparator2 = new System.Windows.Forms.RibbonSeparator();
             this.ribbonSeparator3 = new System.Windows.Forms.RibbonSeparator();
@@ -149,7 +146,6 @@
             this.rb_new_emp = new System.Windows.Forms.RibbonOrbMenuItem();
             this.rb_load_emp = new System.Windows.Forms.RibbonOrbMenuItem();
             this.rb_close = new System.Windows.Forms.RibbonOrbMenuItem();
-            this.pic_emp = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -165,13 +161,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.left_menu1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_emp)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_emp)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonUpDown1
@@ -193,7 +189,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 121);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -211,7 +207,7 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel6, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.advancedFlowLayoutPanel1, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(7, 7);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -228,7 +224,7 @@
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.dataGridView1, 0, 1);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(264, 4);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 182F));
@@ -245,7 +241,7 @@
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel7, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -264,7 +260,7 @@
             this.tableLayoutPanel4.Controls.Add(this.txt_area, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.dt_startwork, 1, 1);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(531, 7);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 5;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
@@ -287,7 +283,7 @@
             "==ชื่อ นามสกุล มากไปน้อย==",
             "==ชื่อ นามสกุล น้อยไปมาก=="});
             this.cbo_order.Location = new System.Drawing.Point(155, 117);
-            this.cbo_order.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbo_order.Margin = new System.Windows.Forms.Padding(4);
             this.cbo_order.Name = "cbo_order";
             this.cbo_order.Size = new System.Drawing.Size(353, 24);
             this.cbo_order.TabIndex = 5;
@@ -332,7 +328,7 @@
             // 
             this.txt_area.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_area.Location = new System.Drawing.Point(155, 7);
-            this.txt_area.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_area.Margin = new System.Windows.Forms.Padding(4);
             this.txt_area.Name = "txt_area";
             this.txt_area.Size = new System.Drawing.Size(353, 22);
             this.txt_area.TabIndex = 8;
@@ -341,7 +337,7 @@
             // 
             this.dt_startwork.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dt_startwork.Location = new System.Drawing.Point(155, 44);
-            this.dt_startwork.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dt_startwork.Margin = new System.Windows.Forms.Padding(4);
             this.dt_startwork.Name = "dt_startwork";
             this.dt_startwork.Size = new System.Drawing.Size(353, 22);
             this.dt_startwork.TabIndex = 7;
@@ -360,7 +356,7 @@
             this.tableLayoutPanel7.Controls.Add(this.btn_search, 1, 3);
             this.tableLayoutPanel7.Controls.Add(this.cbo_site, 1, 2);
             this.tableLayoutPanel7.Location = new System.Drawing.Point(7, 7);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 5;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
@@ -375,7 +371,7 @@
             // 
             this.txt_pid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_pid.Location = new System.Drawing.Point(155, 44);
-            this.txt_pid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_pid.Margin = new System.Windows.Forms.Padding(4);
             this.txt_pid.Name = "txt_pid";
             this.txt_pid.Size = new System.Drawing.Size(353, 22);
             this.txt_pid.TabIndex = 2;
@@ -395,7 +391,7 @@
             // 
             this.txt_name_sname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_name_sname.Location = new System.Drawing.Point(155, 7);
-            this.txt_name_sname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_name_sname.Margin = new System.Windows.Forms.Padding(4);
             this.txt_name_sname.Name = "txt_name_sname";
             this.txt_name_sname.Size = new System.Drawing.Size(353, 22);
             this.txt_name_sname.TabIndex = 1;
@@ -425,7 +421,7 @@
             // btn_search
             // 
             this.btn_search.Location = new System.Drawing.Point(155, 115);
-            this.btn_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(4);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(155, 35);
             this.btn_search.TabIndex = 0;
@@ -438,7 +434,7 @@
             this.cbo_site.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_site.FormattingEnabled = true;
             this.cbo_site.Location = new System.Drawing.Point(155, 80);
-            this.cbo_site.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbo_site.Margin = new System.Windows.Forms.Padding(4);
             this.cbo_site.Name = "cbo_site";
             this.cbo_site.Size = new System.Drawing.Size(353, 24);
             this.cbo_site.TabIndex = 5;
@@ -451,35 +447,35 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.Location = new System.Drawing.Point(4, 186);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.Size = new System.Drawing.Size(1054, 352);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -494,7 +490,7 @@
             this.advancedFlowLayoutPanel1.Controls.Add(this.left_menu1);
             this.advancedFlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedFlowLayoutPanel1.Location = new System.Drawing.Point(4, 4);
-            this.advancedFlowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.advancedFlowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.advancedFlowLayoutPanel1.Name = "advancedFlowLayoutPanel1";
             this.advancedFlowLayoutPanel1.Size = new System.Drawing.Size(252, 542);
             this.advancedFlowLayoutPanel1.TabIndex = 11;
@@ -518,7 +514,7 @@
             this.tableLayoutPanel8.Controls.Add(this.linkLabel3, 1, 2);
             this.tableLayoutPanel8.Controls.Add(this.pictureBox4, 0, 2);
             this.tableLayoutPanel8.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 6;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
@@ -550,7 +546,7 @@
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = global::BIG.Present.Properties.Resources.Script;
             this.pictureBox6.Location = new System.Drawing.Point(20, 152);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(32, 29);
             this.pictureBox6.TabIndex = 11;
@@ -562,7 +558,7 @@
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::BIG.Present.Properties.Resources.Home;
             this.pictureBox2.Location = new System.Drawing.Point(20, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(32, 29);
             this.pictureBox2.TabIndex = 3;
@@ -598,7 +594,7 @@
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = global::BIG.Present.Properties.Resources.Toolbox;
             this.pictureBox5.Location = new System.Drawing.Point(21, 115);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(31, 29);
             this.pictureBox5.TabIndex = 9;
@@ -610,7 +606,7 @@
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = global::BIG.Present.Properties.Resources.Flag;
             this.pictureBox3.Location = new System.Drawing.Point(20, 41);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(32, 29);
             this.pictureBox3.TabIndex = 5;
@@ -646,7 +642,7 @@
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(20, 78);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(32, 29);
             this.pictureBox4.TabIndex = 7;
@@ -663,12 +659,24 @@
             this.left_menu1.ExpandedHeight = 0;
             this.left_menu1.IsExpanded = true;
             this.left_menu1.Location = new System.Drawing.Point(4, 12);
-            this.left_menu1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.left_menu1.Margin = new System.Windows.Forms.Padding(4);
             this.left_menu1.Name = "left_menu1";
             this.left_menu1.Size = new System.Drawing.Size(244, 440);
             this.left_menu1.TabIndex = 2;
             this.left_menu1.Text = "เมนูลัด";
             this.left_menu1.UseAnimation = true;
+            // 
+            // pic_emp
+            // 
+            this.pic_emp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
+            this.pic_emp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pic_emp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(130)))), ((int)(((byte)(180)))));
+            this.pic_emp.Image = global::BIG.Present.Properties.Resources.pid_icon1;
+            this.pic_emp.Location = new System.Drawing.Point(5, 238);
+            this.pic_emp.Name = "pic_emp";
+            this.pic_emp.Size = new System.Drawing.Size(229, 191);
+            this.pic_emp.TabIndex = 2;
+            this.pic_emp.TabStop = false;
             // 
             // panel1
             // 
@@ -678,7 +686,7 @@
             this.panel1.Controls.Add(this.tableLayoutPanel5);
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(130)))), ((int)(((byte)(180)))));
             this.panel1.Location = new System.Drawing.Point(5, 59);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(233, 159);
             this.panel1.TabIndex = 1;
@@ -698,7 +706,7 @@
             this.tableLayoutPanel5.Controls.Add(this.linkLabel6, 1, 3);
             this.tableLayoutPanel5.Controls.Add(this.pictureBox1, 0, 3);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(5, 5);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 4;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
@@ -716,7 +724,7 @@
             this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox7.Image = global::BIG.Present.Properties.Resources.Home;
             this.pictureBox7.Location = new System.Drawing.Point(18, 5);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(32, 29);
             this.pictureBox7.TabIndex = 3;
@@ -742,7 +750,7 @@
             this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox9.Image = global::BIG.Present.Properties.Resources.user_add_icon;
             this.pictureBox9.Location = new System.Drawing.Point(18, 43);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(32, 29);
             this.pictureBox9.TabIndex = 5;
@@ -781,7 +789,7 @@
             this.pictureBox10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox10.Image = global::BIG.Present.Properties.Resources.Report;
             this.pictureBox10.Location = new System.Drawing.Point(18, 81);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(32, 29);
             this.pictureBox10.TabIndex = 7;
@@ -807,7 +815,7 @@
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::BIG.Present.Properties.Resources.Application;
             this.pictureBox1.Location = new System.Drawing.Point(18, 119);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 30);
             this.pictureBox1.TabIndex = 11;
@@ -834,36 +842,15 @@
             // 
             // ribbonPanel9
             // 
-            this.ribbonPanel9.Items.Add(this.ribbonButton10);
+            this.ribbonPanel9.Items.Add(this.rb_employee);
             this.ribbonPanel9.Text = "";
             // 
-            // ribbonButton10
+            // rb_employee
             // 
-            this.ribbonButton10.Image = global::BIG.Present.Properties.Resources.Boss;
-            this.ribbonButton10.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton10.SmallImage")));
-            this.ribbonButton10.Text = "ตามชื่อพนักงาน";
-            // 
-            // ribbonPanel10
-            // 
-            this.ribbonPanel10.Items.Add(this.ribbonButton11);
-            this.ribbonPanel10.Text = "";
-            // 
-            // ribbonButton11
-            // 
-            this.ribbonButton11.Image = global::BIG.Present.Properties.Resources.Find;
-            this.ribbonButton11.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.SmallImage")));
-            this.ribbonButton11.Text = "ตามรหัสพนักงาน";
-            // 
-            // ribbonPanel11
-            // 
-            this.ribbonPanel11.Items.Add(this.ribbonButton16);
-            this.ribbonPanel11.Text = "";
-            // 
-            // ribbonButton16
-            // 
-            this.ribbonButton16.Image = global::BIG.Present.Properties.Resources.Upload;
-            this.ribbonButton16.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton16.SmallImage")));
-            this.ribbonButton16.Text = "ตามบัตรประชาชน";
+            this.rb_employee.Image = global::BIG.Present.Properties.Resources.Boss;
+            this.rb_employee.SmallImage = ((System.Drawing.Image)(resources.GetObject("rb_employee.SmallImage")));
+            this.rb_employee.Text = "ประวัติพนักงาน";
+            this.rb_employee.Click += new System.EventHandler(this.rb_employee_Click);
             // 
             // ribbonPanel8
             // 
@@ -887,21 +874,22 @@
             // 
             // ribbonPanel7
             // 
-            this.ribbonPanel7.Items.Add(this.ribbonButton22);
+            this.ribbonPanel7.Items.Add(this.ribbonAllEmployee);
             this.ribbonPanel7.Text = "";
             // 
-            // ribbonButton22
+            // ribbonAllEmployee
             // 
-            this.ribbonButton22.Image = global::BIG.Present.Properties.Resources.Stock_graph;
-            this.ribbonButton22.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton22.SmallImage")));
-            this.ribbonButton22.Text = "รายงานทั้งหมด";
+            this.ribbonAllEmployee.Image = global::BIG.Present.Properties.Resources.Stock_graph;
+            this.ribbonAllEmployee.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonAllEmployee.SmallImage")));
+            this.ribbonAllEmployee.Text = "รายชื่อพนักงานทั้งหมด";
+            this.ribbonAllEmployee.Click += new System.EventHandler(this.ribbonAllEmployee_Click);
             // 
             // ribbon1
             // 
             this.ribbon1.CaptionBarVisible = false;
             this.ribbon1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbon1.Location = new System.Drawing.Point(0, 0);
-            this.ribbon1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ribbon1.Margin = new System.Windows.Forms.Padding(4);
             this.ribbon1.Minimized = false;
             this.ribbon1.Name = "ribbon1";
             // 
@@ -1035,8 +1023,6 @@
             // 
             this.ribbonTab5.Panels.Add(this.ribbonPanel7);
             this.ribbonTab5.Panels.Add(this.ribbonPanel9);
-            this.ribbonTab5.Panels.Add(this.ribbonPanel10);
-            this.ribbonTab5.Panels.Add(this.ribbonPanel11);
             this.ribbonTab5.Text = "รายงาน";
             // 
             // ribbonTab6
@@ -1247,18 +1233,6 @@
             this.rb_close.SmallImage = global::BIG.Present.Properties.Resources.Close;
             this.rb_close.Text = "ปิดโปรแกรม";
             // 
-            // pic_emp
-            // 
-            this.pic_emp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
-            this.pic_emp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pic_emp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(130)))), ((int)(((byte)(180)))));
-            this.pic_emp.Image = global::BIG.Present.Properties.Resources.pid_icon1;
-            this.pic_emp.Location = new System.Drawing.Point(5, 238);
-            this.pic_emp.Name = "pic_emp";
-            this.pic_emp.Size = new System.Drawing.Size(229, 191);
-            this.pic_emp.TabIndex = 2;
-            this.pic_emp.TabStop = false;
-            // 
             // PersonalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1268,11 +1242,12 @@
             this.Controls.Add(this.ribbon1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1359, 728);
             this.Name = "PersonalForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ข้อมูลพนักงาน";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PersonalForm_FormClosed);
             this.Load += new System.EventHandler(this.PersonalForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -1293,6 +1268,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.left_menu1.ResumeLayout(false);
             this.left_menu1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_emp)).EndInit();
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
@@ -1300,7 +1276,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_emp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1343,12 +1318,8 @@
         private System.Windows.Forms.RibbonOrbMenuItem rb_load_emp;
         private System.Windows.Forms.RibbonOrbMenuItem rb_close;
         private System.Windows.Forms.RibbonTab ribbonTab2;
-        private System.Windows.Forms.RibbonButton ribbonButton11;
         private System.Windows.Forms.RibbonPanel ribbonPanel9;
-        private System.Windows.Forms.RibbonButton ribbonButton10;
-        private System.Windows.Forms.RibbonPanel ribbonPanel10;
-        private System.Windows.Forms.RibbonPanel ribbonPanel11;
-        private System.Windows.Forms.RibbonButton ribbonButton16;
+        private System.Windows.Forms.RibbonButton rb_employee;
         private System.Windows.Forms.RibbonButton rb_home;
         private System.Windows.Forms.RibbonButton rb_new;
         private System.Windows.Forms.RibbonButton rb_save;
@@ -1360,7 +1331,7 @@
         private System.Windows.Forms.RibbonButton rb_exit;
         private System.Windows.Forms.RibbonButton ribbonButton20;
         private System.Windows.Forms.RibbonButton ribbonButton21;
-        private System.Windows.Forms.RibbonButton ribbonButton22;
+        private System.Windows.Forms.RibbonButton ribbonAllEmployee;
         private System.Windows.Forms.RibbonPanel ribbonPanel7;
         private System.Windows.Forms.Ribbon ribbon1;
         private System.Windows.Forms.RibbonSeparator ribbonSeparator2;

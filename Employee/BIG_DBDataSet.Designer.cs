@@ -11774,48 +11774,21 @@ and EMP_ID = @emp_id";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(BIG_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._currentImagesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.CurrentImages.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._currentImagesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._educationTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Education.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._educationTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._otherDocumentsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.OtherDocuments.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._otherDocumentsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._referenceDocumentsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ReferenceDocuments.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._referenceDocumentsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._sSOTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.SSO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._sSOTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._fingerScanTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.FingerScan.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._fingerScanTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -11828,12 +11801,39 @@ and EMP_ID = @emp_id";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._fingerScanTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.FingerScan.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._currentImagesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.CurrentImages.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._fingerScanTableAdapter.Update(updatedRows));
+                    result = (result + this._currentImagesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._referenceDocumentsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ReferenceDocuments.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._referenceDocumentsTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._otherDocumentsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.OtherDocuments.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._otherDocumentsTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._educationTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Education.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._educationTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -11847,43 +11847,19 @@ and EMP_ID = @emp_id";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(BIG_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._currentImagesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.CurrentImages.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._currentImagesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._educationTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Education.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._educationTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._otherDocumentsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.OtherDocuments.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._otherDocumentsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._referenceDocumentsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ReferenceDocuments.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._referenceDocumentsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._sSOTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.SSO.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._sSOTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._fingerScanTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.FingerScan.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._fingerScanTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -11895,11 +11871,35 @@ and EMP_ID = @emp_id";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._fingerScanTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.FingerScan.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._currentImagesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.CurrentImages.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._fingerScanTableAdapter.Update(addedRows));
+                    result = (result + this._currentImagesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._referenceDocumentsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ReferenceDocuments.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._referenceDocumentsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._otherDocumentsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.OtherDocuments.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._otherDocumentsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._educationTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Education.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._educationTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -11913,35 +11913,11 @@ and EMP_ID = @emp_id";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(BIG_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._fingerScanTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.FingerScan.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._educationTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Education.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._fingerScanTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._companyInfoTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.CompanyInfo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._companyInfoTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._sSOTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.SSO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._sSOTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._referenceDocumentsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ReferenceDocuments.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._referenceDocumentsTableAdapter.Update(deletedRows));
+                    result = (result + this._educationTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -11953,11 +11929,11 @@ and EMP_ID = @emp_id";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._educationTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Education.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._referenceDocumentsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ReferenceDocuments.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._educationTableAdapter.Update(deletedRows));
+                    result = (result + this._referenceDocumentsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -11966,6 +11942,30 @@ and EMP_ID = @emp_id";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._currentImagesTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._companyInfoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.CompanyInfo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._companyInfoTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._fingerScanTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.FingerScan.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._fingerScanTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._sSOTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.SSO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._sSOTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

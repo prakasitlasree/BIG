@@ -28,22 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportAllEmployeeForm));
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.employeeReportBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.AllEmployeeDS = new BIG.Present.AllEmployeeDS();
             this.ribbonPanel6 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton12 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton13 = new System.Windows.Forms.RibbonButton();
+            this.ribbonSearchbyPID = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel8 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton14 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton15 = new System.Windows.Forms.RibbonButton();
+            this.ribbonSearchbyName = new System.Windows.Forms.RibbonButton();
             this.ribbonTab5 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton9 = new System.Windows.Forms.RibbonButton();
+            this.ribbonAllReport = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel9 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton10 = new System.Windows.Forms.RibbonButton();
-            this.ribbonPanel10 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton11 = new System.Windows.Forms.RibbonButton();
-            this.ribbonPanel11 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton16 = new System.Windows.Forms.RibbonButton();
+            this.ribbon_Employee = new System.Windows.Forms.RibbonButton();
             this.ribbonTab6 = new System.Windows.Forms.RibbonTab();
             this.ribbonTab7 = new System.Windows.Forms.RibbonTab();
             this.ribbonSeparator4 = new System.Windows.Forms.RibbonSeparator();
@@ -70,95 +68,89 @@
             this.ribbonSeparator1 = new System.Windows.Forms.RibbonSeparator();
             this.ribbonSeparator2 = new System.Windows.Forms.RibbonSeparator();
             this.ribbonSeparator3 = new System.Windows.Forms.RibbonSeparator();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.lb_search1 = new System.Windows.Forms.Label();
+            this.start_date = new System.Windows.Forms.DateTimePicker();
+            this.Btn_Search = new System.Windows.Forms.Button();
+            this.end_date = new System.Windows.Forms.DateTimePicker();
+            this.lb_search2 = new System.Windows.Forms.Label();
+            this.Btn_ShowAll = new System.Windows.Forms.Button();
+            this.allEmployeeDSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.EmployeeReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.EmployeeReportTableAdapter = new BIG.Present.AllEmployeeDSTableAdapters.EmployeeReportTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeReportBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AllEmployeeDS)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.allEmployeeDSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeReportBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // employeeReportBindingSource1
+            // 
+            this.employeeReportBindingSource1.DataMember = "EmployeeReport";
+            this.employeeReportBindingSource1.DataSource = this.AllEmployeeDS;
+            // 
+            // AllEmployeeDS
+            // 
+            this.AllEmployeeDS.DataSetName = "AllEmployeeDS";
+            this.AllEmployeeDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ribbonPanel6
             // 
-            this.ribbonPanel6.Items.Add(this.ribbonButton12);
-            this.ribbonPanel6.Items.Add(this.ribbonButton13);
+            this.ribbonPanel6.Items.Add(this.ribbonSearchbyPID);
             this.ribbonPanel6.Text = "";
             // 
-            // ribbonButton12
+            // ribbonSearchbyPID
             // 
-            this.ribbonButton12.Image = global::BIG.Present.Properties.Resources.Toolbox2;
-            this.ribbonButton12.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton12.SmallImage")));
-            this.ribbonButton12.Text = "ค้นหาตามไซต์งาน";
-            // 
-            // ribbonButton13
-            // 
-            this.ribbonButton13.Image = global::BIG.Present.Properties.Resources.Blue_pin;
-            this.ribbonButton13.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton13.SmallImage")));
-            this.ribbonButton13.Text = "ค้นหาตามเขต";
+            this.ribbonSearchbyPID.Image = global::BIG.Present.Properties.Resources.Toolbox2;
+            this.ribbonSearchbyPID.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonSearchbyPID.SmallImage")));
+            this.ribbonSearchbyPID.Text = "ค้นหาบัตรประชาชน";
+            this.ribbonSearchbyPID.Click += new System.EventHandler(this.ribbonSearchbyPID_Click);
             // 
             // ribbonPanel8
             // 
-            this.ribbonPanel8.Items.Add(this.ribbonButton14);
-            this.ribbonPanel8.Items.Add(this.ribbonButton15);
+            this.ribbonPanel8.Items.Add(this.ribbonSearchbyName);
             this.ribbonPanel8.Text = "";
             // 
-            // ribbonButton14
+            // ribbonSearchbyName
             // 
-            this.ribbonButton14.Image = global::BIG.Present.Properties.Resources.People1;
-            this.ribbonButton14.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton14.SmallImage")));
-            this.ribbonButton14.Text = "ค้นหาตามชื่อ-สกุล";
-            // 
-            // ribbonButton15
-            // 
-            this.ribbonButton15.Image = global::BIG.Present.Properties.Resources.Calendar;
-            this.ribbonButton15.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton15.SmallImage")));
-            this.ribbonButton15.Text = "ค้นหาตามวันเริ่มงาน";
+            this.ribbonSearchbyName.Image = global::BIG.Present.Properties.Resources.People1;
+            this.ribbonSearchbyName.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonSearchbyName.SmallImage")));
+            this.ribbonSearchbyName.Text = "ค้นหาตามชื่อ-สกุล";
+            this.ribbonSearchbyName.Click += new System.EventHandler(this.ribbonSearchbyName_Click);
             // 
             // ribbonTab5
             // 
             this.ribbonTab5.Panels.Add(this.ribbonPanel7);
             this.ribbonTab5.Panels.Add(this.ribbonPanel9);
-            this.ribbonTab5.Panels.Add(this.ribbonPanel10);
-            this.ribbonTab5.Panels.Add(this.ribbonPanel11);
             this.ribbonTab5.Text = "รายงาน";
             // 
             // ribbonPanel7
             // 
-            this.ribbonPanel7.Items.Add(this.ribbonButton9);
+            this.ribbonPanel7.Items.Add(this.ribbonAllReport);
             this.ribbonPanel7.Text = "...";
             // 
-            // ribbonButton9
+            // ribbonAllReport
             // 
-            this.ribbonButton9.Image = global::BIG.Present.Properties.Resources.Stock_graph;
-            this.ribbonButton9.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.SmallImage")));
-            this.ribbonButton9.Text = "รายงานทั้งหมด";
+            this.ribbonAllReport.Image = global::BIG.Present.Properties.Resources.Stock_graph;
+            this.ribbonAllReport.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonAllReport.SmallImage")));
+            this.ribbonAllReport.Text = "รายชื่อพนักงานทั้งหมด";
+            this.ribbonAllReport.Click += new System.EventHandler(this.ribbonAllReport_Click);
             // 
             // ribbonPanel9
             // 
-            this.ribbonPanel9.Items.Add(this.ribbonButton10);
+            this.ribbonPanel9.Items.Add(this.ribbon_Employee);
             this.ribbonPanel9.Text = "";
             // 
-            // ribbonButton10
+            // ribbon_Employee
             // 
-            this.ribbonButton10.Image = global::BIG.Present.Properties.Resources.Boss;
-            this.ribbonButton10.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton10.SmallImage")));
-            this.ribbonButton10.Text = "ตามชื่อพนักงาน";
-            // 
-            // ribbonPanel10
-            // 
-            this.ribbonPanel10.Items.Add(this.ribbonButton11);
-            this.ribbonPanel10.Text = "";
-            // 
-            // ribbonButton11
-            // 
-            this.ribbonButton11.Image = global::BIG.Present.Properties.Resources.Find;
-            this.ribbonButton11.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.SmallImage")));
-            this.ribbonButton11.Text = "ตามรหัสพนักงาน";
-            // 
-            // ribbonPanel11
-            // 
-            this.ribbonPanel11.Items.Add(this.ribbonButton16);
-            this.ribbonPanel11.Text = "";
-            // 
-            // ribbonButton16
-            // 
-            this.ribbonButton16.Image = global::BIG.Present.Properties.Resources.Upload;
-            this.ribbonButton16.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton16.SmallImage")));
-            this.ribbonButton16.Text = "ตามบัตรประชาชน";
+            this.ribbon_Employee.Image = global::BIG.Present.Properties.Resources.Boss;
+            this.ribbon_Employee.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbon_Employee.SmallImage")));
+            this.ribbon_Employee.Text = "รายงานประวัติบุคคล";
+            this.ribbon_Employee.Click += new System.EventHandler(this.ribbon_personale_detail_Click);
             // 
             // ribbonTab6
             // 
@@ -212,12 +204,14 @@
             this.rb_home.SmallImage = ((System.Drawing.Image)(resources.GetObject("rb_home.SmallImage")));
             this.rb_home.Text = "หน้าหลัก";
             this.rb_home.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            this.rb_home.Click += new System.EventHandler(this.rb_home_Click);
             // 
             // rb_new
             // 
             this.rb_new.Image = global::BIG.Present.Properties.Resources.User_group;
             this.rb_new.SmallImage = ((System.Drawing.Image)(resources.GetObject("rb_new.SmallImage")));
             this.rb_new.Text = "เพิ่มพนักงาน";
+            this.rb_new.Click += new System.EventHandler(this.rb_new_Click);
             // 
             // rb_load_pid
             // 
@@ -246,6 +240,7 @@
             this.rb_print.SmallImage = ((System.Drawing.Image)(resources.GetObject("rb_print.SmallImage")));
             this.rb_print.Text = "พิมพ์รายงาน";
             this.rb_print.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            this.rb_print.Click += new System.EventHandler(this.rb_print_Click);
             // 
             // ribbonPanel5
             // 
@@ -259,6 +254,7 @@
             this.rb_logout.SmallImage = ((System.Drawing.Image)(resources.GetObject("rb_logout.SmallImage")));
             this.rb_logout.Text = "ออกจากระบบ";
             this.rb_logout.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            this.rb_logout.Click += new System.EventHandler(this.rb_logout_Click);
             // 
             // rb_exit
             // 
@@ -266,6 +262,7 @@
             this.rb_exit.SmallImage = ((System.Drawing.Image)(resources.GetObject("rb_exit.SmallImage")));
             this.rb_exit.Text = "ปิดโปรแกรม";
             this.rb_exit.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            this.rb_exit.Click += new System.EventHandler(this.rb_exit_Click);
             // 
             // ribbonTab2
             // 
@@ -280,6 +277,7 @@
             this.ribbon1.CaptionBarVisible = false;
             this.ribbon1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbon1.Location = new System.Drawing.Point(0, 0);
+            this.ribbon1.Margin = new System.Windows.Forms.Padding(4);
             this.ribbon1.Minimized = false;
             this.ribbon1.Name = "ribbon1";
             // 
@@ -301,7 +299,7 @@
             // 
             this.ribbon1.QuickAcessToolbar.Visible = false;
             this.ribbon1.RibbonTabFont = new System.Drawing.Font("Viner Hand ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ribbon1.Size = new System.Drawing.Size(1008, 96);
+            this.ribbon1.Size = new System.Drawing.Size(1344, 118);
             this.ribbon1.TabIndex = 3;
             this.ribbon1.Tabs.Add(this.rb_main);
             this.ribbon1.Tabs.Add(this.ribbonTab1);
@@ -319,15 +317,153 @@
             this.ribbonOrbMenuItem1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem1.SmallImage")));
             this.ribbonOrbMenuItem1.Text = "ribbonOrbMenuItem1";
             // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.employeeReportBindingSource1;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "BIG.Present.AllEmployeeReport.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(3, 63);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(1314, 536);
+            this.reportViewer1.TabIndex = 4;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.reportViewer1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 125);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1320, 602);
+            this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 6;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel2.Controls.Add(this.lb_search1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.start_date, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Btn_Search, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.end_date, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lb_search2, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Btn_ShowAll, 5, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1314, 47);
+            this.tableLayoutPanel2.TabIndex = 5;
+            // 
+            // lb_search1
+            // 
+            this.lb_search1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lb_search1.AutoSize = true;
+            this.lb_search1.Location = new System.Drawing.Point(43, 15);
+            this.lb_search1.Name = "lb_search1";
+            this.lb_search1.Size = new System.Drawing.Size(85, 17);
+            this.lb_search1.TabIndex = 0;
+            this.lb_search1.Text = "ค้นหาจากวันที่";
+            // 
+            // start_date
+            // 
+            this.start_date.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.start_date.Location = new System.Drawing.Point(134, 12);
+            this.start_date.Name = "start_date";
+            this.start_date.Size = new System.Drawing.Size(191, 22);
+            this.start_date.TabIndex = 2;
+            // 
+            // Btn_Search
+            // 
+            this.Btn_Search.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Btn_Search.Location = new System.Drawing.Point(674, 8);
+            this.Btn_Search.Name = "Btn_Search";
+            this.Btn_Search.Size = new System.Drawing.Size(110, 30);
+            this.Btn_Search.TabIndex = 1;
+            this.Btn_Search.Text = "ค้นหา";
+            this.Btn_Search.UseVisualStyleBackColor = true;
+            this.Btn_Search.Click += new System.EventHandler(this.Btn_Search_Click);
+            // 
+            // end_date
+            // 
+            this.end_date.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.end_date.Location = new System.Drawing.Point(462, 12);
+            this.end_date.Name = "end_date";
+            this.end_date.Size = new System.Drawing.Size(191, 22);
+            this.end_date.TabIndex = 3;
+            // 
+            // lb_search2
+            // 
+            this.lb_search2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lb_search2.AutoSize = true;
+            this.lb_search2.Location = new System.Drawing.Point(410, 15);
+            this.lb_search2.Name = "lb_search2";
+            this.lb_search2.Size = new System.Drawing.Size(46, 17);
+            this.lb_search2.TabIndex = 5;
+            this.lb_search2.Text = "ถึงวันที่";
+            // 
+            // Btn_ShowAll
+            // 
+            this.Btn_ShowAll.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Btn_ShowAll.Location = new System.Drawing.Point(790, 8);
+            this.Btn_ShowAll.Name = "Btn_ShowAll";
+            this.Btn_ShowAll.Size = new System.Drawing.Size(110, 30);
+            this.Btn_ShowAll.TabIndex = 4;
+            this.Btn_ShowAll.Text = "แสดงทั้งหมด";
+            this.Btn_ShowAll.UseVisualStyleBackColor = true;
+            this.Btn_ShowAll.Click += new System.EventHandler(this.Btn_ShowAll_Click);
+            // 
+            // allEmployeeDSBindingSource
+            // 
+            this.allEmployeeDSBindingSource.DataSource = this.AllEmployeeDS;
+            this.allEmployeeDSBindingSource.Position = 0;
+            // 
+            // EmployeeReportBindingSource
+            // 
+            this.EmployeeReportBindingSource.DataMember = "EmployeeReport";
+            this.EmployeeReportBindingSource.DataSource = this.AllEmployeeDS;
+            // 
+            // EmployeeReportTableAdapter
+            // 
+            this.EmployeeReportTableAdapter.ClearBeforeFill = true;
+            // 
             // ReportAllEmployeeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 561);
+            this.ClientSize = new System.Drawing.Size(1344, 739);
             this.Controls.Add(this.ribbon1);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ReportAllEmployeeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReportAllEmployeeForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReportAllEmployeeForm_FormClosed);
+            this.Load += new System.EventHandler(this.ReportAllEmployeeForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.employeeReportBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AllEmployeeDS)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.allEmployeeDSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeReportBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -335,20 +471,14 @@
         #endregion
 
         private System.Windows.Forms.RibbonPanel ribbonPanel6;
-        private System.Windows.Forms.RibbonButton ribbonButton12;
-        private System.Windows.Forms.RibbonButton ribbonButton13;
+        private System.Windows.Forms.RibbonButton ribbonSearchbyPID;
         private System.Windows.Forms.RibbonPanel ribbonPanel8;
-        private System.Windows.Forms.RibbonButton ribbonButton14;
-        private System.Windows.Forms.RibbonButton ribbonButton15;
+        private System.Windows.Forms.RibbonButton ribbonSearchbyName;
         private System.Windows.Forms.RibbonTab ribbonTab5;
         private System.Windows.Forms.RibbonPanel ribbonPanel7;
-        private System.Windows.Forms.RibbonButton ribbonButton9;
+        private System.Windows.Forms.RibbonButton ribbonAllReport;
         private System.Windows.Forms.RibbonPanel ribbonPanel9;
-        private System.Windows.Forms.RibbonButton ribbonButton10;
-        private System.Windows.Forms.RibbonPanel ribbonPanel10;
-        private System.Windows.Forms.RibbonButton ribbonButton11;
-        private System.Windows.Forms.RibbonPanel ribbonPanel11;
-        private System.Windows.Forms.RibbonButton ribbonButton16;
+        private System.Windows.Forms.RibbonButton ribbon_Employee;
         private System.Windows.Forms.RibbonTab ribbonTab6;
         private System.Windows.Forms.RibbonTab ribbonTab7;
         private System.Windows.Forms.RibbonSeparator ribbonSeparator4;
@@ -375,5 +505,19 @@
         private System.Windows.Forms.RibbonSeparator ribbonSeparator1;
         private System.Windows.Forms.RibbonSeparator ribbonSeparator2;
         private System.Windows.Forms.RibbonSeparator ribbonSeparator3;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource EmployeeReportBindingSource;
+        private AllEmployeeDS AllEmployeeDS;
+        private AllEmployeeDSTableAdapters.EmployeeReportTableAdapter EmployeeReportTableAdapter;
+        private System.Windows.Forms.BindingSource allEmployeeDSBindingSource;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label lb_search1;
+        private System.Windows.Forms.Button Btn_Search;
+        private System.Windows.Forms.DateTimePicker start_date;
+        private System.Windows.Forms.DateTimePicker end_date;
+        private System.Windows.Forms.BindingSource employeeReportBindingSource1;
+        private System.Windows.Forms.Button Btn_ShowAll;
+        private System.Windows.Forms.Label lb_search2;
     }
 }

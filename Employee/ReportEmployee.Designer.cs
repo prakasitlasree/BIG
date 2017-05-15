@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource23 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource24 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource25 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource26 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource27 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource28 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource29 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource30 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource31 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource32 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource33 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource10 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource11 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportEmployee));
             this.AddressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BIG_DBDataSet = new BIG.Present.BIG_DBDataSet();
@@ -59,6 +59,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbo_name = new System.Windows.Forms.ComboBox();
             this.ribbonSeparator2 = new System.Windows.Forms.RibbonSeparator();
             this.ribbonPanel4 = new System.Windows.Forms.RibbonPanel();
             this.rb_main = new System.Windows.Forms.RibbonTab();
@@ -80,20 +81,13 @@
             this.ribbonSeparator3 = new System.Windows.Forms.RibbonSeparator();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel6 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton12 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton13 = new System.Windows.Forms.RibbonButton();
-            this.ribbonPanel8 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton14 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton15 = new System.Windows.Forms.RibbonButton();
+            this.ribbonSearchbyPID = new System.Windows.Forms.RibbonButton();
+            this.ribbonSearchbyName = new System.Windows.Forms.RibbonButton();
             this.ribbonTab5 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton9 = new System.Windows.Forms.RibbonButton();
+            this.ribbonAllReport = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel9 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton10 = new System.Windows.Forms.RibbonButton();
-            this.ribbonPanel10 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton11 = new System.Windows.Forms.RibbonButton();
-            this.ribbonPanel11 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton16 = new System.Windows.Forms.RibbonButton();
+            this.ribbon_Employee = new System.Windows.Forms.RibbonButton();
             this.ribbonTab6 = new System.Windows.Forms.RibbonTab();
             this.ribbonTab7 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
@@ -113,7 +107,6 @@
             this.PermanentAddressTableAdapter = new BIG.Present.BIG_DBDataSetTableAdapters.PermanentAddressTableAdapter();
             this.EducationTableAdapter = new BIG.Present.BIG_DBDataSetTableAdapters.EducationTableAdapter();
             this.CompanyInfoTableAdapter = new BIG.Present.BIG_DBDataSetTableAdapters.CompanyInfoTableAdapter();
-            this.cbo_name = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.AddressBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BIG_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReferenceDocumentsBindingSource)).BeginInit();
@@ -196,42 +189,42 @@
             this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource23.Name = "DSAddress";
-            reportDataSource23.Value = this.AddressBindingSource;
-            reportDataSource24.Name = "DS_IDCARD";
-            reportDataSource24.Value = this.ReferenceDocumentsBindingSource;
-            reportDataSource25.Name = "DSEmployeePhoto";
-            reportDataSource25.Value = this.CurrentImagesBindingSource;
-            reportDataSource26.Name = "DSRefPerson";
-            reportDataSource26.Value = this.ReferencePersonBindingSource;
-            reportDataSource27.Name = "DSTraining";
-            reportDataSource27.Value = this.TrainingBindingSource;
-            reportDataSource28.Name = "DSExp";
-            reportDataSource28.Value = this.WorkExperienceBindingSource;
-            reportDataSource29.Name = "DSFingerScan";
-            reportDataSource29.Value = this.FingerScanBindingSource;
-            reportDataSource30.Name = "DSEmployee";
-            reportDataSource30.Value = this.EmployeeBindingSource;
-            reportDataSource31.Name = "DSPermanantAddr";
-            reportDataSource31.Value = this.PermanentAddressBindingSource;
-            reportDataSource32.Name = "DSEDU";
-            reportDataSource32.Value = this.EducationBindingSource;
-            reportDataSource33.Name = "DSCompanyInfo";
-            reportDataSource33.Value = this.CompanyInfoBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource23);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource24);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource25);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource26);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource27);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource28);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource29);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource30);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource31);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource32);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource33);
+            reportDataSource1.Name = "DSAddress";
+            reportDataSource1.Value = this.AddressBindingSource;
+            reportDataSource2.Name = "DS_IDCARD";
+            reportDataSource2.Value = this.ReferenceDocumentsBindingSource;
+            reportDataSource3.Name = "DSEmployeePhoto";
+            reportDataSource3.Value = this.CurrentImagesBindingSource;
+            reportDataSource4.Name = "DSRefPerson";
+            reportDataSource4.Value = this.ReferencePersonBindingSource;
+            reportDataSource5.Name = "DSTraining";
+            reportDataSource5.Value = this.TrainingBindingSource;
+            reportDataSource6.Name = "DSExp";
+            reportDataSource6.Value = this.WorkExperienceBindingSource;
+            reportDataSource7.Name = "DSFingerScan";
+            reportDataSource7.Value = this.FingerScanBindingSource;
+            reportDataSource8.Name = "DSEmployee";
+            reportDataSource8.Value = this.EmployeeBindingSource;
+            reportDataSource9.Name = "DSPermanantAddr";
+            reportDataSource9.Value = this.PermanentAddressBindingSource;
+            reportDataSource10.Name = "DSEDU";
+            reportDataSource10.Value = this.EducationBindingSource;
+            reportDataSource11.Name = "DSCompanyInfo";
+            reportDataSource11.Value = this.CompanyInfoBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource5);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource6);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource7);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource8);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource9);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource10);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource11);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "BIG.Present.EmployeeDetailReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(4, 53);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(1332, 475);
             this.reportViewer1.TabIndex = 0;
@@ -241,7 +234,7 @@
             // 
             this.txt_emp_id.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_emp_id.Location = new System.Drawing.Point(204, 9);
-            this.txt_emp_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_emp_id.Margin = new System.Windows.Forms.Padding(4);
             this.txt_emp_id.Name = "txt_emp_id";
             this.txt_emp_id.Size = new System.Drawing.Size(257, 22);
             this.txt_emp_id.TabIndex = 1;
@@ -251,7 +244,7 @@
             // 
             this.btn_search.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btn_search.Location = new System.Drawing.Point(504, 6);
-            this.btn_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(4);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(100, 28);
             this.btn_search.TabIndex = 2;
@@ -266,10 +259,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.reportViewer1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 126);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
@@ -287,13 +280,13 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 382F));
             this.tableLayoutPanel2.Controls.Add(this.btn_search, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txt_emp_id, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.cbo_name, 3, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -310,6 +303,16 @@
             this.label1.Size = new System.Drawing.Size(78, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "รหัสพนักงาน";
+            // 
+            // cbo_name
+            // 
+            this.cbo_name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbo_name.FormattingEnabled = true;
+            this.cbo_name.Location = new System.Drawing.Point(653, 8);
+            this.cbo_name.Name = "cbo_name";
+            this.cbo_name.Size = new System.Drawing.Size(294, 24);
+            this.cbo_name.TabIndex = 3;
+            this.cbo_name.SelectedIndexChanged += new System.EventHandler(this.cbo_name_SelectedIndexChanged);
             // 
             // ribbonPanel4
             // 
@@ -407,7 +410,7 @@
             this.ribbon1.CaptionBarVisible = false;
             this.ribbon1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbon1.Location = new System.Drawing.Point(0, 0);
-            this.ribbon1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ribbon1.Margin = new System.Windows.Forms.Padding(4);
             this.ribbon1.Minimized = false;
             this.ribbon1.Name = "ribbon1";
             // 
@@ -450,96 +453,57 @@
             // ribbonTab1
             // 
             this.ribbonTab1.Panels.Add(this.ribbonPanel6);
-            this.ribbonTab1.Panels.Add(this.ribbonPanel8);
             this.ribbonTab1.Text = "ค้นหา";
             // 
             // ribbonPanel6
             // 
-            this.ribbonPanel6.Items.Add(this.ribbonButton12);
-            this.ribbonPanel6.Items.Add(this.ribbonButton13);
+            this.ribbonPanel6.Items.Add(this.ribbonSearchbyPID);
+            this.ribbonPanel6.Items.Add(this.ribbonSearchbyName);
             this.ribbonPanel6.Text = "";
             // 
-            // ribbonButton12
+            // ribbonSearchbyPID
             // 
-            this.ribbonButton12.Image = global::BIG.Present.Properties.Resources.Toolbox2;
-            this.ribbonButton12.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton12.SmallImage")));
-            this.ribbonButton12.Text = "ค้นหาตามไซต์งาน";
+            this.ribbonSearchbyPID.Image = global::BIG.Present.Properties.Resources.Toolbox2;
+            this.ribbonSearchbyPID.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonSearchbyPID.SmallImage")));
+            this.ribbonSearchbyPID.Text = "ค้นหาบัตรประชาชน";
+            this.ribbonSearchbyPID.Click += new System.EventHandler(this.ribbonSearchbyPID_Click);
             // 
-            // ribbonButton13
+            // ribbonSearchbyName
             // 
-            this.ribbonButton13.Image = global::BIG.Present.Properties.Resources.Blue_pin;
-            this.ribbonButton13.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton13.SmallImage")));
-            this.ribbonButton13.Text = "ค้นหาตามเขต";
-            // 
-            // ribbonPanel8
-            // 
-            this.ribbonPanel8.Items.Add(this.ribbonButton14);
-            this.ribbonPanel8.Items.Add(this.ribbonButton15);
-            this.ribbonPanel8.Text = "";
-            // 
-            // ribbonButton14
-            // 
-            this.ribbonButton14.Image = global::BIG.Present.Properties.Resources.People1;
-            this.ribbonButton14.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton14.SmallImage")));
-            this.ribbonButton14.Text = "ค้นหาตามชื่อ-สกุล";
-            // 
-            // ribbonButton15
-            // 
-            this.ribbonButton15.Image = global::BIG.Present.Properties.Resources.Calendar;
-            this.ribbonButton15.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton15.SmallImage")));
-            this.ribbonButton15.Text = "ค้นหาตามวันเริ่มงาน";
+            this.ribbonSearchbyName.Image = global::BIG.Present.Properties.Resources.People1;
+            this.ribbonSearchbyName.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonSearchbyName.SmallImage")));
+            this.ribbonSearchbyName.Text = "ค้นหาตามชื่อ-สกุล";
+            this.ribbonSearchbyName.Click += new System.EventHandler(this.ribbonSearchbyName_Click);
             // 
             // ribbonTab5
             // 
             this.ribbonTab5.Panels.Add(this.ribbonPanel7);
             this.ribbonTab5.Panels.Add(this.ribbonPanel9);
-            this.ribbonTab5.Panels.Add(this.ribbonPanel10);
-            this.ribbonTab5.Panels.Add(this.ribbonPanel11);
             this.ribbonTab5.Text = "รายงาน";
             // 
             // ribbonPanel7
             // 
-            this.ribbonPanel7.Items.Add(this.ribbonButton9);
+            this.ribbonPanel7.Items.Add(this.ribbonAllReport);
             this.ribbonPanel7.Text = "...";
             // 
-            // ribbonButton9
+            // ribbonAllReport
             // 
-            this.ribbonButton9.Image = global::BIG.Present.Properties.Resources.Stock_graph;
-            this.ribbonButton9.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.SmallImage")));
-            this.ribbonButton9.Text = "รายงานทั้งหมด";
+            this.ribbonAllReport.Image = global::BIG.Present.Properties.Resources.Stock_graph;
+            this.ribbonAllReport.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonAllReport.SmallImage")));
+            this.ribbonAllReport.Text = "รายงานทั้งหมด";
+            this.ribbonAllReport.Click += new System.EventHandler(this.ribbonAllReport_Click);
             // 
             // ribbonPanel9
             // 
-            this.ribbonPanel9.Items.Add(this.ribbonButton10);
+            this.ribbonPanel9.Items.Add(this.ribbon_Employee);
             this.ribbonPanel9.Text = "";
             // 
-            // ribbonButton10
+            // ribbon_Employee
             // 
-            this.ribbonButton10.Image = global::BIG.Present.Properties.Resources.Boss;
-            this.ribbonButton10.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton10.SmallImage")));
-            this.ribbonButton10.Text = "ตามชื่อพนักงาน";
-            // 
-            // ribbonPanel10
-            // 
-            this.ribbonPanel10.Items.Add(this.ribbonButton11);
-            this.ribbonPanel10.Text = "";
-            // 
-            // ribbonButton11
-            // 
-            this.ribbonButton11.Image = global::BIG.Present.Properties.Resources.Find;
-            this.ribbonButton11.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.SmallImage")));
-            this.ribbonButton11.Text = "ตามรหัสพนักงาน";
-            // 
-            // ribbonPanel11
-            // 
-            this.ribbonPanel11.Items.Add(this.ribbonButton16);
-            this.ribbonPanel11.Text = "";
-            // 
-            // ribbonButton16
-            // 
-            this.ribbonButton16.Image = global::BIG.Present.Properties.Resources.Upload;
-            this.ribbonButton16.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton16.SmallImage")));
-            this.ribbonButton16.Text = "ตามบัตรประชาชน";
+            this.ribbon_Employee.Image = global::BIG.Present.Properties.Resources.Boss;
+            this.ribbon_Employee.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbon_Employee.SmallImage")));
+            this.ribbon_Employee.Text = "ตามชื่อพนักงาน";
+            this.ribbon_Employee.Click += new System.EventHandler(this.ribbon_Employee_Click);
             // 
             // ribbonTab6
             // 
@@ -616,16 +580,6 @@
             // 
             this.CompanyInfoTableAdapter.ClearBeforeFill = true;
             // 
-            // cbo_name
-            // 
-            this.cbo_name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbo_name.FormattingEnabled = true;
-            this.cbo_name.Location = new System.Drawing.Point(653, 8);
-            this.cbo_name.Name = "cbo_name";
-            this.cbo_name.Size = new System.Drawing.Size(294, 24);
-            this.cbo_name.TabIndex = 3;
-            this.cbo_name.SelectedIndexChanged += new System.EventHandler(this.cbo_name_SelectedIndexChanged);
-            // 
             // ReportEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -634,7 +588,7 @@
             this.Controls.Add(this.ribbon1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ReportEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReportEmployee";
@@ -713,20 +667,13 @@
         private System.Windows.Forms.RibbonSeparator ribbonSeparator3;
         private System.Windows.Forms.RibbonTab ribbonTab1;
         private System.Windows.Forms.RibbonPanel ribbonPanel6;
-        private System.Windows.Forms.RibbonButton ribbonButton12;
-        private System.Windows.Forms.RibbonButton ribbonButton13;
-        private System.Windows.Forms.RibbonPanel ribbonPanel8;
-        private System.Windows.Forms.RibbonButton ribbonButton14;
-        private System.Windows.Forms.RibbonButton ribbonButton15;
+        private System.Windows.Forms.RibbonButton ribbonSearchbyPID;
+        private System.Windows.Forms.RibbonButton ribbonSearchbyName;
         private System.Windows.Forms.RibbonTab ribbonTab5;
         private System.Windows.Forms.RibbonPanel ribbonPanel7;
-        private System.Windows.Forms.RibbonButton ribbonButton9;
+        private System.Windows.Forms.RibbonButton ribbonAllReport;
         private System.Windows.Forms.RibbonPanel ribbonPanel9;
-        private System.Windows.Forms.RibbonButton ribbonButton10;
-        private System.Windows.Forms.RibbonPanel ribbonPanel10;
-        private System.Windows.Forms.RibbonButton ribbonButton11;
-        private System.Windows.Forms.RibbonPanel ribbonPanel11;
-        private System.Windows.Forms.RibbonButton ribbonButton16;
+        private System.Windows.Forms.RibbonButton ribbon_Employee;
         private System.Windows.Forms.RibbonTab ribbonTab6;
         private System.Windows.Forms.RibbonTab ribbonTab7;
         private System.Windows.Forms.RibbonPanel ribbonPanel1;

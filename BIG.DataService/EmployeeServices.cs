@@ -199,6 +199,94 @@ namespace BIG.DataService
             }
         }
 
+        public static string GetLastEmployeeIDSmutSakorn()
+        {
+            var emp_id = string.Empty;
+            try
+            {
+                using (var ctx = new BIG_DBEntities())
+                {
+                    var yr = DateTime.Now.ToString("yy");
+                    var month = getMonth();
+                    var temp = yr + month;
+                    var empctx = ctx.Employees.Where(x => x.EMP_ID.Contains(temp)).ToList();
+                    if (empctx != null)
+                    {
+                        var obj = empctx.OrderBy(x => x.EMP_ID).LastOrDefault();
+                        if (obj != null)
+                        {
+                            emp_id = obj.EMP_ID;
+                        } 
+                    }
+                }
+                return emp_id;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static string getMonth()
+        {
+            var month = "";
+            try
+            { 
+                if (DateTime.Now.Month == 1)
+                {
+                    month = "A";
+                }
+                if (DateTime.Now.Month == 2)
+                {
+                    month = "B";
+                }
+                if (DateTime.Now.Month == 3)
+                {
+                    month = "C";
+                }
+                if (DateTime.Now.Month == 4)
+                {
+                    month = "D";
+                }
+                if (DateTime.Now.Month == 5)
+                {
+                    month = "E";
+                }
+                if (DateTime.Now.Month == 6)
+                {
+                    month = "F";
+                }
+                if (DateTime.Now.Month == 7)
+                {
+                    month = "G";
+                }
+                if (DateTime.Now.Month == 8)
+                {
+                    month = "H";
+                }
+                if (DateTime.Now.Month == 9)
+                {
+                    month = "I";
+                }
+                if (DateTime.Now.Month == 10)
+                {
+                    month = "J";
+                }
+                if (DateTime.Now.Month == 11)
+                {
+                    month = "K";
+                }
+                if (DateTime.Now.Month == 12)
+                {
+                    month = "L";
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return month;
+        }
 
     }
 }

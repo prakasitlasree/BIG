@@ -76,8 +76,7 @@ namespace BIG.Present
             {
                 MessageBox.Show("ReportEmployee_Load...." + ex.Message);
             }
-        }
-
+        } 
         private void btn_search_Click(object sender, EventArgs e)
         {
             if (txt_emp_id.Text != string.Empty)
@@ -145,34 +144,39 @@ namespace BIG.Present
         }
         private void ReportEmployee_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            
+            var form = new PersonalForm();
+            form.Show();
+            Hide();
         }
 
+
+        #region Ribbon Event
+        
         private void rb_exit_CanvasChanged(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
         private void rb_logout_Click(object sender, EventArgs e)
-        {
-            this.Close();
+        { 
             var form = new LoginForm();
             form.Show();
+            Hide();
         }
 
         private void rb_home_Click(object sender, EventArgs e)
-        {
-            this.Close();
+        { 
             var form = new PersonalForm();
             form.Show();
+            Hide();
         }
 
         private void rb_new_Click(object sender, EventArgs e)
-        {
-            this.Close();
+        { 
             var form = new EmployeeForm();
             form.Show();
-
+            Hide();
         }
 
         private void rb_exit_Click(object sender, EventArgs e)
@@ -181,13 +185,41 @@ namespace BIG.Present
         }
 
         private void rb_personal_Click(object sender, EventArgs e)
-        {
-            this.Close();
+        { 
             var frm = new PersonalForm();
             frm.Show();
-
+            Hide();
         }
 
+        private void ribbonSearchbyPID_Click(object sender, EventArgs e)
+        {
+            var form = new PersonalForm();
+            form.Show();
+            Hide();
+        }
+
+        private void ribbonSearchbyName_Click(object sender, EventArgs e)
+        {
+            var form = new PersonalForm();
+            form.Show();
+            Hide();
+        }
+
+        private void ribbon_Employee_Click(object sender, EventArgs e)
+        {
+            var form = new ReportEmployee();
+            form.Show();
+            Hide();
+        }
+
+        private void ribbonAllReport_Click(object sender, EventArgs e)
+        {
+            var form = new ReportAllEmployeeForm();
+            form.Show();
+            Hide();
+        }
+
+        #endregion
 
     }
 }
