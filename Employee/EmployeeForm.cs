@@ -15,22 +15,24 @@ using System.Globalization;
 using System.Threading;
 using Neurotec.Biometrics;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.Drawing.Imaging;
+
 namespace BIG.Present
 {
     
     public partial class EmployeeForm : Form
-    {
-        WebCam webcam;
+    { 
+        private Capture cam;
         private ThaiIDCard CardID = new ThaiIDCard();
         public string currentImgName = "";
         Nffv _engine;
          
         public EmployeeForm()
-        {
-            
+        { 
             InitializeComponent(); 
             initialCombobox();
-
+             
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
@@ -39,7 +41,7 @@ namespace BIG.Present
             _engine = engine;
             InitializeComponent();
             initialCombobox();
-
+             
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
@@ -48,7 +50,7 @@ namespace BIG.Present
             _engine = engine;
             InitializeComponent();
             initialCombobox();
-
+            
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             SearchPID(pid);
         }
@@ -56,6 +58,7 @@ namespace BIG.Present
         public EmployeeForm(BIG.Model.Employee emp)
         { 
             this.employee = emp;
+            
         }
 
         public EmployeeForm(string emp_id, string mode)
@@ -73,12 +76,12 @@ namespace BIG.Present
             {
                 EmployeeMode(true);
             }
-
+            
         }
         private void EmployeeForm_Load(object sender, EventArgs e)
-        {
-            webcam = new WebCam();
-            webcam.InitializeWebCam(ref imgVideo);
+        { 
+            //webcam = new WebCam();
+            //webcam.InitializeWebCam(ref imgVideo);
         }
         #region ===Properties===
 
@@ -1805,6 +1808,7 @@ namespace BIG.Present
                 if (cimg != null)
                 {
                     pic_current.Image = GetImage(cimg.PHOTO, 150, 187);
+                    imgCurrentImage.Image = GetImage(cimg.PHOTO, 150, 187);
                 }
 
                 //Finger
@@ -2021,6 +2025,8 @@ namespace BIG.Present
                         if (item.TYPE == "สำเนาบัตรประชาชน")
                         {
                             pic_copy_idcard.Image = GetImage(item.PHOTO, 367, 452);
+                            imgCaptureIDCard.Image = GetImage(item.PHOTO, 367, 452);
+
                         }
                         if (item.TYPE == "สำเนาทะเบียนบ้าน")
                         {
@@ -2439,9 +2445,22 @@ namespace BIG.Present
 
         private void EmployeeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Hide();
-            var from = new PersonalForm();
-            from.Show(); 
+            //MessageBox.Show("Before DisPose");
+            if (cam != null)
+            {
+                cam.Dispose();
+
+                if (m_ip != IntPtr.Zero)
+                {
+                    Marshal.FreeCoTaskMem(m_ip);
+                    m_ip = IntPtr.Zero;
+                }
+               // MessageBox.Show("After DisPose");
+            }
+            
+            //Hide();
+            //var from = new PersonalForm();
+            //from.Show(); 
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -2730,39 +2749,79 @@ namespace BIG.Present
         }
 
         #region ==== camera ====
-
-        private void bntCaptureIDCard_Click(object sender, EventArgs e)
-        {
-            imgCaptureIDCard.Image = imgVideo.Image;
-            pic_copy_idcard.Image = imgVideo.Image;
-        }
-
+        IntPtr m_ip = IntPtr.Zero;
+        
         private void btn_ref_img_Click(object sender, EventArgs e)
         {
             EmployeeTab.SelectTab(tabCamera);
-            webcam.Start();
+
+            const int VIDEODEVICE = 0; // zero based index of video capture device to use
+            const int VIDEOWIDTH = 640; // Depends on video device caps
+            const int VIDEOHEIGHT = 480; // Depends on video device caps
+            const int VIDEOBITSPERPIXEL = 24; // BitsPerPixel values determined by device
+
+            if (cam != null)
+            {
+                cam.Dispose();
+            }
+            cam = new Capture(VIDEODEVICE, VIDEOWIDTH, VIDEOHEIGHT, VIDEOBITSPERPIXEL, imgVideo);
+            //webcam.Start();
         }
         private void bntCapture_Click(object sender, EventArgs e)
         {
-            imgCurrentImage.Image = imgVideo.Image;
-            pic_current.Image =  imgVideo.Image;
+            if (cam == null)
+            {
+                const int VIDEODEVICE = 0; // zero based index of video capture device to use
+                const int VIDEOWIDTH = 640; // Depends on video device caps
+                const int VIDEOHEIGHT = 480; // Depends on video device caps
+                const int VIDEOBITSPERPIXEL = 24; // BitsPerPixel values determined by device
+                cam = new Capture(VIDEODEVICE, VIDEOWIDTH, VIDEOHEIGHT, VIDEOBITSPERPIXEL, imgVideo);
+            }
+            // Release any previous buffer
+            if (m_ip != IntPtr.Zero)
+            {
+                Marshal.FreeCoTaskMem(m_ip);
+                m_ip = IntPtr.Zero;
+            }
+
+            // capture image
+            m_ip = cam.Click();
+            Bitmap b = new Bitmap(cam.Width, cam.Height, cam.Stride, PixelFormat.Format24bppRgb, m_ip);
+
+            // If the image is upsidedown
+            b.RotateFlip(RotateFlipType.RotateNoneFlipY);
+            pic_current.Image = b;
+            imgCurrentImage.Image = b;
+
+            //imgCurrentImage.Image = imgVideo.Image;
+            //pic_current.Image =  imgVideo.Image;
+        }
+        private void bntCaptureIDCard_Click(object sender, EventArgs e)
+        {
+            // Release any previous buffer
+            if (m_ip != IntPtr.Zero)
+            {
+                Marshal.FreeCoTaskMem(m_ip);
+                m_ip = IntPtr.Zero;
+            }
+
+            // capture image
+            m_ip = cam.Click();
+            Bitmap b = new Bitmap(cam.Width, cam.Height, cam.Stride, PixelFormat.Format24bppRgb, m_ip);
+
+            // If the image is upsidedown
+            b.RotateFlip(RotateFlipType.RotateNoneFlipY);
+            imgCaptureIDCard.Image = b;
+            pic_copy_idcard.Image = b;
+
+            //imgCaptureIDCard.Image = imgVideo.Image;
+            //pic_copy_idcard.Image = imgVideo.Image;
         }
         private void bntSave_Click(object sender, EventArgs e)
         {
             pic_current.Image = imgCaptureIDCard.Image;
         }
-
-        private void bntVideoFormat_Click(object sender, EventArgs e)
-        {
-            webcam.ResolutionSetting();
-        }
-        private void bntVideoSource_Click(object sender, EventArgs e)
-        {
-            webcam.AdvanceSetting();
-        }
-
-
-
+         
         #endregion
 
         private void btn_new_img_del_Click(object sender, EventArgs e)
@@ -2791,7 +2850,7 @@ namespace BIG.Present
             //mainform.Show();
             var main = new PersonalForm();
             main.Show();
-            Hide();
+            Close();
         }
 
         private void rb_new_Click(object sender, EventArgs e)
@@ -2808,9 +2867,10 @@ namespace BIG.Present
                 frm.Show();
                 
             }
-            Hide();
+           
             var emp = new EmployeeForm(engine);
             emp.Show();
+            Close();
 
         }
 
@@ -2832,7 +2892,7 @@ namespace BIG.Present
             this.Cursor = Cursors.WaitCursor;
             var frm = new PersonalForm();
             frm.Show();
-            Hide();
+            Close();
         }
 
         private void rb_load_pid_Click(object sender, EventArgs e)
@@ -2848,7 +2908,7 @@ namespace BIG.Present
 
         private void rb_logout_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Close();
             var frm = new LoginForm();
             frm.Show();
         }
@@ -3362,15 +3422,16 @@ namespace BIG.Present
             if (txt_empid.Text != "")
             {
                 var form = new ReportEmployee(txt_empid.Text);
-                Hide();
+                 
                 form.Show();
             }
             else
             {
                 var form = new ReportEmployee(txt_empid.Text);
                 form.Show();
-                Hide();
+                
             }
+            Close();
         }
 
         private void ribbonButton21_CanvasChanged(object sender, EventArgs e)

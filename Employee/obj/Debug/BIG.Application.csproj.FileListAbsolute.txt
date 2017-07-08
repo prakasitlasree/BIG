@@ -34,11 +34,12 @@ D:\_zBIG\SourceCode\BIG\Employee\obj\Debug\BIG.Present.SplashScreen.resources
 D:\_zBIG\SourceCode\BIG\Employee\obj\Debug\BIG.Present.TestForm.resources
 D:\_zBIG\SourceCode\BIG\Employee\obj\Debug\BIG.Present.UC.UserControl1.resources
 D:\_zBIG\SourceCode\BIG\Employee\obj\Debug\BIG.Application.csproj.GenerateResource.Cache
-D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.Present_V1.3.exe.config
-D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.Present_V1.3.exe
-D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.Present_V1.3.pdb
-D:\_zBIG\SourceCode\BIG\Employee\obj\Debug\BIG.Present_V1.3.exe
-D:\_zBIG\SourceCode\BIG\Employee\obj\Debug\BIG.Present_V1.3.pdb
 D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\Microsoft.ReportViewer.Common.dll
 D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\Microsoft.ReportViewer.WinForms.DLL
 D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\DirectShowLib-2005.dll
+D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.Present_V1.4.exe.config
+D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.Present_V1.4.exe
+D:\_zBIG\SourceCode\BIG\Employee\bin\Debug\BIG.Present_V1.4.pdb
+D:\_zBIG\SourceCode\BIG\Employee\obj\Debug\BIG.Present_V1.4.exe
+D:\_zBIG\SourceCode\BIG\Employee\obj\Debug\BIG.Present_V1.4.pdb

@@ -52,7 +52,7 @@
             this.btn_employee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_employee.Image = global::BIG.Present.Properties.Resources.personal;
             this.btn_employee.Location = new System.Drawing.Point(267, 218);
-            this.btn_employee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_employee.Margin = new System.Windows.Forms.Padding(4);
             this.btn_employee.Name = "btn_employee";
             this.btn_employee.Size = new System.Drawing.Size(100, 92);
             this.btn_employee.TabIndex = 7;
@@ -77,7 +77,7 @@
             this.btn_setting.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_setting.Image = global::BIG.Present.Properties.Resources.setting;
             this.btn_setting.Location = new System.Drawing.Point(802, 220);
-            this.btn_setting.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_setting.Margin = new System.Windows.Forms.Padding(4);
             this.btn_setting.Name = "btn_setting";
             this.btn_setting.Size = new System.Drawing.Size(100, 92);
             this.btn_setting.TabIndex = 9;
@@ -103,7 +103,7 @@
             this.btn_report.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_report.Image = global::BIG.Present.Properties.Resources.skill;
             this.btn_report.Location = new System.Drawing.Point(652, 531);
-            this.btn_report.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_report.Margin = new System.Windows.Forms.Padding(4);
             this.btn_report.Name = "btn_report";
             this.btn_report.Size = new System.Drawing.Size(97, 84);
             this.btn_report.TabIndex = 11;
@@ -129,7 +129,7 @@
             this.btn_company.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_company.Image = global::BIG.Present.Properties.Resources.network;
             this.btn_company.Location = new System.Drawing.Point(312, 531);
-            this.btn_company.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_company.Margin = new System.Windows.Forms.Padding(4);
             this.btn_company.Name = "btn_company";
             this.btn_company.Size = new System.Drawing.Size(100, 92);
             this.btn_company.TabIndex = 17;
@@ -155,7 +155,7 @@
             this.btn_close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_close.Image = global::BIG.Present.Properties.Resources.Close2;
             this.btn_close.Location = new System.Drawing.Point(1087, 1);
-            this.btn_close.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_close.Margin = new System.Windows.Forms.Padding(4);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(32, 30);
             this.btn_close.TabIndex = 20;
@@ -167,7 +167,7 @@
             this.btn_home.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_home.Image = global::BIG.Present.Properties.Resources.Home1;
             this.btn_home.Location = new System.Drawing.Point(1, 1);
-            this.btn_home.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_home.Margin = new System.Windows.Forms.Padding(4);
             this.btn_home.Name = "btn_home";
             this.btn_home.Size = new System.Drawing.Size(32, 30);
             this.btn_home.TabIndex = 23;
@@ -195,12 +195,12 @@
             this.Controls.Add(this.btn_employee);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "โปรแกรมจัดการข้อมูลพนักงาน";
+            this.Text = "โปรแกรมจัดการข้อมูลพนักงาน V1.4 (9 July 2017)";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btn_employee)).EndInit();
